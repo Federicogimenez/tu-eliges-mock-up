@@ -1,0 +1,63 @@
+.section-discounts{
+    height: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__border{
+        height: 50rem;
+        flex: 0 0 clamp(3rem, 4vw, 6.5rem);
+        background-color: #2995FC;
+
+        &--1{
+            border-radius: 0 1rem 1rem  0;
+        }
+        &--2{
+            border-radius: 1rem 0 0 1rem;
+        }
+    }
+
+    &__box-cards{
+        flex: 1 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &--box{
+            flex: 1 0 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+
+// queries 768
+    @media (max-width: 1208px) {
+        &__border{
+            height: 74rem;
+        }
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 0;
+
+        &__border{
+            width: 100%;
+    
+            &--1{
+                border-radius: 0 0 1rem 1rem;
+                margin-bottom: 2rem;
+            }
+            &--2{
+                border-radius: 0 0 1rem 1rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+}

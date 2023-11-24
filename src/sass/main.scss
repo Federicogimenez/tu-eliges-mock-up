@@ -1,0 +1,23 @@
+
+@import "./base/__typography.scss";
+@import "./base/__base";
+
+@import "./pages/home.scss";
+@import "./pages/thank-you.scss";
+
+
+@import "./layout/__header.scss";
+@import "./layout/__about-us.scss";
+@import "./layout/__footer.scss";
+@import "./layout/__section-discount.scss";
+@import "./layout/__section-video.scss";
+@import "./layout/__section-app.scss";
+@import "./layout/__section-price.scss";
+@import "./layout/__section-brands.scss";
+
+@import "./components/__burger.scss";
+@import "./components/__switch-lang.scss";
+@import "./components/__discount-card.scss";
+@import "./components/__swiper-app.scss";
+@import "./components/__swiper-categories.scss";
+@import "./components/__swiper-brands.scss";

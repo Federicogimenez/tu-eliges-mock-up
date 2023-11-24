@@ -1,0 +1,28 @@
+.app-swiper-wrapper{
+    width: 50vw;
+    max-width: 800px;
+}
+.app-swiper-slider{
+    width: 100% !important;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.app-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img{
+        width: 100%;
+    }
+}
+
+// queries
+@media (max-width: 768px) {
+    .app-swiper-wrapper{
+        max-width: 95vw;
+    }
+}

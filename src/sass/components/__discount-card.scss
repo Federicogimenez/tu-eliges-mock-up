@@ -1,0 +1,81 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 32.3rem;
+    cursor: pointer;
+    width: 23.3rem;
+    margin: 2rem;
+    &__side {
+      height: 100%;
+      transition: all .8s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backface-visibility: hidden;
+      border-radius: 2rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      box-shadow: .2rem .2rem 1rem rgba(109, 109, 109, 0.678); 
+
+        &--front {
+          display: grid;
+          place-items: center;
+          background-size: cover;
+          background-position: center;
+
+          img{
+            width: 55%;
+            margin-bottom: 1rem;
+          }
+          span{
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-family: "Monserrat";
+            color: #fff;
+            width: 75%;
+            text-align: center;
+          }
+        }
+        &--back {
+          display: grid;
+          place-items: center;
+          background-color: #000;
+          transform: rotateY(180deg); 
+          padding: 2rem 4.5rem 2rem 2rem;
+        
+          p{
+            font-size: 2rem;
+            font-family: "Monserrat";
+            color: #2995FC;
+          }
+        }
+      }
+    }
+
+    #discount-card-1{background-image: url("/img/png/discount-card-1.png");}
+    #discount-card-2{background-image: url("/img/png/discount-card-2.png");}
+    #discount-card-3{background-image: url("/img/png/discount-card-3.png");}
+    #discount-card-4{background-image: url("/img/png/discount-card-4.png");}
+
+    .card:hover .card__side--front {
+      transform: rotateY(-180deg); 
+    }
+    .card:focus .card__side--front {
+      transform: rotateY(-180deg); 
+    }
+    .card:hover .card__side--back {
+      transform: rotateY(0deg); }
+    .card:focus .card__side--back {
+      transform: rotateY(0deg); }
+
+
+
+      .rotateBack{
+          transform: rotateY(0deg); 
+        }
+      .rotateFront{
+          transform: rotateY(-180deg); 
+        }

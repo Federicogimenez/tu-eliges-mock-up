@@ -1,0 +1,43 @@
+.switch-languaje{
+    color: #ffffffb6;
+    font-size: 2rem;
+    font-family: "Monserrat Semibold";
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+
+    img{
+        width: 2.2rem;
+        margin-left: 4px;
+    }
+
+    ul{
+        display: none;
+        width: 110%;
+        position: absolute;
+        bottom: -50px;
+        left: -15px;
+        background-color: #000;
+        border: 2px solid #fff;
+        border-top: none;
+        border-radius: 7px;
+        z-index: 10;
+
+        li{
+            height: 0;
+            list-style: none;
+            width: 100%;
+            padding: .9rem 1.5rem;
+            transition: all .2s ease-in;
+        }
+    }
+}
+
+.switch-languaje:hover ul,
+.switch-languaje:hover ul:hover{
+    display: block;
+}
+.switch-languaje:hover ul li{
+    height: 100%;
+}

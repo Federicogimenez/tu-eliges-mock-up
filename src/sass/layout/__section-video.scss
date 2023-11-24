@@ -1,0 +1,43 @@
+.section-video{
+    height: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+
+
+    h3{
+        width: 75%;
+        color: #313033;
+        font-family: "Monserrat";
+        font-size: clamp(2.8rem, 4.4vw, 3.6rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    p{
+        color: #313033;
+        font-family: "Monserrat Light";
+        font-size: clamp(2rem, 4vw, 3rem);
+        text-align: center;
+    }
+    &__video-box{
+        margin-top: clamp(20px, 2vw, 54px);
+        width: 92vw;
+        height: 50vw;
+        max-width: 1200px;
+        max-height: 585px;
+        
+        position: relative;
+
+        iframe,
+        embed{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

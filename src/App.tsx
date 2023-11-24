@@ -1,18 +1,16 @@
-// import './App.css'
-import './sass/main.scss'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ThanksYou from "./pages/ThanksYou";
 
 function App() {
 
   return (
-    <>
-      <div>
-        hi madafacars   
-        <br />
-        <br />
-        <br />
-        <img src="/src/assets/react.svg" alt="" />
-      </div>
-    </>
+    <BrowserRouter >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/thanks-you" element={<ThanksYou />} />
+        </Routes>
+    </BrowserRouter>
   )
 }
 
