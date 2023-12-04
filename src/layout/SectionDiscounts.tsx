@@ -33,7 +33,7 @@ export default function SectionDiscounts() {
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-1">
                                     <img src="/img/svg/brand-icon.svg" alt="" />
-                                    <span>¡A TODOS LADOS CON VOS!</span>
+                                    <span>¡!AHORRAR</span>
                                 </div>
                                 <div className="card__side card__side--back">
                                     <p>Descuentos exclusivos en más de 700.000 ubicaciones</p>
@@ -42,7 +42,7 @@ export default function SectionDiscounts() {
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-2">
                                     <img src="/img/svg/food-icon.svg" alt="" />
-                                    <span>¡A TODOS LADOS CON VOS!</span>
+                                    <span>RESTAURANTES</span>
                                 </div>
                                 <div className="card__side card__side--back">
                                     <p>Descuentos exclusivos en más de 700.000 ubicaciones</p>
@@ -53,7 +53,7 @@ export default function SectionDiscounts() {
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-3">
                                     <img src="/img/svg/shopping-icon.svg" alt="" />
-                                    <span>¡A TODOS LADOS CON VOS!</span>
+                                    <span>COMERCIOS</span>
                                 </div>
                                 <div className="card__side card__side--back">
                                     <p>Descuentos exclusivos en más de 700.000 ubicaciones</p>
@@ -62,7 +62,7 @@ export default function SectionDiscounts() {
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-4">
                                     <img src="/img/svg/travel-icon.svg" alt="" />
-                                    <span>¡A TODOS LADOS CON VOS!</span>
+                                    <span>VIAJES</span>
                                 </div>
                                 <div className="card__side card__side--back">
                                     <p>Descuentos exclusivos en más de 700.000 ubicaciones</p>
