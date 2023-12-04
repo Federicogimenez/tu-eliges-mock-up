@@ -22,8 +22,10 @@
       box-shadow: .2rem .2rem 1rem rgba(109, 109, 109, 0.678); 
 
         &--front {
-          display: grid;
-          place-items: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
           background-size: cover;
           background-position: center;
 
@@ -33,9 +35,9 @@
           }
           span{
             font-size: clamp(1.5rem, 3vw, 2rem);
-            font-family: "Monserrat";
+            font-family: "Monserrat Semibold";
             color: #fff;
-            width: 75%;
+            width: fit-content;
             text-align: center;
           }
         }

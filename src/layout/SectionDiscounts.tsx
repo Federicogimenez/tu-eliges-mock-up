@@ -33,7 +33,7 @@ export default function SectionDiscounts() {
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-1">
                                     <img src="/img/svg/brand-icon.svg" alt="" />
-                                    <span>¡!AHORRAR</span>
+                                    <span>¡AHORRAR!</span>
                                 </div>
                                 <div className="card__side card__side--back">
                                     <p>Descuentos exclusivos en más de 700.000 ubicaciones</p>
