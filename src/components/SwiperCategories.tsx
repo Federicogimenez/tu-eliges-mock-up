@@ -52,7 +52,7 @@ function SwiperCategories() {
                         <button>compra y ahorra</button>
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/shop.png'/>
+                      <img src='/img/png/slider-1.webp'/>
                       <button>compra y ahorra</button>
                     </div>
                   </div>
@@ -70,7 +70,7 @@ function SwiperCategories() {
                         <button>únite y disfrutá</button>
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/food.png'/>
+                      <img src='/img/png/slider-2.webp'/>
                       <button>únite y disfrutá</button>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ function SwiperCategories() {
                         <button>divertite ahorrando</button>
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/mickey.png'/>
+                      <img src='/img/png/slider-3.webp'/>
                       <button>divertite ahorrando</button>
                     </div>
                   </div>
@@ -100,7 +100,7 @@ function SwiperCategories() {
                         <button>empeza tu aventura</button>
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/travel.png'/>
+                      <img src='/img/png/slider-4.webp'/>
                       <button>empeza tu aventura</button>
                     </div>
                   </div>

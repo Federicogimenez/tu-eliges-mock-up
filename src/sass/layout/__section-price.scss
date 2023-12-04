@@ -5,16 +5,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.4vw 7vw;
+    flex-wrap: wrap;
+    padding: 2rem 0 2rem 7vw;
     background-color: #000;
+    gap: 30px;
 
     &__text{
-        flex: 1 0 45%;
+        flex: 1 0 30%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-right: 6vw;
 
         h3{
             color: #2995FC;
@@ -42,21 +43,25 @@
         }
     }
     &__price{
-        flex: 1 0 50%;
+        flex: 1 0 45%;
         display: flex;
         justify-content: center;
         align-items: center;
 
 
         .price-card{
-            width: clamp(19rem, 80%, 43rem);
-            height: clamp(21.4rem, 70vw, 48.6rem);
+            width: clamp(21rem, 40vw, 43rem);
+            height: clamp(21.4rem, 50vw, 48.6rem);
             border-radius: 2rem;
             padding: 2rem 3rem;
             perspective: 150rem;
             -moz-perspective: 150rem;
             position: relative;
             cursor: pointer;
+
+            @media (max-width: 600px) {
+                width: clamp(21rem, 50vw, 43rem);
+            }
 
             &::before{
                 content: "";
@@ -66,7 +71,11 @@
                 border: 7px solid #fff;
                 background-color: #000;
                 border-radius: 2rem;
-                transform: rotate(-35deg);
+                transform: rotate(-25deg);
+
+                @media (max-width: 600px) {
+                    transform: rotate(-45deg);
+                }
             }
 
             &__side{
@@ -96,7 +105,7 @@
                 }
                 &--front-text{
                     color: #000;
-                    font-size: clamp(3rem, 5vw, 6.4rem);
+                    font-size: clamp(2.5rem, 4vw, 6rem);
                     font-family: "Monserrat Semibold";
                     text-align: center;
                 }
@@ -112,7 +121,7 @@
 
 
                     button{
-                        font-size: 1.8rem;
+                        font-size: clamp(1.8rem, 2.4vw, 2.5rem);
                         font-family: "Monserrat Semibold";
                         color: #fff;
                         padding: 1rem 2.8rem;
@@ -126,7 +135,7 @@
                 }
                 &--back--text{
                     color: #2995FC;
-                    font-size: clamp(2rem, 3vw, 3.2rem);
+                    font-size: clamp(1.8rem, 2.5vw, 3rem);
                     font-family: "Monserrat";
                     text-align: center;
                     margin-bottom: 1.5rem;
@@ -134,7 +143,7 @@
                 &--back--price{
                     margin-bottom: 1.5rem;
                     color: #2995FC;
-                    font-size: clamp(3rem, 5vw, 6.4rem);
+                    font-size: clamp(3rem, 4vw, 6rem);
                     font-family: "Monserrat Semibold";
                 }
             }
@@ -159,4 +168,13 @@
 }
 .price-card:focus .price-card__side--back {
     transform: rotateY(0deg);
+}
+
+@media (max-width: 768px) {
+    .price-card .price-card__side--back {
+        transform: rotateY(0deg);
+    }
+    .price-card:hover .price-card__side--front {
+        display: none;
+    }
 }

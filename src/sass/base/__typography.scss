@@ -1,12 +1,17 @@
 @font-face {
     font-family: "Monserrat";
-    src: url("/font/monserrat/Montserrat-Regular.ttf");
+    src: url("/font/monserrat/Montserrat-Regular.ttf") format("truetype");
+    font-display: swap;
+
 }
 @font-face {
     font-family: "Monserrat Semibold";
-    src: url("/font/monserrat/Montserrat-SemiBold.ttf");
+    src: 
+        url("/font/monserrat/Montserrat-SemiBold.ttf") format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "Monserrat Light";
-    src: url("/font/monserrat/Montserrat-Light.ttf");
+    src: url("/font/monserrat/Montserrat-Light.ttf") format("truetype");
+    font-display: swap;
 }

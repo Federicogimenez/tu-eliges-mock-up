@@ -21,7 +21,7 @@ export default function Header() {
                         <div className='header__menu-desk--navbar-desk'>
                             <button>usuario</button>
                             <nav>
-                                <a href="#header" className="active">Home</a>
+                                <a href="#header">Home</a>
                                 <a href="#video">Video</a>
                                 <a href="#categories">Categoria</a>
                                 <a href="#brands">Marcas</a>
@@ -62,7 +62,7 @@ export default function Header() {
                         <button>unirme ahora</button>
                     </div>
                     <div className="header__content--ilustration">
-                        <img src="/img/png/header.png" alt="ilustration" />
+                        <img src="/img/png/header.webp" alt="ilustration" />
                     </div>
                 </div>
             </div>

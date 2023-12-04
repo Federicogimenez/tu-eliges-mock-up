@@ -14,8 +14,8 @@ export default function Home() {
             <div className="home">
                 <Header />
                 <SectionDiscounts />
-                <SectionVideo />
                 <SwiperCategories />
+                <SectionVideo />
                 <SectionBrands />
                 <SectionPrice />
                 <SectionApp />
@@ -23,6 +23,7 @@ export default function Home() {
                 <Footer />
                 <br />
                 <Link to="/thanks-you">Thanks You so much!</Link>
+                <Link to="/aliado">alliancess!</Link>
             </div>
     )
 }

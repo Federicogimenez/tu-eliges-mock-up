@@ -19,13 +19,13 @@
             strong{
                 font-family: "Monserrat Semibold";
                 color: #fff;
-                font-size: clamp(1.8rem, 2.2vw, 2rem);
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 10px;
             }
             span{
                 font-family: "Monserrat";
                 color: #fff;
-                font-size: clamp(1.6rem, 2.2vw, 2rem);
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 10px;
 
                 img{
@@ -56,7 +56,7 @@
             strong{
                 font-family: "Monserrat Semibold";
                 color: #fff;
-                font-size: clamp(1.8rem, 2.2vw, 2rem);
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 10px;
             }
             span{
@@ -81,16 +81,16 @@
         flex-wrap: wrap;
         background-color: #fff;
         height: 100%;
-        padding: 4rem 2.5rem;
+        padding: 2rem 1rem;
 
         a,
         a:visited{
             text-decoration: none;
             width: fit-content;
-            margin: 10px;
+            margin: 5px 10px;
             color: #313033;
             font-family: "Monserrat Light";
-            font-size: clamp(1.5rem, 2.2vw, 2rem);
+            font-size: clamp(1.4rem, 2vw, 1.6rem);
         }
         a:active,
         a:hover{

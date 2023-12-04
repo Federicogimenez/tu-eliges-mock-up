@@ -7,6 +7,14 @@
     display: flex;
     flex-wrap: nowrap;
 
+    @media (max-width:1200px) {
+        color: #fff;
+        font-size: 3rem;
+        text-transform: uppercase;
+        padding-left: 3rem;
+    }
+
+
     img{
         width: 2.2rem;
         margin-left: 4px;
@@ -16,13 +24,20 @@
         display: none;
         width: 110%;
         position: absolute;
-        bottom: -50px;
+        bottom: -40px;
         left: -15px;
         background-color: #000;
         border: 2px solid #fff;
         border-top: none;
         border-radius: 7px;
         z-index: 10;
+
+        @media (max-width:1200px) {
+            width: 80%;
+            color: #fff;
+            left: 10px;
+            bottom: -50px;
+        }
 
         li{
             height: 0;

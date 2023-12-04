@@ -6,7 +6,7 @@
 
     &__title{
         color: #313033;
-        font-size: 3.6rem;
+        font-size: clamp(2rem, 2.3vw, 3rem);
         font-family: "Monserrat Semibold";
         text-align: center;
 
@@ -17,7 +17,7 @@
     &__p{
         color: #313033;
         font-family: "Monserrat";
-        font-size: clamp(1.6rem, 2.4vw, 3rem);
+        font-size: clamp(1.8rem,2vw,2.5rem);
         text-align: center;
         margin-top: 1rem;
     }
