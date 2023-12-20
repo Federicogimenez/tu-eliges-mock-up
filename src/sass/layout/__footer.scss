@@ -28,6 +28,7 @@
                 font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 15px;
                 text-decoration: none;
+                cursor: pointer;
 
                 img{
                     margin-right: 10px;
@@ -40,6 +41,7 @@
                 justify-content: flex-start;
                 align-items: center;
                 a{
+                    cursor: pointer;
                     text-decoration: none;
                     margin-right: 10px;
                     img{
@@ -73,6 +75,7 @@
             }
             a{
                 font-family: "Monserrat";
+                cursor: pointer;
                 color: #fff;
                 font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 15px;
@@ -97,6 +100,7 @@
                 margin-bottom: 10px;
             }
             a{
+                cursor: pointer;
                 font-family: "Monserrat";
                 color: #fff;
                 font-size: clamp(1.5rem, 2vw, 1.8rem);

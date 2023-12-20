@@ -1,11 +1,33 @@
+import { useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext"
 
 export default function Footer() {
+
     const data = useLanguageContext()
-  return (
+
+    const navigate = useNavigate();
+
+    function handleRedirectHome (){
+        window.scrollTo(0, 0)
+        navigate("/");
+    }
+    function handleRedirectLegal (){
+        window.scrollTo(0, 0)
+        navigate("/legals");
+    }
+    function handleRedirectTerms (){
+        window.scrollTo(0, 0)
+        navigate("/terms-and-conditions");
+    }
+    function handleRedirectFaq (){
+        window.scrollTo(0, 0)
+        navigate("/faqs");
+    }
+
+    return (
     <div className="footer">
         <div className="footer__data">
-            <a href="/" className="footer__data--img">
+            <a onClick={handleRedirectHome} className="footer__data--img">
                 <img src="/img/png/logo-tu-eliges.png" alt="logo" />
             </a>
             <div className="footer__data--contact">
@@ -35,12 +57,12 @@ export default function Footer() {
                     <img src="/img/svg/mail.svg" alt="" />
                     soporte@tueliges.us
                 </a>
-                <a href="/faqs">F.A.Q</a>
+                <a onClick={handleRedirectFaq}>F.A.Q</a>
             </div>
             <div className="footer__data--legal">
                 <strong> { data["footer_legal"] } </strong>
-                <a href="/legals"> { data["footer_policy"] } </a>
-                <a href="/terms-and-conditions"> { data["footer_terms"] } </a>
+                <a onClick={handleRedirectLegal}> { data["footer_policy"] } </a>
+                <a onClick={handleRedirectTerms}> { data["footer_terms"] } </a>
                 <a href="https://static.adcrws.com/docs/access_privacy_policy_20190604.html"> {data["footer_policy_2"]} </a>
             </div>
         </div>
