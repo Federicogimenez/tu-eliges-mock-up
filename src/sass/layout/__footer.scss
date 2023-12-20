@@ -3,14 +3,14 @@
 
     &__data{
         background-color: #000;
-        padding: 4rem 6rem;
+        padding: 4rem 2rem;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        gap: 15px;
 
         &--contact{
-            flex: 1 0 290px;
-            order: 1;
+            flex: 1 0 22%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -22,47 +22,22 @@
                 font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 10px;
             }
-            span{
+            a{
                 font-family: "Monserrat";
                 color: #fff;
                 font-size: clamp(1.5rem, 2vw, 1.8rem);
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+                text-decoration: none;
 
                 img{
                     margin-right: 10px;
                     width: 2rem;
                 }
             }
-        }
-        &--img{
-            flex: 1 0 40%;
-            display: flex;
-            justify-content: center;
-            order: 2;
-            padding: 0 10px;
-
-            img{
-                width: clamp(15rem, 20vw, 30rem);
-            }
-        }
-        &--comunity{
-            flex: 1 0 20%;
-            order: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            strong{
-                font-family: "Monserrat Semibold";
-                color: #fff;
-                font-size: clamp(1.5rem, 2vw, 1.8rem);
-                margin-bottom: 10px;
-            }
             span{
                 width: 100%;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 a{
                     text-decoration: none;
@@ -73,46 +48,91 @@
                 }
             }
         }
+        &--img{
+            cursor: pointer;
+            flex: 1 0 30%;
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: clamp(15rem, 25vw, 30rem);
+            }
+        }
+        &--support{
+            flex: 1 0 22%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            strong{
+                font-family: "Monserrat Semibold";
+                color: #fff;
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
+                margin-bottom: 10px;
+            }
+            a{
+                font-family: "Monserrat";
+                color: #fff;
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
+                margin-bottom: 15px;
+                text-decoration: none;
+
+                img{
+                    margin-right: 10px;
+                    width: 2rem;
+                }
+            }
+        }
+        &--legal{
+            flex: 1 0 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            strong{
+                font-family: "Monserrat Semibold";
+                color: #fff;
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
+                margin-bottom: 10px;
+            }
+            a{
+                font-family: "Monserrat";
+                color: #fff;
+                font-size: clamp(1.5rem, 2vw, 1.8rem);
+                margin-bottom: 10px;
+                text-decoration: none;
+            }
+        }
     }
     &__access{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-wrap: wrap;
         background-color: #fff;
         height: 100%;
         padding: 2rem 1rem;
-
-        a,
-        a:visited{
-            text-decoration: none;
-            width: fit-content;
-            margin: 5px 10px;
-            color: #313033;
-            font-family: "Monserrat Light";
-            font-size: clamp(1.4rem, 2vw, 1.6rem);
-        }
-        a:active,
-        a:hover{
-            color: #000;
-        }
+        color: #313033;
+        font-family: "Monserrat Light";
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
+        text-align: center;
     }
 
     @media (max-width: 768px) {
         &__data{
             flex-direction: column;
 
-            &--img{
-                order: 1;
-                margin-bottom: 3rem;
-            }
             &--contact{
-                order: 2;
                 flex: 1 0 0;
                 margin-right: auto;
                 margin-bottom: 3rem;
             }
-            &--comunity{
+            &--support{
+                margin-right: auto;
+                order: 3;
+            }
+            &--legal{
                 margin-right: auto;
                 order: 3;
             }

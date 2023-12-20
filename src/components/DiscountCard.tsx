@@ -1,4 +1,4 @@
-import Card from "../interfaces/Card";
+import Card from "../interfaces/CardInterface";
 
 export default function DiscountCard(info: Card) {
 

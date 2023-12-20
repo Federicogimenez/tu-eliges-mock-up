@@ -1,13 +1,24 @@
-.app-swiper-wrapper{
-    width: 50vw;
-    max-width: 800px;
+.app-swiper-wrapper-desktop{
+    width: clamp(270px, 80vw, 1000px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
+.app-swiper-wrapper-mobile{
+    display: none;
+    max-width: 75vw;
+}
+
 .app-swiper-slider{
     width: 100% !important;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 15px;
+    overflow: hidden;
 }
 .app-slide{
     display: flex;
@@ -22,7 +33,11 @@
 
 // queries
 @media (max-width: 768px) {
-    .app-swiper-wrapper{
-        max-width: 95vw;
+    .app-swiper-wrapper-desktop{
+        display: none;
     }
+    .app-swiper-wrapper-mobile{
+        display: flex;
+    }
+
 }

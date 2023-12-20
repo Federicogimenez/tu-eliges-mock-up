@@ -1,54 +1,26 @@
-import BurgerMenu from "../components/BurgerMenu";
-import SwitchLang from "../components/SwitchLang";
 import Typewriter from "typewriter-effect";
-import Headroom from "react-headroom";
+import { useLanguageContext } from "../hooks/UseLanguageContext";
+import { NavBar } from "../components/NavBar";
 
 
 
 export default function Header() {
+    const data = useLanguageContext();
 
     return (
             <div className="header" id="header">
-                <Headroom className="header__menu-desk" style={{
-                    display:'flex',
-                    justifyContent:'space-around',
-                    width:'100%',
-                    zIndex:'100',
-                }}>
-                        <picture className='header__menu-desk--logo'>
-                            <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
-                        </picture>
-                        <div className='header__menu-desk--navbar-desk'>
-                            <button>usuario</button>
-                            <nav>
-                                <a href="#header">Home</a>
-                                <a href="#video">Video</a>
-                                <a href="#categories">Categoria</a>
-                                <a href="#brands">Marcas</a>
-                                <a href="#membership">Membresia</a>
-                                <a href="#app">App</a>
-                                <SwitchLang />
-                            </nav>
-                        </div>
-                </Headroom>
-                <div className="header__menu-mobile">
-                    <picture className='header__menu-mobile--logo'>
-                        <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
-                    </picture>
-                    <BurgerMenu  />
-                </div>
+                <NavBar />
                 <div className="header__content">
                     <div className="header__content--text-box">
                         <h2>
-                            La red privada de descuentos más grande de Estados Unidos para 
+                            {data["header_title"]}
                             <span>
                             <Typewriter
                                 options={{
                                 strings: [
-                                    "la comunidad hispana.",
-                                    "ahorrar miles de dólares.",
-                                    "compartir en familia.",
-                                    "elegir dónde ahorrar.",
+                                    data["header_title_phrase1"],
+                                    data["header_title_phrase2"],
+                                    data["header_title_phrase3"]
                                 ],
                                 autoStart: true,
                                 loop: true,
@@ -58,8 +30,8 @@ export default function Header() {
                             />    
                             </span>    
                         </h2>
-                        <h1>Tú Eliges cómo ahorrar</h1>
-                        <button>unirme ahora</button>
+                        <h1>{ data["header_subtitle"] }</h1>
+                        <button>{ data["header_button"] }</button>
                     </div>
                     <div className="header__content--ilustration">
                         <img src="/img/png/header.webp" alt="ilustration" />

@@ -1,6 +1,9 @@
 .big-brand-swiper-wrapper{
     height: 20rem;
 
+    @media (max-width:768px) {
+        height: 15rem;
+    }
     &__swiper{
         background-color: #fff;
         border: 3px solid #ccc;

@@ -1,7 +1,11 @@
 import SwiperBrandSmall from "../components/SwiperBrandSmall";
 import SwiperBrandBig from "../components/SwiperBrandBig";
+import { useLanguageContext } from "../hooks/UseLanguageContext";
 
 export default function SectionBrands() {
+
+    const data = useLanguageContext();
+
 
     const bigBrands = [
         [
@@ -77,57 +81,58 @@ export default function SectionBrands() {
   return (
     <div className="section-brands" id="brands">
         <h5 className="section-brands__title">
-            Marcas populares.
-            <span> Socios de confianza</span>
+            { data["brands_title"] }
         </h5>
-        <p className="section-brands__p">Ahorro máximo garantizado</p>
+        <p className="section-brands__p">
+            { data["brands_subtitle"] }
+        </p>
         <div className="brands">
             <div className="brands__big">
                 <div className="brands__big--item">
-                    <SwiperBrandBig {...bigBrands[0]} />
+                    <SwiperBrandBig key={1} {...bigBrands[0]} />
                 </div>
                 <div className="brands__big--item">
-                    <SwiperBrandBig {...bigBrands[1]} />
+                    <SwiperBrandBig key={2} {...bigBrands[1]} />
                 </div>
             </div>
             <div className="brands__small">
                 <div className="brands__small-list">
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[0]} />
+                        <SwiperBrandSmall key={3} {...smallBrands[0]} />
 
                     </div>
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[1]} />
+                        <SwiperBrandSmall key={4} {...smallBrands[1]} />
                     </div>
                 </div>
                 <div className="brands__small-list">
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[2]} />
+                        <SwiperBrandSmall key={5} {...smallBrands[2]} />
                     </div>
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[3]} />
+                        <SwiperBrandSmall key={6} {...smallBrands[3]} />
                     </div>
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[4]} />
-                    </div>
-                </div>
-                <div className="brands__small-list">
-                    <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[5]} />
-                    </div>
-                    <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[6]} />
+                        <SwiperBrandSmall key={7} {...smallBrands[4]} />
                     </div>
                 </div>
                 <div className="brands__small-list">
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[7]} />
+                        <SwiperBrandSmall key={8} {...smallBrands[5]} />
                     </div>
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[8]} />
+                        <SwiperBrandSmall key={9} {...smallBrands[6]} />
+                    </div>
+                </div>
+                <div className="brands__small-list">
+                    <div className="brands__small--item">
+                        <SwiperBrandSmall key={10} {...smallBrands[7]} />
                     </div>
                     <div className="brands__small--item">
-                        <SwiperBrandSmall {...smallBrands[9]} />
+                        <SwiperBrandSmall key={11} {...smallBrands[8]} />
+                    </div>
+                    <div className="brands__small--item">
+                        <SwiperBrandSmall key={12} {...smallBrands[9]} />
                     </div>
                 </div>
             </div>

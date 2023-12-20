@@ -1,13 +1,29 @@
+import { useLanguageContext } from "../hooks/UseLanguageContext"
 
 export default function AboutUs() {
+    const data = useLanguageContext()
+
     return (
-        <div className="about-us">
+        <div className="about-us" id="about-us">
             <div className="about-us__text">
-                <h6>Un poco <br /> sobre nosotros</h6>
-                <p>Escribe aquí un párrafo que hable de tu empresa. Puede hablar sobre los antecedentes, la historia, la misión, la visión o la filosofía de su empresa. Cualquier cosa que presente la personalidad de su marca a sus clientes. Esto ayudará a construir una conexión entre usted y ellos, que con suerte conducirá a una relación de trabajo.</p>
+                <h6>
+                    { data["aboutus_title"] }
+                </h6>
+                <p>
+                    { data["aboutus_paragraph_1"] }
+                </p>
+                <p>
+                    { data["aboutus_paragraph_2"] }
+                </p>
+                <p>
+                    { data["aboutus_paragraph_3"] }
+                </p>
+                <a href="mailto:info@tueliges.us">
+                    { data["aboutus_cta"] }
+                </a>
             </div>
             <div className="about-us__img">
-                <img src="/img/png/about-us.webp" alt="about us" />
+                <img src="/img/png/about-us.png" alt="about us" />
             </div>
         </div>
     )

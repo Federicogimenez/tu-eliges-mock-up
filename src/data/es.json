@@ -1,0 +1,121 @@
+{
+    "menu_link1":"Home",
+    "menu_link2":"Categorias",
+    "menu_link3":"Video",
+    "menu_link4":"Marcas",
+    "menu_link5":"Membresia",
+    "menu_link6":"App",
+    "menu_link7":"Nosotros",
+    "button_user":"Usuario",
+    "lang_current":"Español",
+    "lang_1":"Inglés",
+
+    "header_title":"LA RED PRIVADA DE DESCUENTOS PARA HISPANOS MÁS GRANDE DE USA...",
+    "header_title_phrase1":"para ahorrar miles de dólares.",
+    "header_title_phrase2":"para elegir dónde ahorrar.",
+    "header_title_phrase3":"para compartir en familia.",
+    "header_subtitle":"¡Creada por hispanos para hispanos!",
+    "header_button":"¡AHORRA DINERO YA!",
+    
+    "video_title":"PREPáRATE!",
+    "video_subtitle":"Aquí viene el secreto para ahorrar dinero todos los días.",
+
+    "cards_title":"MÁS DE 1+ MILLÓN DE DESCUENTOS PARA AHORRAR",
+    "cards_title_blue":"Todo en un solo lugar",
+
+    "cards_card1_front":"COMPRAS",
+    "cards_card1_back":"MINORISTAS Y SERVICIOS 150.000+ Ropa, tecnología, servicios, automóviles, hogar, comestibles, salud, fitness, etc.",
+    "cards_card2_front":"COMIDAS",
+    "cards_card2_back":"SALIR A COMER 50.000+ Cenas informales y elegantes, comida rápida, pizza, catering, etc.",
+    "cards_card3_front":"JUEGOS",
+    "cards_card3_back":"ACTIVIDADES Y DIVERSIÓN 50.000+ Parques temáticos, recreación, entretenimiento de aventuras, cine, golf, etc.",
+    "cards_card4_front":"VIAJES",
+    "cards_card4_back":"VIAJES 850.000+ Hotel, alquiler de autos, condominios, servicios de aeropuerto, cruceros, tours, etc.",
+    
+    "cat_title":"NO HAY EXCUSAS",
+    "cat_subtitle":"¡Ahorrar diariamente es más fácil que nunca!",
+
+    "cat_thumbs_1":"Compras",
+    "cat_thumbs_2":"Comidas",
+    "cat_thumbs_3":"Juegos",
+    "cat_thumbs_4":"Viajes",
+
+    "cat_1_title":"Compras",
+    "cat_1_text_1":"¿Sabías que comprar es sinónimo de felicidad, bienestar y placer?",
+    "cat_1_text_2":"De la A a la Z, disfruta de los descuentos más top de nuestros socios comerciales, desde salud, ropa y belleza hasta hogar y jardín",
+    "cat_1_cta":"COMPRA Y AHORRA",
+
+    "cat_2_title":"Ofertas deliciosas",
+    "cat_2_text_1":"Sumate en la búsqueda para descubrir sabores exquisitos que te esperan con descuentos irresistibles",
+    "cat_2_text_2":"",
+    "cat_2_cta":"ÚNETE Y DISFRUTA",
+
+    "cat_3_title":"Jugar",
+    "cat_3_text_1":"Cada día es una nueva oportunidad para sumergirte en una aventura sin igual.",
+    "cat_3_text_2":"Ahorra en grande con descuentos en parques temáticos, teatros, centros de diversión y muchas opciones más",
+    "cat_3_cta":"DIVIÉRTETE AHORRANDO",
+
+    "cat_4_title":"Viajar",
+    "cat_4_text_1":"Embárcate en un viaje de ensueño a través de montañas y valles, o simplemente sumérgete en una cama de plumas esponjosas",
+    "cat_4_text_2":"¡Aprovecha los descuentos en hoteles y asociaciones de viaje para que tu viaje sea aún más inolvidable!",
+    "cat_4_cta":"EMPIEZA TU AVENTURA",
+
+    "brands_title":"¡AHORRO MÁXIMO GARANTIZADO!",
+    "brands_subtitle":"Encuentra ahorros exclusivos de las mejores marcas del mundo, incluidos miles de comerciantes locales en todo el país.",
+
+    "membership_title":"¿A qué accedo con mi membresía?",
+    "membership_benefit1":"Descuentos de alto valor.",
+    "membership_benefit2":"Marcas queridas y conocidas.",
+    "membership_benefit3":"Descuentos cerca a tu ubicación",
+    "membership_benefit4":"Ofertas exclusivas.",
+    "membership_benefit5":"Descuentos fáciles de redimir.",
+    "membership_cta":"QUIERO AHORRAR",
+    "membership_card_front1":"AHORRA MAS",
+    "membership_card_front2":"DE $2,500 USD AL AÑO",
+    "membership_card_front3":"CON 1 MILLÓN DE DESCUENTOS",
+    "membership_card_back1":"POR $2,99 USD MENSUAL",
+    "membership_card_back2":"PAGO ANUAL $35,9 USD ",
+    "membership_card_back3":"con renovación automática",
+
+    "app_title":"¡CONOCE CÓMO!",
+    "app_paragraph_1":"Usa la función del GPS en nuestra APP Web o Celular para encontrar descuentos cerca de ti.",
+    "app_paragraph_2":"Al hacerte miembro, sólo descarga nuestra app, inicia sesión y déjate sorprender con las mejores ofertas en un abrir y cerrar de ojos.",
+    "app_paragraph_3":"¿Qué esperas? ¡Corre a usarla",
+    "app_button":"quiero descuentos",
+    "app_button_hover":"¡subscribite!",
+
+    "aboutus_title":"Nosotros",
+    "aboutus_paragraph_1":"¿Quieres conocer nuestra historia?",
+    "aboutus_paragraph_2":"Además de atender a los consumidores individuales, TuEliges.us también colabora con organizaciones de diversos tamaños e industrias que prestan sus servicios a la comunidad hispana.",
+    "aboutus_paragraph_3":"Por ejemplo, Asociaciones Hispanas, Cámaras de Comercio Hispanas, Entidades Financieras, Empresas y más, utilizan nuestra membresía de descuentos como una herramienta valiosa para que todos sus miembros ahorren miles de dólares por año, y decir “Gracias“ a su comunidad.",
+    "aboutus_cta":"Contactanos",
+
+    "footer_contact":"Contacto",
+    "footer_support":"Soporte",
+    "footer_legal":"Información Legal",
+    "footer_terms":"Términos y condiciones",
+    "footer_policy":"Política de privacidad",
+    "footer_policy_2":"Política de Privacidad - Sitio Web de Cupones",
+    "footer_copyright":"Copyright © 2024 TuEliges.us LLC. Todos los derechos reservados.",
+    "footer_based":"Based in Lake Mary, FL - USA",
+
+
+    
+    "thanks_title":"¡Gracias!",
+    "thanks_paragraph1":"Ya haces parte de nuestra comunidad, ahora vas a disfrutar, divertirte y sobre todo ahorrar en grande.",
+    "thanks_paragraph2":"Revisa por favor el email que te acabamos de enviar desde noreply@tueliges.us (podrías encontrarlo en spam), allí te llegará copia de tu membresía:",
+    "thanks_key_btn":"ABC123",
+    "thanks_support_text":"Si no lo encuentras, escríbenos a ",
+    "thanks_step1":"1. Activa tu membresía ahora mismo haciendo",
+    "thanks_step1_click":"click aquí",
+    "thanks_step2":"2. Descarga nuestra mobile app para que encuentres ofertas en todo momento.",
+    "thanks_visit_us":"Visita nuestras redes sociales para más información.",
+
+
+    "modal_paragraph1_1":"Como miembro de la comunidad ",
+    "modal_paragraph1_2":" tu membresía tiene un descuento exclusivo del 50% y pagas sólo $17.99 por año (precio normal $35.99), para que ahorres en todas tus compras diarias de costa a costa.",
+    "modal_paragraph2":"Desde aquí puedes acceder a tu membresía anual con tu código promocional o bien puedes recorrer nuestro sitio y conocer más sobre nuestros descuentos.",
+    "modal_welcome":"¡Bienvenido!",
+    "modal_info":"Conocer mas sobre nuestros descuentos",
+    "modal_cta":"USAR MI CÓDIGO"
+}

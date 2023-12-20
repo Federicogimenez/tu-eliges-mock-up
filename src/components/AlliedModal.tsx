@@ -1,14 +1,45 @@
-// import { useState } from 'react'
-
+import { useAlliedModalContext } from "../hooks/UseAlliedModalContext";
+import { useLanguageContext } from "../hooks/UseLanguageContext";
+import { useSwitchAlliedModalContext } from "../hooks/UseSwitchAlliedModalContext"
 
 export default function AlliedModal() {
 
-  // const [showModal, setShowModal] = useState(true);
+  const data = useLanguageContext()
+  
+  const alliedData = useAlliedModalContext()
+  const closeModal = useSwitchAlliedModalContext()
+  
+  document.body.style.overflow = 'hidden';
+
+  const closeModalCallback = ():void=>{
+    document.body.style.overflow = 'auto';
+    closeModal()
+  }
+
   return (
-    <>
+    <div className="allied-modal-wrapper">
         <div className='allied-modal'>
-          <div className="allied-modal__modal">
-            <span className="allied-modal__modal--close-btn">
+          {
+            alliedData.isLoading && 
+            <><img src="/img/svg/loading.svg" alt="loading.." /></>
+          }
+          {
+            alliedData.userNotFound && 
+            <div className="allied-modal__user-not-found">
+              <img src="/img/svg/error.svg" alt="" />
+              <p>
+                No fue posible validar tu membresia
+              </p>
+              <span onClick={closeModalCallback}>
+                <img src="/img/svg/close.svg" alt="" />
+              </span>
+            </div>
+          }
+          {
+            !alliedData.userNotFound && 
+            !alliedData.isLoading && 
+            <div className="allied-modal__modal">
+            <span className="allied-modal__modal--close-btn" onClick={closeModalCallback}>
               <img src="/img/svg/close.svg" alt="" />
             </span>
             <div className="allied-modal__modal--box-1">
@@ -17,10 +48,10 @@ export default function AlliedModal() {
                     <img src="/img/png/company-name.webp" alt="" />
                   </picture>
                   <p className="box-white__text">
-                    Como miembro de la comunidad [nombre aliado] tu membresía tiene un súper descuento del 50% para que ahorres en todas tus compras y salidas.
+                    {data.modal_paragraph1_1}{alliedData.alliedName}{data.modal_paragraph1_2}
                   </p>
                   <p className="box-white__text">
-                    Desde aquí puedes acceder a tu membresía anual o bien puedes recorrer nuestro sitio y conocer más sobre nuestros descuentos.
+                    {data["modal_paragraph1_2"]}
                   </p>
                 </div>
             </div>
@@ -31,8 +62,9 @@ export default function AlliedModal() {
                 <button className="box-blue__buy-btn">COMPRAR MEMBRESIA</button>
               </div>
             </div>
-          </div>
+            </div>
+          }
         </div>
-    </>
+    </div>
   )
 }

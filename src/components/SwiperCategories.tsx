@@ -10,15 +10,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import { useState } from 'react';
+import { useLanguageContext } from '../hooks/UseLanguageContext';
 
 function SwiperCategories() {
 
   const [thumbsSwiper, setThumbsSwiper]  = useState<SwiperType | null>(null);
-
-  
+  const data = useLanguageContext();  
   
   return (
-    <div className='category-swiper-wrapper' id='categories'>
+    <div className='category-swiper-wrapper'>
       <Swiper 
         modules={[ Thumbs ]}
         spaceBetween={10}
@@ -27,10 +27,10 @@ function SwiperCategories() {
         slidesPerView={4}
         className='category-swiper-thumb'
       >
-        <SwiperSlide className='category-swiper-thumb__thumb' >Compras</SwiperSlide>
-        <SwiperSlide className='category-swiper-thumb__thumb' >Comidas</SwiperSlide>
-        <SwiperSlide className='category-swiper-thumb__thumb' >Juegos</SwiperSlide>
-        <SwiperSlide className='category-swiper-thumb__thumb' >Viajes</SwiperSlide>
+        <SwiperSlide className='category-swiper-thumb__thumb' > { data["cat_thumbs_1"] } </SwiperSlide>
+        <SwiperSlide className='category-swiper-thumb__thumb' > { data["cat_thumbs_2"] } </SwiperSlide>
+        <SwiperSlide className='category-swiper-thumb__thumb' > { data["cat_thumbs_3"] } </SwiperSlide>
+        <SwiperSlide className='category-swiper-thumb__thumb' > { data["cat_thumbs_4"] } </SwiperSlide>
       </Swiper>
 
       <Swiper
@@ -46,14 +46,14 @@ function SwiperCategories() {
                 className='category-swiper-slider'>
                   <div className='category-slide'>
                     <div className='category-slide__data-box'>
-                        <h6>Shop</h6>
-                        <p>La terapia de compras ahora es aún mejor.</p>
-                        <p>De la A a la Z, disfruta de los descuentos más top de más de 150,000 minoristas en todo, desde salud y belleza hasta hogar y jardín.</p>
-                        <button>compra y ahorra</button>
+                        <h6> { data["cat_1_title"] } </h6>
+                        <p> { data["cat_1_text_1"] } </p>
+                        <p> { data["cat_1_text_2"] } </p>
+                        <button> { data["cat_1_cta"] } </button>
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-1.webp'/>
-                      <button>compra y ahorra</button>
+                      <button> { data["cat_1_cta"] } </button>
                     </div>
                   </div>
               </SwiperSlide>
@@ -61,17 +61,13 @@ function SwiperCategories() {
                 className='category-swiper-slider'>
                   <div className='category-slide'>
                     <div className='category-slide__data-box'>
-                        <h6>Ofertas Deliciosas</h6>
-                        <p>
-                          Súmate en la búsqueda para descubrir
-                          sabores exquisitos en más de 50.000 lugares,
-                          que te esperan con descuentos irresistibles.
-                        </p>
-                        <button>únite y disfrutá</button>
+                        <h6> { data["cat_2_title"] } </h6>
+                        <p> {data["cat_2_text_1"]} </p>
+                        <button> { data["cat_2_cta"] } </button>
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-2.webp'/>
-                      <button>únite y disfrutá</button>
+                      <button> { data["cat_2_cta"] } </button>
                     </div>
                   </div>
               </SwiperSlide>
@@ -79,14 +75,14 @@ function SwiperCategories() {
                 className='category-swiper-slider'>
                   <div className='category-slide'>
                     <div className='category-slide__data-box'>
-                        <h6>Jugar</h6>
-                        <p>Cada día es una nueva oportunidad para sumergirte en una aventura sin igual.</p>
-                        <p>Ahorra en grande con descuentos en más de 50,000 parques temáticos, teatros, centros de diversión y un sinfín de opciones más.</p>
-                        <button>divertite ahorrando</button>
+                        <h6> { data["cat_3_title"] } </h6>
+                        <p> { data["cat_3_text_1"] } </p>
+                        <p> { data["cat_3_text_2"] } </p>
+                        <button> { data["cat_3_cta"] } </button>
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-3.webp'/>
-                      <button>divertite ahorrando</button>
+                      <button> { data["cat_3_cta"] } </button>
                     </div>
                   </div>
               </SwiperSlide>
@@ -94,14 +90,14 @@ function SwiperCategories() {
                 className='category-swiper-slider'>
                   <div className='category-slide'>
                     <div className='category-slide__data-box'>
-                        <h6>Viajar</h6>
-                        <p>Embárcate en un viaje de ensueño a través de montañas y valles, o simplemente sumérgete en una cama de plumas esponjosas. </p>
-                        <p>¡Aprovecha los descuentos en nuestros casi 1 millón de hoteles y asociaciones de viaje para que tu viaje sea aún más inolvidable!</p>
-                        <button>empeza tu aventura</button>
+                        <h6> { data["cat_4_title"] } </h6>
+                        <p> { data["cat_4_text_1"] } </p>
+                        <p> { data["cat_4_text_2"] } </p>
+                        <button> { data["cat_4_cta"] } </button>
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-4.webp'/>
-                      <button>empeza tu aventura</button>
+                      <button> { data["cat_4_cta"] } </button>
                     </div>
                   </div>
               </SwiperSlide>

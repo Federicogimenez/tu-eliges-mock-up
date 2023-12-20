@@ -1,9 +1,13 @@
+import { useLanguageContext } from "../hooks/UseLanguageContext"
 
 export default function SectionVideo() {
+
+    const data = useLanguageContext();
+
     return (
         <section className="section-video" id="video">
-            <h3>Ahorrar dinero todos los días ahora es más fácil</h3>
-            <p>¡Conoce cómo!</p>
+            <h3> { data["video_title"] } </h3>
+            <p>{ data["video_subtitle"] } </p>
 
             <div className="section-video__video-box">
                 <iframe 

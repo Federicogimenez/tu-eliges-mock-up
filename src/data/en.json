@@ -1,0 +1,121 @@
+{
+    "menu_link1":"Home",
+    "menu_link2":"Video",
+    "menu_link3":"Categories",
+    "menu_link4":"Brands",
+    "menu_link5":"Membership",
+    "menu_link6":"App",
+    "menu_link7":"About Us",
+    "button_user":"User",
+    "lang_current":"English",
+    "lang_1":"Spanish",
+
+    "header_title":"THE LARGEST PRIVATE DISCOUNT NETWORK FOR HISPANICS IN THE USA...",
+    "header_title_phrase1":"to save thousands of dollars.",
+    "header_title_phrase2":"to choose where to save.",
+    "header_title_phrase3":"to share with the family.",
+    "header_subtitle":"Created by Hispanics for Hispanics!",
+    "header_button":"START SAVING NOW!",
+
+    "video_title":"GET READY!",
+    "video_subtitle":"Here comes the secret to save money every day.",
+
+    "cards_title":"MORE THAN 1+ MILLION DISCOUNTS TO SAVE",
+    "cards_title_blue":"All in just one place",
+
+    "cards_card1_front":"SHOPPING",
+    "cards_card1_back":"RETAILERS AND SERVICES 150,000+ Clothing, technology, services, cars, home, groceries, health, fitness, etc.",
+    "cards_card2_front":"FOOD",
+    "cards_card2_back":"EAT OUT 50,000+ Casual and elegant dining, fast food, pizza, catering, etc.",
+    "cards_card3_front":"PLAY AND ENTERTAINMENT",
+    "cards_card3_back":"ACTIVITIES AND FUN 50,000+ Theme parks, recreation, adventure entertainment, movies, golf, etc.",
+    "cards_card4_front":"TRAVEL",
+    "cards_card4_back":"TRAVEL 850,000+ Hotel, car rentals, resorts, airport services, cruises, tours, etc.",
+
+    "cat_title":"THERE ARE NO EXCUSES",
+    "cat_subtitle":"Daily savings is easier than ever!",
+
+    "cat_thumbs_1":"Shop",
+    "cat_thumbs_2":"Eat",
+    "cat_thumbs_3":"Play",
+    "cat_thumbs_4":"Travel",
+
+    "cat_1_title":"Shop",
+    "cat_1_text_1":"Did you know that shopping is related with happiness, well-being and pleasure?",
+    "cat_1_text_2":"From A to Z, enjoy the top discounts from our partners, from health, clothing and beauty to home and garden",
+    "cat_1_cta":"SHOP AND SAVE",
+
+    "cat_2_title":"Tasty Offers",
+    "cat_2_text_1":"Join the quest to discover exquisite flavors that await for you with irresistible discounts",
+    "cat_2_text_2":"",
+    "cat_2_cta":"JOIN AND ENJOY",
+
+    "cat_3_title":"Play",
+    "cat_3_text_1":"Every day is a new opportunity to immerse yourself in an adventure like no other.",
+    "cat_3_text_2":"Big savings with discounts on theme parks, theaters, amusement centers and many more options",
+    "cat_3_cta":"HAVE FUN WHILE SAVING",
+
+    "cat_4_title":"Travel",
+    "cat_4_text_1":"Embark on a dream journey through mountains and valleys, or simply sink into a fluffy feather bed.",
+    "cat_4_text_2":"Take advantage of discounts on hotels and travel agencies to make your trip even more unforgettable!",
+    "cat_4_cta":"START YOUR ADVENTURE",
+
+    "brands_title":"MAXIMUM SAVINGS GUARANTEED!",
+    "brands_subtitle":"Find exclusive savings from the world's best brands, including thousands of local merchants nationwide.",
+
+    "membership_title":"What do I access with my membership?",
+    "membership_benefit1":"Higdiscounts.",
+    "membership_benefit2":"Beloved and well-known brands.",
+    "membership_benefit3":"Discounts near your location",
+    "membership_benefit4":"Exclusive offers.",
+    "membership_benefit5":"Easy to redeem discounts.",
+    "membership_cta":"I WANT TO SAVE",
+    "membership_card_front1":"SAVE OVER",
+    "membership_card_front2":"$2,500 USD A YEAR",
+    "membership_card_front3":"WITH 1 MILLION DISCOUNTS",
+    "membership_card_back1":"FOR $2.99 USD MONTHLY",
+    "membership_card_back2":"*ANNUAL PAYMENT $35.99 USD",
+    "membership_card_back3":"with automatic renewal",
+
+    "app_title":"FIND OUT HOW!",
+    "app_paragraph_1":"Use the GPS function in our Web or Mobile APP to find discounts near you.",
+    "app_paragraph_2":"When you become a member, just download our app, log in and be surprised with the best offers in the blink of an eye.",
+    "app_paragraph_3":"What are you waiting for? Start using it now!",
+    "app_button":"I WANT DISCOUNTS",
+    "app_button_hover":"SIGN UP!",
+
+    "aboutus_title":"About Us",
+    "aboutus_paragraph_1":"Would you like to know our history?",
+    "aboutus_paragraph_2":"ORGANIZATIONS: In addition to serving individual consumers, TuEliges.us also collaborates with organizations of various sizes and industries that serve the Hispanic community.",
+    "aboutus_paragraph_3":"For example, Hispanic Associations, Hispanic Chambers of Commerce, Financial Entities, Companies and more, use our discount membership as a valuable tool for all their members to save thousands of dollars per year, and say “Thank you” to their community.",
+    "aboutus_cta":"CONTACT US",
+
+    "footer_contact":"Contact",
+    "footer_support":"Support",
+    "footer_legal":"Legal Information",
+    "footer_terms":"Terms and Conditions",
+    "footer_policy":"Privacy Policy",
+    "footer_policy_2":"Privacy Policy - Coupon Website",
+    "footer_copyright":"Copyright © 2024 TuEliges.us LLC. All rights reserved.",
+    "footer_based":"Based in Lake Mary, FL - USA",
+
+
+    
+    "thanks_title":"Thank you!",
+    "thanks_paragraph1":"You are now part of our community, now you are going to enjoy, have fun and above all, SAVE...",
+    "thanks_paragraph2":"Please check the email we just sent you from noreply@tueliges.us (you could find it in spam), there you will receive a copy of your membership:",
+    "thanks_key_btn":"ABC123",
+    "thanks_support_text":"If you can't find it, write to us at ",
+    "thanks_step1":"1. Activate your membership right now by ",
+    "thanks_step1_click":"clicking here.",
+    "thanks_step2":"2. Download our mobile app so you can find offers at all times.",
+    "thanks_visit_us":"Visit our social network sites for more information.",
+
+
+    "modal_paragraph1_1":"As a member of the",
+    "modal_paragraph1_2":" community, your membership has an exclusive 50% discount and you pay only $17.99 per year (normally $35.99), so you can save on all your purchases and outings from coast to coast.",
+    "modal_paragraph2":"From here you can access your annual membership with your promotional code or you can visit our site and learn more about our discounts.",
+    "modal_welcome":"Welcome!",
+    "modal_info":"Learn more about our discounts",
+    "modal_cta":"USE MY CODE"
+}

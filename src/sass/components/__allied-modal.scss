@@ -1,6 +1,13 @@
-.allied-modal{
-    z-index: inherit;
+.allied-modal-wrapper{
     position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 999999;
+}
+.allied-modal{
+    position: relative;
+    z-index: inherit;
     top: 0;
     left: 0;
     width: 100%;
@@ -12,6 +19,38 @@
     padding: 10px;
 
 
+    &__user-not-found{
+        width: 90%;
+        max-width: 750px;
+        height: fit-content;
+        position: relative;
+        padding: 2rem ;
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        background-color: rgba(131, 30, 30, 0.925);
+
+        img{width: clamp(1.6rem, 3vw, 3rem);}
+        
+        p{
+            padding: 1rem 2rem;
+            color: #000;
+            font-size: 2vw;
+            font-family: 'Monserrat';
+        }
+        span{
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+            top: 0;
+
+            img{width:2rem;}
+        }
+
+    }
     &__modal{
         width: clamp(25rem, 90%, 80rem);
         height: 45rem;

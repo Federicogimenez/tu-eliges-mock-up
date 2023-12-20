@@ -38,7 +38,7 @@
             justify-content: center;
 
             &--item{
-                width: clamp(25rem, 30vw, 40rem);
+                width: clamp(10rem, 30vw, 40rem);
 
                 &:not(:last-child){
                     margin-bottom: 2.8rem;
@@ -52,7 +52,7 @@
             align-items: center;
             
             &--item{
-                width: clamp(10rem, 13vw, 20rem);
+                width: clamp(10rem, 12vw, 20rem);
 
                 &:not(:last-child){
                     margin-bottom: 2rem;
@@ -80,7 +80,7 @@
                 margin-bottom: 2rem;
 
                 &--item{
-                    width: clamp(14rem, 45vw, 40rem);
+                    width: clamp(12rem, 40vw, 40rem);
     
                     &:not(:last-child){
                         margin-right: 1rem;
@@ -96,7 +96,7 @@
             &__small{
                 flex-direction: column;
                 &--item{
-                    width: clamp(10rem, 26vw, 20rem);
+                    width: clamp(9rem, 25vw, 20rem);
                     &:not(:last-child){
                         margin-bottom: 0;
                         margin-right: 1rem;

@@ -4,10 +4,9 @@ import { Autoplay, EffectFade } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
-function SwiperApp() {
+function SwiperApp(data:string[]) {
 
     return (
-    <div className='app-swiper-wrapper'>
 
       <Swiper
             modules={[ Autoplay, EffectFade ]}
@@ -17,16 +16,27 @@ function SwiperApp() {
             effect='fade'
             loop={true}
           >
-              <SwiperSlide
+            {
+              Object.values(data).map( (img, i)=>
+                <SwiperSlide
+                  key={i}
+                  className='app-swiper-slider'>
+                    <div className='app-slide'>
+                      <img src={img} alt="" />
+                    </div>
+                </SwiperSlide>
+              )
+            }
+              {/* <SwiperSlide
                 className='app-swiper-slider'>
                   <div className='app-slide'>
-                    <img src="/img/png/app-1.webp" alt="" />
+                    <img src={data[0]} alt="" />
                   </div>
               </SwiperSlide>
               <SwiperSlide
                 className='app-swiper-slider'>
                   <div className='app-slide'>
-                    <img src="/img/png/app-2.webp" alt="" />
+                    <img src={data[1]} alt="" />
                   </div>
               </SwiperSlide>
               <SwiperSlide
@@ -34,9 +44,8 @@ function SwiperApp() {
                   <div className='app-slide'>
                     <img src="/img/png/app-3.webp" alt="" />
                   </div>
-              </SwiperSlide>
-          </Swiper>
-    </div>
+              </SwiperSlide> */}
+        </Swiper>
   )
 }
 
