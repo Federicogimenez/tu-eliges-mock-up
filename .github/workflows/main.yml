@@ -13,12 +13,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Deploy to AWS S3
-      uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --follow-symlinks --delete
+    - name: Copy files to AWS S3
+      run: aws s3 cp dist s3://tu-eliges-front/ --recursive
       env:
-        AWS_S3_BUCKET: tu-eliges-front
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: dist
