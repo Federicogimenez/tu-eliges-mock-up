@@ -37,4 +37,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync ./dist/ s3://tu-eliges-front
+        run: aws s3 sync $GITHUB_WORKSPACE/dist/ s3://tu-eliges-front
