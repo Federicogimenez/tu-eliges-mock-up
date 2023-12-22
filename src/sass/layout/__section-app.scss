@@ -69,41 +69,8 @@
                 object-position: center;
             }
         }
-        &--btn:focus{
-            outline: none;
-        }
-        &--btn{
-            border: none;
-            font-size: clamp(1.5rem, 2vw, 2.5rem);
-            font-family: "Monserrat Semibold";
-            width: clamp(270px, 34vw, 400px);
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-transform: uppercase;
-            background-color: #2995FC;
-            color: #fff;
-            position: relative;
-            margin-top: 6rem;
-
-            &>*{
-                height: 100%;
-                width: 100%;
-                display: inline-block;
-                transition: all .3s ease;
-            }
-        }
-        &--btn-visible{
-            padding: 1.5rem;
-        }
-        &--btn-invisible{
-            padding: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: 100%;
+        button{
+            margin-top: 4rem;
         }
         &--download-btn{
             margin-top: 3.5rem;
@@ -143,15 +110,4 @@
             padding: clamp(5.7rem, 6vw, 9rem) 1.5rem;
         }
     }
-}
-
-
-// btn effect
-.section-app__content--btn:hover .section-app__content--btn-visible {
-    transform: translateY(-100%); 
-}
-.section-app__content--btn:hover .section-app__content--btn-invisible {
-    top: 0;
-    color: #2995FC;
-    background-color: #000; 
 }

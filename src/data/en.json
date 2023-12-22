@@ -16,6 +16,7 @@
     "header_title_phrase3":"TO SHARE WITH THE FAMILY.",
     "header_subtitle":"Created by Hispanics for Hispanics!",
     "header_button":"START SAVING NOW!",
+    "header_button_hover":"JOIN NOW!",
 
     "video_title":"GET READY!",
     "video_subtitle":"Here comes the secret to save money every day.",
@@ -70,6 +71,7 @@
     "membership_benefit4":"Exclusive offers.",
     "membership_benefit5":"Easy to redeem discounts.",
     "membership_cta":"I WANT TO SAVE",
+    "membership_cta_hover":"JOIN NOW",
     "membership_card_front1":"SAVE OVER",
     "membership_card_front2":"$2,500 USD A YEAR",
     "membership_card_front3":"WITH 1 MILLION DISCOUNTS",

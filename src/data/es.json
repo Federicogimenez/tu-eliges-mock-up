@@ -16,6 +16,7 @@
     "header_title_phrase3":"PARA COMPARTIR EN FAMILIA",
     "header_subtitle":"¡Creada por hispanos para hispanos!",
     "header_button":"¡AHORRA DINERO YA!",
+    "header_button_hover":"JOIN NOW!",
     
     "video_title":"PREPÁRATE!",
     "video_subtitle":"Aquí viene el secreto para ahorrar dinero todos los días.",
@@ -70,6 +71,7 @@
     "membership_benefit4":"Ofertas exclusivas.",
     "membership_benefit5":"Descuentos fáciles de redimir.",
     "membership_cta":"QUIERO AHORRAR",
+    "membership_cta_hover":"JOIN NOW",
     "membership_card_front1":"AHORRA MAS",
     "membership_card_front2":"DE $2,500 USD AL AÑO",
     "membership_card_front3":"CON 1 MILLÓN DE DESCUENTOS",

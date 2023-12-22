@@ -41,17 +41,7 @@
                 }
             }
             button{
-                font-size: clamp(1.8rem, 2.4vw, 2.5rem);
-                font-family: "Monserrat Semibold";
-                color: #fff;
-                padding: 1rem 2.8rem;
-                background-color: #2995FC;
-                border-radius: 5px;
-                border: none;
-                text-transform: uppercase;
-                margin-bottom: 1rem;
-                margin-top: 1.5rem;
-                cursor: pointer;
+                margin: 3rem 0;
             }
         }
     }
@@ -72,7 +62,7 @@
             position: relative;
             cursor: pointer;
 
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
                 width: clamp(25rem, 50vw, 43rem);
                 height: clamp(26rem, 80vw, 30.6rem);
             }

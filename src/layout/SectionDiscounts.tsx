@@ -1,8 +1,10 @@
+// import { useEffect, useRef, useState } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 
 export default function SectionDiscounts() {
     const data = useLanguageContext();
+    
 
     const [isIntersecting, setIsIntersecting] = useState<boolean>()
     const elementRef = useRef<HTMLInputElement>(null)
@@ -15,7 +17,7 @@ export default function SectionDiscounts() {
             entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
         },
         {
-            threshold: 1,
+            threshold: 0,
         }
         );
 
@@ -34,9 +36,9 @@ export default function SectionDiscounts() {
                         <span>{data["cards_title_blue"]}</span>
                     </h3>
                     <div className="section-discounts__box-cards">
-                        <div className="section-discounts__box-cards--box" ref={elementRef}>
+                        <div className="section-discounts__box-cards--box">
                             <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-1">
+                                <div className="card__side card__side--front" id="discount-card-1" ref={elementRef}>
                                     <img className={isIntersecting ? 'animation-card-1' : '' } src="/img/svg/shopping-icon.svg" alt="" />
                                     <span> { data["cards_card1_front"] } </span>
                                 </div>
@@ -45,7 +47,7 @@ export default function SectionDiscounts() {
                                 </div>
                             </div>
                             <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-2">
+                                <div className="card__side card__side--front" id="discount-card-2" ref={elementRef}>
                                     <img  className={isIntersecting ? 'animation-card-2' : '' }  src="/img/svg/food-icon.svg" alt="" />
                                     <span>{ data["cards_card2_front"] }</span>
                                 </div>
@@ -56,7 +58,7 @@ export default function SectionDiscounts() {
                         </div>
                         <div className="section-discounts__box-cards--box">
                             <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-3">
+                                <div className="card__side card__side--front" id="discount-card-3" ref={elementRef}>
                                     <img  className={isIntersecting ? 'animation-card-3' : '' }  src="/img/svg/icon-play.svg" alt="" />
                                     <span>{ data["cards_card3_front"] }</span>
                                 </div>
@@ -65,11 +67,7 @@ export default function SectionDiscounts() {
                                 </div>
                             </div>
                             <div className="card">
-                                <div 
-                                    className="card__side card__side--front" 
-                                    id="discount-card-4"
-                                    style={isIntersecting ? {backgroundSize: '120%'} : undefined}
-                                    >
+                                <div className="card__side card__side--front" id="discount-card-4">
                                     <img  className={isIntersecting ? 'animation-card-4' : '' }  src="/img/svg/travel-icon.svg" alt="" />
                                     <span>{ data["cards_card4_front"] }</span>
                                 </div>

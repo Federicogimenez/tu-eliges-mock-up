@@ -1,6 +1,7 @@
 import Typewriter from "typewriter-effect";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { NavBar } from "../components/NavBar";
+import ButtonTwoStates from "../components/ButtonTwoStates";
 
 
 
@@ -31,7 +32,8 @@ export default function Header() {
                             </span>    
                         </h1>
                         <h2>{ data["header_subtitle"] }</h2>
-                        <button>{ data["header_button"] }</button>
+                        {/* <button>{ data["header_button"] }</button> */}
+                        <ButtonTwoStates text_static={ data["header_button"]} text_hover={ data["header_button_hover"] } />
                     </div>
                     <div className="header__content--ilustration">
                         <img src="/img/png/header.webp" alt="ilustration" />

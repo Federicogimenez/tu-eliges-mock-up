@@ -1,3 +1,4 @@
+import ButtonTwoStates from '../components/ButtonTwoStates';
 import SwiperApp from '../components/SwiperApp'
 import { useLanguageContext } from '../hooks/UseLanguageContext';
 
@@ -66,10 +67,7 @@ export default function SectionApp() {
             <div className='app-swiper-wrapper-mobile'>
                 <SwiperApp {...sliderMobile}/>
             </div>
-            <button className="section-app__content--btn">
-                <span className="section-app__content--btn-visible"> { data["app_button"] } </span>
-                <span className="section-app__content--btn-invisible"> { data["app_button_hover"] } </span>
-            </button>
+            <ButtonTwoStates text_static={data["app_button"]} text_hover={data["app_button_hover"]} />
             <div className='section-app__content--download-btn'>
                 <a href="#">
                     <img src="/img/png/android-logo.png" alt="" />

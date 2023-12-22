@@ -1,3 +1,4 @@
+import ButtonTwoStates from "../components/ButtonTwoStates";
 import { useLanguageContext } from "../hooks/UseLanguageContext"
 
 export default function SectionPrice() {
@@ -29,9 +30,8 @@ export default function SectionPrice() {
                     <img src="/img/svg/check-white.svg" alt="" />
                     { data["membership_benefit5"] }
                 </p>
-                <button>
-                    { data["membership_cta"] }
-                </button>
+                <ButtonTwoStates text_static={data["membership_cta"]} text_hover={data["membership_cta_hover"]} />
+
             </div>
         </div>
         <div className="section-price__price">
