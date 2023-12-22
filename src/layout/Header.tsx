@@ -12,7 +12,7 @@ export default function Header() {
                 <NavBar />
                 <div className="header__content">
                     <div className="header__content--text-box">
-                        <h2>
+                        <h1>
                             {data["header_title"]}
                             <span>
                             <Typewriter
@@ -29,8 +29,8 @@ export default function Header() {
                                 }}
                             />    
                             </span>    
-                        </h2>
-                        <h1>{ data["header_subtitle"] }</h1>
+                        </h1>
+                        <h2>{ data["header_subtitle"] }</h2>
                         <button>{ data["header_button"] }</button>
                     </div>
                     <div className="header__content--ilustration">

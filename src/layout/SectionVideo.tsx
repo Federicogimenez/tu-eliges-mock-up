@@ -11,7 +11,7 @@ export default function SectionVideo() {
 
             <div className="section-video__video-box">
                 <iframe 
-                    src="https://www.youtube.com/embed/AxR-wrIOoQw?si=iLStpK4Zy8efa676" 
+                    src="https://vimeo.com/823121032/4adf9d1d10?share=copy" 
                     title="" 
                     width="600px"
                     height="500px"

@@ -17,7 +17,7 @@ export function NavBar (){
                             <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
                         </picture>
                         <div className='navbar__menu-desk--navbar-desk'>
-                            <button>usuario</button>
+                            {/* <button>usuario</button> */}
                             <nav>
                                 <a href="#header">{data["menu_link1"]}</a>
                                 <a href="#video">{data["menu_link2"]}</a>

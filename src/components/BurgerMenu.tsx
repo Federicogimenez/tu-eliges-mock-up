@@ -13,7 +13,7 @@ export default function BurgerMenu() {
 
     return (
         <div className="burger">
-            <input type="checkbox" className="burger__checkbox" id="navi-toggle" checked={naviToggle} />
+            <input type="checkbox" className="burger__checkbox" id="navi-toggle" readOnly checked={naviToggle} />
             
             <label htmlFor="navi-toggle" className="burger__button" onClick={callbackNaviToggle}>
                 <span className="burger__icon"></span>

@@ -19,9 +19,16 @@
             align-items: flex-start;
             justify-content: center;
 
-            h2{
+            h2{                
+                color: #ffffffb6;
+                font-size: clamp(1.7rem, 2vw, 2.2rem);
+                text-align: left;
+                font-family: "Monserrat";
+                margin-bottom: 4.8rem;
+            }
+            h1{
                 color: #fff;
-                font-size: clamp(2rem, 3vw, 3rem);
+                font-size: clamp(2rem, 2.4vw, 2.6rem);
                 max-width: 423px;
                 font-family: "Monserrat Semibold";
                 margin-bottom: 4.8rem;
@@ -29,13 +36,6 @@
                 span{
                     color: #2995FC;
                 }
-            }
-            h1{
-                color: #ffffffb6;
-                font-size: clamp(1.7rem, 3vw, 2.7rem);
-                text-align: left;
-                font-family: "Monserrat";
-                margin-bottom: 4.8rem;
             }
             button{
                 font-size: clamp(1.6rem, 2vw, 2rem);
@@ -56,7 +56,7 @@
             align-items: center;
 
             img{
-                width: clamp(28rem, 100%, 70.4rem);
+                width: clamp(28rem, 100%, 60.4rem);
             }
         }
     }

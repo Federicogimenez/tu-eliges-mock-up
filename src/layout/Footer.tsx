@@ -8,20 +8,20 @@ export default function Footer() {
     const navigate = useNavigate();
 
     function handleRedirectHome (){
-        window.scrollTo(0, 0)
         navigate("/");
+        window.scrollTo(0, 0)
     }
     function handleRedirectLegal (){
-        window.scrollTo(0, 0)
         navigate("/legals");
+        window.scrollTo(0, 0)
     }
     function handleRedirectTerms (){
-        window.scrollTo(0, 0)
         navigate("/terms-and-conditions");
+        window.scrollTo(0, 0)
     }
     function handleRedirectFaq (){
-        window.scrollTo(0, 0)
         navigate("/faqs");
+        window.scrollTo(0, 0)
     }
 
     return (

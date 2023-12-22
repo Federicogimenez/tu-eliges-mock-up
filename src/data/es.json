@@ -1,7 +1,7 @@
 {
     "menu_link1":"Home",
-    "menu_link2":"Categorias",
-    "menu_link3":"Video",
+    "menu_link2":"Video",
+    "menu_link3":"Categorias",
     "menu_link4":"Marcas",
     "menu_link5":"Membresia",
     "menu_link6":"App",
@@ -11,13 +11,13 @@
     "lang_1":"Inglés",
 
     "header_title":"LA RED PRIVADA DE DESCUENTOS PARA HISPANOS MÁS GRANDE DE USA...",
-    "header_title_phrase1":"para ahorrar miles de dólares.",
-    "header_title_phrase2":"para elegir dónde ahorrar.",
-    "header_title_phrase3":"para compartir en familia.",
+    "header_title_phrase1":"PARA AHORRAR MILES DE DÓLARES.",
+    "header_title_phrase2":"PARA ELEGIR DONDE AHORRAR.",
+    "header_title_phrase3":"PARA COMPARTIR EN FAMILIA",
     "header_subtitle":"¡Creada por hispanos para hispanos!",
     "header_button":"¡AHORRA DINERO YA!",
     
-    "video_title":"PREPáRATE!",
+    "video_title":"PREPÁRATE!",
     "video_subtitle":"Aquí viene el secreto para ahorrar dinero todos los días.",
 
     "cards_title":"MÁS DE 1+ MILLÓN DE DESCUENTOS PARA AHORRAR",
@@ -74,7 +74,7 @@
     "membership_card_front2":"DE $2,500 USD AL AÑO",
     "membership_card_front3":"CON 1 MILLÓN DE DESCUENTOS",
     "membership_card_back1":"POR $2,99 USD MENSUAL",
-    "membership_card_back2":"PAGO ANUAL $35,9 USD ",
+    "membership_card_back2":"*PAGO ANUAL $35,9 USD ",
     "membership_card_back3":"con renovación automática",
 
     "app_title":"¡CONOCE CÓMO!",
@@ -82,7 +82,7 @@
     "app_paragraph_2":"Al hacerte miembro, sólo descarga nuestra app, inicia sesión y déjate sorprender con las mejores ofertas en un abrir y cerrar de ojos.",
     "app_paragraph_3":"¿Qué esperas? ¡Corre a usarla",
     "app_button":"quiero descuentos",
-    "app_button_hover":"¡subscribite!",
+    "app_button_hover":"¡subscríbete!",
 
     "aboutus_title":"Nosotros",
     "aboutus_paragraph_1":"¿Quieres conocer nuestra historia?",

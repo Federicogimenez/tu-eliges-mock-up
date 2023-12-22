@@ -28,6 +28,7 @@
           justify-content: center;
           background-size: cover;
           background-position: center;
+          transition: all .2;
 
           img{
             width: 55%;
@@ -80,4 +81,32 @@
         }
       .rotateFront{
           transform: rotateY(-180deg); 
+        }
+
+
+        .animation-card-1{
+            animation-duration: 1.4s;
+            transform-origin: top center;
+            animation-iteration-count: infinite;
+            animation-name: swing;
+        }
+        .animation-card-2{
+            animation-duration: 2s;
+            animation-delay: 1s;
+            backface-visibility: visible !important;
+            animation-iteration-count: infinite;
+            animation-name: wobble;        
+        }
+        .animation-card-3{
+            animation-name: rotateIn;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+            animation-duration: 3s;
+            transform-origin: center;          
+        }
+        .animation-card-4{
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+            animation-delay: 3s;
+            animation-name: fadeOutTopRight;
         }

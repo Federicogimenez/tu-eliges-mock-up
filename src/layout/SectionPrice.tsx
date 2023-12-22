@@ -40,7 +40,9 @@ export default function SectionPrice() {
                     <span className="price-card__side--front-text">
                         { data["membership_card_front1"] }
                     </span>
-                    { data["membership_card_front2"] }
+                    <span className="price-card__side--front-text">
+                        { data["membership_card_front2"] }
+                    </span>
                     <br />
                     { data["membership_card_front3"] }
                 </div>

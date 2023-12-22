@@ -39,11 +39,11 @@ export default function AlliedModal() {
             !alliedData.userNotFound && 
             !alliedData.isLoading && 
             <div className="allied-modal__modal">
-            <span className="allied-modal__modal--close-btn" onClick={closeModalCallback}>
-              <img src="/img/svg/close.svg" alt="" />
-            </span>
             <div className="allied-modal__modal--box-1">
                 <div className="box-white">
+                  <span className="allied-modal__modal--box-white-close-btn" onClick={closeModalCallback}>
+                    <img src="/img/svg/close.svg" alt="" />
+                  </span>
                   <picture className="box-white__company-logo">
                     <img src="/img/png/company-name.webp" alt="" />
                   </picture>
@@ -57,6 +57,9 @@ export default function AlliedModal() {
             </div>
             <div className="allied-modal__modal--box-2">
               <div className="box-blue">
+                <span className="allied-modal__modal--box-blue-close-btn" onClick={closeModalCallback}>
+                  <img src="/img/svg/close.svg" alt="" />
+                </span>
                 <h4 className="box-blue__welcome">¡Bienvenido!</h4>
                 <a className="box-blue__data" href="#">Conocer más sobre nuestros descuentos</a>
                 <button className="box-blue__buy-btn">COMPRAR MEMBRESIA</button>

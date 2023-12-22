@@ -6,10 +6,10 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-
+    
     @media (max-width:1200px) {
+        margin-top: 2rem;
         color: #fff;
-        font-size: 3rem;
         text-transform: uppercase;
         padding-left: 3rem;
     }

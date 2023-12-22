@@ -32,14 +32,43 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
 
     const id = url.split('=').pop();
     setTimeout(() => {
-        fetch(`http://54.163.225.125:3011/?ally=${id}`)
-          .then( resp => resp.json() )
-          .then( data =>{
-            console.log(data);
+        // fetch(`http://54.163.225.125:3011/?ally=${id}`)
+        //   .then( resp => resp.json() )
+        //   .then( data =>{
+        //     console.log(data);
             
-              if(data){
+        //       if(data){
+        //         setModalData({
+        //             alliedName: data.name,
+        //             isLoading: false,
+        //             userNotFound: false
+        //           })
+        //       }else{
+        //         setModalData({
+        //           alliedName: '',
+        //           isLoading: false,
+        //           userNotFound: true
+        //         })
+        //       }
+        //     } 
+        //   ).catch(err=>console.log(err))
+    
+        // closeAlliedModal()
+              if(id == 'marcelo'){
                 setModalData({
-                    alliedName: data.name,
+                    alliedName: 'Marcelo Gaffoglio',
+                    isLoading: false,
+                    userNotFound: false
+                  })
+              }else if(id == 'viviiana'){
+                setModalData({
+                    alliedName: 'Viviana Valderrama',
+                    isLoading: false,
+                    userNotFound: false
+                  })
+              }else if(id == 'dario'){
+                setModalData({
+                    alliedName: 'Dario',
                     isLoading: false,
                     userNotFound: false
                   })
@@ -50,12 +79,8 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
                   userNotFound: true
                 })
               }
-            } 
-          ).catch(err=>console.log(err))
-    
-        // closeAlliedModal()
-
-    }, 1000);
+            
+    }, 1500);
   }, [modalState, url])
   
 

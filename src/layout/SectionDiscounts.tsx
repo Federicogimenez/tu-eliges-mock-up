@@ -1,8 +1,28 @@
+import { useEffect, useRef, useState } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 
 export default function SectionDiscounts() {
     const data = useLanguageContext();
 
+    const [isIntersecting, setIsIntersecting] = useState<boolean>()
+    const elementRef = useRef<HTMLInputElement>(null)
+    
+    
+    useEffect(()=>{
+        const element = elementRef.current;
+        
+        const observer = new IntersectionObserver( entries => {
+            entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
+        },
+        {
+            threshold: 1,
+        }
+        );
+
+        if (element) {
+            observer.observe(element)
+        }
+    }, [])
 
     return (
         <section className="section-discounts">
@@ -14,10 +34,10 @@ export default function SectionDiscounts() {
                         <span>{data["cards_title_blue"]}</span>
                     </h3>
                     <div className="section-discounts__box-cards">
-                        <div className="section-discounts__box-cards--box">
+                        <div className="section-discounts__box-cards--box" ref={elementRef}>
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-1">
-                                    <img src="/img/svg/shopping-icon.svg" alt="" />
+                                    <img className={isIntersecting ? 'animation-card-1' : '' } src="/img/svg/shopping-icon.svg" alt="" />
                                     <span> { data["cards_card1_front"] } </span>
                                 </div>
                                 <div className="card__side card__side--back">
@@ -26,7 +46,7 @@ export default function SectionDiscounts() {
                             </div>
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-2">
-                                    <img src="/img/svg/food-icon.svg" alt="" />
+                                    <img  className={isIntersecting ? 'animation-card-2' : '' }  src="/img/svg/food-icon.svg" alt="" />
                                     <span>{ data["cards_card2_front"] }</span>
                                 </div>
                                 <div className="card__side card__side--back">
@@ -37,7 +57,7 @@ export default function SectionDiscounts() {
                         <div className="section-discounts__box-cards--box">
                             <div className="card">
                                 <div className="card__side card__side--front" id="discount-card-3">
-                                    <img src="/img/svg/icon-play.svg" alt="" />
+                                    <img  className={isIntersecting ? 'animation-card-3' : '' }  src="/img/svg/icon-play.svg" alt="" />
                                     <span>{ data["cards_card3_front"] }</span>
                                 </div>
                                 <div className="card__side card__side--back">
@@ -45,8 +65,12 @@ export default function SectionDiscounts() {
                                 </div>
                             </div>
                             <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-4">
-                                    <img src="/img/svg/travel-icon.svg" alt="" />
+                                <div 
+                                    className="card__side card__side--front" 
+                                    id="discount-card-4"
+                                    style={isIntersecting ? {backgroundSize: '120%'} : undefined}
+                                    >
+                                    <img  className={isIntersecting ? 'animation-card-4' : '' }  src="/img/svg/travel-icon.svg" alt="" />
                                     <span>{ data["cards_card4_front"] }</span>
                                 </div>
                                 <div className="card__side card__side--back">

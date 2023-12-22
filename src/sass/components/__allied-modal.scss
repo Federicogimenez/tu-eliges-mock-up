@@ -1,22 +1,34 @@
 .allied-modal-wrapper{
     position: fixed;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
     z-index: 999999;
+    background-color: #3d3d3dbb;
 }
 .allied-modal{
     position: relative;
     z-index: inherit;
+    overflow-y: auto;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    max-height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3d3d3dbb;
-    padding: 10px;
+    padding: 2rem 1rem;
+
+    @media (orientation: landscape){
+        padding-top: 2rem;
+        align-items: flex-start;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
 
 
     &__user-not-found{
@@ -27,11 +39,11 @@
         padding: 2rem ;
         border-radius: 10px;
         background-color: #fff;
+        align-self: center;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 15px;
-        background-color: rgba(131, 30, 30, 0.925);
 
         img{width: clamp(1.6rem, 3vw, 3rem);}
         
@@ -45,7 +57,7 @@
             cursor: pointer;
             position: absolute;
             right: 5px;
-            top: 0;
+            top: 2px;
 
             img{width:2rem;}
         }
@@ -53,31 +65,56 @@
     }
     &__modal{
         width: clamp(25rem, 90%, 80rem);
-        height: 45rem;
+        height: clamp(300px, 90vh, 700px);
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        min-height: 350px;
 
         @media (max-width:768px){
+            justify-content: flex-start;
             flex-direction: column;
         }
+        @media (orientation: landscape){
+            height: 100%;
+            flex-direction: row;
+        }
 
-        &--close-btn{
+        &--box-white-close-btn{
+            display: none;
             cursor: pointer;
             position: absolute;
             z-index: 20;
-            top: 35px;
-            right: 35px;
-    
+            top: 15px;
+            right: 15px;
+
             @media (max-width:768px) {
-                top: 0px;
-                right: 25px;
+                display: inline-block;
             }
-            @media (max-width:400px) {
-                top: -50px;
-                right: 25px;
+            @media (orientation: landscape){
+                display: none;
             }
+
+            img{
+                width: 20px;
+            }
+        }
+        &--box-blue-close-btn{
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            z-index: 20;
+            top: 15px;
+            right: 15px;
+
+            @media (max-width:768px) {
+                display: none;
+            }
+            @media (orientation: landscape){
+                display: inline-block;
+            }
+
             img{
                 width: 20px;
             }
@@ -89,28 +126,31 @@
             box-sizing: border-box;
             position: relative;
             z-index: 10;
-            top: 0;
-            left: 25px;
-
+            left: 5%;
+            
             @media (max-width:768px){
-                flex: 1 0 0;
                 left: 0;
-                top: 40px;
+            }
+            @media (orientation: landscape){
+                left: 5%;
             }
 
             .box-white{
                 height: 100%;
                 width: 100%;
-                min-width: 400px;
                 background-color: #fff;
                 padding: 2rem 4rem;
                 position: relative;
+                overflow-y: auto;
                 clip-path: polygon( 1.367% 4.957%,1.367% 4.957%,1.418% 4.258%,1.566% 3.594%,1.803% 2.976%,2.121% 2.411%,2.511% 1.909%,2.966% 1.478%,3.478% 1.128%,4.039% 0.866%,4.64% 0.703%,5.273% 0.647%,94.713% 0.647%,94.713% 0.647%,95.399% 0.712%,96.044% 0.902%,96.638% 1.204%,97.172% 1.607%,97.637% 2.098%,98.023% 2.666%,98.321% 3.3%,98.521% 3.987%,98.614% 4.716%,98.591% 5.475%,88.893% 93.837%,88.893% 93.837%,88.78% 94.469%,88.588% 95.063%,88.324% 95.611%,87.994% 96.107%,87.606% 96.545%,87.165% 96.918%,86.679% 97.219%,86.154% 97.443%,85.597% 97.582%,85.015% 97.629%,5.273% 97.629%,5.273% 97.629%,4.64% 97.573%,4.039% 97.41%,3.478% 97.148%,2.966% 96.798%,2.511% 96.367%,2.121% 95.865%,1.803% 95.3%,1.566% 94.681%,1.418% 94.018%,1.367% 93.319%,1.367% 4.957% );
 
                 @media (max-width:768px) {
                     padding: 2rem 2rem 5.5rem 2rem;
-                    min-width: 250px;
                     clip-path: polygon( 91.429% 0%,91.429% 0%,92.587% 0.086%,93.686% 0.333%,94.711% 0.73%,95.647% 1.261%,96.479% 1.914%,97.193% 2.676%,97.774% 3.532%,98.207% 4.47%,98.478% 5.476%,98.571% 6.536%,98.571% 90.671%,98.571% 90.671%,98.462% 91.818%,98.148% 92.896%,97.648% 93.889%,96.982% 94.783%,96.169% 95.561%,95.228% 96.207%,94.179% 96.706%,93.041% 97.041%,91.834% 97.198%,90.577% 97.161%,7.72% 88.055%,7.72% 88.055%,6.671% 87.867%,5.687% 87.546%,4.778% 87.105%,3.954% 86.553%,3.228% 85.903%,2.609% 85.165%,2.109% 84.352%,1.738% 83.473%,1.508% 82.541%,1.429% 81.566%,1.429% 6.536%,1.429% 6.536%,1.522% 5.476%,1.793% 4.47%,2.226% 3.532%,2.807% 2.676%,3.521% 1.914%,4.353% 1.261%,5.289% 0.73%,6.314% 0.333%,7.413% 0.086%,8.571% 0%,91.429% 0% );
+                }
+                @media (orientation: landscape){
+                    padding: 2rem 4rem;
+                    clip-path :polygon( 1.367% 4.957%,1.367% 4.957%,1.418% 4.258%,1.566% 3.594%,1.803% 2.976%,2.121% 2.411%,2.511% 1.909%,2.966% 1.478%,3.478% 1.128%,4.039% 0.866%,4.64% 0.703%,5.273% 0.647%,94.713% 0.647%,94.713% 0.647%,95.399% 0.712%,96.044% 0.902%,96.638% 1.204%,97.172% 1.607%,97.637% 2.098%,98.023% 2.666%,98.321% 3.3%,98.521% 3.987%,98.614% 4.716%,98.591% 5.475%,88.893% 93.837%,88.893% 93.837%,88.78% 94.469%,88.588% 95.063%,88.324% 95.611%,87.994% 96.107%,87.606% 96.545%,87.165% 96.918%,86.679% 97.219%,86.154% 97.443%,85.597% 97.582%,85.015% 97.629%,5.273% 97.629%,5.273% 97.629%,4.64% 97.573%,4.039% 97.41%,3.478% 97.148%,2.966% 96.798%,2.511% 96.367%,2.121% 95.865%,1.803% 95.3%,1.566% 94.681%,1.418% 94.018%,1.367% 93.319%,1.367% 4.957% );
                 }
 
                 &__company-logo{
@@ -136,28 +176,31 @@
         }
         &--box-2{
             flex: 1 0 42%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             display: flex;
-            align-items: center;
             position: relative;
             top: 0;
-            right: 30px;
+            right: 5%;
             z-index: 5;
             
             @media (max-width:768px){
-                flex: 1 0 0;
-                width: 100%;
-                top: -40px;
+                top: -10%;
                 right: 0;
-                padding-top: 30px;
+                padding-bottom: 20px;
             }
+            @media (orientation: landscape){
+                top: 0;
+                right: 5%;
+                padding-bottom: 0px;
+            }
+
 
             .box-blue{
                 width: 100%;
-                height: 90%;
                 background-color: #2995FC;
                 border-radius: 20px;
-                padding: 4.5rem 2rem;
+                padding: 4rem 2rem 4rem 6.5rem;
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -167,8 +210,12 @@
                     @media (max-width:768px){
                         height: 100%;
                         width: 90%;
+                        padding: 4rem 2rem ;
                         margin: 0 auto;
                     }
+                    @media (orientation: landscape){
+                    }
+
 
                 &__welcome{
                     text-align: left;
@@ -200,6 +247,7 @@
                     font-family: "Monserrat";
                     font-size: clamp(1.2rem, 1.8vw, 1.7rem);
                     cursor: pointer;
+                    border: none;
                 }
             }
         }
