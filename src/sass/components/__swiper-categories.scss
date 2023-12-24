@@ -1,6 +1,6 @@
 .category-swiper-wrapper{
     max-width: 1600px;
-    min-height: 100vh;
+    // min-height: 100vh;
     display: flex;
     margin: 0 auto;
 }
@@ -40,18 +40,6 @@
             margin-bottom: 3.9rem;
             max-width: 53rem;
         }
-        button{
-            text-transform: uppercase;
-            padding: 1.2rem 2.7rem;
-            background-color: #2995FC;
-            color: #fff;
-            font-size: clamp(1.5rem, 2vw, 2rem);
-            font-family: "Monserrat Semibold";
-            border-radius: 1rem;
-            border: none;
-            cursor: pointer;
-        }
-
     }
     &__img-box{
         flex: 1 0 50%;
@@ -72,17 +60,7 @@
         }
         button{
             display: none;
-            text-transform: uppercase;
-            padding: 1.2rem 2.7rem ;
-            background-color: #2995FC;
-            color: #fff;
-            font-size: 1.8rem;
-            font-family: "Monserrat Semibold";
-            border-radius: 1rem;
-            border: none;
             margin-top: 2rem;
-            align-self: flex-start;
-            cursor: pointer;
         }
     }
 }
@@ -133,7 +111,7 @@
             button{display: none;}
         }
         &__img-box{
-            button{display: inline-block;}
+            button{display: flex;}
         }
     }
     .category-swiper-slider {

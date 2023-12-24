@@ -11,6 +11,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import { useState } from 'react';
 import { useLanguageContext } from '../hooks/UseLanguageContext';
+import ButtonTwoStates from './ButtonTwoStates';
 
 function SwiperCategories() {
 
@@ -49,11 +50,11 @@ function SwiperCategories() {
                         <h6> { data["cat_1_title"] } </h6>
                         <p> { data["cat_1_text_1"] } </p>
                         <p> { data["cat_1_text_2"] } </p>
-                        <button> { data["cat_1_cta"] } </button>
+                        <ButtonTwoStates text_static={data["cat_1_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-1.webp'/>
-                      <button> { data["cat_1_cta"] } </button>
+                      <ButtonTwoStates text_static={data["cat_1_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
               </SwiperSlide>
@@ -63,11 +64,11 @@ function SwiperCategories() {
                     <div className='category-slide__data-box'>
                         <h6> { data["cat_2_title"] } </h6>
                         <p> {data["cat_2_text_1"]} </p>
-                        <button> { data["cat_2_cta"] } </button>
+                        <ButtonTwoStates text_static={data["cat_2_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-2.webp'/>
-                      <button> { data["cat_2_cta"] } </button>
+                      <ButtonTwoStates text_static={data["cat_2_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
               </SwiperSlide>
@@ -78,11 +79,11 @@ function SwiperCategories() {
                         <h6> { data["cat_3_title"] } </h6>
                         <p> { data["cat_3_text_1"] } </p>
                         <p> { data["cat_3_text_2"] } </p>
-                        <button> { data["cat_3_cta"] } </button>
+                        <ButtonTwoStates text_static={data["cat_3_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-3.webp'/>
-                      <button> { data["cat_3_cta"] } </button>
+                      <ButtonTwoStates text_static={data["cat_3_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
               </SwiperSlide>
@@ -93,11 +94,11 @@ function SwiperCategories() {
                         <h6> { data["cat_4_title"] } </h6>
                         <p> { data["cat_4_text_1"] } </p>
                         <p> { data["cat_4_text_2"] } </p>
-                        <button> { data["cat_4_cta"] } </button>
+                        <ButtonTwoStates text_static={data["cat_4_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
                       <img src='/img/png/slider-4.webp'/>
-                      <button> { data["cat_4_cta"] } </button>
+                      <ButtonTwoStates text_static={data["cat_4_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
               </SwiperSlide>

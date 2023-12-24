@@ -1,30 +1,31 @@
 // import { useEffect, useRef, useState } from "react";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
+import DiscountCard from "../components/DiscountCard";
 
 export default function SectionDiscounts() {
     const data = useLanguageContext();
     
 
-    const [isIntersecting, setIsIntersecting] = useState<boolean>()
-    const elementRef = useRef<HTMLInputElement>(null)
+    // const [isIntersecting, setIsIntersecting] = useState<boolean>()
+    // const elementRef = useRef<HTMLInputElement>(null)
     
     
-    useEffect(()=>{
-        const element = elementRef.current;
+    // useEffect(()=>{
+    //     const element = elementRef.current;
         
-        const observer = new IntersectionObserver( entries => {
-            entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
-        },
-        {
-            threshold: 0,
-        }
-        );
+    //     const observer = new IntersectionObserver( entries => {
+    //         entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
+    //     },
+    //     {
+    //         threshold: 0,
+    //     }
+    //     );
 
-        if (element) {
-            observer.observe(element)
-        }
-    }, [])
+    //     if (element) {
+    //         observer.observe(element)
+    //     }
+    // }, [])
 
     return (
         <section className="section-discounts">
@@ -37,44 +38,33 @@ export default function SectionDiscounts() {
                     </h3>
                     <div className="section-discounts__box-cards">
                         <div className="section-discounts__box-cards--box">
-                            <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-1" ref={elementRef}>
-                                    <img className={isIntersecting ? 'animation-card-1' : '' } src="/img/svg/shopping-icon.svg" alt="" />
-                                    <span> { data["cards_card1_front"] } </span>
-                                </div>
-                                <div className="card__side card__side--back">
-                                    <p>{ data["cards_card1_back"] }</p>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-2" ref={elementRef}>
-                                    <img  className={isIntersecting ? 'animation-card-2' : '' }  src="/img/svg/food-icon.svg" alt="" />
-                                    <span>{ data["cards_card2_front"] }</span>
-                                </div>
-                                <div className="card__side card__side--back">
-                                    <p>{ data["cards_card2_back"] }</p>
-                                </div>
-                            </div>
+                            <DiscountCard 
+                                background_img={"/img/png/discount-card-1.png"}
+                                icon={"/img/svg/shopping-icon.svg"}
+                                animation={"animation__card-1"} 
+                                front_title={data["cards_card1_front"]} 
+                                back_text={data["cards_card1_back"]} />
+                            <DiscountCard 
+                                background_img={"/img/png/discount-card-2.png"} 
+                                icon={"/img/svg/food-icon.svg"} 
+                                animation={"animation__card-2"} 
+                                front_title={data["cards_card2_front"]} 
+                                back_text={data["cards_card2_back"]} />
+                            
                         </div>
                         <div className="section-discounts__box-cards--box">
-                            <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-3" ref={elementRef}>
-                                    <img  className={isIntersecting ? 'animation-card-3' : '' }  src="/img/svg/icon-play.svg" alt="" />
-                                    <span>{ data["cards_card3_front"] }</span>
-                                </div>
-                                <div className="card__side card__side--back">
-                                    <p>{ data["cards_card3_back"] }</p>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="card__side card__side--front" id="discount-card-4">
-                                    <img  className={isIntersecting ? 'animation-card-4' : '' }  src="/img/svg/travel-icon.svg" alt="" />
-                                    <span>{ data["cards_card4_front"] }</span>
-                                </div>
-                                <div className="card__side card__side--back">
-                                    <p>{ data["cards_card4_back"] }</p>
-                                </div>
-                            </div>
+                            <DiscountCard 
+                                background_img={"/img/png/discount-card-3.png"} 
+                                icon={"/img/svg/icon-play.svg"} 
+                                animation={"animation__card-3"} 
+                                front_title={data["cards_card3_front"]} 
+                                back_text={data["cards_card3_back"]} />
+                            <DiscountCard 
+                                background_img={"/img/png/discount-card-4.png"} 
+                                icon={"/img/svg/travel-icon.svg"} 
+                                animation={"animation__card-4"} 
+                                front_title={data["cards_card4_front"]} 
+                                back_text={data["cards_card4_back"]} />
                         </div>
                     </div>
             </div>

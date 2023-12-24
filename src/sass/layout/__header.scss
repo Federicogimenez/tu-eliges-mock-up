@@ -25,7 +25,7 @@
                 max-width: 423px;
                 font-family: "Monserrat Semibold";
                 margin-bottom: 4rem;
-                min-height: 145px;
+                min-height: clamp(120px, 12vw, 160px);
 
                 span{
                     color: #2995FC;
