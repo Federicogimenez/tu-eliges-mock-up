@@ -1,11 +1,19 @@
+import { useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext"
 
 export default function ThanksYou() {
   const data = useLanguageContext();
 
+  const navigate = useNavigate();
+
+  function handleRedirectHome (){
+      navigate("/");
+      window.scrollTo(0, 0)
+  }
+
   return (
       <div className="thanks-you">
-        <a href="/" className="thanks-you__logo">
+        <a onClick={handleRedirectHome} className="thanks-you__logo">
           <img src="/img/png/logo-tu-eliges.png" alt="" />
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
@@ -25,10 +33,10 @@ export default function ThanksYou() {
           </div>
         </div>
         <div className="thanks-you__download">
-          <a href="#">
+          <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1">
             <img src="/img/png/android-logo.png" alt="" />
           </a>
-          <a href="#">
+          <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196">
             <img src="/img/png/apple-logo.png" alt="" />
           </a>
         </div>
@@ -36,20 +44,20 @@ export default function ThanksYou() {
           { data["thanks_visit_us"] }
         </p>
         <div className="thanks-you__socials">
-          <a href="#">
+          <a target="_blank" href="https://www.facebook.com/tueligesusa">
               <img src="/img/svg/facebook.svg" alt="facebook" />
           </a>
-          <a href="#">
+          <a target="_blank" href="https://www.instagram.com/tueliges.us/">
               <img src="/img/svg/ig.svg" alt="instagram" />
           </a>
-          <a href="#">
-              <img src="/img/svg/linkedin-icon.svg" alt="twitter" />
+          <a target="_blank" href="https://www.linkedin.com/company/tueliges-us">
+              <img src="/img/svg/linkedin-icon.svg" alt="linkedin" />
           </a>
-          <a href="#">
-              <img src="/img/svg/youtube-icon.svg" alt="twitter" />
+          <a target="_blank" href="https://www.youtube.com/channel/UC5QtJ5tx41WsIIZGyru7_Ng">
+              <img src="/img/svg/youtube-icon.svg" alt="youtube" />
           </a>
         </div>
-        <a className="thanks-you__redirect" href="#">www.tueliges.us</a>
+        <a className="thanks-you__redirect" onClick={handleRedirectHome}>www.tueliges.us</a>
       </div>
     )
 }

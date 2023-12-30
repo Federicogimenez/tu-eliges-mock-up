@@ -24,11 +24,7 @@
     }
     &__video-box{
         margin-top: clamp(20px, 2vw, 54px);
-        width: 92vw;
-        height: 60vw;
-        max-width: 1200px;
-        max-height: 650px;
-        
+        width: 75%;
         position: relative;
 
         iframe,

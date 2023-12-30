@@ -1,5 +1,3 @@
-// import { useEffect, useState } from "react"
-
 import { useLanguageContext } from "../hooks/UseLanguageContext"
 import { useLanguageSwitchContext } from "../hooks/UseLanguageSwitchContext";
 

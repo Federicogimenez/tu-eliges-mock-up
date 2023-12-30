@@ -39,7 +39,6 @@ function SwiperCategories() {
             spaceBetween={50}
             slidesPerView={1}
             thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
-            autoplay
             effect={"fade"}
             watchSlidesProgress
           >

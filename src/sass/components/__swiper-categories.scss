@@ -58,7 +58,7 @@
             max-height: 75vh;
             object-fit: cover;
         }
-        button{
+        a{
             display: none;
             margin-top: 2rem;
         }
@@ -108,10 +108,10 @@
         &__data-box{
             flex: none;
             p{padding-left: 2vw;}
-            button{display: none;}
+            a{display: none;}
         }
         &__img-box{
-            button{display: flex;}
+            a{display: flex;}
         }
     }
     .category-swiper-slider {

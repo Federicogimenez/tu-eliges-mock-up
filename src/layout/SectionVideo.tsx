@@ -10,21 +10,14 @@ export default function SectionVideo() {
             <p>{ data["video_subtitle"] } </p>
 
             <div className="section-video__video-box">
-                {/* <iframe 
-                    src="https://vimeo.com/823121032/4adf9d1d10?share=copy" 
-                    title="" 
-                    width="600px"
-                    height="500px"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen></iframe> */}
+                <div style={{'padding':'56.25% 0 0 0','position':'relative'}}>
                     <iframe 
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/p-14LYE-0Ho?si=DG_zxfQKeTvAVxLy" 
-                        title="YouTube video player" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowFullScreen></iframe>
-            </div>
+                        src="https://player.vimeo.com/video/898604407?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameBorder={0}
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                        style={{"position":"absolute","top":"0","left":"0","width":"100%","height":"100%"}} 
+                        title="TuEliges - Video Tour subtitulado Español"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
         </section>
     )
 }

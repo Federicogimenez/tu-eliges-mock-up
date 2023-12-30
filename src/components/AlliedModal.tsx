@@ -21,18 +21,18 @@ export default function AlliedModal() {
         <div className='allied-modal'>
           {
             alliedData.isLoading && 
-            <><img src="/img/svg/loading.svg" alt="loading.." /></>
+            <><img className="allied-modal__loader" src="/img/svg/loading.svg" alt="loading.." /></>
           }
           {
             alliedData.userNotFound && 
             <div className="allied-modal__user-not-found">
-              <img src="/img/svg/error.svg" alt="" />
-              <p>
-                No fue posible validar tu membresia
-              </p>
-              <span onClick={closeModalCallback}>
-                <img src="/img/svg/close.svg" alt="" />
-              </span>
+              <div className="allied-modal__user-not-found--content">
+                <img src="/img/svg/error.svg" alt="error" />
+                <p>
+                  No fue posible validar tu membresia
+                </p>
+              </div>
+              <button onClick={closeModalCallback}>Ok</button>
             </div>
           }
           {
@@ -51,7 +51,7 @@ export default function AlliedModal() {
                     {data.modal_paragraph1_1}{alliedData.alliedName}{data.modal_paragraph1_2}
                   </p>
                   <p className="box-white__text">
-                    {data["modal_paragraph1_2"]}
+                    {data.modal_paragraph2}
                   </p>
                 </div>
             </div>
@@ -61,8 +61,8 @@ export default function AlliedModal() {
                   <img src="/img/svg/close.svg" alt="" />
                 </span>
                 <h4 className="box-blue__welcome">¡Bienvenido!</h4>
-                <a className="box-blue__data" href="#">Conocer más sobre nuestros descuentos</a>
-                <button className="box-blue__buy-btn">COMPRAR MEMBRESIA</button>
+                <a className="box-blue__data" href="#membership" onClick={closeModalCallback}>Conocer más sobre nuestros descuentos</a>
+                <a className="box-blue__buy-btn" href="#">COMPRAR MEMBRESIA</a>
               </div>
             </div>
             </div>

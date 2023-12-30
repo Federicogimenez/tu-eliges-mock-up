@@ -3,20 +3,22 @@ import Home from "./pages/Home";
 import ThanksYou from "./pages/ThanksYou";
 import Faqs from "./pages/Faqs";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import Legals from "./pages/Legals";
-// import Allied from "./pages/Allied";
+import Policy from "./pages/Policy";
+import { LanguageProvider } from "./context/Language";
 
 function App() {
 
   return (
     <BrowserRouter >
+      <LanguageProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/thanks-you" element={<ThanksYou />} />
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/legals" element={<Legals />} />
+          <Route path="/policy" element={<Policy />} />
         </Routes>
+      </LanguageProvider>
     </BrowserRouter>
   )
 }

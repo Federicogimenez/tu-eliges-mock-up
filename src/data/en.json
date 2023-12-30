@@ -96,6 +96,7 @@
     "footer_support":"Support",
     "footer_legal":"Legal Information",
     "footer_terms":"Terms and Conditions",
+    "footer_membership":"Manage membership",
     "footer_policy":"Privacy Policy",
     "footer_policy_2":"Privacy Policy - Coupon Website",
     "footer_copyright":"Copyright © 2024 TuEliges.us LLC. All rights reserved.",
@@ -119,5 +120,46 @@
     "modal_paragraph2":"From here you can access your annual membership with your promotional code or you can visit our site and learn more about our discounts.",
     "modal_welcome":"Welcome!",
     "modal_info":"Learn more about our discounts",
-    "modal_cta":"USE MY CODE"
+    "modal_cta":"USE MY CODE",
+
+
+    "faq_title_1":"What is TuEliges.us?",
+    "faq_title_2":"How does the discount platform work?",
+    "faq_title_3":"What products or services do I get discounts on with my membership?",
+    "faq_title_4":"How much can I save?",
+    "faq_title_5":"Why should I join?",
+    "faq_content_1":"TuEliges.us was designed and created to become the largest private discount network in the United States for the Hispanic community. TuEliges.us today has more than 1 million discounts in a national network with brands known around the world, but also works together with all communities and local merchants in each of the 150 markets from coast to coast. Our goal is for each of our members and their Hispanic families to save thousands of dollars during the year.",
+    "faq_content_2_1":"1. Register with your contact information ",
+    "faq_content_2_1_link":"here",
+    "faq_content_2_2":"2. If you have a promotional code from our ALLIES, paste it in the “promotional code” box and click Apply.",
+    "faq_content_2_3_phrase_1":"3. Once you make the payment for your annual membership, we will redirect you to a thank you page, so you can log in with just one click on our discount platform ",
+    "faq_content_2_3_link":"tueligesus.enjoymydeals.com",
+    "faq_content_2_3_phrase_2":" or, you can download the application on your cell phone and register with your data and your UNIQUE MEMBER IDENTIFIER (Member ID).",
+    "faq_content_2_4":"4. Your UNIQUE MEMBER IDENTIFIER (Member ID) will also be sent to your email along with your login details.",
+    "faq_content_2_5":"5. Thirty (30) calendar days before automatic renewal, we will send you an email asking if you want to continue using our platform. If you do not want to do so, you can cancel at that time.",
+    "faq_content_2_6":"6. You can unsubscribe from your membership at any time from the USER section.",
+    "faq_content_2_7":"7. Discounts can be redeemed in three ways: in person by showing the discount directly from your cell phone, online or through a phone call.",
+    "faq_content_2_8":"8. We offer a full 30-day money back guarantee. If it has been 30 days since you purchased from us, unfortunately we cannot offer you a refund or exchange. However, if there is a problem or you have any questions, you can send us an email at support@tueliges.us and we will find a solution in the shortest time possible.",
+    "faq_content_2_9":"9. We accept the following payment methods: credit card and debit card (except Visa Electron, Mastercard Maestro and Interac debit cards).",
+    "faq_content_2_10_phrase_1":"10. Our website ",
+    "faq_content_2_10_link1":"(www.tueliges.us)",
+    "faq_content_2_10_phrase_2":" and our discount platform ",
+    "faq_content_2_10_link2":"(tueligesus.enjoymydeals.com)",
+    "faq_content_2_10_phrase_3":" are in English and Spanish languages.",
+
+    "faq_content_3":"You'll get exclusive access to OVER 1 MILLION PLACES TO SAVE in four categories from coast to coast:",
+    "faq_content_3_1":"1. Retail and Services: with over 150,000 options for clothing, technology, services, automobiles, home, groceries, health, fitness, etc.",
+    "faq_content_3_2":"2. Food: with more than 50,000 options for casual and fine dining, fast food, pizza, catering, etc.",
+    "faq_content_3_3":"3. Activities and Fun: with more than 50,000 options for theme parks, recreation, adventure entertainment, movies, golf, etc.",
+    "faq_content_3_4":"4. Travel: with more than 850,000 options for hotels, car rentals, condos, airport services, cruises, tours, etc.",
+
+    "faq_content_4":"With an average discount of 34%, you can easily recover your annual membership investment by making at least two or three purchases, generating savings of more than $2,500 per year.",
+    "faq_content_5":"TuEliges.us is a tool to empower the Hispanic community, allowing them to save on their purchases and daily experiences. As our motto says, you choose where to save. We are a platform made by and for the Hispanic community in the United States."
+
+
+
+
+
+
+
 }

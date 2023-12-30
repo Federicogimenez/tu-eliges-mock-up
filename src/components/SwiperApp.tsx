@@ -27,24 +27,6 @@ function SwiperApp(data:string[]) {
                 </SwiperSlide>
               )
             }
-              {/* <SwiperSlide
-                className='app-swiper-slider'>
-                  <div className='app-slide'>
-                    <img src={data[0]} alt="" />
-                  </div>
-              </SwiperSlide>
-              <SwiperSlide
-                className='app-swiper-slider'>
-                  <div className='app-slide'>
-                    <img src={data[1]} alt="" />
-                  </div>
-              </SwiperSlide>
-              <SwiperSlide
-                className='app-swiper-slider'>
-                  <div className='app-slide'>
-                    <img src="/img/png/app-3.webp" alt="" />
-                  </div>
-              </SwiperSlide> */}
         </Swiper>
   )
 }

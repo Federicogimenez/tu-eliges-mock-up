@@ -1,9 +1,9 @@
 .btn-two-states{
-    border: none;
+    border: 2px solid #2995FC;
     font-size: clamp(1.5rem, 2vw, 2.5rem);
     font-family: "Monserrat Semibold";
     width: clamp(220px, 34vw, 400px);
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     display: flex;
@@ -13,6 +13,7 @@
     background-color: #2995FC;
     color: #fff;
     position: relative;
+    text-decoration: none;
     
     @media (max-width: 768px) {
         width: fit-content;

@@ -38,7 +38,7 @@ export default function SectionApp() {
         "/img/png/app/app-12.png"
     ];
 
-  return (
+    return (
     <div className='section-app' id='app'>
         <div className="section-app__border section-app__border--left"></div>
         <div className="section-app__content">
@@ -69,10 +69,10 @@ export default function SectionApp() {
             </div>
             <ButtonTwoStates text_static={data["app_button"]} text_hover={data["app_button_hover"]} />
             <div className='section-app__content--download-btn'>
-                <a href="#">
+                <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1">
                     <img src="/img/png/android-logo.png" alt="" />
                 </a>
-                <a href="#">
+                <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196">
                     <img src="/img/png/apple-logo.png" alt="" />
                 </a>
             </div>

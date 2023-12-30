@@ -1,10 +1,74 @@
 .legals-page{
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
     font-family: "Monserrat";
     
     &__content{
         height: 100%;
         padding: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        gap: 70px;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        header{
+            flex: 1 0 20%;
+            max-height: 100vh;
+            overflow-y: auto;
+
+            
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            img{
+                cursor: pointer;
+                width: clamp(100px, 100%, 250px);
+                margin-bottom: 4rem;
+
+                @media (max-width: 768px) {
+                    width: clamp(100px, 50vw, 250px);
+                }
+            }
+        }
+        article{
+            flex: 1 0 70%;
+            height: 100vh;
+            overflow-y: auto;
+            padding-top: 10rem;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                padding-top: 0rem;
+            }
+
+            h2{
+                font-family: "Monserrat";
+                color: #000;
+                font-size: 3rem;
+                margin-bottom: 5rem;
+            }
+            h5{
+                font-family: "Monserrat";
+                color: #2995FC;
+                font-size: 3rem;
+                margin-bottom: 2.5rem;
+            }
+            p{
+                font-family: "Monserrat";
+                color: #000;
+                font-size: 2rem;
+                line-height: 1.5;
+                margin-bottom: 2.5rem;
+            }
+        }
     }
 }
