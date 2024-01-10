@@ -6,13 +6,13 @@ import { useLanguageContext } from "../hooks/UseLanguageContext";
 export function NavBar (){
     const data = useLanguageContext();
     return (
-    <div className="navbar">
-        <Headroom className="navbar__menu-desk" style={{
-                    display:'flex',
-                    justifyContent:'space-around',
-                    width:'100%',
-                    zIndex:'100',
-                }}>
+        <div className="navbar">
+            <Headroom className="navbar__menu-desk" style={{
+                        display:'flex',
+                        justifyContent:'space-around',
+                        width:'100%',
+                        zIndex:'100',
+                    }}>
                         <picture className='navbar__menu-desk--logo'>
                             <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
                         </picture>

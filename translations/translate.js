@@ -145,7 +145,7 @@ function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
     spreadsheetId: '1br2fZdfdoiWzTvWKv1hi6XzDCeIVLwEB-wVilCXSfWs',
-    range: 'uchooseit',
+    range: 'tueliges',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
