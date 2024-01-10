@@ -32,7 +32,6 @@ export default function Header() {
                             </span>    
                         </h1>
                         <h2>{ data["header_subtitle"] }</h2>
-                        {/* <button>{ data["header_button"] }</button> */}
                         <ButtonTwoStates text_static={ data["header_button"]} text_hover={ data["header_button_hover"] } />
                     </div>
                     <div className="header__content--ilustration">

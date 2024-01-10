@@ -48,7 +48,7 @@ export default function AlliedModal() {
                     <img src="/img/png/company-name.webp" alt="" />
                   </picture>
                   <p className="box-white__text">
-                    {data.modal_paragraph1_1}{alliedData.alliedName}{data.modal_paragraph1_2}
+                    {data.modal_paragraph1_phrase1}{alliedData.alliedName}{data.modal_paragraph1_phrase2}
                   </p>
                   <p className="box-white__text">
                     {data.modal_paragraph2}

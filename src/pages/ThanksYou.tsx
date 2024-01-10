@@ -20,7 +20,10 @@ export default function ThanksYou() {
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
         <p className="thanks-you__p">{ data["thanks_paragraph2"] }</p>
         <button className="thanks-you__key-btn">{ data["thanks_key_btn"] }</button>
-        <p className="thanks-you__support-text">{ data["thanks_support_text"] } soporte@tueliges.com</p>
+        <p className="thanks-you__support-text">
+          { data["thanks_support_text"] } 
+          <a href="mailto:support@tueliges.us">{ data["thanks_support_email"] }</a>
+        </p>
         <div className="thanks-you__steps">
           <div className="thanks-you__steps--step">
             <div>
