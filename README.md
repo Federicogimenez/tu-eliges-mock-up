@@ -13,11 +13,8 @@ package in use
    "vite": "^4.4.5",
    "vite-plugin-lightningcss": "^0.0.5"  => compilador-compresor-prefixer css
 
-   el resto de los paquetes se instalan automaticamente con vite
 
-
-
-   scripts a agregar: 
+   scripts: 
 
   "scripts": {
     "dev": "vite",
@@ -26,6 +23,13 @@ package in use
     "preview": "vite preview"
   }
 
+
+# for update excel text en/es: 
+
+cd /translations/ = node translate-tueliges
+cd /translations/ = node translate-uchooseit
+
+there are two files for each web content: 'tueliges' and 'uchooseit' 
 
 
 

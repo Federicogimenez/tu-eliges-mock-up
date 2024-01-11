@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import ThanksYou from "./pages/ThanksYou";
 import Faqs from "./pages/Faqs";
@@ -17,6 +17,8 @@ function App() {
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/policy" element={<Policy />} />
+          {/* default redirect to home page */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </LanguageProvider>
     </BrowserRouter>
