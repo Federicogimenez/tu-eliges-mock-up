@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
-import SwitchLang from "./SwitchLang";
 
 export default function BurgerMenu() {
 
@@ -30,7 +29,7 @@ export default function BurgerMenu() {
                     <li className="burger__item"><a href="#membership" className="burger__link" onClick={callbackNaviToggle}>{data["menu_link5"]}</a></li>
                     <li className="burger__item"><a href="#app" className="burger__link" onClick={callbackNaviToggle}>{data["menu_link6"]}</a></li>
                     <li className="burger__item"><a href="#about-us" className="burger__link" onClick={callbackNaviToggle}>{data["menu_link7"]}</a></li>
-                    <SwitchLang />
+                    {/* <SwitchLang /> */}
                 </ul>
             </nav>
         </div>

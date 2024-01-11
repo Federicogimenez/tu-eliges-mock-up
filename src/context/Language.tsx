@@ -2,19 +2,19 @@ import { useState, createContext } from 'react';
 import { dictionaryList } from './LanguageOptions'
 import { languageProvideChildren } from '../interfaces/LanguageProviderInterface';
 
-export const LanguageContext = createContext(dictionaryList.es)
+export const LanguageContext = createContext(dictionaryList.en)
 export const LanguageSwitchContext = createContext(()=>{})
 
 
 export function LanguageProvider({ children }: languageProvideChildren) {
     
-    const [userLanguage, setUserLanguage] = useState(dictionaryList.es);
+    const [userLanguage, setUserLanguage] = useState(dictionaryList.en);
 
     const toggleLanguage = ()=>{
-        if (userLanguage == dictionaryList.es) {
-            setUserLanguage(dictionaryList.en)
-        }else{
+        if (userLanguage == dictionaryList.en) {
             setUserLanguage(dictionaryList.es)
+        }else{
+            setUserLanguage(dictionaryList.en)
         }
     }
 

@@ -1,6 +1,5 @@
-import BurgerMenu from "../components/BurgerMenu";
-import SwitchLang from "../components/SwitchLang";
 import Headroom from "react-headroom";
+import BurgerMenu from "../components/BurgerMenu";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 
 export function NavBar (){
@@ -25,7 +24,7 @@ export function NavBar (){
                                 <a href="#membership">{data["menu_link5"]}</a>
                                 <a href="#app">{data["menu_link6"]}</a>
                                 <a href="#about-us">{data["menu_link7"]}</a>
-                                <SwitchLang />
+                                {/* <SwitchLang /> */}
                             </nav>
                         </div>
                 </Headroom>
