@@ -31,6 +31,8 @@ cd /translations/ = node translate-uchooseit
 
 there are two files for each web content: 'tueliges' and 'uchooseit' 
 
+probando
+
 
 
 
