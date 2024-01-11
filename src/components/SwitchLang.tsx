@@ -6,7 +6,7 @@ export default function SwitchLang(){
     const data = useLanguageContext();
     const toggleLanguage = useLanguageSwitchContext();
 
-    const callback = (): void => {
+    const handleToggleLanguage = (): void => {
         toggleLanguage()
     }
     
@@ -15,7 +15,7 @@ export default function SwitchLang(){
             { data['lang_current'] }
             <img src="/img/svg/arrow-up.svg" alt="" />
             <ul>
-                <li onClick={callback}>
+                <li onClick={handleToggleLanguage}>
                 { data['lang_1'] }
                 </li>
             </ul>

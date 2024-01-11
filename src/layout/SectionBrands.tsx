@@ -3,7 +3,6 @@ import SwiperBrandBig from "../components/SwiperBrandBig";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { useEffect, useRef } from "react";
 import UseObserver from "../hooks/UseObserver";
-import UseNavItemActive from "../hooks/UseNavItemActive";
 
 export default function SectionBrands() {
 
@@ -17,7 +16,7 @@ export default function SectionBrands() {
 
     useEffect(()=>{
       if (isIntersecting) {
-        UseNavItemActive("brands")
+        console.log("brands");
       }
     }, [])
 

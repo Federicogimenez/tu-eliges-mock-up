@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 export default function UseObserver( elementRef:HTMLDivElement | null, options = {}) {
 
     const [isIntersecting, setIsIntersecting] = useState<boolean>()
-    // const elementRef = useRef<HTMLDivElement>()
     
     
     useEffect(()=>{
@@ -24,7 +23,7 @@ export default function UseObserver( elementRef:HTMLDivElement | null, options =
                 observer.unobserve(element)
             }
         }
-    }, [elementRef, options])
+    }, [])
 
     return isIntersecting
 }

@@ -81,21 +81,27 @@
                     font-family: "Monserrat";
                     cursor: pointer;
                     transition: all .2s;
+                    position: relative;
 
-                    &::before{
-                        content: "";
-                        display: inline-block;
-                        width: 0;                    
-                        height: 2px;
-                        border-radius: 10px;
-                        background-color: #2995FC;
-                    }
+                }
+                a::before{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    bottom: -8px;
+                    width: 0;                    
+                    height: 3px;
+                    border-radius: 30px;
+                    background-color: #2995FC;
                 }
                 a:hover{
                     color: #fff;
                 }
-                a.active > ::before{
-                    width: 100%;
+                a.active {
+                    font-family: "Monserrat Semibold";
+                    &::before{
+                        width: 100%;
+                    }
                 }
             }
         }
