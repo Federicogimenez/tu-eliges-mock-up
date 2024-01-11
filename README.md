@@ -24,14 +24,12 @@ package in use
   }
 
 
--for update excel text en/es: 
+# for update excel text en/es: 
 
 cd /translations/ = node translate-tueliges
 cd /translations/ = node translate-uchooseit
 
 there are two files for each web content: 'tueliges' and 'uchooseit' 
-
-probando
 
 
 
