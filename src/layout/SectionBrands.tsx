@@ -1,11 +1,25 @@
 import SwiperBrandSmall from "../components/SwiperBrandSmall";
 import SwiperBrandBig from "../components/SwiperBrandBig";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
+import { useEffect, useRef } from "react";
+import UseObserver from "../hooks/UseObserver";
+import UseNavItemActive from "../hooks/UseNavItemActive";
 
 export default function SectionBrands() {
 
     const data = useLanguageContext();
 
+    const elementCurrentRef = useRef<HTMLDivElement>(null)
+    
+    const isIntersecting  = UseObserver(elementCurrentRef.current, {})
+    
+    
+
+    useEffect(()=>{
+      if (isIntersecting) {
+        UseNavItemActive("brands")
+      }
+    }, [])
 
     const bigBrands = [
         [
@@ -79,7 +93,7 @@ export default function SectionBrands() {
     ]
 
   return (
-    <div className="section-brands" id="brands">
+    <div className="section-brands" id="brands" ref={elementCurrentRef}>
         <h5 className="section-brands__title">
             { data["brands_title"] }
         </h5>

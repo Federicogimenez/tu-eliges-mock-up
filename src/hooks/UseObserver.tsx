@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function UseObserver( options = {}) {
+export default function UseObserver( elementRef:HTMLDivElement | null, options = {}) {
 
     const [isIntersecting, setIsIntersecting] = useState<boolean>()
-    const elementRef = useRef<HTMLDivElement>()
+    // const elementRef = useRef<HTMLDivElement>()
     
     
     useEffect(()=>{
-        const element = elementRef.current;
+        const element = elementRef;
         
         const observer = new IntersectionObserver( entries => {
             entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
@@ -24,7 +24,7 @@ export default function UseObserver( options = {}) {
                 observer.unobserve(element)
             }
         }
-    }, [])
+    }, [elementRef, options])
 
-    return [ elementRef, isIntersecting]
+    return isIntersecting
 }

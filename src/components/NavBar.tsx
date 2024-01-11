@@ -2,9 +2,11 @@ import BurgerMenu from "../components/BurgerMenu";
 import SwitchLang from "../components/SwitchLang";
 import Headroom from "react-headroom";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
+import UseNavItemActive from "../hooks/UseNavItemActive";
 
 export function NavBar (){
     const data = useLanguageContext();
+    const navItemActive = UseNavItemActive;
     return (
         <div className="navbar">
             <Headroom className="navbar__menu-desk" style={{
@@ -20,8 +22,8 @@ export function NavBar (){
                             <nav>
                                 <a href="#header">{data["menu_link1"]}</a>
                                 <a href="#video">{data["menu_link2"]}</a>
-                                <a href="#categories">{data["menu_link3"]}</a>
-                                <a href="#brands">{data["menu_link4"]}</a>
+                                <a href="#categories" className={navItemActive == 'categories' ? "active" : ""}>{data["menu_link3"]}</a>
+                                <a href="#brands" className={navItemActive == 'brands' ? "active" : ""}>{data["menu_link4"]}</a>
                                 <a href="#membership">{data["menu_link5"]}</a>
                                 <a href="#app">{data["menu_link6"]}</a>
                                 <a href="#about-us">{data["menu_link7"]}</a>
