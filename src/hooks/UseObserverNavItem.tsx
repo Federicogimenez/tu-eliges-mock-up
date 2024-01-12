@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 
-export default function UseObserver( elementRef:HTMLDivElement | null, options = {}) {
+export default function UseObserverNavItem( elementRef:HTMLDivElement | null) {
 
     const [isIntersecting, setIsIntersecting] = useState<boolean>()
-    
-    
+
     useEffect(()=>{
         const element = elementRef;
         
         const observer = new IntersectionObserver( entries => {
             entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
         },
-        options
+        {
+            threshold: .3
+        }
         );
 
         if (element) {
@@ -23,7 +24,7 @@ export default function UseObserver( elementRef:HTMLDivElement | null, options =
                 observer.unobserve(element)
             }
         }
-    }, [])
+    }, [elementRef])
 
     return isIntersecting
 }

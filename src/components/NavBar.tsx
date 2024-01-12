@@ -20,13 +20,13 @@ export function NavBar (){
                         </picture>
                         <div className='navbar__menu-desk--navbar-desk'>
                             <nav>
-                                    <a href="#header">{data["menu_link1"]}</a>
-                                    <a href="#video">{data["menu_link2"]}</a>
-                                    <a href="#categories">{data["menu_link3"]}</a>
-                                    <a href="#brands">{data["menu_link4"]}</a>
-                                    <a href="#membership">{data["menu_link5"]}</a>
-                                    <a href="#app">{data["menu_link6"]}</a>
-                                    <a href="#about-us">{data["menu_link7"]}</a>
+                                    <a href="#header" id="nav-item-header" className="active">{data["menu_link1"]}</a>
+                                    <a href="#video" id="nav-item-video">{data["menu_link2"]}</a>
+                                    <a href="#categories" id="nav-item-categories">{data["menu_link3"]}</a>
+                                    <a href="#brands" id="nav-item-brands">{data["menu_link4"]}</a>
+                                    <a href="#membership" id="nav-item-membership">{data["menu_link5"]}</a>
+                                    <a href="#app" id="nav-item-app">{data["menu_link6"]}</a>
+                                    <a href="#about-us" id="nav-item-aboutus">{data["menu_link7"]}</a>
                                     <SwitchLang />
                             </nav>
                         </div>

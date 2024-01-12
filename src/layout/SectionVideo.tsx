@@ -1,11 +1,29 @@
+import { useEffect, useRef } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext"
+import UseObserverNavItem from "../hooks/UseObserverNavItem";
 
 export default function SectionVideo() {
 
     const data = useLanguageContext();
+    
+    const elementCurrentRef = useRef<HTMLDivElement>(null)
+    const isIntersecting  = UseObserverNavItem(elementCurrentRef.current)
+    if (isIntersecting) {
+        document.querySelector('#nav-item-video')?.classList.add('active')
+    }else{
+        document.querySelector('#nav-item-video')?.classList.remove('active')
+    }
+    useEffect(() => {
+        if (isIntersecting) {
+            document.querySelector('#nav-item-video')?.classList.add('active')
+        }else{
+            document.querySelector('#nav-item-video')?.classList.remove('active')
+        }
+    }, [isIntersecting])
+    
 
     return (
-        <section className="section-video" id="video">
+        <section className="section-video" id="video" ref={elementCurrentRef}>
             <h3> { data["video_title"] } </h3>
             <p>{ data["video_subtitle"] } </p>
 

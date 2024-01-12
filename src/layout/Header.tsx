@@ -1,15 +1,34 @@
+import { useEffect, useRef } from "react";
 import Typewriter from "typewriter-effect";
-import { useLanguageContext } from "../hooks/UseLanguageContext";
-import { NavBar } from "../components/NavBar";
 import ButtonTwoStates from "../components/ButtonTwoStates";
+import { NavBar } from "../components/NavBar";
+import { useLanguageContext } from "../hooks/UseLanguageContext";
+import UseObserverNavItem from "../hooks/UseObserverNavItem";
 
 
 
 export default function Header() {
     const data = useLanguageContext();
 
+    const elementCurrentRef = useRef<HTMLDivElement>(null)
+    const isIntersecting  = UseObserverNavItem(elementCurrentRef.current)    
+    
+    if (isIntersecting) {
+        document.querySelector('#nav-item-header')?.classList.add('active')
+    }else{
+        document.querySelector('#nav-item-header')?.classList.remove('active')
+    }
+    useEffect(() => {
+        if (isIntersecting) {
+            document.querySelector('#nav-item-header')?.classList.add('active')
+        }else{
+            document.querySelector('#nav-item-header')?.classList.remove('active')
+        }
+    }, [isIntersecting])
+    
+
     return (
-            <div className="header" id="header">
+            <div className="header" id="header" ref={elementCurrentRef}>
                 <NavBar />
                 <div className="header__content">
                     <div className="header__content--text-box">

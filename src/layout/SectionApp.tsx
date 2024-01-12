@@ -1,9 +1,26 @@
+import { useEffect, useRef } from 'react';
 import ButtonTwoStates from '../components/ButtonTwoStates';
 import SwiperApp from '../components/SwiperApp'
 import { useLanguageContext } from '../hooks/UseLanguageContext';
+import UseObserverNavItem from '../hooks/UseObserverNavItem';
 
 export default function SectionApp() {
     const data = useLanguageContext();
+
+    const elementCurrentRef = useRef<HTMLDivElement>(null)
+    const isIntersecting  = UseObserverNavItem(elementCurrentRef.current)
+    if (isIntersecting) {
+        document.querySelector('#nav-item-app')?.classList.add('active')
+    }else{
+        document.querySelector('#nav-item-app')?.classList.remove('active')
+    }
+    useEffect(() => {
+        if (isIntersecting) {
+            document.querySelector('#nav-item-app')?.classList.add('active')
+        }else{
+            document.querySelector('#nav-item-app')?.classList.remove('active')
+        }
+    }, [isIntersecting])
 
     const sliderMobile = [
         "/img/png/app/app-1.png",
@@ -39,7 +56,7 @@ export default function SectionApp() {
     ];
 
     return (
-    <div className='section-app' id='app'>
+    <div className='section-app' id='app' ref={elementCurrentRef}>
         <div className="section-app__border section-app__border--left"></div>
         <div className="section-app__content">
             <h5 className='section-app__content--title'>

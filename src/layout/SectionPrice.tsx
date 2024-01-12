@@ -1,10 +1,30 @@
+import { useEffect, useRef } from "react";
 import ButtonTwoStates from "../components/ButtonTwoStates";
-import { useLanguageContext } from "../hooks/UseLanguageContext"
+import { useLanguageContext } from "../hooks/UseLanguageContext";
+import UseObserverNavItem from "../hooks/UseObserverNavItem";
 
 export default function SectionPrice() {
     const data = useLanguageContext();
-  return (
-    <div className="section-price" id="membership">
+
+    const elementCurrentRef = useRef<HTMLDivElement>(null)
+    const isIntersecting  = UseObserverNavItem(elementCurrentRef.current)
+
+    if (isIntersecting) {
+        document.querySelector('#nav-item-membership')?.classList.add('active')
+    }else{
+        document.querySelector('#nav-item-membership')?.classList.remove('active')
+    }
+    useEffect(() => {
+        if (isIntersecting) {
+            document.querySelector('#nav-item-membership')?.classList.add('active')
+        }else{
+            document.querySelector('#nav-item-membership')?.classList.remove('active')
+        }
+    }, [isIntersecting])
+    
+
+    return (
+    <div className="section-price" id="membership" ref={elementCurrentRef}>
         <div className="section-price__text">
             <h3>
                 { data["membership_title"] }

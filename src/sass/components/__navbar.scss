@@ -80,7 +80,6 @@
                     font-size: 2rem;
                     font-family: "Monserrat";
                     cursor: pointer;
-                    transition: all .2s;
                     position: relative;
 
                 }
@@ -93,12 +92,13 @@
                     height: 3px;
                     border-radius: 30px;
                     background-color: #2995FC;
+                    transition: .2s;
                 }
                 a:hover{
                     color: #fff;
                 }
                 a.active {
-                    font-family: "Monserrat Semibold";
+                    color: #fff;
                     &::before{
                         width: 100%;
                     }

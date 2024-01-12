@@ -1,24 +1,29 @@
-import SwiperBrandSmall from "../components/SwiperBrandSmall";
-import SwiperBrandBig from "../components/SwiperBrandBig";
-import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { useEffect, useRef } from "react";
-import UseObserver from "../hooks/UseObserver";
+import SwiperBrandBig from "../components/SwiperBrandBig";
+import SwiperBrandSmall from "../components/SwiperBrandSmall";
+import { useLanguageContext } from "../hooks/UseLanguageContext";
+import UseObserverNavItem from "../hooks/UseObserverNavItem";
 
 export default function SectionBrands() {
 
     const data = useLanguageContext();
 
     const elementCurrentRef = useRef<HTMLDivElement>(null)
-    
-    const isIntersecting  = UseObserver(elementCurrentRef.current, {})
-    
-    
+    const isIntersecting  = UseObserverNavItem(elementCurrentRef.current)
+    if (isIntersecting) {
+        document.querySelector('#nav-item-brands')?.classList.add('active')
+    }else{
+        document.querySelector('#nav-item-brands')?.classList.remove('active')
+    }
 
-    useEffect(()=>{
-      if (isIntersecting) {
-        console.log("brands");
-      }
-    }, [])
+    useEffect(() => {
+        if (isIntersecting) {
+            document.querySelector('#nav-item-brands')?.classList.add('active')
+        }else{
+            document.querySelector('#nav-item-brands')?.classList.remove('active')
+        }
+    }, [isIntersecting])
+    
 
     const bigBrands = [
         [

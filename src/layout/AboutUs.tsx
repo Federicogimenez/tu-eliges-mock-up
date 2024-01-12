@@ -1,10 +1,28 @@
+import { useEffect, useRef } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext"
+import UseObserverNavItem from "../hooks/UseObserverNavItem";
 
 export default function AboutUs() {
     const data = useLanguageContext()
+    
+    const elementCurrentRef = useRef<HTMLDivElement>(null)
+    const isIntersecting  = UseObserverNavItem(elementCurrentRef.current)
+    if (isIntersecting) {
+        document.querySelector('#nav-item-aboutus')?.classList.add('active')
+    }else{
+        document.querySelector('#nav-item-aboutus')?.classList.remove('active')
+    }    
+    useEffect(() => {
+        if (isIntersecting) {
+            document.querySelector('#nav-item-aboutus')?.classList.add('active')
+        }else{
+            document.querySelector('#nav-item-aboutus')?.classList.remove('active')
+        }
+    }, [isIntersecting])
+    
 
     return (
-        <div className="about-us" id="about-us">
+        <div className="about-us" id="about-us" ref={elementCurrentRef}>
             <div className="about-us__text">
                 <h6>
                     { data["aboutus_title"] }
