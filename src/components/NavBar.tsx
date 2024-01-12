@@ -13,7 +13,7 @@ export function NavBar (){
                         zIndex:'100',
                     }}>
                         <picture className='navbar__menu-desk--logo'>
-                            <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
+                            <img src="/img/png/you-choose-it-logo.png" alt="yoouchooseit" />
                         </picture>
                         <div className='navbar__menu-desk--navbar-desk'>
                             <nav>
