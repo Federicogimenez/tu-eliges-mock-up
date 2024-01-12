@@ -17,8 +17,9 @@ function App() {
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/policy" element={<Policy />} />
-          {/* default redirect to home page */}
-          <Route path="*" element={<Navigate to="/" />} />
+
+          {/* redirect path does not exist */}
+          <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       </LanguageProvider>
     </BrowserRouter>
