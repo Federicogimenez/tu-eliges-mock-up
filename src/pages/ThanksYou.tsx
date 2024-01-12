@@ -60,7 +60,7 @@ export default function ThanksYou() {
               <img src="/img/svg/youtube-icon.svg" alt="youtube" />
           </a>
         </div>
-        <a className="thanks-you__redirect" onClick={handleRedirectHome}>www.tueliges.us</a>
+        <a className="thanks-you__redirect" onClick={handleRedirectHome}>www.uchooseit.us</a>
       </div>
     )
 }
