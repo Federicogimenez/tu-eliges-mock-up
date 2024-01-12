@@ -42,7 +42,7 @@ export default function Faqs() {
             <div className="legals-page">
                     <div className="legals-page__content">
                         <header>
-                            <img onClick={handleRedirectHome} src="/img/png/logo-alternative-tu-eliges.png" alt="tu eliges" />
+                            <img onClick={handleRedirectHome} src="/img/png/logo-alternative-uchooseit.png" alt="uchooseit" />
                             <BurgerMenuAlternative {...burgerOptions} />
                         </header>
                         <article>

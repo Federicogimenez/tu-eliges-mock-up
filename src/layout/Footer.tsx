@@ -28,13 +28,13 @@ export default function Footer() {
     <div className="footer">
         <div className="footer__data">
             <a onClick={handleRedirectHome} className="footer__data--img">
-                <img src="/img/png/logo-tu-eliges.png" alt="logo" />
+                <img src="/img/png/logo-uchooseit.png" alt="logo" />
             </a>
             <div className="footer__data--contact">
                 <strong> { data["footer_contact"] } :</strong>
-                <a href="mailto:info@tueliges.us" target="_blank">
+                <a href="mailto:info@uchooseit.us" target="_blank">
                     <img src="/img/svg/mail.svg" alt="" />
-                    info@tueliges.us
+                    info@uchooseit.us
                 </a>
                 <span>
                     <a target="_blank" href="https://www.facebook.com/tueligesusa">
@@ -53,9 +53,9 @@ export default function Footer() {
             </div>
             <div className="footer__data--support">
                 <strong> { data["footer_support"] } :</strong>
-                <a href="mailto:support@tueliges.us" target="_blank">
+                <a href="mailto:support@uchooseit.us" target="_blank">
                     <img src="/img/svg/mail.svg" alt="" />
-                    support@tueliges.us
+                    support@uchooseit.us
                 </a>
                 <a onClick={handleRedirectFaq}>F.A.Q</a>
                 <a target="_blank" href="https://tueliges-us.recurly.com/account/create_account">

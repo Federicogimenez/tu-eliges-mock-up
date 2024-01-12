@@ -45,7 +45,7 @@ export default function Policy() {
             <div className="legals-page">
                     <div className="legals-page__content">
                         <header>
-                            <img onClick={handleRedirectHome} src="/img/png/logo-alternative-tu-eliges.png" alt="tu eliges" />
+                            <img onClick={handleRedirectHome} src="/img/png/logo-alternative-uchooseit.png" alt="tu eliges" />
                             <BurgerMenuAlternative {...burgerOptions} />
                         </header>
                         <article>

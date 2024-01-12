@@ -14,7 +14,7 @@ export default function ThanksYou() {
   return (
       <div className="thanks-you">
         <a onClick={handleRedirectHome} className="thanks-you__logo">
-          <img src="/img/png/logo-tu-eliges.png" alt="" />
+          <img src="/img/png/logo-uchooseit.png" alt="" />
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
