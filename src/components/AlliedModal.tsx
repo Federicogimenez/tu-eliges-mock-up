@@ -66,7 +66,7 @@ export default function AlliedModal() {
                 </span>
                 <h4 className="box-blue__welcome">¡Bienvenido!</h4>
                 <a className="box-blue__data" href="#membership" onClick={closeModalCallback}>Conocer más sobre nuestros descuentos</a>
-                <a className="box-blue__buy-btn" href="#">COMPRAR MEMBRESIA</a>
+                <a className="box-blue__buy-btn" href="https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD">COMPRAR MEMBRESIA</a>
               </div>
             </div>
             </div>
