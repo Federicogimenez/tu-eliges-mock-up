@@ -41,7 +41,6 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
     async function fetchData(){
       const response = await fetch(urlFetch, 
         {method: 'GET',
-        mode: 'no-cors', 
         headers: {
           "Content-Type": "application/json"
         }})
