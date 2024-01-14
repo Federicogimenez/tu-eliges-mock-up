@@ -1,8 +1,12 @@
-import { useNavigate } from "react-router";
-import { useLanguageContext } from "../hooks/UseLanguageContext"
+import { useLocation, useNavigate } from "react-router";
+import { useLanguageContext } from "../hooks/UseLanguageContext";
 
 export default function ThanksYou() {
   const data = useLanguageContext();
+
+  const url = useLocation().search;
+  
+  const id = url.split('=').pop();
 
   const navigate = useNavigate();
 
@@ -19,7 +23,7 @@ export default function ThanksYou() {
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
         <p className="thanks-you__p">{ data["thanks_paragraph2"] }</p>
-        <button className="thanks-you__key-btn">{ data["thanks_key_btn"] }</button>
+        <button className="thanks-you__key-btn">{ id }</button>
         <p className="thanks-you__support-text">
           { data["thanks_support_text"] } 
           <a href="mailto:support@tueliges.us">{ data["thanks_support_email"] }</a>

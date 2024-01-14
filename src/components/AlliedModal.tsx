@@ -45,10 +45,14 @@ export default function AlliedModal() {
                     <img src="/img/svg/close.svg" alt="" />
                   </span>
                   <picture className="box-white__company-logo">
-                    <img src="/img/png/company-name.webp" alt="" />
+                    <img src={alliedData.alliedCompanyImg} alt="" />
                   </picture>
                   <p className="box-white__text">
-                    {data.modal_paragraph1_phrase1}{alliedData.alliedName}{data.modal_paragraph1_phrase2}
+                    {data.modal_paragraph1_phrase1}
+                    <strong>
+                    {alliedData.alliedName},
+                    </strong> 
+                    {data.modal_paragraph1_phrase2}
                   </p>
                   <p className="box-white__text">
                     {data.modal_paragraph2}

@@ -37,9 +37,33 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
     const urlFetch = `https://api.tueliges.us/public/ally-code/${id}`
     console.log(urlFetch);
     
+    setTimeout(() => {
+                if(id == 'SFLHCC'){
+                setModalData({
+                    alliedName: 'South Florida Hispanic Chamber of Commerce',
+                    alliedCompanyImg: '/img/png/south-florida-recurly-data-img.jpg',
+                    isLoading: false,
+                    userNotFound: false
+                  })
+              }else{
+                setModalData({
+                  alliedName: '',
+                  alliedCompanyImg:'',
+                  isLoading: false,
+                  userNotFound: true
+                })
+              }
+        // closeAlliedModal()
+            
+    }, 1500);
 
-    async function fetchData(){
-      const response = await fetch(urlFetch)
+
+
+
+
+
+    // async function fetchData(){
+    //   const response = await fetch(urlFetch)
       // const response = await fetch(urlFetch, 
       //   {method: 'GET',
       //   headers: {
@@ -49,40 +73,31 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
       //     "Access-Control-Allow-Headers": "Special-Request-Header",
       //     "Access-Control-Allow-Credentials": "true"
       //   }})
-      const data = await response.json()
-      return data
-    }
-    fetchData()
-    .then(( data )=> {
-        if(data){
-        setModalData({
-            alliedName: data.allyCompanyName,
-            alliedCompanyImg: data.allyCompanyLogo,
-            isLoading: false,
-            userNotFound: false
-          })
-      }else{
-        setModalData({
-          alliedName: '',
-          alliedCompanyImg: '',
-          isLoading: false,
-          userNotFound: true
-        })
-      } }
-    )
-    .catch(err=>console.log(err)) 
+  //     const data = await response.json()
+  //     return data
+  //   }
+  //   fetchData()
+  //   .then(( data )=> {
+  //       if(data){
+  //       setModalData({
+  //           alliedName: data.allyCompanyName,
+  //           alliedCompanyImg: data.allyCompanyLogo,
+  //           isLoading: false,
+  //           userNotFound: false
+  //         })
+  //     }else{
+  //       setModalData({
+  //         alliedName: '',
+  //         alliedCompanyImg: '',
+  //         isLoading: false,
+  //         userNotFound: true
+  //       })
+  //     } }
+  //   )
+  //   .catch(err=>console.log(err)) 
   }, [url])
 
-  // fetch(`https://api.tueliges.us/public/ally-code/SFLHCC`, {
-  //       method: 'GET',
-  //       mode: 'no-cors', 
-  //       headers:{
-  //         "Content-Type": "application/json"
-  //       }})
-  // .then((resp)=>resp.json())
-  // .then((data)=> JSON.stringify(data))
-  // .then((data)=>console.log(data))
-  // .catch(err=>console.log(err))
+
 
 
 
@@ -100,7 +115,16 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
 
 
 
-
+  // fetch(`https://api.tueliges.us/public/ally-code/SFLHCC`, {
+  //       method: 'GET',
+  //       mode: 'no-cors', 
+  //       headers:{
+  //         "Content-Type": "application/json"
+  //       }})
+  // .then((resp)=>resp.json())
+  // .then((data)=> JSON.stringify(data))
+  // .then((data)=>console.log(data))
+  // .catch(err=>console.log(err))
 
 
 
