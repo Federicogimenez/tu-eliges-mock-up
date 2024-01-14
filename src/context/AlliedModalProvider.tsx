@@ -42,7 +42,11 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
       const response = await fetch(urlFetch, 
         {method: 'GET',
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://tueliges.us",
+          "Access-Control-Allow-Methods":"PUT, POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Special-Request-Header",
+          "Access-Control-Allow-Credentials": "true"
         }})
       const data = await response.json()
       return data
