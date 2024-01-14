@@ -5,6 +5,7 @@ export interface alliedModalProvideChildren {
 
 export interface alliedModalData {
     alliedName: string,
+    alliedCompanyImg: string,
     isLoading: boolean,
     userNotFound: boolean
 }
