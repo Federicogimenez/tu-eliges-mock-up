@@ -60,18 +60,6 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
                     isLoading: false,
                     userNotFound: false
                   })
-              }else if(id == 'viviiana'){
-                setModalData({
-                    alliedName: 'Viviana Valderrama',
-                    isLoading: false,
-                    userNotFound: false
-                  })
-              }else if(id == 'dario'){
-                setModalData({
-                    alliedName: 'Dario',
-                    isLoading: false,
-                    userNotFound: false
-                  })
               }else{
                 setModalData({
                   alliedName: '',

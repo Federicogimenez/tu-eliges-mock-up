@@ -30,7 +30,7 @@ export function NavBar (){
                 </Headroom>
                 <div className="navbar__menu-mobile">
                     <picture className='navbar__menu-mobile--logo'>
-                        <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
+                        <img src="/img/png/logo-uchooseit.png" alt="yoouchooseit" />
                     </picture>
                     <BurgerMenu  />
                 </div>
