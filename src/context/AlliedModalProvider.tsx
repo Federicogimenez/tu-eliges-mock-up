@@ -5,8 +5,9 @@ import { useLocation } from "react-router";
 export const AlliedModalStateContext = createContext<alliedModalData>({
   alliedName: '',
   alliedCompanyImg: "",
+  alliedCuponCode: "",
   isLoading: true,
-  userNotFound: false,
+  userNotFound: false
 })
 export const SwitchAlliedModalContext = createContext(()=>{})
 
@@ -22,13 +23,13 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
   const [modalData, setModalData] = useState({
     alliedName: '',
     alliedCompanyImg: "",
+    alliedCuponCode: "",
     isLoading: true,
     userNotFound: false
   })
   const url = useLocation().search;
 
   useEffect(() => {
-
     if(url.includes('?ally')){
       setModalState(true)
     }
@@ -36,65 +37,33 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
 
     const urlFetch = `https://api.tueliges.us/public/ally-code/${id}`
     console.log(urlFetch);
-    
-    setTimeout(() => {
-                if(id == 'SFLHCC'){
-                setModalData({
-                    alliedName: 'South Florida Hispanic Chamber of Commerce',
-                    alliedCompanyImg: '/img/png/south-florida-recurly-data-img.jpg',
-                    isLoading: false,
-                    userNotFound: false
-                  })
-              }else{
-                setModalData({
-                  alliedName: '',
-                  alliedCompanyImg:'',
-                  isLoading: false,
-                  userNotFound: true
-                })
-              }
-        // closeAlliedModal()
-            
-    }, 1500);
 
+    const api = async ()=>{
+      const data = await fetch(urlFetch);
+      const jsonData = await data.json();
+      return jsonData
+    };
+    api()
+    .then((data)=> {
+      if(data){
+        setModalData({
+          alliedName: data.allyCompanyName,
+          alliedCompanyImg: data.allyCompanyLogo,
+          alliedCuponCode: data.allyCoupons[0],
+          isLoading: false,
+          userNotFound: false
+        })
+      }else{
+        setModalData({
+          alliedName: '',
+          alliedCompanyImg: '',
+          alliedCuponCode: '',
+          isLoading: false,
+          userNotFound: true
+        })}
+    })
+    .catch(err=> console.log(err))
 
-
-
-
-
-    // async function fetchData(){
-    //   const response = await fetch(urlFetch)
-      // const response = await fetch(urlFetch, 
-      //   {method: 'GET',
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Origin": "https://tueliges.us",
-      //     "Access-Control-Allow-Methods":"PUT, POST, OPTIONS",
-      //     "Access-Control-Allow-Headers": "Special-Request-Header",
-      //     "Access-Control-Allow-Credentials": "true"
-      //   }})
-  //     const data = await response.json()
-  //     return data
-  //   }
-  //   fetchData()
-  //   .then(( data )=> {
-  //       if(data){
-  //       setModalData({
-  //           alliedName: data.allyCompanyName,
-  //           alliedCompanyImg: data.allyCompanyLogo,
-  //           isLoading: false,
-  //           userNotFound: false
-  //         })
-  //     }else{
-  //       setModalData({
-  //         alliedName: '',
-  //         alliedCompanyImg: '',
-  //         isLoading: false,
-  //         userNotFound: true
-  //       })
-  //     } }
-  //   )
-  //   .catch(err=>console.log(err)) 
   }, [url])
 
 

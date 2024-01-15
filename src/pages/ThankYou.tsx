@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 
-export default function ThanksYou() {
+export default function ThankYou() {
   const data = useLanguageContext();
 
   const url = useLocation().search;

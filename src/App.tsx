@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Home from "./pages/Home";
-import ThanksYou from "./pages/ThanksYou";
-import Faqs from "./pages/Faqs";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import Policy from "./pages/Policy";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "./context/Language";
+import Faqs from "./pages/Faqs";
+import Home from "./pages/Home";
+import Policy from "./pages/Policy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import ThankYou from "./pages/ThankYou";
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
       <LanguageProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/thanks-you" element={<ThanksYou />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/policy" element={<Policy />} />
