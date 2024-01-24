@@ -37,16 +37,16 @@ export default function Footer() {
                     info@uchooseit.us
                 </a>
                 <span>
-                    <a target="_blank" href="https://www.facebook.com/tueligesusa">
+                    <a target="_blank" href="https://facebook.com/Uchooseit.us">
                         <img src="/img/svg/facebook.svg" alt="facebook" />
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/tueliges.us/">
+                    <a target="_blank" href="https://www.instagram.com/uchooseit.us/">
                         <img src="/img/svg/ig.svg" alt="instagram" />
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/company/tueliges-us">
+                    <a target="_blank" href="https://www.linkedin.com/company/uchooseit-us/about/?viewAsMember=true">
                         <img src="/img/svg/linkedin-icon.svg" alt="linkedin" />
                     </a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UC5QtJ5tx41WsIIZGyru7_Ng">
+                    <a target="_blank" href="https://www.youtube.com/channel/UCTS9Hp-WjV4eMaqHATtmJSg">
                         <img src="/img/svg/youtube-icon.svg" alt="youtube" />
                     </a>
                 </span>
