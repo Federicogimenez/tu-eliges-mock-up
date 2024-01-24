@@ -6,36 +6,108 @@ export default function SectionApp() {
     const data = useLanguageContext();
 
     const sliderMobile = [
-        "/img/png/app/app-1.png",
-        "/img/png/app/app-2.png",
-        "/img/png/app/app-3.png",
-        "/img/png/app/app-4.png",
-        "/img/png/app/app-5.png",
-        "/img/png/app/app-6.png",
-        "/img/png/app/app-7.png",
-        "/img/png/app/app-8.png",
-        "/img/png/app/app-9.png",
-        "/img/png/app/app-10.png",
-        "/img/png/app/app-11.png",
-        "/img/png/app/app-12.png"
+        {
+            img:"/img/png/app/app-1.png",
+            text: data.app_slider_1
+        },
+        {
+            img:"/img/png/app/app-2.png",
+            text: data.app_slider_2
+        },
+        {
+            img:"/img/png/app/app-3.png",
+            text: data.app_slider_3
+        },
+        {
+            img:"/img/png/app/app-4.png",
+            text: data.app_slider_4
+        },
+        {
+            img:"/img/png/app/app-5.png",
+            text: data.app_slider_5
+        },
+        {
+            img:"/img/png/app/app-6.png",
+            text: data.app_slider_6
+        },
+        {
+            img:"/img/png/app/app-7.png",
+            text: data.app_slider_7
+        },
+        {
+            img:"/img/png/app/app-8.png",
+            text: data.app_slider_8
+        },
+        {
+            img:"/img/png/app/app-9.png",
+            text: data.app_slider_9
+        },
+        {
+            img:"/img/png/app/app-10.png",
+            text: data.app_slider_10
+        },
+        {
+            img:"/img/png/app/app-11.png",
+            text: data.app_slider_11
+        },
+        {
+            img:"/img/png/app/app-11.png",
+            text: data.app_slider_12
+        },
     ];
     const slider1 = [
-        "/img/png/app/app-1.png",
-        "/img/png/app/app-2.png",
-        "/img/png/app/app-3.png",
-        "/img/png/app/app-4.png"
+        {
+            img:"/img/png/app/app-1.png",
+            text: data.app_slider_1
+        },
+        {
+            img:"/img/png/app/app-2.png",
+            text: data.app_slider_2
+        },
+        {
+            img:"/img/png/app/app-3.png",
+            text: data.app_slider_3
+        },
+        {
+            img:"/img/png/app/app-4.png",
+            text: data.app_slider_4
+        },
     ];
     const slider2 = [
-        "/img/png/app/app-5.png",
-        "/img/png/app/app-6.png",
-        "/img/png/app/app-7.png",
-        "/img/png/app/app-8.png"
+        {
+            img:"/img/png/app/app-5.png",
+            text: data.app_slider_5
+        },
+        {
+            img:"/img/png/app/app-6.png",
+            text: data.app_slider_6
+        },
+        {
+            img:"/img/png/app/app-7.png",
+            text: data.app_slider_7
+        },
+        {
+            img:"/img/png/app/app-8.png",
+            text: data.app_slider_8
+        },
     ];
     const slider3 = [
-        "/img/png/app/app-9.png",
-        "/img/png/app/app-10.png",
-        "/img/png/app/app-11.png",
-        "/img/png/app/app-12.png"
+        {
+            img:"/img/png/app/app-9.png",
+            text: data.app_slider_9
+        },
+        {
+            img:"/img/png/app/app-10.png",
+            text: data.app_slider_10
+        },
+        {
+            img:"/img/png/app/app-11.png",
+            text: data.app_slider_11
+        },
+        {
+            img:"/img/png/app/app-11.png",
+            text: data.app_slider_12
+        },
     ];
 
     return (
