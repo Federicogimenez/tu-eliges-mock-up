@@ -4,7 +4,12 @@ import { Autoplay, EffectFade } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
-function SwiperApp(data:string[]) {
+
+interface swiperAppProps {
+  img: string,
+  text: string
+}
+function SwiperApp(sliders: swiperAppProps[]) {
 
     return (
 
@@ -15,14 +20,18 @@ function SwiperApp(data:string[]) {
             autoplay
             effect='fade'
             loop={true}
+            className='app-swiper-slider'
           >
             {
-              Object.values(data).map( (img, i)=>
+              Object.values(sliders).map( (slide, i)=>
                 <SwiperSlide
                   key={i}
-                  className='app-swiper-slider'>
+                  className='app-slider'>
                     <div className='app-slide'>
-                      <img src={img} alt="" />
+                      <div className='app-slide__img'>
+                        <img src={slide.img} alt="" />
+                      </div>
+                      <p>{slide.text}</p>
                     </div>
                 </SwiperSlide>
               )
