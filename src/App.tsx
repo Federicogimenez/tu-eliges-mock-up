@@ -5,23 +5,28 @@ import Home from "./pages/Home";
 import Policy from "./pages/Policy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ThankYou from "./pages/ThankYou";
+import { Suspense } from "react";
+import { Loading } from "./components/Loading";
 
 function App() {
 
   return (
     <BrowserRouter >
-      <LanguageProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/faqs" element={<Faqs />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/policy" element={<Policy />} />
+      <Suspense 
+        fallback={<Loading />}>
+        <LanguageProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/faqs" element={<Faqs />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/policy" element={<Policy />} />
 
-          {/* redirect path does not exist */}
-          <Route path="*" element={<Navigate to="/"/>} />
-        </Routes>
-      </LanguageProvider>
+            {/* redirect path does not exist */}
+            <Route path="*" element={<Navigate to="/"/>} />
+          </Routes>
+        </LanguageProvider>
+      </Suspense>
     </BrowserRouter>
   )
 }
