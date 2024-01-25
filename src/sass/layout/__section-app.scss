@@ -37,6 +37,15 @@
                 margin-bottom: 2rem;
             }
         }
+        &--subtitle{
+            width: 100%;
+            max-width: 48.5rem;
+            color: #313033;
+            text-align: center;
+            font-family: 'Monserrat';
+            font-size: clamp(2rem, 2.5vw, 3.2rem);
+            margin: 5rem 1rem;
+        }
         &--p{
             color: #313033;
             font-size: clamp(1.7rem, 2.3vw, 2rem);

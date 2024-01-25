@@ -17,7 +17,7 @@ function SwiperApp(sliders: swiperAppProps[]) {
             modules={[ Autoplay, EffectFade ]}
             spaceBetween={50}
             slidesPerView={1}
-            autoplay
+            autoplay={{delay: 4000, pauseOnMouseEnter: true}}
             effect='fade'
             loop={true}
             className='app-swiper-slider'
