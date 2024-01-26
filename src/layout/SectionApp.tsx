@@ -132,7 +132,7 @@ export default function SectionApp() {
                 <img src="/img/png/app/app-banner.png" alt="" />
             </div>
             <h4 className='section-app__content--subtitle'>
-                ¡Haz como ellos y comienza a ahorrar ahora mismo!
+                {data.app_subtitle}
             </h4>
             <div className='app-swiper-wrapper-desktop'>
                 <SwiperApp {...slider1}/>
