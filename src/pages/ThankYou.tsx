@@ -32,7 +32,7 @@ export default function ThankYou() {
           <div className="thanks-you__steps--step">
             <div>
               {data["thanks_step1"]}
-              <a href="#"> { data["thanks_step1_click"] }</a>
+              <a href="https://tueligesus.enjoymydeals.com/"> { data["thanks_step1_click"] }</a>
             </div>
           </div>
           <div className="thanks-you__steps--step">
