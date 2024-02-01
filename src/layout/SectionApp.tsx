@@ -51,7 +51,7 @@ export default function SectionApp() {
             text: data.app_slider_11
         },
         {
-            img:"/img/png/app/app-11.png",
+            img:"/img/png/app/app-12.png",
             text: data.app_slider_12
         },
     ];
@@ -105,7 +105,7 @@ export default function SectionApp() {
             text: data.app_slider_11
         },
         {
-            img:"/img/png/app/app-11.png",
+            img:"/img/png/app/app-12.png",
             text: data.app_slider_12
         },
     ];
