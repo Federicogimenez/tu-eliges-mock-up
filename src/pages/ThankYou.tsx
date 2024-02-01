@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext"
 
-export default function ThanksYou() {
+export default function ThankYou() {
   const data = useLanguageContext();
 
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function ThanksYou() {
           <div className="thanks-you__steps--step">
             <div>
               {data["thanks_step1"]}
-              <a href="#"> { data["thanks_step1_click"] }</a>
+              <a href="https://tueligesus.enjoymydeals.com/"> { data["thanks_step1_click"] }</a>
             </div>
           </div>
           <div className="thanks-you__steps--step">
