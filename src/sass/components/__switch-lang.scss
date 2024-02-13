@@ -6,6 +6,8 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
+    top: 5px;
+    margin-bottom: 10px;
     
     @media (max-width:1200px) {
         margin-top: 2rem;

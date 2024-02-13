@@ -158,7 +158,7 @@ export default function TermsAndConditions() {
                             <section id="option-5">
                                 <h5>5. MEMBERSHIP FEE</h5>
                                 <p>
-                                    For your convenience, your membership fee will be automatically billed to the credit or debit card account you designated when you registered with TuEliges.us (designated as the billing source), in accordance with the billing terms that will be provided to you upon registration at TuEliges.us. The charge on your credit card will appear as: TuEliges.us. Available membership plans are: $35.99 annually or if you have a referral promotional code, the price is $17.99 annually.
+                                    For your convenience, your membership fee will be automatically billed to the credit or debit card account you designated when you registered with TuEliges.us (designated as the billing source), in accordance with the billing terms that will be provided to you upon registration at TuEliges.us. The charge on your credit card will appear as: TuEliges.us. Available membership plans are: $47.99 annually or if you have a referral promotional code, the price is $23.99 annually.
                                 </p>
                             </section>
 
@@ -172,7 +172,10 @@ export default function TermsAndConditions() {
                             <section id="option-7">
                                 <h5>7. RIGHT TO CANCEL MEMBERSHIP</h5>
                                 <p>
-                                    (a) You have the right to cancel this Agreement at any time. You may cancel this Agreement by emailing support@tueliges.us. Cancel this Agreement during your trial, and you will owe nothing further; at any time thereafter, you will owe nothing further. You will remain liable for any other fees, purchases, or charges to be paid pursuant to this Agreement. (b) If TuEliges.us determines it is unable to bill the membership fee due hereunder to your designated billing source, TuEliges.us shall have the right to terminate this Agreement in which event you will no longer have access to any of the TuEliges.us benefits. In addition to TuEliges.us termination rights set forth above, TuEliges.us may elect in its sole discretion to keep this Agreement in effect but suspend your access to all the TuEliges.us benefits, until such time (if any) as TuEliges.us is able to bill the membership fee due hereunder to your designated billing source. 
+                                    (a) You have the right to cancel this Agreement at any time. You may cancel this Agreement at <a href="https://tueliges-us.recurly.com/account/create_account">tueliges-us.recurly.com/account/create_account</a>. 
+                                    (b) If TuEliges.us determines that it is unable to bill the membership fee due hereunder to its designated billing source, TuEliges.us shall have the right to terminate this Agreement, 
+                                    in which case you will no longer have access to any of the You choose. it benefits us. In addition to the termination rights of TuEliges.us set forth above, TuEliges.us may elect, in its sole discretion, 
+                                    to keep this Agreement in effect but suspend your access to all benefits of TuEliges.us, until such time (if applicable) that TuEliges.us may bill the membership fee due hereunder to its designated billing source.
                                 </p>
                             </section>
                             <section id="option-8">

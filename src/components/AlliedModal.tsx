@@ -2,6 +2,7 @@ import { useAlliedModalContext } from "../hooks/UseAlliedModalContext";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { useSwitchAlliedModalContext } from "../hooks/UseSwitchAlliedModalContext"
 import { Loading } from "./Loading";
+import SwitchLang from "./SwitchLang";
 
 export default function AlliedModal() {
 
@@ -19,6 +20,9 @@ export default function AlliedModal() {
 
   return (
     <div className="allied-modal-wrapper">
+      <div className="allied-modal-wrapper__switch-lang">
+        <SwitchLang />
+      </div>
         <div className='allied-modal'>
           {
             alliedData.isLoading && <Loading />
@@ -64,9 +68,9 @@ export default function AlliedModal() {
                 <span className="allied-modal__modal--box-blue-close-btn" onClick={closeModalCallback}>
                   <img src="/img/svg/close.svg" alt="" />
                 </span>
-                <h4 className="box-blue__welcome">¡Bienvenido!</h4>
-                <a className="box-blue__data" href="#membership" onClick={closeModalCallback}>Conocer más sobre nuestros descuentos</a>
-                <a className="box-blue__buy-btn" href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode}>COMPRAR MEMBRESIA</a>
+                <h4 className="box-blue__welcome">{data.modal_welcome}</h4>
+                <a className="box-blue__data" href="https://tueligesus.enjoymydeals.com/" target="_blank" >{data.modal_info}</a>
+                <a className="box-blue__buy-btn" href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode}>{data.modal_cta}</a>
               </div>
             </div>
             </div>
