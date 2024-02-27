@@ -11,8 +11,11 @@
         position: absolute;
         width: 150px;
         right: 2vw;
-        margin-top: 20px;
         z-index: 1999999;
+
+        &>.switch-languaje{
+            margin-top: 0;
+        }
     }
 }
 .allied-modal{
@@ -148,7 +151,8 @@
             left: 5%;
             
             @media (max-width:768px){
-                left: 0;
+                    height: fit-content;
+                    left: 0;
             }
             @media (orientation: landscape){
                 left: 5%;
@@ -178,7 +182,8 @@
                     padding-right: auto;
                     
                     img{
-                        width: clamp(125px, 20vw, 215px);
+                        height: clamp(8rem, 15vh, 12rem);
+                        // width: clamp(125px, 20vw, 215px);
                     }
                 }
                 &__text{
