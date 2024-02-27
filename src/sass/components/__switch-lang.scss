@@ -1,6 +1,6 @@
 .switch-languaje{
     color: #ffffffb6;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
     font-family: "Monserrat Semibold";
     cursor: pointer;
     position: relative;
@@ -24,10 +24,10 @@
 
     ul{
         display: none;
-        width: 110%;
+        width: 115%;
         position: absolute;
         bottom: -40px;
-        left: -15px;
+        left: -8px;
         background-color: #000;
         border: 2px solid #fff;
         border-top: none;

@@ -65,7 +65,7 @@
             text-transform: uppercase;
             color: #ffff;
             padding: 1rem 2rem;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2.2vw, 2rem);
             font-weight: 300;
             background-size: 220%;
             transition: all .4s;

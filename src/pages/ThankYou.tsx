@@ -1,32 +1,63 @@
 import { useLocation, useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
+import SwitchLang from "../components/SwitchLang";
+import { useRef, useState } from "react";
 
 export default function ThankYou() {
-  const data = useLanguageContext();
 
+  
+  const data = useLanguageContext();
+  
   const url = useLocation().search;
   
   const id = url.split('=').pop();
 
   const navigate = useNavigate();
 
+  const [copySuccess, setCopySuccess] = useState('');
+  const textAreaRef = useRef(null);
+  
+  function copyToClipboard() {
+    if(id){
+      navigator.clipboard.writeText(id);
+      setCopySuccess(data['thanks_copy_clipboard']);
+    }
+    else{
+      setCopySuccess('ID Error!');
+    }
+    setTimeout(() => {
+      setCopySuccess('')
+    }, 2000);
+  }
   function handleRedirectHome (){
       navigate("/");
       window.scrollTo(0, 0)
   }
-
+  
   return (
-      <div className="thanks-you">
+    <div className="thanks-you">
+        <div className="thanks-you__switch-lang">
+          <SwitchLang />
+        </div>
         <a onClick={handleRedirectHome} className="thanks-you__logo">
           <img src="/img/png/logo-tu-eliges.png" alt="" />
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
         <p className="thanks-you__p">{ data["thanks_paragraph2"] }</p>
-        <button className="thanks-you__key-btn">{ id }</button>
+
+        <p className="thanks-you__p">
+        { data["thanks_paragraph3"] }
+          <span ref={textAreaRef} onClick={copyToClipboard}>
+            {copySuccess == '' ? null : <small>{copySuccess}</small>}
+            { id == '' ? 'ABC123' : id}
+          </span></p>
         <p className="thanks-you__support-text">
-          { data["thanks_support_text"] } 
-          <a href="mailto:support@tueliges.us">{ data["thanks_support_email"] }</a>
+          { data["thanks_paragraph4"] } 
+          <a href="mailto:support@tueliges.us">{data["thanks_support_email"] }</a>
+        </p>
+        <p className="thanks-you__p">
+          { data["thanks_paragraph5"] }
         </p>
         <div className="thanks-you__steps">
           <div className="thanks-you__steps--step">

@@ -84,8 +84,8 @@
         &--download-btn{
             position: absolute;
             z-index: 10;
-            bottom: 40px;
-            padding-left: 120px;
+            bottom: 2vw;
+            padding-left: clamp(120px, 31vw, 480px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -93,7 +93,7 @@
 
             a{
                 text-decoration: none;
-                width: clamp(87px, 100%, 127px);
+                width: clamp(80px, 12vw, 160px);
                 
                 img{
                     width: 100%;
