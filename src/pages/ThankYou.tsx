@@ -39,7 +39,7 @@ export default function ThankYou() {
         <div className="thanks-you__switch-lang">
           <SwitchLang />
         </div>
-        <a onClick={handleRedirectHome} className="thanks-you__logo">
+        <a className="thanks-you__logo">
           <img src="/img/png/logo-tu-eliges.png" alt="" />
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
@@ -63,7 +63,7 @@ export default function ThankYou() {
           <div className="thanks-you__steps--step">
             <div>
               {data["thanks_step1"]}
-              <a href="https://tueligesus.enjoymydeals.com/"> { data["thanks_step1_click"] }</a>
+              <a href="https://tueligesus.enjoymydeals.com/" target="_blank"> { data["thanks_step1_click"] }</a>
             </div>
           </div>
           <div className="thanks-you__steps--step">
@@ -71,10 +71,10 @@ export default function ThankYou() {
           </div>
         </div>
         <div className="thanks-you__download">
-          <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1">
+          <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1" target="_blank">
             <img src="/img/png/android-logo.png" alt="" />
           </a>
-          <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196">
+          <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196" target="_blank">
             <img src="/img/png/apple-logo.png" alt="" />
           </a>
         </div>
