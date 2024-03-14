@@ -130,6 +130,14 @@ export default function SectionApp() {
             </p>
             <div className='section-app__content--banner'>
                 <img src="/img/png/app/app-banner.png" alt="" />
+                <div className='section-app__content--download-btn'>
+                    <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1">
+                        <img src="/img/png/android-logo.png" alt="" />
+                    </a>
+                    <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196">
+                        <img src="/img/png/apple-logo.png" alt="" />
+                    </a>
+                </div>
             </div>
             <h4 className='section-app__content--subtitle'>
                 {data.app_subtitle}
@@ -143,14 +151,7 @@ export default function SectionApp() {
                 <SwiperApp {...sliderMobile}/>
             </div>
             <ButtonTwoStates text_static={data["app_button"]} text_hover={data["app_button_hover"]} />
-            <div className='section-app__content--download-btn'>
-                <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1">
-                    <img src="/img/png/android-logo.png" alt="" />
-                </a>
-                <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196">
-                    <img src="/img/png/apple-logo.png" alt="" />
-                </a>
-            </div>
+
         </div>
         <div className="section-app__border section-app__border--right"></div>
     </div>

@@ -69,6 +69,7 @@
         &--banner{
             height: auto;
             margin-bottom:4rem;
+            position: relative;
     
             img{
                 display: block;
@@ -82,7 +83,10 @@
             margin-top: 4rem;
         }
         &--download-btn{
-            margin-top: 3.5rem;
+            position: absolute;
+            z-index: 10;
+            bottom: 2vw;
+            padding-left: clamp(120px, 31vw, 480px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,7 +94,7 @@
 
             a{
                 text-decoration: none;
-                width: clamp(87px, 100%, 127px);
+                width: clamp(80px, 12vw, 160px);
                 
                 img{
                     width: 100%;
