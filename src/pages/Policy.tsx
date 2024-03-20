@@ -56,7 +56,7 @@ export default function Policy() {
                                 </strong>
                             </p>
                             <p>
-                                This website (the "Website") is a member of the TuEliges.us family of Internet properties, operated by TuEliges.us https://www.TuEliges.us ("We," or "Company").
+                                This website (the "Website") is a member of the uchooseit.us family of Internet properties, operated by uchooseit.us https://www.uchooseit.us ("We," or "Company").
                             </p>
                             <p>
                                 By accessing, using, registering, or placing an order at or from this Website, you agree to be bound by this Privacy Policy. You hereby state and affirm that they have read, understand, and agree with this policy. Therefore, please take the time to read this policy in full, which is part of the Terms and Condition of Use of this Website. If you do not agree to the terms and conditions of this Privacy Policy, please do not use this Website or order product from us. For your convenience we will change the "Last Updated" date above to reflect changes to this policy.
@@ -81,7 +81,7 @@ export default function Policy() {
                                 <p>
                                     <strong>1.3.</strong> Third Party Information. 
                                     <br />
-                                    Company may collect Personal Information from you when you provide information to a third party and Company subsequently acquires or uses the information provided by the third party. Such information may include, but is not limited to, your name, email address, street address, zip code, telephone numbers (including cell phone numbers and carriers), birth date, gender, salary range, education and marital status, occupation, industry of employment, personal and online interests, and such other information you may have provided to the third party. When acquiring this information, Company seeks assurances from the third party that you agreed to provide and have such information acquired by Company. If you did not give express permission, or you would like to remove your permission, you may suppress all of your information by sending notification to us at support@tueliges.us.
+                                    Company may collect Personal Information from you when you provide information to a third party and Company subsequently acquires or uses the information provided by the third party. Such information may include, but is not limited to, your name, email address, street address, zip code, telephone numbers (including cell phone numbers and carriers), birth date, gender, salary range, education and marital status, occupation, industry of employment, personal and online interests, and such other information you may have provided to the third party. When acquiring this information, Company seeks assurances from the third party that you agreed to provide and have such information acquired by Company. If you did not give express permission, or you would like to remove your permission, you may suppress all of your information by sending notification to us at support@uchooseit.us.
                                 </p>
                                 <p>
                                     <strong>1.4.</strong> Other Methods of Collecting Personal Information. 
@@ -135,7 +135,7 @@ export default function Policy() {
                                 <p>
                                     <strong>2.2.</strong> Email and Unsubscribe Policy. 
                                     <br />
-                                    Company uses Personal Information to provide Company or third-party promotional offers via email. Company may maintain separate email lists for different purposes. If an email recipient wishes to stop receiving email from a particular list, they need to follow the instructions at the end of the email message to unsubscribe from the list. To unsubscribe from all Company's email lists, a person need only send an email to support@tueliges.us with the subject line “email unsubscribe” or similar language.
+                                    Company uses Personal Information to provide Company or third-party promotional offers via email. Company may maintain separate email lists for different purposes. If an email recipient wishes to stop receiving email from a particular list, they need to follow the instructions at the end of the email message to unsubscribe from the list. To unsubscribe from all Company's email lists, a person need only send an email to support@uchooseit.us with the subject line “email unsubscribe” or similar language.
                                     Company's unsubscribe process impacts only the future delivery of electronic mailings disseminated by Company on its own behalf. You may still receive electronic mailings sent on behalf of Third Parties and your Personal Information may still be shared with Third Parties for use in offline marketing and data appends, including email appends unless you unsubscribe as provided above.
 
                                     You should also note that unsubscribing from Company's electronic mailings will not automatically unsubscribe your information from any Third-Party business associates and licensees of the data. Since Third Party associates and licensee partners maintain separate databases from Company, and you will need to unsubscribe from each source individually, if desired. This allows you the freedom to pick and choose which subscriptions to maintain and which to discontinue.
@@ -300,7 +300,7 @@ export default function Policy() {
                                     </strong>
                                     California User Consumer Rights.
                                     <br />
-                                    In accordance with California Civil Code Sec. 1789.3, California resident users are entitled to know that they may file grievances and complaints with California Department of Consumer Affairs, 400 R Street, STE 1080, Sacramento, CA 95814; or by phone at 888-356-2024; or by email to dca@dca.ca.gov. For more information about protecting your privacy, you may wish to visit: http://www.ftc.gov. If you have questions about this policy, please contact us at support@tueliges.us 
+                                    In accordance with California Civil Code Sec. 1789.3, California resident users are entitled to know that they may file grievances and complaints with California Department of Consumer Affairs, 400 R Street, STE 1080, Sacramento, CA 95814; or by phone at 888-356-2024; or by email to dca@dca.ca.gov. For more information about protecting your privacy, you may wish to visit: http://www.ftc.gov. If you have questions about this policy, please contact us at support@uchooseit.us
                                 </p>
                             </section>
                         </article>

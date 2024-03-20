@@ -57,14 +57,14 @@ export default function Faqs() {
                                 <h5>{data.faq_title_2}</h5>
                                 <p>
                                     {data.faq_content_2_1}
-                                    <a href="https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD">
+                                    <a href="https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD">
                                         {data.faq_content_2_1_link}
                                     </a>
                                 </p>
                                 <p>{data.faq_content_2_2}</p>
                                 <p>
                                     {data.faq_content_2_3_phrase_1}
-                                    <a href="http://tueligesus.enjoymydeals.com/">
+                                    <a href="uchooseitus.enjoymydeals.com/">
                                         {data.faq_content_2_3_link}
                                     </a>
                                     {data.faq_content_2_3_phrase_2}
@@ -77,11 +77,11 @@ export default function Faqs() {
                                 <p>{data.faq_content_2_9}</p>
                                 <p>
                                     {data.faq_content_2_10_phrase_1}
-                                    <a href="http://www.tueliges.us/">
+                                    <a href="http://www.uchooseit.us">
                                         {data.faq_content_2_10_link1}
                                     </a>
                                     {data.faq_content_2_10_phrase_2}
-                                    <a href="http://tueligesus.enjoymydeals.com/">
+                                    <a href="http://uchooseitus.enjoymydeals.com">
                                         {data.faq_content_2_10_link2}
                                     </a>
                                     {data.faq_content_2_10_phrase_3}
