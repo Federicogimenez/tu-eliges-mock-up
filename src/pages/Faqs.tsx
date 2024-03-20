@@ -46,7 +46,7 @@ export default function Faqs() {
                             <BurgerMenuAlternative {...burgerOptions} />
                         </header>
                         <article>
-                            <h2>Preguntas Frecuentes</h2>
+                            <h2>{data.faq_faq}</h2>
                             <section id="option-1">
                                 <h5>{data.faq_title_1}</h5>
                                 <p>
