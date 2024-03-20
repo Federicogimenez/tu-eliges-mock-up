@@ -18,7 +18,7 @@ export default function AboutUs() {
                 <p>
                     { data["aboutus_paragraph_3"] }
                 </p>
-                <a href="mailto:info@tueliges.us">
+                <a href="mailto:info@uchooseit.us">
                     { data["aboutus_cta"] }
                 </a>
             </div>

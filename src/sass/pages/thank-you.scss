@@ -7,19 +7,25 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: clamp(30px, 5vw, 100px) 0;
+    padding-top: 2rem;
+    padding-bottom: 8rem;
 
-
+    &__switch-lang{
+        margin-left: auto;
+        margin-right: 2rem;
+        width: fit-content;
+    }
     &__logo{
         width: 95%;
         max-width: 1000px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-top: 2.5rem;
         margin-bottom: 6rem;
 
         img{
-            width: clamp(148px, 25vw, 391px);
+            height: clamp(108px, 8vw, 150px);
         }
     }
     &__title{
@@ -39,18 +45,46 @@
         margin-bottom: clamp(2rem, 2.5vw, 4rem);
         width: 95%;
         max-width: 1000px;
+
+        span{
+            font-family: "Monserrat Italic";
+            border-bottom: 2px solid #2995FC;
+            cursor: pointer;
+            transform: translateY(0);
+            padding: 0 10px ;
+            position: relative;
+
+            small{
+                position: absolute;
+                top: -101%;
+                left: 95%;
+                width: fit-content;
+                text-wrap: nowrap;
+                background-color: #2995FC;
+                border-radius: 8px;
+                border: 1px solid #fff;
+                padding: 5px;
+                color: #fff;
+                font-size: 12px;
+                font-family: 'Monserrat';
+
+            }
+        }
     }
-    &__key-btn{
-        margin: 0 auto;
-        padding: 12px 50px;
-        color: #fff;
-        text-transform: uppercase;
-        background-color: #00BFE9;
-        margin-bottom: clamp(4rem, 5vw, 6.6rem);
-        text-decoration: none;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+    &__list{
+        width: 95%;
+        max-width: 1000px;
+        margin-bottom: 20px;
+        p{
+            margin-bottom: 7px;
+        }
+
+        ul{
+            padding-left: 50px;
+            li{
+                margin-bottom: 7px;
+            }
+        }
     }
     &__support-text{
         color: #fff;
@@ -60,6 +94,11 @@
         margin-bottom: clamp(2rem, 2.5vw, 4rem);
         width: 95%;
         max-width: 1000px;
+
+        a{
+            color: #fff;
+            cursor: pointer;
+        }
     }
     &__steps{
         width: 95%;
@@ -99,7 +138,7 @@
 
         a{
             text-decoration: none;
-            width: clamp(100px, 9vw, 228px);
+            width: clamp(100px, 15vw, 300px);
 
             img{
                 width: 100%;
@@ -125,7 +164,7 @@
         margin-bottom: clamp(2rem, 4vw, 7rem);
 
         a{
-            width: clamp(28px, 3.5vw, 58px);
+            width: clamp(28px, 3vw, 45px);
 
             img{
                 width: 100%;
@@ -138,8 +177,6 @@
         transition: all .2s;
         color: #2995FC;
         font-size: clamp(1.8rem, 2.5rem, 3rem);
-        &:hover{
-            text-decoration: underline;
-        }
+        cursor: pointer;
     }
 }
