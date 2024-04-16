@@ -12,6 +12,7 @@
     min-height: 50rem;
     padding: 8rem 4rem 2rem 4rem;
 }
+
 .category-slide{
     display: flex;
     justify-content: space-between;
@@ -64,16 +65,15 @@
         }
     }
 }
-
 .category-swiper-thumb{
-    position: absolute;
-    z-index: 20;
-    height: auto;
-    width: clamp(30rem, 100%, 70rem);
-    box-sizing: border-box;
-    padding: 1rem;
+    position: absolute !important;
+    z-index: 20 !important;
+    height: auto !important;
+    width: clamp(30rem, 100%, 70rem) !important;
+    box-sizing: border-box !important;
+    padding: 1rem !important;
     padding-left: 4rem;
-
+    
     &__thumb{
         width: 18% !important;
         padding: 1rem .2rem;
