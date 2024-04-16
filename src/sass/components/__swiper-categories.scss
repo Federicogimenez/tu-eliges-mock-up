@@ -83,7 +83,7 @@
         border: 1px solid #2995FC;
         font-size: clamp(1.2rem, 3vw, 2rem);
         font-family: "Monserrat";
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         cursor: pointer;
