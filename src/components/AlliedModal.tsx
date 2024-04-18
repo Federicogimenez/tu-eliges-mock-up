@@ -61,8 +61,8 @@ export default function AlliedModal() {
                   <img src="/img/svg/close.svg" alt="" />
                 </span>
                 <h4 className="box-blue__welcome">¡Bienvenido!</h4>
-                <a className="box-blue__data" href="https://tueligesus.enjoymydeals.com/">Conocer más sobre nuestros descuentos</a>
-                <a className="box-blue__buy-btn" href="https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD">COMPRAR MEMBRESIA</a>
+                <a className="box-blue__data" href="https://uchooseitus.enjoymydeals.com/">{data.modal_info}</a>
+                <a className="box-blue__buy-btn" href="https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]=">{data.modal_cta}</a>
               </div>
             </div>
             </div>

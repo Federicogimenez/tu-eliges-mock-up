@@ -158,7 +158,7 @@ export default function TermsAndConditions() {
                             <section id="option-5">
                                 <h5>5. MEMBERSHIP FEE</h5>
                                 <p>
-                                    For your convenience, your membership fee will be automatically billed to the credit or debit card account you designated when you registered with uchooseit.us (designated as the billing source), in accordance with the billing terms that will be provided to you upon registration at uchooseit.us. The charge on your credit card will appear as: uchooseit.us. Available membership plans are: $35.99 annually or if you have a referral promotional code, the price is $17.99 annually.
+                                    For your convenience, your membership fee will be automatically billed to the credit or debit card account you designated when you registered with uchooseit.us (designated as the billing source), in accordance with the billing terms that will be provided to you upon registration at uchooseit.us. The charge on your credit card will appear as: uchooseit.us. Available membership plans are: $47.99 annually or if you have a referral promotional code, the price is $23.99 annually.
                                 </p>
                             </section>
 
