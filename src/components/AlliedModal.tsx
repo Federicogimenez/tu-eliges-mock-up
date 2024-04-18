@@ -45,7 +45,7 @@ export default function AlliedModal() {
                     <img src="/img/svg/close.svg" alt="" />
                   </span>
                   <picture className="box-white__company-logo">
-                    <img src="/img/png/company-name.webp" alt="" />
+                    <img src={alliedData.alliedCompanyImg} alt="" />
                   </picture>
                   <p className="box-white__text">
                     {data.modal_paragraph1_phrase1}{alliedData.alliedName}{data.modal_paragraph1_phrase2}
@@ -62,7 +62,7 @@ export default function AlliedModal() {
                 </span>
                 <h4 className="box-blue__welcome">¡Bienvenido!</h4>
                 <a className="box-blue__data" href="https://uchooseitus.enjoymydeals.com/">{data.modal_info}</a>
-                <a className="box-blue__buy-btn" href="https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]=">{data.modal_cta}</a>
+                <a className="box-blue__buy-btn" href={"https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]="+ alliedData.alliedCuponCode}>{data.modal_cta}</a>
               </div>
             </div>
             </div>

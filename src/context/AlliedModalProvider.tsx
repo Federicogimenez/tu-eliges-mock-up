@@ -4,6 +4,8 @@ import { useLocation } from "react-router";
 
 export const AlliedModalStateContext = createContext<alliedModalData>({
   alliedName: '',
+  alliedCompanyImg: "",
+  alliedCuponCode: "",
   isLoading: true,
   userNotFound: false
 })
@@ -15,8 +17,13 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
   
   const [modalState, setModalState]= useState(false)
 
+  function closeAlliedModal (){
+    setModalState(false)
+  }
   const [modalData, setModalData] = useState({
     alliedName: '',
+    alliedCompanyImg: "",
+    alliedCuponCode: "",
     isLoading: true,
     userNotFound: false
   })
@@ -26,56 +33,38 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
     if(url.includes('?ally')){
       setModalState(true)
     }
+    const id = url.split('=').pop();
+
+    const urlFetch = `https://api.tueliges.us/public/ally-code/${id}`
+
+    const api = async ()=>{
+      const data = await fetch(urlFetch);
+      const jsonData = await data.json();
+      return jsonData
+    };
+    api()
+    .then((data)=> {
+      if(data){
+        setModalData({
+          alliedName: data.allyCompanyName,
+          alliedCompanyImg: data.allyCompanyLogo,
+          alliedCuponCode: data.allyCoupons[0],
+          isLoading: false,
+          userNotFound: false
+        })
+      }else{
+        setModalData({
+          alliedName: '',
+          alliedCompanyImg: '',
+          alliedCuponCode: '',
+          isLoading: false,
+          userNotFound: true
+        })}
+    })
+    .catch(err=> console.log(err))
+
   }, [url])
 
-  useEffect(() => {
-
-    const id = url.split('=').pop();
-    setTimeout(() => {
-        // fetch(`http://54.163.225.125:3011/?ally=${id}`)
-        //   .then( resp => resp.json() )
-        //   .then( data =>{
-        //     console.log(data);
-            
-        //       if(data){
-        //         setModalData({
-        //             alliedName: data.name,
-        //             isLoading: false,
-        //             userNotFound: false
-        //           })
-        //       }else{
-        //         setModalData({
-        //           alliedName: '',
-        //           isLoading: false,
-        //           userNotFound: true
-        //         })
-        //       }
-        //     } 
-        //   ).catch(err=>console.log(err))
-    
-        // closeAlliedModal()
-              if(id == 'marcelo'){
-                setModalData({
-                    alliedName: 'Marcelo Gaffoglio',
-                    isLoading: false,
-                    userNotFound: false
-                  })
-              }else{
-                setModalData({
-                  alliedName: '',
-                  isLoading: false,
-                  userNotFound: true
-                })
-              }
-            
-    }, 1500);
-  }, [modalState, url])
-  
-
-
-  function closeAlliedModal (){
-    setModalState(false)
-  }
   return (
     <AlliedModalStateContext.Provider value={modalData}>
       <SwitchAlliedModalContext.Provider value={closeAlliedModal}>
