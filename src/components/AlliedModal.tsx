@@ -29,7 +29,7 @@ export default function AlliedModal() {
               <div className="allied-modal__user-not-found--content">
                 <img src="/img/svg/error.svg" alt="error" />
                 <p>
-                  No fue posible validar tu membresia
+                  It can't be posible to validate your membership
                 </p>
               </div>
               <button onClick={closeModalCallback}>Ok</button>
