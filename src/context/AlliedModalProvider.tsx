@@ -32,8 +32,8 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
   useEffect(() => {
     if(url.includes('?ally')){
       setModalState(true)
-    }
-    const id = url.split('=').pop();
+
+      const id = url.split('=').pop();
 
     const urlFetch = `https://api.tueliges.us/public/ally-code/${id}`
 
@@ -61,8 +61,16 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
           userNotFound: true
         })}
     })
-    .catch(err=> console.log(err))
-
+    .catch( err =>{
+      if (err) { 
+        setModalData({
+          alliedName: '',
+          alliedCompanyImg: '',
+          alliedCuponCode: '',
+          isLoading: false,
+          userNotFound: true})
+        }})
+    }
   }, [url])
 
   return (
