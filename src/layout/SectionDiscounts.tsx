@@ -67,6 +67,12 @@ export default function SectionDiscounts() {
                                 back_text={data["cards_card4_back"]} />
                         </div>
                     </div>
+                <p className="section-discounts__content--subtitle">{data.card_subtitle}</p>
+                <a href="https://tueligesus.enjoymydeals.com/ " target="_blank">
+                    <span>
+                        {data.cards_cta}
+                    </span>
+                </a>
             </div>
             <div className="section-discounts__border section-discounts__border--2"></div>
         </section>
