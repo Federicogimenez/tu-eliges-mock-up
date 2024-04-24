@@ -58,6 +58,18 @@
             margin-bottom: 1rem;
             margin-top: 1.5rem;
             cursor: pointer;
+            
+            span{
+                display: block;
+                position: relative;
+                transform: scale(1);
+                background-color: transparent;
+                transition: all .2s ease-in-out;
+            }
+            &:hover span{
+                text-shadow: 2px 2px 5px  #000;
+                transform: scale(1.4) rotate(-6deg) translateY(-5px);
+            }
         }
     }
     
