@@ -61,8 +61,15 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
           userNotFound: true
         })}
     })
-    .catch(err=> console.log(err))
-
+    .catch( err =>{
+      if (err) { 
+        setModalData({
+          alliedName: '',
+          alliedCompanyImg: '',
+          alliedCuponCode: '',
+          isLoading: false,
+          userNotFound: true})
+        }})
   }, [url])
 
   return (

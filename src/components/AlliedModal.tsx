@@ -1,6 +1,7 @@
 import { useAlliedModalContext } from "../hooks/UseAlliedModalContext";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { useSwitchAlliedModalContext } from "../hooks/UseSwitchAlliedModalContext"
+import Loading from "./Loading";
 
 export default function AlliedModal() {
 
@@ -20,8 +21,7 @@ export default function AlliedModal() {
     <div className="allied-modal-wrapper">
         <div className='allied-modal'>
           {
-            alliedData.isLoading && 
-            <><img className="allied-modal__loader" src="/img/svg/loading.svg" alt="loading.." /></>
+            alliedData.isLoading && <Loading />
           }
           {
             alliedData.userNotFound && 
@@ -29,7 +29,7 @@ export default function AlliedModal() {
               <div className="allied-modal__user-not-found--content">
                 <img src="/img/svg/error.svg" alt="error" />
                 <p>
-                  It can't be posible to validate your membership
+                  {data.modal_error}
                 </p>
               </div>
               <button onClick={closeModalCallback}>Ok</button>
