@@ -126,18 +126,34 @@
                     padding: 2rem;
                     text-align: center;
                 }
-                &--back--text{
+                &--back--title{
+                    display: none;
+                    font-size: clamp(2.5rem, 4vw, 3rem);
                     color: #2995FC;
-                    font-size: clamp(2rem, 2.5vw, 3.2rem);
-                    font-family: "Monserrat";
-                    text-align: center;
-                    margin-bottom: 1.5rem;
+                    font-family: "Monserrat Semibold";
+                    margin-bottom: 1.2rem;
+
+                    @media (max-width:768px) {
+                        display: inline-block;
+
+                    }
                 }
                 &--back--price{
                     margin-bottom: 1.5rem;
                     color: #2995FC;
-                    font-size: clamp(2.5rem, 3vw, 4rem);
+                    font-size: clamp(1.7rem, 2.8vw, 4rem);
                     font-family: "Monserrat Semibold";
+
+                    @media (max-width:768px) {
+                        color: #fff;
+                    }
+                }
+                &--back--text{
+                    color: #2995FC;
+                    font-size: clamp(1.4rem, 2.5vw, 3rem);
+                    font-family: "Monserrat";
+                    text-align: center;
+                    margin-bottom: 1rem;
                 }
             }
         }
