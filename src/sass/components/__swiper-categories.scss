@@ -40,6 +40,10 @@
             color: #313033;
             margin-bottom: 3.9rem;
             max-width: 53rem;
+
+            @media (max-width:768px) {
+                margin-bottom: 1.5rem;
+            }
         }
     }
     &__img-box{
@@ -107,7 +111,10 @@
 
         &__data-box{
             flex: none;
-            p{padding-left: 2vw;}
+            p{
+                padding-left: 2vw;
+                text-align: left;
+            }
             a{display: none;}
         }
         &__img-box{

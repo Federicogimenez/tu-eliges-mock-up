@@ -47,6 +47,9 @@ export default function SectionPrice() {
                     { data["membership_card_front3"] }
                 </div>
                 <div className="price-card__side price-card__side--back">
+                    <span className="price-card__side--back--title">
+                        { data["membership_card_back1-mob"] }
+                    </span>
                     <span className="price-card__side--back--price">
                         { data["membership_card_back1"] }
                     </span>

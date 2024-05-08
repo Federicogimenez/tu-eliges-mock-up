@@ -1,13 +1,13 @@
 .section-categories{
     padding: clamp(2rem, 3vw, 3rem) 0;
-    h4{
+    &__title{
         color: #313033;
         font-family: "Monserrat";
         font-size: clamp(2rem, 2.3vw, 2.8rem);
         text-align: center;
         margin-bottom: 1.5rem;
     }
-    p{
+    &__subtitle{
         color: #313033;
         font-family: "Monserrat";
         font-size: clamp(1.8rem,2vw,2.5rem);

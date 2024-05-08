@@ -3,10 +3,17 @@
 @import "./sass/base/__base";
 @import "./sass/base/__animations";
 
-@import "./sass/pages/home.scss";
-@import "./sass/pages/thank-you.scss";
-@import "./sass/pages/legals.scss";
-
+@import "./sass/components/__allied-modal.scss";
+@import "./sass/components/__burger.scss";
+@import "./sass/components/__burger-alternative.scss";
+@import "./sass/components/__buttons.scss";
+@import "./sass/components/__discount-card.scss";
+@import "./sass/components/__navbar.scss";
+@import "./sass/components/__loading.scss";
+@import "./sass/components/__swiper-app.scss";
+@import "./sass/components/__swiper-categories.scss";
+@import "./sass/components/__swiper-brands.scss";
+@import "./sass/components/__switch-lang.scss";
 
 @import "./sass/layout/__header.scss";
 @import "./sass/layout/__about-us.scss";
@@ -18,14 +25,6 @@
 @import "./sass/layout/__section-price.scss";
 @import "./sass/layout/__section-brands.scss";
 
-@import "./sass/components/__allied-modal.scss";
-@import "./sass/components/__burger.scss";
-@import "./sass/components/__burger-alternative.scss";
-@import "./sass/components/__button-two-states.scss";
-@import "./sass/components/__discount-card.scss";
-@import "./sass/components/__navbar.scss";
-@import "./sass/components/__loading.scss";
-@import "./sass/components/__swiper-app.scss";
-@import "./sass/components/__swiper-categories.scss";
-@import "./sass/components/__swiper-brands.scss";
-@import "./sass/components/__switch-lang.scss";
+@import "./sass/pages/home.scss";
+@import "./sass/pages/thank-you.scss";
+@import "./sass/pages/legals.scss";
