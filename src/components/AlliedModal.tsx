@@ -53,6 +53,10 @@ export default function AlliedModal() {
                   <p className="box-white__text">
                     {data.modal_paragraph2}
                   </p>
+                  <p className="box-white__text">
+                    {data.modal_paragraph3}
+                  </p>
+                  <img src="/img/gif/activate_code.gif" alt="activate your code" width={'300px'} />
                 </div>
             </div>
             <div className="allied-modal__modal--box-2">

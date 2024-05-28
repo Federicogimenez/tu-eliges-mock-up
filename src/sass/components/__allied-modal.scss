@@ -19,6 +19,7 @@
     align-items: stretch;
     justify-content: center;
     padding: 2rem 1rem;
+    padding-top: 50px;
 
     @media (max-height:500px) and (orientation: landscape){
         align-items: flex-start;
@@ -73,11 +74,10 @@
         
     }
     &__modal{
-        width: clamp(25rem, 90%, 80rem);
+        width: clamp(25rem, 90%, 100rem);
         height: 100%;
-        max-height: 50rem;
+        max-height: 58rem;
         min-height: 35rem;
-        // align-self: center;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -98,7 +98,7 @@
             position: absolute;
             z-index: 20;
             top: 15px;
-            right: 15px;
+            right: 30px;
 
             @media (orientation: landscape){
                 display: none;
@@ -139,8 +139,9 @@
             z-index: 10;
             left: 5%;
             
-            @media (max-width:768px){
-                left: 0;
+            @media (max-width:710px){
+                    height: fit-content;
+                    left: 0;
             }
             @media (orientation: landscape){
                 left: 5%;
@@ -150,7 +151,7 @@
                 height: 100%;
                 width: 100%;
                 background-color: #fff;
-                padding: 2rem 4rem;
+                padding: 2rem 2.2rem 2rem 4rem;
                 position: relative;
                 overflow-y: auto;
                 clip-path: polygon( 1.367% 4.957%,1.367% 4.957%,1.418% 4.258%,1.566% 3.594%,1.803% 2.976%,2.121% 2.411%,2.511% 1.909%,2.966% 1.478%,3.478% 1.128%,4.039% 0.866%,4.64% 0.703%,5.273% 0.647%,94.713% 0.647%,94.713% 0.647%,95.399% 0.712%,96.044% 0.902%,96.638% 1.204%,97.172% 1.607%,97.637% 2.098%,98.023% 2.666%,98.321% 3.3%,98.521% 3.987%,98.614% 4.716%,98.591% 5.475%,88.893% 93.837%,88.893% 93.837%,88.78% 94.469%,88.588% 95.063%,88.324% 95.611%,87.994% 96.107%,87.606% 96.545%,87.165% 96.918%,86.679% 97.219%,86.154% 97.443%,85.597% 97.582%,85.015% 97.629%,5.273% 97.629%,5.273% 97.629%,4.64% 97.573%,4.039% 97.41%,3.478% 97.148%,2.966% 96.798%,2.511% 96.367%,2.121% 95.865%,1.803% 95.3%,1.566% 94.681%,1.418% 94.018%,1.367% 93.319%,1.367% 4.957% );
@@ -160,16 +161,18 @@
                     clip-path: polygon( 91.429% 0%,91.429% 0%,92.587% 0.086%,93.686% 0.333%,94.711% 0.73%,95.647% 1.261%,96.479% 1.914%,97.193% 2.676%,97.774% 3.532%,98.207% 4.47%,98.478% 5.476%,98.571% 6.536%,98.571% 90.671%,98.571% 90.671%,98.462% 91.818%,98.148% 92.896%,97.648% 93.889%,96.982% 94.783%,96.169% 95.561%,95.228% 96.207%,94.179% 96.706%,93.041% 97.041%,91.834% 97.198%,90.577% 97.161%,7.72% 88.055%,7.72% 88.055%,6.671% 87.867%,5.687% 87.546%,4.778% 87.105%,3.954% 86.553%,3.228% 85.903%,2.609% 85.165%,2.109% 84.352%,1.738% 83.473%,1.508% 82.541%,1.429% 81.566%,1.429% 6.536%,1.429% 6.536%,1.522% 5.476%,1.793% 4.47%,2.226% 3.532%,2.807% 2.676%,3.521% 1.914%,4.353% 1.261%,5.289% 0.73%,6.314% 0.333%,7.413% 0.086%,8.571% 0%,91.429% 0% );
                 }
                 @media (orientation: landscape){
-                    padding: 2rem 4rem;
+                    padding: 2rem 3.5rem 2rem 4rem;
                     clip-path :polygon( 1.367% 4.957%,1.367% 4.957%,1.418% 4.258%,1.566% 3.594%,1.803% 2.976%,2.121% 2.411%,2.511% 1.909%,2.966% 1.478%,3.478% 1.128%,4.039% 0.866%,4.64% 0.703%,5.273% 0.647%,94.713% 0.647%,94.713% 0.647%,95.399% 0.712%,96.044% 0.902%,96.638% 1.204%,97.172% 1.607%,97.637% 2.098%,98.023% 2.666%,98.321% 3.3%,98.521% 3.987%,98.614% 4.716%,98.591% 5.475%,88.893% 93.837%,88.893% 93.837%,88.78% 94.469%,88.588% 95.063%,88.324% 95.611%,87.994% 96.107%,87.606% 96.545%,87.165% 96.918%,86.679% 97.219%,86.154% 97.443%,85.597% 97.582%,85.015% 97.629%,5.273% 97.629%,5.273% 97.629%,4.64% 97.573%,4.039% 97.41%,3.478% 97.148%,2.966% 96.798%,2.511% 96.367%,2.121% 95.865%,1.803% 95.3%,1.566% 94.681%,1.418% 94.018%,1.367% 93.319%,1.367% 4.957% );
                 }
 
                 &__company-logo{
-                    margin-bottom: 22px;
+                    display: inline-block;
+                    margin-bottom: 10px;
                     padding-right: auto;
                     
                     img{
-                        width: clamp(125px, 20vw, 215px);
+                        height: clamp(8rem, 15vh, 12rem);
+                        // width: clamp(125px, 20vw, 215px);
                     }
                 }
                 &__text{
@@ -178,6 +181,9 @@
                     font-family: "Monserrat";
                     font-size: clamp(1.6rem, 2vw, 2rem);
                     margin-bottom: 22px;
+
+                    // &:not(:last-of-type){
+                    // }
 
                     @media (max-width:768px) and (orientation: landscape){
                         font-size: clamp(1.2rem, 2vh, 2rem);
@@ -190,7 +196,7 @@
             }
         }
         &--box-2{
-            flex: 1 0 42%;
+            flex: 1 0 43%;
             width: 90%;
             height: 90%;
             display: flex;
@@ -200,7 +206,7 @@
             z-index: 5;
             
             @media (max-width:768px){
-                top: -10%;
+                top: -15%;
                 right: 0;
                 padding-bottom: 20px;
             }
@@ -215,7 +221,7 @@
                 width: 100%;
                 background-color: #2995FC;
                 border-radius: 20px;
-                padding: 4rem 2rem 4rem 6.5rem;
+                padding: 4rem 2rem 4rem 7rem;
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -225,7 +231,7 @@
                     @media (max-width:768px){
                         height: 100%;
                         width: 90%;
-                        padding: 4rem 2rem ;
+                        padding: 6rem 2rem 4rem 2rem;
                         margin: 0 auto;
                     }
                     @media (max-width:768px) and (orientation: landscape){
@@ -247,7 +253,7 @@
                 &__data{
                     display: block;
                     text-align: center;
-                    padding: 1rem;
+                    padding: 1rem 0;
                     margin-bottom: 2rem;
                     color: #000;
                     font-family: "Monserrat";
