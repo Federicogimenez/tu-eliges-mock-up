@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
-import { alliedModalData, alliedModalProvideChildren } from "../interfaces/AlliedModalInterface";
 import { useLocation } from "react-router";
+import { alliedModalData, alliedModalProvideChildren } from "../interfaces/AlliedModalInterface";
+import { useSearchParams } from "react-router-dom";
 
 export const AlliedModalStateContext = createContext<alliedModalData>({
   alliedName: '',
@@ -14,7 +15,7 @@ export const SwitchAlliedModalContext = createContext(()=>{})
 
 export function AlliedModalProvider ({children}: alliedModalProvideChildren){
 
-  
+  const [searchParams] = useSearchParams();
   const [modalState, setModalState]= useState(false)
 
   function closeAlliedModal (){
@@ -31,9 +32,11 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
 
   useEffect(() => {
     if(url.includes('?ally')){
+      // console.log(searchParams.get('ally'));
+      
       setModalState(true)
 
-      const id = url.split('=').pop();
+      const id = searchParams.get('ally');
 
     const urlFetch = `https://api.tueliges.us/public/ally-code/${id}`
 
