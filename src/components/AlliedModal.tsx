@@ -51,12 +51,11 @@ export default function AlliedModal() {
                     {data.modal_paragraph1_phrase1}{alliedData.alliedName}{data.modal_paragraph1_phrase2}
                   </p>
                   <p className="box-white__text">
-                    {data.modal_paragraph2}
+                    {data.modal_paragraph2_phrase1}
                   </p>
                   <p className="box-white__text">
-                    {data.modal_paragraph3}
+                    {data.modal_paragraph2_phrase3_black}
                   </p>
-                  <img src="/img/gif/activate_code.gif" alt="activate your code" width={'300px'} />
                 </div>
             </div>
             <div className="allied-modal__modal--box-2">
