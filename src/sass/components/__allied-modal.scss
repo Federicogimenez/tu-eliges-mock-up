@@ -7,38 +7,6 @@
     z-index: 999999;
     background-color: #3d3d3dbb;
 
-    &__switch-lang{
-        position: absolute;
-        width: 150px;
-        right: 2vw;
-        top: 5px;
-        padding: 10px;
-        z-index: 1999999;
-        background-color: #777;
-        border-radius: 7px;
-
-        @media (max-width:768px) {
-            width: 105px;
-        }
-
-        &>.switch-languaje{
-            top: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding-left: 5px;
-
-            ul{
-                width: 100%;
-                margin-left: 0;
-                left: 0;
-                bottom: -43px;
-
-                li{
-                    color: #fff;
-                }
-            }
-        }
-    }
 }
 .allied-modal{
     position: relative;
