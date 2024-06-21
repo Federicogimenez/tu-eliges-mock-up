@@ -1,8 +1,11 @@
 import { useLocation, useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
+import SwitchLang from "../components/SwitchLang";
 import { useRef, useState } from "react";
 
 export default function ThankYou() {
+
+  
   const data = useLanguageContext();
   
   const url = useLocation().search;
@@ -32,60 +35,124 @@ export default function ThankYou() {
   }
   
   return (
-      <div className="thanks-you">
-        <a onClick={handleRedirectHome} className="thanks-you__logo">
+    <div className="thanks-you">
+        <div className="thanks-you__switch-lang">
+          <SwitchLang />
+        </div>
+        <a className="thanks-you__logo">
           <img src="/img/png/logo-uchooseit.png" alt="" />
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
-        <p className="thanks-you__p">{ data["thanks_paragraph2"] }</p>
+        <p className="thanks-you__p">
+          { data["thanks_paragraph2"] }
+          <a href="mailto:support@uchooseit.us">{data["thanks_support_email"] }</a>  
+        </p>
 
         <p className="thanks-you__p">
-        { data["thanks_paragraph3"] }
-          <span ref={textAreaRef} onClick={copyToClipboard}>
-            {copySuccess == '' ? null : <small>{copySuccess}</small>}
-            { id == '' ? 'ABC123' : id}
-          </span></p>
-        <p className="thanks-you__support-text">
-          { data["thanks_paragraph4"] } 
-          <a href="mailto:support@uchooseit.us">{data["thanks_support_email"] }</a>
-        </p>
-        <p className="thanks-you__p">
-          { data["thanks_paragraph5"] }
-        </p>
+          { data["thanks_membership"] }
+            <span ref={textAreaRef} onClick={copyToClipboard}>
+              {copySuccess == '' ? null : <small>{copySuccess}</small>}
+              { id == '' ? 'ABC123' : id}
+            </span>
+          </p>
+
         <div className="thanks-you__steps">
-          <div className="thanks-you__steps--step">
-            <div>
-              {data["thanks_step1"]}
-              <a href="https://tueligesus.enjoymydeals.com/"> { data["thanks_step1_click"] }</a>
+
+          <div>
+            <div className="thanks-you__steps--step">
+              <div>
+
+              <h5>
+              { data["thanks_step1_title"] }
+
+              </h5>
+              <p>
+                { data["thanks_step1_description"] }
+              </p>
+
+              <ul>
+                <li>
+                  { data["thanks_step1_1"] }
+                </li>
+                <li>
+                { data["thanks_step1_2"] }
+                </li>
+                <li>
+                  { data["thanks_step1_3"] }
+                  <span ref={textAreaRef} onClick={copyToClipboard}>
+                    {copySuccess == '' ? null : <small>{copySuccess}</small>}
+                    { id == '' ? 'ABC123' : id}
+                  </span>
+                </li>
+                <li>
+                  { data["thanks_step1_4"] }
+                </li>
+              </ul>
+              </div>
+
+            </div>
+            <a className="thanks-you__steps--cta" href="https://uchooseitus.enjoymydeals.com/" target="_blank"> { data["thanks_step1_cta"] }</a>
+          </div>
+
+          <div>
+            <div className="thanks-you__steps--step">
+              <div>
+
+                <h5>
+                  { data["thanks_step2_title"] }
+                </h5>
+                <p>
+                  { data["thanks_step2_description"] }
+                </p>
+
+                <ul>
+                  <li>
+                    { data["thanks_step2_1"] }
+                  </li>
+                  <li>
+                    { data["thanks_step2_2"] }
+                  </li>
+                  <li>       
+                    { data["thanks_step2_3"] }
+                    <span ref={textAreaRef} onClick={copyToClipboard}>
+                      {copySuccess == '' ? null : <small>{copySuccess}</small>}
+                      { id == '' ? 'ABC123' : id}
+                    </span>
+                  </li>
+                  <li>
+                    { data["thanks_step2_4"] }
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="thanks-you__download">
+              <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1" target="_blank">
+                <img src="/img/png/android-logo.png" alt="" />
+              </a>
+              <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196" target="_blank">
+                <img src="/img/png/apple-logo.png" alt="" />
+              </a>
             </div>
           </div>
-          <div className="thanks-you__steps--step">
-            { data["thanks_step2"] }
-          </div>
+
+
         </div>
-        <div className="thanks-you__download">
-          <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1" target="_blank">
-            <img src="/img/png/android-logo.png" alt="" />
-          </a>
-          <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196" target="_blank">
-            <img src="/img/png/apple-logo.png" alt="" />
-          </a>
-        </div>
+
         <p className="thanks-you__visit-us">
           { data["thanks_visit_us"] }
         </p>
         <div className="thanks-you__socials">
-          <a target="_blank" href="facebook.com/Uchooseit.us">
+          <a target="_blank" href="https://www.facebook.com/tueligesusa">
               <img src="/img/svg/facebook.svg" alt="facebook" />
           </a>
-          <a target="_blank" href="https://www.instagram.com/uchooseit.us/">
+          <a target="_blank" href="https://www.instagram.com/tueliges.us/">
               <img src="/img/svg/ig.svg" alt="instagram" />
           </a>
-          <a target="_blank" href="https://www.linkedin.com/company/uchooseit-us/about/?viewAsMember=true">
+          <a target="_blank" href="https://www.linkedin.com/company/tueliges-us">
               <img src="/img/svg/linkedin-icon.svg" alt="linkedin" />
           </a>
-          <a target="_blank" href="https://www.youtube.com/channel/UCTS9Hp-WjV4eMaqHATtmJSg">
+          <a target="_blank" href="https://www.youtube.com/channel/UC5QtJ5tx41WsIIZGyru7_Ng">
               <img src="/img/svg/youtube-icon.svg" alt="youtube" />
           </a>
         </div>
