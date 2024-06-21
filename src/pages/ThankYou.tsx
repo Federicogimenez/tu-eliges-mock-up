@@ -44,40 +44,88 @@ export default function ThankYou() {
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
-        <p className="thanks-you__p">{ data["thanks_paragraph2"] }</p>
+        <p className="thanks-you__p">
+          { data["thanks_paragraph2"] }
+          <a href="mailto:support@tueliges.us">{data["thanks_support_email"] }</a>  
+        </p>
 
         <p className="thanks-you__p">
-        { data["thanks_paragraph3"] }
-          <span ref={textAreaRef} onClick={copyToClipboard}>
-            {copySuccess == '' ? null : <small>{copySuccess}</small>}
-            { id == '' ? 'ABC123' : id}
-          </span></p>
-        <p className="thanks-you__support-text">
-          { data["thanks_paragraph4"] } 
-          <a href="mailto:support@tueliges.us">{data["thanks_support_email"] }</a>
-        </p>
-        <p className="thanks-you__p">
-          { data["thanks_paragraph5"] }
-        </p>
+          { data["thanks_membership"] }
+            <span ref={textAreaRef} onClick={copyToClipboard}>
+              {copySuccess == '' ? null : <small>{copySuccess}</small>}
+              { id == '' ? 'ABC123' : id}
+            </span>
+          </p>
+
         <div className="thanks-you__steps">
-          <div className="thanks-you__steps--step">
-            <div>
-              {data["thanks_step1"]}
-              <a href="https://tueligesus.enjoymydeals.com/" target="_blank"> { data["thanks_step1_click"] }</a>
+
+          <div>
+            <div className="thanks-you__steps--step">
+              <div>
+
+              <h5>
+                1. Empieza a explorar tus descuentos para ahorrar en grande
+                “My Deals Web”
+              </h5>
+              <p>
+                Para activar tu membresía debes registrarte con:
+              </p>
+
+              <ul>
+                <li>Tu nombre</li>
+                <li>Tu correo electronico</li>
+                <li>tu membership id           
+                  <span ref={textAreaRef} onClick={copyToClipboard}>
+                    {copySuccess == '' ? null : <small>{copySuccess}</small>}
+                    { id == '' ? 'ABC123' : id}
+                  </span>
+                </li>
+                <li>Crear una contraseña</li>
+              </ul>
+              </div>
+
+            </div>
+            <a className="thanks-you__steps--cta" href="https://tueligesus.enjoymydeals.com/" target="_blank"> { data["thanks_step1_cta"] }</a>
+          </div>
+
+          <div>
+            <div className="thanks-you__steps--step">
+              <div>
+
+                <h5>
+                2. Descarga el App para que encuentres ofertas cerca a ti
+                “My Deals Mobile App”
+                </h5>
+                <p>
+                  Registrate con:
+                </p>
+
+                <ul>
+                  <li>Tu correo electronico</li>
+                  <li>El nombre de tu organización: TuEliges.us</li>
+                  <li>tu membership id           
+                    <span ref={textAreaRef} onClick={copyToClipboard}>
+                      {copySuccess == '' ? null : <small>{copySuccess}</small>}
+                      { id == '' ? 'ABC123' : id}
+                    </span>
+                  </li>
+                  <li>La contraseña de My Deals Web.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="thanks-you__download">
+              <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1" target="_blank">
+                <img src="/img/png/android-logo.png" alt="" />
+              </a>
+              <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196" target="_blank">
+                <img src="/img/png/apple-logo.png" alt="" />
+              </a>
             </div>
           </div>
-          <div className="thanks-you__steps--step">
-            { data["thanks_step2"] }
-          </div>
+
+
         </div>
-        <div className="thanks-you__download">
-          <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1" target="_blank">
-            <img src="/img/png/android-logo.png" alt="" />
-          </a>
-          <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196" target="_blank">
-            <img src="/img/png/apple-logo.png" alt="" />
-          </a>
-        </div>
+
         <p className="thanks-you__visit-us">
           { data["thanks_visit_us"] }
         </p>

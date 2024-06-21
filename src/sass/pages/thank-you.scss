@@ -46,6 +46,11 @@
         width: 95%;
         max-width: 1000px;
 
+        a{
+            color: #fff;
+            text-decoration: underline;
+        }
+
         span{
             font-family: "Monserrat Italic";
             border-bottom: 2px solid #2995FC;
@@ -71,21 +76,7 @@
             }
         }
     }
-    &__list{
-        width: 95%;
-        max-width: 1000px;
-        margin-bottom: 20px;
-        p{
-            margin-bottom: 7px;
-        }
 
-        ul{
-            padding-left: 50px;
-            li{
-                margin-bottom: 7px;
-            }
-        }
-    }
     &__support-text{
         color: #fff;
         font-size: clamp(1.6rem, 3vw, 2.5rem);
@@ -104,15 +95,31 @@
         width: 95%;
         max-width: 1000px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
         gap: 2rem;
         margin-bottom: 5rem;
 
+        &>div{
+            flex: .5 0 250px;
+        }
 
+
+        &--cta{
+            display: block;
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: clamp(2rem, 4vw, 7rem) auto;
+            // margin: 20px auto;
+            text-align: center;
+            background-color: #DA82FF;
+            color: #fff;
+            font-family: 'Monserrat', sans-serif;
+            font-size: clamp(2rem, 3vw, 2.5rem);
+        }
         &--step{
-            flex: 1 0 250px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -127,6 +134,48 @@
                 text-decoration: none;
                 color: #2995FC;
             }
+
+            h5{
+                text-align: center;
+                font-size: clamp(1.8rem, 3vw, 2.5rem);
+                max-width: 600px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-size: clamp(1.6rem, 2vw, 2rem);
+            }
+            ul{
+                margin-top: 20px;
+                padding-left: 20px;
+                font-size: clamp(1.6rem, 2vw, 2rem);
+                li{
+                    margin: 5px;
+                    span{
+                        font-family: "Monserrat Italic";
+                        border-bottom: 2px solid #2995FC;
+                        cursor: pointer;
+                        transform: translateY(0);
+                        padding: 0 10px ;
+                        position: relative;
+            
+                        small{
+                            position: absolute;
+                            top: -101%;
+                            left: 95%;
+                            width: fit-content;
+                            text-wrap: nowrap;
+                            background-color: #2995FC;
+                            border-radius: 8px;
+                            border: 1px solid #fff;
+                            padding: 5px;
+                            color: #fff;
+                            font-size: 12px;
+                            font-family: 'Monserrat';
+            
+                        }
+                    }
+                }
+            }
         }
     }
     &__download{
@@ -134,7 +183,8 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        margin-bottom: clamp(2rem, 4vw, 7rem);
+        margin: clamp(2rem, 4vw, 7rem) 0;
+        // margin: clamp(2rem, 4vw, 7rem);
 
         a{
             text-decoration: none;
