@@ -64,23 +64,30 @@ export default function ThankYou() {
               <div>
 
               <h5>
-                1. Empieza a explorar tus descuentos para ahorrar en grande
-                “My Deals Web”
+              { data["thanks_step1_title"] }
+
               </h5>
               <p>
-                Para activar tu membresía debes registrarte con:
+                { data["thanks_step1_description"] }
               </p>
 
               <ul>
-                <li>Tu nombre</li>
-                <li>Tu correo electronico</li>
-                <li>tu membership id           
+                <li>
+                  { data["thanks_step1_1"] }
+                </li>
+                <li>
+                { data["thanks_step1_2"] }
+                </li>
+                <li>
+                  { data["thanks_step1_3"] }
                   <span ref={textAreaRef} onClick={copyToClipboard}>
                     {copySuccess == '' ? null : <small>{copySuccess}</small>}
                     { id == '' ? 'ABC123' : id}
                   </span>
                 </li>
-                <li>Crear una contraseña</li>
+                <li>
+                  { data["thanks_step1_4"] }
+                </li>
               </ul>
               </div>
 
@@ -93,23 +100,29 @@ export default function ThankYou() {
               <div>
 
                 <h5>
-                2. Descarga el App para que encuentres ofertas cerca a ti
-                “My Deals Mobile App”
+                  { data["thanks_step2_title"] }
                 </h5>
                 <p>
-                  Registrate con:
+                  { data["thanks_step2_description"] }
                 </p>
 
                 <ul>
-                  <li>Tu correo electronico</li>
-                  <li>El nombre de tu organización: TuEliges.us</li>
-                  <li>tu membership id           
+                  <li>
+                    { data["thanks_step2_1"] }
+                  </li>
+                  <li>
+                    { data["thanks_step2_2"] }
+                  </li>
+                  <li>       
+                    { data["thanks_step2_3"] }
                     <span ref={textAreaRef} onClick={copyToClipboard}>
                       {copySuccess == '' ? null : <small>{copySuccess}</small>}
                       { id == '' ? 'ABC123' : id}
                     </span>
                   </li>
-                  <li>La contraseña de My Deals Web.</li>
+                  <li>
+                    { data["thanks_step2_4"] }
+                  </li>
                 </ul>
               </div>
             </div>
