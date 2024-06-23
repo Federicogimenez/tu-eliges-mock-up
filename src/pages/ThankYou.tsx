@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
-import SwitchLang from "../components/SwitchLang";
 import { useRef, useState } from "react";
 
 export default function ThankYou() {
@@ -36,9 +35,6 @@ export default function ThankYou() {
   
   return (
     <div className="thanks-you">
-        <div className="thanks-you__switch-lang">
-          <SwitchLang />
-        </div>
         <a className="thanks-you__logo">
           <img src="/img/png/logo-uchooseit.png" alt="" />
         </a>
