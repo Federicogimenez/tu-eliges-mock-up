@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #000;
+    // background-color: #000;
     height: 100%;
 
     &__menu-desk{
@@ -13,7 +13,6 @@
         z-index: 1000;
         
         .headroom {
-            background-color: #000;
             display: flex;
             padding: 3rem 2rem;
             justify-content: space-around;
@@ -24,6 +23,11 @@
           .headroom--unfixed {
             position: relative;
             transform: translateY(0);
+
+            .navbar__menu-desk--logo img{
+                    width: clamp(15rem, 17vw, 22rem);
+                    margin-right: 15px;
+                }
           }
           .headroom--scrolled {
             transition: transform 200ms ease-in-out;
@@ -33,8 +37,10 @@
             transform: translateY(-100%);
           }
           .headroom--pinned {
+            background-color: #000;
             position: fixed;
             transform: translateY(0%);
+            padding: 1.5rem 2rem !important;
           }
 
         &--logo{
@@ -42,8 +48,9 @@
             justify-content: flex-start;
             align-items: center;
             img{
-                width: clamp(15rem, 17vw, 22rem);
+                width: clamp(12rem, 10vw, 22rem);
                 margin-right: 15px;
+                transition: all .1s ease;
             }
         }
         &--navbar-desk{
