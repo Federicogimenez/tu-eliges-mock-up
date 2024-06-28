@@ -62,11 +62,13 @@
         place-items: center;
         background-color: #000;
         transform: rotateY(180deg); 
-        padding: 2rem 4.5rem 2rem 2rem;
+        padding: 2rem;
       
         p{
           font-size: 2rem;
           font-family: "Monserrat";
+          font-weight: 600;
+          text-align: center;
           color: #2995FC;
         }
       }
