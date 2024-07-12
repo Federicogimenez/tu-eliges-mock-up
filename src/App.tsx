@@ -7,6 +7,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import ThankYou from "./pages/ThankYou";
 import { Suspense } from "react";
 import { Loading } from "./components/Loading";
+// import Presentation from "./pages/Presentation";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <LanguageProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* <Route path="/presentation" element={<Presentation />} /> */}
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

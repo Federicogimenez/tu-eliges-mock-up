@@ -20,3 +20,6 @@
     src: url("/font/monserrat/Montserrat-Italic.ttf") format("truetype");
     font-display: swap;
 }
+body{
+    font-family: 'Monserrat';
+}

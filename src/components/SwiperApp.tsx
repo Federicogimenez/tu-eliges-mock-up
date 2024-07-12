@@ -29,7 +29,7 @@ function SwiperApp(sliders: swiperAppProps[]) {
                   className='app-slider'>
                     <div className='app-slide'>
                       <div className='app-slide__img'>
-                        <img src={slide.img} alt="" />
+                        <img src={slide.img} alt={`note ${i}`} loading='lazy' />
                       </div>
                       <p>{slide.text}</p>
                     </div>
