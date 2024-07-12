@@ -2,6 +2,7 @@ import BurgerMenu from "../components/BurgerMenu";
 import SwitchLang from "../components/SwitchLang";
 import Headroom from "react-headroom";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
+import { LazyLoader } from "./LazyLoader";
 
 export function NavBar (){
     const data = useLanguageContext();
@@ -14,7 +15,8 @@ export function NavBar (){
                         zIndex:'100',
                     }}>
                         <picture className='navbar__menu-desk--logo'>
-                            <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" />
+                            <LazyLoader src={"/img/png/logo-tu-eliges.png"} alt={"tu eliges"} />
+                            {/* <img src="/img/png/logo-tu-eliges.png" alt="tu eliges" /> */}
                         </picture>
                         <div className='navbar__menu-desk--navbar-desk'>
                             <nav>
