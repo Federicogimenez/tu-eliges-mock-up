@@ -46,6 +46,8 @@
             align-items: center;
 
             img{
+                display: block;
+                margin: 0 auto;
                 width: clamp(28rem, 100%, 60.4rem);
             }
         }
