@@ -7,7 +7,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import ThankYou from "./pages/ThankYou";
 import { Suspense } from "react";
 import { Loading } from "./components/Loading";
-// import Presentation from "./pages/Presentation";
+import Presentation from "./pages/Presentation";
 
 function App() {
 
@@ -18,7 +18,12 @@ function App() {
         <LanguageProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/presentation" element={<Presentation />} /> */}
+            <Route path="/presentation" >
+              <Route path="/presentation" element={<Presentation comercial={1} />}/>
+              <Route path="/presentation/comercial-1" element={<Presentation comercial={1} />} />
+              <Route path="/presentation/comercial-2" element={<Presentation comercial={2} />} />
+              <Route path="/presentation/comercial-3" element={<Presentation comercial={3} />} />
+            </Route>
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

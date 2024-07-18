@@ -13,7 +13,7 @@ export default function ThankYou() {
   const id = url.split('=').pop();
 
   const navigate = useNavigate();
-
+  
   const [copySuccess, setCopySuccess] = useState('');
   const textAreaRef = useRef(null);
   
@@ -23,6 +23,7 @@ export default function ThankYou() {
       setCopySuccess(data['thanks_copy_clipboard']);
     }
     else{
+      navigator.clipboard.writeText('id error');
       setCopySuccess('ID Error!');
     }
     setTimeout(() => {

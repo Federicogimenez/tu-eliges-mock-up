@@ -16,7 +16,8 @@ export default function SectionVideo() {
                         frameBorder={0}
                         allow="autoplay; fullscreen; picture-in-picture" 
                         style={{"position":"absolute","top":"0","left":"0","width":"100%","height":"100%"}} 
-                        title="TuEliges - Video Tour subtitulado Español"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                        title="TuEliges - Video Tour subtitulado Español"></iframe></div>
+                        <script src="https://player.vimeo.com/api/player.js"></script>
                 </div>
         </section>
     )
