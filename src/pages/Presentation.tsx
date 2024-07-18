@@ -31,7 +31,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
         {
             id: 3,
             img: '/img/png/presentation/martin.png',
-            name: 'Martin Palermo',
+            name: 'Martin Arnaud',
             profile: 'Co-Founder',
             role: 'CEO',
             email: ''
@@ -108,6 +108,12 @@ export default function Presentation({comercial=1}:presentationPropType) {
                         <button className="dynamic-contact__second--1">Book an appointment</button>
                         <button className="dynamic-contact__second--2">Send a email</button>
                     </div>
+                </div>
+                <div className="dynamic-contact__message">
+                    <p> 
+                        “Let's work together to create impactful, positive 
+                        changes and memorable successes”
+                    </p>
                 </div>
             </section>
             <section className="presentation__footer">

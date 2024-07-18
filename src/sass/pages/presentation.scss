@@ -135,12 +135,12 @@
             &--img{
                 width: clamp(270px, 30vw, 345px);
                 border-radius: 30px;
-                background-color: #D9D9D9;
+                background-color: #ffff;
 
                 img{
                     display: block;
                     transform-origin: bottom;
-                    transform: scale(1.2);
+                    // transform: scale(1.2);
                     width: 100%;
                 }
             }
@@ -184,6 +184,23 @@
             }
             &--2{
                 background-color: #6065FC;
+            }
+        }
+        &__message{
+            width: 100%;
+            padding: clamp(3rem, 6vw, 6rem) 2vw;
+            background-color: #E8FBFF;
+            border-radius: 25px;
+            margin-top: clamp(4rem, 5vw, 8rem);
+
+            p{
+                max-width: 1127px;
+                width: 100%;
+                margin: 0 auto;
+                font-family: 'Monserrat Italic';
+                font-size: clamp(2rem, 2.2vw, 4.5rem);
+                color: #000;
+                text-align: center;
             }
         }
     }
