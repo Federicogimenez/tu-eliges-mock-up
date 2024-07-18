@@ -10,7 +10,9 @@ export const LazyImageComponent = (image: LazyImage ) => (
     alt={image.alt}
     width={image.width}
     height={image.height}
+    className={image.class}
     effect="blur"
+    style={{transition:'all .4s ease', transform: 'scale(1)'}}
     wrapperProps={{style: {transitionDelay: "1s"},}}
     />
 );

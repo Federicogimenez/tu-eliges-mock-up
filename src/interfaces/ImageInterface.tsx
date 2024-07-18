@@ -3,4 +3,5 @@ export interface LazyImage {
     alt: string,
     width?: string
     height?: string
+    class?: string
 }

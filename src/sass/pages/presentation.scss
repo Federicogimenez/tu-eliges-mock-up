@@ -121,7 +121,7 @@
         }
 
         &__first{
-            flex: 1 0 55%;
+            flex: 1 0 57%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -135,14 +135,21 @@
             &--img{
                 width: clamp(270px, 30vw, 345px);
                 border-radius: 30px;
-                background-color: #ffff;
-
-                img{
+                background-color: transparent;
+                border: 5px solid #2995FC;
+                
+                
+                .grow-img{
+                    position: relative;
                     display: block;
-                    transform-origin: bottom;
-                    // transform: scale(1.2);
+                    transform-origin: center bottom;
                     width: 100%;
+                    
                 }
+                .grow-img.active{
+                    transform: scale(1.2) !important;
+                }
+                // img{}
             }
             &--text{
                 display: flex;
@@ -165,9 +172,11 @@
         }
         &__second{
             flex: 1 0 35%;
+            width: 100%;
             
-            
-            button{
+            a{
+                display: block;
+                text-decoration: none;
                 border: none;
                 font-family: 'Monserrat Semibold';
                 font-size: clamp(2rem, 2.2vw, 4.5rem);
