@@ -2,30 +2,11 @@
 // import { useEffect, useRef, useState } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import DiscountCard from "../components/DiscountCard";
+import ButtonTwoStates from "../components/ButtonTwoStates";
 
 export default function SectionDiscounts() {
     const data = useLanguageContext();
     
-
-    // const [isIntersecting, setIsIntersecting] = useState<boolean>()
-    // const elementRef = useRef<HTMLInputElement>(null)
-    
-    
-    // useEffect(()=>{
-    //     const element = elementRef.current;
-        
-    //     const observer = new IntersectionObserver( entries => {
-    //         entries.forEach( entry => setIsIntersecting(entry.isIntersecting))
-    //     },
-    //     {
-    //         threshold: 0,
-    //     }
-    //     );
-
-    //     if (element) {
-    //         observer.observe(element)
-    //     }
-    // }, [])
 
     return (
         <section className="section-discounts">
@@ -67,12 +48,13 @@ export default function SectionDiscounts() {
                                 back_text={data["cards_card4_back"]} />
                         </div>
                     </div>
-                <p className="section-discounts__content--subtitle">{data.card_subtitle}</p>
-                <a href="https://tueligesus.enjoymydeals.com/" target="_blank" className="btn-scale-outside">
-                    <span>
-                        {data.cards_cta}
-                        </span>
-                    </a>
+                    <p className="section-discounts__content--subtitle">{data.card_subtitle}</p>
+                    {/* <a href="https://tueligesus.enjoymydeals.com/" target="_blank" className="btn-two-states-horizontal">
+                        <span>
+                            {data.cards_cta}
+                            </span>
+                    </a> */}
+                    <ButtonTwoStates text_static={data.cards_cta} text_hover={'explore now'} animation="2" />
                 </div>
             <div className="section-discounts__border section-discounts__border--2"></div>
         </section>
