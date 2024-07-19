@@ -145,16 +145,16 @@ export default function Presentation({comercial=1}:presentationPropType) {
                 <p>Visit our social network sites.</p>
                 <button onClick={handleRedirectHome}>www.uchooseit.us</button>
                 <div>
-                    <a target="_blank" href="https://www.facebook.com/tueligesusa">
+                    <a target="_blank" href="https://facebook.com/Uchooseit.us">
                         <LazyImageComponent src={"/img/svg/facebook.svg"} alt={"facebook"} />
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/tueliges.us/">
+                    <a target="_blank" href="https://www.instagram.com/uchooseit.us/">
                         <LazyImageComponent src={"/img/svg/ig.svg"} alt={"instagram"} />
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/company/tueliges-us">
+                    <a target="_blank" href="https://www.linkedin.com/company/uchooseit-us/about/?viewAsMember=true">
                         <LazyImageComponent src={"/img/svg/linkedin-icon.svg"} alt={"linkedin"} />
                     </a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UC5QtJ5tx41WsIIZGyru7_Ng">
+                    <a target="_blank" href="https://www.youtube.com/channel/UCTS9Hp-WjV4eMaqHATtmJSg">
                         <LazyImageComponent src={"/img/svg/youtube-icon.svg"} alt={"youtube"} />
                     </a>
                 </div>
