@@ -11,30 +11,30 @@ export default function Presentation({comercial=1}:presentationPropType) {
     const presentersData = [
         {
             id: 1,
-            img: '/img/png/presentation/marcelo.png',
+            img: 'https://tueliges.us/img/png/presentation/marcelo.png',
             name: 'Marcelo Gaffoglio',
             profile: 'Co-Founder',
             role: 'CEO',
-            email: 'marcelo@tueliges.us?subject=Schedule a Meeting - TuEliges.us',
-            appointment: 'https://calendar.app.google/qwqxs7hcUeU1AhGH9'
+            email: 'marcelo@uchooseit.us?subject=Schedule a Meeting - TuEliges.us',
+            appointment: 'https://calendar.app.google/rMwZd4VdykaK61L39'
         },
         {
             id: 2,
-            img: '/img/png/presentation/viviana.png',
+            img: 'https://tueliges.us/img/png/presentation/viviana.png',
             name: 'Viviana Valderrama',
             profile: 'Co-Founder',
             role: 'President',
-            email: 'viviana@tueliges.us?subject=Schedule a Meeting - TuEliges.us',
-            appointment: 'https://calendar.app.google/jwsufrC1FTFZz8fc8'
+            email: 'viviana@uchooseit.us?subject=Schedule a Meeting - TuEliges.us',
+            appointment: 'https://calendar.app.google/1XijWsfVDay9jkbC9'
         },
         {
             id: 3,
-            img: '/img/png/presentation/martin.png',
+            img: 'https://tueliges.us/img/png/presentation/martin.png',
             name: 'Martin Arnaud',
             profile: 'Business Development',
             role: 'EVP',
-            email: 'martin@tueliges.us?subject=Schedule a Meeting - TuEliges.us',
-            appointment: 'https://calendar.app.google/8gQoZfXLot7jp6WXA'
+            email: 'martin@uchooseit?subject=Schedule a Meeting - TuEliges.us',
+            appointment: 'https://calendar.app.google/Vn3rHnB4GWJ6RqxV8'
         }
     ]
     const currentComercial = presentersData.find( ( e ) => e.id == comercial );
@@ -71,12 +71,12 @@ export default function Presentation({comercial=1}:presentationPropType) {
     return (
         <main className="presentation">
             <div className="presentation__bg-square">
-                <LazyImageComponent src={"/img/png/presentation/presentation-header.png"} alt={"bg"}  />
+                <LazyImageComponent src={"https://tueliges.us/img/png/presentation/presentation-header.png"} alt={"bg"}  />
             </div>
 
             <header className="presentation__header">
                 <picture>
-                    <LazyImageComponent src={"/img/png/logo-tu-eliges.png"} alt={"tu eliges"}  />
+                    <LazyImageComponent src={"/img/png/logo-uchooseit.png"} alt={"uchooseit"}  />
                 </picture>
                 <h1>DISCOUNTS WITH A PURPOSE</h1>
                 <p>
