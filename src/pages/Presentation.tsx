@@ -82,7 +82,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
                 <p>
                     Partner with 
                     <span>
-                        TuEliges.us
+                        UChooseIt.us
                     </span>
                     to Empower the 
                     <br />
@@ -142,7 +142,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
             </section>
             <section className="presentation__footer">
                 <p>Visit our social network sites.</p>
-                <button onClick={handleRedirectHome}>www.tueliges.us</button>
+                <button onClick={handleRedirectHome}>www.uchooseit.us</button>
                 <div>
                     <a target="_blank" href="https://www.facebook.com/tueligesusa">
                         <LazyImageComponent src={"/img/svg/facebook.svg"} alt={"facebook"} />
