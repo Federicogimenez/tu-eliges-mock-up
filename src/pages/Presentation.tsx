@@ -15,7 +15,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
             name: 'Marcelo Gaffoglio',
             profile: 'Co-Founder',
             role: 'CEO',
-            email: 'marcelo@uchooseit.us?subject=Schedule a Meeting - TuEliges.us',
+            email: 'marcelo@uchooseit.us?subject=Schedule a Meeting - uchooseit',
             appointment: 'https://calendar.app.google/rMwZd4VdykaK61L39'
         },
         {
@@ -24,7 +24,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
             name: 'Viviana Valderrama',
             profile: 'Co-Founder',
             role: 'President',
-            email: 'viviana@uchooseit.us?subject=Schedule a Meeting - TuEliges.us',
+            email: 'viviana@uchooseit.us?subject=Schedule a Meeting - uchooseit',
             appointment: 'https://calendar.app.google/1XijWsfVDay9jkbC9'
         },
         {
@@ -33,7 +33,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
             name: 'Martin Arnaud',
             profile: 'Business Development',
             role: 'EVP',
-            email: 'martin@uchooseit?subject=Schedule a Meeting - TuEliges.us',
+            email: 'martin@uchooseit?subject=Schedule a Meeting - uchooseit',
             appointment: 'https://calendar.app.google/Vn3rHnB4GWJ6RqxV8'
         }
     ]
