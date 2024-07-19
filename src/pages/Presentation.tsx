@@ -82,14 +82,15 @@ export default function Presentation({comercial=1}:presentationPropType) {
                 <p>
                     Partner with 
                     <span>
-                        UChooseIt.us
+                        uchooseit.us 
                     </span>
-                    to Empower the 
+                    to Empower all
                     <br />
                     <span>
-                        Hispanic Community
+                        Communities Across America 
                     </span>
-                    through Exclusive Savings Across America.</p>
+                    with Exclusive Savings.
+                </p>
             </header>
             <section className="presentation__video-section">
                 <div className="presentation__video-border presentation__video-border--left"></div>
@@ -130,7 +131,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
                     </div>
                     <div className="dynamic-contact__second">
                         <a target="_blank" href={`${currentComercial?.appointment}`} className="dynamic-contact__second--1">Book an appointment</a>
-                        <a target="_blank" href={`mailto:${currentComercial?.email}`} className="dynamic-contact__second--2">Send a email</a>
+                        <a href={`mailto:${currentComercial?.email}`} className="dynamic-contact__second--2">Send a email</a>
                     </div>
                 </div>
                 <div className="dynamic-contact__message">
