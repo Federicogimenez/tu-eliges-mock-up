@@ -39,37 +39,12 @@
             }
         }
         &--subtitle{
-            font-size: clamp(1.8rem, 2.3vw, 2.8rem);
+            color: #313033;
             font-family: "Monserrat";
-            color: #000;
-            margin-bottom: 1rem;
-            margin-top: clamp(4rem, 6vw, 8rem);
-        }
-        a{
-            font-size: clamp(1.8rem, 2.2vw, 2.2rem);
-            font-family: "Monserrat Semibold";
-            color: #fff;
-            padding: 1rem 2.8rem;
-            background-color: #2995FC;
-            border-radius: 5px;
-            display: inline-block;
-            text-transform: uppercase;
-            text-decoration: none;
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-            cursor: pointer;
-
-            span{
-                display: block;
-                position: relative;
-                transform: scale(1);
-                background-color: transparent;
-                transition: all .2s ease-in-out;
-            }
-            &:hover span{
-                text-shadow: 2px 2px 5px  #000;
-                transform: scale(1.4) rotate(-6deg) translateY(-5px);
-            }
+            font-size: clamp(2rem,2.5vw,3rem);
+            text-align: center;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
         }
     }
     

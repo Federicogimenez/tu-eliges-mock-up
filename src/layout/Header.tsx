@@ -2,6 +2,7 @@ import Typewriter from "typewriter-effect";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { NavBar } from "../components/NavBar";
 import ButtonTwoStates from "../components/ButtonTwoStates";
+import { LazyImageComponent } from "../components/LazyImage";
 
 
 
@@ -35,7 +36,8 @@ export default function Header() {
                         <ButtonTwoStates text_static={ data["header_button"]} text_hover={ data["header_button_hover"] } />
                     </div>
                     <div className="header__content--ilustration">
-                        <img src="/img/png/header.webp" alt="ilustration" />
+                        <LazyImageComponent src={"/img/png/header.webp"} alt={"ilustration"} />
+                        {/* <img src="/img/png/header.webp" alt="ilustration" /> */}
                     </div>
                 </div>
             </div>

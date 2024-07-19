@@ -28,7 +28,7 @@ export default function AlliedModal() {
             alliedData.userNotFound && 
             <div className="allied-modal__user-not-found">
               <div className="allied-modal__user-not-found--content">
-                <img src="/img/svg/error.svg" alt="error" />
+                <img src="/img/svg/error.svg" alt="error" loading='lazy'/>
                 <p>
                   {data.modal_error}
                 </p>
@@ -43,10 +43,10 @@ export default function AlliedModal() {
             <div className="allied-modal__modal--box-1">
                 <div className="box-white">
                   <span className="allied-modal__modal--box-white-close-btn" onClick={closeModalCallback}>
-                    <img src="/img/svg/close.svg" alt="" />
+                    <img src="/img/svg/close.svg" alt="close" loading='lazy' />
                   </span>
                   <picture className="box-white__company-logo">
-                    <img src={alliedData.alliedCompanyImg} alt="" />
+                    <img src={alliedData.alliedCompanyImg} alt="logo" loading='lazy'/>
                   </picture>
                   <div className="box-white__text-box">
                     <p className="box-white__text">

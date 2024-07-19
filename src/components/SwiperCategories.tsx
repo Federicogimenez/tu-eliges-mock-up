@@ -52,7 +52,7 @@ function SwiperCategories() {
                         <ButtonTwoStates text_static={data["cat_1_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/slider-1.webp'/>
+                      <img src='/img/png/slider-1.webp' loading='lazy'/>
                       <ButtonTwoStates text_static={data["cat_1_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
@@ -66,7 +66,7 @@ function SwiperCategories() {
                         <ButtonTwoStates text_static={data["cat_2_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/slider-2.webp'/>
+                      <img src='/img/png/slider-2.webp'loading='lazy'/>
                       <ButtonTwoStates text_static={data["cat_2_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
@@ -81,7 +81,7 @@ function SwiperCategories() {
                         <ButtonTwoStates text_static={data["cat_3_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/slider-3.webp'/>
+                      <img src='/img/png/slider-3.webp' loading='lazy'/>
                       <ButtonTwoStates text_static={data["cat_3_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>
@@ -96,7 +96,7 @@ function SwiperCategories() {
                         <ButtonTwoStates text_static={data["cat_4_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                     <div className='category-slide__img-box'>
-                      <img src='/img/png/slider-4.webp'/>
+                      <img src='/img/png/slider-4.webp' loading='lazy'/>
                       <ButtonTwoStates text_static={data["cat_4_cta"]} text_hover={'JOIN NOW!'} />
                     </div>
                   </div>

@@ -2,6 +2,7 @@
 // import { useEffect, useRef, useState } from "react";
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 import DiscountCard from "../components/DiscountCard";
+import ButtonTwoStates from "../components/ButtonTwoStates";
 
 export default function SectionDiscounts() {
     const data = useLanguageContext();
@@ -68,11 +69,12 @@ export default function SectionDiscounts() {
                         </div>
                     </div>
                 <p className="section-discounts__content--subtitle">{data.cards_subtitle}</p>
-                <a href="https://uchooseitus.enjoymydeals.com/" target="_blank">
+                {/* <a href="https://uchooseitus.enjoymydeals.com/" target="_blank">
                     <span>
                         {data.cards_cta}
                     </span>
-                </a>
+                </a> */}
+                <ButtonTwoStates text_static={data.cards_cta} text_hover={'explore now'} animation="2" />
             </div>
             <div className="section-discounts__border section-discounts__border--2"></div>
         </section>

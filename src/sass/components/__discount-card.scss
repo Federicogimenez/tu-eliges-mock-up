@@ -1,128 +1,130 @@
 .card {
-    perspective: 150rem;
-    -moz-perspective: 150rem;
-    position: relative;
-    height: 32.3rem;
-    cursor: pointer;
-    width: 23.3rem;
-    margin: 2rem;
-    &__side {
-      height: 100%;
-      transition: all .8s ease;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 32.3rem;
+  cursor: pointer;
+  width: 23.3rem;
+  margin: 2rem;
+  &__side {
+    height: 100%;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: .2rem .2rem 1rem rgba(109, 109, 109, 0.678); 
+
+    &--front {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      transition: all .2;
+      
+    }
+    &--front-bg{
       position: absolute;
+      z-index: 1;
       top: 0;
       left: 0;
       width: 100%;
-      backface-visibility: hidden;
-      border-radius: 2rem;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      box-shadow: .2rem .2rem 1rem rgba(109, 109, 109, 0.678); 
-
-      &--front {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-size: cover;
-        background-position: center;
-        transition: all .2;
-        
-      }
-      &--front-bg{
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: transform .5s;
-        transform: scale(1);
-      }
-      &--front-icon{
-        position: relative;
-        z-index: 2;
-        width: 55%;
-        margin-bottom: 1rem;
-      }
-      &--front-text{
-        position: relative;
-        z-index: 2;
-        font-size: clamp(1.5rem, 3vw, 2rem);
-        font-family: "Monserrat Semibold";
-        color: #fff;
-        width: fit-content;
+      height: 100%;
+      transition: transform .5s;
+      transform: scale(1);
+    }
+    &--front-icon{
+      position: relative;
+      z-index: 2;
+      width: 55%;
+      margin-bottom: 1rem;
+    }
+    &--front-text{
+      position: relative;
+      z-index: 2;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-family: "Monserrat Semibold";
+      color: #fff;
+      width: fit-content;
+      text-align: center;
+    }
+    &--back {
+      display: grid;
+      place-items: center;
+      background-color: #000;
+      transform: rotateY(180deg); 
+      padding: 2rem;
+    
+      p{
+        font-size: 2rem;
+        font-family: "Monserrat";
+        font-weight: 600;
         text-align: center;
-      }
-      &--back {
-        display: grid;
-        place-items: center;
-        background-color: #000;
-        transform: rotateY(180deg); 
-        padding: 2rem 4.5rem 2rem 2rem;
-      
-        p{
-          font-size: 2rem;
-          font-family: "Monserrat";
-          color: #2995FC;
-        }
+        color: #2995FC;
       }
     }
   }
+}
 
 // card rotate effect start
 
 .card:hover .card__side--front {
-  transform: rotateY(-180deg); 
+transform: rotateY(-180deg); 
 }
 .card:focus .card__side--front {
-  transform: rotateY(-180deg); 
+transform: rotateY(-180deg); 
 }
 .card:hover .card__side--back {
-  transform: rotateY(0deg); }
+transform: rotateY(0deg); }
 .card:focus .card__side--back {
-  transform: rotateY(0deg); }
+transform: rotateY(0deg); }
 
 .rotateBack{
-    transform: rotateY(0deg); 
-  }
+  transform: rotateY(0deg); 
+}
 .rotateFront{
-    transform: rotateY(-180deg); 
-  }
+  transform: rotateY(-180deg); 
+}
 // card rotate effect end
 
 
 
 // animations start
 .animation{
-  &__bg-scale{
-    transform: scale(1.3);
-  }
-  &__card-1{
-    animation-duration: 1.4s;
-    transform-origin: top center;
-    animation-iteration-count: infinite;
-    animation-name: swing;
-  }
-  &__card-2{
-    animation-duration: 1s;
-    transform-origin: center bottom;
-    animation-iteration-count: infinite;
-    animation-name: bounce; 
-  }
-  &__card-3{
-    animation-name: rotateIn;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-    transform-origin: center;  
-  }
-  &__card-4{
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
-    animation-name: fadeOutTopRight;
-  }
+&__bg-scale{
+  transform: scale(1.3);
+}
+&__card-1{
+  animation-duration: 1.4s;
+  transform-origin: top center;
+  animation-iteration-count: infinite;
+  animation-name: swing;
+}
+&__card-2{
+  animation-duration: 1s;
+  transform-origin: center bottom;
+  animation-iteration-count: infinite;
+  animation-name: bounce; 
+}
+&__card-3{
+  animation-name: rotateIn;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  transform-origin: center;  
+}
+&__card-4{
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-name: fadeOutTopRight;
+}
 }
 // animations end

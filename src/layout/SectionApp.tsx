@@ -129,13 +129,13 @@ export default function SectionApp() {
                 { data["app_paragraph_3"] }
             </p>
             <div className='section-app__content--banner'>
-                <img src="/img/png/app/app-banner.png" alt="" />
+                <img src="/img/png/app/app-banner.png" alt="app banner" loading='lazy'/>
                 <div className='section-app__content--download-btn'>
                     <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1">
-                        <img src="/img/png/android-logo.png" alt="" />
+                        <img src="/img/png/android-logo.png" alt="android" loading='lazy'/>
                     </a>
                     <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196">
-                        <img src="/img/png/apple-logo.png" alt="" />
+                        <img src="/img/png/apple-logo.png" alt="apple" loading='lazy'/>
                     </a>
                 </div>
             </div>

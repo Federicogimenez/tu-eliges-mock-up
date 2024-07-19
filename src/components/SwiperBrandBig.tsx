@@ -18,7 +18,7 @@ export default function SwiperBrandBig(data: string[]) {
                 {
                     Object.values(data).map( (img, i) => 
                         <SwiperSlide className='big-brand-swiper-wrapper__slider' key={`swiper-big${i}`}>
-                            <img src={img} alt="brands" />
+                            <img src={img} alt="brands" loading='lazy' />
                         </SwiperSlide>
                     )
                 }
