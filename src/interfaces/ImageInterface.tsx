@@ -4,4 +4,5 @@ export interface LazyImage {
     width?: string
     height?: string
     class?: string
+    dynamicClass?: string
 }

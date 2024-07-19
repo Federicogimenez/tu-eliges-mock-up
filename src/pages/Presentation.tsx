@@ -126,7 +126,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
                 <div className="dynamic-contact">
                     <div className="dynamic-contact__first" ref={elementRef}>
                         <picture className="dynamic-contact__first--img">
-                            <LazyImageComponent src={currentComercial!.img} alt={currentComercial!.name} class={'grow-img '+(isIntersecting ? 'active':'')} />
+                            <LazyImageComponent src={currentComercial!.img} alt={currentComercial!.name} class='grow-img' dynamicClass={isIntersecting ? ' active':''} />
                         </picture>
                         <div className="dynamic-contact__first--text">
                             <h4>{currentComercial?.name}</h4>

@@ -39,7 +39,7 @@
             margin-bottom: clamp(3rem, 3.5vw, 5rem);
         }
         p{
-            font-size: clamp(2rem, 2.5vw, 4.5rem);
+            font-size: clamp(1.8rem, 2.5vw, 4.5rem);
             color: #fff;
             font-family: 'Monserrat';
             text-align: center;
@@ -62,12 +62,16 @@
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-        gap: clamp(2rem, 3vw, 4rem);
+        gap: clamp(1.5rem, 2vw, 4rem);
 
     }
     &__video-border{
         width: clamp(20px, 5vw, 11.1rem);
         background-color: #2995FC;
+
+        @media (max-width:769px) {
+            width: clamp(5px, 2vw, 7rem);
+        }
 
         &--left{
             border-radius: 0 20px 20px  0;
@@ -78,9 +82,14 @@
     }
     &__video-content{
         width: 90vw;
+
+        @media (max-width:769px) {
+            padding: 20px 0;
+        }
+
     }
     &__contact{
-        padding: 80px clamp(20px, 7vw, 120px);
+        padding: clamp(50px, 4vw, 80px) clamp(20px, 7vw, 120px);
     }
     &__contact-title{
         display: flex;
@@ -107,7 +116,7 @@
         font-family: 'Monserrat';
         color: #fff;
         font-size: clamp(2rem, 2.2vw, 4.5rem);
-        margin: 70px 0;
+        margin: clamp(40px, 5vw, 70px) 0;
     }
     .dynamic-contact{
         width: 100%;
@@ -117,6 +126,7 @@
         gap: 40px;
         
         @media (max-width:768px) {
+            padding-top: 20px;
             flex-direction: column;
         }
 
@@ -140,14 +150,15 @@
                 
                 
                 .grow-img{
+                    width: 100%;
                     position: relative;
                     display: block;
-                    transform-origin: center bottom;
-                    width: 100%;
-                    
+                    transform-origin: center bottom ;
+                    transition: all 1s ease-in-out !important;
+                    transform: scale(1);                    
                 }
                 .grow-img.active{
-                    transform: scale(1.2) !important;
+                    transform: scale(1.2);
                 }
                 // img{}
             }
