@@ -6,6 +6,7 @@ export default function ButtonTwoStates({ animation='1', text_hover, text_static
     <>
       { animation == '1' &&
         <a 
+        target="_blank"
         href="https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD" 
         className="btn-two-states">
               <span className="btn-two-states__visible"> { text_static } </span>
@@ -14,6 +15,7 @@ export default function ButtonTwoStates({ animation='1', text_hover, text_static
       }
       { animation == '2' &&
         <a 
+        target="_blank"
         href="https://tueligesus.enjoymydeals.com/" 
         className="btn-two-states-horizontal">
               <span className="btn-two-states-horizontal__visible"> { text_static } </span>
