@@ -98,7 +98,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
                     <div style={{'padding':'56.25% 0 0 0','position':'relative'}}>
                         <iframe 
                             style={{"position":"absolute","top":"0","left":"0","width":"100%","height":"100%"}} 
-                            src='https://www.youtube.com/embed/dUajsULLQdU?si=tbXpUsdx6N2XU01a'
+                            src='https://www.youtube.com/embed/dUajsULLQdU?si=tbXpUsdx6N2XU01a?rel=0'
                             loading="lazy" 
                             title="UChooseIt" 
                             frameBorder="0" 
