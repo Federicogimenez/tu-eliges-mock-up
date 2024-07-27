@@ -25,3 +25,7 @@
     src: url("/font/monserrat/Montserrat-SemiBoldItalic.ttf") format("truetype");
     font-display: swap;
 }
+
+html{
+    -webkit-font-smoothing: antialiased;
+}
