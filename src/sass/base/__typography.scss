@@ -24,3 +24,7 @@
     src: url("/font/monserrat/Montserrat-Light.ttf") format("truetype");
     font-display: swap;
 }
+
+html{
+    -webkit-font-smoothing: antialiased;
+}
