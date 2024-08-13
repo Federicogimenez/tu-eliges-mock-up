@@ -36,7 +36,7 @@ export default function ThankYou() {
   return (
     <div className="thanks-you">
         <a className="thanks-you__logo">
-          <img src="/img/png/logo-uchooseit.png" alt="" />
+          <img src="/img/png/logo-uchooseit.png" alt="logo" />
         </a>
         <h1 className="thanks-you__title">{ data["thanks_title"] }</h1>
         <p className="thanks-you__p">{ data["thanks_paragraph1"] }</p>
@@ -139,16 +139,16 @@ export default function ThankYou() {
           { data["thanks_visit_us"] }
         </p>
         <div className="thanks-you__socials">
-          <a target="_blank" href="https://www.facebook.com/tueligesusa">
+          <a target="_blank" href="http://facebook.com/Uchooseit.us">
               <img src="/img/svg/facebook.svg" alt="facebook" />
           </a>
-          <a target="_blank" href="https://www.instagram.com/tueliges.us/">
+          <a target="_blank" href="https://www.instagram.com/uchooseit.us/">
               <img src="/img/svg/ig.svg" alt="instagram" />
           </a>
-          <a target="_blank" href="https://www.linkedin.com/company/tueliges-us">
+          <a target="_blank" href="https://www.linkedin.com/company/uchooseit-us/about/?viewAsMember=true">
               <img src="/img/svg/linkedin-icon.svg" alt="linkedin" />
           </a>
-          <a target="_blank" href="https://www.youtube.com/channel/UC5QtJ5tx41WsIIZGyru7_Ng">
+          <a target="_blank" href="https://www.youtube.com/channel/UCTS9Hp-WjV4eMaqHATtmJSg">
               <img src="/img/svg/youtube-icon.svg" alt="youtube" />
           </a>
         </div>
