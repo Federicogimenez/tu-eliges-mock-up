@@ -18,9 +18,9 @@ export default function AlliedModal() {
 
   const gTagEventPurchase = () => {
       ReactGA.event({
-        category: 'cta',
-        action: 'purchase',
-        label: 'purchase'
+        category: 'button',
+        action: 'pop_up_purchase',
+        label: 'pop_up_purchase'
       })
     }
 
