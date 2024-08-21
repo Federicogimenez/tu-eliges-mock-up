@@ -19,8 +19,8 @@ export default function AlliedModal() {
   const gTagEventPurchase = () => {
       ReactGA.event({
         category: 'cta',
-        action: 'compra',
-        label: 'compra'
+        action: 'purchase',
+        label: 'purchase'
       })
     }
 
@@ -34,7 +34,7 @@ export default function AlliedModal() {
       action: 'close_pop_up',
       label: 'close_pop_up'
     })
-    
+
     closeModal()
   }
 
