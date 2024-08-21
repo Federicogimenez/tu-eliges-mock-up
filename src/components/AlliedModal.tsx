@@ -3,6 +3,7 @@ import { useLanguageContext } from "../hooks/UseLanguageContext";
 import { useSwitchAlliedModalContext } from "../hooks/UseSwitchAlliedModalContext"
 import { Loading } from "./Loading";
 import SwitchLang from "./SwitchLang";
+import ReactGA from 'react-ga4';
 
 export default function AlliedModal() {
 
@@ -13,8 +14,27 @@ export default function AlliedModal() {
   
   document.body.style.overflow = 'hidden';
 
+
+
+  const gTagEventPurchase = () => {
+      ReactGA.event({
+        category: 'cta',
+        action: 'compra',
+        label: 'compra'
+      })
+    }
+
+
+
   const closeModalCallback = ():void=>{
     document.body.style.overflow = 'auto';
+
+    ReactGA.event({
+      category: 'close_pop_up',
+      action: 'close_pop_up',
+      label: 'close_pop_up'
+    })
+    
     closeModal()
   }
 
@@ -85,7 +105,7 @@ export default function AlliedModal() {
                 <h4 className="box-blue__welcome">{data.modal_welcome}</h4>
                 <a className="box-blue__data" href="https://tueligesus.enjoymydeals.com/" target="_blank" >{data.modal_info}</a>
                 <p className="box-blue__ready">{data.modal_ready}</p>
-                <a className="box-blue__buy-btn" href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode}>{data.modal_cta}</a>
+                <a className="box-blue__buy-btn" href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode} onClick={gTagEventPurchase}>{data.modal_cta}</a>
               </div>
             </div>
             </div>
