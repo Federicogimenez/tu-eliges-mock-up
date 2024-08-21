@@ -1,18 +1,16 @@
+import { Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Loading } from "./components/Loading";
 import { LanguageProvider } from "./context/Language";
 import Faqs from "./pages/Faqs";
 import Home from "./pages/Home";
 import Policy from "./pages/Policy";
+import Presentation from "./pages/Presentation";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ThankYou from "./pages/ThankYou";
-import { Suspense } from "react";
-import { Loading } from "./components/Loading";
-import Presentation from "./pages/Presentation";
-import usePageViewTracking from "./hooks/usePageViewTracking";
+
 
 function App() {
-  usePageViewTracking()
-
   return (
     <BrowserRouter >
       <Suspense 

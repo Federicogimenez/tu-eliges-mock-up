@@ -10,8 +10,13 @@ import SectionDiscounts from "../layout/SectionDiscounts";
 import SectionPrice from "../layout/SectionPrice";
 import SectionVideo from "../layout/SectionVideo";
 
+import usePageViewTracking from "../hooks/usePageViewTracking";
+
 
 export default function Home() {
+    
+    usePageViewTracking()
+
     return (
             <div className="home">
                 <AlliedModalProvider>
