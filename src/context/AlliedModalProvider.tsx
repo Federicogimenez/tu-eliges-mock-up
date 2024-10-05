@@ -32,6 +32,7 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
 
   useEffect(() => {
     if(url.includes('?ally')){
+      
       // console.log(searchParams.get('ally'));
       
       setModalState(true)
@@ -48,6 +49,8 @@ export function AlliedModalProvider ({children}: alliedModalProvideChildren){
     api()
     .then((data)=> {
       if(data){
+        console.log('entro');
+        
         setModalData({
           alliedName: data.allyCompanyName,
           alliedCompanyImg: data.allyCompanyLogo,

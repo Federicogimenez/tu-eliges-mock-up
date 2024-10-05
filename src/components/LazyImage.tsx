@@ -13,6 +13,6 @@ export const LazyImageComponent = (image: LazyImage ) => (
     className={`${image.class} ${image.dynamicClass}`}
     effect="blur"
     // style={{transition:'all .4s ease', transform: 'scale(1)'}}
-    wrapperProps={{style: {transitionDelay: "1s"},}}
+    wrapperProps={{style: {transitionDelay: ".2s"},}}
     />
 );

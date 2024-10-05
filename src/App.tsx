@@ -8,6 +8,7 @@ import Policy from "./pages/Policy";
 import Presentation from "./pages/Presentation";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ThankYou from "./pages/ThankYou";
+import Purchase from "./pages/Purchase";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/presentation/3" element={<Presentation comercial={3} />} />
             </Route>
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/purchase" element={<Purchase />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/policy" element={<Policy />} />
