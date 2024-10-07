@@ -11,6 +11,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Loading } from '../components/Loading';
 import { useLanguageContext } from '../hooks/UseLanguageContext';
 import SwitchLang from '../components/SwitchLang';
+import { LazyImageComponent } from '../components/LazyImage';
 
 export default function Purchase (){
 
@@ -36,10 +37,7 @@ export default function Purchase (){
 
   
     useEffect(() => {
-      if(url.includes('?ally')){
-        
-        // console.log(searchParams.get('ally'));
-        
+      if(url.includes('?ally')){        
   
         const id = searchParams.get('ally');
   
@@ -52,9 +50,7 @@ export default function Purchase (){
         };
         api()
         .then((data)=> {
-            if(data){
-            console.log('entro');
-            
+            if(data){            
             setModalData({
                 alliedName: data.allyCompanyName,
                 alliedCompanyImg: data.allyCompanyLogo,
@@ -113,7 +109,7 @@ export default function Purchase (){
                                         <h1>{t.modal_welcome}</h1>
                                         <div className='purchase__logos'>
                                             <picture>
-                                                <img src={"/img/png/logo-tu-eliges.png"} alt={"tu eliges"} loading='lazy' />
+                                                <img src={"/img/png/logo-alternative-tu-eliges.png"} alt={"tueliges.us"} loading='lazy' />
                                             </picture>
                                             <picture>
                                                 <img src={modalData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
@@ -121,14 +117,14 @@ export default function Purchase (){
                                         </div>
                                         {/* {modalData.userNotFound ? <h2>no encontrado</h2> : <img src={modalData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
                                         <p className='purchase__intro'>
-                                            <span>Tueliges.us </span>
+                                            <span>TuEliges.us </span>
                                             & 
                                             <span> {modalData.alliedName} </span>
                                             <br />
-                                            se unen para ofrecerte un<strong> descuento especial </strong>en la compra de tu membresia
+                                            se unen para ofrecerte un<strong> descuento exclusivo </strong>en la compra de tu membresía.
                                         </p>
                                         <h4>
-                                            ¡No te pierdas nuestros beneficios!
+                                            ¡No pierdas dinero y suscríbete!
                                         </h4>
                                         <div className='purchase__cta'>
                                             <span></span>
@@ -140,9 +136,9 @@ export default function Purchase (){
                                         </p>
                                     </div>
                                     <div className='purchase__discount'>
-                                        <span className='purchase__discount--promcode'>PROMCODE</span>
+                                        <span className='purchase__discount--promcode'>YOURCODE</span>
                                         <span className='purchase__discount--apply'>DISCOUNT APPLIED</span>
-                                        <img className='purchase__discount--img' src="/img/png/discount-tueliges.jpg" alt="discount applied" loading='lazy' />
+                                        <LazyImageComponent src={'/img/png/discount-tueliges.jpg'} alt={'discount applied'} class='purchase__discount--img' />
                                     </div>
                                 </div>
                     }
