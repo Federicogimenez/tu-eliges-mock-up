@@ -14,7 +14,7 @@
 
     &__lang-container{
         position: absolute;
-        top: -10px;
+        top: 0px;
         right: 20px;
     }
 
@@ -55,6 +55,7 @@
         font-size: clamp(16px, 1.8vw, 22px);
         width: 100%;
         max-width: 450px;
+        margin: 0 auto;
 
         span{
             font-family: "Monserrat Semibold";
