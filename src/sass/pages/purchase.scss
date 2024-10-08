@@ -25,7 +25,7 @@
             padding-left: 0;
 
             ul{
-                width: 100%;
+                width: fit-content;
                 margin-left: 0;
                 left: 0;
             }
@@ -69,7 +69,7 @@
         text-align: center;
         font-size: clamp(16px, 1.8vw, 22px);
         width: 100%;
-        max-width: 450px;
+        max-width: 470px;
         margin: 0 auto;
 
         span{
@@ -127,7 +127,7 @@
         text-align: center;
         text-transform: uppercase;
         margin: 7px auto;
-        font-family: "Monserrat";
+        font-family: "Monserrat Semibold";
         font-size: clamp(.8rem, 1vw, 1.5rem);
 
     }
@@ -148,6 +148,8 @@
             border-radius: 7px;
             animation: 1s 1s ease 1 fadeIn backwards;
             z-index: 2;
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
         &--apply{
             position: absolute;

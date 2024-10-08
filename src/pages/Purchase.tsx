@@ -49,7 +49,7 @@ export default function Purchase (){
             return jsonData
         };
         api()
-        .then((data)=> {
+        .then((data)=> {            
             if(data){            
             setModalData({
                 alliedName: data.allyCompanyName,
@@ -77,7 +77,7 @@ export default function Purchase (){
                 userNotFound: true})
             }})
         }
-        })
+        }, [] )
 
     return (
 
@@ -121,18 +121,18 @@ export default function Purchase (){
                                             & 
                                             <span> {modalData.alliedName} </span>
                                             <br />
-                                            se unen para ofrecerte un<strong> descuento exclusivo </strong>en la compra de tu membresía.
+                                            <p dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
                                         </p>
                                         <h4>
-                                            ¡No pierdas dinero y suscríbete!
+                                           {t.purchase_h4}
                                         </h4>
                                         <div className='purchase__cta'>
                                             <span></span>
-                                            <a href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.modal_cta}</a>
+                                            <a href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
                                             <span></span>
                                         </div>
                                         <p className='purchase__recommend'>
-                                            asegurate de usar el codigo y aplicar los descuentos
+                                            {t.purchase_recommend}
                                         </p>
                                     </div>
                                     <div className='purchase__discount'>
