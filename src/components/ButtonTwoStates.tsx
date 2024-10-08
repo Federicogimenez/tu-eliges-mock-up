@@ -7,7 +7,7 @@ export default function ButtonTwoStates({ animation='1', text_hover, text_static
       { animation == '1' &&
         <a 
         target="_blank"
-        href="https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD" 
+        href="https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD" 
         className="btn-two-states">
               <span className="btn-two-states__visible"> { text_static } </span>
               <span className="btn-two-states__invisible"> { text_hover } </span>

@@ -57,7 +57,7 @@ export default function Faqs() {
                                 <h5>{data.faq_title_2}</h5>
                                 <p>
                                     {data.faq_content_2_1}
-                                    <a href="https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD">
+                                    <a href="https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD">
                                         {data.faq_content_2_1_link}
                                     </a>
                                 </p>

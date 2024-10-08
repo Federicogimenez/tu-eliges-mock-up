@@ -58,7 +58,7 @@ export default function Footer() {
                     support@uchooseit.us
                 </a>
                 <a onClick={handleRedirectFaq}>F.A.Q</a>
-                <a target="_blank" href="https://uchooseit-us.recurly.com/account/create_account">
+                <a target="_blank" href="https://uchooseitus.recurly.com/account/create_account">
                     {data.footer_membership}
                 </a>
             </div>

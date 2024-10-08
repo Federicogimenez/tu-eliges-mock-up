@@ -82,7 +82,7 @@ export default function AlliedModal() {
                 <h4 className="box-blue__welcome">{data.modal_welcome}</h4>
                 <a className="box-blue__data" href="https://uchooseitus.enjoymydeals.com/" target="_blank" >{data.modal_info}</a>
                 <p className="box-blue__ready">{data.modal_ready}</p>
-                <a className="box-blue__buy-btn" target="blank" href={'https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode}>{data.modal_cta}</a>
+                <a className="box-blue__buy-btn" target="blank" href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode}>{data.modal_cta}</a>
               </div>
             </div>
             </div>

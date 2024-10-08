@@ -114,7 +114,7 @@ export default function Purchase (){
                                         </h4>
                                         <div className='purchase__cta'>
                                             <span></span>
-                                            <a href={'https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
+                                            <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
                                             <span></span>
                                         </div>
                                         <p className='purchase__recommend'>
