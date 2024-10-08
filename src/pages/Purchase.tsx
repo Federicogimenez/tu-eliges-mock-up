@@ -5,7 +5,6 @@
 // import { useAlliedModalContext } from "../hooks/UseAlliedModalContext"
 // import { useLanguageContext } from "../hooks/UseLanguageContext"
 import { useEffect, useState } from 'react';
-import ReactGA from 'react-ga4';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import { useLanguageContext } from '../hooks/UseLanguageContext';
@@ -15,14 +14,6 @@ export default function Purchase (){
 
     const t = useLanguageContext()
     const [searchParams] = useSearchParams();
-
-    const gTagEventPurchase = () => {
-        ReactGA.event({
-          category: 'purchase',
-          action: 'purchase',
-          label: 'cta_pop_up'
-        })
-      }
 
     const [modalData, setModalData] = useState({
       alliedName: '',
@@ -123,7 +114,7 @@ export default function Purchase (){
                                         </h4>
                                         <div className='purchase__cta'>
                                             <span></span>
-                                            <a href={'https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
+                                            <a href={'https://uchooseit-us.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
                                             <span></span>
                                         </div>
                                         <p className='purchase__recommend'>
