@@ -6,6 +6,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import Policy from "./pages/Policy";
 import { LanguageProvider } from "./context/Language";
 import Presentation from "./pages/Presentation";
+import Purchase from "./pages/Purchase";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
               <Route path="/presentation/2" element={<Presentation comercial={2} />} />
               <Route path="/presentation/3" element={<Presentation comercial={3} />} />
             </Route>
+          <Route path="/purchase" element={<Purchase />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
