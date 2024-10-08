@@ -128,7 +128,7 @@ export default function Purchase (){
                                         </h4>
                                         <div className='purchase__cta'>
                                             <span></span>
-                                            <a href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
+                                            <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
                                             <span></span>
                                         </div>
                                         <p className='purchase__recommend'>

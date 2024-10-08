@@ -57,7 +57,7 @@ export default function Faqs() {
                                 <h5>{data.faq_title_2}</h5>
                                 <p>
                                     {data.faq_content_2_1}
-                                    <a href="https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD">
+                                    <a href="https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD">
                                         {data.faq_content_2_1_link}
                                     </a>
                                 </p>

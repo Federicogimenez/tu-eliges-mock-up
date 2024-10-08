@@ -105,7 +105,7 @@ export default function AlliedModal() {
                 <h4 className="box-blue__welcome">{data.modal_welcome}</h4>
                 <a className="box-blue__data" href="https://tueligesus.enjoymydeals.com/" target="_blank" >{data.modal_info}</a>
                 <p className="box-blue__ready">{data.modal_ready}</p>
-                <a className="box-blue__buy-btn" href={'https://tueliges-us.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode} onClick={gTagEventPurchase}>{data.modal_cta}</a>
+                <a className="box-blue__buy-btn" href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ alliedData.alliedCuponCode} onClick={gTagEventPurchase}>{data.modal_cta}</a>
               </div>
             </div>
             </div>

@@ -172,7 +172,7 @@ export default function TermsAndConditions() {
                             <section id="option-7">
                                 <h5>7. RIGHT TO CANCEL MEMBERSHIP</h5>
                                 <p>
-                                    (a) You have the right to cancel this Agreement at any time. You may cancel this Agreement at <a href="https://tueliges-us.recurly.com/account/create_account">tueliges-us.recurly.com/account/create_account</a>. 
+                                    (a) You have the right to cancel this Agreement at any time. You may cancel this Agreement at <a href="https://tueligesus.recurly.com/account/create_account">tueliges-us.recurly.com/account/create_account</a>. 
                                     (b) If TuEliges.us determines that it is unable to bill the membership fee due hereunder to its designated billing source, TuEliges.us shall have the right to terminate this Agreement, 
                                     in which case you will no longer have access to any of the You choose. it benefits us. In addition to the termination rights of TuEliges.us set forth above, TuEliges.us may elect, in its sole discretion, 
                                     to keep this Agreement in effect but suspend your access to all benefits of TuEliges.us, until such time (if applicable) that TuEliges.us may bill the membership fee due hereunder to its designated billing source.
