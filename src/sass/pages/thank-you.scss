@@ -1,211 +1,238 @@
-.thanks-you{
+.thank{
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 8rem;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    background-image: #fff;
+    // background-image: radial-gradient( #fff 70%, #2995FC);
 
-    &__switch-lang{
-        margin-left: auto;
-        margin-right: 2rem;
-        width: fit-content;
-    }
-    &__logo{
-        width: 95%;
+    &__header{
+        width: 100%;
         max-width: 1000px;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-top: 2.5rem;
-        margin-bottom: 6rem;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
 
-        img{
-            height: clamp(108px, 8vw, 150px);
+        
+        &--switch-lang{
+            width: fit-content;
+                        
+            &>.switch-languaje{
+                padding: 5px 12px;
+                background-color: #000;
+                border-radius: 10px;
+                
+                // padding-left: 0;
+                margin-top: 0;
+                @media (max-width:600px) {
+                    font-size: 12px;
+                }
+                
+                ul{
+                    width: fit-content;
+                    margin-left: 0;
+                    left: 0;
+                    bottom: -90%;
+                    border: none;
+                    
+                    li{
+                        padding: 5px 12px;
+                    }
+                }
+            }
         }
-    }
-    &__title{
-        color: #fff;
-        font-family: "Monserrat Semibold";
-        font-size: clamp(2rem, 3.5vw, 5rem);
-        text-align: center;
-        margin-bottom: clamp(2.5rem, 4vw, 6rem);
-        width: 95%;
-        max-width: 1000px;
-    }
-    &__p{
-        color: #fff;
-        font-size: clamp(1.6rem, 3vw, 2.5rem);
-        font-family: "Monserrat";
-        text-align: left;
-        margin-bottom: clamp(2rem, 2.5vw, 4rem);
-        width: 95%;
-        max-width: 1000px;
-
-        a{
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        span{
-            font-family: "Monserrat Italic";
-            border-bottom: 2px solid #2995FC;
-            cursor: pointer;
-            transform: translateY(0);
-            padding: 0 10px ;
-            position: relative;
-
-            small{
-                position: absolute;
-                top: -101%;
-                left: 95%;
-                width: fit-content;
-                text-wrap: nowrap;
-                background-color: #2995FC;
-                border-radius: 8px;
-                border: 1px solid #fff;
-                padding: 5px;
-                color: #fff;
-                font-size: 12px;
-                font-family: 'Monserrat';
-
+        &--logo{
+            width: fit-content;
+            display: block;
+            
+            img{
+                height: clamp(60px, 6vw, 120px);
             }
         }
     }
-
-    &__support-text{
-        color: #fff;
-        font-size: clamp(1.6rem, 3vw, 2.5rem);
-        font-family: "Monserrat";
-        text-align: left;
-        margin-bottom: clamp(2rem, 2.5vw, 4rem);
-        width: 95%;
+    &__title{
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(to right, #000,#2995FC 50%);
+        font-family: "Monserrat Semibold";
+        font-size: clamp(2.2rem, 2.8vw, 3rem);
+        text-align: center;
+        margin: clamp(1rem, 2vw, 3rem) 0;
         max-width: 1000px;
-
-        a{
-            color: #fff;
-            cursor: pointer;
-        }
     }
-    &__steps{
-        width: 95%;
-        max-width: 1000px;
+    &__intro{
         display: flex;
         justify-content: center;
-        align-items: stretch;
+        gap: 40px;
+        align-items: center;
         flex-wrap: wrap;
-        gap: 2rem;
-        margin-bottom: 5rem;
+        max-width: 900px;
 
-        &>div{
-            flex: .5 0 250px;
-            max-width: 440px;
+        div{
+            flex: 1 0 0;
         }
+        &--p{
+            color: #000;
+            font-size: clamp(1.6rem, 2vw, 2.2rem);
+            font-family: "Monserrat";
+            text-align: left;
+            margin-bottom: clamp(2rem, 2.5vw, 4rem);
+        }
+        &--step{
+            color: #000;
+            font-size: clamp(1.6rem, 2vw, 2rem);
+            font-family: "Monserrat";
+            text-align: left;
+            margin-bottom: clamp(1rem, 1.3vw, 1.6rem);
+            padding-left: 2rem;
 
+            &::first-letter{
+                // color: #DA82FF;  
+                font-weight: 700;
+            }
 
+            span{
+                font-family: "Monserrat Italic";
+                font-weight: 700;
+                border-bottom: 2px solid #2995FC;
+                cursor: pointer;
+                transform: translateY(0);
+                padding: 0 10px ;
+                position: relative;
+                transition: all .3s ease-in;
+                border-radius: 5px 5px 0 0;
+
+                &:hover{
+                    color: #fff;
+                    background-color: #2995FC;
+                }
+    
+                small{
+                    position: absolute;
+                    top: -101%;
+                    left: 95%;
+                    width: fit-content;
+                    text-wrap: nowrap;
+                    background-color: #2995FC;
+                    border-radius: 8px;
+                    border: 1px solid #fff;
+                    padding: 5px;
+                    color: #fff;
+                    font-size: 12px;
+                    font-family: 'Monserrat';
+                }
+            }
+        }
         &--cta{
             display: block;
             width: fit-content;
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin: clamp(2rem, 4vw, 7rem) auto;
+            padding: 10px 30px;
+            border-radius: 25px;
+            margin: clamp(2rem, 5vw, 7rem) auto 0 auto;
             // margin: 20px auto;
             text-align: center;
             background-color: #DA82FF;
             color: #fff;
             font-family: 'Monserrat', sans-serif;
+            font-weight: 700;
             font-size: clamp(2rem, 3vw, 2.5rem);
+            text-decoration: none;
+            border-bottom: solid 4px transparent;
+            transition: all .2s ease-in-out;
+
+            &:hover{
+                transform: translateY(-4px);
+                border-bottom: solid 4px #6166fd;
+            }
+            &:active{
+                transform: translateY(0);
+                border-bottom: solid 4px transparent;
+            }
         }
-        &--step{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-height: 384px;
-            color: #fff;
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            font-family: "Monserrat";
-            padding: clamp(2rem, 4vw, 4rem) 2rem;
-            border-radius: 20px;
-            border: 4px solid #2995FC;
+        &--gif{
+            flex: 1 0 300px;
+            max-width: 270px;
+            border-radius: 10px;
+        }
+    }
+    &__subtitle{
+        color: #000;
+        font-family: "Monserrat Semibold";
+        font-size: clamp(2.2rem, 2.8vw, 3rem);
+        text-align: center;
+        margin: clamp(2rem, 5vw, 7rem) auto clamp(1rem, 2vw, 3rem) auto;
+        max-width: 1000px;
+    }
 
-            a{
-                text-decoration: none;
-                color: #2995FC;
-            }
+    &__my-deals{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        gap: 20px;
 
-            h5{
-                text-align: center;
-                font-size: clamp(1.8rem, 3vw, 2.5rem);
-                max-width: 600px;
-                margin-bottom: 20px;
-            }
+        &--logo{
+            width: clamp(50px, 8vw, 200px);
+        }
+
+        &--p{
+            flex: 1 0 300px;
+            max-width: 580px;
+
             p{
+                color: #000;
                 font-size: clamp(1.6rem, 2vw, 2rem);
+                font-family: "Monserrat";
+                text-align: left;
+                margin-bottom: clamp(1.5rem, 5vw, 7rem);
             }
-            ul{
-                margin-top: 20px;
-                padding-left: 20px;
-                font-size: clamp(1.6rem, 2vw, 2rem);
-                li{
-                    margin: 5px;
-                    span{
-                        font-family: "Monserrat Italic";
-                        border-bottom: 2px solid #2995FC;
-                        cursor: pointer;
-                        transform: translateY(0);
-                        padding: 0 10px ;
-                        position: relative;
-            
-                        small{
-                            position: absolute;
-                            top: -101%;
-                            left: 95%;
-                            width: fit-content;
-                            text-wrap: nowrap;
-                            background-color: #2995FC;
-                            border-radius: 8px;
-                            border: 1px solid #fff;
-                            padding: 5px;
-                            color: #fff;
-                            font-size: 12px;
-                            font-family: 'Monserrat';
-            
-                        }
-                    }
+        }
+        &--download{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2rem;
+    
+            a{
+                display: inline-block;
+                text-decoration: none;
+                width: clamp(80px, 10vw, 150px);
+    
+                img{
+                    width: 100%;
                 }
             }
         }
-    }
-    &__download{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        margin: clamp(2rem, 4vw, 7rem) 0;
-        // margin: clamp(2rem, 4vw, 7rem);
-
-        a{
-            text-decoration: none;
-            width: clamp(100px, 15vw, 300px);
-
-            img{
-                width: 100%;
-            }
+        &--app{
+            flex: 1 0 200px;
+            max-width: 200px;
         }
     }
-    &__visit-us{
-        color: #fff;
-        font-size: clamp(1.6rem, 3vw, 2.5rem);
+    &__email-text{
+        max-width: 1000px;
+        color: #000;
+        font-size: clamp(1.4rem, 1.6vw, 2rem);
         font-family: "Monserrat";
         text-align: center;
-        width: 95%;
+        margin: clamp(1.5rem, 2vw, 3rem) 0;
+    }
+    &__slogan{
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(to right, #DA82FF,#6166fd);
+        font-family: "Monserrat Semibold";
+        font-size: clamp(2.2rem, 2.8vw, 3rem);
+        text-align: center;
+        margin: clamp(2rem, 5vw, 5rem) auto clamp(1rem, 2vw, 3rem) auto;
         max-width: 1000px;
-        margin-bottom: clamp(2rem, 4vw, 7rem);
-            }
+    }
     &__socials{
         width: 95%;
         max-width: 1000px;
@@ -223,8 +250,9 @@
             }
         }
     }
+
     &__redirect{
-        font-family: "Monserrat";
+        font-family: "Monserrat Semibold";
         text-decoration: none;
         transition: all .2s;
         color: #2995FC;
