@@ -12,7 +12,7 @@ export function LanguageProvider({ children }: languageProvideChildren) {
 
     const toggleLanguage = ()=>{
         if (userLanguage == dictionaryList.en) {
-            setUserLanguage(dictionaryList.es)
+            // setUserLanguage(dictionaryList.es)
         }else{
             setUserLanguage(dictionaryList.en)
         }
