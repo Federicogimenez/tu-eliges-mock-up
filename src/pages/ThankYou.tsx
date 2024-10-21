@@ -67,7 +67,7 @@ export default function ThankYou() {
             <p className="thank__intro--step">3. {data.thanks_intro_step_3}</p>
             <a className="thank__intro--cta" href="https://tueligesus.enjoymydeals.com/" target="_blank"> { data.thanks_cta }</a>
           </div>
-          <LazyImageComponent src="/img/gif/thank-you-activate.gif" alt={"how to activate"} class="thank__intro--gif" width="100%" height="100%" />
+          <video src="/thank-you-activate.mp4" autoPlay loop className="thank__intro--gif" width="100%" height="100%"></video>
         </div>
 
 
