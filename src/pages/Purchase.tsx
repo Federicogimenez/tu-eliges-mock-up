@@ -86,7 +86,7 @@ export default function Purchase (){
             <header>
                 <img className='logo' src="/img/png/favicon.png" alt="isotipo" />
                 <h1>{t.modal_welcome}</h1>
-                <div className='purchase__lang-container'>
+                <div className='lang-container'>
                     <SwitchLang />
                 </div>
             </header>
