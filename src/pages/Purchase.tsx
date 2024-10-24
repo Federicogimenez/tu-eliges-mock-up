@@ -9,6 +9,7 @@ import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import { useLanguageContext } from '../hooks/UseLanguageContext';
 import { LazyImageComponent } from '../components/LazyImage';
+import Footer from '../layout/Footer';
 
 export default function Purchase (){
 
@@ -71,70 +72,73 @@ export default function Purchase (){
     return (
 
         <div className='purchase__bg'>
-
+            <header>
+                <img className='logo' src="/img/png/favicon.png" alt="isotipo" />
+                <h1>{t.modal_welcome}</h1>
+            </header>
+            <div className='purchase'>
             {
                 
                 modalData.isLoading ? <h1></h1> :
-                
-                
-                <div className='purchase'>
-                    {
-                        modalData.userNotFound ?
-                            
-                            <div className="allied-modal__user-not-found">
-                                <div className="allied-modal__user-not-found--content">
-                                    <img src="/img/svg/error.svg" alt="error" />
-                                    <p>
-                                    {t.modal_error}
-                                    </p>
-                                </div>
+
+                (
+
+                    modalData.userNotFound ?
+                        
+                        <div className="allied-modal__user-not-found">
+                            <div className="allied-modal__user-not-found--content">
+                                <img src="/img/svg/error.svg" alt="error" />
+                                <p>
+                                {t.modal_error}
+                                </p>
                             </div>
-                        :
-                                <div className='purchase__main'>
-                                    <div>
-                                        <h1>{t.modal_welcome}</h1>
-                                        <div className='purchase__logos'>
-                                            <picture>
-                                                <img src={"/img/png/logo-alternative-uchooseit.png"} alt={"uchooseit.us"} loading='lazy' />
-                                            </picture>
-                                            <picture>
-                                                <img src={modalData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
-                                            </picture>
-                                        </div>
-                                        {/* {modalData.userNotFound ? <h2>no encontrado</h2> : <img src={modalData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
-                                        <p className='purchase__intro'>
+                        </div>
+                    :
+                        <div className='purchase__main'>
+                            <div className='purchase__logos'>
+                                <picture>
+                                    <img src={"/img/png/logo-alternative-uchooseit.png"} alt={"uchooseit.us"} loading='lazy' />
+                                </picture>
+                                <picture>
+                                    <img src={modalData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
+                                </picture>
+                            </div>
+                            
+                            <div className='purchase__description'>
+
+                                {/* {modalData.userNotFound ? <h2>no encontrado</h2> : <img src={modalData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
+                                <div className='purchase__text'>
+                                    <div className='purchase__intro'>
+                                        <h3>
                                             <span>Uchooseit.us </span>
                                             & 
                                             <span> {modalData.alliedName} </span>
-                                            <br />
-                                            <p dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
-                                        </p>
-                                        <h4>
-                                           {t.purchase_h4}
-                                        </h4>
-                                        <div className='purchase__cta'>
-                                            <span></span>
-                                            <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
-                                            <span></span>
-                                        </div>
-                                        <p className='purchase__recommend'>
-                                            {t.purchase_recommend}
-                                        </p>
+                                        </h3>
+                                        <p className='purchase__intro--p' dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
                                     </div>
-                                    <div className='purchase__discount'>
-                                        <span className='purchase__discount--promcode'>YOURCODE</span>
-                                        <span className='purchase__discount--apply'>DISCOUNT APPLIED</span>
-                                        <LazyImageComponent src={'/img/png/discount-uchooseit.jpg'} alt={'discount applied'} class='purchase__discount--img' />
+                                    <h4>
+                                        {t.purchase_h4}
+                                    </h4>
+                                    <div className='purchase__cta'>
+                                        <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
                                     </div>
+                                    <p className='purchase__recommend'>
+                                        {t.purchase_recommend}
+                                    </p>
                                 </div>
-                    }
+                                <div className='purchase__discount'>
+                                    
+                                    <LazyImageComponent src={'/img/png/discount-uchooseit.jpg'} alt={'discount applied'} class='purchase__discount--img' />
+                                </div>
+                            </div>
+                        </div>
 
-                </div>
+                )
+
             }
-
-        </div>
-
-
+            </div>
+            <Footer />
+            </div>
 
     )
 }
