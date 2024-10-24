@@ -22,11 +22,15 @@
     }
 
     ul{
-        display: none;
+        // display: none;
+        display: inline-block;
         width: 115%;
         position: absolute;
         bottom: -40px;
         left: -8px;
+        height: 0;
+        opacity: 0;
+        transition: all .3s ease;
         background-color: #000;
         border: 2px solid #fff;
         border-top: none;
@@ -55,7 +59,9 @@
 }
 .switch-languaje:hover ul,
 .switch-languaje:hover ul:hover{
+    opacity: 1;
     display: block;
+    height: fit-content;
 }
 .switch-languaje:hover ul li{
     height: 100%;
