@@ -83,9 +83,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        column-gap: 50px;
-        // flex-wrap: wrap;
+        gap: 50px;
+        flex-wrap: nowrap;
+        @media (max-width:900px) {
+            flex-wrap: wrap;
+        }
     }
+
 
     &__text{
         flex: 1 0 60%;
@@ -126,7 +130,12 @@
             font-size: clamp(20px, 2.5vw, 60px);
             margin-bottom: 20px;
             text-wrap: nowrap;
+            @media (max-width:900px) {
+                text-wrap: wrap;
+                align-items: center;
+            }
         }
+
         &--p{
             font-size: clamp(18px, 1.8vw, 45px);
         }
@@ -193,7 +202,12 @@
         position: relative;
         width: fit-content;
         height: fit-content;
-
+        
+        @media (max-width:900px) {
+            flex: none;
+            width: 100%;
+            text-align: center;
+        }
         &--promcode{
             position: absolute;
             top: 61%;
