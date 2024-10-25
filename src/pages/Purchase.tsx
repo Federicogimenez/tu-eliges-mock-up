@@ -142,8 +142,8 @@ export default function Purchase (){
                                         </p>
                                     </div>
                                     <div className='purchase__discount'>
-                                        {/* <span className='purchase__discount--promcode'>YOURCODE</span> */}
-                                        {/* <span className='purchase__discount--apply'>DISCOUNT APPLIED</span> */}
+                                        <span className='purchase__discount--promcode'>YOURCODE</span>
+                                        <span className='purchase__discount--apply'>DISCOUNT APPLIED</span>
                                         <LazyImageComponent src={'/img/png/discount-tueliges.jpg'} alt={'discount applied'} class='purchase__discount--img' />
                                     </div>
                                 </div>

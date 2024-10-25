@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './main.scss'
+import './index.css'
 import App from './App.tsx'
 import ReactGA from 'react-ga4';
 
