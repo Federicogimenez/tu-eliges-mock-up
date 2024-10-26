@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router";
-import BurgerMenuAlternative from "../components/BurgerMenuAlternative";
-import { useLanguageContext } from "../hooks/UseLanguageContext";
-import { LegalBurgerOptions } from "../interfaces/LegalBurgerOptions";
-import Footer from "../layout/Footer";
+import { useNavigate } from "react-router"
+import BurgerMenuAlternative from "../components/BurgerMenuAlternative"
+import { useLanguageContext } from "../hooks/UseLanguageContext"
+import { LegalBurgerOptions } from "../interfaces/LegalBurgerOptions"
+import Footer from "../layout/Footer"
 
 
 export default function Faqs() {

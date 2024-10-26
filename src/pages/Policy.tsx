@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router";
-import BurgerMenuAlternative from "../components/BurgerMenuAlternative";
-import { LegalBurgerOptions } from "../interfaces/LegalBurgerOptions";
-import Footer from "../layout/Footer";
+import { useNavigate } from "react-router"
+import BurgerMenuAlternative from "../components/BurgerMenuAlternative"
+import { LegalBurgerOptions } from "../interfaces/LegalBurgerOptions"
+import Footer from "../layout/Footer"
 
 
 export default function Policy() {

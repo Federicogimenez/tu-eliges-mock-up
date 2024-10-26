@@ -1,9 +1,9 @@
 // import { useLocation } from "react-router";
 // import { useSearchParams } from "react-router-dom";
 
-import { useNavigate } from "react-router";
-import { LazyImageComponent } from "../components/LazyImage";
-import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router"
+import { LazyImageComponent } from "../components/LazyImage"
+import { useEffect, useRef, useState } from "react"
 
 interface presentationPropType {
     comercial?: number

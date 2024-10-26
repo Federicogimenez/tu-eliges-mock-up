@@ -1,9 +1,9 @@
-import { useLocation } from "react-router";
-import { useLanguageContext } from "../hooks/UseLanguageContext";
-import SwitchLang from "../components/SwitchLang";
-import { useRef, useState } from "react";
-import { LazyImageComponent } from "../components/LazyImage";
-import Footer from "../layout/Footer";
+import { useLocation } from "react-router"
+import { useLanguageContext } from "../hooks/UseLanguageContext"
+import SwitchLang from "../components/SwitchLang"
+import { useRef, useState } from "react"
+import { LazyImageComponent } from "../components/LazyImage"
+import Footer from "../layout/Footer"
 
 import thankYouVideo from '/thank-you-activate.mp4'
 
@@ -68,7 +68,12 @@ export default function ThankYou() {
               <strong>Sign Up</strong>
             </p>
             <p className="thank__intro--step">3. {data.thanks_intro_step_3}</p>
-            <a className="thank__intro--cta" href="https://tueligesus.enjoymydeals.com/" target="_blank"> { data.thanks_cta }</a>
+            <a className="thank__intro--cta" href="https://tueligesus.enjoymydeals.com/" target="_blank">
+              <span>
+
+                { data.thanks_cta }
+              </span>
+            </a>
           </div>
           <video autoPlay={true} loop={true} controls={true} className="thank__intro--gif" width="100%" height="100%">
             <source src={thankYouVideo} type="video/mp4" />

@@ -4,15 +4,15 @@
 // import { AlliedModalProvider } from "../context/AlliedModalProvider"
 // import { useAlliedModalContext } from "../hooks/UseAlliedModalContext"
 // import { useLanguageContext } from "../hooks/UseLanguageContext"
-import { useEffect, useState } from 'react';
-import ReactGA from 'react-ga4';
-import { useLocation } from 'react-router';
-import { useSearchParams } from 'react-router-dom';
-import { Loading } from '../components/Loading';
-import { useLanguageContext } from '../hooks/UseLanguageContext';
-import SwitchLang from '../components/SwitchLang';
-import { LazyImageComponent } from '../components/LazyImage';
-import Footer from '../layout/Footer';
+import { useEffect, useState } from 'react'
+import ReactGA from 'react-ga4'
+import { useLocation } from 'react-router'
+import { useSearchParams } from 'react-router-dom'
+import { Loading } from '../components/Loading'
+import { useLanguageContext } from '../hooks/UseLanguageContext'
+import SwitchLang from '../components/SwitchLang'
+import { LazyImageComponent } from '../components/LazyImage'
+import Footer from '../layout/Footer'
 
 export default function Purchase (){
 
