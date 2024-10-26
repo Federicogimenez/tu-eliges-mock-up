@@ -6,27 +6,46 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem;
     padding-bottom: 4rem;
     background-image: #fff;
     // background-image: radial-gradient( #fff 70%, #2995FC);
 
-    &__header{
+    header{
+        background-color: #000;
+        border-radius: 0 0 50px 50px;
         width: 100%;
-        max-width: 1000px;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
+        align-items: center;
+        padding: 20px 80px;
+        @media (max-width:700px) {
+            padding: 15px ;
+        }
 
+        .isologo{
+            min-width: 50px;
+            width: 4vw;
+            max-width: 100px;
+        }
+        h1{
+            color: #fff;
+            font-size: clamp(22px,3vw, 55px);
+            font-family: "Monserrat";
+            text-align: center;
+            font-weight: 700;
+            // margin-top: 50px;
+        }
         
-        &--switch-lang{
+        .lang-container{
             width: fit-content;
-                        
+            height: fit-content;
+                            
             &>.switch-languaje{
                 padding: 5px 12px;
-                background-color: #000;
+                // background-color: #000;
                 border-radius: 10px;
+                color: #fff;
+                align-items: center;
                 
                 // padding-left: 0;
                 margin-top: 0;
@@ -47,31 +66,79 @@
                 }
             }
         }
-        &--logo{
-            width: fit-content;
-            display: block;
+    }
+    // &__header{
+    //     width: 100%;
+    //     max-width: 1000px;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: flex-start;
+    //     gap: 20px;
+
+        
+    //     &--switch-lang{
+    //         width: fit-content;
+                        
+    //         &>.switch-languaje{
+    //             padding: 5px 12px;
+    //             background-color: #000;
+    //             border-radius: 10px;
+                
+    //             // padding-left: 0;
+    //             margin-top: 0;
+    //             @media (max-width:600px) {
+    //                 font-size: 12px;
+    //             }
+                
+    //             ul{
+    //                 width: fit-content;
+    //                 margin-left: 0;
+    //                 left: 0;
+    //                 bottom: -90%;
+    //                 border: none;
+                    
+    //                 li{
+    //                     padding: 5px 12px;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     &--logo{
+    //         width: fit-content;
+    //         display: block;
             
-            img{
-                height: clamp(60px, 6vw, 120px);
-            }
-        }
+    //         img{
+        //         }
+        //     }
+        // }
+    &__logo{
+        display: block;
+        height: clamp(60px, 6vw, 120px);
+        width: fit-content;
+        margin: 20px auto;
     }
     &__title{
-        color: transparent;
-        background-clip: text;
-        background-image: linear-gradient(to right, #000,#2995FC 50%);
-        font-family: "Monserrat Semibold";
+        color: #2995FC;
+        font-family: "Monserrat";
         font-size: clamp(2.2rem, 2.8vw, 3rem);
         text-align: center;
-        margin: clamp(1rem, 2vw, 3rem) 0;
+        margin: clamp(1rem, 2.4vw, 3rem) 0;
         max-width: 1000px;
+        font-weight: 400;
+        line-height: 1.2;
+        strong{
+            font-weight: 900;
+            font-size: clamp(2.5rem, 3vw, 5rem);
+            display: block;
+        }
     }
     &__intro{
         display: flex;
         justify-content: center;
-        gap: 40px;
+        gap: 3vw;
         align-items: center;
         flex-wrap: wrap;
+        width: 90%;
         max-width: 900px;
 
         div{
@@ -83,6 +150,7 @@
             font-family: "Monserrat";
             text-align: left;
             margin-bottom: clamp(2rem, 2.5vw, 4rem);
+            font-weight: 700;
         }
         &--step{
             color: #000;
@@ -90,7 +158,6 @@
             font-family: "Monserrat";
             text-align: left;
             margin-bottom: clamp(1rem, 1.3vw, 1.6rem);
-            padding-left: 2rem;
 
             &::first-letter{
                 // color: #DA82FF;  
@@ -130,31 +197,82 @@
             }
         }
         &--cta{
-            display: block;
-            width: fit-content;
-            padding: 10px 30px;
-            border-radius: 25px;
-            margin: clamp(2rem, 5vw, 7rem) auto 0 auto;
-            // margin: 20px auto;
-            text-align: center;
-            background-color: #DA82FF;
-            color: #fff;
-            font-family: 'Monserrat', sans-serif;
-            font-weight: 700;
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            text-decoration: none;
-            border-bottom: solid 4px transparent;
-            transition: all .2s ease-in-out;
-
-            &:hover{
-                transform: translateY(-4px);
-                border-bottom: solid 4px #6166fd;
-            }
-            &:active{
-                transform: translateY(0);
+                display: block;
+                width: 80%;
+                position: relative;
+                min-width: fit-content;
+                max-width: 600px;
+                padding: 10px 0px;
+                border-radius: 15px;
+                margin-top: 70px;
+                margin-right: auto;
+                text-align: center;
+                background-color: #6166fd;
+                color: #fff;
+                font-family: 'Monserrat', sans-serif;
+                font-weight: 700;
+                font-size: clamp(2rem, 3vw, 2.5rem);
+                text-decoration: none;
                 border-bottom: solid 4px transparent;
+                transition: all .2s ease-in-out;
+                overflow: hidden;
+
+                @media (max-width:600px) {
+                    width: 100%;
+                }
+                span{
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    background-color: transparent;
+                    z-index: 4;
+                    text-wrap: nowrap;
+                    padding: 0 8px;
+                }
+
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #DA82FF;
+                    height: 100%;
+                    width: 100%;
+                    transform: translateY(0);
+                    transition: all .3s ease;
+                }
+                &::before{
+                    content: "";
+                    cursor: pointer;
+                    pointer-events: all;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 10px;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    background-color: #DA82FF;
+                    z-index: 2;
+                    clip-path: ellipse(50% 50% at 50% 50%);
+                    transform: translateY(0);
+                    transition: all .3s ease-in;
+
+                }
+    
+                &:hover{
+                    transform: translateY(-4px);
+                    box-shadow: 0 10px 10px 7px #00000025;
+                    &::after{
+                        transform: translateY(-50%);
+                    }
+                }
+                &:active{
+                    transform: translateY(0);
+                    border-bottom: solid 4px transparent;
+                }
             }
-        }
         &--gif{
             flex: 1 0 300px;
             max-width: 270px;
@@ -165,33 +283,60 @@
         color: #000;
         font-family: "Monserrat Semibold";
         font-size: clamp(2.2rem, 2.8vw, 3rem);
-        text-align: center;
-        margin: clamp(2rem, 5vw, 7rem) auto clamp(1rem, 2vw, 3rem) auto;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 10px;
         max-width: 1000px;
     }
 
     &__my-deals{
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: stretch;
         flex-wrap: wrap;
         max-width: 1200px;
+        padding: 0 20px;
         gap: 20px;
 
+        @media (max-width:600px) {
+            // flex-direction: column;
+        }
+
         &--logo{
-            width: clamp(50px, 8vw, 200px);
+            flex: 1 0 40%;
+            max-width: 200px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding: 30px 0;
+            border-radius: 10px;
+            background-color: #3497db;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            
         }
 
         &--p{
-            flex: 1 0 300px;
+            flex: 1 0 50%;
+            margin-bottom: 20px;
             max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            @media (max-width:600px) {
+                flex: 1 0 0;
+                order: 3;
+            }
 
             p{
+                flex: 1 0 0;
                 color: #000;
                 font-size: clamp(1.6rem, 2vw, 2rem);
                 font-family: "Monserrat";
                 text-align: left;
-                margin-bottom: clamp(1.5rem, 5vw, 7rem);
             }
         }
         &--download{
@@ -211,8 +356,15 @@
             }
         }
         &--app{
-            flex: 1 0 200px;
+            flex: 1 0 20%;
             max-width: 200px;
+            @media (max-width:600px) {
+                order: 2;
+            }
+            picture{
+                height: auto;
+
+            }
         }
     }
     &__email-text{
@@ -221,7 +373,10 @@
         font-size: clamp(1.4rem, 1.6vw, 2rem);
         font-family: "Monserrat";
         text-align: center;
-        margin: clamp(1.5rem, 2vw, 3rem) 0;
+        margin: clamp(1.5rem, 3vw, 5rem) 0;
+        strong{
+            color: #2995FC;
+        }
     }
     &__slogan{
         color: transparent;
