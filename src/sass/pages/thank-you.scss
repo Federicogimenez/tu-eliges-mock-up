@@ -115,6 +115,8 @@
         display: block;
         height: clamp(60px, 6vw, 120px);
         width: fit-content;
+        height: auto;
+        max-width: 30vw;
         margin: 20px auto;
     }
     &__title{
@@ -140,6 +142,7 @@
         flex-wrap: wrap;
         width: 90%;
         max-width: 900px;
+        margin-bottom: 50px;
 
         div{
             flex: 1 0 0;

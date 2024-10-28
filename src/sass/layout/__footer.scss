@@ -28,6 +28,7 @@
                 font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 15px;
                 text-decoration: none;
+                display: flex;
                 cursor: pointer;
 
                 img{
@@ -44,6 +45,7 @@
                     cursor: pointer;
                     text-decoration: none;
                     margin-right: 10px;
+                    
                     img{
                         width: 2rem;
                     }
@@ -80,6 +82,7 @@
                 font-size: clamp(1.5rem, 2vw, 1.8rem);
                 margin-bottom: 15px;
                 text-decoration: none;
+                display: flex;
 
                 img{
                     margin-right: 10px;

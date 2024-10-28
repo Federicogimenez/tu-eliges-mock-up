@@ -40,7 +40,7 @@ export default function ThankYou() {
         <img className='isologo' src="/img/png/favicon.png" alt="isotipo" />
     </header>
 
-    <img className="thank__logo" src="/img/png/logo-alternative-uchooseit.png" alt="logo" />
+    <img className="thank__logo max-w-[30vw] h-auto" src="/img/png/logo-alternative-uchooseit.png" alt="logo" />
     <h1 className="thank__title" dangerouslySetInnerHTML={ { __html: data.thanks_title }} />
 
     <div className="thank__intro">
