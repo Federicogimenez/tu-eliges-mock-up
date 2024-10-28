@@ -48,8 +48,8 @@ export default function ThankYou() {
             </div>
         </header>
 
-        <img className="thank__logo" src="/img/png/logo-alternative-tu-eliges.png" alt="logo" />
-        <h1 className="thank__title" dangerouslySetInnerHTML={ { __html: data.thanks_title }} />
+        <img className="thank__logo max-w-[50vw] h-auto" src="/img/png/logo-alternative-tu-eliges.png" alt="logo" />
+        <h1 className="thank__title mb-10" dangerouslySetInnerHTML={ { __html: data.thanks_title }} />
 
         <div className="thank__intro">
           <div>
