@@ -35,6 +35,15 @@ export default function Presentation({comercial=1}:presentationPropType) {
             role: 'EVP',
             email: 'martin@uchooseit?subject=Schedule a Meeting - uchooseit',
             appointment: 'https://calendar.app.google/Vn3rHnB4GWJ6RqxV8'
+        },
+        {
+            id: 4,
+            img: '/img/png/jose-jimenez.png',
+            name: 'Jose Jimenez',
+            profile: 'Regional Partnerships Executive',
+            role: '',
+            email: 'jose@uchooseit.us?subject=Schedule a Meeting - Uchooseit.us',
+            appointment: ''
         }
     ]
     const currentComercial = presentersData.find( ( e ) => e.id == comercial );
