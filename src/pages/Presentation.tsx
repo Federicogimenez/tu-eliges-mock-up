@@ -42,7 +42,7 @@ export default function Presentation({comercial=1}:presentationPropType) {
             name: 'Jose Jimenez',
             profile: 'Regional Partnerships Executive',
             role: '',
-            email: 'jose@uchooseit.us?subject=Schedule a Meeting - Uchooseit.us',
+            email: 'jose@uchooseit.us?subject=Schedule a Meeting - uchooseit.us',
             appointment: ''
         }
     ]
