@@ -79,7 +79,7 @@ export default function ThankYou() {
             }
             <p className="text-left text-[16px] md:text-[20px] text-[#000] mb-2" dangerouslySetInnerHTML={ { __html: data.thanks_intro_step_4 }} />
             <LazyImageComponent src={step_4} alt={"step ilustration"} width="100%" height="100%" class="max-w-[600px]" /> 
-            <p className="text-center text-[16px] md:text-[20px] text-[#000] my-10 " dangerouslySetInnerHTML={ { __html:data.thanks_intro_download_mydeals } } />
+            <p className="text-center text-[16px] md:text-[20px] text-[#000] mx-auto my-10 max-w-[700px] " dangerouslySetInnerHTML={ { __html:data.thanks_intro_download_mydeals } } />
             <a className="block mx-auto mt-[20px] text-center w-[80%] rounded-full max-w-[600px] p-[10px] transition-all duration-300 bg-pink-primary text-[#fff] text-[25px] border-b-4 border-b-[#00000000] translate-y-0 hover:translate-y-[-2px] hover:border-b-blue-primary" 
             href="https://tueligesus.enjoymydeals.com/" target="_blank">
                 { data.thanks_cta }
@@ -122,25 +122,10 @@ export default function ThankYou() {
         </div>
 
 
-        <p className="thank__email-text mx-auto" dangerouslySetInnerHTML={{__html: data.thanks_email_text}} />
+        <p className="thank__email-text mx-auto my-10 font-bold" dangerouslySetInnerHTML={{__html: data.thanks_ready_to_save}} />
+        <p className="thank__email-text mx-auto my-10" dangerouslySetInnerHTML={{__html: data.thanks_email_text}} />
 
-        {/* <h3 className="thank__slogan">{data.thanks_slogan}</h3>
 
-        <div className="thank__socials">
-          <a target="_blank" href="https://www.facebook.com/tueligesusa">
-              <img src="/img/svg/icon-facebook-black.svg" alt="facebook" />
-          </a>
-          <a target="_blank" href="https://www.instagram.com/tueliges.us/">
-              <img src="/img/svg/icon-Ig-black.svg" alt="instagram" />
-          </a>
-          <a target="_blank" href="https://www.linkedin.com/company/tueliges-us">
-              <img src="/img/svg/icon-linkedin-black.svg" alt="linkedin" />
-          </a>
-          <a target="_blank" href="https://www.youtube.com/channel/UC5QtJ5tx41WsIIZGyru7_Ng">
-              <img src="/img/svg/icon-youtube-black.svg" alt="youtube" />
-          </a>
-        </div>
-        <a className="thank__redirect" onClick={handleRedirectHome}>www.tueliges.us</a> */}
         <Footer />
       </div>
     )
