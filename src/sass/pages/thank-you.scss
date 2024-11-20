@@ -350,6 +350,9 @@
             align-items: center;
             justify-content: flex-start;
             gap: 2rem;
+            @media (max-width:600px) {
+                margin-top: 20px;
+            }
     
             a{
                 display: inline-block;

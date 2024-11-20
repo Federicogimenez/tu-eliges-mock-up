@@ -45,10 +45,13 @@ export default function ThankYou() {
       setCopySuccess('')
     }, 2000);
   }
-  // function handleRedirectHome (){
-  //     navigate("/");
-  //     window.scrollTo(0, 0)
-  // }
+
+  function handleSetVideoHelp (e:HTMLButtonElement){
+    setVideoHelp(!videoHelp)
+    if (!videoHelp) {
+      window.scrollTo(0, e.offsetTop)
+    }
+  }
   
   return (
     <div className="w-full h-full min-h-screen ">
@@ -77,14 +80,14 @@ export default function ThankYou() {
               : 
               <LazyImageComponent src={step_3_mob} alt={"step ilustration"}  width="100%" height="100%" class="max-w-[300px]" /> 
             }
-            <p className="text-left text-[16px] md:text-[20px] text-[#000] mb-2" dangerouslySetInnerHTML={ { __html: data.thanks_intro_step_4 }} />
+            <p className="text-left text-[16px] md:text-[20px] text-[#000] mt-[40px] mb-2" dangerouslySetInnerHTML={ { __html: data.thanks_intro_step_4 }} />
             <LazyImageComponent src={step_4} alt={"step ilustration"} width="100%" height="100%" class="max-w-[600px]" /> 
             <p className="text-center text-[16px] md:text-[20px] text-[#000] my-10 max-w-[700px] mx-auto " dangerouslySetInnerHTML={ { __html:data.thanks_intro_download_mydeals } } />
             <a className="block mx-auto mt-[20px] text-center w-[80%] rounded-full max-w-[600px] p-[10px] transition-all duration-300 bg-pink-primary text-[#fff] text-[25px] border-b-4 border-b-[#00000000] translate-y-0 hover:translate-y-[-2px] hover:border-b-blue-primary" 
             href="https://uchooseitus.enjoymydeals.com/" target="_blank">
                 { data.thanks_cta }
             </a>
-            <button onClick={()=>{setVideoHelp(!videoHelp)}} className="w-fit mb-3 border-none text-[#000] mt-3 text-[15px] text-center block mx-auto underline ">{data.thanks_need_help}</button>
+            <button onClick={(e)=>{handleSetVideoHelp(e.currentTarget)}} className="w-fit mb-3 border-none text-[#000] mt-3 text-[15px] text-center block mx-auto underline transition-all duration-300 hover:text-[#00000090] ">{data.thanks_need_help}</button>
             {videoHelp ? 
               <div style={{animation: '1s fadeIn ease-out forwards'}} className={`w-[90%] mx-auto rounded-lg overflow-hidden transition-all duration-500 `}>
                 <video autoPlay={true} loop={true} controls={true} className={`w-full transition-all duration-500 ${videoHelp ? ' opacity-100': ' opacity-0'}`} width="100%" height="100%">
