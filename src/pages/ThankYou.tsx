@@ -43,10 +43,13 @@ export default function ThankYou() {
       setCopySuccess('')
     }, 2000);
   }
-  // function handleRedirectHome (){
-  //     navigate("/");
-  //     window.scrollTo(0, 0)
-  // }
+
+  function handleSetVideoHelp (e:HTMLButtonElement){
+    setVideoHelp(!videoHelp)
+    if (!videoHelp) {
+      window.scrollTo(0, e.offsetTop)
+    }
+  }
   
   return (
     <div className="w-full h-full min-h-screen ">
@@ -84,7 +87,7 @@ export default function ThankYou() {
               href="https://tueligesus.enjoymydeals.com/" target="_blank">
                 { data.thanks_cta }
             </a>
-            <button onClick={()=>{setVideoHelp(!videoHelp)}} className="w-fit border-none text-[#000] mt-3 text-[15px] text-center block mx-auto underline transition-all duration-300 hover:text-[#00000090] ">{data.thanks_need_help}</button>
+            <button onClick={(e)=>{handleSetVideoHelp(e.currentTarget)}} className="w-fit border-none text-[#000] mt-3 text-[15px] text-center block mx-auto underline transition-all duration-300 hover:text-[#00000090] ">{data.thanks_need_help}</button>
             {videoHelp ? 
               <div style={{animation: '1s fadeIn ease-out forwards'}} className={`w-[90%] mx-auto rounded-lg overflow-hidden transition-all duration-500 `}>
                 <video autoPlay={true} loop={true} controls={true} className={`w-full transition-all duration-500 ${videoHelp ? ' opacity-100': ' opacity-0'}`} width="100%" height="100%">
