@@ -12,7 +12,7 @@ export default {
     },
     extend: {
       fontFamily: {
-				montserrat: ['"Montserrat"', 'sans-serif'],
+				montserrat: ['"Monserrat"', 'sans-serif'],
 				montserrat_italic: ['"Monserrat Italic"', 'sans-serif'],
 			},
     },
