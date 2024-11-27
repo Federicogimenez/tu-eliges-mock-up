@@ -53,7 +53,7 @@ export default function ThankYou() {
   
   return (
     <div className="w-full h-full min-h-screen ">
-        <header className="thank-header bg-[#000] w-full px-[15px] py-[7px] md:py-[20px] md:px-[80px] rounded-b-[25px] flex justify-between items-center">
+        <header className="thank-header bg-[#000] w-full px-[15px] py-[15px] md:py-[20px] md:px-[80px] rounded-b-[25px] flex justify-between items-center">
             <img className='min-w-[30px] w-[4vw] max-w-[100px]' src="/img/png/favicon.png" alt="isotipo" />
             <div className='lang-container'>
                 <SwitchLang />
