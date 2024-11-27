@@ -45,7 +45,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        column-gap: 50px;
+        column-gap: 0px;
         margin-bottom: 20px;
     }
     &__description{
@@ -108,7 +108,7 @@
     &__intro{
         font-family: "Monserrat";
         width: 100%;
-        max-width: 600px;
+        // max-width: 600px;
         margin: 0 auto;
         text-align: center;
         color: #052941;
@@ -126,7 +126,8 @@
     }
 
     &__cta{
-        min-width: 60%;
+        min-width: 280px;
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -169,7 +170,7 @@
 
     }
     &__discount{
-        flex: 1 0 35%;
+        flex: 1 0 40%;
         position: relative;
         width: fit-content;
         height: fit-content;
@@ -213,6 +214,7 @@
         &--img{
             border-radius: 15px;
             border: 7px solid #000;
+            margin: 0 auto;
         }
     }
 }
