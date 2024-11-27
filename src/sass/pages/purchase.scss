@@ -184,28 +184,29 @@
         &--promcode{
             position: absolute;
             top: 61%;
-            left: 10%;
+            left: 50%;
+            transform: translateX(-50%);
             font-family: "Monserrat Semibold";
             background-color: #fff;
             color: #052941;
             font-size: 20px;
             padding: 8px 18px;
             border-radius: 7px;
-            animation: 1s 1s ease 1 fadeIn backwards;
+            animation: 1s 2s ease 1 fadeIn backwards;
             z-index: 2;
             text-decoration: underline;
             text-underline-offset: 4px;
         }
         &--apply{
             position: absolute;
-            bottom: 20px;
-            left: 20%;
-            transform: rotate(-20deg) scale(1.1);
+            bottom: 25px;
+            left: 50%;
+            transform: rotate(-20deg) scale(1.1) translateX(-30%);
             font-family: "Monserrat Semibold";
             background-color: #2995FC;
             font-size: 20px;
             text-wrap: nowrap;
-            animation: 1s 2s ease 1 fadeIn backwards;
+            animation: 1s 3s ease 1 fadeIn backwards;
             color: #fff;
             padding: 8px 18px;
             border-radius: 7px;
