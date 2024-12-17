@@ -10,6 +10,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import ThankYou from "./pages/ThankYou";
 import Purchase from "./pages/Purchase";
 import { InteractiveProposal } from "./pages/InteractiveProposal";
+import { InteractivePresentation } from "./pages/InteractivePresentation";
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/policy" element={<Policy />} />
 
+            <Route path="/interactive-presentation" element={<InteractivePresentation  />}/>
+            
             <Route path="/interactive-proposal/hhf" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6759c28e5a67056c1931c2af"} />}/>
 
             {/* redirect path does not exist */}
