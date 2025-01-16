@@ -52,7 +52,7 @@ export default function Policy() {
                             <h2>Privacy Policy</h2>
                             <p>
                                 <strong>
-                                    Date of Last Revision: 1/1/2024
+                                    Date of Last Revision: 1/1/2025
                                 </strong>
                             </p>
                             <p>

@@ -142,9 +142,9 @@ export default function Purchase (){
                                         </p>
                                     </div>
                                     <div className='purchase__discount'>
-                                        <span className='purchase__discount--promcode'>YOURCODE</span>
-                                        <span className='purchase__discount--apply'>DISCOUNT APPLIED</span>
-                                        <LazyImageComponent src={'/img/png/discount-tueliges.jpg'} alt={'discount applied'} class='purchase__discount--img' />
+                                        {/* <span className='purchase__discount--promcode'>YOURCODE</span> */}
+                                        {/* <span className='purchase__discount--apply'>DISCOUNT APPLIED</span> */}
+                                        <LazyImageComponent src={'/img/png/discount-tueliges.png'} alt={'discount applied'} class='purchase__discount--img' />
                                     </div>
                                 </div>
                             </div>
@@ -153,6 +153,18 @@ export default function Purchase (){
 
                 }
                 </div>
+                <section className='w-[65%] mx-auto mb-32'>
+                    <h2 className='text-[#000] text-[25px] text-center font-semibold mb-10'>{t.purchase_video_title}</h2>
+                    <div style={{'padding':'56.25% 0 0 0','position':'relative'}}>
+                            <iframe 
+                                src="https://www.youtube.com/embed/p-14LYE-0Ho?si=1JlIk3tTEemNFfk7" 
+                                title="Tu Eliges" 
+                                style={{"position":"absolute","top":"0","left":"0","width":"100%","height":"100%"}} 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerPolicy="strict-origin-when-cross-origin" 
+                                allowFullScreen></iframe>
+                    </div>
+                </section>
             <Footer />
 
         </div>
