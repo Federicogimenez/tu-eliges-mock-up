@@ -153,7 +153,7 @@ export default function Purchase (){
 
                 }
                 </div>
-                <section className='w-[65%] mx-auto mb-32'>
+                <section className='w-[90%] md:w-[65%] mx-auto mb-32'>
                     <h2 className='text-[#000] text-[25px] text-center font-semibold mb-10'>{t.purchase_video_title}</h2>
                     <div style={{'padding':'56.25% 0 0 0','position':'relative'}}>
                             <iframe 
@@ -164,6 +164,12 @@ export default function Purchase (){
                                 referrerPolicy="strict-origin-when-cross-origin" 
                                 allowFullScreen></iframe>
                     </div>
+                    <div className='purchase__cta mx-auto mt-10'>
+                        <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
+                    </div>
+                    <p className='purchase__recommend'>
+                        {t.purchase_recommend}
+                    </p>
                 </section>
             <Footer />
 
