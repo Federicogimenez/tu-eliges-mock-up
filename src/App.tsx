@@ -36,7 +36,7 @@ function App() {
           <Route path="/interactive-proposal/cityplace" element={<InteractiveProposal allyPresentation={"https://view.genially.com/674f02e8c7db94c9977d1e87"} />}/>
           <Route path="/interactive-proposal/wahoos" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6751e4278688f0d281e50497"} />}/>
           <Route path="/interactive-proposal/sunshine" element={<InteractiveProposal allyPresentation={"https://view.genially.com/677ff8e674058c30eed41935"} />}/>
-          <Route path="/interactive-proposal/panthera" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6786d0cb99007f0abc335f5e"} />}/>
+          <Route path="/interactive-proposal/panther" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6786d0cb99007f0abc335f5e"} />}/>
           
           {/* redirect path does not exist */}
           <Route path="*" element={<Navigate to="/"/>} />

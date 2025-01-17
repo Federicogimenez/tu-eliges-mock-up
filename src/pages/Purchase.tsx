@@ -138,7 +138,7 @@ export default function Purchase (){
 
             }
             </div>
-            <section className='w-[65%] mx-auto mb-32'>
+            <section className=' w-[90%] md:w-[65%] mx-auto mb-32'>
                 <h2 className='text-[25px] text-[#000] text-center mb-5 font-semibold'>
                     Watch the video to learn more
                 </h2>
@@ -153,6 +153,12 @@ export default function Purchase (){
                         referrerPolicy="strict-origin-when-cross-origin" 
                         allowFullScreen></iframe>
                 </div>
+                <div className='purchase__cta mx-auto mt-10'>
+                    <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
+                </div>
+                <p className='purchase__recommend'>
+                                        {t.purchase_recommend}
+                                    </p>
             </section>
             <Footer />
             </div>
