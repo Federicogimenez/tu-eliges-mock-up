@@ -10,6 +10,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useLanguageContext } from '../hooks/UseLanguageContext';
 import { LazyImageComponent } from '../components/LazyImage';
 import Footer from '../layout/Footer';
+import Loading from '../components/Loading';
 
 export default function Purchase (){
 
@@ -79,7 +80,7 @@ export default function Purchase (){
             <div className='purchase'>
             {
                 
-                modalData.isLoading ? <h1></h1> :
+                modalData.isLoading ? <Loading /> :
 
                 (
 
