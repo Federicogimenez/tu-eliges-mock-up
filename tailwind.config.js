@@ -10,6 +10,9 @@ export default {
       'blue-primary':'#6166fd',
       'pink-primary':'#DA82FF',
     },
+    animation:{
+      'pulse-infinite':'pulseInfinite 1s ease-in-out infinite alternate '
+    },
     extend: {
       fontFamily: {
 				montserrat: ['"Monserrat"', 'sans-serif'],
