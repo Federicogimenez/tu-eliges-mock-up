@@ -22,6 +22,7 @@ export default function Purchase (){
       alliedCompanyImg: "",
       alliedCuponCode: "",
       discount_percent: "",
+      membership_anual_fee: "",
       new_price_after_discount: "",
       isLoading: true,
       userNotFound: false
@@ -51,6 +52,7 @@ export default function Purchase (){
                 alliedCompanyImg: data.allyCompanyLogo,
                 alliedCuponCode: data.allyCoupons[0],
                 discount_percent: data.discount_percent,
+                membership_anual_fee: data.membership_anual_fee,
                 new_price_after_discount: data.new_price_after_discount,
                 isLoading: false,
                 userNotFound: false
@@ -61,6 +63,7 @@ export default function Purchase (){
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
                 discount_percent: "",
+                membership_anual_fee: "",
                 new_price_after_discount: "",
                 isLoading: false,
                 userNotFound: true
@@ -73,6 +76,7 @@ export default function Purchase (){
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
                 discount_percent: "",
+                membership_anual_fee: "",
                 new_price_after_discount: "",
                 isLoading: false,
                 userNotFound: true})
@@ -105,6 +109,8 @@ export default function Purchase (){
                             </div>
                         </div>
                     :
+
+
                         <div className='purchase__main'>
                             <div className='purchase__logos'>
                                 <picture>
@@ -116,8 +122,6 @@ export default function Purchase (){
                             </div>
                             
                             <div className='purchase__description'>
-
-                                {/* {allyData.userNotFound ? <h2>no encontrado</h2> : <img src={allyData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
                                 <div className='purchase__text'>
                                     <div className='purchase__intro'>
                                         <h3>
@@ -127,9 +131,31 @@ export default function Purchase (){
                                         </h3>
                                         <p className='purchase__intro--p' dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
                                     </div>
+                                    <h4 className='text-center font-bold'>
+                                         <span className='text-[25px]'>
+                                            {t.purchase_public_price_1}
+                                            <s className='mx-2'>
+                                                { allyData.membership_anual_fee }
+                                            </s>
+                                            {t.purchase_public_price_2}
+                                        </span>
+                                        <br />
+                                        <span className='text-green-primary text-[30px]'>
+                                            { t.purchase_congratulations }
+                                            <span className='mx-2'>
+                                                { allyData.discount_percent }% OFF
+                                            </span>
+                                        </span>
+                                        <br />
+                                        <span className='text-green-primary text-[30px]'>
+                                            ${ allyData.new_price_after_discount }
+                                            <span className='mx-2'>
+                                                {t.purchase_discounted_price}
+                                            </span>
+                                        </span>
+                                    </h4>
                                     <h4>
                                         {t.purchase_h4}
-                                        {/* { allyData.discount_percent ? allyData.discount_percent : null } */}
                                     </h4>
                                     <div className='purchase__cta'>
                                         <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} >{t.purchase_cta}</a>
@@ -141,7 +167,7 @@ export default function Purchase (){
                                 <div className='purchase__discount'>
                                     {/* <span className='purchase__discount--promcode'>YOURCODE</span> */}
                                     {/* <span className='purchase__discount--apply'>DISCOUNT APPLIED</span> */}
-                                    <LazyImageComponent src={'/img/png/discount-uchooseit.png'} alt={'discount applied'} class='purchase__discount--img' />
+                                    <LazyImageComponent src={'/img/png/discount-uchooseit.png'} alt={'discount applied'} class='purchase__discount--img object-contain w-fit max-h-[90vh]' />
                                 </div>
                             </div>
                         </div>
