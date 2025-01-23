@@ -27,12 +27,15 @@ export default function Purchase (){
         })
       }
 
-    const [modalData, setModalData] = useState({
-      alliedName: '',
-      alliedCompanyImg: "",
-      alliedCuponCode: "",
-      isLoading: true,
-      userNotFound: false
+    const [allyData, setAllyData] = useState({
+        alliedName: '',
+        alliedCompanyImg: '',
+        alliedCuponCode: '',
+        discount_percent: "",
+        membership_anual_fee: "",
+        new_price_after_discount: "",
+        isLoading: false,
+        userNotFound: true
     })
     const url = useLocation().search;
 
@@ -52,28 +55,37 @@ export default function Purchase (){
         api()
         .then((data)=> {            
             if(data){            
-            setModalData({
+            setAllyData({
                 alliedName: data.allyCompanyName,
                 alliedCompanyImg: data.allyCompanyLogo,
                 alliedCuponCode: data.allyCoupons[0],
+                discount_percent: data.discount_percent,
+                membership_anual_fee: data.membership_anual_fee,
+                new_price_after_discount: data.new_price_after_discount,
                 isLoading: false,
                 userNotFound: false
             })
             }else{
-            setModalData({
+            setAllyData({
                 alliedName: '',
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
+                discount_percent: "",
+                membership_anual_fee: "",
+                new_price_after_discount: "",
                 isLoading: false,
                 userNotFound: true
             })}
         })
         .catch( err =>{
             if (err) { 
-            setModalData({
+            setAllyData({
                 alliedName: '',
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
+                discount_percent: "",
+                membership_anual_fee: "",
+                new_price_after_discount: "",
                 isLoading: false,
                 userNotFound: true})
             }})
@@ -93,12 +105,12 @@ export default function Purchase (){
             <div className='purchase'>
             {
                 
-                modalData.isLoading ? <Loading /> :
+                allyData.isLoading ? <Loading /> :
                 
                 
                     (
 
-                        modalData.userNotFound ?
+                        allyData.userNotFound ?
                             
                             <div className="allied-modal__user-not-found">
                                 <div className="allied-modal__user-not-found--content">
@@ -115,27 +127,50 @@ export default function Purchase (){
                                         <img src={"/img/png/logo-alternative-tu-eliges.png"} alt={"tueliges.us"} loading='lazy' />
                                     </picture>
                                     <picture>
-                                        <img src={modalData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
+                                        <img src={allyData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
                                     </picture>
                                 </div>
                                 
                                 <div className='purchase__description'>
 
-                                    {/* {modalData.userNotFound ? <h2>no encontrado</h2> : <img src={modalData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
+                                    {/* {allyData.userNotFound ? <h2>no encontrado</h2> : <img src={allyData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
                                     <div className='purchase__text'>
                                         <div className='purchase__intro'>
                                             <h3>
                                                 <span>TuEliges.us </span>
                                                 & 
-                                                <span> {modalData.alliedName} </span>
+                                                <span> {allyData.alliedName} </span>
                                             </h3>
                                             <p className='purchase__intro--p' dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
                                         </div>
+                                        <h4 className='text-center font-bold'>
+                                         <span className='text-[25px]'>
+                                            {t.purchase_public_price_1}
+                                            <s className='mx-2'>
+                                                { allyData.membership_anual_fee }
+                                            </s>
+                                            {t.purchase_public_price_2}
+                                        </span>
+                                        <br />
+                                        <span className='text-green-primary text-[30px]'>
+                                            { t.purchase_congratulations }
+                                            <span className='mx-2'>
+                                                { allyData.discount_percent }% OFF
+                                            </span>
+                                        </span>
+                                        <br />
+                                        <span className='text-green-primary text-[30px]'>
+                                            ${ allyData.new_price_after_discount }
+                                            <span className='mx-2'>
+                                                {t.purchase_discounted_price}
+                                            </span>
+                                        </span>
+                                    </h4>
                                         <h4>
-                                        {t.purchase_h4}
+                                            {t.purchase_h4}
                                         </h4>
                                         <div className='purchase__cta'>
-                                            <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
+                                            <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
                                         </div>
                                         <p className='purchase__recommend'>
                                             {t.purchase_recommend}
@@ -144,7 +179,7 @@ export default function Purchase (){
                                     <div className='purchase__discount'>
                                         {/* <span className='purchase__discount--promcode'>YOURCODE</span> */}
                                         {/* <span className='purchase__discount--apply'>DISCOUNT APPLIED</span> */}
-                                        <LazyImageComponent src={'/img/png/discount-tueliges.png'} alt={'discount applied'} class='purchase__discount--img' />
+                                        <LazyImageComponent src={'/img/png/discount-tueliges.png'} alt={'discount applied'} class='purchase__discount--img object-contain w-fit max-h-[90vh]' />
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +200,7 @@ export default function Purchase (){
                                 allowFullScreen></iframe>
                     </div>
                     <div className='purchase__cta mx-auto mt-10'>
-                        <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
+                        <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} onClick={gTagEventPurchase}>{t.purchase_cta}</a>
                     </div>
                     <p className='purchase__recommend'>
                         {t.purchase_recommend}

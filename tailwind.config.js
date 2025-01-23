@@ -9,6 +9,7 @@ export default {
       'lightblue-primary':'#2995FC',
       'blue-primary':'#6166fd',
       'pink-primary':'#DA82FF',
+      'green-primary':'#00bf63',
     },
     animation:{
       'pulse-infinite':'pulseInfinite 1s ease-in-out infinite alternate '
