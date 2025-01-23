@@ -9,7 +9,7 @@ export const InteractiveProposal = ( { allyPresentation }:PropType) => {
     return (
     <div style={{width: "100%", height: "100%"}}>
         { loading ? <Loading /> : <></>}
-            <iframe title="Proposal tueliges" width="1920" height="1080" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}} 
+            <iframe title="Proposal tueliges" allowFullScreen width="1920" height="1080" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}} 
               onLoad={()=>{setLoading(true)}}
               src={allyPresentation} >
             </iframe>

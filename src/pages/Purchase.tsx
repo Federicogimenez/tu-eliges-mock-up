@@ -162,7 +162,7 @@ export default function Purchase (){
                                         <span className='text-green-primary text-[30px]'>
                                             ${ allyData.new_price_after_discount }
                                             <span className='mx-2'>
-                                                {t.purchase_discounted_price}
+                                                { t.purchase_discounted_price }
                                             </span>
                                         </span>
                                     </h4>
