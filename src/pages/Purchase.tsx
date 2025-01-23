@@ -132,7 +132,7 @@ export default function Purchase (){
                                         <p className='purchase__intro--p' dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
                                     </div>
                                     <h4 className='text-center font-bold'>
-                                         <span className='text-[25px]'>
+                                         <span className='text-[22px] md:text-[25px]'>
                                             {t.purchase_public_price_1}
                                             <s className='mx-2'>
                                                 { allyData.membership_anual_fee }
@@ -140,14 +140,14 @@ export default function Purchase (){
                                             {t.purchase_public_price_2}
                                         </span>
                                         <br />
-                                        <span className='text-green-primary text-[30px]'>
+                                        <span className='text-green-primary text-[25px] md:text-[30px]'>
                                             { t.purchase_congratulations }
                                             <span className='mx-2'>
                                                 { allyData.discount_percent }% OFF
                                             </span>
                                         </span>
                                         <br />
-                                        <span className='text-green-primary text-[30px]'>
+                                        <span className='text-green-primary text-[25px] md:text-[30px]'>
                                             ${ allyData.new_price_after_discount }
                                             <span className='mx-2'>
                                                 {t.purchase_discounted_price}
