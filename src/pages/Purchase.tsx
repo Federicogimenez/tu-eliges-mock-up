@@ -17,10 +17,12 @@ export default function Purchase (){
     const t = useLanguageContext()
     const [searchParams] = useSearchParams();
 
-    const [modalData, setModalData] = useState({
+    const [allyData, setAllyData] = useState({
       alliedName: '',
       alliedCompanyImg: "",
       alliedCuponCode: "",
+      discount_percent: "",
+      new_price_after_discount: "",
       isLoading: true,
       userNotFound: false
     })
@@ -37,33 +39,41 @@ export default function Purchase (){
         const api = async ()=>{
             const data = await fetch(urlFetch);
             const jsonData = await data.json();
+            console.log(jsonData);
+            
             return jsonData
         };
         api()
         .then((data)=> {            
             if(data){            
-            setModalData({
+            setAllyData({
                 alliedName: data.allyCompanyName,
                 alliedCompanyImg: data.allyCompanyLogo,
                 alliedCuponCode: data.allyCoupons[0],
+                discount_percent: data.discount_percent,
+                new_price_after_discount: data.new_price_after_discount,
                 isLoading: false,
                 userNotFound: false
             })
             }else{
-            setModalData({
+            setAllyData({
                 alliedName: '',
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
+                discount_percent: "",
+                new_price_after_discount: "",
                 isLoading: false,
                 userNotFound: true
             })}
         })
         .catch( err =>{
             if (err) { 
-            setModalData({
+            setAllyData({
                 alliedName: '',
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
+                discount_percent: "",
+                new_price_after_discount: "",
                 isLoading: false,
                 userNotFound: true})
             }})
@@ -80,11 +90,11 @@ export default function Purchase (){
             <div className='purchase'>
             {
                 
-                modalData.isLoading ? <Loading /> :
+                allyData.isLoading ? <Loading /> :
 
                 (
 
-                    modalData.userNotFound ?
+                    allyData.userNotFound ?
                         
                         <div className="allied-modal__user-not-found">
                             <div className="allied-modal__user-not-found--content">
@@ -101,27 +111,28 @@ export default function Purchase (){
                                     <img src={"/img/png/logo-alternative-uchooseit.png"} alt={"uchooseit.us"} loading='lazy' />
                                 </picture>
                                 <picture>
-                                    <img src={modalData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
+                                    <img src={allyData.alliedCompanyImg} alt={"aliado"} loading='lazy'/>
                                 </picture>
                             </div>
                             
                             <div className='purchase__description'>
 
-                                {/* {modalData.userNotFound ? <h2>no encontrado</h2> : <img src={modalData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
+                                {/* {allyData.userNotFound ? <h2>no encontrado</h2> : <img src={allyData.alliedCompanyImg} alt="logo" loading='lazy' />} */}
                                 <div className='purchase__text'>
                                     <div className='purchase__intro'>
                                         <h3>
                                             <span>Uchooseit.us </span>
                                             & 
-                                            <span> {modalData.alliedName} </span>
+                                            <span> {allyData.alliedName} </span>
                                         </h3>
                                         <p className='purchase__intro--p' dangerouslySetInnerHTML={{ __html: t.purchase_intro }} />
                                     </div>
                                     <h4>
                                         {t.purchase_h4}
+                                        {/* { allyData.discount_percent ? allyData.discount_percent : null } */}
                                     </h4>
                                     <div className='purchase__cta'>
-                                        <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
+                                        <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} >{t.purchase_cta}</a>
                                     </div>
                                     <p className='purchase__recommend'>
                                         {t.purchase_recommend}
@@ -155,7 +166,7 @@ export default function Purchase (){
                         allowFullScreen></iframe>
                 </div>
                 <div className='purchase__cta mx-auto mt-10'>
-                    <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ modalData.alliedCuponCode} >{t.purchase_cta}</a>
+                    <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} >{t.purchase_cta}</a>
                 </div>
                 <p className='purchase__recommend'>
                                         {t.purchase_recommend}

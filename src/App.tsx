@@ -37,6 +37,8 @@ function App() {
           <Route path="/interactive-proposal/wahoos" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6751e4278688f0d281e50497"} />}/>
           <Route path="/interactive-proposal/sunshine" element={<InteractiveProposal allyPresentation={"https://view.genially.com/677ff8e674058c30eed41935"} />}/>
           <Route path="/interactive-proposal/panther" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6786d0cb99007f0abc335f5e"} />}/>
+          <Route path="/interactive-proposal/tsr" element={<InteractiveProposal allyPresentation={"https://view.genially.com/67923512e1c1aa2632585d23"} />}/>
+          <Route path="/interactive-proposal/nhra" element={<InteractiveProposal allyPresentation={"https://view.genially.com/678eae4a28ab0f6d993f6a00"} />}/>
           
           {/* redirect path does not exist */}
           <Route path="*" element={<Navigate to="/"/>} />
