@@ -39,6 +39,7 @@ function App() {
             <Route path="/interactive-proposal/mundo-now" element={<InteractiveProposal allyPresentation={"https://view.genially.com/678ae02fd076684df51515ba"} />}/>
             <Route path="/interactive-proposal/sigo-seguros" element={<InteractiveProposal allyPresentation={"https://view.genially.com/6792b570c9d92e6d80724fe4"} />}/>
             <Route path="/interactive-proposal/investor-deck" element={<InteractiveProposal allyPresentation={"https://view.genially.com/67ad11a23d76658c2f21f19d"} />}/>
+            <Route path="/interactive-proposal/sqp" element={<InteractiveProposal allyPresentation={"https://view.genially.com/67ba4d3a1332b6b4ce8bfe6a"} />}/>
 
             {/* redirect path does not exist */}
             <Route path="*" element={<Navigate to="/"/>} />
