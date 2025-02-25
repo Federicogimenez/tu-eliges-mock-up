@@ -206,6 +206,17 @@ export default function Purchase (){
                         {t.purchase_recommend}
                     </p>
                 </section>
+                <a href="https://wa.me/17869393494" target="_blank" rel="noopener noreferrer"
+                    className='fixed z-50 bottom-2 right-2 w-fit  cursor-pointer flex justify-center items-center bg-[#fff] rounded-full pl-5 transition-all duration-500 hover:scale-105'
+                    >
+                        <span className='font-montserrat text-center text-[12px] leading-[1]'>
+                            {t.purchase_cta_whatsapp_questions}
+                            <strong className='block text-[18px]'>
+                                {t.purchase_cta_whatsapp_contact_us}
+                            </strong>
+                        </span>
+                    <img src="/img/png/whatsapp.png" alt="whatsapp" className='size-20' />
+                </a>
             <Footer />
 
         </div>
