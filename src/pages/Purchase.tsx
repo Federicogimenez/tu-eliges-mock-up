@@ -34,8 +34,8 @@ export default function Purchase (){
         discount_percent: "",
         membership_anual_fee: "",
         new_price_after_discount: "",
-        isLoading: false,
-        userNotFound: true
+        isLoading: true,
+        userNotFound: false
     })
     const url = useLocation().search;
 
