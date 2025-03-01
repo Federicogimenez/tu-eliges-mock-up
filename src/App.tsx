@@ -11,6 +11,7 @@ import ThankYou from "./pages/ThankYou";
 import Purchase from "./pages/Purchase";
 import { InteractiveProposal } from "./pages/InteractiveProposal";
 import { InteractivePresentation } from "./pages/InteractivePresentation";
+import { Activate } from "./pages/Activate";
 
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
             <Route path="/presentation/2" element={<Presentation comercial={2} />} />
             <Route path="/presentation/3" element={<Presentation comercial={3} />} />
             
-            <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/purchase" element={<Purchase />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/activate" element={<Activate />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/policy" element={<Policy />} />

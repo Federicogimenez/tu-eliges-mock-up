@@ -12,11 +12,11 @@ export default function SwitchLang(){
     
     return (
         <div className="switch-languaje">
-            { data['lang_current'] }
+            { data.lang_current }
             <img src="/img/svg/arrow-up.svg" alt="" />
             <ul>
                 <li onClick={callback}>
-                { data['lang_1'] }
+                { data.lang_1 }
                 </li>
             </ul>
         </div>

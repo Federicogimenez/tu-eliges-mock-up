@@ -1,7 +1,10 @@
 @import url('main.scss');
+@import url('styles/animations/initial-animations.css');
+@import url('styles/animations/utilities.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
     * {

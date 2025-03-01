@@ -1,47 +1,43 @@
 .switch-languaje{
-    color: #ffffffb6;
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    color: #fff;
+    line-height: 1;
+    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
     font-family: "Monserrat Semibold";
     cursor: pointer;
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: nowrap;
-    top: 5px;
-    margin-bottom: 10px;
-    
-    @media (max-width:1200px) {
-        margin-top: 2rem;
-        padding-left: 3rem;
-    }
-
 
     img{
         width: 2.2rem;
-        margin-left: 4px;
-        transition: all .2s;
+        margin-left: 10px;
+        transition: all .4s ease-in-out;
     }
 
     ul{
         // display: none;
-        display: inline-block;
-        width: 115%;
+        // display: inline-block;
+        width: 100%;
         position: absolute;
+        left: 0;
         bottom: -40px;
-        left: -8px;
+        // left: -8px;
         height: 0;
         opacity: 0;
         transition: all .3s ease;
         background-color: #000;
-        border: 2px solid #fff;
-        border-top: none;
+        // border: 2px solid #fff;
+        // border-top: none;
         border-radius: 7px;
-        z-index: 10;
+        z-index: 30;
 
         @media (max-width:1200px) {
-            width: 80%;
-            left: 10px;
+            width: 100%;
+            // left: 10px;
             bottom: -41px;
-            margin-left:2rem ;
+            // margin-left:2rem ;
         }
 
         li{
@@ -62,6 +58,7 @@
     opacity: 1;
     display: block;
     height: fit-content;
+    z-index: inherit;
 }
 .switch-languaje:hover ul li{
     height: 100%;

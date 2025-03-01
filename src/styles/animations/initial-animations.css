@@ -1,0 +1,28 @@
+@keyframes initialHeader {
+    from {
+      height: 70vh;
+    }
+    
+    to {
+      height: 80px;
+    }
+  }
+@keyframes initialLogo {
+    0% {
+        transform: translateX(calc(50vw - 65%)) scale(3);
+    }
+    35% {
+        transform: translateX(calc(50vw - 65%)) scale(3.5);
+    }
+    
+    100% {
+        transform: translateX(0) scale(1);
+    }
+  }
+
+  .animate-initial-header{
+    animation: initialHeader 1.4s .6s ease-in-out both;
+}
+  .animate-initial-logo{
+    animation: initialLogo 2s 0s ease both;
+}

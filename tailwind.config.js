@@ -10,6 +10,9 @@ export default {
       'blue-primary':'#6166fd',
       'pink-primary':'#DA82FF',
       'green-primary':'#00bf63',
+      'white':'#fff',
+      'black':'#000',
+      'transparent':'#00000000',
     },
     animation:{
       'pulse-infinite':'pulseInfinite 1s ease-in-out infinite alternate '
