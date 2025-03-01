@@ -30,11 +30,6 @@ export default function ThankYou() {
       navigate('/activate?id='+id)
     }
   }
-  function handleRedirectFaq (){
-    navigate("/faqs");
-    window.scrollTo(0, 0)
-}
-
   
 
   
@@ -50,11 +45,12 @@ export default function ThankYou() {
           <h1 className="font-montserrat leading-[1.2] text-center max-w-[1000px] text-black mb-10 mx-auto font-normal text-[30px] md:text-[30px] my-[10vh] *:text-lightblue-primary *:block *:text-[40px] *:md:text-[55px] animate-fade-in-0_5" dangerouslySetInnerHTML={ { __html: data.thanks_title }} />
 
 
-          <div className="relative w-[90%] max-w-[800px] mx-auto my-[10vh] h-fit p-4 border-2 border-lightblue-primary rounded-lg animate-fade-in-1"  >
-
+          <div className="relative w-[90%] max-w-[800px] mx-auto mt-[10vh] mb-3 h-fit p-4 border-2 border-lightblue-primary rounded-lg animate-fade-in-1"  >
             <p className=" text-center text-[20px] text-black *:mx-2" dangerouslySetInnerHTML={{__html:data.thanks_intro}}>
             </p>
           </div>
+          <p className=" text-center text-[18px] text-black *:mx-2 mb-[10vh]" dangerouslySetInnerHTML={{__html:data.thanks_send_email}}>
+          </p>
 
           <p className=" text-center font-bold text-[25px] animate-fade-in-1_5" >
           {data.thanks_your_member}
@@ -75,23 +71,6 @@ export default function ThankYou() {
             </strong>
           </p>
           <div className="footer relative">
-              <div className="footer__data md:items-center">
-                  <a className="footer__data--img">
-                      <img src="/img/png/logo-tu-eliges.png" alt="logo" />
-                  </a>
-                  <div className="footer__data--support">
-                      <strong> { data["footer_support"] } :</strong>
-                      <a href="mailto:support@tueliges.us" target="_blank">
-                          <img src="/img/svg/mail.svg" alt="" />
-                          support@tueliges.us
-                      </a>
-                      <a onClick={handleRedirectFaq}>F.A.Q</a>
-                      <a target="_blank" href="https://tueligesus.recurly.com/account/create_account">
-                          {data.footer_membership}
-                      </a>
-                  </div>
-
-              </div>
               <div className="footer__access">
                   { data["footer_copyright"] }
                   <br />
