@@ -30,7 +30,9 @@ export default function BurgerMenu() {
                     <li className="burger__item"><a href="#membership" className="burger__link" onClick={callbackNaviToggle}>{data["menu_link5"]}</a></li>
                     <li className="burger__item"><a href="#app" className="burger__link" onClick={callbackNaviToggle}>{data["menu_link6"]}</a></li>
                     <li className="burger__item"><a href="#about-us" className="burger__link" onClick={callbackNaviToggle}>{data["menu_link7"]}</a></li>
-                    <SwitchLang />
+                    <li className="relative ml-[30px] mt-10">
+                        <SwitchLang />
+                    </li>
                 </ul>
             </nav>
         </div>
