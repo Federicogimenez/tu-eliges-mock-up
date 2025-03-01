@@ -30,6 +30,11 @@ export default function ThankYou() {
       navigate('/activate?id='+id)
     }
   }
+  function handleRedirectFaq (){
+    navigate("/faqs");
+    window.scrollTo(0, 0)
+}
+
   
 
   
@@ -69,7 +74,30 @@ export default function ThankYou() {
               
             </strong>
           </p>
+          <div className="footer relative">
+              <div className="footer__data md:items-center">
+                  <a className="footer__data--img">
+                      <img src="/img/png/logo-tu-eliges.png" alt="logo" />
+                  </a>
+                  <div className="footer__data--support">
+                      <strong> { data["footer_support"] } :</strong>
+                      <a href="mailto:support@tueliges.us" target="_blank">
+                          <img src="/img/svg/mail.svg" alt="" />
+                          support@tueliges.us
+                      </a>
+                      <a onClick={handleRedirectFaq}>F.A.Q</a>
+                      <a target="_blank" href="https://tueligesus.recurly.com/account/create_account">
+                          {data.footer_membership}
+                      </a>
+                  </div>
 
+              </div>
+              <div className="footer__access">
+                  { data["footer_copyright"] }
+                  <br />
+                  { data["footer_based"] }
+              </div>
+            </div>
       </main>
     )
 }

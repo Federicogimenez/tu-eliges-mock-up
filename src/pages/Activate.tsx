@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import SwitchLang from "../components/SwitchLang"
 import { useLanguageContext } from "../hooks/UseLanguageContext";
 // import { useWindowSize } from "../hooks/UseWindowSize";
@@ -8,6 +8,8 @@ import { useWindowSize } from "../hooks/UseWindowSize";
 
 export const Activate = () => {
 
+    const navigate = useNavigate();
+  
     const { width } = useWindowSize()
     
     const data = useLanguageContext();
@@ -37,6 +39,10 @@ export const Activate = () => {
       }, 2000);
     }
 
+    function handleRedirectFaq (){
+      navigate("/faqs");
+      window.scrollTo(0, 0)
+  }
 
   return (
     <div className="w-full h-full min-h-screen ">
@@ -113,6 +119,31 @@ export const Activate = () => {
               href="https://tueligesus.enjoymydeals.com/" target="_blank">
                 { data.thanks_cta }
             </a>
+
+            <div className="footer relative">
+              <div className="footer__data md:items-center">
+                  <a className="footer__data--img">
+                      <img src="/img/png/logo-tu-eliges.png" alt="logo" />
+                  </a>
+                  <div className="footer__data--support">
+                      <strong> { data["footer_support"] } :</strong>
+                      <a href="mailto:support@tueliges.us" target="_blank">
+                          <img src="/img/svg/mail.svg" alt="" />
+                          support@tueliges.us
+                      </a>
+                      <a onClick={handleRedirectFaq}>F.A.Q</a>
+                      <a target="_blank" href="https://tueligesus.recurly.com/account/create_account">
+                          {data.footer_membership}
+                      </a>
+                  </div>
+
+              </div>
+              <div className="footer__access">
+                  { data["footer_copyright"] }
+                  <br />
+                  { data["footer_based"] }
+              </div>
+            </div>
           </div>
 
           <div className={`absolute top-0 left-0 w-full overflow-hidden  ${ info == "mobile" ? "animate-fade-in z-30" : "animate-fade-out hidden"}`}>
@@ -128,16 +159,16 @@ export const Activate = () => {
               <div className="w-full lg:landscape:w-[60%] max-w-[600px] mx-auto mb-10">
                 <p className="text-left text-[18px] md:text-[20px] text-[#000] mb-2" dangerouslySetInnerHTML={{__html:data.activate_app_1}} />
                 <p className="text-left text-[18px] md:text-[20px] text-[#000] mb-2" dangerouslySetInnerHTML={{__html:data.activate_app_2}} />
-                <div className="mb-1 ">
-                  <p className="text-left text-[18px] md:text-[20px] text-[#000] mb-2" dangerouslySetInnerHTML={{__html:data.activate_app_3}} />
-                  <p  className="text-left text-[18px] md:text-[20px] text-[#000] font-bold flex flex-nowrap justify-center items-center gap-4 ">
+                <p className="text-left text-[18px] md:text-[20px] text-[#000] mb-2" dangerouslySetInnerHTML={{__html:data.activate_app_3}} />
+                <div className="mb-1 pl-[3vw] ">
+                  <p  className="text-left text-[18px] md:text-[20px] text-[#000] font-bold flex flex-nowrap justify-start items-center gap-4 ">
                     {data.activate_app_3_a}
                     <strong className="relative font-montserrat_italic border-b-2 cursor-pointer border-b-lightblue-primary bg-white px-[10px] text-[16px] md:text-[18px] rounded-md transition-all duration-500 hover:bg-lightblue-primary hover:text-[#fff] " 
                         >
                         TuEliges.us
                       </strong>
                   </p>
-                  <p className="text-left text-[18px] md:text-[20px] text-[#000] font-bold  flex flex-nowrap justify-center items-center gap-4">
+                  <p className="text-left text-[18px] md:text-[20px] text-[#000] font-bold  flex flex-nowrap justify-start items-center gap-4">
                       {data.activate_app_3_b}
                       <strong className="relative mx-4 font-montserrat_italic border-b-2 cursor-pointer border-b-lightblue-primary bg-white px-[10px] text-[16px] md:text-[18px] rounded-md transition-all duration-500 hover:bg-lightblue-primary hover:text-[#fff] " 
                         ref={textAreaRef} 
@@ -173,8 +204,32 @@ export const Activate = () => {
                 <img src="/img/png/apple-logo.png" alt="" />
               </a>
             </div>
-          </div>
 
+            <div className="footer relative">
+              <div className="footer__data md:items-center">
+                  <a className="footer__data--img">
+                      <img src="/img/png/logo-tu-eliges.png" alt="logo" />
+                  </a>
+                  <div className="footer__data--support">
+                      <strong> { data["footer_support"] } :</strong>
+                      <a href="mailto:support@tueliges.us" target="_blank">
+                          <img src="/img/svg/mail.svg" alt="" />
+                          support@tueliges.us
+                      </a>
+                      <a onClick={handleRedirectFaq}>F.A.Q</a>
+                      <a target="_blank" href="https://tueligesus.recurly.com/account/create_account">
+                          {data.footer_membership}
+                      </a>
+                  </div>
+
+              </div>
+              <div className="footer__access">
+                  { data["footer_copyright"] }
+                  <br />
+                  { data["footer_based"] }
+              </div>
+            </div>
+          </div>
         </section>
     </div>
   )
