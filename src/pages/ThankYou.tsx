@@ -45,11 +45,11 @@ export default function ThankYou() {
           <h1 className="font-montserrat leading-[1.2] text-center max-w-[1000px] text-black mb-10 mx-auto font-normal text-[30px] md:text-[30px] my-[10vh] *:text-lightblue-primary *:block *:text-[40px] *:md:text-[55px] animate-fade-in-0_5" dangerouslySetInnerHTML={ { __html: data.thanks_title }} />
 
 
-          <div className="relative w-[90%] max-w-[800px] mx-auto mt-[10vh] mb-3 h-fit p-4 border-2 border-lightblue-primary rounded-lg animate-fade-in-1"  >
+          <div className="relative w-[90%] max-w-[800px] mx-auto mt-[6vh] mb-3 h-fit p-4 border-2 border-lightblue-primary rounded-lg animate-fade-in-1"  >
             <p className=" text-center text-[20px] text-black *:mx-2" dangerouslySetInnerHTML={{__html:data.thanks_intro}}>
             </p>
           </div>
-          <p className=" text-center text-[18px] text-black *:mx-2 mb-[10vh]" dangerouslySetInnerHTML={{__html:data.thanks_send_email}}>
+          <p className=" text-center text-[18px] text-black *:mx-2 mb-[6vh]" dangerouslySetInnerHTML={{__html:data.thanks_send_email}}>
           </p>
 
           <p className=" text-center font-bold text-[25px] animate-fade-in-1_5" >
