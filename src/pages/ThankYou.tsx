@@ -57,7 +57,7 @@ export default function ThankYou() {
             <span className="text-lightblue-primary mx-3">{id}</span>
           </p>
 
-          <button className="block mx-auto my-24 text-center w-[80%] rounded-full max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-[#00000000] translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary animate-fade-in-1_7" 
+          <button className="block mx-auto my-24 text-center w-[80%] rounded-full max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary animate-fade-in-1_7" 
                 onClick={handleRedirectActivate}
               >
               { data.thanks_cta }
