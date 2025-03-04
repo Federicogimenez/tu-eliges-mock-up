@@ -1,4 +1,6 @@
 @import url("main.scss");
+@import url("./styles/animation/initial.css");
+@import url("./styles/animation/utilities.css");
 
 @tailwind base;
 @tailwind components;
