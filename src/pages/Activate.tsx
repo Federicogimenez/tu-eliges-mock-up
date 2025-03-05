@@ -49,7 +49,7 @@ export const Activate = () => {
         </header>
 
         <section>
-          <h1 className=" w-[90%] text-center text-[35px] md:text-[30px] mx-auto max-w-[800px] leading-[1.3] my-16 animate-fade-in-1" dangerouslySetInnerHTML={{ __html: data.activate_title }} />
+          <h1 className=" w-[90%] text-center text-[35px] md:text-[30px] mx-auto max-w-[800px] leading-[1.3] my-16 *:block *:uppercase *:text-[30px] *:md:text-[40px] animate-fade-in-1" dangerouslySetInnerHTML={{ __html: data.activate_title }} />
           <p className=" font-bold text-[20px] text-center animate-fade-in-1_5 *:text-lightblue-primary *:mx-2" dangerouslySetInnerHTML={{ __html:data.activate_subtitle}} />
         </section>
         
