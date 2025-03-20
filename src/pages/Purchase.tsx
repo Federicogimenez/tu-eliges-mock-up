@@ -116,14 +116,14 @@ export default function Purchase (){
                             </div>
                         :
                             <div className='relative w-full h-full '>
-                                <div className='relative flex flex-col justify-around items-center min-h-[500px] h-[100vh] max-h-[600px] pt-[80px]'>
-                                    <img src="/img/png/hero-cerdito-ahorro.png" alt="hero" className='absolute left-0 top-0 w-full h-full object-cover object-[80%_50%] md:object-center animate-fade-in' />
+                                <div className='relative flex flex-col justify-around items-center min-h-[500px] h-[100vh] max-h-[700px] pt-[80px]'>
+                                    <img src="/img/png/hero-cerdito-ahorro.png" alt="hero" className='absolute left-0 top-0 w-full h-full object-cover object-[70%_50%] md:object-center animate-fade-in' />
 
-                                    <picture className='relative h-[20vh]'>
+                                    <picture className='relative h-[20vh] w-[60%] max-w-[300px]'>
                                         <img src={allyData.alliedCompanyImg} alt={"aliado"} loading='lazy' className='w-full h-full object-contain object-center animate-fade-in-1'/>
                                     </picture>
                                     <div className='w-full'>
-                                        <h1 className='relative text-center text-[22px] md:text-[4vw] leading-[1.2] font-bold font-[#000] w-[90%] mx-auto animate-fade-in-1'>
+                                        <h1 className='relative text-center text-[30px] md:text-[4vw] leading-[1.2] font-bold font-[#000] w-[90%] mx-auto animate-fade-in-1'>
                                             {t.purchase_title_1}
                                             <span className='text-[25px] md:text-[5vw] mx-2'>
                                                 {'$'+ (parseFloat(allyData.new_price_after_discount) / 12).toFixed(2).toString() }
@@ -274,17 +274,16 @@ export default function Purchase (){
                                         {t.purchase_apply_title}
                                     </h3>
                                     <div className='relative w-[90%] mx-auto flex flex-col md:flex-row justify-center items-center gap-8'>
-                                        <div>
+                                        <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
                                                 <span className='bg-lightblue-primary rounded-lg text-center text-white text-[18px] md:text-[20px] py-2 px-4 mr-4'>1</span>
                                                 {t.purchase_apply_1_title}
                                             </h6>
-                                            <p className='w-full text-left text-[16px] md:text-[18px] mb-5 font-thin'>
-                                                {t.purchase_apply_1_p}
+                                            <p className='w-full text-left text-[16px] md:text-[18px] mb-5 font-thin *:font-bold' dangerouslySetInnerHTML={{__html: t.purchase_apply_1_p}}>
                                             </p>
                                             <img src="/img/png/paso-1.png" alt="paso 1" className='h-[30vh] w-full object-contain object-center' />
                                         </div>
-                                        <div>
+                                        <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
                                                 <span className='bg-lightblue-primary rounded-lg text-center text-white text-[18px] md:text-[20px] py-2 px-4 mr-4'>2</span>
                                                 {t.purchase_apply_2_title}
@@ -294,7 +293,7 @@ export default function Purchase (){
                                             </p>
                                             <img src="/img/png/tueliges-dominos-descuento-redime-cupon.png" alt="paso 2" className='h-[30vh] w-full object-contain object-center' />
                                         </div>
-                                        <div>
+                                        <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
                                                 <span className='bg-lightblue-primary rounded-lg text-center text-white text-[18px] md:text-[20px] py-2 px-4 mr-4'>3</span>
                                                 {t.purchase_apply_3_title}

@@ -35,16 +35,55 @@ const SwiperMultipleSlides = () => {
             brandUrl:'/img/png/brands/small/box-a/brand-1.webp',
         },
         {
+            brandUrl:'/img/png/brands/small/box-a/brand-2.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-a/brand-3.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-b/brand-1.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-b/brand-2.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-b/brand-3.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-c/brand-3.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-d/brand-1.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-d/brand-2.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-d/brand-3.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-e/brand-1.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/small/box-e/brand-3.webp',
+        },
+        {
             brandUrl:'/img/png/brands/small/box-f/brand-1.webp',
         },
         {
             brandUrl:'/img/png/brands/small/box-f/brand-2.webp',
         },
         {
+            brandUrl:'/img/png/brands/small/box-f/brand-3.webp',
+        },
+        {
             brandUrl:'/img/png/brands/small/box-g/brand-1.webp',
         },
         {
-            brandUrl:'/img/png/brands/small/box-g/brand-2.webp',
+            brandUrl:'/img/png/brands/small/box-g/brand-3.webp',
+        },
+        {
+            brandUrl:'/img/png/brands/big/box-b/brand-3.webp',
         },
         {
             brandUrl:'/img/png/brands/small/box-h/brand-1.webp',
