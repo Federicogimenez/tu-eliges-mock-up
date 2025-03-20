@@ -116,7 +116,7 @@ export default function Purchase (){
                             </div>
                         :
                             <div className='relative w-full h-full '>
-                                <div className='relative flex flex-col justify-around items-center h-full min-h-[100vh] pt-[80px]'>
+                                <div className='relative flex flex-col justify-around items-center min-h-[500px] h-[100vh] max-h-[600px] pt-[80px]'>
                                     <img src="/img/png/hero-cerdito-ahorro.png" alt="hero" className='absolute left-0 top-0 w-full h-full object-cover object-[80%_50%] md:object-center animate-fade-in-1' />
 
                                     <picture className='relative h-[20vh]'>
