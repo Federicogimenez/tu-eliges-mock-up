@@ -64,7 +64,7 @@ export const Activate = () => {
           <div className="animate-fade-in-1_7">
             <div onClick={()=>setInfo("web")} className={`w-fit flex flex-col gap-8 justify-center items-center cursor-pointer rounded-xl `}>
               <img src="https://res.cloudinary.com/dhy5yj59p/image/upload/v1740702547/my-deals-desktop_kdhylg.png" alt="desktop" className={`portrait:h-[30vh] md:landscape:h-[40vh] object-contain transition-all duration-500 hover:scale-105 ${info == 'web' ? 'scale-105':'scale-100'} `} />
-              <button className={` min-w-[100px] w-[40vw] md:w-[35vw] max-w-[400px] font-semibold border-2 border-lightblue-primary text-[16px] md:text-[20px] bg-[#fff] py-2 text-center rounded-full transition-all duration-300 hover:bg-lightblue-primary/90 hover:text-[#fff] ${ info == "web" ? "bg-lightblue-primary text-[#fff]" : "bg-[#fff] text-lightblue-primary" }`}>
+              <button className={` min-w-[100px] w-[40vw] md:w-[35vw] max-w-[400px] font-semibold border-2 border-lightblue-primary text-[16px] md:text-[20px] bg-[#fff] py-2 text-center rounded-[20px] transition-all duration-300 hover:bg-lightblue-primary/90 hover:text-[#fff] ${ info == "web" ? "bg-lightblue-primary text-[#fff]" : "bg-[#fff] text-lightblue-primary" }`}>
                 {data.activate_from_web}
               </button>
             </div>
@@ -72,7 +72,7 @@ export const Activate = () => {
           <div className="animate-fade-in-2">
             <div onClick={()=>setInfo("mobile")} className="w-fit flex flex-col gap-8 justify-center items-center cursor-pointer ">
               <img src="https://res.cloudinary.com/dhy5yj59p/image/upload/v1740702547/my-deals-mobile_e6twj7.png" alt="mobile" className={`portrait:h-[30vh] landscape:h-[40vh] object-contain transition-all duration-500 hover:scale-105 ${info == 'mobile' ? 'scale-105':'scale-100'}`} />
-              <button  className={` min-w-[100px] w-[40vw] md:w-[35vw] max-w-[400px] font-semibold border-2 border-lightblue-primary text-[16px] md:text-[20px] bg-[#fff] py-2 text-center rounded-full transition-all duration-300 hover:bg-lightblue-primary/90 hover:text-[#fff] ${ info == "mobile" ? "bg-lightblue-primary text-[#fff]" : "bg-[#fff] text-lightblue-primary" } `}>
+              <button  className={` min-w-[100px] w-[40vw] md:w-[35vw] max-w-[400px] font-semibold border-2 border-lightblue-primary text-[16px] md:text-[20px] bg-[#fff] py-2 text-center rounded-[20px] transition-all duration-300 hover:bg-lightblue-primary/90 hover:text-[#fff] ${ info == "mobile" ? "bg-lightblue-primary text-[#fff]" : "bg-[#fff] text-lightblue-primary" } `}>
                 {data.activate_from_app}
               </button>
             </div>

@@ -57,7 +57,7 @@ export default function ThankYou() {
             <span className="text-lightblue-primary mx-3">{id}</span>
           </p>
 
-          <button className="block mx-auto my-24 text-center w-[80%] rounded-full max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary animate-fade-in-1_7" 
+          <button className="block mx-auto my-24 text-center w-[80%] rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary animate-fade-in-1_7" 
                 onClick={handleRedirectActivate}
               >
               { data.thanks_cta }
@@ -66,9 +66,6 @@ export default function ThankYou() {
           <p className=" text-center text-[22px] mb-6 *:mx-2 animate-fade-in-2">
           {data.thanks_email_text}
             <a href="mailto:support@tueliges.us" className=" font-bold mx-2">support@tueliges.us</a>
-            <strong className="mx-2">
-              
-            </strong>
           </p>
           <div className="footer relative">
               <div className="footer__access">

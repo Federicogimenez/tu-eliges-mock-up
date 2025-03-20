@@ -106,7 +106,7 @@ export default function Purchase (){
 
                         allyData.userNotFound ?
                             
-                            <div className="allied-modal__user-not-found">
+                            <div className="w-full relative h-screen flex justify-center items-center">
                                 <div className="allied-modal__user-not-found--content">
                                     <img src="/img/svg/error.svg" alt="error" />
                                     <p>
@@ -117,29 +117,31 @@ export default function Purchase (){
                         :
                             <div className='relative w-full h-full '>
                                 <div className='relative flex flex-col justify-around items-center min-h-[500px] h-[100vh] max-h-[600px] pt-[80px]'>
-                                    <img src="/img/png/hero-cerdito-ahorro.png" alt="hero" className='absolute left-0 top-0 w-full h-full object-cover object-[80%_50%] md:object-center animate-fade-in-1' />
+                                    <img src="/img/png/hero-cerdito-ahorro.png" alt="hero" className='absolute left-0 top-0 w-full h-full object-cover object-[80%_50%] md:object-center animate-fade-in' />
 
                                     <picture className='relative h-[20vh]'>
                                         <img src={allyData.alliedCompanyImg} alt={"aliado"} loading='lazy' className='w-full h-full object-contain object-center animate-fade-in-1'/>
                                     </picture>
-                                    <h1 className='relative text-center text-[22px] md:text-[4vw] leading-[1.2] font-bold font-[#000] w-[90%] mx-auto animate-fade-in-1'>
-                                        {t.purchase_title_1}
-                                        <span className='text-[25px] md:text-[5vw] mx-2'>
-                                            {'$'+ (parseFloat(allyData.new_price_after_discount) / 12).toFixed(2).toString() }
-                                        </span>
-                                        {t.purchase_title_2}
-                                    </h1>
-                                    <p className='w-[90%] text-center text-[18px] md:text-[2.4vw] font-thin animate-fade-in-1'>
-                                        E{t.purchase_p}
-                                    </p>
+                                    <div className='w-full'>
+                                        <h1 className='relative text-center text-[22px] md:text-[4vw] leading-[1.2] font-bold font-[#000] w-[90%] mx-auto animate-fade-in-1'>
+                                            {t.purchase_title_1}
+                                            <span className='text-[25px] md:text-[5vw] mx-2'>
+                                                {'$'+ (parseFloat(allyData.new_price_after_discount) / 12).toFixed(2).toString() }
+                                            </span>
+                                            {t.purchase_title_2}
+                                        </h1>
+                                        <p className='w-[90%] mx-auto text-center text-[18px] md:text-[2.4vw] font-thin animate-fade-in-1'>
+                                            {t.purchase_p}
+                                        </p>
+                                    </div>
                                     <div className='w-[90%] animate-fade-in-1_5'>
                                         <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} 
                                             onClick={gTagEventPurchase}
-                                            className="block mx-auto text-center w-full rounded-full max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary " 
+                                            className="block mx-auto text-center w-full rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary " 
                                             >
                                                 {t.purchase_cta}
                                         </a>
-                                        <p className='w-[90%] mx-auto text-center text-[16px] md:text-[2vw] font-thin'>
+                                        <p className='w-[90%] mx-auto text-center text-[16px] md:text-[1.8vw] font-thin'>
                                                 {t.purchase_users}
                                         </p>
                                     </div>
@@ -175,7 +177,7 @@ export default function Purchase (){
                                     </p>
                                     <p className='w-[90%] mx-auto text-left text-[16px] md:text-[2vw] mb-5 font-thin flex items-center justify-start'>
                                         <img src="/img/png/check-verde.png" alt="check" className=' inline-block w-8 mr-4' />
-                                        {t.purchase_benefit_6}
+                                        {t.purchase_benefit_7}
                                     </p>
                                 </div>
                                 <div className='pt-[10vh] pb-[6vh] w-full bg-littleblue'>
@@ -203,15 +205,15 @@ export default function Purchase (){
                                         </div>
                                     </div>
                                 </div>
-                                <div className='w-[90%] md:w-[70%] lg:w-[50%] xl:[40%] mx-auto rounded-[30px] border-[1px] border-black/50 p-8'>
-                                    <p className='w-full text-center text-[14px] md:text-[1.8vw] mb-5 font-bold '>
+                                <div className='w-[90%] md:w-[70%] lg:w-[50%] xl:[40%] mx-auto rounded-[30px] border-[2px] border-black py-20 px-8'>
+                                    <p className='w-full text-center text-[16px] md:text-[1.8vw] mb-5 font-bold '>
                                         <img src="/img/png/regalito-amarillo.png" alt="regalo" className='inline-block mr-2' />
                                         {t.purchase_special_offer}
                                     </p>
                                     <picture className='relative block mx-auto mb-[5vh] w-[50%] h-[20vh]'>
                                         <img src={allyData.alliedCompanyImg} alt={"aliado"} loading='lazy' className='w-full h-full object-contain object-center animate-fade-in-1'/>
                                     </picture>
-                                    <p className='w-full text-center text-[14px] md:text-[1.8vw] mb-5 font-bold '>
+                                    <p className='w-full text-center text-[16px] md:text-[1.8vw] mb-5 font-bold '>
                                         <img src="/img/png/explosion-naranja.png" alt="regalo" className='inline-block mr-2' />
                                          {t.purchase_save}
                                          <span className='inline-block mx-3'>
@@ -234,8 +236,8 @@ export default function Purchase (){
                                         </span>
                                     </p>
                                     <a href={'https://tueligesus.recurly.com/subscribe/tueliges_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} 
-                                            onClick={gTagEventPurchase}
-                                            className="block mx-auto mt-10 text-center w-full rounded-full max-w-[500px] p-[10px] transition-all duration-300 bg-pink-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-pink-primary translate-y-0  hover:translate-y-[-2px] hover:border-b-lightblue-primary " 
+                                        onClick={gTagEventPurchase}
+                                        className="block mx-auto mt-10 text-center w-full rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-pink-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-pink-primary translate-y-0  hover:translate-y-[-2px] hover:border-b-lightblue-primary " 
                                             >
                                                 {t.purchase_cta}
                                     </a>
@@ -262,7 +264,7 @@ export default function Purchase (){
                                             <img src="/img/png/union-card.png" alt="union" className='w-full h-full object-contain object-center' />
                                         </div>
                                     </div>
-                                    <p className='text-black text-[14px] md:text-[16px]  text-center font-thin mt-[30px]'>
+                                    <p className='text-black text-[16px] md:text-[18px]  text-center font-thin mt-[30px]'>
                                         {t.purchase_recommended}
                                     </p>
                                 </div>
