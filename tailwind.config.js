@@ -7,6 +7,7 @@ export default {
   theme: {
     colors:{
       'lightblue-primary':'#2995FC',
+      'littleblue':'#e7fbfe',
       'blue-primary':'#6166fd',
       'pink-primary':'#DA82FF',
       'green-primary':'#00bf63',
