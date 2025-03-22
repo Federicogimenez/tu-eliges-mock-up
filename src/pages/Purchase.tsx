@@ -267,7 +267,7 @@ export default function Purchase (){
                                             </h6>
                                             <p className='w-full text-left text-[16px] md:text-[18px] mb-5 font-thin *:font-bold' dangerouslySetInnerHTML={{__html: t.purchase_apply_1_p}}>
                                             </p>
-                                            <img src="https://tueliges.us/img/png/paso-1.png" alt="paso 1" className='h-[30vh] w-full object-contain object-center' />
+                                            <img src="/img/png/uchooseit-my-deals-web.png" alt="paso 1" className='h-[30vh] w-full object-contain object-center' />
                                         </div>
                                         <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
