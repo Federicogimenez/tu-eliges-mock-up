@@ -110,7 +110,7 @@ export const Activate = () => {
                 </picture>
             </div>
             
-            <a className="block mx-auto my-24 text-center w-[80%] rounded-full max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-[#00000000] translate-y-0 hover:translate-y-[-2px] hover:bg-pink-primary hover:border-b-lightblue-primary" 
+            <a className="block mx-auto my-24 text-center w-[80%] rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-[#00000000] translate-y-0 hover:translate-y-[-2px] hover:bg-pink-primary hover:border-b-lightblue-primary" 
               href="https://uchooseitus.enjoymydeals.com/" target="_blank">
                 { data.thanks_cta }
             </a>
