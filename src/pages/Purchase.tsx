@@ -1,7 +1,6 @@
 
 
 import { useEffect, useState } from 'react'
-import ReactGA from 'react-ga4'
 import { useLocation } from 'react-router'
 import { useSearchParams } from 'react-router-dom'
 import { useLanguageContext } from '../hooks/UseLanguageContext'
@@ -12,14 +11,6 @@ export default function Purchase (){
 
     const t = useLanguageContext()
     const [searchParams] = useSearchParams();
-
-    const gTagEventPurchase = () => {
-        ReactGA.event({
-          category: 'purchase',
-          action: 'purchase',
-          label: 'cta_pop_up'
-        })
-      }
 
     const [allyData, setAllyData] = useState({
         alliedName: '',
@@ -133,7 +124,6 @@ export default function Purchase (){
                                     </div>
                                     <div className='w-[90%] animate-fade-in-1_5'>
                                         <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} 
-                                            onClick={gTagEventPurchase}
                                             className="block mx-auto text-center w-full rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary " 
                                             >
                                                 {t.purchase_cta}
@@ -233,7 +223,6 @@ export default function Purchase (){
                                         </span>
                                     </p>
                                     <a href={'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='+ allyData.alliedCuponCode} 
-                                        onClick={gTagEventPurchase}
                                         className="block mx-auto mt-10 text-center w-full rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-pink-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-pink-primary translate-y-0  hover:translate-y-[-2px] hover:border-b-lightblue-primary " 
                                             >
                                                 {t.purchase_cta}
