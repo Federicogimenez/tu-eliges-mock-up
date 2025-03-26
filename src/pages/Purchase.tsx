@@ -8,6 +8,17 @@ import { useLanguageContext } from '../hooks/UseLanguageContext'
 import SwitchLang from '../components/SwitchLang'
 import SwiperMultipleSlides from '../components/SwiperMultipleSlides'
 
+interface AllyDataProps{
+    alliedName: string,
+    alliedCompanyImg: string,
+    alliedCuponCode: string,
+    discount_percent: number,
+    membership_anual_fee: number,
+    new_price_after_discount: number,
+    isLoading: boolean,
+    userNotFound: boolean
+}
+
 export default function Purchase (){
 
     const t = useLanguageContext()
@@ -21,13 +32,13 @@ export default function Purchase (){
         })
       }
 
-    const [allyData, setAllyData] = useState({
+    const [allyData, setAllyData] = useState<AllyDataProps>({
         alliedName: '',
         alliedCompanyImg: '',
         alliedCuponCode: '',
-        discount_percent: "",
-        membership_anual_fee: "",
-        new_price_after_discount: "",
+        discount_percent: 0,
+        membership_anual_fee: 0,
+        new_price_after_discount: 0,
         isLoading: true,
         userNotFound: false
     })
@@ -64,9 +75,9 @@ export default function Purchase (){
                 alliedName: '',
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
-                discount_percent: "",
-                membership_anual_fee: "",
-                new_price_after_discount: "",
+                discount_percent: 0,
+                membership_anual_fee: 0,
+                new_price_after_discount: 0,
                 isLoading: false,
                 userNotFound: true
             })}
@@ -77,9 +88,9 @@ export default function Purchase (){
                 alliedName: '',
                 alliedCompanyImg: '',
                 alliedCuponCode: '',
-                discount_percent: "",
-                membership_anual_fee: "",
-                new_price_after_discount: "",
+                discount_percent: 0,
+                membership_anual_fee: 0,
+                new_price_after_discount: 0,
                 isLoading: false,
                 userNotFound: true})
             }})
@@ -126,7 +137,7 @@ export default function Purchase (){
                                         <h1 className='relative text-center text-[30px] md:text-[4vw] leading-[1.2] font-bold font-[#000] w-[90%] mx-auto animate-fade-in-1'>
                                             {t.purchase_title_1}
                                             <span className='text-[25px] md:text-[5vw] mx-2'>
-                                                {'$'+ (parseFloat(allyData.new_price_after_discount) / 12).toFixed(2).toString() }
+                                                {'$'+ ( Math.floor(allyData.new_price_after_discount * 100 / 12 ) / 100 )}
                                             </span>
                                             {t.purchase_title_2}
                                         </h1>
@@ -224,7 +235,7 @@ export default function Purchase (){
                                         <img src="/img/png/explosion-naranja.png" alt="regalo" className='inline-block ml-2' />
                                     </p>
                                     <p className='text-green-primary text-[30px] md:text-[3vw]  text-center font-extrabold'>
-                                        {t.purchase_only} ${ (parseFloat(allyData.new_price_after_discount) / 12).toFixed(2).toString() } {t.purchase_per_month}
+                                        {t.purchase_only} ${ Math.floor(allyData.new_price_after_discount * 100 / 12 ) / 100  } {t.purchase_per_month}
                                     </p>
                                     <p className='text-black text-[20px] md:text-[2vw]  text-center font-extrabold leading-[1]'>
                                         {t.purchase_discounted_price} ${ allyData.new_price_after_discount}

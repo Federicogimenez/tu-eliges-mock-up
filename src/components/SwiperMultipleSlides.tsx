@@ -119,8 +119,9 @@ const SwiperMultipleSlides = () => {
                 }
             >
                 {
-                    slides.map(({ brandUrl })=>{
+                    slides.map(({ brandUrl }, id)=>{
                         return <SwiperSlide
+                            key={id}
                             className='w-full p-2 border-[1px] border-black/40 rounded-xl bg-white'>
                                 <img src={brandUrl} alt="brand" className='mx-auto w-[200px] h-[100px] object-contain object-center' />
                         </SwiperSlide>
