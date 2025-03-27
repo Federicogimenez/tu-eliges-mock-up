@@ -323,7 +323,7 @@ export default function Purchase (){
                     }
 
                     <a href="https://wa.me/17869393494" target='_blank'
-                        className='fixed z-50 top-[85vh] right-2 w-fit rounded-full bg-white flex justify-between items-center '
+                        className='fixed z-50 top-[85vh] right-2 w-fit rounded-full bg-white flex justify-between items-center transition-all duration-300 hover:scale-105'
                         >
                         <span className='px-5'>
                             <div className='text-[15px] md:text-[17px] text-center'>
