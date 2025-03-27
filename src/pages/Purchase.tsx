@@ -322,7 +322,7 @@ export default function Purchase (){
                         )
                     }
 
-                    <a href="https://wa.me/573044975409" target='_blank'
+                    <a href="https://wa.me/17869393494" target='_blank'
                         className='fixed z-50 top-[85vh] right-2 w-fit rounded-full bg-white flex justify-between items-center '
                         >
                         <span className='px-5'>
