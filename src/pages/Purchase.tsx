@@ -311,6 +311,20 @@ export default function Purchase (){
                         )
                     }
 
+                    <a href="https://wa.me/17869393494" target='_blank'
+                        className='fixed z-50 top-[85vh] right-2 w-fit rounded-full bg-[#fff] flex justify-between items-center transition-all duration-300 hover:scale-105'
+                        >
+                        <span className='pr-5 pl-8'>
+                            <div className='text-[15px] md:text-[17px] text-center'>
+                                {t.purchase_cta_whatsapp_questions}
+                            </div>
+                            <div className='text-[20px] md:text-[22px] text-center'>
+                                {t.purchase_cta_whatsapp_contact_us}
+                            </div>
+                        </span>
+                        <img src="/img/png/whatsapp.png" alt="whatsapp" className='w-[70px]' />
+                    </a>
+
                     <div className="footer__access">
                         { t["footer_copyright"] }
                         <br />
