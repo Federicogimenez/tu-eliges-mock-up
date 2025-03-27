@@ -60,7 +60,7 @@ export default function Purchase (){
                 alliedCuponCode: data.allyCoupons[0],
                 discount_percent: data.discount_percent,
                 membership_anual_fee: data.membership_anual_fee,
-                new_price_after_discount: data.discount_percent,
+                new_price_after_discount: data.new_price_after_discount,
                 isLoading: false,
                 userNotFound: false
             })
