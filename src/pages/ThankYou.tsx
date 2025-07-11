@@ -39,15 +39,16 @@ export default function ThankYou() {
             <p className=" text-center text-[20px] text-black *:mx-2" dangerouslySetInnerHTML={{__html:data.thanks_intro}}>
             </p>
           </div>
-          <p className=" text-center text-[18px] text-black *:mx-2 mb-[6vh]" dangerouslySetInnerHTML={{__html:data.thanks_send_email}}>
+          <p className=" text-center text-[18px] text-black *:mx-2 mb-[6vh]">
+            We sent you an email from noreply@uchooseit.us
           </p>
 
           <p className=" text-center font-bold text-[25px] animate-fade-in-1_5" >
           {data.thanks_your_member}
-            <span className="text-lightblue-primary mx-3">{id}</span>
+            <span className="text-lightblue-primary block mx-3">{id}</span>
           </p>
 
-          <button className="block mx-auto my-24 text-center w-[80%] rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary animate-fade-in-1_7" 
+          <button className="block mx-auto mb-24 mt-12 text-center w-[80%] rounded-[20px] max-w-[500px] p-[10px] transition-all duration-300 bg-lightblue-primary text-[#fff] text-[20px] md:text-[25px] font-semibold border-b-4 border-b-lightblue-primary translate-y-0 hover:bg-pink-primary hover:translate-y-[-2px] hover:border-b-lightblue-primary animate-fade-in-1_7" 
                 onClick={handleRedirectActivate}
               >
               { data.thanks_cta }

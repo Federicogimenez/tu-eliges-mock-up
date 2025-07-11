@@ -58,7 +58,7 @@ export const Activate = () => {
         <section className=" mx-auto w-[95%] max-w-[1000px] flex justify-center items-center gap-[10vw] py-8">
           <div className="animate-fade-in-1_7">
             <div onClick={()=>setInfo("web")} className={`w-fit flex flex-col gap-8 justify-center items-center cursor-pointer rounded-xl `}>
-              <img src="https://res.cloudinary.com/dhy5yj59p/image/upload/v1740702547/my-deals-desktop_kdhylg.png" alt="desktop" className={`portrait:h-[30vh] md:landscape:h-[40vh] object-contain transition-all duration-500 hover:scale-105 ${info == 'web' ? 'scale-105':'scale-100'} `} />
+              <img src="/img/png/uchooseit-my-deals-web.png" alt="desktop" className={`portrait:h-[30vh] md:landscape:h-[40vh] object-contain transition-all duration-500 hover:scale-105 ${info == 'web' ? 'scale-105':'scale-100'} `} />
               <button className={` min-w-[100px] w-[40vw] md:w-[35vw] max-w-[400px] font-semibold border-2 border-lightblue-primary text-[16px] md:text-[20px] bg-[#fff] py-2 text-center rounded-full transition-all duration-300 hover:bg-lightblue-primary/90 hover:text-[#fff] ${ info == "web" ? "bg-lightblue-primary text-[#fff]" : "bg-[#fff] text-lightblue-primary" }`}>
                 {data.activate_from_web}
               </button>
@@ -66,7 +66,7 @@ export const Activate = () => {
           </div>
           <div className="animate-fade-in-2">
             <div onClick={()=>setInfo("mobile")} className="w-fit flex flex-col gap-8 justify-center items-center cursor-pointer ">
-              <img src="https://res.cloudinary.com/dhy5yj59p/image/upload/v1740702547/my-deals-mobile_e6twj7.png" alt="mobile" className={`portrait:h-[30vh] landscape:h-[40vh] object-contain transition-all duration-500 hover:scale-105 ${info == 'mobile' ? 'scale-105':'scale-100'}`} />
+              <img src="/img/png/uchooseit-my-deals-mobile.png" alt="mobile" className={`portrait:h-[30vh] landscape:h-[40vh] object-contain transition-all duration-500 hover:scale-105 ${info == 'mobile' ? 'scale-105':'scale-100'}`} />
               <button  className={` min-w-[100px] w-[40vw] md:w-[35vw] max-w-[400px] font-semibold border-2 border-lightblue-primary text-[16px] md:text-[20px] bg-[#fff] py-2 text-center rounded-full transition-all duration-300 hover:bg-lightblue-primary/90 hover:text-[#fff] ${ info == "mobile" ? "bg-lightblue-primary text-[#fff]" : "bg-[#fff] text-lightblue-primary" } `}>
                 {data.activate_from_app}
               </button>
@@ -79,7 +79,7 @@ export const Activate = () => {
           
           <div className={`absolute w-full top-0 left-0 overflow-hidden ${ info == "web" ? "animate-fade-in z-30" : "animate-fade-out hidden"}`}>
             
-            <img src="/img/png/compras-banner.jpg" alt="bg-banner" className="absolute h-full w-full bottom-0 left-0 object-cover object-center opacity-40 " />
+            {/* <img src="/img/png/compras-banner.jpg" alt="bg-banner" className="absolute h-full w-full bottom-0 left-0 object-cover object-center opacity-40 " /> */}
             <div className="absolute left-0 top-0 h-[50%] w-full object-contain bg-gradient-to-b from-white to-transparent" />
 
             <div className="relative w-[90%] max-w-[800px] mx-auto my-6 h-fit p-4 text-center text-[18px] text-black border-2 border-lightblue-primary rounded-lg *:text-lightblue-primary *:mx-2" dangerouslySetInnerHTML={{__html:data.activate_web_info}} />
@@ -143,7 +143,7 @@ export const Activate = () => {
 
           <div className={`absolute top-0 left-0 w-full overflow-hidden  ${ info == "mobile" ? "animate-fade-in z-30" : "animate-fade-out hidden"}`}>
             
-            <img src="/img/png/compras-2-banner.jpg" alt="bg-banner" className="absolute h-full w-full bottom-0 left-0 object-cover object-left opacity-40 " />
+            {/* <img src="/img/png/compras-2-banner.jpg" alt="bg-banner" className="absolute h-full w-full bottom-0 left-0 object-cover object-left opacity-40 " /> */}
             <div className="absolute left-0 top-0 h-[70%] w-full object-contain bg-gradient-to-b from-white to-transparent" />
 
             

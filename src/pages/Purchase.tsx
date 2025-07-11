@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useLanguageContext } from '../hooks/UseLanguageContext'
 import SwiperMultipleSlides from '../components/SwiperMultipleSlides'
 import Loading from '../components/Loading'
+import { Accordion } from '../components/Acordion'
 
 
 interface AllyDataProps {
@@ -276,7 +277,7 @@ export default function Purchase (){
                                     <div className='relative w-[90%] mx-auto flex flex-col md:flex-row justify-center items-center gap-8'>
                                         <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
-                                                <span className='bg-lightblue-primary rounded-lg text-center text-white text-[18px] md:text-[20px] py-2 px-4 mr-4'>1</span>
+                                                <span className='bg-lightblue-primary rounded-lg text-center text-[#fff] font-bold text-[18px] md:text-[20px] py-2 px-4 mr-4'>1</span>
                                                 {t.purchase_apply_1_title}
                                             </h6>
                                             <p className='w-full text-left text-[16px] md:text-[18px] mb-5 font-thin *:font-bold' dangerouslySetInnerHTML={{__html: t.purchase_apply_1_p}}>
@@ -285,7 +286,7 @@ export default function Purchase (){
                                         </div>
                                         <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
-                                                <span className='bg-lightblue-primary rounded-lg text-center text-white text-[18px] md:text-[20px] py-2 px-4 mr-4'>2</span>
+                                                <span className='bg-lightblue-primary rounded-lg text-center text-[#fff] font-bold text-[18px] md:text-[20px] py-2 px-4 mr-4'>2</span>
                                                 {t.purchase_apply_2_title}
                                             </h6>
                                             <p className='w-full text-left text-[16px] md:text-[18px] mb-5 font-thin'>
@@ -295,7 +296,7 @@ export default function Purchase (){
                                         </div>
                                         <div className='w-full md:w-[33%]'>
                                             <h6 className='text-[18px] md:text-[22px] text-black text-left mb-4'>
-                                                <span className='bg-lightblue-primary rounded-lg text-center text-white text-[18px] md:text-[20px] py-2 px-4 mr-4'>3</span>
+                                                <span className='bg-lightblue-primary rounded-lg text-center text-[#fff] font-bold text-[18px] md:text-[20px] py-2 px-4 mr-4'>3</span>
                                                 {t.purchase_apply_3_title}
                                             </h6>
                                             <p className='w-full text-left text-[16px] md:text-[18px] mb-5 font-thin'>
@@ -324,6 +325,101 @@ export default function Purchase (){
                         </span>
                         <img src="/img/png/whatsapp.png" alt="whatsapp" className='w-[70px]' />
                     </a>
+
+                    <div className='py-24 w-[90%] mx-auto'>
+                        <h3 className='text-[22px] md:text-[3vw] leading-[1.2] font-bold text-center'>Frequent Ask Questions</h3>
+                        <Accordion label={'What is uchooseit.us?'}  >
+                            It’s a private discount network exclusively for members, offering savings of up to 50% at over 1 million locations across the U.S.—including restaurants, retail, entertainment, travel, and much more. Our mission is to help you and your family save thousands of dollars every year on everyday purchases and experiences.
+                        </Accordion>
+                        <Accordion label={'How do I access the discounts?'}  >
+                            You must purchase your annual membership, and then you can access the discounts through the My Deals® app or from your computer. You can view offers near you by using your location and redeem them directly from your phone.
+                        </Accordion>
+                        <Accordion label={'Where can I use the discounts?'}  >
+                            <strong>All across the United States.</strong> From major brands to local businesses. Just enable GPS and discover discounts near you.
+                        </Accordion>
+                        <Accordion label={'Do I really save money?'}  >
+                            Yes! Since we have direct agreements with brands, you’ll get the best possible discounts. Many of our members save <strong>hundreds or even thousands of dollars per year. </strong>
+                            Use just 1 or 2 discounts per month and you’ll already cover the cost of your membership. <br />
+                            <strong>You could save over $2,500 per year</strong>, depending on how often you use it.
+                        </Accordion>
+                        <Accordion label={'Is it available in Spanish?'}  >
+                            Yes! The platform is available in <strong>10 different languages</strong>, including Spanish.
+                        </Accordion>
+                        <Accordion label={'Is my information safe?'}  >
+                            Absolutely. We take your privacy seriously. <strong>We do not sell your information </strong> like some free apps. Your data is secure and protected.
+                        </Accordion>
+                        <Accordion label={'Does the membership auto-renew?'}  >
+                           Yes, but you can cancel at any time. No commitments. No fine print. Simply go to:
+                           <a className='text-blue-primary ml-1' href="https://uchooseitus.recurly.com/account/create_account" target="_blank" rel="noopener noreferrer">
+                                https://uchooseitus.recurly.com/account/create_account
+                           </a>
+                        </Accordion>
+                        <Accordion label={'How much does it cost?'}  >
+                            Less than $3.99 per month. With just one discount, you’ll cover the cost of your membership.
+                        </Accordion>
+                        <Accordion label={'Can I cancel anytime?'}  >
+                            Yes. You can do it yourself in just seconds from your account. <strong>No hidden fees</strong>. No hassle.
+                            <a className='text-blue-primary' href="https://uchooseitus.recurly.com/account/create_account" target="_blank" rel="noopener noreferrer">
+                                https://uchooseitus.recurly.com/account/create_account
+                            </a>
+                        </Accordion>
+                        <Accordion label={'Is customer support available?'}  >
+                            Absolutely! Our team is available by <strong>chat or phone</strong> whenever you need help.
+                        </Accordion>
+                        <Accordion label={'Can I explore the discounts without being a member?'}  >
+                            <strong>Yes, you can! </strong> You're welcome to explore most of the available discounts by browsing through categories, cities, or ZIP codes. Just click the link below to start discovering how much you could be saving — no membership required (yet).
+                            <a className='text-blue-primary ml-1' href="https://uchooseitus.enjoymydeals.com/" target="_blank" rel="noopener noreferrer">
+                                https://uchooseitus.enjoymydeals.com/
+                            </a>
+                        </Accordion>
+                        <Accordion label={'How does the discount platform work?'}  >
+                            1. Sign up by entering your contact information at checkout. 
+                            <br />
+                            <br />
+                            2. If you have a promotional code from one of our partners, enter it in the “Promotional Code” field and click Apply. 
+                            <br />
+                            <br />
+                            3. After completing your annual membership payment, you’ll be redirected to a Thank You page with your login details.
+                            <br />
+                            <br />
+                            4. You can then access the platform at <a className='text-blue-primary' href="uchooseitus.enjoymydeals.com" target="_blank" rel="noopener noreferrer">uchooseitus.enjoymydeals.com</a> or download the My Deals® mobile app to use your discounts on the go.
+                            <br />
+                            <br />
+                            5. Your Unique Member ID will also be emailed to you.
+                            <br />
+                            <br />
+                            6. You’ll receive a reminder email 30 days before automatic renewal, giving you time to cancel if you wish.
+                            <br />
+                            <br />
+                            7. You can cancel at any time via 
+                                <a className='text-blue-primary mx-1' href="https://uchooseitus.recurly.com/account/create_account" target="_blank" rel="noopener noreferrer">
+                                    https://uchooseitus.recurly.com/account/create_account.
+                                </a>
+                            <br />
+                            <br />
+                            8. Discounts can be redeemed in three ways:
+                            <ul className='pl-4'>
+                                <li className='flex gap-x-3 justify-start items-center'>
+                                    <span className='inline-block size-2 bg-[#000] rounded-full' />
+                                    In-store (show from your mobile)
+                                </li>
+                                <li className='flex gap-x-3 justify-start items-center'>
+                                    <span className='inline-block size-2 bg-[#000] rounded-full' />
+                                    Online (with a coupon code or link)
+                                </li>
+                                <li className='flex gap-x-3 justify-start items-center'>
+                                    <span className='inline-block size-2 bg-[#000] rounded-full' />
+                                    By phone (for specific services)
+                                </li>
+                            </ul>
+                            <br />
+                            9. We offer an 8-day money-back guarantee. If you’re not satisfied, email us at support@uchooseit.us, and we’ll do our best to help.
+                            <br />
+                            <br />
+                            10. We accept all major credit/debit cards: Visa, MasterCard, Amex, Discover, Diners Club, JCB, UnionPay.
+
+                        </Accordion>
+                    </div>
 
                     <div className="footer__access">
                         { t["footer_copyright"] }
