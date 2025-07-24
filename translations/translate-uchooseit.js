@@ -1,4 +1,4 @@
-const EXPORT_PATH = "../src/data/uchooseit/";
+const EXPORT_PATH = "../src/languages/";
 
 import fs from "fs";
 import readline from "readline";
