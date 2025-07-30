@@ -1,0 +1,1 @@
+lee el archivo /doc/design/flow.md y luego lee el archivo /doc/design/home.md 

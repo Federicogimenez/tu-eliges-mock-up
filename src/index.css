@@ -1,0 +1,114 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-blue-uchooseit: #2995fc;
+  --color-pink-entertainment: #e600b0;
+  --color-yellow-dining: #f5b800;
+  --color-blue-travel: #7fd9f8;
+  --color-purple-shop: #9b5cf8;
+  --color-blue-gradient-start: #55d4e1;
+  --color-blue-gradient-end: #0451af;
+
+   --text-shadow-xl-dark: 0 0px 5px white; 
+}
+
+
+ /* Base styles */
+@layer base {
+
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    @apply bg-white dark:bg-black text-black dark:text-white transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-finger-paint {
+    font-family: 'Finger Paint', cursive;
+  }
+  .light-title-effect {
+    text-shadow: 0px 2px 2px black;
+  }
+  .dark-title-effect {
+    text-shadow: 0px 2px 2px white;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  /* .btn-gradient {
+    transition: all .3s ;
+    background: linear-gradient(90deg, var(--blue-gradient-start), var(--blue-gradient-end));
+    &:hover{
+      background:  var(--blue-uchooseit);
+    }
+  }
+   */
+  /* Custom color utilities */
+  .bg-blue-uchooseit {
+    background-color: var(--blue-uchooseit);
+  }
+  
+  .bg-pink-entertainment {
+    background-color: var(--pink-entertainment);
+  }
+  
+  .bg-yellow-dining {
+    background-color: var(--yellow-dining);
+  }
+  
+  .bg-blue-travel {
+    background-color: var(--blue-travel);
+  }
+  
+  .bg-purple-shop {
+    background-color: var(--purple-shop);
+  }
+  
+  .text-blue-uchooseit {
+    color: var(--blue-uchooseit);
+  }
+  
+  .hover\:bg-blue-uchooseit:hover {
+    background-color: var(--blue-uchooseit);
+  }
+}
+
+/* Dark mode utilities */
+@layer utilities {
+  .dark-mode-transition {
+    @apply transition-colors duration-300;
+  }
+  
+  /* 3D Card Animation Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
