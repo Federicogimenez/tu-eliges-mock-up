@@ -1,10 +1,21 @@
 import React from 'react';
+import HeroTrendy from '../../shared/layout/HeroTrendy';
+import shop_icon from '/icon-shop.svg';
+import { BenefitsSection } from '../home/components/BenefitsSection';
+import { PricingSection } from '../home/components/PricingSection';
+import { GatewaySection } from '../home/components/GatewaySection';
+import { Footer } from '../home/components/Footer';
+import { BrandsSection } from '../home/components/BrandsSection';
 
 export const Shop: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      <h1>Shop Category</h1>
-      <p>This will be the shop category page</p>
-    </div>
+    <>
+      <HeroTrendy logo={shop_icon} color={'--color-purple-shop'} />
+      <BrandsSection />
+      <BenefitsSection />
+      <PricingSection />
+      <GatewaySection />
+      <Footer />
+    </>
   );
 };

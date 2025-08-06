@@ -9,11 +9,11 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'Product', path: '/product' },
   { label: 'Shop', path: '/shop' },
   { label: 'Travel', path: '/travel' },
   { label: 'Dining', path: '/dining' },
   { label: 'Entertainment', path: '/entertainment' },
+  { label: 'Learn more', path: '/product' },
 ];
 
 export const HamburgerMenu: React.FC = () => {
@@ -84,6 +84,7 @@ export const HamburgerMenu: React.FC = () => {
                       transition={{ delay: index * 0.1 }}
                     >
                       <Link
+                        preventScrollReset={false}
                         to={item.path}
                         onClick={toggleMenu}
                         className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition-colors duration-200"

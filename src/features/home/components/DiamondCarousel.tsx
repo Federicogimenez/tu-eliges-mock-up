@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 import { useWindowSize } from '../../../hooks/useWindowSize'
 
 const slides = [
-  { name: 'Travel', icon: '/home/icon-travel.svg', img: '/home/bg-category-1.png', path: '/travel', color:'color-blue-travel' },
-  { name: 'Dining', icon: '/home/icon-dining.svg', img: '/home/bg-category-2.png',path: '/dining', color: 'color-yellow-dining' },
-  { name: 'Entertainment', icon: '/home/icon-entertainment.svg', img: '/home/bg-category-3.png', path: '/entertainment', color: 'color-pink-entertainment' },
-  { name: 'Shop', icon: '/home/icon-shop.svg', img: '/home/bg-category-4.png', path: '/shop', color: 'color-purple-shop' },
+  { name: 'Travel', icon: '/icon-travel.svg', img: '/bg-category-1.png', path: '/travel', color:'color-blue-travel' },
+  { name: 'Dining', icon: '/icon-dining.svg', img: '/bg-category-2.png',path: '/dining', color: 'color-yellow-dining' },
+  { name: 'Entertainment', icon: '/icon-entertainment.svg', img: '/bg-category-3.png', path: '/entertainment', color: 'color-pink-entertainment' },
+  { name: 'Shop', icon: '/icon-shop.svg', img: '/bg-category-4.png', path: '/shop', color: 'color-purple-shop' },
 ]
 
 export const DiamondCarousel = () => {
@@ -138,10 +138,10 @@ export const DiamondCarousel = () => {
   // Función para obtener la posición de cada slide en el diamante
   const getSlidePosition = (index: number, currentIndex: number) => {
     const positions = [
-      { x: 0, y: -130, rotation: 0 }, // Top
-      { x:  (width > 500 ? 160 : 110 ), y: -20, rotation: 90 }, // Right
-      { x: 0, y: 140, rotation: 180 }, // Bottom (activo)
-      { x: (width > 500 ? -160 : -110 ), y: -20, rotation: 270 }, // Left
+      { x: 0, y: -140, scale: (width > 500 ? .6 : .5 )}, // Top
+      { x:  (width > 500 ? 120 : 110 ), y: -50, scale: (width > 500 ? .8 : .6 ) }, // Right
+      { x: 0, y: 100, scale: (width > 500 ? 1.4 : 1.3 )}, // Bottom (activo)
+      { x: (width > 500 ? -120 : -100 ), y: -50, scale: (width > 500 ? .8 : .6 ) }, // Left
     ]
     
     const relativeIndex = (index - currentIndex + 4) % 4
@@ -150,7 +150,7 @@ export const DiamondCarousel = () => {
 
   return (
     <div
-      className="relative w-full h-[400px] lg:size-[500px] mx-auto mt-10 cursor-grab transition-all duration-300 active:cursor-grabbing select-none"
+      className="relative w-full h-[320px] lg:size-[500px] mx-auto cursor-grab transition-all duration-300 active:cursor-grabbing select-none"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
@@ -178,7 +178,7 @@ export const DiamondCarousel = () => {
               key={idx}
               className="absolute size-40 transition-all duration-700 ease-in-out"
               style={{
-                transform: `translate(${position.x}px, ${position.y}px) scale(${isActive ? 1.4 : (width > 500 ? 1 : .75 ) })`,
+                transform: `translate(${position.x}px, ${position.y}px) scale(${position.scale})`,
                 zIndex: isActive ? 10 : 1,
               }}
             >
@@ -214,7 +214,7 @@ const Slide = ({ img, name, icon, active, path, color }: SlideProps) => {
       <div
         className={`w-full h-full rounded-full bg-cover bg-center relative overflow-hidden border  `}
         style={{border:`2px solid var(--${color})`}}
-      >
+        >
         <img src={img} alt={name} className='absolute w-full h-full object-cover object-center' />
         {/* Overlay for better contrast */}
         <div className={`absolute w-full h-full z-10 inset-0 rounded-full transition-all duration-300 ${active ? 'bg-transparent' : 'bg-black/40'}`}></div>
@@ -227,6 +227,7 @@ const Slide = ({ img, name, icon, active, path, color }: SlideProps) => {
           <img
             src={icon}
             alt={name}
+            loading='eager'
             className={`w-full h-full object-contain filter brightness-0 invert`}
             style={{
               filter: `drop-shadow(0 0 1rem var(--${color}))`
@@ -238,7 +239,7 @@ const Slide = ({ img, name, icon, active, path, color }: SlideProps) => {
           className={`w-fit mx-auto relative transition-all duration-300 `}>
           <h3
             style={{color: `var(--${color})`}} 
-            className={`text-xl font-bold drop-shadow-lg text-nowrap transition-all duration-500 ${active ? ' translate-y-1 opacity-100': 'opacity-0'}`}>
+            className={`text-xl font-bold drop-shadow-lg text-nowrap transition-all duration-500 ${active ? ' opacity-100': 'opacity-0'}`}>
             {name}
           </h3>
         </div>

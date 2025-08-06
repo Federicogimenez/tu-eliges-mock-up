@@ -1,38 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import gateway from '/gateway.png'
 
 export const GatewaySection: React.FC = () => {
   return (
-    <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
+    <section className="py-[8vh] px-4 w-full h-full bg-black/5 dark:bg-white/5 transition-colors duration-300">
+        <div className=" mx-auto text-center flex flex-col justify-center items-center gap-y-4">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-3xl md:text-4xl  text-gray-900 dark:text-white">
             See how members save every day
           </h2>
 
-          {/* Image */}
-          <div className="mb-8">
-            <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-2xl flex items-center justify-center mx-auto max-w-2xl">
-              <div className="text-center">
-                <div className="text-6xl mb-4">📊</div>
-                <p className="text-gray-500 dark:text-gray-400">Member Savings Showcase</p>
-              </div>
-            </div>
-          </div>
+          <div className='w-full flex flex-col justify-center items-center'>
+            <img src={gateway} alt="gateway" className='relative min-h-40 h-[60dvh] max-h-60 w-auto object-contain object-bottom ' />
 
-          {/* CTA Button */}
-          <div className="mb-8">
+            {/* CTA Button */}
             <Link 
               to="/product"
-              className="inline-block btn-gradient text-lg px-8 py-4"
+              className="uppercase w-[90%] max-w-[500px] inline-block mb-8 text-lg px-8 py-4 rounded-full border-2 border-black dark:border-white transition-all hover:font-semibold hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black hover:-translate-y-1"
             >
-              Learn More About Benefits
+              Discover More
             </Link>
           </div>
+          {/* Image */}
 
           {/* Description Paragraphs */}
-          <div className="max-w-2xl mx-auto space-y-4 text-gray-600 dark:text-gray-400">
+          {/* <div className="max-w-2xl mx-auto space-y-4 text-gray-600 dark:text-gray-400">
             <p>
               Join thousands of families who are already saving big on their everyday purchases. 
               From groceries to entertainment, our members enjoy exclusive discounts that add up 
@@ -43,9 +36,8 @@ export const GatewaySection: React.FC = () => {
               your membership pays for itself in just a few purchases. Start your savings 
               journey today and see the difference it makes for your family budget.
             </p>
-          </div>
+          </div> */}
         </div>
-      </div>
     </section>
   );
 };

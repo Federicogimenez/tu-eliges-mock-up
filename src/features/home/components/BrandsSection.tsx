@@ -4,11 +4,28 @@ import 'keen-slider/keen-slider.min.css';
 
 // Placeholder brand logos
 const topBrands = [
-  'Brand 1', 'Brand 2', 'Brand 3', 'Brand 4', 'Brand 5', 'Brand 6', 'Brand 7', 'Brand 8'
+  '/brands/1/1.png',
+  '/brands/1/2.png',
+  '/brands/1/3.png',
+  '/brands/1/4.png',
+  '/brands/1/5.png',
+  '/brands/1/6.png',
+  '/brands/1/7.png',
+  '/brands/1/8.png',
+  '/brands/1/9.png',
+  '/brands/1/10.png',
 ];
-
 const bottomBrands = [
-  'Brand A', 'Brand B', 'Brand C', 'Brand D', 'Brand E', 'Brand F', 'Brand G', 'Brand H'
+  '/brands/2/1.png',
+  '/brands/2/2.png',
+  '/brands/2/3.png',
+  '/brands/2/4.png',
+  '/brands/2/5.png',
+  '/brands/2/6.png',
+  '/brands/2/7.png',
+  '/brands/2/8.png',
+  '/brands/2/9.png',
+  '/brands/2/10.png',
 ];
 
 export const BrandsSection: React.FC = () => {
@@ -62,17 +79,18 @@ export const BrandsSection: React.FC = () => {
   });
 
   return (
-    <section className="py-12 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section className="py-[8vh] bg-black/5 dark:bg-white/5 transition-colors duration-300">
+      <h2 className="w-[90%] mx-auto text-center text-2xl sm:text-3xl md:text-4xl  text-gray-900 dark:text-white mb-10">
+        Enjoy savings at your favorite national and local brands
+      </h2>
       <div className="container mx-auto">
         {/* Top Slider - Moving Right */}
         <div className="mb-8">
           <div ref={topSliderRef} className="keen-slider">
             {topBrands.map((brand, index) => (
               <div key={index} className="keen-slider__slide">
-                <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                    {brand}
-                  </span>
+                <div className="group bg-gradient-to-b to-white/5 from-black/5 rounded-2xl p-2 shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
+                  <img src={brand} alt={`brand ${index}`} className='w-full h-full object-contain object-center' />
                 </div>
               </div>
             ))}
@@ -84,10 +102,11 @@ export const BrandsSection: React.FC = () => {
           <div ref={bottomSliderRef} className="keen-slider">
             {bottomBrands.map((brand, index) => (
               <div key={index} className="keen-slider__slide">
-                <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                <div className="bg-gradient-to-b from-white/5 to-black/5 rounded-2xl p-2 shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
+                  {/* <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                     {brand}
-                  </span>
+                  </span> */}
+                  <img src={brand} alt={`brand ${index}`} className='w-full h-full object-contain object-center' />
                 </div>
               </div>
             ))}

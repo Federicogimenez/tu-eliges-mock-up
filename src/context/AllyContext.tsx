@@ -5,12 +5,12 @@ import { fetchAllyData } from '../lib/allyApi';
 
 const defaultAllyData: AllyDataProps = {
   alliedName: '',
-  alliedCompanyImg: '',
+  alliedCompanyImg: '/icons/user_no_image.jpg',
   alliedCuponCode: '',
   discount_percent: 0,
-  membership_anual_fee: 48,
-  new_price_after_discount: 48,
-  isLoading: false,
+  membership_anual_fee: 47.99,
+  new_price_after_discount: 47.99,
+  isLoading: true,
   userNotFound: false
 };
 
@@ -25,6 +25,9 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
   const [allyData, setAllyData] = useState<AllyDataProps>(defaultAllyData);
   const [hasInitialized, setHasInitialized] = useState(false);
 
+  const recurlyUrl = 'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD'
+  const recurlyCuponUrl = 'https://uchooseitus.recurly.com/subscribe/uchooseit_member?currency=USD&subscription[coupon_code]='
+
   useEffect(() => {
     // Solo ejecutar una vez al montar el componente
     if (hasInitialized) return;
@@ -34,7 +37,9 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
       const codeParam = urlParams.get('code');
       
       if (codeParam) {
-        setCode(codeParam);
+        setCode(recurlyCuponUrl + codeParam);
+        // Actualizar LocalStorage con el nuevo código
+        localStorage.setItem('ally-code', codeParam);
         // Marcar como loading mientras se hace la consulta
         setAllyData(prev => ({ ...prev, isLoading: true }));
         
@@ -45,13 +50,37 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
           })
           .catch((error) => {
             console.error('Error loading ally data:', error);
-            setAllyData(prev => ({ 
-              ...prev, 
-              isLoading: false, 
+            setAllyData(prev => ({
+              ...prev,
+              isLoading: false,
               userNotFound: true,
               alliedCuponCode: codeParam
             }));
           });
+      } else {
+        // Buscar código en LocalStorage
+        const storedCode = localStorage.getItem('ally-code');
+        if (storedCode) {
+          setCode(recurlyCuponUrl + storedCode);
+          // Marcar como loading mientras se hace la consulta
+          setAllyData(prev => ({ ...prev, isLoading: true }));
+          
+          // Hacer la consulta a la API con el código almacenado
+          fetchAllyData(storedCode)
+            .then((data) => {
+              setAllyData(data);
+            })
+            .catch((error) => {
+              console.error('Error loading ally data:', error);
+              setAllyData(prev => ({
+                ...prev,
+                isLoading: false,
+                userNotFound: true,
+                alliedCuponCode: storedCode
+              }));
+            });
+        }
+        // Si no existe código en LocalStorage, no hacer nada
       }
     };
 
@@ -60,6 +89,7 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
   }, [hasInitialized]);
 
   const contextValue: AllyContextType = {
+    recurlyUrl,
     code,
     allyData
   };

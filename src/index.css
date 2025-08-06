@@ -7,14 +7,19 @@
 
 @theme {
   --color-blue-uchooseit: #2995fc;
-  --color-pink-entertainment: #e600b0;
+  /* --color-pink-entertainment: #e600b0;
   --color-yellow-dining: #f5b800;
   --color-blue-travel: #7fd9f8;
-  --color-purple-shop: #9b5cf8;
+  --color-purple-shop: #9b5cf8; */
+  --color-pink-entertainment: #e82c8d;
+  --color-yellow-dining: #ffe500;
+  --color-blue-travel: #00b3eb;
+  --color-purple-shop: #884cfc;
   --color-blue-gradient-start: #55d4e1;
   --color-blue-gradient-end: #0451af;
 
    --text-shadow-xl-dark: 0 0px 5px white; 
+   --text-shadow-xl-light: 0 0px 5px black; 
 }
 
 
@@ -25,6 +30,10 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    &::-webkit-scrollbar{
+      width: 0;
+    }
   }
   html {
     font-family: 'Montserrat', sans-serif;
@@ -32,6 +41,12 @@
   
   body {
     @apply bg-white dark:bg-black text-black dark:text-white transition-colors duration-300;
+  }
+
+  #root{
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -47,6 +62,7 @@
   .dark-title-effect {
     text-shadow: 0px 2px 2px white;
   }
+
 }
 
 /* Custom component styles */
@@ -64,32 +80,34 @@
   }
    */
   /* Custom color utilities */
-  .bg-blue-uchooseit {
-    background-color: var(--blue-uchooseit);
+
+
+  .shiny-blue-text {
+    color: transparent; /* Adjust this color to change intensity/style */
+    background: linear-gradient(
+      120deg,
+      var(--color-blue-uchooseit) 40%,
+      var(--color-blue-travel) 50%,
+      var(--color-blue-uchooseit) 60%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear infinite;
   }
-  
-  .bg-pink-entertainment {
-    background-color: var(--pink-entertainment);
+
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
   }
-  
-  .bg-yellow-dining {
-    background-color: var(--yellow-dining);
-  }
-  
-  .bg-blue-travel {
-    background-color: var(--blue-travel);
-  }
-  
-  .bg-purple-shop {
-    background-color: var(--purple-shop);
-  }
-  
-  .text-blue-uchooseit {
-    color: var(--blue-uchooseit);
-  }
-  
-  .hover\:bg-blue-uchooseit:hover {
-    background-color: var(--blue-uchooseit);
+
+  .shiny-text.disabled {
+    animation: none;
   }
 }
 
@@ -110,5 +128,33 @@
   
   .transform-style-preserve-3d {
     transform-style: preserve-3d;
+  }
+
+    
+  .dots {
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+  }
+
+  .dot {
+    border: none;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(to bottom, #c4c4c4, #040404);
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+  }
+
+  .dot:focus {
+    outline: none;
+  }
+
+  .dot.active {
+    width: 20px;
+    background: var(--color-blue-uchooseit);
   }
 }

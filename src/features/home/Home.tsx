@@ -9,7 +9,7 @@ import { Footer } from './components/Footer';
 
 export const Home: React.FC = () => {
   return (
-    <div className="min-h-screen">
+    <>
       <HeroSection />
       <BrandsSection />
       <CategorySection />
@@ -17,6 +17,6 @@ export const Home: React.FC = () => {
       <PricingSection />
       <GatewaySection />
       <Footer />
-    </div>
+    </>
   );
 };
