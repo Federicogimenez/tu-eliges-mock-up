@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 interface MenuItem {
   label: string;
@@ -28,7 +29,7 @@ export const HamburgerMenu: React.FC = () => {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className="cursor-pointer fixed top-6 left-6 z-50 w-10 h-10 flex flex-col justify-center items-center bg-white dark:bg-black rounded-lg shadow-lg transition-colors duration-300"
+        className="cursor-pointer fixed top-6 left-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg shadow-2xl-dark dark:shadow-2xl-light transition-colors duration-300"
         aria-label="Toggle menu"
       >
         <motion.div
@@ -67,10 +68,13 @@ export const HamburgerMenu: React.FC = () => {
               className="fixed top-0 left-0 h-full w-80 bg-white dark:bg-black border-r-2 border-r-white/15 shadow-xl z-40 flex flex-col"
             >
               {/* Menu Header */}
-              <div className="p-6 border-b border-gray-200 dark:border-black">
-                <h2 className="text-center text-xl font-semibold text-black dark:text-white">
-                  Navigation
+              <div className="p-6 border-b border-gray-200 dark:border-black flex justify-center items-center gap-x-3">
+                <h2 className="text-center text-xl font-semibold text-black dark:text-white grow">
+                  Navigate
                 </h2>
+                <div className='relative '>
+                  <ThemeSwitcher />
+                </div>
               </div>
 
               {/* Menu Items */}

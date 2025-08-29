@@ -11,8 +11,8 @@ export const GatewaySection: React.FC = () => {
             See how members save every day
           </h2>
 
-          <div className='w-full flex flex-col justify-center items-center'>
-            <img src={gateway} alt="gateway" className='relative min-h-40 h-[60dvh] max-h-60 w-auto object-contain object-bottom ' />
+          <div className='w-full flex flex-col justify-center items-center mb-2'>
+            <img src={gateway} alt="gateway" className='relative min-h-40 h-[60dvh] max-h-78 w-auto object-contain object-bottom ' />
 
             {/* CTA Button */}
             <Link 
@@ -22,6 +22,20 @@ export const GatewaySection: React.FC = () => {
               Discover More
             </Link>
           </div>
+          <p className=' text-blue-gradient-end dark:text-blue-gradient-start font-semibold flex justify-center items-baseline gap-x-4'>
+            <span>
+              ✓Testimonials  
+            </span>
+            <span>
+              ✓How it works
+            </span>
+            <span>
+              ✓Savings calculator
+            </span>
+          </p>
+          <p>
+            It only takes 60 seconds to read
+          </p>
           {/* Image */}
 
           {/* Description Paragraphs */}

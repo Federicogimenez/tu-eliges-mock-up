@@ -1,0 +1,8 @@
+@keyframes translateFullUp {
+    from{
+        transform: translateY(300%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

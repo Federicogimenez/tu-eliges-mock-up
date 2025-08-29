@@ -79,6 +79,11 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
                 alliedCuponCode: storedCode
               }));
             });
+        } else {
+          setAllyData(prev => ({
+            ...prev,
+            isLoading: false,
+          }))
         }
         // Si no existe código en LocalStorage, no hacer nada
       }

@@ -7,7 +7,7 @@ export const ThemeSwitcher: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className={`block cursor-pointer size-10 rounded-full overflow-hidden transition-all duration-300 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}
+      className={`relative block cursor-pointer size-10 rounded-full overflow-hidden transition-all duration-300 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
         <img 

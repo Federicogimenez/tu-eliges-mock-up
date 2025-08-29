@@ -1,15 +1,14 @@
 // src/components/DiamondCarousel.tsx
-import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useWindowSize } from '../../../hooks/useWindowSize'
 
 const slides = [
-  { name: 'Travel', icon: '/icon-travel.svg', img: '/bg-category-1.png', path: '/travel', color:'color-blue-travel' },
-  { name: 'Dining', icon: '/icon-dining.svg', img: '/bg-category-2.png',path: '/dining', color: 'color-yellow-dining' },
-  { name: 'Entertainment', icon: '/icon-entertainment.svg', img: '/bg-category-3.png', path: '/entertainment', color: 'color-pink-entertainment' },
-  { name: 'Shop', icon: '/icon-shop.svg', img: '/bg-category-4.png', path: '/shop', color: 'color-purple-shop' },
+  { name: 'Travel', icon: '/icons/category/travel.png', img: '/bg-category-1.png', path: '/travel', color:'color-blue-travel' },
+  { name: 'Dining', icon: '/icons/category/dining.png', img: '/bg-category-2.png',path: '/dining', color: 'color-yellow-dining' },
+  { name: 'Entertainment', icon: '/icons/category/entertainment.png', img: '/bg-category-3.png', path: '/entertainment', color: 'color-pink-entertainment' },
+  { name: 'Shop', icon: '/icons/category/shop.png', img: '/bg-category-4.png', path: '/shop', color: 'color-purple-shop' },
 ]
 
 export const DiamondCarousel = () => {
@@ -18,7 +17,7 @@ export const DiamondCarousel = () => {
   const [isDragging, setIsDragging] = useState(false)
   const intervalRef = useRef<number | null>(null)
   const dragStartRef = useRef<{ x: number; y: number } | null>(null)
-  const dragThreshold = 50 // Minimum distance to trigger slide change
+  const dragThreshold = 20 // Minimum distance to trigger slide change
   const { width } = useWindowSize()
 
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -40,7 +39,7 @@ export const DiamondCarousel = () => {
         if (!isHovered && !isDragging && instanceRef.current) {
           instanceRef.current.next()
         }
-      }, 2000)
+      }, 1500)
     }
 
     const stopAutoPlay = () => {

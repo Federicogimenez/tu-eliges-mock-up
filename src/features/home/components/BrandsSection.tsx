@@ -1,6 +1,5 @@
 import React from 'react';
 import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
 
 // Placeholder brand logos
 const topBrands = [
@@ -49,7 +48,7 @@ export const BrandsSection: React.FC = () => {
       s.moveToIdx(0, true);
       setInterval(() => {
         s.next();
-      }, 2000);
+      }, 1500);
     },
   });
 
@@ -74,13 +73,13 @@ export const BrandsSection: React.FC = () => {
       s.moveToIdx(0, true);
       setInterval(() => {
         s.next();
-      }, 2000);
+      }, 1500);
     },
   });
 
   return (
     <section className="py-[8vh] bg-black/5 dark:bg-white/5 transition-colors duration-300">
-      <h2 className="w-[90%] mx-auto text-center text-2xl sm:text-3xl md:text-4xl  text-gray-900 dark:text-white mb-10">
+      <h2 className="w-[90%] mx-auto text-center text-2xl sm:text-3xl xl:text-4xl  text-gray-900 dark:text-white mb-10">
         Enjoy savings at your favorite national and local brands
       </h2>
       <div className="container mx-auto">
@@ -89,7 +88,7 @@ export const BrandsSection: React.FC = () => {
           <div ref={topSliderRef} className="keen-slider">
             {topBrands.map((brand, index) => (
               <div key={index} className="keen-slider__slide">
-                <div className="group bg-gradient-to-b to-white/5 from-black/5 rounded-2xl p-2 shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
+                <div className="group bg-white/90 rounded-2xl p-2 dark:shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
                   <img src={brand} alt={`brand ${index}`} className='w-full h-full object-contain object-center' />
                 </div>
               </div>
@@ -102,7 +101,7 @@ export const BrandsSection: React.FC = () => {
           <div ref={bottomSliderRef} className="keen-slider">
             {bottomBrands.map((brand, index) => (
               <div key={index} className="keen-slider__slide">
-                <div className="bg-gradient-to-b from-white/5 to-black/5 rounded-2xl p-2 shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
+                <div className="bg-white/90 rounded-2xl p-2 dark:shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
                   {/* <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                     {brand}
                   </span> */}

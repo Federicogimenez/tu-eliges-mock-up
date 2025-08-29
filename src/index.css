@@ -1,18 +1,26 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import './styles/animations/fade.css';
+@import './styles/animations/translations.css';
+
 @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-finger-paint: 'Finger Paint', 'Montserrat', cursive;
+
   --color-blue-uchooseit: #2995fc;
   /* --color-pink-entertainment: #e600b0;
-  --color-yellow-dining: #f5b800;
   --color-blue-travel: #7fd9f8;
   --color-purple-shop: #9b5cf8; */
   --color-pink-entertainment: #e82c8d;
-  --color-yellow-dining: #ffe500;
+  /* --color-yellow-dining: #f5b800; */
+  /* --color-yellow-dining: #ffe500; */
+  --color-yellow-dining: #ffb807;
   --color-blue-travel: #00b3eb;
   --color-purple-shop: #884cfc;
   --color-blue-gradient-start: #55d4e1;
@@ -20,6 +28,11 @@
 
    --text-shadow-xl-dark: 0 0px 5px white; 
    --text-shadow-xl-light: 0 0px 5px black; 
+   
+   --shadow-2xl-light: 0 0px 5px white; 
+   --shadow-2xl-dark: 0 0px 5px black; 
+
+   --animate-appear-up: translateFullUp 1s 1s ease-in-out both, fadeIn .5s 1s ease-in-out both;
 }
 
 
@@ -87,14 +100,75 @@
     background: linear-gradient(
       120deg,
       var(--color-blue-uchooseit) 40%,
-      var(--color-blue-travel) 50%,
+      var(--color-blue-gradient-start) 50%,
       var(--color-blue-uchooseit) 60%
     );
-    background-size: 200% 100%;
+    background-size: 500% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     display: inline-block;
-    animation: shine 5s linear infinite;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-lightblue-text {
+    color: transparent; /* Adjust this color to change intensity/style */
+    background: linear-gradient(
+      120deg,
+      var(--color-blue-gradient-start) 40%,
+      white 50%,
+      var(--color-blue-gradient-start) 60%
+      /* var(--color-blue-uchooseit) 40%,
+      var(--color-blue-gradient-start) 50%,
+      var(--color-blue-uchooseit) 60% */
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-purple-text {
+    color: transparent; /* Adjust this color to change intensity/style */
+    background: linear-gradient(
+      120deg,
+      var(--color-purple-shop) 40%,
+      var(--color-purple-400) 50%,
+      var(--color-purple-shop) 60%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-yellow-text {
+    color: transparent; /* Adjust this color to change intensity/style */
+    background: linear-gradient(
+      120deg,
+      var(--color-yellow-dining) 40%,
+      /* var(--color-blue-travel) 50%, */
+      var(--color-yellow-200) 50%,
+      var(--color-yellow-dining) 60%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-pink-text {
+    color: transparent; /* Adjust this color to change intensity/style */
+    background: linear-gradient(
+      120deg,
+      var(--color-pink-entertainment) 40%,
+      /* var(--color-blue-travel) 50%, */
+      var(--color-pink-300) 50%,
+      var(--color-pink-entertainment) 60%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
   }
 
   @keyframes shine {

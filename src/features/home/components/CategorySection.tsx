@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+// import { DiamondCarousel } from './DiamondCarousel';
 
 const categories = [
   {
@@ -10,7 +10,7 @@ const categories = [
     path: '/shop',
     color: '--color-purple-shop',
     frontImage: '/bg-shop.jpg',
-    logo: '/icon-shop.svg',
+    logo: '/icons/category/shop.png',
     number: '175',
     description: 'Technology, Cars, Home, Health, Fitness, and more.'
   },
@@ -19,7 +19,7 @@ const categories = [
     path: '/dining',
     color: '--color-yellow-dining',
     frontImage: '/bg-dining.jpg',
-    logo: '/icon-dining.svg',
+    logo: '/icons/category/dining.png',
     number: '50',
     description: 'Casual and Fine Dining, Fast food, Catering, and more.'
   },
@@ -28,7 +28,7 @@ const categories = [
     path: '/travel',
     color: '--color-blue-travel',
     frontImage: '/bg-travel.jpg',
-    logo: '/icon-travel.svg',
+    logo: '/icons/category/travel.png',
     number: '850',
     description: 'Hotel, Car rentals, Resorts, Cruises, Tours, and more.'
   },
@@ -37,7 +37,7 @@ const categories = [
     path: '/entertainment',
     color: '--color-pink-entertainment',
     frontImage: '/bg-entertainment.jpg',
-    logo: '/icon-entertainment.svg',
+    logo: '/icons/category/entertainment.png',
     number: '50',
     description: 'Theme parks, Adventure, Movies, Golf, and more.'
   }
@@ -69,7 +69,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index, isActive, 
       onClick={() => onCardClick(index)}
     >
       {/* Front Face */}
-      <div className={`absolute inset-0 w-full h-full backface-hidden rounded-3xl shadow-lg overflow-hidden border-2 border-amber-600`}
+      <div className={`absolute inset-0 w-full h-full backface-hidden rounded-3xl shadow-lg overflow-hidden`}
           style={{border: `2px solid var(${category.color})` }}
       >
         {/* <div className={`w-full h-full ${category.color} bg-opacity-20 flex flex-col items-center justify-center p-6`}> */}
@@ -95,7 +95,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index, isActive, 
       {/* Back Face */}
       <div 
         className={`absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-lg overflow-hidden border-2 border-amber-500 `}
-        style={{ transform: 'rotateY(180deg)', border: `2px solid var(${category.color})`,  filter: isActive ? `drop-shadow(0px 0px 10px var(${category.color}))` : '', }}
+        style={{ transform: 'rotateY(180deg)', border: `2px solid var(${category.color})`,  filter: `drop-shadow(0px 0px 5px var(${category.color}))`, }}
       >
         <div className={`w-full h-full flex flex-col items-center justify-around p-6 `}>
           {/* <div className="text-4xl mb-2">{category.logo}</div> */}
@@ -118,7 +118,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index, isActive, 
   );
 };
 
-export const CategorySection: React.FC = () => {
+export default function CategorySection () {
   // Estado para controlar qué card está mostrando su backside
   const ref = useRef(null);
   const isInView = useInView(ref,{ once: true});
@@ -147,16 +147,18 @@ export const CategorySection: React.FC = () => {
   };
 
   return (
-    <section className="py-[8vh] px-4">
+    <section className="pt-[8dvh] pb-12 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h3 className="text-3xl md:text-4xl font text-black dark:text-white mb-4">
-            Explore Categories
+        <div className="text-center mb-20 lg:mb-6">
+          <h3 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-black dark:text-white mb-4">
+            Discover amazing savings
           </h3>
           <p className="text-lg bg-clip-text text-transparent bg-gradient-to-b text-shadow-2xs to-gray-200 from-black dark:from-gray-500  max-w-2xl mx-auto">
-            Discover amazing savings across all your favorite categories
+            Explore across all your favorite categories
           </p>
         </div>
+
+        {/* <DiamondCarousel /> */}
 
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center">
           {categories.map((category, index) => (

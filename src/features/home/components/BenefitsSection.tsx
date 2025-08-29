@@ -1,116 +1,76 @@
-import React from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
 
-import shop_sad from '/benefits/shop/sad.png'
-import shop_happy from '/benefits/shop/happy.png'
-
-import travel_sad from '/benefits/travel/sad.png'
-import travel_happy from '/benefits/travel/happy.png'
-
-import dining_sad from '/benefits/dining/sad.png'
-import dining_happy from '/benefits/dining/happy.png'
-
-import entertainment_sad from '/benefits/entertainment/sad.png'
-import entertainment_happy from '/benefits/entertainment/happy.png'
-
-import w_protected from '/icons/white/protected.png'
-import w_country from '/icons/white/country.png'
-import w_infinite_disounts from '/icons/white/infinite-discounts.png'
-import w_pin from '/icons/white/pin.png'
-import w_promo from '/icons/white/promo.png'
-import w_quick from '/icons/white/quick.png'
-
-import b_protected from '/icons/black/protected.png'
-import b_country from '/icons/black/country.png'
-import b_infinite_disounts from '/icons/black/infinite-discounts.png'
-import b_pin from '/icons/black/pin.png'
-import b_promo from '/icons/black/promo.png'
-import b_quick from '/icons/black/quick.png'
-import { useTheme } from '../../../hooks/useTheme';
-
-const slides = [
-  {
-    color: '--color-purple-shop',
-    discount: '-$400',
-    sad_img: shop_sad,
-    happy_img: shop_happy,
-  },
-  {
-    color: '--color-yellow-dining',
-    discount: '-$30',
-    sad_img: dining_sad,
-    happy_img: dining_happy,
-  },
-  {
-    color: '--color-blue-travel',
-    discount: '-$110',
-    sad_img: travel_sad,
-    happy_img: travel_happy,
-  },
-  {
-    color: '--color-pink-entertainment',
-    discount: '-$173',
-    sad_img: entertainment_sad,
-    happy_img: entertainment_happy,
-  },
-];
+import icon_gps from '/icons/benefits/gps.svg'
+import icon_discount from '/icons/benefits/discount.svg'
+import icon_permanent from '/icons/benefits/permanent.svg'
+import icon_privacy from '/icons/benefits/privacy.svg'
+import icon_quick from '/icons/benefits/quick.svg'
+import icon_save from '/icons/benefits/save.svg'
 
 const benefits = [
   {
-    w_icon: w_promo,
-    b_icon: b_promo,
-    title: 'Save *$2,000+ per year — Up to 50% off ',
+    icon: icon_save,
+    title: 'Save $2,000+ per year - 50% off ',
     description: 'Travel • Dining • Shopping • Entertainment',
     note: '*Average member savings in 2024'
   },
   {
-    w_icon: w_country,
-    b_icon: b_country,
+    icon: icon_discount,
     title: 'Over 1 millon:',
     description: 'Nationwide deals at hand.',
     note: null
   },
   {
-    w_icon: w_infinite_disounts,
-    b_icon: b_infinite_disounts,
+    icon: icon_permanent,
     title: 'Permanent discounts:',
     description: 'Use as often as you want.',
     note: null
   },
   {
-    w_icon: w_pin,
-    b_icon: b_pin,
+    icon: icon_gps,
     title: 'GPS-enabled savings:',
     description: 'Find offers near you.',
     note: null
   },
   {
-    w_icon: w_quick,
-    b_icon: b_quick,
+    icon: icon_quick,
     title: 'Quick and easy:',
     description: 'Redenptions no complicated steps.',
     note: null
   },
   {
-    w_icon: w_protected,
-    b_icon: b_protected,
+    icon: icon_privacy,
     title: 'Privacy protected:',
     description: 'We never sell your data.',
     note: null
-  },
-
-
+  }
 ];
 
-export const BenefitsSection: React.FC = () => {
+export interface BenefitSlide{
+      color: string,
+      discount: string,
+      with_img: string,
+      withoout_img: string,
+}
 
-  const { theme } = useTheme()
+interface BenefitsSectionProps{
+  title?: string;
+  subtitle?: string;
+  color?: string;
+  slides: BenefitSlide[];
+}
 
-  const [currentSlide, setCurrentSlide] = React.useState(0)
-  const isPausedRef = React.useRef(false)
-  const intervalRef = React.useRef<number | null>(null)
-  const sliderInstanceRef = React.useRef<{ next: () => void } | null>(null)
+export default function BenefitsSection ({ 
+  slides, 
+  color='currentColor', 
+  title='One membership',
+  subtitle="Real benefits for the whole family" }: BenefitsSectionProps) {
+
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const isPausedRef = useRef(false)
+  const intervalRef = useRef<number | null>(null)
+  const sliderInstanceRef = useRef<{ next: () => void } | null>(null)
   
   const [sliderRef , instanceRef] = useKeenSlider({
     loop: true,
@@ -128,7 +88,7 @@ export const BenefitsSection: React.FC = () => {
   });
 
   // Gestión del autoplay separada del slider
-  React.useEffect(() => {
+  useEffect(() => {
     const startAutoplay = () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
       intervalRef.current = setInterval(() => {
@@ -149,15 +109,15 @@ export const BenefitsSection: React.FC = () => {
     }
   }, [sliderInstanceRef.current])
 
-  const handleMouseEnter = React.useCallback(() => {
+  const handleMouseEnter = useCallback(() => {
     isPausedRef.current = true
   }, [])
 
-  const handleMouseLeave = React.useCallback(() => {
+  const handleMouseLeave = useCallback(() => {
     isPausedRef.current = false
   }, [])
 
-  const handleDotClick = React.useCallback((idx: number) => {
+  const handleDotClick = useCallback((idx: number) => {
     isPausedRef.current = true
     instanceRef.current?.moveToIdx(idx)
     setTimeout(() => {
@@ -172,11 +132,11 @@ export const BenefitsSection: React.FC = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            One membership
+          <h2 className="text-4xl sm:text-5xl md:text-5xl xl:text-7xl  text-gray-900 dark:text-white mb-2">
+            {title}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Real benefits for whole family
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400" style={{color: `var(${color})`}}>
+            {subtitle}
           </p>
         </div>
 
@@ -192,15 +152,17 @@ export const BenefitsSection: React.FC = () => {
               onClick={handleMouseEnter}
             >
               {slides.map((slide, index) => (
-                <div key={index} className="keen-slider__slide overflow-visible">
-                  <div className="relative mx-auto w-fit h-[60dvh] min-h-48 max-h-80 md:max-h-[450px] bg-black/5 dark:bg-white/5 rounded-xl shadow-lg overflow-hidden flex gap-x-2 justify-center items-stretch">
-                    <img src={slide.sad_img} alt="sad" className='w-full h-full object-contain object-center rounded-2xl sepia-100' />
-                    <div className='w-full h-full overflow-hidden rounded-2xl'>
-                      <div className={` w-full h-full rounded-2xl transition-all duration-[2s] ${currentSlide == index ? ' scale-110' : ' scale-100' }`}>
-                        <img src={slide.happy_img} alt="happy" className={`w-full h-full object-contain object-center rounded-2xl transition-all duration-1000 ${currentSlide == index ? ' sepia-0' : ' sepia-100' }`} />
-                      </div>
+                <div key={index} className="keen-slider__slide ">
+                  <div className="relative mx-auto w-fit h-full min-h-48 rounded-2xl shadow-lg overflow-hidden flex gap-x-0 justify-center items-center">
+                    <div className='w-1/2 h-fit overflow-hidden rounded-2xl'>
+                      <img src={slide.withoout_img} alt="sad" className={` w-full h-full object-contain object-center rounded-2xl  scale-100  `} />
                     </div>
-                  <span className='absolute px-3 py-0.5 rounded-lg right-1 top-1 text-sm' style={{background: `var(${slide.color})`}}>
+                    {/* <div className='w-full h-full overflow-hidden rounded-2xl'> */}
+                    <div className={` w-1/2 h-fit overflow-hidden rounded-2xl transition-all duration-1000 ${currentSlide == index ? ' ' : ' ' }`}>
+                      <img src={slide.with_img} alt="happy" className={`w-full h-full object-contain object-center  transition-all duration-1000 origin-top ${currentSlide == index ? ' scale-100' : ' scale-110  ' }`} />
+                    </div>
+                    {/* </div> */}
+                  <span className='absolute px-3 py-0.5 rounded-lg right-1 bottom-1 text-sm' style={{background: `var(${slide.color})`}}>
                     {slide.discount}
                   </span>
                   </div>
@@ -214,8 +176,8 @@ export const BenefitsSection: React.FC = () => {
                   onClick={() => handleDotClick(idx)}
                   className={`w-3 h-3 cursor-pointer rounded-full transition-all duration-300 ${
                     currentSlide === idx
-                      ? ' bg-gradient-to-r from-blue-uchooseit to-blue-gradient-end w-5 mx-1 '
-                      : 'bg-gradient-to-r from-gray-400 dark:to-white/50'
+                      ? ' bg-black dark:bg-white w-5 mx-1 '
+                      : ' bg-gray-500'
                   }`}
                 ></button>
               ))}
@@ -226,7 +188,7 @@ export const BenefitsSection: React.FC = () => {
           <div className='flex flex-col justify-center items-start gap-y-4'>
             {benefits.map((benefit, index) => (
               <div key={index} className="flex justify-start items-start gap-x-3">
-                <img src={ theme == 'dark' ? benefit.w_icon :  benefit.b_icon} alt="icon" className='size-12 object-contain object-center' />
+                <img src={benefit.icon} alt="icon" className='size-8 object-contain object-center' />
                 <div className=''>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                     {benefit.title}

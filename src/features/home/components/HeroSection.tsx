@@ -1,5 +1,4 @@
 import React from 'react';
-import 'keen-slider/keen-slider.min.css';
 import { DiamondCarousel } from './DiamondCarousel';
 import ButtonPrimary from '../../../shared/components/ButtonPrimary';
 import { useAllyContext } from '../../../hooks/useAllyContext';
@@ -14,9 +13,9 @@ export const HeroSection: React.FC = () => {
         {/* Title */}
         <h1 className="text-black text-shadow-xl-light dark:text-shadow-xl-dark dark:text-white text-3xl md:text-5xl xl:text-6xl leading-[1.4] lg:pt-10 mb-4 lg:mb-8 max-w-[500px] lg:max-w-[600px] xl:max-w-[720px]">
           Up to 
-          <span className=" shiny-blue-text text-shadow-none font-semibold mx-3"
-
-          >50% OFF</span> 
+          <span className=" shiny-blue-text text-shadow-none font-semibold mx-3">
+            50% OFF
+          </span> 
           <br className='hidden lg:block' />
           on millions of moments
         </h1>
