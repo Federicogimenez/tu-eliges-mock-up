@@ -8,7 +8,7 @@ export const GatewaySection: React.FC = () => {
         <div className=" mx-auto text-center flex flex-col justify-center items-center gap-y-4">
           {/* Title */}
           <h2 className="text-3xl md:text-4xl  text-gray-900 dark:text-white">
-            See how members save every day
+            How to save every day
           </h2>
 
           <div className='w-full flex flex-col justify-center items-center mb-2'>

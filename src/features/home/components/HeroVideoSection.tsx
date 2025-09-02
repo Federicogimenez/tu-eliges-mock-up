@@ -41,7 +41,7 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
 
             <div className="w-full text-white">
                 <h1 className="  text-center  font-semibold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1] lg:pt-10  max-w-[600px] lg:max-w-[600px] xl:max-w-[720px] mb-5 ">
-                    One Million deals
+                    One Million Deals
                     <span className="block shiny-lightblue-text text-2xl sm:text-4xl md:text-4xl xl:text-5xl text-shadow-none mx-3">
                         One VIP membership
                     </span> 

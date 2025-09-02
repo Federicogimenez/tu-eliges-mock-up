@@ -25,9 +25,14 @@ import travel_without from '/benefits/home/travel-without.png'
 
 import entertainment_with from '/benefits/home/entertainment-with.png'
 import entertainment_without from '/benefits/home/entertainment-without.png'
+import CalculatorTableSection from '../product/components/CalculatorTableSection';
+import { useAllyContext } from '../../hooks/useAllyContext';
 
 
 export default function Home (){
+
+  const { allyData } = useAllyContext();
+  
 
   const { width } = useWindowSize()
 
@@ -63,9 +68,10 @@ export default function Home (){
     <>
       {/* <HeroSection /> */}
       <HeroVideoSection videoHero={width > 980 ? videoHeroDesk : videoHeroMobile} videoHeroPreview={width > 980 ? videoHeroPreviewDesk : videoHeroPreviewMobile} />
-      <BrandsSection />
       <CategorySection />
+      <BrandsSection />
       <BenefitsSection slides={slides} />
+      <CalculatorTableSection membershipCost={allyData.new_price_after_discount} />
       <PricingSection img={pricing_family} />
       <GatewaySection />
     </>
