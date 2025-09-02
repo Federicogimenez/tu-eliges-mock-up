@@ -1,65 +1,86 @@
-# React + TypeScript + Vite
+# UChooseIt – Red privada de descuentos ilimitados
 
-run proyect = npm run dev
+## Descripción del proyecto
 
-build proyect = npm run build
+UChooseIt es una membresía digital dirigida a jóvenes adultos (20-30 años) que viven en EE.UU. y desean ahorrar en productos y servicios cotidianos. Por solo 48 USD anuales, acceden a descuentos exclusivos de hasta el 50% en miles de marcas reconocidas.
 
+### Propuesta de valor
+- Descuentos de hasta el 50%
+- Ahorro estimado de hasta $2,000 USD al año
+- Miles de marcas top en EE.UU.
+- Uso ilimitado de los descuentos
+- Funciona para toda la familia
+- App integrada para redimir desde el mapa y explorar beneficios locales
 
+### Categorías principales
+- 🛍️ **Shop**: Ropa, electrodomésticos, zapatillas, tecnología
+- 🍽️ **Dining**: Comida rápida y restaurantes
+- ✈️ **Travel**: Hoteles, vuelos y renta de autos
+- 🎭 **Entertainment**: Parques temáticos, conciertos, deportes
 
-package in use
-   "react-dom": "^18.2.0",
-   "react-router": "^6.18.0",
-   "react-router-dom": "^6.18.0"
-   "vite": "^4.4.5",
-   "vite-plugin-lightningcss": "^0.0.5"  => compilador-compresor-prefixer css
+## Stack Tecnológico
 
-   el resto de los paquetes se instalan automaticamente con vite
+- **Framework:** React 19.1
+- **Lenguaje:** TypeScript
+- **Routing:** React Router DOM
+- **State & Context:** React Context API
+- **HTTP Queries:** Axios
+- **Estilos:** Tailwind CSS (temas claro y oscuro)
+- **Animaciones:** Framer Motion (Scroll / InView)
+- **Internacionalización:** Global State switcher (en/es)
+- **Slider:** keen-slider
+- **Build tool:** Vite
+- **Métricas:** Google Analytics
 
+## Patrón de Diseño
 
+El proyecto está organizado de forma modular para escalar fácilmente:
 
-   scripts a agregar: 
-
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+src/
+├── assets/          # Imágenes, logos e íconos
+├── components/      # Componentes reutilizables globales
+├── hooks/           # Hooks personalizados (tema, idioma, discount code)
+├── context/         # Contextos globales (afiliados, idioma, tema)
+├── features/        # Cada landing con lógica y vistas encapsuladas
+├── languages/       # Archivos de texto por idioma (en.json, es.json)
+├── lib/             # Funciones auxiliares (API calls)
+├── routes/          # Definición de rutas
+├── styles/          # Configuración de Tailwind y estilos base
+└── types/           # Interfaces TypeScript
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Modelo de Adquisición
+
+100% basado en afiliados. Los usuarios llegan a través de links con códigos en la URL:
+```
+uchooseit.us?code=stv20
+```
+
+El código sirve para:
+- Brindar descuento exclusivo en la membresía
+- Personalizar la sección de pricing
+- Mostrar beneficios exclusivos por referido
+- Persistir durante la navegación
+
+## Instalación y Desarrollo
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+```
+
+## Características Técnicas
+
+- **Mobile-first**: Diseño responsivo optimizado para móviles
+- **Internacionalización**: Soporte para inglés y español
+- **Temas**: Modo claro y oscuro
+- **Sistema de afiliados**: Códigos de descuento personalizados
+- **Animaciones**: Transiciones fluidas con Framer Motion
+- **Performance**: Optimizado con Vite y React 19

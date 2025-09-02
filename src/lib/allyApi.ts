@@ -1,0 +1,36 @@
+import axios from 'axios';
+import type { AllyDataProps } from '../types/ally';
+
+export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
+  try {
+    // const urlFetch = `https://api.tueliges.us/public/ally-code/${code}`;
+    const urlFetch = `https://te-uc-platform-api.fly.dev/user/ally-code/${code}`;
+    const response = await axios.get(urlFetch);
+
+    console.log(response);
+    
+    
+    return {
+      alliedName: response.data.allyCompanyName || 'No Name',
+      alliedCompanyImg: response.data.allyCompanyLogo || '/icons/user_no_image.jpg',
+      alliedCuponCode: response.data.alliedCuponCode || code,
+      discount_percent: response.data.discount_percent || 0,
+      membership_anual_fee: response.data.membership_anual_fee || 47.99,
+      new_price_after_discount: response.data.new_price_after_discount || 47.99,
+      isLoading: false,
+      userNotFound: false
+    };
+  } catch (error) {
+    console.error('Error fetching ally data:', error);
+    return {
+      alliedName: 'No Name',
+      alliedCompanyImg: '/icons/user_no_image.jpg',
+      alliedCuponCode: code,
+      discount_percent: 0,
+      membership_anual_fee: 47.99,
+      new_price_after_discount: 47.99,
+      isLoading: false,
+      userNotFound: true
+    };
+  }
+};
