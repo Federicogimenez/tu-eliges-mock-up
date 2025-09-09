@@ -128,7 +128,7 @@ export default function BenefitsSection ({
   const dotsLength = instanceRef.current?.track.details.slides.length || 0
   
   return (
-    <section className="py-[8vh] px-4 bg-black/5 dark:bg-white/5 transition-colors duration-300">
+    <section className="py-10 px-4 bg-black/15 dark:bg-white/15 transition-colors duration-300">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

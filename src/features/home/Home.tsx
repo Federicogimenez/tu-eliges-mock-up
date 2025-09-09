@@ -1,8 +1,7 @@
 import { useWindowSize } from '../../hooks/useWindowSize';
 import BenefitsSection, { type BenefitSlide } from './components/BenefitsSection';
 import { BrandsSection } from './components/BrandsSection';
-import CategorySection from './components/CategorySection';
-import { GatewaySection } from './components/GatewaySection';
+import GatewaySection from './components/GatewaySection';
 import HeroVideoSection from './components/HeroVideoSection';
 import PricingSection from './components/PricingSection';
 
@@ -27,6 +26,7 @@ import entertainment_with from '/benefits/home/entertainment-with.png'
 import entertainment_without from '/benefits/home/entertainment-without.png'
 import CalculatorTableSection from '../product/components/CalculatorTableSection';
 import { useAllyContext } from '../../hooks/useAllyContext';
+import CategoriesSection from './components/CategoriesSection';
 
 
 export default function Home (){
@@ -68,7 +68,8 @@ export default function Home (){
     <>
       {/* <HeroSection /> */}
       <HeroVideoSection videoHero={width > 980 ? videoHeroDesk : videoHeroMobile} videoHeroPreview={width > 980 ? videoHeroPreviewDesk : videoHeroPreviewMobile} />
-      <CategorySection />
+      {/* <CategorySection /> */}
+      <CategoriesSection />
       <BrandsSection />
       <BenefitsSection slides={slides} />
       <CalculatorTableSection membershipCost={allyData.new_price_after_discount} />

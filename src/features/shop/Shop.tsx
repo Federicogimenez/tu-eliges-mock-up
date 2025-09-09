@@ -2,7 +2,7 @@
 import HeroCategory from '../../shared/layout/HeroCategory';
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import { GatewaySection } from '../home/components/GatewaySection';
+import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/shop/netflix.png';
@@ -227,7 +227,7 @@ export default function Shop (){
         testimonials={categoryTestimonials} 
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop' />
-      <GatewaySection />
+      <GatewaySection home_btn/>
     </>
   );
 };

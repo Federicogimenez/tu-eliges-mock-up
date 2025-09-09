@@ -203,41 +203,43 @@ export default function Savings ({membershipCost}: SavingsProps){
   return (
     <div className="h-full w-full bg-gray-50 dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <div className="mx-auto max-w-6xl px-4">
-          {/* <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Uchooseit.us <span className="font-normal">Savings Calculator</span>
-          </h1> */}
-        <div className="flex w-11/12 max-w-2xl mx-auto items-center justify-center gap-x-5 text-green-400">
-            <span className="font-semibold text-xl lg:text-4xl">Net savings</span>
-            <span className="text-4xl font-bold ">{currency(netSavings)}</span>
+      <div className="mx-auto max-w-6xl px-4 flex justify-center gap-x-4 items-stretch my-8">
+        <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-black dark:text-white">
+            <span className="text-xl sm:text-3xl lg:text-4xl">You pay</span>
+            <span className="text-xl sm:text-3xl lg:text-4xl font-bold ">${membershipCost}</span>
         </div>
-        <p className="mt-2 text-center text-sm md:text-lg max-w-xl mx-auto ">Set your <span className="font-medium">annual usage</span> for each subcategory. Savings use fixed typical averages per purchase.</p>
+        <div className="block w-1 rounded-full bg-black dark:bg-white "></div>
+        <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-green-400">
+            <span className="text-xl sm:text-3xl lg:text-4xl">You Save</span>
+            <span className="text-xl sm:text-3xl lg:text-4xl font-bold ">{currency(netSavings)}</span>
+        </div>
+        {/* <p className="mt-2 text-center text-sm md:text-lg max-w-xl mx-auto ">Set your <span className="font-medium">annual usage</span> for each subcategory. Savings use fixed typical averages per purchase.</p> */}
       </div>
 
       {/* Category Groups */}
-      <div className="mx-auto max-w-6xl px-4 grid gap-6">
+      <div className="mx-auto max-w-6xl px-4 grid gap-6 h-full max-h-[400px] overflow-auto">
         {CATEGORIES.map((cat, i) => (
           <CategoryGroup
-            key={cat.key}
+            key={i}
             category={cat}
             annualUses={annualUses}
             setAnnualUses={setAnnualUses}
             annual={categoryAnnuals[cat.key]}
-            openDefault={ i == 0 ? true : false }
+            openDefault={ false }
           />
         ))}
       </div>
 
       {/* Breakdown + ROI */}
       <div className="mx-auto max-w-6xl px-4 mt-8">
-        <div className="rounded-2xl  shadow p-5">
-          <h3 className="text-lg font-semibold mb-3">Estimated Yearly Savings Breakdown</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+        <div className="rounded-2xl p-5">
+          {/* <h3 className="text-lg font-semibold mb-3">Estimated Yearly Savings Breakdown</h3> */}
+          {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             {CATEGORIES.map((cat) => (
               <BreakdownRow key={cat.key} label={cat.title} amount={categoryAnnuals[cat.key]} color={cat.color} />
             ))}
-          </div>
-          <div className="mt-4 border-t pt-4 space-y-3">
+          </div> */}
+          {/* <div className="mt-4 border-t pt-4 space-y-3">
             <div className="flex items-center justify-between">
               <span className="font-medium">Gross total</span>
               <span className="text-xl font-bold">{currency(total)}</span>
@@ -249,29 +251,20 @@ export default function Savings ({membershipCost}: SavingsProps){
                     $
                     {membershipCost}
                 </span>
-                {/* <input
-                  type="number"
-                  className="w-24 rounded-lg border px-3 py-1 text-right"
-                  min={0}
-                  step={1}
-                  value={membershipCost}
-                  onChange={(e) => setMembershipCost(Number(e.target.value))}
-                /> */}
               </div>
             </div>
             <div className="flex items-center justify-between">
               <span className="font-semibold">Net savings</span>
               <span className="text-3xl font-bold text-green-400">{currency(netSavings)}</span>
             </div>
-            {/* <div className="text-xs text-gray-700 text-right">Pays for itself {roiMultiple.toFixed(1)}×</div> */}
-          </div>
+          </div> */}
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <button onClick={resetAll} className="px-4 py-2 cursor-pointer rounded-xl shadow border text-sm">Reset</button>
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
+            <button onClick={resetAll} className="w-10/12 max-w-md px-4 py-2 cursor-pointer rounded-xl shadow border text-lg transition-all hover:-translate-y-1">Reset</button>
           </div>
         </div>
 
-        <footer className="py-10 text-center text-xs text-gray-400">
+        <footer className="py-5 text-center text-xs text-gray-400">
           © {new Date().getFullYear()} Uchooseit.us — Savings are estimates; actual savings vary by offer and usage.
         </footer>
       </div>
@@ -293,17 +286,34 @@ function CategoryGroup({ category, annualUses, setAnnualUses, annual, openDefaul
   const { title, color, subs, icon } = category;
 
   return (
-    <div className="rounded-2xl  shadow">
-        <button onClick={() => setOpen((s) => !s)} className="w-full flex items-center justify-between px-5 py-4 cursor-pointer rounded-t-xl transition-all hover:bg-black/5 dark:hover:bg-white/5">
-            <div className="flex items-center gap-3">
+    <div className="rounded-2xl">
+        <button 
+            onClick={() => setOpen((s) => !s)} 
+            className="w-full flex items-center justify-between px-1 md:px-5 py-4 cursor-pointer rounded-t-xl transition-all hover:-translate-y-1"
+            style={{borderBottom: `solid 2px ${color}`}}
+          >
+            <div className="flex w-full items-center gap-3">
                 {/* <span className="inline-block h-4 w-4 rounded-full" style={{ background: color }} /> */}
                 <img src={icon} alt="category icon" className="size-7 md:size-10" />
-                <h2 className="text-xl font-semibold" style={{ color }}>{title}</h2>
+                <h2 className="text lg:text-xl font-semibold" style={{ color }}>{title}</h2>
+            </div>
+            <div className="flex justify-center items-center gap-x-4">
+              <p className="text lg:text-2xl text-left w-full pl-10" style={{color}}>
+                {currency(annual)}
+              </p>
+              <picture className={`w-fit transition-transform duration-300 ${
+                open ? "rotate-90" : "rotate-0"
+                }`}
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" >
+                  <path d="M9 6L15 12L9 18"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke={color}/>
+                </svg>
+              </picture>
             </div>
         </button>
-        <div className="rounded-b-lg px-3 py-2 text-sm text-black font-semibold" style={{ background: color }}>
+        {/* <div className="rounded-b-lg px-3 py-2 text-sm text-black font-semibold" style={{ background: color }}>
             {currency(annual)}
-        </div>
+        </div> */}
 
       {open && (
         <div className="p-5 grid gap-4" >
@@ -369,20 +379,20 @@ function SubRow({ label, color, annualUses, onAnnualUses, typicalSaving }: SubRo
   );
 }
 
-interface BreakdownRowProps {
-  label: string;
-  amount: number;
-  color: string;
-}
+// interface BreakdownRowProps {
+//   label: string;
+//   amount: number;
+//   color: string;
+// }
 
-function BreakdownRow({ label, amount, color }: BreakdownRowProps){
-  return (
-    <div className="flex items-center justify-between rounded-lg border p-3 ">
-      <div className="flex items-center gap-2">
-        <span className="inline-block h-3 w-3 rounded-full" style={{ background: color }} />
-        <span>{label}</span>
-      </div>
-      <span className="font-medium">{currency(amount)}</span>
-    </div>
-    );
-}
+// function BreakdownRow({ label, amount, color }: BreakdownRowProps){
+//   return (
+//     <div className="flex items-center justify-between rounded-lg border p-3 ">
+//       <div className="flex items-center gap-2">
+//         <span className="inline-block h-3 w-3 rounded-full" style={{ background: color }} />
+//         <span>{label}</span>
+//       </div>
+//       <span className="font-medium">{currency(amount)}</span>
+//     </div>
+//     );
+// }

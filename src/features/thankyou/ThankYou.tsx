@@ -40,7 +40,7 @@ export default function ThankYou() {
             to={"/activate?code="+memberId}
             className="uppercase w-[90%] max-w-[500px] mx-auto block mt-7 text-lg px-8 py-4 rounded-full border-2 border-black dark:border-white transition-all hover:font-semibold hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black hover:-translate-y-1"
             >
-            Activate Mambership
+            Activate Membership
         </Link>
 
         <p className="font-bold mt-8">

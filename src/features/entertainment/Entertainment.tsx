@@ -1,6 +1,6 @@
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import { GatewaySection } from '../home/components/GatewaySection';
+import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/entertainment/drink.png';
@@ -195,7 +195,7 @@ export default function Entertainment (){
         testimonials={categoryTestimonials} 
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment' />
-      <GatewaySection />
+      <GatewaySection home_btn />
     </>
   );
 };

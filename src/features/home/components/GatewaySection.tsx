@@ -1,57 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import gateway from '/gateway.png'
+import ButtonSecondary from '../../../shared/components/ButtonSecondary';
+import ButtonTertiary from '../../../shared/components/ButtonTertiary';
 
-export const GatewaySection: React.FC = () => {
+interface GatewayProps{
+  home_btn?: boolean;
+}
+
+export default function GatewaySection ({ home_btn=false }:GatewayProps) {
   return (
-    <section className="py-[8vh] px-4 w-full h-full bg-black/5 dark:bg-white/5 transition-colors duration-300">
-        <div className=" mx-auto text-center flex flex-col justify-center items-center gap-y-4">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl  text-gray-900 dark:text-white">
-            How to save every day
-          </h2>
+    <section className="py-14 px-4 w-full h-full ">
+        <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-x-10 gap-y-8 max-w-7xl mx-auto'>
+          <div className='lg:pt-10'>
+            <h3 className="font-semibold text-3xl md:text-6xl text-gray-900 dark:text-white text-center lg:text-left">
+              Start saving in minutes
+            </h3>
+            <p className='text-lg text-gray-900 dark:text-white text-center lg:text-left my-8'>
+              Discover how easy it is to activate your membership and start saving every day with our Mobile & Web App.
+            </p>
 
-          <div className='w-full flex flex-col justify-center items-center mb-2'>
-            <img src={gateway} alt="gateway" className='relative min-h-40 h-[60dvh] max-h-78 w-auto object-contain object-bottom ' />
-
-            {/* CTA Button */}
-            <Link 
-              to="/product"
-              className="uppercase w-[90%] max-w-[500px] inline-block mb-8 text-lg px-8 py-4 rounded-full border-2 border-black dark:border-white transition-all hover:font-semibold hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black hover:-translate-y-1"
-            >
-              Discover More
-            </Link>
+            <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 gap-y-2">
+              <ButtonSecondary text={'Discover Here'} redirect={'/product'} />
+              {
+                !home_btn ? null :
+                <ButtonTertiary text={'See All Categories'} redirect={'/'} />
+              }
+            </div>
           </div>
-          <p className=' text-blue-gradient-end dark:text-blue-gradient-start font-semibold flex justify-center items-baseline gap-x-4'>
-            <span>
-              ✓Testimonials  
-            </span>
-            <span>
-              ✓How it works
-            </span>
-            <span>
-              ✓Savings calculator
-            </span>
-          </p>
-          <p>
-            It only takes 60 seconds to read
-          </p>
-          {/* Image */}
-
-          {/* Description Paragraphs */}
-          {/* <div className="max-w-2xl mx-auto space-y-4 text-gray-600 dark:text-gray-400">
-            <p>
-              Join thousands of families who are already saving big on their everyday purchases. 
-              From groceries to entertainment, our members enjoy exclusive discounts that add up 
-              to real savings throughout the year.
-            </p>
-            <p>
-              With over 1,000 participating brands and new partners joining every month, 
-              your membership pays for itself in just a few purchases. Start your savings 
-              journey today and see the difference it makes for your family budget.
-            </p>
-          </div> */}
+          <div className='w-full relative'>
+            <picture className='relative'>
+              <img src="/app-banner.png" alt="app banner" className='w-full' />
+              <div className='absolute w-1/2 right-1/12 bottom-1/12 translate-y-2 flex justify-center items-center gap-x-3'>
+                <a href="https://play.google.com/store/apps/details?id=com.access.access&pli=1" target="_blank" rel="noopener noreferrer">
+                  <img src="/android-logo.png" alt="android" className='w-full' />
+                </a>
+                <a href="https://apps.apple.com/us/app/my-deals-mobile/id427118196" target="_blank" rel="noopener noreferrer">
+                  <img src="/apple-logo.png" alt="android" className='w-full' />
+                </a>
+              </div>
+            </picture>
+            <p className='text-lg mt-4 text-center'>✨500,000+ downloads and counting</p>
+          </div>
         </div>
+        <p className='mt-10 text-center font-semibold'>App available exclusively for Uchooseit members</p>
     </section>
   );
 };

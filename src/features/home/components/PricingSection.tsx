@@ -49,9 +49,9 @@ export default function PricingSection ({
   const discount = allyData.discount_percent || 0;
 
   return (
-    <section className="relative pt-[8vh] lg:pb-[5vh] px-4 h-full flex flex-col justify-center gap-y-5">
+    <section className="relative py-10  h-full flex flex-col justify-center gap-y-5">
       <div className="text-center ">
-        <h2 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-gray-900 dark:text-white mb-2 mx-auto max-w-4xl"
+        <h2 className="text-4xl sm:text-5xl px-4 md:text-5xl xl:text-6xl text-gray-900 dark:text-white mb-2 mx-auto max-w-4xl"
           dangerouslySetInnerHTML={{ __html : title}}
         >
         </h2>
@@ -70,19 +70,33 @@ export default function PricingSection ({
 
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
-                <span className="text-gray-700 dark:text-gray-300 font-semibold">Up to 50% off at thousands of stores</span>
+                <span className="text-gray-700 dark:text-gray-300 font-semibold">
+                  Start saving immediately
+                </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
-                <span className="text-gray-700 dark:text-gray-300">Unlimited usage for whole family</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Access 1M+ exclusive deals
+                </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
-                <span className="text-gray-700 dark:text-gray-300">Mobile app access</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Save on the go (Web & App)
+                </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
-                <span className="text-gray-700 dark:text-gray-300">24/7 customer support</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Risk-free: 7-day refund guarantee
+                </span>
+              </div>
+              <div className="flex items-center">
+                <div className="text-green-500 mr-3">✓</div>
+                <span className="text-gray-700 dark:text-gray-300">
+                  No commitments - cancel anytime
+                </span>
               </div>
             </div>
           </div>
@@ -91,9 +105,9 @@ export default function PricingSection ({
         {/* Pricing Card */}
         <div className="relative z-20 h-full w-full lg:w-1/2 flex flex-col justify-center items-center gap-y-6 max-lg:-translate-y-14">
             <div className="relative bg-white dark:bg-black h-full w-11/12 max-w-md md:max-w-lg rounded-4xl shadow-xl ">
-              <div className='w-full h-full bg-gradient-to-b from-white to-black/5 dark:from-white/5 dark:to-white/15 px-8 py-6 rounded-4xl'>
+              <div className='w-full h-full bg-gradient-to-b from-white to-black/5 dark:from-white/5 dark:to-white/15 px-2 md:px-5 lg:px-8 py-6 rounded-4xl'>
                 <div className="relative text-center mb-6">
-                  <h3 className="relative text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="relative text-2xl  text-gray-900 dark:text-white mb-2">
                     Equivalent to <br /> 
                     <span className='shiny-blue-text font-semibold text-4xl '>
                       <span className='mx-2'>
@@ -105,7 +119,7 @@ export default function PricingSection ({
                   {
                     allyData.isLoading ? <LoaderSimple /> :
                     discount > 0 && (
-                      <div className="my-6">
+                      <div className="my-6 w-full">
                         <div className='flex justify-center items-end flex-nowrap gap-x-3 mb-4'>
                           <img src={allyData.alliedCompanyImg} alt="ally logo" className=' border-2 border-white size-12 rounded-full object-cover object-center' />
                           <div>
@@ -123,7 +137,7 @@ export default function PricingSection ({
                 </div>
 
                 <div className="text-center mb-6">
-                  <p className="text-gray-600 dark:text-gray-400">One-time annual payment:</p>
+                  <p className="text-gray-600 dark:text-gray-400">Billed annually at</p>
                   {discount > 0 ? 
                     <div className='flex justify-center items-center gap-x-2 font-semibold'>
                       <div className="text-2xl text-red-800 dark:text-red-400 line-through">
@@ -134,29 +148,43 @@ export default function PricingSection ({
                       </div>
                     </div>
                     :
-                    <div className="text-lg text-gray-500 dark:text-gray-400 mb-2">
+                    <div className="text-2xl text-gray-500 dark:text-gray-400 mb-2">
                       ${annualPrice}
                     </div>
                   }
                 </div>
 
-                <div className=" relative lg:hidden space-y-3 mb-8 w-fit mx-auto">
+                <div className=" relative lg:hidden space-y-3 mb-8 w-fit mx-auto px-2">
                   <div className="flex items-center">
                     <div className="text-green-500 mr-3">✓</div>
-                    <span className="text-gray-700 dark:text-gray-300">Up to 50% off at thousands of stores</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="text-green-500 mr-3">✓</div>
-                    <span className="text-gray-700 dark:text-gray-300">Unlimited usage for whole family</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="text-green-500 mr-3">✓</div>
-                    <span className="text-gray-700 dark:text-gray-300">Mobile app access</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="text-green-500 mr-3">✓</div>
-                    <span className="text-gray-700 dark:text-gray-300">24/7 customer support</span>
-                  </div>
+                      <span className="text-gray-700 dark:text-gray-300 font-semibold">
+                        Start saving immediately
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="text-green-500 mr-3">✓</div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        Access 1M+ exclusive deals
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="text-green-500 mr-3">✓</div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        Save on the go (Web & App)
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="text-green-500 mr-3">✓</div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        Risk-free: 7-day refund guarantee
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="text-green-500 mr-3">✓</div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        No commitments - cancel anytime
+                      </span>
+                    </div>
                 </div>
 
 
@@ -187,7 +215,9 @@ export default function PricingSection ({
             </div>
             {
               !cta ? null : 
-              <ButtonPrimary src={code ? code : recurlyUrl} fromColor2={ctaGradientFrom2} fromColor={ctaGradientFrom} toColor={ctaGradientTo} toColor2={ctaGradientTo2} />
+              <div className='w-11/12 mx-auto'>
+                <ButtonPrimary src={code ? code : recurlyUrl} fromColor2={ctaGradientFrom2} fromColor={ctaGradientFrom} toColor={ctaGradientTo} toColor2={ctaGradientTo2} />
+              </div>
             }
         </div>
       </div>

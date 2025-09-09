@@ -1,6 +1,6 @@
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import { GatewaySection } from '../home/components/GatewaySection';
+import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/dining/cafe.png';
@@ -171,7 +171,7 @@ export default function Dining () {
         testimonials={categoryTestimonials} 
         ctaGradientFrom='from-yellow-dining' 
         ctaGradientTo='to-yellow-dining' />
-      <GatewaySection />
+      <GatewaySection home_btn />
     </>
   );
 };

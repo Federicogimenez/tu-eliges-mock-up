@@ -1,7 +1,7 @@
 import HeroCategory from '../../shared/layout/HeroCategory';
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import { GatewaySection } from '../home/components/GatewaySection';
+import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/travel/parking.png';
@@ -180,7 +180,7 @@ export default function Travel (){
         ctaGradientFrom='from-blue-travel'
         ctaGradientTo='to-blue-travel' 
         />
-      <GatewaySection />
+      <GatewaySection home_btn />
     </>
   );
 };

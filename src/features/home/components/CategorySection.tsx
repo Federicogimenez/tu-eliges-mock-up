@@ -150,11 +150,11 @@ export default function CategorySection () {
     <section className="pt-[8dvh] pb-12 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-20 lg:mb-6">
-          <h3 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-black dark:text-white mb-4">
+          <h3 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-black dark:text-white mb-2">
             Discover amazing savings
           </h3>
-          <p className="text-lg bg-clip-text text-transparent bg-gradient-to-b text-shadow-2xs to-gray-200 from-black dark:from-gray-500  max-w-2xl mx-auto">
-            Explore across all your favorite categories
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
+            Explore across all your favorite categories and brands
           </p>
         </div>
 

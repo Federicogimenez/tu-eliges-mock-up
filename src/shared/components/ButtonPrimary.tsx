@@ -27,7 +27,7 @@ export default function ButtonPrimary (
   return (
     <a href={src} 
       target="_blank" 
-      className={`group block font-semibold text-white relative cursor-pointer w-full max-w-md rounded-full text-sm md:text-lg px-8 py-4 text-center bg-white border-2 border-white shadow-lg shadow-black/50 overflow-hidden ${customStyle}`}>
+      className={`group block font-semibold text-white relative cursor-pointer w-full max-w-md rounded-full text-sm md:text-lg px-8 py-3 text-center bg-white border-2 border-white shadow-lg shadow-black/50 overflow-hidden ${customStyle}`}>
         <span className={`absolute block left-0 top-0 w-full h-full bg-gradient-to-r transition-all duration-300 group-hover:translate-x-full ${ fromColor + ' ' + toColor}`} />
         <span className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[100%] w-full h-full bg-gradient-to-r flex justify-center items-center transition-all duration-300 group-hover:translate-x-0 ${ special ? ' to-yellow-400 from-yellow-950' : (fromColor2 + ' ' + toColor2) }`} >
             {special ? 'Get Special Discount' : text_2}
