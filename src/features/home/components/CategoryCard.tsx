@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useIsTouchDevice } from "../../../hooks/useIsTouchDevice";
-import { useIsInView } from "../../../hooks/useIsInView";
+// import { useIsTouchDevice } from "../../../hooks/useIsTouchDevice";
+// import { useIsInView } from "../../../hooks/useIsInView";
 
 interface CategoryCardProps{
     name: string,
@@ -14,9 +14,9 @@ interface CategoryCardProps{
 
 export default function CategoryCard({ name, path, color, image, logo, number, description }: CategoryCardProps) {
   
-    const isTouchDevice = useIsTouchDevice()
+    // const isTouchDevice = useIsTouchDevice()
 
-    const isInView = useIsInView()
+    // const isInView = useIsInView()
 
   return (
     <Link 
@@ -26,7 +26,7 @@ export default function CategoryCard({ name, path, color, image, logo, number, d
         >
         <img src={image} alt="card bg" className="w-full h-full object-cover object-center relative opacity-100 transition-all duration-300 group-hover:opacity-50" />
         
-        <div className={`absolute bottom-0 w-full h-full translate-y-full transition-all duration-500 ease-out ${ isTouchDevice ? (isInView ? 'translate-y-5' : '') : 'group-hover:translate-y-5' } `}>
+        <div className={`absolute bottom-0 w-full h-full translate-y-full transition-all duration-500 ease-out group-hover:translate-y-5 `}>
             <div className="absolute inset-0 w-full h-full opacity-5 " 
                 style={{background: `var(${color})`}} />
             <div className="relative flex flex-col justify-center items-center gap-y-4 p-4 bottom-0 w-full h-full" >
