@@ -29,7 +29,7 @@ export default function CategoryCard({ name, path, color, image, logo, number, d
         <div className={`absolute bottom-0 w-full h-full translate-y-full transition-all duration-500 ease-out ${ isTouchDevice ? (isInView ? 'translate-y-5' : '') : 'group-hover:translate-y-5' } `}>
             <div className="absolute inset-0 w-full h-full opacity-5 " 
                 style={{background: `var(${color})`}} />
-            <div className="absolute flex flex-col justify-center items-center gap-y-4 p-4 bottom-0 w-full h-full translate-y-full transition-all duration-300 ease-out group-hover:translate-0" >
+            <div className="relative flex flex-col justify-center items-center gap-y-4 p-4 bottom-0 w-full h-full" >
                 <img src={logo} alt="logo" className="mx-auto w-1/3" />
                 <p className="text-white text-lg text-center font-semibold">{description}</p>
                 <p className="text-white text-2xl text-center font-bold ">{number}K Places</p>
