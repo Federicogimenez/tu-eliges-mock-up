@@ -31,8 +31,8 @@ export default function CategoryCard({ name, path, color, image, logo, number, d
                 style={{background: `var(${color})`}} />
             <div className="relative flex flex-col justify-center items-center gap-y-4 p-4 bottom-0 w-full h-full" >
                 <img src={logo} alt="logo" className="mx-auto w-1/3" />
-                <p className="text-white text-lg text-center font-semibold">{description}</p>
-                <p className="text-white text-2xl text-center font-bold ">{number}K Places</p>
+                <p className="text-black dark:text-white text-lg text-center font-semibold">{description}</p>
+                <p className="text-black dark:text-white text-2xl text-center font-bold ">{number}K Places</p>
             </div>
         </div>
         <div className={'absolute top-0 left-0 w-full py-0.5 h-0 flex items-center justify-center text-white dark:text-black text-lg transition-all duration-300 group-hover:h-9'} 
