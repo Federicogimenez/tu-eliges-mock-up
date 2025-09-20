@@ -11,15 +11,6 @@ const categories = [
     description: 'Technology, Cars, Home, Health, Fitness, and more.'
   },
   {
-    name: 'Dining',
-    path: '/dining',
-    color: '--color-yellow-dining',
-    image: '/trendy/dining/3.png',
-    logo: '/icons/category/dining.png',
-    number: '50',
-    description: 'Casual and Fine Dining, Fast food, Catering, and more.'
-  },
-  {
     name: 'Travel',
     path: '/travel',
     color: '--color-blue-travel',
@@ -27,6 +18,15 @@ const categories = [
     logo: '/icons/category/travel.png',
     number: '850',
     description: 'Hotel, Car rentals, Resorts, Cruises, Tours, and more.'
+  },
+  {
+    name: 'Dining',
+    path: '/dining',
+    color: '--color-yellow-dining',
+    image: '/trendy/dining/3.png',
+    logo: '/icons/category/dining.png',
+    number: '50',
+    description: 'Casual and Fine Dining, Fast food, Catering, and more.'
   },
   {
     name: 'Entertainment',
@@ -43,10 +43,10 @@ export default function CategoriesSection() {
   return (
     <div className="relative w-full py-10 flex flex-col items-center  ">
         <div className="text-center mb-2 px-4">
-          <h3 className="text-2xl sm:text-5xl md:text-5xl xl:text-6xl text-black dark:text-white mb-2">
+          <h3 className="heading-1 mb-2">
             Discover amazing savings
           </h3>
-          <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
+          <p className="subtitle text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
             Explore across all your favorite categories and brands
           </p>
         </div>

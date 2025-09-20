@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import PrivacyPolicy from './PrivacyPolicy';
 
 export const Footer: React.FC = () => {
   const { theme } = useTheme();
@@ -49,23 +50,12 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Legal */}
-          {/* <div>
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Legals</h3>
             <div className="space-y-2 text-sm">
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Cookie Policy
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Refund Policy
-              </a>
+              <PrivacyPolicy />
             </div>
-          </div> */}
+          </div>
         </div>
 
         {/* Social Media and Copyright */}

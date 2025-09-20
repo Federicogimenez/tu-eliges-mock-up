@@ -43,19 +43,18 @@ export default function PricingSection ({
   
   const { allyData, code, recurlyUrl } = useAllyContext();
 
-  const originalPrice = 47.99;
   const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
-  const annualPrice = allyData.new_price_after_discount.toFixed(2) || originalPrice.toFixed(2);
+  const annualPrice = allyData.new_price_after_discount.toFixed(2) || allyData.membership_anual_fee.toFixed(2);
   const discount = allyData.discount_percent || 0;
 
   return (
     <section className="relative py-10  h-full flex flex-col justify-center gap-y-5">
       <div className="text-center ">
-        <h2 className="text-4xl sm:text-5xl px-4 md:text-5xl xl:text-6xl text-gray-900 dark:text-white mb-2 mx-auto max-w-4xl"
+        <h2 className="heading-1 mb-2 mx-auto max-w-4xl"
           dangerouslySetInnerHTML={{ __html : title}}
         >
         </h2>
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400" style={{color: `var(${color})`}}>
+        <p className="subtitle text-gray-600 dark:text-gray-400" style={{color: `var(${color})`}}>
           {subtitle}
         </p>
       </div>
@@ -141,7 +140,7 @@ export default function PricingSection ({
                   {discount > 0 ? 
                     <div className='flex justify-center items-center gap-x-2 font-semibold'>
                       <div className="text-2xl text-red-800 dark:text-red-400 line-through">
-                        ${originalPrice}
+                        ${allyData.membership_anual_fee}
                       </div>
                       <div className="text-2xl text-green-800 dark:text-green-400  ">
                         ${annualPrice}
@@ -213,14 +212,14 @@ export default function PricingSection ({
               </div>
 
             </div>
-            {
-              !cta ? null : 
-              <div className='w-11/12 mx-auto'>
-                <ButtonPrimary src={code ? code : recurlyUrl} fromColor2={ctaGradientFrom2} fromColor={ctaGradientFrom} toColor={ctaGradientTo} toColor2={ctaGradientTo2} />
-              </div>
-            }
         </div>
       </div>
+        {
+          !cta ? null : 
+          <div className='w-11/12 max-w-lg mx-auto'>
+            <ButtonPrimary src={code ? code : recurlyUrl} fromColor2={ctaGradientFrom2} fromColor={ctaGradientFrom} toColor={ctaGradientTo} toColor2={ctaGradientTo2} />
+          </div>
+        }
     </section>
   );
 };

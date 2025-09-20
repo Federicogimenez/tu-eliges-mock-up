@@ -6,20 +6,20 @@ import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/travel/parking.png';
 
-import profile_car from '/hero-category/travel/car.png';
-import icon_car from '/hero-category/travel/icons/car.svg';
+import profile_car from '/category-testimonials/travel/car.png';
+import icon_car from '/category-testimonials/travel/icons/car.svg';
 
-import icon_flight from '/hero-category/travel/icons/flight.svg';
-import profile_flight from '/hero-category/travel/flight.png';
+import icon_flight from '/category-testimonials/travel/icons/flight.svg';
+import profile_flight from '/category-testimonials/travel/flight.png';
 
-import icon_hotel from '/hero-category/travel/icons/hotel.svg';
-import profile_hotel from '/hero-category/travel/hotel.png';
+import icon_hotel from '/category-testimonials/travel/icons/hotel.svg';
+import profile_hotel from '/category-testimonials/travel/hotel.png';
 
-import profile_bag from '/hero-category/travel/bag.png';
-import icon_bag from '/hero-category/travel/icons/bag.svg';
+import profile_bag from '/category-testimonials/travel/bag.png';
+import icon_bag from '/category-testimonials/travel/icons/bag.svg';
 
-import icon_beach from '/hero-category/travel/icons/beach.svg';
-import profile_beach from '/hero-category/travel/beach.png';
+import icon_beach from '/category-testimonials/travel/icons/beach.svg';
+import profile_beach from '/category-testimonials/travel/beach.png';
 
 
 import benefits_with_1 from '/benefits/travel/park-with.png';
@@ -31,11 +31,16 @@ import benefits_without_2 from '/benefits/travel/suite-without.png';
 import benefits_with_3 from '/benefits/travel/flight-with.png';
 import benefits_without_3 from '/benefits/travel/flight-without.png';
 
-import trendy_1 from '/trendy/travel/1.png';
-import trendy_2 from '/trendy/travel/2.png';
-import trendy_3 from '/trendy/travel/3.png';
-import trendy_4 from '/trendy/travel/4.png';
 
+import trendy_mobile_1 from '/hero-category/travel/mobile/1.png';
+import trendy_mobile_2 from '/hero-category/travel/mobile/2.png';
+import trendy_mobile_3 from '/hero-category/travel/mobile/3.png';
+import trendy_mobile_4 from '/hero-category/travel/mobile/4.png';
+
+import trendy_desktop_1 from '/hero-category/travel/desktop/1.png';
+import trendy_desktop_2 from '/hero-category/travel/desktop/2.png';
+import trendy_desktop_3 from '/hero-category/travel/desktop/3.png';
+import trendy_desktop_4 from '/hero-category/travel/desktop/4.png';
 
 import article_1_brand from '/trendy/travel/articles/wyndham.png';
 import article_2_brand from '/trendy/travel/articles/stay-america.png';
@@ -44,9 +49,13 @@ import article_4_brand from '/trendy/travel/articles/carnival.png';
 import article_5_brand from '/trendy/travel/articles/avis.png';
 import article_6_brand from '/trendy/travel/articles/alamo.png';
 import article_7_brand from '/trendy/travel/articles/flights.png';
+import { useWindowSize } from '../../hooks/useWindowSize';
+import Hero from '../../shared/layout/Hero';
 
 
 export default function Travel (){
+
+  const { width } = useWindowSize()
 
   const categoryTestimonials = [
     {
@@ -77,38 +86,32 @@ export default function Travel (){
   ]
 
   const trendyArticles: HeroTrendyArticleProps[] = [
+
     {
-      discount:'',
       description:"Member-only hotel deals—nationwide.",
       brandImg: article_1_brand,
     },
     {
-      discount:'',
       description:'Long stays, low rates for members.',
       brandImg: article_2_brand,
     },
     {
-      discount:"",
       description:"Family-ready cruises with exclusive savings.",
       brandImg: article_3_brand,
     },
     {
-      discount:"",
       description:"Drive away with member savings.",
       brandImg: article_4_brand,
     },
     {
-      discount:"",
       description:"Drive away with member savings.",
       brandImg: article_5_brand,
     },
     {
-      discount:"",
       description:"Vacation-ready rentals at member value.",
       brandImg: article_6_brand,
     },
     {
-      discount:"",
       description:"Save on Flights Worldwide.",
       brandImg: article_7_brand,
     },
@@ -136,23 +139,33 @@ export default function Travel (){
     },
   ];
 
-  const bannerCollage : string[] =[
-    trendy_1,
-    trendy_2,
-    trendy_3,
-    trendy_4,
-  ]
 
+  const bannerCollageDesktop : string[] =[
+    trendy_desktop_1,
+    trendy_desktop_2,
+    trendy_desktop_3,
+    trendy_desktop_4,
+  ]
+  const bannerCollageMobile : string[] =[
+    trendy_mobile_1,
+    trendy_mobile_2,
+    trendy_mobile_3,
+    trendy_mobile_4,
+  ]
     
   return (
     <>
+      <Hero 
+        ctaGradientFrom={'from-blue-travel'} 
+        ctaGradientTo={'to-blue-travel'} 
+        shiny_color={'shiny-blue-text'} 
+        hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} />
       <HeroTrendy 
         color={'--color-blue-travel'} 
         wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'} 
         title={'Smarter Travel,'} 
         subtitle={'Bigger Adventures!'} 
         description={'Hotels, Rental Cars, Flights & Cruises—member-only savings wherever you go.'} 
-        banner={bannerCollage} 
         ctaGradientFrom='from-blue-travel' 
         ctaGradientTo='to-blue-travel'
         articles={trendyArticles} />

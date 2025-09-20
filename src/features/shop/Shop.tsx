@@ -7,20 +7,20 @@ import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/shop/netflix.png';
 
-import profile_car from '/hero-category/shop/car.png';
-import icon_car from '/hero-category/shop/icons/car.svg';
+import profile_car from '/category-testimonials/shop/car.png';
+import icon_car from '/category-testimonials/shop/icons/car.svg';
 
-import icon_pc from '/hero-category/shop/icons/pc.svg';
-import profile_pc from '/hero-category/shop/pc.png';
+import icon_pc from '/category-testimonials/shop/icons/pc.svg';
+import profile_pc from '/category-testimonials/shop/pc.png';
 
-import icon_pet from '/hero-category/shop/icons/pet.svg';
-import profile_pet from '/hero-category/shop/pet.png';
+import icon_pet from '/category-testimonials/shop/icons/pet.svg';
+import profile_pet from '/category-testimonials/shop/pet.png';
 
-import profile_clothes from '/hero-category/shop/clothes.png';
-import icon_clothes from '/hero-category/shop/icons/clothes.svg';
+import profile_clothes from '/category-testimonials/shop/clothes.png';
+import icon_clothes from '/category-testimonials/shop/icons/clothes.svg';
 
-import icon_tv from '/hero-category/shop/icons/tv.svg';
-import profile_tv from '/hero-category/shop/tv.png';
+import icon_tv from '/category-testimonials/shop/icons/tv.svg';
+import profile_tv from '/category-testimonials/shop/tv.png';
 
 
 import shop_with_1 from '/benefits/shop/flowers-with.png';
@@ -32,44 +32,44 @@ import shop_without_2 from '/benefits/shop/paint-without.png';
 import shop_with_3 from '/benefits/shop/refrigerator-with.png';
 import shop_without_3 from '/benefits/shop/refrigerator-without.png';
 
-import trendy_1 from '/trendy/shop/1.png';
-import trendy_2 from '/trendy/shop/2.png';
-import trendy_3 from '/trendy/shop/3.png';
-import trendy_4 from '/trendy/shop/4.png';
+import trendy_mobile_1 from '/hero-category/shop/mobile/1.png';
+import trendy_mobile_2 from '/hero-category/shop/mobile/2.png';
+import trendy_mobile_3 from '/hero-category/shop/mobile/3.png';
+import trendy_mobile_4 from '/hero-category/shop/mobile/4.png';
+
+import trendy_desktop_1 from '/hero-category/shop/desktop/1.png';
+import trendy_desktop_2 from '/hero-category/shop/desktop/2.png';
+import trendy_desktop_3 from '/hero-category/shop/desktop/3.png';
+import trendy_desktop_4 from '/hero-category/shop/desktop/4.png';
 
 
-import article_1_article from '/trendy/shop/articles/1/article.png';
 import article_1_brand from '/trendy/shop/articles/1/brand.png';
 
-import article_2_article from '/trendy/shop/articles/2/article.png';
 import article_2_brand from '/trendy/shop/articles/2/brand.png';
 
-import article_3_article from '/trendy/shop/articles/3/article.png';
 import article_3_brand from '/trendy/shop/articles/3/brand.png';
 
-import article_4_article from '/trendy/shop/articles/4/article.png';
 import article_4_brand from '/trendy/shop/articles/4/brand.png';
 
-import article_5_article from '/trendy/shop/articles/5/article.png';
 import article_5_brand from '/trendy/shop/articles/5/brand.png';
 
-import article_6_article from '/trendy/shop/articles/6/article.png';
 import article_6_brand from '/trendy/shop/articles/6/brand.png';
 
-import article_7_article from '/trendy/shop/articles/7/article.png';
 import article_7_brand from '/trendy/shop/articles/7/brand.png';
 
-import article_8_article from '/trendy/shop/articles/8/article.png';
 import article_8_brand from '/trendy/shop/articles/8/brand.png';
 
-import article_9_article from '/trendy/shop/articles/9/article.png';
 import article_9_brand from '/trendy/shop/articles/9/brand.png';
 
-import article_10_article from '/trendy/shop/articles/10/article.png';
 import article_10_brand from '/trendy/shop/articles/10/brand.png';
+
+import Hero from '../../shared/layout/Hero';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 
 export default function Shop (){
+
+  const { width } = useWindowSize()
 
   const categoryTestimonials = [
     {
@@ -101,63 +101,43 @@ export default function Shop (){
 
   const trendyArticles: HeroTrendyArticleProps[] = [
     {
-      discount:'30%',
-      description:"30% off select Men's and Women's SKECHERS styles.",
-      articleImg: article_1_article,
+      description:"Step up your style & savings",
       brandImg: article_1_brand,
     },
     {
-      discount:'15%',
-      description:'15% off purchase of $100 or more.',
-      articleImg: article_2_article,
+      description:'Fashion finds made smarter',
       brandImg: article_2_brand,
     },
     {
-      discount:"15%",
-      description:"Extra 15% off Select Apparel, Shoes, Accessories, Fine Jewelry, and Home. ",
-      articleImg: article_3_article,
+      description:"Extra chic, extra savings ",
       brandImg: article_3_brand,
     },
     {
-      discount:"$20",
-      description:"$20 off Your $100 Order.",
-      articleImg: article_4_article,
+      description:"Comfort never felt this affordable",
       brandImg: article_4_brand,
     },
     {
-      discount:"15%",
-      description:"15% off your first pair of base frames.",
-      articleImg: article_5_article,
+      description:"Frame your look for less ",
       brandImg: article_5_brand,
     },
     {
-      discount:"55%",
-      description:"Up to 55% off when you shop in-store or online.",
-      articleImg: article_6_article,
+      description:"Gear up & save big",
       brandImg: article_6_brand,
     },
     {
-      discount:"40%",
-      description:"Up to 40% off performance tech.",
-      articleImg: article_7_article,
+      description:"Power your day smarter",
       brandImg: article_7_brand,
     },
     {
-      discount:"$10",
-      description:"Save $10 off any Order of $50 or More Plus Get Free Shipping on Orders $99+ ",
-      articleImg: article_8_article,
+      description:" Back to school, back to savings.",
       brandImg: article_8_brand,
     },
     {
-      discount:"90%",
-      description:"Save up to 90% on Microsoft Office Home & Business.",
-      articleImg: article_9_article,
+      description:"Work smarter, save harder",
       brandImg: article_9_brand,
     },
     {
-      discount:"$45",
-      description:"New members save $45! $15 for a one-year.",
-      articleImg: article_10_article,
+      description:"Everyday essentials, extraordinary savings",
       brandImg: article_10_brand,
     },
   ]
@@ -183,23 +163,34 @@ export default function Shop (){
     },
   ];
 
-  const bannerCollage : string[] =[
-    trendy_1,
-    trendy_2,
-    trendy_3,
-    trendy_4,
+  const bannerCollageDesktop : string[] =[
+    trendy_desktop_1,
+    trendy_desktop_2,
+    trendy_desktop_3,
+    trendy_desktop_4,
+  ]
+  const bannerCollageMobile : string[] =[
+    trendy_mobile_1,
+    trendy_mobile_2,
+    trendy_mobile_3,
+    trendy_mobile_4,
   ]
 
     
   return (
     <>
+      <Hero 
+        ctaGradientFrom='from-purple-shop' 
+        ctaGradientTo='to-purple-shop' 
+        shiny_color='shiny-purple-text' 
+        hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
+        />
       <HeroTrendy 
         color={'--color-purple-shop'} 
         wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'} 
         title={'Smarter Shopping,'} 
         subtitle={'Bigger Finds!'} 
         description={'From fashion to tech, member-only deals on the things you love.'} 
-        banner={bannerCollage} 
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop'
         expiration='08/31/2025'

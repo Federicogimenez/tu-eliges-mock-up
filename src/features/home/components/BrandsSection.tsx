@@ -69,8 +69,8 @@ export const BrandsSection: React.FC = () => {
         <div className="mb-8">
           <div ref={topSliderRef} className="keen-slider">
             {topBrands.map((brand, index) => (
-              <div key={index} className="keen-slider__slide">
-                <div className="group bg-white/90 rounded-2xl p-2 dark:shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
+              <div key={index} className="keen-slider__slide pb-2">
+                <div className="group shadow-lg bg-white/90 rounded-2xl p-2 dark:shadow-sm flex items-center justify-center h-16 transition-colors duration-300">
                   <img src={brand} alt={`brand ${index}`} className='w-full h-full object-contain object-center' />
                 </div>
               </div>

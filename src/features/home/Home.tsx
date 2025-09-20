@@ -4,6 +4,9 @@ import { BrandsSection } from './components/BrandsSection';
 import GatewaySection from './components/GatewaySection';
 import HeroVideoSection from './components/HeroVideoSection';
 import PricingSection from './components/PricingSection';
+import CalculatorTableSection from '../../shared/layout/CalculatorTableSection';
+import CategoriesSection from './components/CategoriesSection';
+import { useAllyContext } from '../../hooks/useAllyContext';
 
 import pricing_family from "/pricing/home/family.png"
 
@@ -24,9 +27,6 @@ import travel_without from '/benefits/home/travel-without.png'
 
 import entertainment_with from '/benefits/home/entertainment-with.png'
 import entertainment_without from '/benefits/home/entertainment-without.png'
-import CalculatorTableSection from '../product/components/CalculatorTableSection';
-import { useAllyContext } from '../../hooks/useAllyContext';
-import CategoriesSection from './components/CategoriesSection';
 
 
 export default function Home (){

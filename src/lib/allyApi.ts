@@ -6,13 +6,11 @@ export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
     // const urlFetch = `https://api.tueliges.us/public/ally-code/${code}`;
     const urlFetch = `https://te-uc-platform-api.fly.dev/user/ally-code/${code}`;
     const response = await axios.get(urlFetch);
-
-    console.log(response);
     
     
     return {
-      alliedName: response.data.allyCompanyName || 'No Name',
-      alliedCompanyImg: response.data.allyCompanyLogo || '/icons/user_no_image.jpg',
+      alliedName: response.data.allyCompanyName || '',
+      alliedCompanyImg: response.data.allyCompanyLogo || '',
       alliedCuponCode: response.data.alliedCuponCode || code,
       discount_percent: response.data.discount_percent || 0,
       membership_anual_fee: response.data.membership_anual_fee || 47.99,
@@ -23,8 +21,8 @@ export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
   } catch (error) {
     console.error('Error fetching ally data:', error);
     return {
-      alliedName: 'No Name',
-      alliedCompanyImg: '/icons/user_no_image.jpg',
+      alliedName: '',
+      alliedCompanyImg: '',
       alliedCuponCode: code,
       discount_percent: 0,
       membership_anual_fee: 47.99,

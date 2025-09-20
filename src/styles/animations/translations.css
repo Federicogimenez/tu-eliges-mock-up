@@ -1,6 +1,6 @@
 @keyframes translateFullUp {
     from{
-        transform: translateY(300%);
+        transform: translateY(70px);
     }
     to{
         transform: translateY(0);

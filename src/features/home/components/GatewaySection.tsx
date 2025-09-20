@@ -9,19 +9,19 @@ export default function GatewaySection ({ home_btn=false }:GatewayProps) {
   return (
     <section className="py-14 px-4 w-full h-full ">
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-x-10 gap-y-8 max-w-7xl mx-auto'>
-          <div className='lg:pt-10'>
-            <h3 className="font-semibold text-3xl md:text-6xl text-gray-900 dark:text-white text-center lg:text-left">
+          <div className='lg:pl-[5vw] lg:pt-10'>
+            <h3 className="heading-1 text-center lg:text-left">
               Start saving in minutes
             </h3>
-            <p className='text-lg text-gray-900 dark:text-white text-center lg:text-left my-8'>
+            <p className='subtitle text-balance text-gray-900 dark:text-white text-center lg:text-left my-8'>
               Discover how easy it is to activate your membership and start saving every day with our Mobile & Web App.
             </p>
 
-            <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 gap-y-2">
-              <ButtonSecondary text={'Discover Here'} redirect={'/product'} />
+            <div className="flex flex-col justify-center lg:justify-start items-start gap-x-4 gap-y-3">
+              <ButtonTertiary text={'Discover Here'} redirect={'/product'} />
               {
                 !home_btn ? null :
-                <ButtonTertiary text={'See All Categories'} redirect={'/'} />
+                <ButtonSecondary text={'See All Categories'} redirect={'/'} />
               }
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function GatewaySection ({ home_btn=false }:GatewayProps) {
             <p className='text-lg mt-4 text-center'>✨500,000+ downloads and counting</p>
           </div>
         </div>
-        <p className='mt-10 text-center font-semibold'>App available exclusively for Uchooseit members</p>
+        <p className='mt-16 text-center font-semibold'>App available exclusively for Uchooseit members</p>
     </section>
   );
 };

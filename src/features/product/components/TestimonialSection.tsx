@@ -2,7 +2,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useCallback, useState } from "react";
 import ReactPlayer from "react-player";
 import LoaderSimple from "../../../shared/components/LoaderSimple";
-import ButtonPrimary from "../../../shared/components/ButtonPrimary";
+import type { AllyDataProps } from "../../../types/ally";
 
 const slides = [
   { youtubeShortId: "3hSU8lpr5rA", color: "--color-pink-entertainment", icon:'/icons/category/entertainment.png', category: 'Entertainment', preview: '/testimonials/entertainment-preview.png'  },
@@ -12,12 +12,15 @@ const slides = [
 ];
 
 interface TestimonialSectionProps{
-  code: string | null;
-  recurlyUrl: string;
+  ally_data: AllyDataProps
 }
 
 
-export default function TestimonialSection({code, recurlyUrl}:TestimonialSectionProps ) {
+
+export default function TestimonialSection({ ally_data }:TestimonialSectionProps) {
+
+  const perMonthPrice = Math.floor((ally_data.new_price_after_discount * 100 )/12) / 100 ;
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -57,18 +60,22 @@ export default function TestimonialSection({code, recurlyUrl}:TestimonialSection
   );
 
   return (
-    <section className="relative mx-auto w-full lg:w-11/12 max-w-[1400px] h-full min-h-[90dvh]  bg-transparent py-10 mt-[150px] md:mt-[120px] flex flex-col xl:flex-row justify-center items-center gap-y-[0vh] gap-x-[2vw]">
-      <div className="w-11/12 xl:w-5/12 -translate-y-5">
-        <h1 className="w-fit mx-auto text-center text-black dark:text-white text-4xl  md:text-5xl">
-          Happy Members, <br className="lg:hidden" />Real Savings!
+    <section className="relative mx-auto w-full lg:w-11/12 max-w-[1400px] h-full min-h-[90dvh]  bg-transparent py-20 flex flex-col  justify-center items-center gap-y-[0vh] gap-x-[2vw]">
+      <div className="w-11/12 mb-10">
+        <h1 className=" text-center heading-1">
+          Happy Members, <br />Real Savings!
         </h1>
-        <p className="my-[7vh] text-lg text-center bg-clip-text text-transparent bg-gradient-to-b text-shadow-2xs to-gray-200 from-black dark:from-gray-300  max-w-2xl px-2 mx-auto">
-          See how real members save on travel, dining, entertainment and
-          shopping every day.
+        <p className="my-3 subtitle text-center bg-clip-text text-transparent bg-gradient-to-b text-shadow-2xs to-gray-200 from-black dark:from-gray-300  max-w-2xl px-2 mx-auto">
+          {/* See how real members save on travel, dining, entertainment and
+          shopping every day. */}
+          Join smart savers community for only
         </p>
-        <div className='hidden relative w-full xl:flex justify-center mt-5'>
+        <p className={`relative w-full text-nowrap font-semibold text-center text-4xl md:text-5xl xl:text-6xl shiny-lightblue-text`}>
+            {perMonthPrice}/month
+        </p>
+        {/* <div className='hidden relative w-full xl:flex justify-center mt-5'>
           <ButtonPrimary src={code ? code : recurlyUrl}  />
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full md:w-11/12 xl:w-7/12 mx-auto relative">

@@ -128,14 +128,14 @@ export default function BenefitsSection ({
   const dotsLength = instanceRef.current?.track.details.slides.length || 0
   
   return (
-    <section className="py-10 px-4 bg-black/15 dark:bg-white/15 transition-colors duration-300">
+    <section className="py-10 px-4 transition-colors duration-300">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-5xl xl:text-7xl  text-gray-900 dark:text-white mb-2">
+          <h2 className="heading-1 mb-2">
             {title}
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400" style={{color: `var(${color})`}}>
+          <p className="subtitle text-gray-600 dark:text-gray-400" style={{color: `var(${color})`}}>
             {subtitle}
           </p>
         </div>

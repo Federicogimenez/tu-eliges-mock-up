@@ -1,6 +1,4 @@
 import { useCallback,  useEffect,  useRef, useState } from "react";
-import { useAllyContext } from "../../hooks/useAllyContext";
-import ButtonPrimary from "../components/ButtonPrimary";
 import { useKeenSlider } from "keen-slider/react";
 
 
@@ -27,13 +25,10 @@ export default function HeroCategory({
   title, 
   subtitle, 
   description,
-  retailers, 
   color, 
   testimonials, 
   dotsColor, 
-  ctaGradientFrom, 
-  ctaGradientTo }: HeroCategoryProps) {
-    const { code, recurlyUrl } = useAllyContext();
+   }: HeroCategoryProps) {
 
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -102,20 +97,20 @@ export default function HeroCategory({
 
 
   return (
-    <section className='relative flex flex-col justify-start items-center w-full h-full xl:h-full xl:min-h-[500px] pt-[150px] xl:pt-[80px]'>
-        <div className="w-full max-w-7xl mx-auto h-full flex justify-center items-center">
-            <div className=" z-10 w-full xl:w-2/3 flex flex-col justify-between items-center pb-[7dvh] mx-auto xl:pr-4 xl:ml-[2dvh] xl:mr-auto xl:max-w-xl">
+    <section className='relative flex flex-col justify-start items-center w-full h-full pt-12 pb-32'>
+        <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-center items-center">
                 <h1 className=" text-black text-center dark:text-white text-4xl sm:text-5xl md:text-5xl xl:text-7xl leading-[1] lg:pt-10  max-w-[500px] lg:max-w-[600px] xl:max-w-[720px] mb-4">
                   {title} 
                   <span className="block text-4xl sm:text-4xl md:text-5xl xl:text-5xl " style={{color: `var(${color})`}}>
                     {subtitle}
                   </span>
                 </h1>
-                <p className="mb-7 xl:mb-20 text-center px-2 max-w-sm">
+
+                <p className="subtitle text-center px-2 max-w-md pb-8">
                   {description}
                 </p>
 
-                <div className="relative xl:absolute xl:right-0 xl:top-1/2 xl:-translate-x-1/6 xl:-translate-y-5/12 w-[95dvw] xl:w-5/12">
+                <div className="relative w-[95dvw] xl:w-5/12">
                     <div
                     ref={sliderRef}
                     className="keen-slider w-full justify-start"
@@ -154,20 +149,7 @@ export default function HeroCategory({
                     </div>
                 </div>
         
-
-                <div className="w-full pt-10 xl:pt-0">
-                    <p className="w-[80%] text-center md:w-full text-sm lg:text-lg  text-black dark:text-white -skew-x-12 mb-2 mx-auto">
-                        Save instantly at {retailers}+ retailers.
-                    </p>
-                    <div className="flex w-full justify-center mx-auto">
-                        <ButtonPrimary src={code ? code : recurlyUrl} customStyle="max-w-lg" fromColor="from-black" fromColor2={ctaGradientFrom} toColor={ctaGradientTo} toColor2="to-black" />
-                    </div>
-                    <p className="text-sm text-black dark:text-gray-200 flex gap-x-2 justify-center items-center mt-4">
-                        <img src="/icons/stars.svg" alt="guarantee" className='w-[50px]' />
-                        Trusted by families nationwide
-                    </p>
-                </div>
-            </div>
+          
         </div>
 
     </section>

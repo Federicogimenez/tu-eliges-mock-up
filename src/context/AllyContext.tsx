@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import type { AllyContextType, AllyDataProps } from '../types/ally';
 import { fetchAllyData } from '../lib/allyApi';
@@ -93,12 +93,12 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
     setHasInitialized(true);
   }, [hasInitialized]);
 
-  const contextValue: AllyContextType = {
-    recurlyUrl,
-    code,
-    allyData
-  };
-
+  const contextValue: AllyContextType = useMemo(() => ({
+      recurlyUrl,
+      code,
+      allyData
+    }), [recurlyUrl, code, allyData]);
+  
   return (
     <AllyContext.Provider value={contextValue}>
       {children}

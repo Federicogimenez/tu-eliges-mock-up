@@ -4,6 +4,7 @@ import icon_dining from '/icons/category/dining.png'
 import icon_travel from '/icons/category/travel.png'
 import icon_shop from '/icons/category/shop.png'
 import icon_entertainment from '/icons/category/entertainment.png'
+import ButtonTertiary from "./ButtonTertiary";
 
 // Uchooseit.us — Savings Calculator (TSX)
 // Annual sliders per subcategory + fixed Typical Savings + ROI
@@ -79,18 +80,7 @@ const TYPICAL_SAVINGS: Record<SubKey, number> = {
 };
 
 const CATEGORIES: CategoryConfig[] = [
-  {
-    key: "dining",
-    title: "Dining",
-    color: BRAND_COLORS.dining,
-    icon: icon_dining,
-    subs: [
-      { key: "Breakfast_Coffee", label: "Breakfast/Coffee" },
-      { key: "Lunch", label: "Lunch" },
-      { key: "Dinner", label: "Dinner" },
-      { key: "Pizza", label: "Pizza" },
-    ],
-  },
+
   {
     key: "shopping",
     title: "Shop",
@@ -107,6 +97,29 @@ const CATEGORIES: CategoryConfig[] = [
     ],
   },
   {
+    key: "travel",
+    title: "Travel",
+    color: BRAND_COLORS.travel,
+    icon: icon_travel,
+    subs: [
+      { key: "Hotel_Stays", label: "Hotel Stays" },
+      { key: "Car_Rental", label: "Car Rental" },
+      { key: "Flights", label: "Flights" },
+    ],
+  },
+    {
+    key: "dining",
+    title: "Dining",
+    color: BRAND_COLORS.dining,
+    icon: icon_dining,
+    subs: [
+      { key: "Breakfast_Coffee", label: "Breakfast/Coffee" },
+      { key: "Lunch", label: "Lunch" },
+      { key: "Dinner", label: "Dinner" },
+      { key: "Pizza", label: "Pizza" },
+    ],
+  },
+    {
     key: "entertainment",
     title: "Entertainment",
     color: BRAND_COLORS.entertainment,
@@ -117,17 +130,6 @@ const CATEGORIES: CategoryConfig[] = [
       { key: "Concerts_Sports_Events", label: "Concerts / Sports / Events" },
       { key: "Movies", label: "Movies" },
       { key: "Golf", label: "Golf" },
-    ],
-  },
-  {
-    key: "travel",
-    title: "Travel",
-    color: BRAND_COLORS.travel,
-    icon: icon_travel,
-    subs: [
-      { key: "Hotel_Stays", label: "Hotel Stays" },
-      { key: "Car_Rental", label: "Car Rental" },
-      { key: "Flights", label: "Flights" },
     ],
   },
 ];
@@ -201,7 +203,7 @@ export default function Savings ({membershipCost}: SavingsProps){
   };
 
   return (
-    <div className="h-full w-full bg-gray-50 dark:bg-black text-black dark:text-white">
+    <div className="h-full w-full ">
       {/* Header */}
       <div className="mx-auto max-w-6xl px-4 flex justify-center gap-x-4 items-stretch my-8">
         <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-black dark:text-white">
@@ -217,7 +219,7 @@ export default function Savings ({membershipCost}: SavingsProps){
       </div>
 
       {/* Category Groups */}
-      <div className="mx-auto max-w-6xl px-4 grid gap-6 h-full max-h-[400px] overflow-auto">
+      <div className="relative grid mx-auto max-w-6xl px-4 pb-10 gap-6 h-full min-h-[380px] max-h-[80dvh] overflow-auto">
         {CATEGORIES.map((cat, i) => (
           <CategoryGroup
             key={i}
@@ -231,8 +233,9 @@ export default function Savings ({membershipCost}: SavingsProps){
       </div>
 
       {/* Breakdown + ROI */}
-      <div className="mx-auto max-w-6xl px-4 mt-8">
-        <div className="rounded-2xl p-5">
+      <div className="relative mx-auto max-w-6xl px-4 mt-8">
+        <div className="absolute -top-5 -translate-y-full h-14 w-full left-0 bg-gradient-to-b from-transparent to-white dark:to-black"></div>
+        <div className="rounded-2xl px-5">
           {/* <h3 className="text-lg font-semibold mb-3">Estimated Yearly Savings Breakdown</h3> */}
           {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             {CATEGORIES.map((cat) => (
@@ -259,8 +262,8 @@ export default function Savings ({membershipCost}: SavingsProps){
             </div>
           </div> */}
 
-          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
-            <button onClick={resetAll} className="w-10/12 max-w-md px-4 py-2 cursor-pointer rounded-xl shadow border text-lg transition-all hover:-translate-y-1">Reset</button>
+          <div className="mt-6 w-full max-w-md mx-auto " onClick={resetAll}>
+            <ButtonTertiary text={"Reset All"}   />
           </div>
         </div>
 
@@ -289,13 +292,13 @@ function CategoryGroup({ category, annualUses, setAnnualUses, annual, openDefaul
     <div className="rounded-2xl">
         <button 
             onClick={() => setOpen((s) => !s)} 
-            className="w-full flex items-center justify-between px-1 md:px-5 py-4 cursor-pointer rounded-t-xl transition-all hover:-translate-y-1"
+            className="group w-full flex items-center justify-between px-1 md:px-5 py-4 cursor-pointer rounded-t-xl transition-all duration-300 hover:-translate-y-1"
             style={{borderBottom: `solid 2px ${color}`}}
           >
             <div className="flex w-full items-center gap-3">
                 {/* <span className="inline-block h-4 w-4 rounded-full" style={{ background: color }} /> */}
-                <img src={icon} alt="category icon" className="size-7 md:size-10" />
-                <h2 className="text lg:text-xl font-semibold" style={{ color }}>{title}</h2>
+                <img src={icon} alt="category icon" className="size-7 md:size-10 transition-all duration-300 group-hover:scale-115" />
+                <h2 className="text lg:text-xl font-semibold transition-all duration-300 group-hover:scale-105 group-hover:font-bold  " style={{ color }}>{title}</h2>
             </div>
             <div className="flex justify-center items-center gap-x-4">
               <p className="text lg:text-2xl text-left w-full pl-10" style={{color}}>
@@ -315,20 +318,22 @@ function CategoryGroup({ category, annualUses, setAnnualUses, annual, openDefaul
             {currency(annual)}
         </div> */}
 
-      {open && (
-        <div className="p-5 grid gap-4" >
-          {subs.map((s) => (
-            <SubRow
-              key={s.key}
-              label={s.label}
-              color={color}
-              annualUses={annualUses[s.key] || 0}
-              onAnnualUses={(n) => setAnnualUses((prev) => ({ ...prev, [s.key]: n }))}
-              typicalSaving={TYPICAL_SAVINGS[s.key]}
-            />
-          ))}
+      {/* {open && ( */}
+        <div className={`grid gap-4 overflow-hidden transition-all duration-500 ${open ? ' opacity-100 h-full' : ' opacity-0 -z-10 h-0'} `} >
+          <div className=" p-5 pb-10">
+            {subs.map((s) => (
+              <SubRow
+                key={s.key}
+                label={s.label}
+                color={color}
+                annualUses={annualUses[s.key] || 0}
+                onAnnualUses={(n) => setAnnualUses((prev) => ({ ...prev, [s.key]: n }))}
+                typicalSaving={TYPICAL_SAVINGS[s.key]}
+              />
+            ))}
+          </div>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 }

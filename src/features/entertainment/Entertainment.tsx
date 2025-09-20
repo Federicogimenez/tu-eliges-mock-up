@@ -5,20 +5,20 @@ import PricingSection from '../home/components/PricingSection';
 
 import pricing_banner from '/pricing/entertainment/drink.png';
 
-import profile_museum from '/hero-category/entertainment/museum.png';
-import icon_museum from '/hero-category/entertainment/icons/museum.svg';
+import profile_museum from '/category-testimonials/entertainment/museum.png';
+import icon_museum from '/category-testimonials/entertainment/icons/museum.svg';
 
-import icon_zoo from '/hero-category/entertainment/icons/zoo.svg';
-import profile_zoo from '/hero-category/entertainment/zoo.png';
+import icon_zoo from '/category-testimonials/entertainment/icons/zoo.svg';
+import profile_zoo from '/category-testimonials/entertainment/zoo.png';
 
-import icon_golf from '/hero-category/entertainment/icons/golf.svg';
-import profile_golf from '/hero-category/entertainment/golf.png';
+import icon_golf from '/category-testimonials/entertainment/icons/golf.svg';
+import profile_golf from '/category-testimonials/entertainment/golf.png';
 
-import profile_cine from '/hero-category/entertainment/cine.png';
-import icon_cine from '/hero-category/entertainment/icons/cine.svg';
+import profile_cine from '/category-testimonials/entertainment/cine.png';
+import icon_cine from '/category-testimonials/entertainment/icons/cine.svg';
 
-import icon_park from '/hero-category/entertainment/icons/park.svg';
-import profile_park from '/hero-category/entertainment/park.png';
+import icon_park from '/category-testimonials/entertainment/icons/park.svg';
+import profile_park from '/category-testimonials/entertainment/park.png';
 
 
 import benefit_with_1 from '/benefits/entertainment/golf-with.png';
@@ -30,11 +30,15 @@ import benefit_without_2 from '/benefits/entertainment/garden-without.png';
 import benefit_with_3 from '/benefits/entertainment/park-with.png';
 import benefit_without_3 from '/benefits/entertainment/park-without.png';
 
+import trendy_mobile_1 from '/hero-category/entertainment/mobile/1.png';
+import trendy_mobile_2 from '/hero-category/entertainment/mobile/2.png';
+import trendy_mobile_3 from '/hero-category/entertainment/mobile/3.png';
+import trendy_mobile_4 from '/hero-category/entertainment/mobile/4.png';
 
-import trendy_1 from '/trendy/entertainment/1.png';
-import trendy_2 from '/trendy/entertainment/2.png';
-import trendy_3 from '/trendy/entertainment/3.png';
-import trendy_4 from '/trendy/entertainment/4.png';
+import trendy_desktop_1 from '/hero-category/entertainment/desktop/1.png';
+import trendy_desktop_2 from '/hero-category/entertainment/desktop/2.png';
+import trendy_desktop_3 from '/hero-category/entertainment/desktop/3.png';
+import trendy_desktop_4 from '/hero-category/entertainment/desktop/4.png';
 
 import article_1_brand from '/trendy/entertainment/articles/disney.png';
 import article_2_brand from '/trendy/entertainment/articles/universal.png';
@@ -49,9 +53,13 @@ import article_10_brand from '/trendy/entertainment/articles/sporting.png';
 
 
 import HeroCategory from '../../shared/layout/HeroCategory';
+import Hero from '../../shared/layout/Hero';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 
 export default function Entertainment (){
+  
+  const { width } = useWindowSize()
 
   const categoryTestimonials = [
     {
@@ -155,21 +163,33 @@ export default function Entertainment (){
     },
   ];
 
-  const bannerCollage : string[] =[
-    trendy_1,
-    trendy_2,
-    trendy_3,
-    trendy_4,
+  const bannerCollageDesktop : string[] =[
+    trendy_desktop_1,
+    trendy_desktop_2,
+    trendy_desktop_3,
+    trendy_desktop_4,
   ]
+  const bannerCollageMobile : string[] =[
+    trendy_mobile_1,
+    trendy_mobile_2,
+    trendy_mobile_3,
+    trendy_mobile_4,
+  ]
+
   return (
     <>
+      <Hero 
+        ctaGradientFrom='from-pink-entertainment' 
+        ctaGradientTo='to-pink-entertainment' 
+        shiny_color='shiny-pink-text' 
+        hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
+        />
       <HeroTrendy 
         color={'--color-pink-entertainment'} 
         wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'} 
         title={'Smarter Entertainment,'} 
         subtitle={'Bigger Smiles!'} 
         description={'From theme parks to movie nights—exclusive savings on the fun you love.'} 
-        banner={bannerCollage} 
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment'
         articles={trendyArticles} />

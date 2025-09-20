@@ -48,31 +48,46 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
 
             <div className="w-full text-white">
                 <h1 className="  text-center  font-semibold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1] lg:pt-7  max-w-[600px] lg:max-w-[600px] xl:max-w-[720px] mb-5 ">
-                    One Million Deals
-                    <span className="block shiny-lightblue-text text-2xl sm:text-4xl md:text-4xl xl:text-5xl text-shadow-none mx-3">
+                    <span className=" animate-appear-up">
+                        One Million Deals
+                    </span>
+                    <span className="block shiny-lightblue-text text-2xl sm:text-4xl md:text-4xl xl:text-5xl text-shadow-none mx-3  animate-appear-up" 
+                        style={{animationDelay:".1s"}}>
                         One VIP Membership
                     </span> 
                 </h1>
-                <p className="w-[95%] text-center md:w-full text-xl md:text-2xl lg:text-3xl font-semibold  mb-1 mx-auto">
+                <p className="animate-appear-up w-[95%] text-center md:w-full text-xl md:text-2xl lg:text-3xl font-semibold  mb-1 mx-auto" style={{animationDelay:".2s"}}>
                     You Choose Where to Save
                 </p>
-                <p className="w-[80%] text-center md:w-full text-sm lg:text-lg mb-2 mx-auto">
+                <p className="animate-appear-up w-[80%] text-center md:w-full text-sm lg:text-lg mb-2 mx-auto" style={{animationDelay: ".3s"}}>
                     Travel - Shop - Dining - Entertainment
                 </p>
-                <button onClick={()=>{ScrollToSection("calculator")}} className="group relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mt-5 before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full ">
+                {/* <button onClick={()=>{ScrollToSection("calculator")}} className="group relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mt-5 before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full ">
                     <span className="transition-all group-hover:-translate-y-1/4">
                         Calculate
                         Savings
                     </span>
                     <img src="/icons/dollar.svg" alt="dollar" className="w-7 ml-2 transition-all group-hover:-translate-y-1/4" />
-                </button>
+                </button> */}
             </div>
 
-            <div className="relative w-full">
-                <div className="relative flex justify-center mx-auto">
+            <div className="relative w-full" >
+                <button onClick={()=>{ScrollToSection("calculator")}} 
+                        style={{animationDelay: '2s'}}
+                        className="group text-white relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mb-6 animate-appear-up
+                                before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full active:before:w-full ">
+                    <span className="transition-all group-hover:-translate-y-1/4">
+                        Calculate
+                        Savings
+                    </span>
+                    <img src="/icons/dollar.svg" 
+                        alt="coin" 
+                        className="w-7 ml-2 transition-all duration-700 group-hover:-translate-y-1/4 group-hover:rotate-y-[360deg] jump"/>
+                </button>
+                <div className="relative flex justify-center mx-auto animate-appear-up" style={{animationDelay: '.3s'}}>
                     <ButtonPrimary src={code ? code : recurlyUrl} />
                 </div>
-                <p className="text-sm text-gray-200 flex gap-x-2 justify-center items-center mt-4">
+                <p className="text-sm text-gray-200 flex gap-x-2 justify-center items-center mt-4 animate-appear-up" style={{animationDelay: '.5s'}}>
                     <img src="/icons/stars.svg" alt="guarantee" className='w-[50px]' />
                     Trusted by families nationwide
                 </p>

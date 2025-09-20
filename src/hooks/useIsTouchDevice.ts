@@ -15,7 +15,8 @@ export function useIsTouchDevice(): boolean {
       return (
         "ontouchstart" in window ||
         navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints !== undefined
+        navigator.msMaxTouchPoints !== undefined ||
+        window.innerWidth < 990
       );
     };
 

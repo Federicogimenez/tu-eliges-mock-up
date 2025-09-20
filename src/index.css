@@ -3,6 +3,7 @@
 
 @import './styles/animations/fade.css';
 @import './styles/animations/translations.css';
+@import './styles/animations/coin_jump.css';
 
 @import 'tailwindcss';
 
@@ -32,7 +33,7 @@
    --shadow-2xl-light: 0 0px 5px white; 
    --shadow-2xl-dark: 0 0px 5px black; 
 
-   --animate-appear-up: translateFullUp 1s 1s ease-in-out both, fadeIn .5s 1s ease-in-out both;
+   --animate-appear-up: translateFullUp .7s 0s ease-in-out both, fadeIn .5s 0s ease-in-out both;
 }
 
 
@@ -130,9 +131,9 @@
     color: transparent; /* Adjust this color to change intensity/style */
     background: linear-gradient(
       120deg,
-      var(--color-purple-shop) 40%,
-      var(--color-purple-400) 50%,
-      var(--color-purple-shop) 60%
+      #fff 30%,
+      var(--color-blue-uchooseit) 50%,
+      #fff 70%
     );
     background-size: 500% 100%;
     -webkit-background-clip: text;
@@ -145,8 +146,7 @@
     background: linear-gradient(
       120deg,
       var(--color-yellow-dining) 40%,
-      /* var(--color-blue-travel) 50%, */
-      var(--color-yellow-200) 50%,
+      white 50%,
       var(--color-yellow-dining) 60%
     );
     background-size: 500% 100%;
@@ -160,8 +160,7 @@
     background: linear-gradient(
       120deg,
       var(--color-pink-entertainment) 40%,
-      /* var(--color-blue-travel) 50%, */
-      var(--color-pink-300) 50%,
+      white 50%,
       var(--color-pink-entertainment) 60%
     );
     background-size: 500% 100%;
@@ -169,6 +168,16 @@
     background-clip: text;
     display: inline-block;
     animation: shine 5s linear forwards infinite;
+  }
+  .skeleton {
+    background: linear-gradient(
+      120deg,
+      #c4c4c4 20%,
+      white 50%,
+      #c4c4c4 80%
+    );
+    background-size: 500% 100%;
+    animation: shine 3s linear alternate backwards infinite;
   }
 
   @keyframes shine {
@@ -190,8 +199,10 @@
   .dark-mode-transition {
     @apply transition-colors duration-300;
   }
-  
-  /* 3D Card Animation Utilities */
+
+  .heading-1{@apply text-3xl sm:text-5xl md:text-5xl xl:text-6xl}
+  .subtitle{@apply text-lg md:text-2xl }
+
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -230,5 +241,15 @@
   .dot.active {
     width: 20px;
     background: var(--color-blue-uchooseit);
+  }
+
+  .list ul{
+    list-style: disc;
+    margin-left: 15px;
+  }
+  .list ul > li{
+    list-style: disc;
+    margin-left: 10px;
+    color: #000;
   }
 }

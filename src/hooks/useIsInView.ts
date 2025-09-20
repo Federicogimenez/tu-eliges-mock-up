@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export function useIsInView<T extends HTMLElement>(
+export default function useIsInView(
+  element: React.RefObject<Element | null>,
   options?: IntersectionObserverInit
 ) {
-  const ref = useRef<T | null>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!element.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,13 +17,13 @@ export function useIsInView<T extends HTMLElement>(
       { threshold: 0.1, ...options } 
     );
 
-    observer.observe(ref.current);
+    observer.observe(element.current);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      // if (ref.current) observer.unobserve(ref.current);
       observer.disconnect();
     };
-  }, [options]);
+  }, [element, options]);
 
-  return { ref, isInView };
+  return isInView ;
 }
