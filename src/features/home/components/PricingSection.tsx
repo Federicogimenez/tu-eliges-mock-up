@@ -49,7 +49,7 @@ export default function PricingSection ({
 
   return (
     <section className="relative py-10  h-full flex flex-col justify-center gap-y-5">
-      <div className="text-center ">
+      <div className="text-center mb-4">
         <h2 className="heading-1 mb-2 mx-auto max-w-4xl"
           dangerouslySetInnerHTML={{ __html : title}}
         >
@@ -59,7 +59,7 @@ export default function PricingSection ({
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto flex flex-col lg:flex-row gap-x-8 gap-y-3 justify-center items-center lg:items-center h-full">
+      <div className="max-w-4xl mx-auto flex flex-col lg:flex-row gap-x-8 gap-y-3 justify-center items-center lg:items-start h-full">
         {/* Image */}
         <div className="relative z-0 w-full lg:w-1/2">
           <img src={img} alt="family" className='w-full h-full object-cover object-top rounded-2xl' />
@@ -108,7 +108,7 @@ export default function PricingSection ({
                 <div className="relative text-center mb-6">
                   <h3 className="relative text-2xl  text-gray-900 dark:text-white mb-2">
                     Equivalent to <br /> 
-                    <span className='shiny-blue-text font-semibold text-4xl '>
+                    <span className='shiny-lightblue-text font-semibold text-4xl '>
                       <span className='mx-2'>
                         ${perMonthPrice} 
                       </span>
@@ -216,7 +216,7 @@ export default function PricingSection ({
       </div>
         {
           !cta ? null : 
-          <div className='w-11/12 max-w-lg mx-auto'>
+          <div className='w-11/12 max-w-lg mx-auto -translate-y-5'>
             <ButtonPrimary src={code ? code : recurlyUrl} fromColor2={ctaGradientFrom2} fromColor={ctaGradientFrom} toColor={ctaGradientTo} toColor2={ctaGradientTo2} />
           </div>
         }

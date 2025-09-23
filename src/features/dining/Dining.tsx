@@ -156,12 +156,14 @@ export default function Dining () {
       <Hero 
         ctaGradientFrom='from-yellow-dining' 
         ctaGradientTo='to-yellow-dining' 
+        border='border-yellow-dining'
         shiny_color='shiny-yellow-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         />
       <HeroTrendy 
         color={'--color-yellow-dining'} 
-        wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-yellow-dining/20 to-yellow-dining/45'} 
+        wrapperClass={'bg-yellow-dining/20'} 
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-yellow-dining/20 to-yellow-dining/45'} 
         title={'Smarter Dining,'} 
         subtitle={'Bigger Flavors!'} 
         description={'From family pizza nights to local diners, exclusive savings you’ll love.'} 

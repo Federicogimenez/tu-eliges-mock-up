@@ -17,11 +17,11 @@ export default function GatewaySection ({ home_btn=false }:GatewayProps) {
               Discover how easy it is to activate your membership and start saving every day with our Mobile & Web App.
             </p>
 
-            <div className="flex flex-col justify-center lg:justify-start items-start gap-x-4 gap-y-3">
-              <ButtonTertiary text={'Discover Here'} redirect={'/product'} />
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-x-4 gap-y-3">
+              <ButtonSecondary text={'Discover Here'} redirect={'/product'} />
               {
                 !home_btn ? null :
-                <ButtonSecondary text={'See All Categories'} redirect={'/'} />
+                <ButtonTertiary text={'See All Categories'} redirect={'/'} />
               }
             </div>
           </div>

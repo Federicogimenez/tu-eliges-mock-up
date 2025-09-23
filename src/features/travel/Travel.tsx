@@ -158,11 +158,13 @@ export default function Travel (){
       <Hero 
         ctaGradientFrom={'from-blue-travel'} 
         ctaGradientTo={'to-blue-travel'} 
+        border='border-blue-travel'
         shiny_color={'shiny-blue-text'} 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} />
       <HeroTrendy 
         color={'--color-blue-travel'} 
-        wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'} 
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'} 
+        wrapperClass={'bg-blue-travel/20'} 
         title={'Smarter Travel,'} 
         subtitle={'Bigger Adventures!'} 
         description={'Hotels, Rental Cars, Flights & Cruises—member-only savings wherever you go.'} 

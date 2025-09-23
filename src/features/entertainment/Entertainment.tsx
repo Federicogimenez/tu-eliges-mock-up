@@ -181,12 +181,14 @@ export default function Entertainment (){
       <Hero 
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment' 
+        border='border-pink-entertainment'
         shiny_color='shiny-pink-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         />
       <HeroTrendy 
         color={'--color-pink-entertainment'} 
-        wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'} 
+        wrapperClass={'bg-pink-entertainment/20'} 
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'} 
         title={'Smarter Entertainment,'} 
         subtitle={'Bigger Smiles!'} 
         description={'From theme parks to movie nights—exclusive savings on the fun you love.'} 

@@ -1,0 +1,142 @@
+
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
+  }
+
+  .shiny-text.disabled {
+    animation: none;
+  }  
+  
+  .shiny-lightblue-text {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      var(--color-blue-gradient-start) 45%,
+      white 50%,
+      var(--color-blue-gradient-start) 55%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+
+  .shiny-blue-text {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #fff 40%,
+      var(--color-blue-travel) 50%,
+      #fff 60%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-purple-text {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #fff 30%,
+      var(--color-purple-shop) 50%,
+      #fff 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-yellow-text {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #fff 30%,
+      var(--color-yellow-dining) 50%,
+      #fff 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-pink-text {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #fff 30%,
+      var(--color-pink-entertainment) 50%,
+      #fff 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+
+  .shiny-blue-text-dark {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #000 30%,
+      var(--color-blue-travel) 50%,
+      #000 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-purple-text-dark {
+    color: transparent;
+    background: linear-gradient(
+      120deg,
+      #000 30%,
+      var(--color-purple-shop) 50%,
+      #000 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-yellow-text-dark {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #000 30%,
+      var(--color-yellow-dining) 50%,
+      #000 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  .shiny-pink-text-dark {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #000 30%,
+      var(--color-pink-entertainment) 50%,
+      #000 70%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }

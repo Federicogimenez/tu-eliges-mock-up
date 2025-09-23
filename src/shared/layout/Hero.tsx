@@ -7,15 +7,16 @@ import HeroCarousel from "../components/HeroCarousel";
 interface HeroProps{
     ctaGradientFrom: string, 
     ctaGradientTo: string,
+    border: string,
     shiny_color: string,
     hero_slides: string[],
 }
 
-export default function Hero({ ctaGradientFrom, ctaGradientTo, shiny_color, hero_slides }: HeroProps) {
+export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_color, hero_slides }: HeroProps) {
 
     const { allyData, code, recurlyUrl } = useAllyContext();
 
-    console.log(allyData);
+    // console.log(allyData);
     
     const originalPrice = allyData.membership_anual_fee.toFixed(2)
     const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
@@ -37,10 +38,11 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, shiny_color, hero
   return (
     <section className="relative w-full h-full min-h-dvh pt-[25dvh] xl:pt-[30dvh]">
 
-        <div className="absolute left-0 top-0 h-dvh w-full overflow-hidden opacity-40">
+        <div className=" absolute inset-0 bg-black" />
+        <div className="absolute left-0 top-0 h-full w-full overflow-hidden opacity-40">
             <HeroCarousel slides={hero_slides} />
         </div>
-        <div className="absolute left-0 bottom-0 h-1/2 w-full bg-gradient-to-b from-transparent to-white dark:to-black" />
+        {/* <div className="absolute left-0 bottom-0 h-1/2 w-full bg-gradient-to-b from-transparent from-50% to-white dark:to-black" /> */}
 
         <div className="flex flex-col justify-between items-center h-full gap-y-6 w-11/12 max-w-lg mx-auto">
             
@@ -58,14 +60,14 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, shiny_color, hero
                 <>
                     <div className="relative w-fit flex flex-col justify-center items-center lg:flex-row gap-x-5 gap-y-5 ">
                         { allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
-                            <picture className="size-28 lg:hidden rounded-full border-2 border-blue-uchooseit p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light">
+                            <picture className={`size-28 lg:hidden rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
                                 <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-cover rounded-full " />
                             </picture>
                             : null
                         }
 
                         <div className="relative h-full w-fit flex flex-col items-center justify-center gap-y-4">
-                            <h2 className=" text-xl sm:text-3xl text-center text-balance">
+                            <h2 className="text-white text-xl sm:text-3xl text-center text-balance">
                                 Join 
                                     {influencer_name ? 
                                         <strong className="mx-2">
@@ -75,10 +77,10 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, shiny_color, hero
                                 {/* <br /> */}
                                 community of smart savers for as little as
                             </h2>
-                            <p className={`relative w-fit text-nowrap font-semibold text-center text-4xl md:text-5xl xl:text-6xl ${shiny_color}`}>
+                            <p className={`relative w-fit text-nowrap font-semibold text-center text-4xl md:text-5xl xl:text-6xl  ${shiny_color} `}>
                                 {perMonthPrice}/month
                             </p>
-                            <p className="subtitle text-gray-600 dark:text-gray-300">
+                            <p className="subtitle text-gray-100 dark:text-gray-300">
                                 Billed annually at
 
                                 { allyData.alliedCuponCode == "" ?
@@ -87,10 +89,10 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, shiny_color, hero
                                     </span>
                                     :
                                     <>
-                                        <span className="mx-2 text-red-800 dark:text-red-400 line-through">
+                                        <span className="mx-2 text-red-400 dark:text-red-400 line-through">
                                             ${originalPrice}
                                         </span>
-                                        <span className=" text-green-800 dark:text-green-400">
+                                        <span className=" text-green-400 dark:text-green-400">
                                             ${annualPrice}
                                         </span>
                                     </>
@@ -98,7 +100,7 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, shiny_color, hero
                             </p>
 
                                 {allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
-                                    <picture className="hidden lg:block size-52 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4/5 rounded-full border-2 border-purple-shop p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light">
+                                    <picture className={`hidden lg:block size-52 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4/5 rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
                                         <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-cover rounded-full " />
                                     </picture>
                                     :null

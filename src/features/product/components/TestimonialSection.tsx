@@ -2,7 +2,9 @@ import { useKeenSlider } from "keen-slider/react";
 import { useCallback, useState } from "react";
 import ReactPlayer from "react-player";
 import LoaderSimple from "../../../shared/components/LoaderSimple";
-import type { AllyDataProps } from "../../../types/ally";
+// import type { AllyDataProps } from "../../../types/ally";
+import ButtonPrimary from "../../../shared/components/ButtonPrimary";
+import { useAllyContext } from "../../../hooks/useAllyContext";
 
 const slides = [
   { youtubeShortId: "3hSU8lpr5rA", color: "--color-pink-entertainment", icon:'/icons/category/entertainment.png', category: 'Entertainment', preview: '/testimonials/entertainment-preview.png'  },
@@ -11,15 +13,18 @@ const slides = [
   { youtubeShortId: "WBJKvF58G9g", color: "--color-purple-shop", icon:'/icons/category/shop.png', category: 'Shop', preview: '/testimonials/shop-preview.png' },
 ];
 
-interface TestimonialSectionProps{
-  ally_data: AllyDataProps
-}
+// interface TestimonialSectionProps{
+//   ally_data: AllyDataProps
+// }
 
 
 
-export default function TestimonialSection({ ally_data }:TestimonialSectionProps) {
+export default function TestimonialSection() {
 
-  const perMonthPrice = Math.floor((ally_data.new_price_after_discount * 100 )/12) / 100 ;
+  const { code, recurlyUrl, allyData } = useAllyContext();
+  
+
+  const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -132,7 +137,9 @@ export default function TestimonialSection({ ally_data }:TestimonialSectionProps
           ))}
         </div>
       </div>
-
+      <div className='relative w-full flex justify-center items-center mt-7'>
+        <ButtonPrimary src={code ? code : recurlyUrl} customStyle="!w-11/12 !max-w-3xl" />
+      </div>
     </section>
   );
 }

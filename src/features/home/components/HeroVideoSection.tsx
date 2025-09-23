@@ -60,7 +60,7 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
                     You Choose Where to Save
                 </p>
                 <p className="animate-appear-up w-[80%] text-center md:w-full text-sm lg:text-lg mb-2 mx-auto" style={{animationDelay: ".3s"}}>
-                    Travel - Shop - Dining - Entertainment
+                    Shop - Travel - Dining - Entertainment
                 </p>
                 {/* <button onClick={()=>{ScrollToSection("calculator")}} className="group relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mt-5 before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full ">
                     <span className="transition-all group-hover:-translate-y-1/4">
@@ -73,7 +73,7 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
 
             <div className="relative w-full" >
                 <button onClick={()=>{ScrollToSection("calculator")}} 
-                        style={{animationDelay: '2s'}}
+                        style={{animationDelay: '1.5s'}}
                         className="group text-white relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mb-6 animate-appear-up
                                 before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full active:before:w-full ">
                     <span className="transition-all group-hover:-translate-y-1/4">

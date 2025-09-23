@@ -97,7 +97,7 @@ export default function HeroCategory({
 
 
   return (
-    <section className='relative flex flex-col justify-start items-center w-full h-full pt-12 pb-32'>
+    <section className='relative flex flex-col justify-start items-center w-full h-full pt-12 pb-10 lg:pb-32'>
         <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-center items-center">
                 <h1 className=" text-black text-center dark:text-white text-4xl sm:text-5xl md:text-5xl xl:text-7xl leading-[1] lg:pt-10  max-w-[500px] lg:max-w-[600px] xl:max-w-[720px] mb-4">
                   {title} 

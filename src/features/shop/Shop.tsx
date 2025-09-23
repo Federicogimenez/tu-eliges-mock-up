@@ -182,18 +182,19 @@ export default function Shop (){
       <Hero 
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop' 
+        border='border-purple-shop'
         shiny_color='shiny-purple-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         />
       <HeroTrendy 
         color={'--color-purple-shop'} 
-        wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'} 
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'} 
+        wrapperClass={'bg-purple-shop/20 '} 
         title={'Smarter Shopping,'} 
         subtitle={'Bigger Finds!'} 
         description={'From fashion to tech, member-only deals on the things you love.'} 
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop'
-        expiration='08/31/2025'
         articles={trendyArticles} />
       <PricingSection 
         title='Cheaper than your monthly streaming subscription.'

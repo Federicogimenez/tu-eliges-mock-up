@@ -1,10 +1,15 @@
+import { useAllyContext } from '../../../hooks/useAllyContext';
+import ButtonPrimary from '../../../shared/components/ButtonPrimary'
 import { DiamondIcons } from '../../home/components/DiamondIcons'
 import presentation from '/product_page_presentation.png'
 
 
 export default function HeroProductPage() {
+    const { code, recurlyUrl } = useAllyContext();
+  
   return (
-    <section className="h-full w-full min-h-dvh flex flex-col lg:flex-row justify-center items-center gap-x-5 gap-y-20 max-w-6xl mx-auto pt-[20dvh]">
+    <section className="h-full w-full min-h-dvh  pt-[25dvh]">
+      <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-x-5 gap-y-20 max-w-6xl mx-auto'>
         <div className="w-10/12 lg:pl-[5dvw]">
             <div className="w-fit mx-auto">
                 <h3 className="heading-1 font-semibold text-center lg:text-left">
@@ -18,15 +23,15 @@ export default function HeroProductPage() {
             <div className=" flex justify-between items-center gap-x-5">
               <div className="flex flex-col text-center justify-center gap-x-3 items-center ">
                 <span className="font-finger-paint text-6xl md:text-8xl">1</span>
-                <p className="text-lg md:text-xl">Show &<br /> Redeem </p>
+                <p className="text-lg md:text-xl">Join</p>
               </div>
               <div className="flex flex-col text-center justify-center gap-x-3 items-center ">
                 <span className="font-finger-paint text-6xl md:text-8xl">2</span>
-                <p className="text-lg md:text-xl">Choose a <br /> discount</p>
+                <p className="text-lg md:text-xl">Activate</p>
               </div>
               <div className="flex flex-col text-center justify-center gap-x-3 items-center ">
                 <span className="font-finger-paint text-6xl md:text-8xl">3</span>
-                <p className="text-lg md:text-xl">Save <br /> instantly </p>
+                <p className="text-lg md:text-xl">Save</p>
               </div>
             </div>
 
@@ -42,6 +47,10 @@ export default function HeroProductPage() {
                 </div>
             </div>
         </div>
+      </div>
+      <div className='relative w-full flex justify-center items-center mt-10'>
+        <ButtonPrimary src={code ? code : recurlyUrl} customStyle="!w-11/12 !max-w-3xl" />
+      </div>
     </section>
   )
 }

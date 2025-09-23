@@ -1,66 +1,140 @@
 import React from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import PrivacyPolicy from './PrivacyPolicy';
+import TermsAndConditions from './TermsAndConditions';
+import { Link } from 'react-router-dom';
+
+import icon_shop from '/icons/category/shop.png'
+import icon_travel from '/icons/category/travel.png'
+import icon_dining from '/icons/category/dining.png'
+import icon_entertainment from '/icons/category/entertainment.png'
+
+import icon_ig from '/icons/socials/ig.png'
+import icon_tiktok from '/icons/socials/tiktok.png'
+import icon_facebook from '/icons/socials/facebook.png'
+import icon_youtube from '/icons/socials/youtube.png'
+import icon_linkedin from '/icons/socials/linkedin.png'
 
 export const Footer: React.FC = () => {
   const { theme } = useTheme();
 
+  const socials = [
+    {
+      path: "https://www.instagram.com/uchooseit.us/" ,
+      img: icon_ig
+    },
+    {
+      path: "https://www.tiktok.com/@uchooseit.us" ,
+      img: icon_tiktok
+    },
+    {
+      path: "https://www.facebook.com/Uchooseit.us/",
+      img: icon_facebook
+    },
+    {
+      path: "https://youtube.com/@uchooseit?si=Xx9-EpEcR8iK0Gks",
+      img: icon_youtube
+    },
+    {
+      path: "https://www.linkedin.com/company/uchooseit-us",
+      img: icon_linkedin
+    },
+  ]
+
+  const navigationLinks = [
+    {
+      label: "Shop",
+      img: icon_shop,
+      path: "/shop"
+    },
+    {
+      label: "Travel",
+      img: icon_travel,
+      path: "/travel"
+    },
+    {
+      label: "Dining",
+      img: icon_dining,
+      path: "/dining"
+    },
+    {
+      label: "Entertainment",
+      img: icon_entertainment,
+      path: "/entertainment"
+    },
+  ]
+
   return (
-    <footer className="bg-black text-white py-12 px-4">
+    <footer className=" py-12 px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
           <div className="lg:col-span-1">
             <img
-              src={theme === 'light' ? '/uchooseit-white.svg' : '/uchooseit-white.svg'}
+              src={theme === 'light' ? '/uchooseit-black.svg' : '/uchooseit-white.svg'}
               alt="UChooseIt"
               className="h-8 mb-4"
             />
-            <p className="text-gray-400 text-sm mb-4">
-              Your VIP key to everyday savings. Join thousands of families saving up to 50% on their favorite brands.
+            <p className=" text-sm mb-4">
+              Your VIP key to everyday savings.
             </p>
+            <div className='flex justify-start items-center gap-x-2'>
+              {
+                socials.map(( { path, img } )=>{
+                  return <a href={path} target='_blank'>
+                    <img src={img} alt="logo" className='w-7 rounded-lg' />
+                  </a>
+                })
+              }
+            </div>
+          </div>
+
+{/* Navigate */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Navigate</h3>
+            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
+
+              {
+                navigationLinks.map(( { label, path, img  } )=>{
+                  return <Link to={path} className='flex justify-start items-center transition-all hover:-translate-y-0.5'>
+                            {label}
+                            <img src={img} alt="shop" className='w-5 ml-3' />
+                        </Link>
+                })}
+              <Link to={'/product'} className='flex justify-start items-center'>
+                {/* <img src={} alt="entertainment" className='w-5 mr-3' /> */}
+                Learn More
+              </Link>
+            </div>
           </div>
 
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <div className="space-y-2 text-sm text-gray-400">
-              <p>📧 support@uchooseit.us</p>
-              {/* <p>📞 1-800-UCHOOSE</p> */}
+            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400 *:block">
+              <a href='mailto:support@uchooseit.us' >Email: support@uchooseit.us</a>
+              <a href='https://uchooseitus.recurly.com/account/create_account' target='_target'>Manage Membership</a>
             </div>
           </div>
-
-          {/* Support */}
-          <div>
-            {/* <h3 className="font-semibold text-lg mb-4">Support</h3> */}
-            {/* <div className="space-y-2 text-sm">
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Help Center
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                How It Works
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Member Benefits
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                Contact Us
-              </a>
-            </div> */}
-          </div>
+          
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Legals</h3>
-            <div className="space-y-2 text-sm">
-              <PrivacyPolicy />
+            <h3 className="font-semibold  text-lg mb-4">Legals</h3>
+            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
+              <div>
+                <PrivacyPolicy />
+              </div>
+              <div>
+                <TermsAndConditions />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Social Media and Copyright */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 pt-8 text-gray-700 dark:text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center ">
             {/* Social Media */}
             {/* <div className="flex space-x-4 mb-4 md:mb-0">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -78,10 +152,10 @@ export const Footer: React.FC = () => {
             </div> */}
 
             {/* Copyright */}
-            <div className="text-sm text-gray-400">
+            <div className="text-sm ">
               © {new Date().getFullYear()} UChooseIt. All rights reserved.
             </div>
-            <div className="text-sm text-gray-400">
+            <div className="text-sm ">
               <p>Based in Orlando, FL - USA</p>
             </div>
           </div>
