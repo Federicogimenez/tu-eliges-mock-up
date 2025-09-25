@@ -29,7 +29,7 @@ export const HamburgerMenu: React.FC = () => {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className="cursor-pointer fixed top-6 left-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg shadow-2xl-dark dark:shadow-2xl-light bg-white dark:bg-black transition-colors duration-300"
+        className="cursor-pointer fixed top-6 left-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg shadow-2xl-dark dark:shadow-2xl-light bg-white dark:bg-transparent transition-colors duration-300"
         aria-label="Toggle menu"
       >
         <motion.div

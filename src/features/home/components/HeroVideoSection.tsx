@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAllyContext } from "../../../hooks/useAllyContext";
 import { useInlineVideo } from "../../../hooks/useInlineVideo";
 import ScrollToSection from "../../../hooks/useScrollSection";
@@ -47,20 +48,32 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
       
 
             <div className="w-full text-white">
-                <h1 className="  text-center  font-semibold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1] lg:pt-7  max-w-[600px] lg:max-w-[600px] xl:max-w-[720px] mb-5 ">
+                <h1 className="  text-center  font-semibold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1] lg:pt-7  max-w-[600px] lg:max-w-[600px] xl:max-w-[720px] mb-4 ">
                     <span className=" animate-appear-up">
                         One Million Deals
                     </span>
-                    <span className="block shiny-lightblue-text text-2xl sm:text-4xl md:text-4xl xl:text-5xl text-shadow-none mx-3  animate-appear-up" 
-                        style={{animationDelay:".1s"}}>
-                        One VIP Membership
-                    </span> 
+                    <span className="animate-appear-up" style={{animationDelay:".1s"}}>
+                        <span className="block shiny-lightblue-text text-2xl sm:text-4xl md:text-4xl xl:text-5xl mx-3 ">
+                            One VIP Membership
+                        </span> 
+                    </span>
                 </h1>
-                <p className="animate-appear-up w-[95%] text-center md:w-full text-xl md:text-2xl lg:text-3xl font-semibold  mb-1 mx-auto" style={{animationDelay:".2s"}}>
+                <p className="animate-appear-up w-[95%] text-center md:w-full text-xl md:text-2xl lg:text-3xl font-semibold  mb-2 mx-auto" style={{animationDelay:".2s"}}>
                     You Choose Where to Save
                 </p>
-                <p className="animate-appear-up w-[80%] text-center md:w-full text-sm lg:text-lg mb-2 mx-auto" style={{animationDelay: ".3s"}}>
-                    Shop - Travel - Dining - Entertainment
+                <p className="animate-appear-up w-[80%] flex justify-center items-center flex-wrap text-center md:w-full text-sm lg:text-lg font-semibold mb-2 mx-auto *:mx-2 *:px-3 *:py-1 *:bg-gradient-to-br *:from-gray-600 *:to-gray-900 *:rounded-full *:border *:transition-all *:duration-300 *:hover:scale-105 " style={{animationDelay: ".3s"}}>
+                    <Link to={"/shop"} className="text-purple-shop border-purple-shop ">
+                        Shop
+                    </Link>
+                    <Link to={"/travel"} className="text-blue-travel border-blue-travel ">
+                        Travel
+                    </Link>
+                    <Link to={"/dining"} className="text-yellow-dining border-yellow-dining ">
+                        Dining
+                    </Link>
+                    <Link to={"/entertainment"} className="text-pink-entertainment border-pink-entertainment ">
+                        Entertainment
+                    </Link>
                 </p>
                 {/* <button onClick={()=>{ScrollToSection("calculator")}} className="group relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mt-5 before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full ">
                     <span className="transition-all group-hover:-translate-y-1/4">

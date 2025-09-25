@@ -154,6 +154,7 @@ export default function Dining () {
   return (
     <>
       <Hero 
+        categoryName='Dining'
         ctaGradientFrom='from-yellow-dining' 
         ctaGradientTo='to-yellow-dining' 
         border='border-yellow-dining'

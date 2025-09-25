@@ -80,8 +80,8 @@ export const Footer: React.FC = () => {
             </p>
             <div className='flex justify-start items-center gap-x-2'>
               {
-                socials.map(( { path, img } )=>{
-                  return <a href={path} target='_blank'>
+                socials.map(( { path, img }, i )=>{
+                  return <a href={path} target='_blank' key={i}>
                     <img src={img} alt="logo" className='w-7 rounded-lg' />
                   </a>
                 })
@@ -95,8 +95,8 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
 
               {
-                navigationLinks.map(( { label, path, img  } )=>{
-                  return <Link to={path} className='flex justify-start items-center transition-all hover:-translate-y-0.5'>
+                navigationLinks.map(( { label, path, img  }, i )=>{
+                  return <Link to={path} key={i} className='flex justify-start items-center transition-all hover:-translate-y-0.5'>
                             {label}
                             <img src={img} alt="shop" className='w-5 ml-3' />
                         </Link>

@@ -5,6 +5,7 @@ import ButtonPrimary from "../components/ButtonPrimary"
 import HeroCarousel from "../components/HeroCarousel";
 
 interface HeroProps{
+    categoryName: string,
     ctaGradientFrom: string, 
     ctaGradientTo: string,
     border: string,
@@ -12,7 +13,7 @@ interface HeroProps{
     hero_slides: string[],
 }
 
-export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_color, hero_slides }: HeroProps) {
+export default function Hero({ categoryName, ctaGradientFrom, ctaGradientTo, border, shiny_color, hero_slides }: HeroProps) {
 
     const { allyData, code, recurlyUrl } = useAllyContext();
 
@@ -36,7 +37,7 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_col
 
     
   return (
-    <section className="relative w-full h-full min-h-dvh pt-[25dvh] xl:pt-[30dvh]">
+    <section className="relative w-full h-full min-h-dvh pt-[25dvh] xl:pt-[25dvh] pb-6">
 
         <div className=" absolute inset-0 bg-black" />
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden opacity-40">
@@ -44,12 +45,13 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_col
         </div>
         {/* <div className="absolute left-0 bottom-0 h-1/2 w-full bg-gradient-to-b from-transparent from-50% to-white dark:to-black" /> */}
 
-        <div className="flex flex-col justify-between items-center h-full gap-y-6 w-11/12 max-w-lg mx-auto">
+
+        <div className="flex flex-col justify-between items-center h-full gap-y-6 w-11/12 mx-auto">
             
             {
                 allyData.isLoading ? 
                 <>
-                    <h3 className="subtitle text-center mb-4">
+                    <h3 className="subtitle text-gray-300 text-center mb-4">
                         Loading Your Exclusive Discount
                     </h3>
                     <picture className="relative animate-bounce skeleton size-28 lg:size-40 rounded-full flex justify-center items-center border-2 border-blue-uchooseit overflow-hidden shadow-2xl-dark dark:shadow-2xl-light bg-white/90">
@@ -58,7 +60,13 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_col
                 </>
                 :
                 <>
-                    <div className="relative w-fit flex flex-col justify-center items-center lg:flex-row gap-x-5 gap-y-5 ">
+                    <div className="relative w-full flex flex-col justify-center items-center gap-x-5 gap-y-5 ">
+                        <div className='relative text-center mx-auto opacity-50'>
+                            <h1 className={`leading-[1.2] font-bold text-[10vw] ${shiny_color}`}>
+                                {categoryName}
+                            </h1>
+                        </div>
+                        
                         { allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
                             <picture className={`size-28 lg:hidden rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
                                 <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-cover rounded-full " />
@@ -66,8 +74,8 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_col
                             : null
                         }
 
-                        <div className="relative h-full w-fit flex flex-col items-center justify-center gap-y-4">
-                            <h2 className="text-white text-xl sm:text-3xl text-center text-balance">
+                        <div className="relative h-full w-full flex flex-col items-center justify-center gap-y-2">
+                            <h2 className="text-white text-xl sm:text-3xl text-center text-balance w-full mb-2">
                                 Join 
                                     {influencer_name ? 
                                         <strong className="mx-2">
@@ -78,6 +86,14 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_col
                                 community of smart savers for as little as
                             </h2>
                             <p className={`relative w-fit text-nowrap font-semibold text-center text-4xl md:text-5xl xl:text-6xl  ${shiny_color} `}>
+                                
+                                {allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
+                                    <picture className={`hidden lg:block size-28 absolute -left-12 top-full -translate-y-3/5 -translate-x-full rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
+                                        <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full object-top object-cover rounded-full " />
+                                    </picture>
+                                    :null
+                                }
+
                                 {perMonthPrice}/month
                             </p>
                             <p className="subtitle text-gray-100 dark:text-gray-300">
@@ -99,12 +115,12 @@ export default function Hero({ ctaGradientFrom, ctaGradientTo, border, shiny_col
                                 }
                             </p>
 
-                                {allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
-                                    <picture className={`hidden lg:block size-52 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4/5 rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
+                                {/* {allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
+                                    <picture className={`hidden lg:block size-52 absolute left-0 top-2/2 -translate-y-1/2 -translate-x-4/5 rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
                                         <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-cover rounded-full " />
                                     </picture>
                                     :null
-                                }
+                                } */}
                         </div>
                     </div>
                 </> 

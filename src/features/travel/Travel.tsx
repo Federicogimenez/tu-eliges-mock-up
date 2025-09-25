@@ -156,6 +156,7 @@ export default function Travel (){
   return (
     <>
       <Hero 
+        categoryName='Travel'
         ctaGradientFrom={'from-blue-travel'} 
         ctaGradientTo={'to-blue-travel'} 
         border='border-blue-travel'

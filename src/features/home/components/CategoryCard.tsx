@@ -20,7 +20,7 @@ export default function CategoryCard({ name, path, color, image, logo, number, d
     const isTouchDevice = useIsTouchDevice()
     const isInView = useIsInView(cardRef, {threshold:.9})
 
-    console.log("visible:" , isInView, "-","touchable:", isTouchDevice);
+    // console.log("visible:" , isInView, "-","touchable:", isTouchDevice);
     
 
   return (

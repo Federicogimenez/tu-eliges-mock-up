@@ -180,6 +180,7 @@ export default function Shop (){
   return (
     <>
       <Hero 
+        categoryName='Shop'
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop' 
         border='border-purple-shop'

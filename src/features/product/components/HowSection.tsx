@@ -14,7 +14,6 @@ export default function HowSection() {
   return (
       <section className='pb-[8dvh] flex flex-col justify-center items-center  h-full min-h-[90dvh] w-full bg-gradient-to-b to-blue-gradient-start from-blue-gradient-end'>
         
-        <SectionDivider />
           <h2 className=' heading-1 text-center'>
             Learn how to save
           </h2>
@@ -105,6 +104,10 @@ export default function HowSection() {
       <div className="mt-10 w-full flex justify-center">
         <ButtonSecondary text={"Discover More"} anchor redirect="https://uchooseitus.enjoymydeals.com/" classnames="bg-white border-white !text-black" />
       </div>
+
+      
+      <SectionDivider />
+
         {/* <ButtonTertiary text={"Discover More"} redirect="https://uchooseitus.enjoymydeals.com/" anchor /> */}
       </section>
   )

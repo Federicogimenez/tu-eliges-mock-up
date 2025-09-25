@@ -27,6 +27,7 @@ import travel_without from '/benefits/home/travel-without.png'
 
 import entertainment_with from '/benefits/home/entertainment-with.png'
 import entertainment_without from '/benefits/home/entertainment-without.png'
+import LearnHow from './components/LearnHow';
 
 
 export default function Home (){
@@ -69,6 +70,7 @@ export default function Home (){
       {/* <HeroSection /> */}
       <HeroVideoSection videoHero={width > 980 ? videoHeroDesk : videoHeroMobile} videoHeroPreview={width > 980 ? videoHeroPreviewDesk : videoHeroPreviewMobile} />
       {/* <CategorySection /> */}
+      <LearnHow />
       <CategoriesSection />
       <BrandsSection />
       <BenefitsSection slides={slides} />

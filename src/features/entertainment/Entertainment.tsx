@@ -179,6 +179,7 @@ export default function Entertainment (){
   return (
     <>
       <Hero 
+        categoryName='Entertainment'
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment' 
         border='border-pink-entertainment'
