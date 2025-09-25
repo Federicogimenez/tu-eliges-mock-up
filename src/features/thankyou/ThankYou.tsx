@@ -11,7 +11,7 @@ export default function ThankYou() {
 
   return (
     <div className="pt-[25dvh] text-center bg-gradient-to-b from-blue-uchooseit/50 to-transparent text-black dark:text-white">
-        <h1 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl shiny-blue-text text-center mx-auto block leading-[1.3]">
+        <h1 className="text-[8vw] shiny-blue-text text-center mx-auto block font-semibold leading-[1.3]">
             Congratulations!
         </h1>
         <p className=" text-center md:w-full text-sm lg:text-2xl   mb-12 mx-auto">
