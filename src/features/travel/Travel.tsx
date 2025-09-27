@@ -52,6 +52,12 @@ import article_7_brand from '/trendy/travel/articles/flights.png';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import Hero from '../../shared/layout/Hero';
 
+import icon_entertainment from '/icons/category/entertainment.png'
+import icon_dining from '/icons/category/dining.png'
+import icon_shop from '/icons/category/shop.png'
+import { Link } from 'react-router-dom';
+
+
 
 export default function Travel (){
 
@@ -152,9 +158,34 @@ export default function Travel (){
     trendy_mobile_3,
     trendy_mobile_4,
   ]
+
+      const categoryLinks = [
+      {
+        icon: icon_shop,
+        path: "/shop",
+      },
+      {
+        icon: icon_dining,
+        path: "/dining",
+      },
+      {
+        icon: icon_entertainment,
+        path: "/entertainment"
+      }
+    ]
+
     
   return (
     <>
+      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
+        {
+          categoryLinks.map(( { icon, path } )=>{
+            return <Link to={path} className='block w-8 transition-all hover:scale-120' >
+              <img src={icon} alt="travel" className='w-full' />
+            </Link>
+          })
+        }
+      </div>
       <Hero 
         categoryName='Travel'
         ctaGradientFrom={'from-blue-travel'} 

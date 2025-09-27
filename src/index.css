@@ -36,6 +36,7 @@
    --shadow-2xl-dark: 0 0px 5px black; 
 
    --animate-appear-up: translateFullUp .7s 0s ease-in-out both, fadeIn .5s 0s ease-in-out both;
+   --animate-fade: fadeIn .5s 0s ease-in-out both;
 }
 
 

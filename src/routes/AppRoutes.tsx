@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Main } from '../shared/layout/Main';
 // import Home from '../features/home/Home';
 import LoaderSimple from '../shared/components/LoaderSimple';
+import Agency from '../features/agency/Agency';
 
 const Home = lazy( () => import('../features/home/Home') )
 const ProductPage = lazy( () => import('../features/product/ProductPage') )
@@ -33,6 +34,7 @@ export const AppRoutes: React.FC = () => {
             <Route path="/entertainment" element={<Entertainment />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/activate" element={<Activate />} />
+            <Route path="/agency" element={<Agency />} />
           </Routes>
         </Suspense>
       </Main>

@@ -88,7 +88,7 @@ export default function Hero({ categoryName, ctaGradientFrom, ctaGradientTo, bor
                             <p className={`relative w-fit text-nowrap font-semibold text-center text-4xl md:text-5xl xl:text-6xl  ${shiny_color} `}>
                                 
                                 {allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
-                                    <picture className={`hidden lg:block size-28 absolute -left-12 top-full -translate-y-3/5 -translate-x-full rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>
+                                    <picture className={`hidden lg:block size-28 absolute -left-12 top-full -translate-y-3/5 -translate-x-full rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light transition-all hover:scale-115 ${border}`}>
                                         <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full object-top object-cover rounded-full " />
                                     </picture>
                                     :null
@@ -114,6 +114,7 @@ export default function Hero({ categoryName, ctaGradientFrom, ctaGradientTo, bor
                                     </>
                                 }
                             </p>
+                            <p className="uppercase text-xs">for all categories</p>
 
                                 {/* {allyData.alliedCompanyImg && allyData.alliedCuponCode !== "" ?
                                     <picture className={`hidden lg:block size-52 absolute left-0 top-2/2 -translate-y-1/2 -translate-x-4/5 rounded-full border-2 p-1 overflow-hidden shadow-2xl-dark dark:shadow-2xl-light ${border}`}>

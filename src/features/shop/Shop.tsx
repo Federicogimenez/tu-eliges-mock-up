@@ -66,6 +66,11 @@ import article_10_brand from '/trendy/shop/articles/10/brand.png';
 import Hero from '../../shared/layout/Hero';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
+import icon_travel from '/icons/category/travel.png'
+import icon_dining from '/icons/category/dining.png'
+import icon_entertainment from '/icons/category/entertainment.png'
+import { Link } from 'react-router-dom';
+
 
 export default function Shop (){
 
@@ -169,16 +174,40 @@ export default function Shop (){
     trendy_desktop_3,
     trendy_desktop_4,
   ]
-  const bannerCollageMobile : string[] =[
+  const bannerCollageMobile : string[] = [
     trendy_mobile_1,
     trendy_mobile_2,
     trendy_mobile_3,
     trendy_mobile_4,
   ]
 
+  const categoryLinks = [
+    {
+      icon: icon_travel,
+      path: "/travel",
+    },
+    {
+      icon: icon_dining,
+      path: "/dining",
+    },
+    {
+      icon: icon_entertainment,
+      path: "/entertainment"
+    }
+  ]
+
     
   return (
     <>
+      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
+        {
+          categoryLinks.map(( { icon, path } )=>{
+            return <Link to={path} className='block w-8 transition-all hover:scale-120' >
+              <img src={icon} alt="travel" className='w-full' />
+            </Link>
+          })
+        }
+      </div>
       <Hero 
         categoryName='Shop'
         ctaGradientFrom='from-purple-shop' 

@@ -56,6 +56,11 @@ import HeroCategory from '../../shared/layout/HeroCategory';
 import Hero from '../../shared/layout/Hero';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
+import icon_travel from '/icons/category/travel.png'
+import icon_dining from '/icons/category/dining.png'
+import icon_shop from '/icons/category/shop.png'
+import { Link } from 'react-router-dom';
+
 
 export default function Entertainment (){
   
@@ -176,8 +181,33 @@ export default function Entertainment (){
     trendy_mobile_4,
   ]
 
+      const categoryLinks = [
+        {
+          icon: icon_shop,
+          path: "/shop"
+        },
+        {
+          icon: icon_travel,
+          path: "/travel",
+        },
+        {
+          icon: icon_dining,
+          path: "/dining",
+        }
+    ]
+
+
   return (
     <>
+      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
+        {
+          categoryLinks.map(( { icon, path } )=>{
+            return <Link to={path} className='block w-8 transition-all hover:scale-120' >
+              <img src={icon} alt="travel" className='w-full' />
+            </Link>
+          })
+        }
+      </div>
       <Hero 
         categoryName='Entertainment'
         ctaGradientFrom='from-pink-entertainment' 
