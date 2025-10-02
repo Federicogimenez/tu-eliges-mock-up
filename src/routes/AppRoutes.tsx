@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Main } from '../shared/layout/Main';
 // import Home from '../features/home/Home';
 import LoaderSimple from '../shared/components/LoaderSimple';
-import Agency from '../features/agency/Agency';
 
 const Home = lazy( () => import('../features/home/Home') )
 const ProductPage = lazy( () => import('../features/product/ProductPage') )
@@ -16,6 +15,11 @@ const Dining = lazy( () => import('../features/dining/Dining') )
 const Entertainment = lazy( () => import('../features/entertainment/Entertainment') )
 const ThankYou = lazy( () => import('../features/thankyou/ThankYou') )
 const Activate = lazy( () => import('../features/activate/Activate') )
+
+const Agency = lazy( () => import('../features/afiliates/Agency') )
+const Influencer = lazy( () => import('../features/afiliates/Influencer') )
+const Company = lazy( () => import('../features/afiliates/Company') )
+const NonProfit = lazy( () => import('../features/afiliates/NonProfit') )
 
 export const AppRoutes: React.FC = () => {
 
@@ -35,6 +39,9 @@ export const AppRoutes: React.FC = () => {
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/activate" element={<Activate />} />
             <Route path="/agency" element={<Agency />} />
+            <Route path="/influencer" element={<Influencer />} />
+            <Route path="/company" element={<Company />} />
+            <Route path="/non-profit" element={<NonProfit />} />
           </Routes>
         </Suspense>
       </Main>

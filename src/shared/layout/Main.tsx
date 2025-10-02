@@ -32,10 +32,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
             className="h-full w-full object-center object-contain"
             />
         </Link>
-        {/* Theme Switcher positioned at top right */}
-        {/* <div className="fixed top-6 right-6 z-50"> */}
-          {/* <ThemeSwitcher /> */}
-        {/* </div> */}
+
       </header>
       
       {/* Main Content */}
@@ -43,7 +40,14 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      <Faqs />
+      {
+          pathname === '/agency' || 
+          pathname === '/influencer' ||
+          pathname === '/company' ||
+          pathname === '/non-profit' ?
+          null :
+          <Faqs />
+      }
 
       <Footer />
     </div>
