@@ -1,5 +1,5 @@
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
-import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
+// import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
 import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
@@ -21,14 +21,14 @@ import icon_park from '/category-testimonials/entertainment/icons/park.svg';
 import profile_park from '/category-testimonials/entertainment/park.png';
 
 
-import benefit_with_1 from '/benefits/entertainment/golf-with.png';
-import benefit_without_1 from '/benefits/entertainment/golf-without.png';
+// import benefit_with_1 from '/benefits/entertainment/golf-with.png';
+// import benefit_without_1 from '/benefits/entertainment/golf-without.png';
 
-import benefit_with_2 from '/benefits/entertainment/garden-with.png';
-import benefit_without_2 from '/benefits/entertainment/garden-without.png';
+// import benefit_with_2 from '/benefits/entertainment/garden-with.png';
+// import benefit_without_2 from '/benefits/entertainment/garden-without.png';
 
-import benefit_with_3 from '/benefits/entertainment/park-with.png';
-import benefit_without_3 from '/benefits/entertainment/park-without.png';
+// import benefit_with_3 from '/benefits/entertainment/park-with.png';
+// import benefit_without_3 from '/benefits/entertainment/park-without.png';
 
 import trendy_mobile_1 from '/hero-category/entertainment/mobile/1.png';
 import trendy_mobile_2 from '/hero-category/entertainment/mobile/2.png';
@@ -53,13 +53,10 @@ import article_10_brand from '/trendy/entertainment/articles/sporting.png';
 
 
 import HeroCategory from '../../shared/layout/HeroCategory';
-import Hero from '../../shared/layout/Hero';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
-import icon_travel from '/icons/category/travel.png'
-import icon_dining from '/icons/category/dining.png'
-import icon_shop from '/icons/category/shop.png'
-import { Link } from 'react-router-dom';
+import Hero2 from '../../shared/layout/Hero2';
+import Benefits from '../../shared/layout/Benefits';
 
 
 export default function Entertainment (){
@@ -147,26 +144,26 @@ export default function Entertainment (){
     },
   ]
 
-  const benefitSlides: BenefitSlide[] = [
-    {
-      color: '--color-pink-entertainment',
-      discount: '-$18',
-      with_img: benefit_with_1,
-      withoout_img: benefit_without_1,
-    },
-    {
-      color: '--color-pink-entertainment',
-      discount: '-$24',
-      with_img: benefit_with_2,
-      withoout_img: benefit_without_2,
-    },
-    {
-      color: '--color-pink-entertainment',
-      discount: '-$420',
-      with_img: benefit_with_3,
-      withoout_img: benefit_without_3,
-    },
-  ];
+  // const benefitSlides: BenefitSlide[] = [
+  //   {
+  //     color: '--color-pink-entertainment',
+  //     discount: '-$18',
+  //     with_img: benefit_with_1,
+  //     withoout_img: benefit_without_1,
+  //   },
+  //   {
+  //     color: '--color-pink-entertainment',
+  //     discount: '-$24',
+  //     with_img: benefit_with_2,
+  //     withoout_img: benefit_without_2,
+  //   },
+  //   {
+  //     color: '--color-pink-entertainment',
+  //     discount: '-$420',
+  //     with_img: benefit_with_3,
+  //     withoout_img: benefit_without_3,
+  //   },
+  // ];
 
   const bannerCollageDesktop : string[] =[
     trendy_desktop_1,
@@ -181,25 +178,25 @@ export default function Entertainment (){
     trendy_mobile_4,
   ]
 
-      const categoryLinks = [
-        {
-          icon: icon_shop,
-          path: "/shop"
-        },
-        {
-          icon: icon_travel,
-          path: "/travel",
-        },
-        {
-          icon: icon_dining,
-          path: "/dining",
-        }
-    ]
+    //   const categoryLinks = [
+    //     {
+    //       icon: icon_shop,
+    //       path: "/shop"
+    //     },
+    //     {
+    //       icon: icon_travel,
+    //       path: "/travel",
+    //     },
+    //     {
+    //       icon: icon_dining,
+    //       path: "/dining",
+    //     }
+    // ]
 
 
   return (
     <>
-      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
+      {/* <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
         {
           categoryLinks.map(( { icon, path } )=>{
             return <Link to={path} className='block w-8 transition-all hover:scale-120' >
@@ -207,8 +204,8 @@ export default function Entertainment (){
             </Link>
           })
         }
-      </div>
-      <Hero 
+      </div> */}
+      <Hero2
         categoryName='Entertainment'
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment' 
@@ -216,9 +213,10 @@ export default function Entertainment (){
         shiny_color='shiny-pink-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         />
+      <Benefits />
       <HeroTrendy 
         color={'--color-pink-entertainment'} 
-        wrapperClass={'bg-pink-entertainment/20'} 
+        wrapperClass={'bg-gradient-to-b from-transparent via-pink-entertainment/50 to-transparent'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'} 
         title={'Smarter Entertainment,'} 
         subtitle={'Bigger Smiles!'} 
@@ -234,10 +232,10 @@ export default function Entertainment (){
         ctaGradientFrom='from-black' 
         ctaGradientTo='to-pink-entertainment' 
         ctaGradientFrom2='from-pink-entertainment' ctaGradientTo2='to-black' />
-      <BenefitsSection 
+      {/* <BenefitsSection 
         slides={benefitSlides} 
         subtitle='More Entertainment, Less Expense' 
-        color='--color-pink-entertainment' />
+        color='--color-pink-entertainment' /> */}
       <HeroCategory
         title='Entertainment'
         subtitle='Without Limits'

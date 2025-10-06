@@ -1,6 +1,5 @@
 import HeroCategory from '../../shared/layout/HeroCategory';
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
-import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
 import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
@@ -22,14 +21,14 @@ import icon_beach from '/category-testimonials/travel/icons/beach.svg';
 import profile_beach from '/category-testimonials/travel/beach.png';
 
 
-import benefits_with_1 from '/benefits/travel/park-with.png';
-import benefits_without_1 from '/benefits/travel/park-without.png';
+// import benefits_with_1 from '/benefits/travel/park-with.png';
+// import benefits_without_1 from '/benefits/travel/park-without.png';
 
-import benefits_with_2 from '/benefits/travel/suite-with.png';
-import benefits_without_2 from '/benefits/travel/suite-without.png';
+// import benefits_with_2 from '/benefits/travel/suite-with.png';
+// import benefits_without_2 from '/benefits/travel/suite-without.png';
 
-import benefits_with_3 from '/benefits/travel/flight-with.png';
-import benefits_without_3 from '/benefits/travel/flight-without.png';
+// import benefits_with_3 from '/benefits/travel/flight-with.png';
+// import benefits_without_3 from '/benefits/travel/flight-without.png';
 
 
 import trendy_mobile_1 from '/hero-category/travel/mobile/1.png';
@@ -50,12 +49,8 @@ import article_5_brand from '/trendy/travel/articles/avis.png';
 import article_6_brand from '/trendy/travel/articles/alamo.png';
 import article_7_brand from '/trendy/travel/articles/flights.png';
 import { useWindowSize } from '../../hooks/useWindowSize';
-import Hero from '../../shared/layout/Hero';
-
-import icon_entertainment from '/icons/category/entertainment.png'
-import icon_dining from '/icons/category/dining.png'
-import icon_shop from '/icons/category/shop.png'
-import { Link } from 'react-router-dom';
+import Benefits from '../../shared/layout/Benefits';
+import Hero2 from '../../shared/layout/Hero2';
 
 
 
@@ -124,26 +119,26 @@ export default function Travel (){
 
   ]
 
-  const benefitSlides: BenefitSlide[] = [
-    {
-      color: '--color-blue-travel',
-      discount: '-$720',
-      with_img: benefits_with_1,
-      withoout_img: benefits_without_1,
-    },
-    {
-      color: '--color-blue-travel',
-      discount: '-$400',
-      with_img: benefits_with_2,
-      withoout_img: benefits_without_2,
-    },
-    {
-      color: '--color-blue-travel',
-      discount: '-$600',
-      with_img: benefits_with_3,
-      withoout_img: benefits_without_3,
-    },
-  ];
+  // const benefitSlides: BenefitSlide[] = [
+  //   {
+  //     color: '--color-blue-travel',
+  //     discount: '-$720',
+  //     with_img: benefits_with_1,
+  //     withoout_img: benefits_without_1,
+  //   },
+  //   {
+  //     color: '--color-blue-travel',
+  //     discount: '-$400',
+  //     with_img: benefits_with_2,
+  //     withoout_img: benefits_without_2,
+  //   },
+  //   {
+  //     color: '--color-blue-travel',
+  //     discount: '-$600',
+  //     with_img: benefits_with_3,
+  //     withoout_img: benefits_without_3,
+  //   },
+  // ];
 
 
   const bannerCollageDesktop : string[] =[
@@ -159,44 +154,36 @@ export default function Travel (){
     trendy_mobile_4,
   ]
 
-      const categoryLinks = [
-      {
-        icon: icon_shop,
-        path: "/shop",
-      },
-      {
-        icon: icon_dining,
-        path: "/dining",
-      },
-      {
-        icon: icon_entertainment,
-        path: "/entertainment"
-      }
-    ]
+    //   const categoryLinks = [
+    //   {
+    //     icon: icon_shop,
+    //     path: "/shop",
+    //   },
+    //   {
+    //     icon: icon_dining,
+    //     path: "/dining",
+    //   },
+    //   {
+    //     icon: icon_entertainment,
+    //     path: "/entertainment"
+    //   }
+    // ]
 
     
   return (
     <>
-      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
-        {
-          categoryLinks.map(( { icon, path } )=>{
-            return <Link to={path} className='block w-8 transition-all hover:scale-120' >
-              <img src={icon} alt="travel" className='w-full' />
-            </Link>
-          })
-        }
-      </div>
-      <Hero 
+      <Hero2
         categoryName='Travel'
         ctaGradientFrom={'from-blue-travel'} 
         ctaGradientTo={'to-blue-travel'} 
         border='border-blue-travel'
         shiny_color={'shiny-blue-text'} 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} />
+      <Benefits />
       <HeroTrendy 
         color={'--color-blue-travel'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'} 
-        wrapperClass={'bg-blue-travel/20'} 
+        wrapperClass={'bg-gradient-to-b from-transparent via-blue-travel/50 to-transparent'} 
         title={'Smarter Travel,'} 
         subtitle={'Bigger Adventures!'} 
         description={'Hotels, Rental Cars, Flights & Cruises—member-only savings wherever you go.'} 
@@ -212,10 +199,10 @@ export default function Travel (){
         ctaGradientTo='to-blue-travel' 
         ctaGradientFrom2='from-blue-travel' 
         ctaGradientTo2='to-black' />
-      <BenefitsSection 
+      {/* <BenefitsSection 
         slides={benefitSlides} 
         subtitle='More Adventures, Less Spending' 
-        color='--color-blue-travel' />
+        color='--color-blue-travel' /> */}
       <HeroCategory
         title={'Travel big,'} 
         subtitle={'Spend Small.'} 

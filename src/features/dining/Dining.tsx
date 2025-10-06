@@ -1,5 +1,5 @@
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
-import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
+// import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
 import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
@@ -21,14 +21,14 @@ import icon_meat from '/category-testimonials/dining/icons/meat.svg';
 import profile_meat from '/category-testimonials/dining/meat.png';
 
 
-import benefits_with_1 from '/benefits/dining/food-with.png';
-import benefits_without_1 from '/benefits/dining/food-without.png';
+// import benefits_with_1 from '/benefits/dining/food-with.png';
+// import benefits_without_1 from '/benefits/dining/food-without.png';
 
-import benefits_with_2 from '/benefits/dining/locald-with.png';
-import benefits_without_2 from '/benefits/dining/locald-without.png';
+// import benefits_with_2 from '/benefits/dining/locald-with.png';
+// import benefits_without_2 from '/benefits/dining/locald-without.png';
 
-import benefits_with_3 from '/benefits/dining/sand-with.png';
-import benefits_without_3 from '/benefits/dining/sand-without.png';
+// import benefits_with_3 from '/benefits/dining/sand-with.png';
+// import benefits_without_3 from '/benefits/dining/sand-without.png';
 
 import trendy_mobile_1 from '/hero-category/dining/mobile/1.png';
 import trendy_mobile_2 from '/hero-category/dining/mobile/2.png';
@@ -48,13 +48,9 @@ import article_5_brand from '/trendy/dining/articles/dq.png';
 import article_6_brand from '/trendy/dining/articles/papaj.png';
 
 import HeroCategory from '../../shared/layout/HeroCategory';
-import Hero from '../../shared/layout/Hero';
 import { useWindowSize } from '../../hooks/useWindowSize';
-
-import icon_travel from '/icons/category/travel.png'
-import icon_shop from '/icons/category/shop.png'
-import icon_entertainment from '/icons/category/entertainment.png'
-import { Link } from 'react-router-dom';
+import Hero2 from '../../shared/layout/Hero2';
+import Benefits from '../../shared/layout/Benefits';
 
 export default function Dining () {
 
@@ -121,26 +117,26 @@ export default function Dining () {
     },
   ]
 
-  const benefitSlides: BenefitSlide[] = [
-    {
-      color: '--color-yellow-dining',
-      discount: '-$20',
-      with_img: benefits_with_1,
-      withoout_img: benefits_without_1,
-    },
-    {
-      color: '--color-yellow-dining',
-      discount: '-$10',
-      with_img: benefits_with_2,
-      withoout_img: benefits_without_2,
-    },
-    {
-      color: '--color-yellow-dining',
-      discount: '-$8',
-      with_img: benefits_with_3,
-      withoout_img: benefits_without_3,
-    },
-  ];
+  // const benefitSlides: BenefitSlide[] = [
+  //   {
+  //     color: '--color-yellow-dining',
+  //     discount: '-$20',
+  //     with_img: benefits_with_1,
+  //     withoout_img: benefits_without_1,
+  //   },
+  //   {
+  //     color: '--color-yellow-dining',
+  //     discount: '-$10',
+  //     with_img: benefits_with_2,
+  //     withoout_img: benefits_without_2,
+  //   },
+  //   {
+  //     color: '--color-yellow-dining',
+  //     discount: '-$8',
+  //     with_img: benefits_with_3,
+  //     withoout_img: benefits_without_3,
+  //   },
+  // ];
 
   const bannerCollageDesktop : string[] =[
     trendy_desktop_1,
@@ -155,34 +151,25 @@ export default function Dining () {
     trendy_mobile_4,
   ]
 
-    const categoryLinks = [
-      {
-        icon: icon_shop,
-        path: "/shop",
-      },
-      {
-        icon: icon_travel,
-        path: "/travel",
-      },
-      {
-        icon: icon_entertainment,
-        path: "/entertainment"
-      }
-    ]
+    // const categoryLinks = [
+    //   {
+    //     icon: icon_shop,
+    //     path: "/shop",
+    //   },
+    //   {
+    //     icon: icon_travel,
+    //     path: "/travel",
+    //   },
+    //   {
+    //     icon: icon_entertainment,
+    //     path: "/entertainment"
+    //   }
+    // ]
 
 
   return (
     <>
-      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
-        {
-          categoryLinks.map(( { icon, path } )=>{
-            return <Link to={path} className='block w-8 transition-all hover:scale-120' >
-              <img src={icon} alt="travel" className='w-full' />
-            </Link>
-          })
-        }
-      </div>
-      <Hero 
+      <Hero2
         categoryName='Dining'
         ctaGradientFrom='from-yellow-dining' 
         ctaGradientTo='to-yellow-dining' 
@@ -190,9 +177,10 @@ export default function Dining () {
         shiny_color='shiny-yellow-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         />
+      <Benefits />
       <HeroTrendy 
         color={'--color-yellow-dining'} 
-        wrapperClass={'bg-yellow-dining/20'} 
+        wrapperClass={'bg-gradient-to-b from-yellow-dining/0 via-yellow-dining/50 to-yellow-dining/0'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-yellow-dining/20 to-yellow-dining/45'} 
         title={'Smarter Dining,'} 
         subtitle={'Bigger Flavors!'} 
@@ -209,10 +197,10 @@ export default function Dining () {
         ctaGradientTo='to-yellow-dining' 
         ctaGradientFrom2='from-yellow-dining' 
         ctaGradientTo2='to-black' />
-      <BenefitsSection 
+      {/* <BenefitsSection 
         slides={benefitSlides} 
         subtitle='Bite Into Bigger Savings' 
-        color='--color-yellow-dining' />
+        color='--color-yellow-dining' /> */}
       <HeroCategory
         title={'Taste More,'} 
         subtitle={'Pay Less.'} 

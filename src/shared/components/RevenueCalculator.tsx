@@ -183,16 +183,17 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
                 {conversionRates.map((rate) => {
                   const sold = Math.round(engaged * (rate / 100));
                   const afiliate = sold * (revPerMembershipAfiliate || 0);
-                  const ag = sold * (revPerMembershipAgency || 0);
+                  const ag = sold * (revPerMembershipAgency);
                   const agTotal = ag * (agencyInfluencers || 1);
+                  // const agTotal_companies = ag * (agencyInfluencers || 1);
                   return (
                     <tr key={rate} className="border-b border-neutral-800/80 hover:bg-neutral-800/40">
                       <Td>{rate}%</Td>
                       <Td>{numberFormat(sold)}</Td>
-                      <Td>{currency(agTotal)}</Td>
+                      <Td>{currency(afiliate)}</Td>
                       {buyer === 'Agency' ?
                         <>
-                          <Td>{currency(afiliate)}</Td>
+                          {/* <Td>{currency(afiliate)}</Td> */}
                           <Td>{currency(ag)}</Td>
                           <Td>{currency(agTotal)}</Td>
                         </>
@@ -215,7 +216,7 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
                       <Td className="font-semibold">{currency(engaged * (revPerMembershipAgency || 0) * (agencyInfluencers || 1))}</Td>
                     </>
                     : 
-                    <Td className="font-semibold">{currency(engaged * (revPerMembershipAgency || 0) * (agencyInfluencers || 1))}</Td>
+                    <Td className="font-semibold">{currency(engaged * (revPerMembershipAfiliate || 0) * (agencyInfluencers || 1))}</Td>
                   }
 
                 </tr>

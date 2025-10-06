@@ -1,7 +1,7 @@
 // import HeroTrendy from '../../shared/layout/HeroTrendy';
 import HeroCategory from '../../shared/layout/HeroCategory';
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
-import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
+// import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
 import GatewaySection from '../home/components/GatewaySection';
 import PricingSection from '../home/components/PricingSection';
 
@@ -23,14 +23,14 @@ import icon_tv from '/category-testimonials/shop/icons/tv.svg';
 import profile_tv from '/category-testimonials/shop/tv.png';
 
 
-import shop_with_1 from '/benefits/shop/flowers-with.png';
-import shop_without_1 from '/benefits/shop/flowers-without.png';
+// import shop_with_1 from '/benefits/shop/flowers-with.png';
+// import shop_without_1 from '/benefits/shop/flowers-without.png';
 
-import shop_with_2 from '/benefits/shop/paint-with.png';
-import shop_without_2 from '/benefits/shop/paint-without.png';
+// import shop_with_2 from '/benefits/shop/paint-with.png';
+// import shop_without_2 from '/benefits/shop/paint-without.png';
 
-import shop_with_3 from '/benefits/shop/refrigerator-with.png';
-import shop_without_3 from '/benefits/shop/refrigerator-without.png';
+// import shop_with_3 from '/benefits/shop/refrigerator-with.png';
+// import shop_without_3 from '/benefits/shop/refrigerator-without.png';
 
 import trendy_mobile_1 from '/hero-category/shop/mobile/1.png';
 import trendy_mobile_2 from '/hero-category/shop/mobile/2.png';
@@ -63,13 +63,14 @@ import article_9_brand from '/trendy/shop/articles/9/brand.png';
 
 import article_10_brand from '/trendy/shop/articles/10/brand.png';
 
-import Hero from '../../shared/layout/Hero';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
-import icon_travel from '/icons/category/travel.png'
-import icon_dining from '/icons/category/dining.png'
-import icon_entertainment from '/icons/category/entertainment.png'
-import { Link } from 'react-router-dom';
+// import icon_travel from '/icons/category/travel.png'
+// import icon_dining from '/icons/category/dining.png'
+// import icon_entertainment from '/icons/category/entertainment.png'
+// import { Link } from 'react-router-dom';
+import Benefits from '../../shared/layout/Benefits';
+import Hero2 from '../../shared/layout/Hero2';
 
 
 export default function Shop (){
@@ -147,26 +148,26 @@ export default function Shop (){
     },
   ]
 
-  const benefitSlides: BenefitSlide[] = [
-    {
-      color: '--color-purple-shop',
-      discount: '-$20',
-      with_img: shop_with_1,
-      withoout_img: shop_without_1,
-    },
-    {
-      color: '--color-purple-shop',
-      discount: '-$10',
-      with_img: shop_with_2,
-      withoout_img: shop_without_2,
-    },
-    {
-      color: '--color-purple-shop',
-      discount: '-$250',
-      with_img: shop_with_3,
-      withoout_img: shop_without_3,
-    },
-  ];
+  // const benefitSlides: BenefitSlide[] = [
+  //   {
+  //     color: '--color-purple-shop',
+  //     discount: '-$20',
+  //     with_img: shop_with_1,
+  //     withoout_img: shop_without_1,
+  //   },
+  //   {
+  //     color: '--color-purple-shop',
+  //     discount: '-$10',
+  //     with_img: shop_with_2,
+  //     withoout_img: shop_without_2,
+  //   },
+  //   {
+  //     color: '--color-purple-shop',
+  //     discount: '-$250',
+  //     with_img: shop_with_3,
+  //     withoout_img: shop_without_3,
+  //   },
+  // ];
 
   const bannerCollageDesktop : string[] =[
     trendy_desktop_1,
@@ -181,25 +182,25 @@ export default function Shop (){
     trendy_mobile_4,
   ]
 
-  const categoryLinks = [
-    {
-      icon: icon_travel,
-      path: "/travel",
-    },
-    {
-      icon: icon_dining,
-      path: "/dining",
-    },
-    {
-      icon: icon_entertainment,
-      path: "/entertainment"
-    }
-  ]
+  // const categoryLinks = [
+  //   {
+  //     icon: icon_travel,
+  //     path: "/travel",
+  //   },
+  //   {
+  //     icon: icon_dining,
+  //     path: "/dining",
+  //   },
+  //   {
+  //     icon: icon_entertainment,
+  //     path: "/entertainment"
+  //   }
+  // ]
 
     
   return (
     <>
-      <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
+      {/* <div className='animate-fade fixed z-10 right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-black rounded-l-2xl flex flex-col justify-center items-center gap-y-2 h-fit px-2 py-3'>
         {
           categoryLinks.map(( { icon, path } )=>{
             return <Link to={path} className='block w-8 transition-all hover:scale-120' >
@@ -207,8 +208,8 @@ export default function Shop (){
             </Link>
           })
         }
-      </div>
-      <Hero 
+      </div> */}
+      <Hero2 
         categoryName='Shop'
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop' 
@@ -216,10 +217,11 @@ export default function Shop (){
         shiny_color='shiny-purple-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         />
+      <Benefits />
       <HeroTrendy 
         color={'--color-purple-shop'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'} 
-        wrapperClass={'bg-purple-shop/20 '} 
+        wrapperClass={'bg-gradient-to-b from-transparent via-purple-shop/50 to-transparent '} 
         title={'Smarter Shopping,'} 
         subtitle={'Bigger Finds!'} 
         description={'From fashion to tech, member-only deals on the things you love.'} 
@@ -235,10 +237,10 @@ export default function Shop (){
         ctaGradientTo='to-purple-shop' 
         ctaGradientFrom2='from-purple-shop' 
         ctaGradientTo2='to-black' />
-      <BenefitsSection 
+      {/* <BenefitsSection 
         slides={benefitSlides} 
         subtitle='Fashion, Tech & More for Less' 
-        color='--color-purple-shop' />
+        color='--color-purple-shop' /> */}
       <HeroCategory 
         title='Shop savvy'
         subtitle='Bag up to 50% OFF!'
