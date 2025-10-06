@@ -1,20 +1,27 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 // import MembershipCard from "../../shared/components/MembershipCard";
 // import TiltedCard from "../../shared/components/TiltedCard";
 import SpotlightCard from "../../shared/components/SpotlightCard";
 
 export default function ThankYou() {
 
-  const url = useLocation().search;
-  
-  const memberId = url.split('=').pop();
+    const [ searchParams ] = useSearchParams()
+
+    const firstName = searchParams.get('first_name_of_account')
+    const memberId = searchParams.get('code')
 
   return (
     <div className="pt-[25dvh] text-center bg-gradient-to-b from-blue-uchooseit/50 to-transparent text-black dark:text-white">
         <h1 className="text-[8vw] shiny-blue-text text-center mx-auto block font-semibold leading-[1.3]">
             Congratulations!
         </h1>
+        <p className="font-bold text-center md:w-full text-sm lg:text-2xl capitalize mb-2 mx-auto">
+            
+        </p>
         <p className=" text-center md:w-full text-sm lg:text-2xl   mb-12 mx-auto">
+            <strong className="capitalize mr-2">
+                {firstName}
+            </strong>
             you are now part of our community!
         </p>
 
