@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HamburgerMenu } from '../components/HamburgerMenu';
 // import { ThemeSwitcher } from '../components/ThemeSwitcher';
 import { useTheme } from '../../hooks/useTheme';
@@ -12,12 +12,35 @@ interface LayoutProps {
 
 export const Main: React.FC<LayoutProps> = ({ children }) => {
     const { theme } = useTheme();
+    const [ currentLogo, setCurrentLogo ] = useState<string>('/uchooseit-white.svg')
 
     const {pathname} = useLocation()
 
+    const blackLogoPages = [
+      '/',
+      '/shop',
+      '/travel',
+      '/dining',
+      '/entertainment',
+    ]
+
     useEffect(() => {
       window.scrollTo(0, 0);
-    }, [pathname]);
+
+
+      if( blackLogoPages.some(page => pathname === page ) ){
+        setCurrentLogo('/uchooseit-white.svg')
+        console.log('es black page');
+        
+      } else{
+        if(theme !== 'dark'){
+          setCurrentLogo('/uchooseit-black.svg')
+        }else{
+          setCurrentLogo('/uchooseit-white.svg')
+        }
+      }
+
+    }, [pathname, theme]);
 
     
   return (
@@ -27,9 +50,9 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
 
         <Link to={'/'} preventScrollReset={false} className='relative h-2/3 max-md:max-w-[40%] lg:max-h-[70px]'>
           <img
-            src={theme !== 'dark' && pathname == '/product' ? '/uchooseit-black.svg' : '/uchooseit-white.svg'}
+            src={currentLogo}
             alt="UChooseIt"
-            className="h-full w-full object-center object-contain"
+            className="h-full w-full object-center object-contain transition-all duration-300"
             />
         </Link>
 

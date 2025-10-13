@@ -51,25 +51,25 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
   const conversionRates = [1, 5, 10, 25, 50, 100];
 
   return (
-    <div className="min-h-screen w-full bg-neutral-950 text-white">
+    <div className="min-h-screen w-full ">
       <div className="mx-auto max-w-6xl px-4 py-10">
         <header className="mb-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               {buyer} Revenue Calculator
             </h1>
-            <p className="text-neutral-300">
+            <p className="text-neutral-900 dark:text-neutral-300">
               Edit the <span className="text-emerald-400">green</span> fields to
               model your agency's revenue with uchooseit.us.
             </p>
           </div>
-          <div className="rounded-2xl bg-neutral-900 px-4 py-2 text-sm text-neutral-300 shadow-lg shadow-black/30">
+          <div className="rounded-2xl bg-neutral-200 dark:bg-neutral-900 px-4 py-2 text-sm text-neutral-900 dark:text-neutral-300 shadow-lg shadow-black/30">
             Public price per year: <strong>{currency(membershipPrice)}</strong>
           </div>
         </header>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <section className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-xl shadow-black/30 backdrop-blur">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-white">
+          <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
             <h2 className="mb-4 text-lg font-medium">1. Negotiation Discount Community</h2>
             <div className="space-y-4">
               <KPI label="Public Price per year" value={currency(membershipPrice)} />
@@ -79,7 +79,7 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
             </div>
           </section>
 
-          <section className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-xl shadow-black/30 backdrop-blur">
+          <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
             <h2 className="mb-4 text-lg font-medium">2. {buyer} Data</h2>
             <div className="space-y-4">
 
@@ -124,7 +124,7 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
             </div>
           </section>
 
-          <section className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-xl shadow-black/30 backdrop-blur">
+          <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
             <h2 className="mb-4 text-lg font-medium">3. Negotiation Terms</h2>
             <div className="space-y-4">
               {
@@ -155,7 +155,7 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
           </section>
         </div>
 
-        <section className="mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-xl shadow-black/30 backdrop-blur">
+        <section className="mt-8 rounded-2xl text-white border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
           <div className="mb-4">
             <h2 className="text-lg font-medium">Conversion Scenarios</h2>
             <p className="text-sm text-neutral-400">Based on estimated organic engagement: {numberFormat(engaged)} people</p>

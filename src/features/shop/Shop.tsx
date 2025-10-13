@@ -181,6 +181,18 @@ export default function Shop (){
     trendy_mobile_3,
     trendy_mobile_4,
   ]
+  // const portraitCarouselImagesMobile = [
+  //   {id: 1 , img: trendy_mobile_1},
+  //   {id: 2 , img: trendy_mobile_2},
+  //   {id: 3 , img: trendy_mobile_3},
+  //   {id: 4 , img: trendy_mobile_4},
+  // ]
+  // const portraitCarouselImagesDesktop = [
+  //   {id: 1 , img: trendy_desktop_1},
+  //   {id: 2 , img: trendy_desktop_2},
+  //   {id: 3 , img: trendy_desktop_3},
+  //   {id: 4 , img: trendy_desktop_4},
+  // ]
 
   // const categoryLinks = [
   //   {

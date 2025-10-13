@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAllyContext } from "../../../hooks/useAllyContext";
 import { useInlineVideo } from "../../../hooks/useInlineVideo";
-import ScrollToSection from "../../../hooks/useScrollSection";
+// import ScrollToSection from "../../../hooks/useScrollSection";
 import ButtonPrimary from "../../../shared/components/ButtonPrimary";
 import LazyLoadImage from "../../../shared/components/LazyLoadImage";
 
@@ -61,7 +61,7 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
                 <p className="animate-appear-up w-[95%] text-center md:w-full text-xl md:text-2xl lg:text-3xl font-semibold  mb-2 mx-auto" style={{animationDelay:".2s"}}>
                     You Choose Where to Save
                 </p>
-                <p className="animate-appear-up w-[80%] flex justify-center items-center flex-wrap text-center md:w-full text-sm lg:text-lg font-semibold mb-2 mx-auto *:mx-2 *:px-3 *:py-1 *:bg-gradient-to-br *:from-gray-600 *:to-gray-900 *:rounded-full *:border *:transition-all *:duration-300 *:hover:scale-105 " style={{animationDelay: ".3s"}}>
+                <p className="animate-appear-up w-[80%] flex justify-center items-center flex-wrap text-center md:w-full text-sm lg:text-lg font-semibold mb-2 mx-auto *:mx-2 *:px-3 *:py-1 *:bg-gradient-to-br *:from-gray-600/40 *:to-gray-900/70 *:rounded-full *:border *:transition-all *:duration-300 *:hover:scale-105 " style={{animationDelay: ".3s"}}>
                     <Link to={"/shop"} className="text-purple-shop border-purple-shop ">
                         Shop
                     </Link>
@@ -85,7 +85,7 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
             </div>
 
             <div className="relative w-full" >
-                <button onClick={()=>{ScrollToSection("calculator")}} 
+                {/* <button onClick={()=>{ScrollToSection("calculator")}} 
                         style={{animationDelay: '1.5s'}}
                         className="group text-white relative flex justify-center items-center cursor-pointer w-fit px-2 font-semibold text-xl mx-auto mb-6 animate-appear-up
                                 before:absolute before:rounded-full before:-bottom-0.5 before:w-1/3 before:bg-white before:h-0.5 before:left-1/2 before:-translate-x-1/2 before:transition-all hover:before:w-full active:before:w-full ">
@@ -96,7 +96,7 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
                     <img src="/icons/dollar.svg" 
                         alt="coin" 
                         className="w-7 ml-2 transition-all duration-700 group-hover:-translate-y-1/4 group-hover:rotate-y-[360deg] jump"/>
-                </button>
+                </button> */}
                 <div className="relative flex justify-center mx-auto animate-appear-up" style={{animationDelay: '.3s'}}>
                     <ButtonPrimary src={code ? code : recurlyUrl} />
                 </div>
