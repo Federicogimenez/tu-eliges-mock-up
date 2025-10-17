@@ -4,7 +4,8 @@ import type { AllyDataProps } from '../types/ally';
 export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
   try {
     // const urlFetch = `https://api.tueliges.us/public/ally-code/${code}`;
-    const urlFetch = `https://te-uc-platform-api.fly.dev/user/ally-code/${code}`;
+    // const urlFetch = `https://te-uc-platform-api.fly.dev/user/ally-code/${code}`;
+    const urlFetch = `https://lb-backend-tueliges-1205073002.us-east-1.elb.amazonaws.com/user/ally-code/${code}`;
     const response = await axios.get(urlFetch);
     
     
