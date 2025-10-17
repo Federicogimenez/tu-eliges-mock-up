@@ -347,7 +347,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
                                     {/* <br /> */}
                                     community of Smart Savers, with 
                                     <strong className='mx-2'>
-                                      %{allyData.discount_percent}Off 
+                                      {allyData.discount_percent}%Off 
                                     </strong>
                                     your membership purchase!
                               
