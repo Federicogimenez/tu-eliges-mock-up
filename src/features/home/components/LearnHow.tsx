@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactPlayer from "react-player";
+import ButtonSecondary from "../../../shared/components/ButtonSecondary";
 
 
 export default function LearnHow() {
@@ -50,6 +51,9 @@ export default function LearnHow() {
             />
           </div>
         </div>
+      </div>
+      <div className="mt-8 w-11/12 mx-auto flex justify-center">
+        <ButtonSecondary text={"Explore Platform"} redirect={"https://uchooseitus.enjoymydeals.com/"} anchor/>
       </div>
     </div>
   );

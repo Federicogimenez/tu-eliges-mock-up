@@ -57,7 +57,7 @@ export default function ButtonPrimary (
 
         <picture className={` absolute right-2 top-1/2 w-7  stroke-white dark:stroke-white scale-100 lg:-translate-x-1/2 -translate-y-1/2 transition-all duration-500 group-hover:scale-105 group-hover:translate-x-0 `}>
               <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
           </picture>
         {/* <img src={} alt="" /> */}

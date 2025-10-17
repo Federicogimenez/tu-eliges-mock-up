@@ -48,8 +48,8 @@ export default function HeroProductPage() {
             </div>
         </div>
       </div>
-      <div className='relative w-full flex justify-center items-center mt-10'>
-        <ButtonPrimary src={code ? code : recurlyUrl} customStyle="!w-11/12 !max-w-3xl" />
+      <div className='relative w-11/12 max-w-xl mx-auto flex justify-center items-center mt-10'>
+        <ButtonPrimary src={code ? code : recurlyUrl} />
       </div>
     </section>
   )

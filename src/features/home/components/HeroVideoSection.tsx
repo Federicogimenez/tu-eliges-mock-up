@@ -38,7 +38,6 @@ export default function HeroVideoSection({videoHero, videoHeroPreview}: HeroVide
                     controls={false} 
                     >
                     <source src={videoHero} type="video/mp4" />
-                    {/* <source src="img/video.webm" type="video/webm" /> */}
                     Your browser can't support this video
                 </video>
             </div>

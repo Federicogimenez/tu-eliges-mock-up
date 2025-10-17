@@ -30,16 +30,6 @@ import profile_meat from '/category-testimonials/dining/meat.png';
 // import benefits_with_3 from '/benefits/dining/sand-with.png';
 // import benefits_without_3 from '/benefits/dining/sand-without.png';
 
-import trendy_mobile_1 from '/hero-category/dining/mobile/1.png';
-import trendy_mobile_2 from '/hero-category/dining/mobile/2.png';
-import trendy_mobile_3 from '/hero-category/dining/mobile/3.png';
-import trendy_mobile_4 from '/hero-category/dining/mobile/4.png';
-
-import trendy_desktop_1 from '/hero-category/dining/desktop/1.png';
-import trendy_desktop_2 from '/hero-category/dining/desktop/2.png';
-import trendy_desktop_3 from '/hero-category/dining/desktop/3.png';
-import trendy_desktop_4 from '/hero-category/dining/desktop/4.png';
-
 import article_1_brand from '/trendy/dining/articles/subway.png';
 import article_2_brand from '/trendy/dining/articles/burgerk.png';
 import article_3_brand from '/trendy/dining/articles/dominos.png';
@@ -48,13 +38,10 @@ import article_5_brand from '/trendy/dining/articles/dq.png';
 import article_6_brand from '/trendy/dining/articles/papaj.png';
 
 import HeroCategory from '../../shared/layout/HeroCategory';
-import { useWindowSize } from '../../hooks/useWindowSize';
-import Hero2 from '../../shared/layout/Hero2';
 import Benefits from '../../shared/layout/Benefits';
 
 export default function Dining () {
 
-    const { width } = useWindowSize()
   
   const categoryTestimonials = [
     {
@@ -138,18 +125,7 @@ export default function Dining () {
   //   },
   // ];
 
-  const bannerCollageDesktop : string[] =[
-    trendy_desktop_1,
-    trendy_desktop_2,
-    trendy_desktop_3,
-    trendy_desktop_4,
-  ]
-  const bannerCollageMobile : string[] =[
-    trendy_mobile_1,
-    trendy_mobile_2,
-    trendy_mobile_3,
-    trendy_mobile_4,
-  ]
+
 
     // const categoryLinks = [
     //   {
@@ -169,14 +145,14 @@ export default function Dining () {
 
   return (
     <>
-      <Hero2
+      {/* <Hero2
         categoryName='Dining'
         ctaGradientFrom='from-yellow-dining' 
         ctaGradientTo='to-yellow-dining' 
         border='border-yellow-dining'
         shiny_color='shiny-yellow-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
-        />
+        /> */}
       <Benefits />
       <HeroTrendy 
         color={'--color-yellow-dining'} 

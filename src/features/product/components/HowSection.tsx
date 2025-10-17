@@ -101,7 +101,7 @@ export default function HowSection() {
                 </div>
           </div>
       
-      <div className="mt-10 w-full flex justify-center">
+      <div className="mt-10 w-11/12 mx-auto flex justify-center">
         <ButtonSecondary text={"Discover More"} anchor redirect="https://uchooseitus.enjoymydeals.com/" classnames="bg-white border-white !text-black" />
       </div>
 

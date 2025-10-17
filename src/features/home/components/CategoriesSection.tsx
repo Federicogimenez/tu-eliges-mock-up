@@ -55,6 +55,7 @@ export default function CategoriesSection() {
                 categories.map(( category, i )=>{
                     return <CategoryCard
                         key={i} 
+                        id={i}
                         name={category.name} 
                         path={category.path} 
                         color={category.color} 

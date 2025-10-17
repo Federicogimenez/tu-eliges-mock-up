@@ -10,6 +10,7 @@ const defaultAllyData: AllyDataProps = {
   discount_percent: 0,
   membership_anual_fee: 47.99,
   new_price_after_discount: 47.99,
+  hasCoupon: false,
   isLoading: true,
   userNotFound: false
 };
@@ -41,7 +42,11 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
         // Actualizar LocalStorage con el nuevo código
         localStorage.setItem('ally-code', codeParam);
         // Marcar como loading mientras se hace la consulta
-        setAllyData(prev => ({ ...prev, isLoading: true }));
+        setAllyData(prev => ({ 
+          ...prev, 
+          hasCoupon: true, 
+          isLoading: true 
+        }));
         
         // Hacer la consulta a la API
         fetchAllyData(codeParam)
@@ -52,6 +57,7 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
             console.error('Error loading ally data:', error);
             setAllyData(prev => ({
               ...prev,
+              hasCoupon: true,
               isLoading: false,
               userNotFound: true,
               alliedCuponCode: codeParam
@@ -63,7 +69,11 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
         if (storedCode) {
           setCode(recurlyCuponUrl + storedCode);
           // Marcar como loading mientras se hace la consulta
-          setAllyData(prev => ({ ...prev, isLoading: true }));
+          setAllyData(prev => ({ 
+            ...prev,
+            hasCoupon: true, 
+            isLoading: true 
+          }));
           
           // Hacer la consulta a la API con el código almacenado
           fetchAllyData(storedCode)
@@ -74,6 +84,7 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
               console.error('Error loading ally data:', error);
               setAllyData(prev => ({
                 ...prev,
+                hasCoupon: true,
                 isLoading: false,
                 userNotFound: true,
                 alliedCuponCode: storedCode
@@ -82,6 +93,7 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
         } else {
           setAllyData(prev => ({
             ...prev,
+            hasCoupon: false,
             isLoading: false,
           }))
         }

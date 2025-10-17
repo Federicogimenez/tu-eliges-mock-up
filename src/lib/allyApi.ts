@@ -15,6 +15,7 @@ export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
       discount_percent: response.data.discount_percent || 0,
       membership_anual_fee: response.data.membership_anual_fee || 47.99,
       new_price_after_discount: response.data.new_price_after_discount || 47.99,
+      hasCoupon: true,
       isLoading: false,
       userNotFound: false
     };
@@ -27,6 +28,7 @@ export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
       discount_percent: 0,
       membership_anual_fee: 47.99,
       new_price_after_discount: 47.99,
+      hasCoupon: false,
       isLoading: false,
       userNotFound: true
     };

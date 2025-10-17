@@ -5,9 +5,6 @@ import icon_permanent from '/icons/benefits/permanent.svg'
 import icon_privacy from '/icons/benefits/privacy.svg'
 import icon_quick from '/icons/benefits/quick.svg'
 import icon_save from '/icons/benefits/save.svg'
-import { useNavigate } from 'react-router-dom';
-import ScrollToSection from '../../hooks/useScrollSection';
-import ButtonSecondary from '../components/ButtonSecondary'
 
 const benefits = [
   {
@@ -58,18 +55,9 @@ export interface BenefitSlide{
 
 export default function Benefits () {
 
-    const navigate = useNavigate();
-
-    function handleNavigateCalculator(){
-        navigate('/')
-        setTimeout(() => {
-            ScrollToSection("calculator")
-        }, 1000);
-    }
-
     
   return (
-    <section className="py-12 px-4 transition-colors duration-300">
+    <section className="py-12 px-4 transition-colors duration-300" id='benefits'>
       <div className="container mx-auto">
 
         <h2 className='heading-1 mb-8 text-center'>
@@ -95,10 +83,10 @@ export default function Benefits () {
               </div>
             ))}
           </div>
-
+{/* 
             <div className='relative w-full max-w-md' onClick={handleNavigateCalculator} >
                 <ButtonSecondary text={'Calculate Savings'} redirect={''} />
-            </div>
+            </div> */}
         </div>
       </div>
     </section>

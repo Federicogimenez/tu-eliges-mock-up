@@ -12,6 +12,21 @@
     animation: none;
   }  
   
+  .shiny-blueuchooseit-text {
+    color: transparent;  
+    background: linear-gradient(
+      120deg,
+      #7fd9f8 45%,
+      white 50%,
+      #7fd9f8 55%
+    );
+    background-size: 500% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear forwards infinite;
+  }
+  
   .shiny-lightblue-text {
     color: transparent;  
     background: linear-gradient(

@@ -29,12 +29,14 @@
   --color-blue-gradient-start: #55d4e1;
   --color-blue-gradient-end: #0451af;
 
-   --text-shadow-xl-dark: 0 0px 5px white; 
+   --text-shadow-xl-dark: 2px 0px 0px #2995fc90; 
    --text-shadow-xl-light: 0 0px 5px black; 
+   --text-shadow-2xl-dark: 1px 3px 0px #000000; 
    
    --shadow-2xl-light: 0 0px 5px white; 
    --shadow-2xl-dark: 0 0px 5px black; 
 
+   --animate-header-initial: headerInitial 2s 0s ease-in-out both;
    --animate-appear-up: translateFullUp .7s 0s ease-in-out both, fadeIn .5s 0s ease-in-out both;
    --animate-fade: fadeIn .5s 0s ease-in-out both;
 }
@@ -169,5 +171,27 @@
     list-style: disc;
     margin-left: 10px;
     color: #000;
+  }
+
+
+  @keyframes headerInitial {
+    0%{
+      background-color: #000;
+      height: 100dvh;
+      max-height: 100dvh;
+    }
+    50%{
+      background-color: #000;
+      height: 100dvh;
+      max-height: 100dvh;
+    }
+    80%{
+      background-color: #000;
+    }
+    100%{
+      background-color: transparent;
+      height: 15dvh;
+      max-height: 100dvh;
+    }
   }
 }

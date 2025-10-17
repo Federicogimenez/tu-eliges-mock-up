@@ -32,16 +32,6 @@ import profile_tv from '/category-testimonials/shop/tv.png';
 // import shop_with_3 from '/benefits/shop/refrigerator-with.png';
 // import shop_without_3 from '/benefits/shop/refrigerator-without.png';
 
-import trendy_mobile_1 from '/hero-category/shop/mobile/1.png';
-import trendy_mobile_2 from '/hero-category/shop/mobile/2.png';
-import trendy_mobile_3 from '/hero-category/shop/mobile/3.png';
-import trendy_mobile_4 from '/hero-category/shop/mobile/4.png';
-
-import trendy_desktop_1 from '/hero-category/shop/desktop/1.png';
-import trendy_desktop_2 from '/hero-category/shop/desktop/2.png';
-import trendy_desktop_3 from '/hero-category/shop/desktop/3.png';
-import trendy_desktop_4 from '/hero-category/shop/desktop/4.png';
-
 
 import article_1_brand from '/trendy/shop/articles/1/brand.png';
 
@@ -63,19 +53,16 @@ import article_9_brand from '/trendy/shop/articles/9/brand.png';
 
 import article_10_brand from '/trendy/shop/articles/10/brand.png';
 
-import { useWindowSize } from '../../hooks/useWindowSize';
 
 // import icon_travel from '/icons/category/travel.png'
 // import icon_dining from '/icons/category/dining.png'
 // import icon_entertainment from '/icons/category/entertainment.png'
 // import { Link } from 'react-router-dom';
 import Benefits from '../../shared/layout/Benefits';
-import Hero2 from '../../shared/layout/Hero2';
 
 
 export default function Shop (){
 
-  const { width } = useWindowSize()
 
   const categoryTestimonials = [
     {
@@ -169,18 +156,6 @@ export default function Shop (){
   //   },
   // ];
 
-  const bannerCollageDesktop : string[] =[
-    trendy_desktop_1,
-    trendy_desktop_2,
-    trendy_desktop_3,
-    trendy_desktop_4,
-  ]
-  const bannerCollageMobile : string[] = [
-    trendy_mobile_1,
-    trendy_mobile_2,
-    trendy_mobile_3,
-    trendy_mobile_4,
-  ]
   // const portraitCarouselImagesMobile = [
   //   {id: 1 , img: trendy_mobile_1},
   //   {id: 2 , img: trendy_mobile_2},
@@ -221,14 +196,14 @@ export default function Shop (){
           })
         }
       </div> */}
-      <Hero2 
+      {/* <Hero2 
         categoryName='Shop'
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop' 
         border='border-purple-shop'
         shiny_color='shiny-purple-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
-        />
+        /> */}
       <Benefits />
       <HeroTrendy 
         color={'--color-purple-shop'} 

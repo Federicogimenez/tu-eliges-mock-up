@@ -29,8 +29,9 @@ export const HamburgerMenu: React.FC = () => {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className="cursor-pointer fixed top-6 left-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg shadow-2xl-dark dark:shadow-2xl-light bg-white dark:bg-transparent transition-colors duration-300"
+        className={`cursor-pointer animate-appear-up fixed top-6 right-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg shadow-2xl-dark dark:shadow-2xl-light transition-colors duration-500 ${isOpen ? 'bg-white dark:bg-black ' : 'bg-white dark:bg-transparent ' } `}
         aria-label="Toggle menu"
+        style={{animationDelay:"1s"}}
       >
         <motion.div
           animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
@@ -61,25 +62,25 @@ export const HamburgerMenu: React.FC = () => {
             
             {/* Menu Panel */}
             <motion.div
-              initial={{ x: '-100%' }}
+              initial={{ x: '100%' }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
+              exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 left-0 h-full w-80 bg-white dark:bg-black border-r-2 border-r-white/15 shadow-xl z-40 flex flex-col"
+              className="fixed top-0 right-0 h-full w-80 bg-white dark:bg-black border-r-2 border-r-white/15 shadow-xl z-40 flex flex-col"
             >
               {/* Menu Header */}
-              <div className="p-6 border-b border-gray-200 dark:border-black flex justify-center items-center gap-x-3">
-                <h2 className="text-center text-xl font-semibold text-black dark:text-white grow">
-                  Navigate
-                </h2>
+              <div className="p-6 border-b border-gray-200 dark:border-black flex justify-center items-center gap-x-3 ">
                 <div className='relative '>
                   <ThemeSwitcher />
                 </div>
+                <h2 className="text-center text-xl font-semibold text-black dark:text-white grow">
+                  Navigation
+                </h2>
               </div>
 
               {/* Menu Items */}
-              <nav className="flex-1 p-6">
-                <ul className="space-y-4">
+              <nav className="flex-1 p-6 overflow-hidden">
+                <ul className="space-y-4 h-full overflow-auto">
                   {menuItems.map((item, index) => (
                     <motion.li
                       key={item.path}
@@ -97,6 +98,20 @@ export const HamburgerMenu: React.FC = () => {
                       </Link>
                     </motion.li>
                   ))}
+                  <motion.li
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (menuItems.length+1) * 0.1 }}
+                  >
+                    <a
+                      href="https://uchooseitus.enjoymydeals.com/"
+                      target='_blank'
+                      onClick={toggleMenu}
+                      className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition-colors duration-200"
+                    >
+                      Log In
+                    </a>
+                  </motion.li>
                 </ul>
               </nav>
             </motion.div>

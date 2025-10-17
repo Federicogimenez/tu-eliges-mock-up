@@ -30,15 +30,6 @@ import profile_park from '/category-testimonials/entertainment/park.png';
 // import benefit_with_3 from '/benefits/entertainment/park-with.png';
 // import benefit_without_3 from '/benefits/entertainment/park-without.png';
 
-import trendy_mobile_1 from '/hero-category/entertainment/mobile/1.png';
-import trendy_mobile_2 from '/hero-category/entertainment/mobile/2.png';
-import trendy_mobile_3 from '/hero-category/entertainment/mobile/3.png';
-import trendy_mobile_4 from '/hero-category/entertainment/mobile/4.png';
-
-import trendy_desktop_1 from '/hero-category/entertainment/desktop/1.png';
-import trendy_desktop_2 from '/hero-category/entertainment/desktop/2.png';
-import trendy_desktop_3 from '/hero-category/entertainment/desktop/3.png';
-import trendy_desktop_4 from '/hero-category/entertainment/desktop/4.png';
 
 import article_1_brand from '/trendy/entertainment/articles/disney.png';
 import article_2_brand from '/trendy/entertainment/articles/universal.png';
@@ -53,15 +44,12 @@ import article_10_brand from '/trendy/entertainment/articles/sporting.png';
 
 
 import HeroCategory from '../../shared/layout/HeroCategory';
-import { useWindowSize } from '../../hooks/useWindowSize';
 
-import Hero2 from '../../shared/layout/Hero2';
 import Benefits from '../../shared/layout/Benefits';
 
 
 export default function Entertainment (){
   
-  const { width } = useWindowSize()
 
   const categoryTestimonials = [
     {
@@ -165,18 +153,7 @@ export default function Entertainment (){
   //   },
   // ];
 
-  const bannerCollageDesktop : string[] =[
-    trendy_desktop_1,
-    trendy_desktop_2,
-    trendy_desktop_3,
-    trendy_desktop_4,
-  ]
-  const bannerCollageMobile : string[] =[
-    trendy_mobile_1,
-    trendy_mobile_2,
-    trendy_mobile_3,
-    trendy_mobile_4,
-  ]
+
 
     //   const categoryLinks = [
     //     {
@@ -205,14 +182,14 @@ export default function Entertainment (){
           })
         }
       </div> */}
-      <Hero2
+      {/* <Hero2
         categoryName='Entertainment'
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment' 
         border='border-pink-entertainment'
         shiny_color='shiny-pink-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
-        />
+        /> */}
       <Benefits />
       <HeroTrendy 
         color={'--color-pink-entertainment'} 

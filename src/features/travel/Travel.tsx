@@ -31,16 +31,6 @@ import profile_beach from '/category-testimonials/travel/beach.png';
 // import benefits_without_3 from '/benefits/travel/flight-without.png';
 
 
-import trendy_mobile_1 from '/hero-category/travel/mobile/1.png';
-import trendy_mobile_2 from '/hero-category/travel/mobile/2.png';
-import trendy_mobile_3 from '/hero-category/travel/mobile/3.png';
-import trendy_mobile_4 from '/hero-category/travel/mobile/4.png';
-
-import trendy_desktop_1 from '/hero-category/travel/desktop/1.png';
-import trendy_desktop_2 from '/hero-category/travel/desktop/2.png';
-import trendy_desktop_3 from '/hero-category/travel/desktop/3.png';
-import trendy_desktop_4 from '/hero-category/travel/desktop/4.png';
-
 import article_1_brand from '/trendy/travel/articles/wyndham.png';
 import article_2_brand from '/trendy/travel/articles/stay-america.png';
 import article_3_brand from '/trendy/travel/articles/disney.png';
@@ -48,15 +38,12 @@ import article_4_brand from '/trendy/travel/articles/carnival.png';
 import article_5_brand from '/trendy/travel/articles/avis.png';
 import article_6_brand from '/trendy/travel/articles/alamo.png';
 import article_7_brand from '/trendy/travel/articles/flights.png';
-import { useWindowSize } from '../../hooks/useWindowSize';
 import Benefits from '../../shared/layout/Benefits';
-import Hero2 from '../../shared/layout/Hero2';
 
 
 
 export default function Travel (){
 
-  const { width } = useWindowSize()
 
   const categoryTestimonials = [
     {
@@ -140,20 +127,6 @@ export default function Travel (){
   //   },
   // ];
 
-
-  const bannerCollageDesktop : string[] =[
-    trendy_desktop_1,
-    trendy_desktop_2,
-    trendy_desktop_3,
-    trendy_desktop_4,
-  ]
-  const bannerCollageMobile : string[] =[
-    trendy_mobile_1,
-    trendy_mobile_2,
-    trendy_mobile_3,
-    trendy_mobile_4,
-  ]
-
     //   const categoryLinks = [
     //   {
     //     icon: icon_shop,
@@ -172,13 +145,13 @@ export default function Travel (){
     
   return (
     <>
-      <Hero2
+      {/* <Hero2
         categoryName='Travel'
         ctaGradientFrom={'from-blue-travel'} 
         ctaGradientTo={'to-blue-travel'} 
         border='border-blue-travel'
         shiny_color={'shiny-blue-text'} 
-        hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} />
+        hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} /> */}
       <Benefits />
       <HeroTrendy 
         color={'--color-blue-travel'} 

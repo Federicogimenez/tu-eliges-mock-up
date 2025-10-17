@@ -1,8 +1,8 @@
-import { useWindowSize } from '../../hooks/useWindowSize';
+// import { useWindowSize } from '../../hooks/useWindowSize';
 import BenefitsSection, { type BenefitSlide } from './components/BenefitsSection';
 import { BrandsSection } from './components/BrandsSection';
 import GatewaySection from './components/GatewaySection';
-import HeroVideoSection from './components/HeroVideoSection';
+// import HeroVideoSection from './components/HeroVideoSection';
 import PricingSection from './components/PricingSection';
 import CalculatorTableSection from '../../shared/layout/CalculatorTableSection';
 import CategoriesSection from './components/CategoriesSection';
@@ -10,11 +10,11 @@ import { useAllyContext } from '../../hooks/useAllyContext';
 
 import pricing_family from "/pricing/home/family.png"
 
-import videoHeroMobile from "/hero-video-mobile.mp4"
-import videoHeroPreviewMobile from "/hero-video-mobile-preview.png"
+// import videoHeroMobile from "/hero-video-mobile.mp4"
+// import videoHeroPreviewMobile from "/hero-video-mobile-preview.png"
 
-import videoHeroDesk from "/hero-video-desk.mp4"
-import videoHeroPreviewDesk from "/preview-hero-video-desk.png"
+// import videoHeroDesk from "/hero-video-desk.mp4"
+// import videoHeroPreviewDesk from "/preview-hero-video-desk.png"
 
 import shop_with from '/benefits/home/shop-with.png'
 import shop_without from '/benefits/home/shop-without.png'
@@ -35,7 +35,7 @@ export default function Home (){
   const { allyData } = useAllyContext();
   
 
-  const { width } = useWindowSize()
+  // const { width } = useWindowSize()
 
   const slides: BenefitSlide[] = [
     {
@@ -68,7 +68,7 @@ export default function Home (){
   return (
     <>
       {/* <HeroSection /> */}
-      <HeroVideoSection videoHero={width > 980 ? videoHeroDesk : videoHeroMobile} videoHeroPreview={width > 980 ? videoHeroPreviewDesk : videoHeroPreviewMobile} />
+      {/* <HeroVideoSection videoHero={width > 980 ? videoHeroDesk : videoHeroMobile} videoHeroPreview={width > 980 ? videoHeroPreviewDesk : videoHeroPreviewMobile} /> */}
       {/* <CategorySection /> */}
       <LearnHow />
       <CategoriesSection />

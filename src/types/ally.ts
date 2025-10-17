@@ -5,6 +5,7 @@ export interface AllyDataProps {
   discount_percent: number;
   membership_anual_fee: number;
   new_price_after_discount: number;
+  hasCoupon: boolean;
   isLoading: boolean;
   userNotFound: boolean;
 }
