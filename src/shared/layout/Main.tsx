@@ -44,8 +44,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
     const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
     const originalPrice = allyData.membership_anual_fee.toFixed(2)
     const annualPrice = allyData.new_price_after_discount.toFixed(2) || originalPrice;
-
-    const influencer_name = allyData.alliedName !== '' ? allyData.alliedName.split(" ")[0] : null 
+    const influencer_name = allyData.alliedName 
 
     const heroVideo = {
       source: width > 1024 ? videoHeroDesk : videoHeroMobile,
