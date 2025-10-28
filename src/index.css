@@ -37,7 +37,7 @@
    --shadow-xl-light: 2px 0px 0px #fff; 
    --shadow-2xl-light: 4px 0px 0px #fff; 
 
-   --animate-header-initial: headerInitial 2s 0s ease-in-out both;
+   --animate-header-initial: headerInitial 1.7s 0s ease-in-out both;
    --animate-appear-up: translateFullUp .7s 0s ease-in-out both, fadeIn .5s 0s ease-in-out both;
    --animate-fade: fadeIn .5s 0s ease-in-out both;
 }
@@ -187,12 +187,12 @@
       height: 100dvh;
       max-height: 100dvh;
     }
-    80%{
-      background-color: #000;
+    75%{
+      background-color: transparent;
+      height: 100dvh;
       z-index: 1000;
     }
     100%{
-      background-color: transparent;
       height: 15dvh;
       max-height: 100dvh;
       z-index: 100;

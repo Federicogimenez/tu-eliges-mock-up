@@ -145,9 +145,10 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
     
   return (
     <SavingsModalProvider>
-      <div className=" transition-colors duration-300">
+      <div className="relative transition-colors duration-300">
         
         <header className='animate-header-initial absolute top-0 left-0 z-[100] w-full flex items-center justify-center min-h-[70px] h-[15dvh] max-h-[120px] md:max-h-[120px]'>
+          
           <HamburgerMenu />
 
 

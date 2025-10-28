@@ -122,7 +122,7 @@ export default function HeroTrendy(
 
 
   return (
-    <section className={`flex flex-col justify-center items-center w-full h-full py-8 ${wrapperClass}`} id="trendy">
+    <section className={`animate-fade flex flex-col justify-center items-center w-full h-full py-8 ${wrapperClass}`} id="trendy" style={{animationDelay:'.1s'}}>
         <div className="relative z-10 w-full flex flex-col justify-between items-center ">
      
             <h1 className="px-2 text-black text-center font-bold text-4xl sm:text-5xl md:text-5xl xl:text-7xl leading-[1] mb-6" 
