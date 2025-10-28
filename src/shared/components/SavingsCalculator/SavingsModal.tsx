@@ -82,10 +82,10 @@ export default function SavingsModal({
           <div className="absolute inset-0" onClick={onClose} />
           
           <div className="relative animate-fade bg-white dark:bg-black rounded-xl shadow-2xl max-w-5xl w-full mx-4 pt-8 h-full max-h-[90dvh] overflow-hidden"> 
-            <div className="h-full flex flex-col justify-center items-center overflow-auto">
+            <div className="h-full flex flex-col justify-start items-center overflow-auto">
                 <button onClick={onClose} className="p-2 size-10 md:size-12 absolute left-2 top-2 flex flex-col justify-center items-evenly cursor-pointer">
-                    <span className="h-1 w-full rotate-45 bg-white rounded-full" />
-                    <span className="h-1 w-full -translate-y-1 -rotate-45 bg-white rounded-full" />
+                    <span className="h-1 w-full rotate-45 bg-black dark:bg-white rounded-full" />
+                    <span className="h-1 w-full -translate-y-1 -rotate-45 bg-black dark:bg-white rounded-full" />
                 </button>
 
                 <div className="mx-auto max-w-6xl px-4 flex justify-center gap-x-4 items-stretch mb-3">
@@ -144,7 +144,7 @@ export default function SavingsModal({
 
                 <div className="absolute right-4 top-4 w-fit max-w-md mx-auto " onClick={resetAll}>
                     <button
-                        className="font-semibold border-b-2 text-white cursor-pointer" 
+                        className="font-semibold border-b-2 text-black dark:text-white cursor-pointer" 
                         onClick={resetAll}>
                             <span className="block transition-all hover:-translate-y-1">
                                 Reset <br className="block md:hidden"/> All
