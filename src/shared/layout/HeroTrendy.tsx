@@ -214,7 +214,7 @@ export default function HeroTrendy(
               </div>
             </div>
               
-            <div className="flex justify-center mx-auto w-full">
+            <div className="flex justify-center mx-auto w-11/12">
                 <ButtonPrimary src={code ? code : recurlyUrl} customStyle="!max-w-lg" fromColor="from-black" fromColor2={ctaGradientFrom} toColor={ctaGradientTo} toColor2="to-black" />
             </div>
         </div>

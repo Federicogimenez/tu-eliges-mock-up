@@ -50,9 +50,9 @@ export default function SavingsModal({
 
   function handleMoveSlider (i: number){
         setCurrentSlide(i)
-            setTimeout(() => {
-                instanceRef?.current?.moveToIdx(i)
-            }, 100);
+        setTimeout(() => {
+            instanceRef?.current?.moveToIdx(i)
+        }, 100);
   }
 
 //     useEffect(() => {
@@ -82,7 +82,7 @@ export default function SavingsModal({
           <div className="absolute inset-0" onClick={onClose} />
           
           <div className="relative animate-fade bg-white dark:bg-black rounded-xl shadow-2xl max-w-5xl w-full mx-4 pt-8 h-full max-h-[90dvh] overflow-hidden"> 
-            <div className="h-full overflow-auto">
+            <div className="h-full flex flex-col justify-center items-center overflow-auto">
                 <button onClick={onClose} className="p-2 size-10 md:size-12 absolute left-2 top-2 flex flex-col justify-center items-evenly cursor-pointer">
                     <span className="h-1 w-full rotate-45 bg-white rounded-full" />
                     <span className="h-1 w-full -translate-y-1 -rotate-45 bg-white rounded-full" />
@@ -102,7 +102,7 @@ export default function SavingsModal({
                 </div>
 
                 {/* Thumbnails */}
-                <div className="flex justify-center items-center gap-4 py-1 ">
+                <div className="flex justify-center items-center gap-4 py-[2dvh] ">
                 {categories.map((cat, idx) => (
                     <button
                         key={cat.key}
@@ -126,7 +126,7 @@ export default function SavingsModal({
                 </div>
 
                 {/* Slider */}
-                <div className="relative w-full">
+                <div className="relative w-full px-1">
                     <div ref={sliderRef} className="keen-slider  w-full">
                         {categories.map((cat) => (
                             <div key={cat.key} className="keen-slider__slide w-full h-full">
