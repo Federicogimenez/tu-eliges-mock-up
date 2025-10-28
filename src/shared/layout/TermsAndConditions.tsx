@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Modal from "../components/Modal";
+import { useSearchParams } from "react-router-dom";
 
 export default function TermsAndConditions() {
-  const [open, setopen] = useState(false);
+    const [searchParams] = useSearchParams();
+    const urlParamOpener = searchParams.get('terms_and_conditions')
+    const [open, setopen] = useState(urlParamOpener ? true : false)
+
 
   return (
     <>

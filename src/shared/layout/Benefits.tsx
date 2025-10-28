@@ -57,7 +57,7 @@ export default function Benefits () {
 
     
   return (
-    <section className="py-12 px-4 transition-colors duration-300" id='benefits'>
+    <section className="py-12 px-4 bg-white dark:bg-black transition-colors duration-300" id='benefits'>
       <div className="container mx-auto">
 
         <h2 className='heading-1 mb-8 text-center'>

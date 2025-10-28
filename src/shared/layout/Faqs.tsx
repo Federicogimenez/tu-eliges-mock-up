@@ -2,7 +2,7 @@ import { Accordion } from "../components/Accordion";
 
 export default function Faqs() {
   return (
-      <section className='px-4 py-10 w-full'>
+      <section className='relative bg-white dark:bg-black px-4 py-10 w-full'>
         <h5 className='text-black dark:text-white heading-1 text-center mb-5'>
           Frequent Ask Questions
         </h5>

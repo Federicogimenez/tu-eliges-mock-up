@@ -41,7 +41,7 @@ const categories = [
 
 export default function CategoriesSection() {
   return (
-    <div className="relative w-full py-10 flex flex-col items-center  ">
+    <div className="relative bg-white dark:bg-black w-full py-10 flex flex-col items-center  ">
         <div className="text-center mb-2 px-4">
           <h3 className="heading-1 mb-2">
             Discover amazing savings

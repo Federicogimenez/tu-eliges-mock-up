@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 
 import iphone_frame from '/frame-iphone.png'
 import { useState } from "react";
-import SectionDivider from "../../../shared/components/SectionDivider";
 import ButtonSecondary from "../../../shared/components/ButtonSecondary";
 
 export default function HowSection() {
@@ -106,7 +105,6 @@ export default function HowSection() {
       </div>
 
       
-      <SectionDivider />
 
         {/* <ButtonTertiary text={"Discover More"} redirect="https://uchooseitus.enjoymydeals.com/" anchor /> */}
       </section>

@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider>
       <AllyProvider>
-        <AppRoutes />
+          <AppRoutes />
       </AllyProvider>
     </ThemeProvider>
   );

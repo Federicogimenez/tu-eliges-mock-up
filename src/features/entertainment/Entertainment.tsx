@@ -1,7 +1,7 @@
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 // import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import GatewaySection from '../home/components/GatewaySection';
-import PricingSection from '../home/components/PricingSection';
+import GatewaySection from '../../shared/layout/GatewaySection';
+import PricingSection from '../../shared/layout/PricingSection';
 
 import pricing_banner from '/pricing/entertainment/drink.png';
 
@@ -43,9 +43,9 @@ import article_9_brand from '/trendy/entertainment/articles/ticket-show.png';
 import article_10_brand from '/trendy/entertainment/articles/sporting.png';
 
 
-import HeroCategory from '../../shared/layout/HeroCategory';
 
 import Benefits from '../../shared/layout/Benefits';
+import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 
 export default function Entertainment (){
@@ -190,10 +190,9 @@ export default function Entertainment (){
         shiny_color='shiny-pink-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         /> */}
-      <Benefits />
       <HeroTrendy 
         color={'--color-pink-entertainment'} 
-        wrapperClass={'bg-gradient-to-b from-transparent via-pink-entertainment/50 to-transparent'} 
+        wrapperClass={'bg-gradient-to-b from-transparent via-pink-entertainment/50 to-pink-entertainment/80'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'} 
         title={'Smarter Entertainment,'} 
         subtitle={'Bigger Smiles!'} 
@@ -201,6 +200,7 @@ export default function Entertainment (){
         ctaGradientFrom='from-pink-entertainment' 
         ctaGradientTo='to-pink-entertainment'
         articles={trendyArticles} />
+      <Benefits />
       <PricingSection 
         title='Cheaper Than a <br /> Concert Drink.'
         subtitle='And it helps you save even more.'
@@ -213,7 +213,7 @@ export default function Entertainment (){
         slides={benefitSlides} 
         subtitle='More Entertainment, Less Expense' 
         color='--color-pink-entertainment' /> */}
-      <HeroCategory
+      <TestimonialSection
         title='Entertainment'
         subtitle='Without Limits'
         description='Save on concerts, parks & events and make every outing unforgettable.'

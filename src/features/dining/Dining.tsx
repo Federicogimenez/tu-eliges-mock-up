@@ -1,7 +1,7 @@
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 // import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import GatewaySection from '../home/components/GatewaySection';
-import PricingSection from '../home/components/PricingSection';
+import GatewaySection from '../../shared/layout/GatewaySection';
+import PricingSection from '../../shared/layout/PricingSection';
 
 import pricing_banner from '/pricing/dining/cafe.png';
 
@@ -37,8 +37,8 @@ import article_4_brand from '/trendy/dining/articles/la-ventana.png';
 import article_5_brand from '/trendy/dining/articles/dq.png';
 import article_6_brand from '/trendy/dining/articles/papaj.png';
 
-import HeroCategory from '../../shared/layout/HeroCategory';
 import Benefits from '../../shared/layout/Benefits';
+import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 export default function Dining () {
 
@@ -153,10 +153,9 @@ export default function Dining () {
         shiny_color='shiny-yellow-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         /> */}
-      <Benefits />
       <HeroTrendy 
         color={'--color-yellow-dining'} 
-        wrapperClass={'bg-gradient-to-b from-yellow-dining/0 via-yellow-dining/50 to-yellow-dining/0'} 
+        wrapperClass={'bg-gradient-to-b from-yellow-dining/0 via-yellow-dining/50 to-yellow-dining/80'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-yellow-dining/20 to-yellow-dining/45'} 
         title={'Smarter Dining,'} 
         subtitle={'Bigger Flavors!'} 
@@ -164,6 +163,7 @@ export default function Dining () {
         ctaGradientFrom='from-yellow-dining' 
         ctaGradientTo='to-yellow-dining'
         articles={trendyArticles} />
+      <Benefits />
       <PricingSection 
         title='Cheaper than a <br /> New York coffee.'
         subtitle='And it helps you save even more.'
@@ -177,7 +177,7 @@ export default function Dining () {
         slides={benefitSlides} 
         subtitle='Bite Into Bigger Savings' 
         color='--color-yellow-dining' /> */}
-      <HeroCategory
+      <TestimonialSection
         title={'Taste More,'} 
         subtitle={'Pay Less.'} 
         description={'Big flavors, small bills — that’s the Uchooseit.us way.'}

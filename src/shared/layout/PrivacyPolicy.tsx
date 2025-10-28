@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Modal from "../components/Modal";
 
 export default function PrivacyPolicy() {
-  const [open, setopen] = useState(false)
+    
+    const [searchParams] = useSearchParams();
+    const urlParamOpener = searchParams.get('privacy_policy')
+    const [open, setopen] = useState(urlParamOpener ? true : false)
+
 
     return (
     <>

@@ -7,7 +7,7 @@ export default function LearnHow() {
   const [videoPlay, setvideoPlay] = useState(false);
 
   return (
-    <div className="relative w-full pt-16 pb-10 ">
+    <div className="relative bg-white dark:bg-black w-full pt-16 pb-10 ">
       <h2 className=" heading-1 text-center">Learn how to save</h2>
       <p className="subtitle text-center text-gray-600 dark:text-gray-400 my-[1vh] xl:mb-5">
         Discounts are always 1-tap away.

@@ -14,7 +14,7 @@ export default function Modal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 px-4 backdrop-blur-xs animate-appear-up">
+    <div className="fixed inset-0 flex items-center justify-center z-[100] px-4 backdrop-blur-xs animate-appear-up">
       <div
         className="absolute w-full h-full inset-0 bg-black-950/35"
         onClick={onClose}

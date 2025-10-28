@@ -1,6 +1,6 @@
-import { useAllyContext } from '../../../hooks/useAllyContext';
-import ButtonPrimary from '../../../shared/components/ButtonPrimary';
-import LoaderSimple from '../../../shared/components/LoaderSimple';
+import { useAllyContext } from '../../hooks/useAllyContext';
+import ButtonPrimary from '../components/ButtonPrimary';
+import LoaderSimple from '../components/LoaderSimple';
 
 import master from '/cards/master.png';
 import amex from '/cards/amex.png';
@@ -48,23 +48,23 @@ export default function PricingSection ({
   const discount = allyData.discount_percent || 0;
 
   return (
-    <section className="relative py-10  h-full flex flex-col justify-center gap-y-5">
-      <div className="text-center mb-4">
+    <section className="relative py-10 bg-white dark:bg-black lg:bg-white/50 lg:dark:bg-black/50 h-full flex flex-col justify-center gap-y-5">
+      <div className="text-center mb-4 ">
         <h2 className="heading-1 mb-2 mx-auto max-w-4xl"
           dangerouslySetInnerHTML={{ __html : title}}
         >
         </h2>
-        <p className="subtitle text-gray-600 dark:text-gray-400" style={{color: `var(${color})`}}>
+        <p className="subtitle text-blue-uchooseit font-semibold text-shadow-xl-dark" style={{color: `var(${color})`}}>
           {subtitle}
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto flex flex-col lg:flex-row gap-x-8 gap-y-3 justify-center items-center lg:items-start h-full">
+      <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row gap-x-8 gap-y-3 justify-center items-center lg:items-stretch h-full">
         {/* Image */}
-        <div className="relative z-0 w-full lg:w-1/2">
-          <img src={img} alt="family" className='w-full h-full object-cover object-top rounded-2xl' />
+        <div className="relative z-0 w-full lg:w-1/2 h-full">
+          <img src={img} alt="family" className='w-full h-full object-cover object-top lg:rounded-2xl' />
           
-          <div className=" relative hidden lg:block space-y-3 mt-5 mx-auto -translate-y-16 w-full py-5  bg-white dark:bg-black">
+          <div className=" relative hidden lg:block space-y-3 mt-5 mx-auto -translate-y-16 w-full py-5  bg-white dark:bg-black rounded-b-2xl">
             <div className="w-fit mx-auto">
 
               <div className="flex items-center">
@@ -103,7 +103,7 @@ export default function PricingSection ({
 
         {/* Pricing Card */}
         <div className="relative z-20 h-full w-full lg:w-1/2 flex flex-col justify-center items-center gap-y-6 max-lg:-translate-y-14">
-            <div className="relative bg-white dark:bg-black h-full w-11/12 max-w-md md:max-w-lg rounded-4xl shadow-xl ">
+            <div className="relative bg-neutral-200 dark:bg-black h-full w-11/12 max-w-md md:max-w-lg rounded-4xl shadow-xl ">
               <div className='w-full h-full bg-gradient-to-b from-white to-black/5 dark:from-white/5 dark:to-white/15 px-2 md:px-5 lg:px-8 py-6 rounded-4xl'>
                 <div className="relative text-center mb-6">
                   <h3 className="relative text-2xl  text-gray-900 dark:text-white mb-2">

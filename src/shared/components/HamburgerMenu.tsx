@@ -29,21 +29,21 @@ export const HamburgerMenu: React.FC = () => {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className={`cursor-pointer animate-appear-up fixed top-6 right-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg shadow-2xl-dark dark:shadow-2xl-light transition-colors duration-500 ${isOpen ? 'bg-white dark:bg-black ' : 'bg-white dark:bg-transparent ' } `}
+        className={`cursor-pointer animate-appear-up fixed top-6 right-6 z-50 w-10 h-10 flex flex-col justify-center items-center rounded-lg transition-colors duration-500 ${isOpen ? 'bg-white dark:bg-black ' : 'bg-white dark:bg-transparent ' } `}
         aria-label="Toggle menu"
         style={{animationDelay:"1s"}}
       >
         <motion.div
           animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-          className="w-6 h-0.5 bg-gray-800 dark:bg-white mb-1 shadow-2xl-light"
+          className="w-6 h-0.5 bg-gray-800 dark:bg-white mb-1"
         />
         <motion.div
           animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-          className="w-6 h-0.5 bg-gray-800 dark:bg-white mb-1 shadow-2xl-light"
+          className="w-6 h-0.5 bg-gray-800 dark:bg-white mb-1"
         />
         <motion.div
           animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-          className="w-6 h-0.5 bg-gray-800 dark:bg-white shadow-2xl-light"
+          className="w-6 h-0.5 bg-gray-800 dark:bg-white "
         />
       </button>
 

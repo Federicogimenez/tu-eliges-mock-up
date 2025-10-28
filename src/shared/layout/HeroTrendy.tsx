@@ -122,16 +122,17 @@ export default function HeroTrendy(
 
 
   return (
-    <section className={`flex flex-col justify-center items-center w-full h-full py-12 ${wrapperClass}`} id="trendy">
+    <section className={`flex flex-col justify-center items-center w-full h-full py-8 ${wrapperClass}`} id="trendy">
         <div className="relative z-10 w-full flex flex-col justify-between items-center ">
      
-            <h1 className="px-2 text-black text-center dark:text-white text-4xl sm:text-5xl md:text-5xl xl:text-7xl leading-[1] max-w-[500px] lg:max-w-[600px] xl:max-w-[720px] mb-6">
+            <h1 className="px-2 text-black text-center font-bold text-4xl sm:text-5xl md:text-5xl xl:text-7xl leading-[1] mb-6" 
+              style={{color: `var(${color})`}}>
               {title}
-              <span className="block text-4xl sm:text-4xl md:text-5xl xl:text-5xl " style={{color: `var(${color})`}}>
+              <span className="block font-semibold text-4xl sm:text-4xl md:text-5xl xl:text-5xl text-white ">
                 {subtitle}
               </span>
             </h1>
-            <p className="w-[80%] text-center md:w-full text-sm lg:text-lg xl:text-2xl max-w-lg text-black dark:text-white mb-6 mx-auto">
+            <p className="w-[80%] text-center md:w-full text-sm lg:text-lg xl:text-2xl max-w-lg text-white mb-6 mx-auto">
                 {description}
             </p>
             {/* <picture className="relative mb-6 w-full h-fit">

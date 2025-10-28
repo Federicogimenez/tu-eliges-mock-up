@@ -2,7 +2,6 @@ import ReactPlayer from "react-player";
 
 import iphone_frame from '/frame-iphone.png'
 import { useState } from "react";
-import SectionDivider from "../../../shared/components/SectionDivider";
 
 
 export default function HowActivateSection() {
@@ -10,10 +9,9 @@ export default function HowActivateSection() {
     const [videoPlay, setvideoPlay] = useState(false)  
 
   return (
-    <section className="pb-12 w-full bg-gradient-to-b from-white dark:from-black to-blue-gradient-end">
-        <SectionDivider />
+    <section className="py-12 w-full bg-gradient-to-b from-white dark:from-black to-blue-gradient-end">
         
-        <div className="mb-8">
+        <div className="my-8">
             <h2 className="heading-1 text-center mb-2">
                 <span className="font-semibold mr-2">
                     Activate your 

@@ -44,7 +44,7 @@ export default function ButtonPrimary (
   return (
     <a href={src} 
       target="_blank" 
-      className={`group block text-white relative cursor-pointer w-full  rounded-full sm:text-xl md:text-xl font-semibold hover:font-bold px-8 py-3 text-center border-2 border-white shadow-lg shadow-black/50 overflow-hidden duration-200 hover:shadow-2xl hover:-translate-y-2 ${customStyle}`}>
+      className={`group block text-white relative cursor-pointer w-full  rounded-full sm:text-xl md:text-xl font-semibold hover:font-bold px-8 py-3 text-center border border-white shadow-lg shadow-black/50 overflow-hidden duration-200 hover:shadow-2xl hover:-translate-y-2 ${customStyle}`}>
         <span className={`absolute block left-0 top-0 w-full h-full bg-gradient-to-r transition-all duration-500 ${activeBtn ? 'translate-x-full' : 'translate-x-0' }  ${ fromColor + ' ' + toColor}`} />
         
         <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r flex justify-center items-center transition-all duration-500  ${activeBtn ? 'translate-x-0' : '-translate-x-full' } ${ special ? ' to-yellow-400 from-yellow-950' : (fromColor2 + ' ' + toColor2) }`} >

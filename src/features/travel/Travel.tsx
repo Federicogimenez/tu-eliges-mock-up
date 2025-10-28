@@ -1,7 +1,6 @@
-import HeroCategory from '../../shared/layout/HeroCategory';
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
-import GatewaySection from '../home/components/GatewaySection';
-import PricingSection from '../home/components/PricingSection';
+import GatewaySection from '../../shared/layout/GatewaySection';
+import PricingSection from '../../shared/layout/PricingSection';
 
 import pricing_banner from '/pricing/travel/parking.png';
 
@@ -39,6 +38,7 @@ import article_5_brand from '/trendy/travel/articles/avis.png';
 import article_6_brand from '/trendy/travel/articles/alamo.png';
 import article_7_brand from '/trendy/travel/articles/flights.png';
 import Benefits from '../../shared/layout/Benefits';
+import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 
 
@@ -152,17 +152,17 @@ export default function Travel (){
         border='border-blue-travel'
         shiny_color={'shiny-blue-text'} 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} /> */}
-      <Benefits />
       <HeroTrendy 
         color={'--color-blue-travel'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'} 
-        wrapperClass={'bg-gradient-to-b from-transparent via-blue-travel/50 to-transparent'} 
+        wrapperClass={'bg-gradient-to-b from-transparent via-blue-travel/50 to-blue-travel/80'} 
         title={'Smarter Travel,'} 
         subtitle={'Bigger Adventures!'} 
         description={'Hotels, Rental Cars, Flights & Cruises—member-only savings wherever you go.'} 
         ctaGradientFrom='from-blue-travel' 
         ctaGradientTo='to-blue-travel'
         articles={trendyArticles} />
+      <Benefits />
       <PricingSection
         title='Cheaper than an <br /> hour of parking.'
         subtitle='And it helps you save even more.' 
@@ -176,7 +176,7 @@ export default function Travel (){
         slides={benefitSlides} 
         subtitle='More Adventures, Less Spending' 
         color='--color-blue-travel' /> */}
-      <HeroCategory
+      <TestimonialSection
         title={'Travel big,'} 
         subtitle={'Spend Small.'} 
         description={'Instant savings on Hotels, Flights & Cars so you can travel more and spend less.'} 

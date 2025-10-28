@@ -1,5 +1,5 @@
-import ButtonSecondary from '../../../shared/components/ButtonSecondary';
-import ButtonTertiary from '../../../shared/components/ButtonTertiary';
+import ButtonSecondary from '../components/ButtonSecondary';
+import ButtonTertiary from '../components/ButtonTertiary';
 
 interface GatewayProps{
   home_btn?: boolean;
@@ -7,7 +7,7 @@ interface GatewayProps{
 
 export default function GatewaySection ({ home_btn=false }:GatewayProps) {
   return (
-    <section className="py-14 px-4 w-full h-full ">
+    <section className="relative bg-white/80 dark:bg-black/80 py-14 px-4 w-full h-full ">
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-x-10 gap-y-8 max-w-7xl mx-auto'>
           <div className='lg:pl-[5vw] lg:pt-10'>
             <h3 className="heading-1 text-center lg:text-left">

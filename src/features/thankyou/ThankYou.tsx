@@ -2,6 +2,7 @@ import { Link, useSearchParams } from "react-router-dom";
 // import MembershipCard from "../../shared/components/MembershipCard";
 // import TiltedCard from "../../shared/components/TiltedCard";
 import SpotlightCard from "../../shared/components/SpotlightCard";
+import '../../styles/components/spotlight_card.css'
 
 export default function ThankYou() {
 

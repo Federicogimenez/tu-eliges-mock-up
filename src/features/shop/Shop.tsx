@@ -1,9 +1,8 @@
 // import HeroTrendy from '../../shared/layout/HeroTrendy';
-import HeroCategory from '../../shared/layout/HeroCategory';
 import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/HeroTrendy';
 // import BenefitsSection, { type BenefitSlide } from '../home/components/BenefitsSection';
-import GatewaySection from '../home/components/GatewaySection';
-import PricingSection from '../home/components/PricingSection';
+import GatewaySection from '../../shared/layout/GatewaySection';
+import PricingSection from '../../shared/layout/PricingSection';
 
 import pricing_banner from '/pricing/shop/netflix.png';
 
@@ -59,6 +58,7 @@ import article_10_brand from '/trendy/shop/articles/10/brand.png';
 // import icon_entertainment from '/icons/category/entertainment.png'
 // import { Link } from 'react-router-dom';
 import Benefits from '../../shared/layout/Benefits';
+import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 
 export default function Shop (){
@@ -204,17 +204,17 @@ export default function Shop (){
         shiny_color='shiny-purple-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         /> */}
-      <Benefits />
       <HeroTrendy 
         color={'--color-purple-shop'} 
         // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'} 
-        wrapperClass={'bg-gradient-to-b from-transparent via-purple-shop/50 to-transparent '} 
+        wrapperClass={'bg-gradient-to-b from-transparent via-purple-shop/50 to-purple-shop/80 '} 
         title={'Smarter Shopping,'} 
         subtitle={'Bigger Finds!'} 
         description={'From fashion to tech, member-only deals on the things you love.'} 
         ctaGradientFrom='from-purple-shop' 
         ctaGradientTo='to-purple-shop'
         articles={trendyArticles} />
+      <Benefits />
       <PricingSection 
         title='Cheaper than your monthly streaming subscription.'
         subtitle='And it helps you save even more.'
@@ -228,7 +228,7 @@ export default function Shop (){
         slides={benefitSlides} 
         subtitle='Fashion, Tech & More for Less' 
         color='--color-purple-shop' /> */}
-      <HeroCategory 
+      <TestimonialSection
         title='Shop savvy'
         subtitle='Bag up to 50% OFF!'
         color={'--color-purple-shop'} 

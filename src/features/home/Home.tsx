@@ -1,9 +1,9 @@
 // import { useWindowSize } from '../../hooks/useWindowSize';
 import BenefitsSection, { type BenefitSlide } from './components/BenefitsSection';
 import { BrandsSection } from './components/BrandsSection';
-import GatewaySection from './components/GatewaySection';
+import GatewaySection from '../../shared/layout/GatewaySection';
 // import HeroVideoSection from './components/HeroVideoSection';
-import PricingSection from './components/PricingSection';
+import PricingSection from '../../shared/layout/PricingSection';
 import CalculatorTableSection from '../../shared/layout/CalculatorTableSection';
 import CategoriesSection from './components/CategoriesSection';
 import { useAllyContext } from '../../hooks/useAllyContext';
