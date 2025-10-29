@@ -182,17 +182,13 @@
       max-height: 100dvh;
       z-index: 1000;
     }
-    50%{
-      background-color: #000;
-      height: 100dvh;
-      max-height: 100dvh;
-    }
     75%{
-      background-color: transparent;
+      background-color: #000;
       height: 100dvh;
       z-index: 1000;
     }
     100%{
+      background-color: transparent;
       height: 15dvh;
       max-height: 100dvh;
       z-index: 100;
