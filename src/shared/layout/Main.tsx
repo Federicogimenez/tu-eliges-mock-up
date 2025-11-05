@@ -354,7 +354,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
                                 </div>
                               </div>
                               <div className='max-w-lg mx-auto'>
-                                <ButtonPrimary src={recurlyUrl} />
+                                <ButtonPrimary src={code ? code : recurlyUrl} />
                               </div>
                             </div>
                           }
