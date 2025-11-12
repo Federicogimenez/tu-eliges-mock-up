@@ -193,7 +193,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
                   </div>
               </div>
 
-              <div className={`relative z-20 w-full transition-all flex flex-col justify-center items-center pt-[25dvh] md:pt-[20dvh] animate-appear-up ${isHome ? 'min-h-[500px] h-full' : 'h-fit'}`}
+              <div className={`relative z-20 w-full transition-all flex flex-col justify-center items-center pt-[25dvh] md:pt-[20dvh] animate-appear-up ${isHome ? 'min-h-[500px] h-dvh' : 'h-fit'}`}
                 style={{animationDelay:"1.2s"}}
                 >
             
@@ -241,12 +241,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
                               }
                           </p>
                         </div>
-                      
-                        <div className='animate-appear-up'
-                              style={{animationDelay: ".3s"}}
-                              >
 
-                        </div>
                   </div>
                   <div className="relative w-full max-w-xl" >
 
@@ -270,96 +265,101 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
 
               {
                 allyData.hasCoupon && allyPopUp ? 
-                <div className='fixed z-50 inset-0 bg-gradient-to-b from-black/50 to-black flex justify-center items-center pt-[12dvh] min-h-[500px] overflow-hidden'>
-                  <div className='absolute inset-0' onClick={()=>setallyPopUp(false)} />
-                    <div className='h-[80dvh] w-full overflow-hidden'>
-                    <div className='relative overflow-auto mx-auto flex justify-center items-center px-6 py-8 w-11/12 portrait:h-full landscape:h-auto min-h-[400px] bg-gradient-to-b from-black to-blue-gradient-end rounded-3xl'>
+                <div className='fixed z-[10000] inset-0 bg-gradient-to-b from-black/50 to-black flex justify-center items-center py-[5dvh] min-h-[500px] overflow-hidden' >
+                  <div className='absolute inset-0 ' onClick={()=>setallyPopUp(false)} />
+                    {/* <div className='h-[80dvh] w-full overflow-hidden'> */}
+                      <div autoFocus className='relative overflow-auto mx-auto flex justify-center items-start px-6 py-8 w-11/12 portrait:h-full landscape:h-fit min-h-[400px] max-w-5xl bg-gradient-to-b from-black/70 to-blue-gradient-end/60 rounded-3xl'>
 
-                      <button className='cursor-pointer size-10 p-2 absolute right-2 top-2 flex flex-col justify-center items-center ' 
-                              onClick={()=>setallyPopUp(false)}>
-                        <span className='w-full h-1 bg-white rounded-xl  rotate-45 '/>
-                        <span className='w-full h-1 bg-white rounded-xl -translate-y-1 -rotate-45 '/>
-                      </button>
-                      {
-                        allyData.isLoading ?
-                          <div className=' flex flex-col justify-center items-center gap-y-6'>
-                            <h3 className="subtitle text-gray-300 text-center mb-4">
-                                Loading Your Exclusive Discount
-                            </h3>
-                            <picture className="relative animate-bounce size-28 lg:size-40 rounded-full flex justify-center items-center  overflow-hidden bg-blue-uchooseit">
-                                <img src="/icons/present.svg" alt="present" className="w-3/5 " />
-                            </picture>
-                          </div>
-                          :
-                          allyData.userNotFound ?
-                            <div className='flex justify-center items-center gap-x-4 w-fit p-4'>
-                              <img src="/icons/error.svg" alt="error" className='w-10 lg:w-14 object-contain'/>
-                              <h5 className='lg:text-xl text-white text-left'>
-                                We can't validate your code. 
-                                <br />
-                                Please try again or check your afiliate url code.
-                              </h5>
+                        <button className='cursor-pointer size-10 p-2 fixed right-0 top-2 flex flex-col justify-center items-center ' 
+                                onClick={()=>setallyPopUp(false)}>
+                          <span className='w-full h-1 bg-white rounded-xl  rotate-45 '/>
+                          <span className='w-full h-1 bg-white rounded-xl -translate-y-1 -rotate-45 '/>
+                        </button>
+                        {
+                          allyData.isLoading ?
+                            <div className='h-full flex flex-col justify-center items-center gap-y-6'>
+                              <h3 className="subtitle text-gray-300 text-center mb-4">
+                                  Loading Your Exclusive Discount
+                              </h3>
+                              <picture className="relative animate-bounce size-28 lg:size-40 rounded-full flex justify-center items-center  overflow-hidden bg-blue-uchooseit">
+                                  <img src="/icons/present.svg" alt="present" className="w-3/5 " />
+                              </picture>
                             </div>
                             :
-                            <div className='h-full w-full'>
-                              <h2 className='text-3xl md:text-5xl xl:text-6xl text-blue-uchooseit text-center mb-10 '>Congratulations!</h2>
-                              <div className='w-fit flex flex-col lg:flex-row-reverse justify-center items-center landscape:items-stretch gap-6 mb-6 mx-auto max-w-4xl'>
+                            allyData.userNotFound ? null
+                              // <div className='flex justify-center items-center gap-x-4 w-fit p-4'>
+                              //   <img src="/icons/error.svg" alt="error" className='w-10 lg:w-14 object-contain'/>
+                              //   <h5 className='lg:text-xl text-white text-left'>
+                              //     We can't validate your code. 
+                              //     <br />
+                              //     Please try again or check your afiliate url code.
+                              //   </h5>
+                              // </div>
+                              :
+                              <div className='w-full flex flex-col justify-start items-center'>
+                                <h2 className='text-3xl md:text-5xl xl:text-6xl text-white font-semibold text-center mb-4 '>Congratulations!</h2>
+                                <div className='w-fit flex flex-col landscape:flex-row-reverse justify-center items-center landscape:items-stretch gap-6 mb-6 mx-auto max-w-4xl'>
 
-                                <picture className={`size-40 landscape:w-1/2 landscape:h-full rounded-full border-2 border-blue-uchooseit p-1 overflow-hidden`}>
-                                    <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-cover rounded-full " />
-                                </picture>
-                                <div className='h-full portrait:text-center landscape:text-left'>
-                                  <h2 className="relative text-white text-xl sm:text-3xl text-balance w-fit mb-[3dvh] leading-[1.4]">
-                                      Join 
-                                          {influencer_name ? 
-                                              <strong className="mx-2">
-                                                  {influencer_name + "'s"}
-                                              </strong>
-                                          : " " } 
-                                      {/* <br /> */}
-                                      community of Smart Savers, with 
-                                      <strong className='mx-2'>
-                                        {allyData.discount_percent}%Off 
-                                      </strong>
-                                      your membership purchase!
-                                
-                                  </h2>
-                                  <p className="subtitle text-gray-100 dark:text-gray-300 mb-2">
-                                      Billed annually at <br className='portrait:block landscape:hidden' />
-
-                                      { allyData.alliedCuponCode == "" ?
-                                          <span className=" ml-2  text-green-400">
-                                              ${annualPrice}
-                                          </span>
-                                          :
-                                          <>
-                                              <span className="mx-2 text-red-400 line-through">
-                                                  ${originalPrice}
-                                              </span>
-                                              <span className=" text-green-400">
-                                                  ${annualPrice}
-                                              </span>
-                                          </>
-                                      }
-                                  </p>
-                                  <p className="relative text-2xl  text-gray-900 dark:text-white mb-2">
-                                    Equivalent to <br className='portrait:block landscape:hidden' />
-                                    <span className='shiny-lightblue-text font-semibold text-4xl '>
-                                      <span className='mx-2'>
-                                        ${perMonthPrice} 
+                                  <picture className={`portrait:w-full portrait:h-[30dvh] landscape:w-1/2 landscape:h-auto rounded-full p-1 overflow-hidden`}>
+                                      <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-contain rounded-full " />
+                                  </picture>
+                                  <div className='portrait:text-center landscape:text-left flex flex-col justify-evenly items-start portrait:gap-y-4 '>
+                                    <h3 className="relative text-neutral-300 text-lg sm:text-xl lg:text-2xl text-balance w-fit leading-[1.4]">
+                                        Join 
+                                            {influencer_name ? 
+                                                <strong className="mx-2 text-white">
+                                                    {influencer_name + "'s"}
+                                                </strong>
+                                            : " " } 
+                                        {/* <br /> */}
+                                        community of Smart Savers, with 
+                                        <strong className='mx-2 text-white'>
+                                          {allyData.discount_percent}%Off 
+                                        </strong>
+                                        your membership purchase!
+                                  
+                                    </h3>
+                                    <p className="w-full font-semibold relative text-xl lg:text-3xl  text-gray-900 dark:text-white">
+                                      Equivalent to <br className='portrait:block landscape:hidden' />
+                                      <span className='shiny-lightblue-text text-xl uppercase font-semibold  '>
+                                        <span className='block landscape:inline-block mx-2 text-4xl'>
+                                          ${perMonthPrice} 
+                                        </span>
+                                        per month
                                       </span>
-                                      per month
-                                    </span>
+                                    </p>
+                                    <p className="subtitle w-full text-gray-100 dark:text-white ">
+                                        Billed annually at <br className='portrait:block landscape:hidden' />
+
+                                        { allyData.alliedCuponCode == "" ?
+                                            <span className=" ml-2  text-green-400">
+                                                ${annualPrice}
+                                            </span>
+                                            :
+                                            <>
+                                                <span className="mx-2 text-red-400 line-through">
+                                                    ${originalPrice}
+                                                </span>
+                                                <span className=" text-green-400">
+                                                    ${annualPrice}
+                                                </span>
+                                            </>
+                                        }
+                                    </p>
+                                 
+                                  </div>
+                                </div>
+                                <div className=' w-full max-w-lg mx-auto'>
+                                  <ButtonPrimary src={code ? code : recurlyUrl} />
+                                  <p className="text-sm  text-gray-200 flex gap-x-2 justify-center items-center mt-4 animate-appear-up" style={{animationDelay: '.5s'}}>
+                                      <img src="/icons/stars.svg" alt="guarantee" className='w-[50px]' />
+                                      Trusted by families nationwide
                                   </p>
                                 </div>
                               </div>
-                              <div className='max-w-lg mx-auto'>
-                                <ButtonPrimary src={code ? code : recurlyUrl} />
-                              </div>
-                            </div>
-                          }
-                    </div>
-                    </div>
+                            }
+                      </div>
+                    {/* </div> */}
                 </div>
 
                 : null
