@@ -52,7 +52,7 @@
     margin: 0;
 
     &::-webkit-scrollbar{
-      width: 0;
+      width: 0px;
     }
   }
   html {
@@ -61,6 +61,19 @@
   
   body {
     @apply bg-white dark:bg-black text-black dark:text-white transition-colors duration-300;
+  }
+
+
+  .show-scrollbar::-webkit-scrollbar{
+    width: 8px;
+  }
+  .show-scrollbar::-webkit-scrollbar-thumb{
+      border-radius: 5px;
+      background-color: #55555550;
+    }
+  .show-scrollbar::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #22222250;
   }
 
   #root{

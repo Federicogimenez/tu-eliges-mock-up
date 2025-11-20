@@ -46,6 +46,9 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
     const [allyPopUp, setallyPopUp] = useState(true)
 
     useAnalytics()
+
+    console.log(allyData);
+    
     
     const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
     const originalPrice = allyData.membership_anual_fee.toFixed(2)
@@ -268,7 +271,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
                 <div className='fixed z-[10000] inset-0 bg-gradient-to-b from-black/50 to-black flex justify-center items-center py-[5dvh] min-h-[500px] overflow-hidden' >
                   <div className='absolute inset-0 ' onClick={()=>setallyPopUp(false)} />
                     {/* <div className='h-[80dvh] w-full overflow-hidden'> */}
-                      <div autoFocus className='relative overflow-auto mx-auto flex justify-center items-start px-6 py-8 w-11/12 portrait:h-full landscape:h-fit min-h-[400px] max-w-5xl bg-gradient-to-b from-black/70 to-blue-gradient-end/60 rounded-3xl'>
+                      <div autoFocus className='relative overflow-auto mx-auto flex justify-center items-start px-6 py-8 w-11/12 portrait:h-full landscape:h-fit min-h-[400px] max-w-5xl bg-gradient-to-b from-black/50 backdrop-blur-xl to-blue-gradient-end/50 rounded-2xl shadow-2xl'>
 
                         <button className='cursor-pointer size-10 p-2 fixed right-0 top-2 flex flex-col justify-center items-center ' 
                                 onClick={()=>setallyPopUp(false)}>
@@ -300,8 +303,8 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
                                 <h2 className='text-3xl md:text-5xl xl:text-6xl text-white font-semibold text-center mb-4 '>Congratulations!</h2>
                                 <div className='w-fit flex flex-col landscape:flex-row-reverse justify-center items-center landscape:items-stretch gap-6 mb-6 mx-auto max-w-4xl'>
 
-                                  <picture className={`portrait:w-full portrait:h-[30dvh] landscape:w-1/2 landscape:h-auto rounded-full p-1 overflow-hidden`}>
-                                      <img src={allyData.alliedCompanyImg} alt="afiliate" className="w-full h-full  object-top object-contain rounded-full " />
+                                  <picture className={`portrait:w-full portrait:h-[30dvh] landscape:min-h-[40dvh] landscape:w-1/2 landscape:h-auto rounded-full p-1 overflow-hidden`}>
+                                      <img src={allyData.alliedCompanyImg} loading='eager' alt="afiliate" className="w-full h-full  object-top object-contain rounded-full " style={{filter: 'drop-shadow(0 0 10px #ffffff50)'}} />
                                   </picture>
                                   <div className='portrait:text-center landscape:text-left flex flex-col justify-evenly items-start portrait:gap-y-4 '>
                                     <h3 className="relative text-neutral-300 text-lg sm:text-xl lg:text-2xl text-balance w-fit leading-[1.4]">

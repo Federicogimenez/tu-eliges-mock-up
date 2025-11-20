@@ -26,8 +26,8 @@ export default function SavingsSlide({
 
   return (
     <div className="w-full h-full max-w-3xl mx-auto">
-        <div className="w-full flex justify-between items-center mb-3 px-6">
-            <h3 className="font-bold text-2xl text-center p-1 border-b-4 "
+        <div className="w-full flex justify-center items-center mb-3 px-6">
+            <h3 className="font-bold text-2xl text-center pt-2 border-t-2 w-3/5"
                 style={{color: color}}
                 >
                     <span className="font-finger-paint scale-125 inline-block mr-2">
@@ -36,7 +36,7 @@ export default function SavingsSlide({
                     {totalCategory}
             </h3>
         </div>
-        <div className="relative w-full h-full min-h-60 max-h-[50dvh] overflow-auto">
+        <div className="relative w-full h-full min-h-60 max-h-[50dvh] overflow-auto show-scrollbar" >
                 {subs.map((s) => (
                     <SavingsRow
                         key={s.key}

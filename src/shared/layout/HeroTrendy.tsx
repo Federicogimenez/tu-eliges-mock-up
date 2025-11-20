@@ -42,6 +42,7 @@ export default function HeroTrendy(
     const { code, recurlyUrl } = useAllyContext();
 
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [ dotsLength, setDotsLenght] = useState(0)
     const isPausedRef = useRef(false)
     const intervalRef = useRef<number | null>(null)
     
@@ -117,8 +118,16 @@ export default function HeroTrendy(
       isPausedRef.current = false
     }, 3000)
   }, [instanceRef])
+  
 
-    const dotsLength = instanceRef.current?.track.details.slides.length || 0;    
+
+  useEffect(() => {
+    if (instanceRef.current?.track.details.slides.length) {
+      setDotsLenght(instanceRef.current?.track.details.slides.length);    
+    }
+  }, [])
+  
+
 
 
   return (

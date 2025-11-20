@@ -67,6 +67,7 @@ export default function BenefitsSection ({
   title='One membership',
   subtitle="Real benefits for the whole family" }: BenefitsSectionProps) {
 
+  const [ dotsLength, setDotsLenght] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const isPausedRef = useRef(false)
   const intervalRef = useRef<number | null>(null)
@@ -125,7 +126,12 @@ export default function BenefitsSection ({
     }, 3000)
   }, [instanceRef])
 
-  const dotsLength = instanceRef.current?.track.details.slides.length || 0
+
+  useEffect(() => {
+    if (instanceRef.current?.track.details.slides.length) {
+      setDotsLenght(instanceRef.current?.track.details.slides.length);    
+    }
+  }, [])
   
   return (
     <section className="relative bg-white/70 dark:bg-black/50 py-10 px-4 transition-colors duration-300">

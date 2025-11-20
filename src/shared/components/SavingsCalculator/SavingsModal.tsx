@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -39,7 +39,9 @@ export default function SavingsModal({
     }: SavingsModalProps) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
-  const {pathname} = useLocation();
+    const {pathname} = useLocation();
+    const modal = useRef<HTMLDivElement | null>(null);
+    
 
 
 
@@ -63,14 +65,21 @@ export default function SavingsModal({
 //   }, [ currentSlide]);
 
     useEffect(() => {
+        handleMoveSlider(0);
         const foundIndex = categories.findIndex((cat) => pathname.includes(cat.key));
-        if (foundIndex) {
+        if (foundIndex && foundIndex !== -1) {
+            // console.log('buton carusel', foundIndex);
             handleMoveSlider(foundIndex);
             setTimeout(() => {
                 instanceRef?.current?.moveToIdx(foundIndex)
             }, 400);
         } else{
             handleMoveSlider(0);
+        }
+        
+
+        if (open) {
+            modal.current?.focus()
         }
     }, [open]);
 
@@ -81,8 +90,8 @@ export default function SavingsModal({
         <div className="fixed animate-fade inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="absolute inset-0" onClick={onClose} />
           
-          <div className="relative animate-fade bg-white dark:bg-black rounded-xl shadow-2xl max-w-5xl w-full mx-4 pt-8 h-full max-h-[90dvh] overflow-hidden"> 
-            <div className="h-full flex flex-col justify-start items-center overflow-auto">
+          <div className="relative animate-fade bg-white dark:bg-black rounded-xl shadow-2xl max-w-5xl w-full mx-4 py-8 h-full max-h-[95dvh] overflow-hidden"> 
+            <div ref={modal} className="outline-none h-full flex flex-col justify-start items-center overflow-auto show-scrollbar">
                 <button onClick={onClose} className="p-2 size-10 md:size-12 absolute left-2 top-2 flex flex-col justify-center items-evenly cursor-pointer">
                     <span className="h-1 w-full rotate-45 bg-black dark:bg-white rounded-full" />
                     <span className="h-1 w-full -translate-y-1 -rotate-45 bg-black dark:bg-white rounded-full" />
@@ -110,7 +119,7 @@ export default function SavingsModal({
                             handleMoveSlider(idx)
                         }}
                         style={{
-                            background: currentSlide === idx ? cat.color : "transparent",
+                            background: currentSlide == idx ? cat.color : "transparent",
                             border: `1px solid ${cat.color}`,
                             color: `${ currentSlide === idx ? '#fff' : cat.color}`,
                             fontWeight: currentSlide === idx ? 600 : 500
