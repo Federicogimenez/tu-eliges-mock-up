@@ -47,7 +47,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
 
     useAnalytics()
 
-    console.log(allyData);
+    // console.log(allyData);
     
     
     const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;

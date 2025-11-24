@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { trackMetaEvent } from "../../utils/trackMetaPixel";
+import { useAllyContext } from "../../hooks/useAllyContext";
 
 interface ButtonPrimaryProps {
   text_1?: string;
@@ -25,8 +27,20 @@ export default function ButtonPrimary (
     toColor2 = 'to-blue-gradient-start/90',
     }: ButtonPrimaryProps) {
 
+       const { allyData } = useAllyContext()
+
         const intervalRef = useRef<number | null>(null)
         const [activeBtn, setActiveBtn] = useState<boolean>(false)
+
+        function handleOnPurchase (){
+          console.log(allyData.new_price_after_discount);
+          
+           trackMetaEvent("InitiateCheckout", {
+              value: allyData.new_price_after_discount,
+              currency: "USD",
+              content_name: "Membership",
+            });
+        }
       
 
         // Auto-play functionality with pause on hover
@@ -43,6 +57,7 @@ export default function ButtonPrimary (
 
   return (
     <a href={src} 
+      onClick={handleOnPurchase}
       target="_blank" 
       className={`group block text-white relative cursor-pointer w-full  rounded-full sm:text-xl md:text-xl font-semibold hover:font-bold px-8 py-3 text-center border border-white shadow-lg shadow-black/50 overflow-hidden duration-200 hover:shadow-2xl hover:-translate-y-2 ${customStyle}`}>
         <span className={`absolute block left-0 top-0 w-full h-full bg-gradient-to-r transition-all duration-500 ${activeBtn ? 'translate-x-full' : 'translate-x-0' }  ${ fromColor + ' ' + toColor}`} />
