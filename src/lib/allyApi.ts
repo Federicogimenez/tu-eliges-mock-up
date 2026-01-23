@@ -15,7 +15,7 @@ export const fetchAllyData = async (code: string): Promise<AllyDataProps> => {
       alliedCuponCode: response.data.alliedCuponCode || code,
       discount_percent: response.data.discount_percent || 0,
       membership_anual_fee: response.data.membership_anual_fee || 47.99,
-      new_price_after_discount: response.data.new_price_after_discount || 47.99,
+      new_price_after_discount: response.data.new_price_after_discount,
       hasCoupon: true,
       isLoading: false,
       userNotFound: false

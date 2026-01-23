@@ -2,12 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-
 import SavingsSlide from "./SavingsSlide";
-
 
 import { Currency } from "../../../utils/Currency";
 import type { CategoryConfig, CatKey, SubKey } from "../../../context/SavingsCalculatorModalContext";
+import { getSavingsDisclaimer } from "../../constants";
 import { useLocation } from "react-router-dom";
 
 interface SavingsModalProps {
@@ -161,7 +160,7 @@ export default function SavingsModal({
                     </button>
                 </div>
                 <footer className="py-5 text-center text-xs text-gray-400">
-                © {new Date().getFullYear()} Uchooseit.us — Savings are estimates; actual savings vary by offer and usage.
+                {getSavingsDisclaimer()}
                 </footer>
             </div>
         </div>

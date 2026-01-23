@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { getSavingsDisclaimer } from "../constants";
 
 import icon_dining from '/icons/category/dining.png'
 import icon_travel from '/icons/category/travel.png'
@@ -268,7 +269,7 @@ export default function Savings ({membershipCost}: SavingsProps){
         </div>
 
         <footer className="py-5 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} Uchooseit.us — Savings are estimates; actual savings vary by offer and usage.
+          {getSavingsDisclaimer()}
         </footer>
       </div>
     </div>

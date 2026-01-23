@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "../components/Modal";
 import { useSearchParams } from "react-router-dom";
+import { getCopyrightText } from "../constants";
 
 export default function TermsAndConditions() {
     const [searchParams] = useSearchParams();
@@ -28,7 +29,7 @@ export default function TermsAndConditions() {
           <h2 className="font-semibold text-left">
             Terms &amp; Conditions
             <br />
-            Last Revised: September 8, 2025
+            Last Revised: January 8, 2026
           </h2>
 
           <div>
@@ -438,7 +439,7 @@ export default function TermsAndConditions() {
             <p>
               Web <a href="https://www.uchooseit.us">https://www.uchooseit.us</a>
             </p>
-            <p>© 2025 Uchooseit.us LLC. All rights reserved.</p>
+            <p>{getCopyrightText()}</p>
           </div>
         </div>
       </Modal>

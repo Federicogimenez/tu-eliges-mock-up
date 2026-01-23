@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
             <div className="relative flex flex-col justify-stretch items-stretch gap-y-5 w-full h-full overflow-y-auto list pb-8">
                 <h2 className="font-semibold text-left">
                     Privacy Policy <br />
-                    Last Revised: September 8, 2025
+                    Last Revised: January 8, 2026
                 </h2>
                 <p>
                     Uchooseit.us LLC (“Uchooseit.us,” “Company,” “We,” or “Our”) respects your privacy and is committed to protecting it. This Privacy Policy explains how we collect, use, store, and safeguard your personal information when you use our website 

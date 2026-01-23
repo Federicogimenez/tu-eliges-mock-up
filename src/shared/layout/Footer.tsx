@@ -3,64 +3,60 @@ import { useTheme } from '../../hooks/useTheme';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsAndConditions from './TermsAndConditions';
 import { Link } from 'react-router-dom';
-
-import icon_shop from '/icons/category/shop.png'
-import icon_travel from '/icons/category/travel.png'
-import icon_dining from '/icons/category/dining.png'
-import icon_entertainment from '/icons/category/entertainment.png'
-
-import icon_ig from '/icons/socials/ig.png'
-import icon_tiktok from '/icons/socials/tiktok.png'
-import icon_facebook from '/icons/socials/facebook.png'
-import icon_youtube from '/icons/socials/youtube.png'
-import icon_linkedin from '/icons/socials/linkedin.png'
+import { getCopyrightText } from '../constants';
+import { FaInstagram, FaTiktok, FaFacebook, FaYoutube, FaLinkedin, FaShoppingBag, FaPlane, FaUtensils } from 'react-icons/fa';
+import { GiJewelCrown } from 'react-icons/gi';
 
 export const Footer: React.FC = () => {
   const { theme } = useTheme();
 
   const socials = [
     {
-      path: "https://www.instagram.com/uchooseit.us/" ,
-      img: icon_ig
+      path: "https://www.instagram.com/uchooseit.us/",
+      icon: FaInstagram
     },
     {
-      path: "https://www.tiktok.com/@uchooseit.us" ,
-      img: icon_tiktok
+      path: "https://www.tiktok.com/@uchooseit.us",
+      icon: FaTiktok
     },
     {
       path: "https://www.facebook.com/Uchooseit.us/",
-      img: icon_facebook
+      icon: FaFacebook
     },
     {
       path: "https://youtube.com/@uchooseit?si=Xx9-EpEcR8iK0Gks",
-      img: icon_youtube
+      icon: FaYoutube
     },
     {
       path: "https://www.linkedin.com/company/uchooseit-us",
-      img: icon_linkedin
+      icon: FaLinkedin
     },
   ]
 
   const navigationLinks = [
     {
       label: "Shop",
-      img: icon_shop,
-      path: "/shop"
+      icon: FaShoppingBag,
+      path: "/shop",
+      hoverColor: "hover:text-purple-shop"
     },
     {
       label: "Travel",
-      img: icon_travel,
-      path: "/travel"
+      icon: FaPlane,
+      path: "/travel",
+      hoverColor: "hover:text-blue-travel"
     },
     {
       label: "Dining",
-      img: icon_dining,
-      path: "/dining"
+      icon: FaUtensils,
+      path: "/dining",
+      hoverColor: "hover:text-yellow-dining"
     },
     {
       label: "Entertainment",
-      img: icon_entertainment,
-      path: "/entertainment"
+      icon: GiJewelCrown,
+      path: "/entertainment",
+      hoverColor: "hover:text-pink-entertainment"
     },
   ]
 
@@ -80,9 +76,9 @@ export const Footer: React.FC = () => {
             </p>
             <div className='flex justify-start items-center gap-x-2'>
               {
-                socials.map(( { path, img }, i )=>{
-                  return <a href={path} target='_blank' key={i}>
-                    <img src={img} alt="logo" className='w-7 rounded-lg' />
+                socials.map(({ path, icon: Icon }, i) => {
+                  return <a href={path} target='_blank' key={i} className='text-gray-700 dark:text-gray-300 hover:text-blue-uchooseit transition-colors'>
+                    <Icon className='w-6 h-6' />
                   </a>
                 })
               }
@@ -95,13 +91,13 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
 
               {
-                navigationLinks.map(( { label, path, img  }, i )=>{
-                  return <Link to={path} key={i} className='flex justify-start items-center transition-all hover:-translate-y-0.5'>
+                navigationLinks.map(({ label, path, icon: Icon, hoverColor }, i) => {
+                  return <Link to={path} key={i} className={`flex justify-start items-center transition-all hover:-translate-y-0.5 ${hoverColor}`}>
                             {label}
-                            <img src={img} alt="shop" className='w-5 ml-3' />
+                            <Icon className='w-4 h-4 ml-3' />
                         </Link>
                 })}
-              <Link to={'/product'} className='flex justify-start items-center'>
+              <Link to={'/product'} className='flex justify-start items-center text-gray-700 hover:text-neutral-800 dark:text-gray-400 dark:hover:text-neutral-100 w-fit'>
                 {/* <img src={} alt="entertainment" className='w-5 mr-3' /> */}
                 Learn More
               </Link>
@@ -111,7 +107,7 @@ export const Footer: React.FC = () => {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400 *:block">
+            <div className="space-y-2 text-sm text-gray-700 *:hover:text-neutral-800 dark:text-gray-400 *:dark:hover:text-neutral-100 *:block *:w-fit">
               <a href='mailto:support@uchooseit.us' >Email: support@uchooseit.us</a>
               <a href='https://uchooseitus.recurly.com/account/create_account' target='_target'>Manage Membership</a>
             </div>
@@ -121,7 +117,7 @@ export const Footer: React.FC = () => {
           {/* Legal */}
           <div>
             <h3 className="font-semibold  text-lg mb-4">Legals</h3>
-            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
+            <div className="space-y-2 text-sm text-gray-700 *:hover:text-neutral-800 dark:text-gray-400 *:dark:hover:text-neutral-100 *:block *:w-fit">
               <div>
                 <PrivacyPolicy />
               </div>
@@ -153,7 +149,7 @@ export const Footer: React.FC = () => {
 
             {/* Copyright */}
             <div className="text-sm ">
-              © {new Date().getFullYear()} UChooseIt. All rights reserved.
+              {getCopyrightText()}
             </div>
             <div className="text-sm ">
               <p>Based in Orlando, FL - USA</p>
