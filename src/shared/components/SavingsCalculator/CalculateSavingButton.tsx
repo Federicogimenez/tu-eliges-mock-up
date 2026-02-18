@@ -23,7 +23,7 @@ export default function CalculateSavingButton() {
   return (
     <div className="fixed z-50 right-0 top-[15dvh]">
       <motion.button
-          onClick={openModal}
+          onClick={() => openModal?.()}
           style={{
             animationDelay: '3s',
           }}

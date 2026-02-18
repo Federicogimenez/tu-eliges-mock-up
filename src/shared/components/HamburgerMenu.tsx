@@ -15,6 +15,7 @@ const menuItems: MenuItem[] = [
   { label: 'Dining', path: '/dining' },
   { label: 'Entertainment', path: '/entertainment' },
   { label: 'Learn more', path: '/product' },
+  { label: 'Business', path: '/business' },
 ];
 
 export const HamburgerMenu: React.FC = () => {

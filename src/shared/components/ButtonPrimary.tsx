@@ -33,7 +33,6 @@ export default function ButtonPrimary (
         const [activeBtn, setActiveBtn] = useState<boolean>(false)
 
         function handleOnPurchase (){
-          console.log(allyData.new_price_after_discount);
           
            trackMetaEvent("InitiateCheckout", {
               value: allyData.new_price_after_discount,

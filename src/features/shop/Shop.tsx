@@ -4,6 +4,8 @@ import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/Her
 import GatewaySection from '../../shared/layout/GatewaySection';
 import PricingSection from '../../shared/layout/PricingSection';
 
+import { usePageMeta } from '../../hooks/usePageMeta';
+import { useJsonLd } from '../../hooks/useJsonLd';
 import pricing_banner from '/pricing/shop/netflix.png';
 
 import profile_car from '/category-testimonials/shop/car.png';
@@ -63,6 +65,20 @@ import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 export default function Shop (){
 
+  usePageMeta({
+    title: 'Shopping Discounts — UChooseIt VIP Membership',
+    description: 'Exclusive member discounts at 175,000+ retail locations. Save on tech, fashion, home & more with brands like Lenovo, Samsung & Chewy.',
+    canonical: 'https://uchooseit.us/shop',
+  });
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://uchooseit.us/' },
+      { '@type': 'ListItem', position: 2, name: 'Shop Discounts', item: 'https://uchooseit.us/shop' },
+    ],
+  });
 
   const categoryTestimonials = [
     {

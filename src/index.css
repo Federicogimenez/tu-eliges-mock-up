@@ -29,6 +29,12 @@
   --color-blue-gradient-start: #55d4e1;
   --color-blue-gradient-end: #0451af;
 
+  /* B2B tokens */
+  --color-blue-b2b: #00A3FF;
+  --color-green-b2b: #22C55E;
+  --color-b2b-surface: #111111;
+  --color-b2b-card: #0A0A0A;
+
    --text-shadow-xl-blue: 2px 0px 0px #2995fc90; 
    
    --text-shadow-xl-dark: 2px 1px 2px #000; 
@@ -37,7 +43,7 @@
    --shadow-xl-light: 2px 0px 0px #fff; 
    --shadow-2xl-light: 4px 0px 0px #fff; 
 
-   --animate-header-initial: headerInitial 1.7s 0s ease-in-out both;
+   --animate-header-initial: headerInitial 1s 0s ease-in-out both;
    --animate-appear-up: translateFullUp .7s 0s ease-in-out both, fadeIn .5s 0s ease-in-out both;
    --animate-fade: fadeIn .5s 0s ease-in-out both;
 }
@@ -195,9 +201,13 @@
       max-height: 100dvh;
       z-index: 1000;
     }
-    75%{
+    33%{
       background-color: #000;
       height: 100dvh;
+      z-index: 1000;
+    }
+    90%{
+      background-color: #000;
       z-index: 1000;
     }
     100%{

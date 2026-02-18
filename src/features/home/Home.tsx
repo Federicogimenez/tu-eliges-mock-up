@@ -7,6 +7,8 @@ import PricingSection from '../../shared/layout/PricingSection';
 import CalculatorTableSection from '../../shared/layout/CalculatorTableSection';
 import CategoriesSection from './components/CategoriesSection';
 import { useAllyContext } from '../../hooks/useAllyContext';
+import { usePageMeta } from '../../hooks/usePageMeta';
+import { useJsonLd } from '../../hooks/useJsonLd';
 
 import pricing_family from "/pricing/home/family.png"
 
@@ -31,6 +33,30 @@ import LearnHow from './components/LearnHow';
 
 
 export default function Home (){
+
+  usePageMeta({
+    title: 'UChooseIt.us — Save Up to 50% on Dining, Travel, Shopping & Entertainment',
+    description: 'One VIP membership, 1 million+ deals across the US. Save $2,000+/year on restaurants, hotels, retail & theme parks for less than $4/month.',
+    canonical: 'https://uchooseit.us/',
+  });
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'UChooseIt VIP Membership',
+    description: 'Annual VIP discount membership with access to 1 million+ deals on dining, travel, shopping and entertainment across the United States.',
+    brand: { '@id': 'https://uchooseit.us/#organization' },
+    url: 'https://uchooseit.us/product',
+    image: 'https://uchooseit.us/site_preview.png',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: '47.99',
+      availability: 'https://schema.org/InStock',
+      url: 'https://uchooseit.us/product',
+      seller: { '@id': 'https://uchooseit.us/#organization' },
+    },
+  });
 
   const { allyData } = useAllyContext();
   

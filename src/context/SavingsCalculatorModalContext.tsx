@@ -10,11 +10,15 @@ import icon_entertainment from '/icons/category/entertainment.png'
 
 
 // ---- Tipado del contexto ---------------------------------------------------
+interface OpenModalOptions {
+  hideMembershipCost?: boolean;
+}
+
 interface SavingsModalContextType {
   isOpen?: boolean;
-  openModal?: () => void;
+  openModal?: (options?: OpenModalOptions) => void;
   closeModal?: () => void;
-  netSavings: number;  
+  netSavings: number;
 }
 
 // ---- Contexto --------------------------------------------------------------
@@ -142,6 +146,7 @@ export function SavingsModalProvider({ children }: { children: ReactNode }) {
   
   const { allyData } = useAllyContext();
   const [isOpen, setIsOpen] = useState(false);
+  const [hideMembershipCost, setHideMembershipCost] = useState(false);
 //   const [savingsSlideIndex, setSavingsSlideIndex] = useState<number>(0);
 //   const {pathname} = useLocation();
 
@@ -176,11 +181,15 @@ export function SavingsModalProvider({ children }: { children: ReactNode }) {
   });
 
   // Control del modal
-  const openModal = () => {
+  const openModal = (options?: OpenModalOptions) => {
+    setHideMembershipCost(options?.hideMembershipCost ?? false);
     setIsOpen(true);
   };
 
-  const closeModal = () => setIsOpen(false);
+  const closeModal = () => {
+    setIsOpen(false);
+    setHideMembershipCost(false);
+  };
 
 
 
@@ -240,9 +249,10 @@ export function SavingsModalProvider({ children }: { children: ReactNode }) {
         annualUses={annualUses}
         categoryAnnuals={categoryAnnuals}
         resetAll={resetAll}
-        setAnnualUses={setAnnualUses} 
+        setAnnualUses={setAnnualUses}
         categories={CATEGORIES}
         typicalSavings={TYPICAL_SAVINGS}
+        hideMembershipCost={hideMembershipCost}
         />
     </SavingsModalContext.Provider>
   );

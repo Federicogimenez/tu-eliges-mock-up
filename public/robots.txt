@@ -1,0 +1,28 @@
+# UChooseIt.us — Robots.txt
+# https://uchooseit.us
+
+User-agent: *
+Allow: /
+Disallow: /thank-you
+Disallow: /activate
+
+# AI crawlers — full access
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://uchooseit.us/sitemap.xml

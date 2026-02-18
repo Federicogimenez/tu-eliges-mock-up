@@ -3,6 +3,8 @@ import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/Her
 import GatewaySection from '../../shared/layout/GatewaySection';
 import PricingSection from '../../shared/layout/PricingSection';
 
+import { usePageMeta } from '../../hooks/usePageMeta';
+import { useJsonLd } from '../../hooks/useJsonLd';
 import pricing_banner from '/pricing/dining/cafe.png';
 
 import icon_pizza from '/category-testimonials/dining/icons/pizza.svg';
@@ -42,7 +44,21 @@ import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 export default function Dining () {
 
-  
+  usePageMeta({
+    title: 'Restaurant Discounts — UChooseIt Membership',
+    description: "Save at 50,000+ restaurants nationwide. Member deals at Papa John's, Burger King, Domino's, Subway & local favorites.",
+    canonical: 'https://uchooseit.us/dining',
+  });
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://uchooseit.us/' },
+      { '@type': 'ListItem', position: 2, name: 'Restaurant Discounts', item: 'https://uchooseit.us/dining' },
+    ],
+  });
+
   const categoryTestimonials = [
     {
       icon: icon_pizza,

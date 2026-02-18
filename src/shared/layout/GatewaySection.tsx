@@ -40,7 +40,7 @@ export default function GatewaySection ({ home_btn=false }:GatewayProps) {
             <p className='text-lg mt-4 text-center'>✨500,000+ downloads and counting</p>
           </div>
         </div>
-        <p className='mt-16 text-center font-semibold'>App available exclusively for Uchooseit members</p>
+        <p className='mt-16 text-center font-semibold'>App available exclusively for Uchooseit.us members</p>
     </section>
   );
 };

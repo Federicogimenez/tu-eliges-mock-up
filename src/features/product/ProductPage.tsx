@@ -7,10 +7,18 @@ import HowActivateSection from './components/HowActivateSection';
 // import CalculatorTableSection from '../../shared/layout/CalculatorTableSection';
 import HowSection from './components/HowSection';
 import TestimonialSection from './components/TestimonialSection';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 // import pricing_banner from '/pricing/home/family.png';
 
 export default function ProductPage() {
+
+  usePageMeta({
+    title: 'Get Your UChooseIt Membership — Plans & Pricing',
+    description: 'Join UChooseIt for $47.99/year and start saving at 1M+ locations. 7-day refund guarantee. Cancel anytime.',
+    canonical: 'https://uchooseit.us/product',
+  });
+
   // const { allyData } = useAllyContext();
   // const { width } = useWindowSize()
 

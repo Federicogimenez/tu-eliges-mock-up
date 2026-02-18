@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Uchooseit - Built for Organizations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00A3FF",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#000000",
+                        "card-bg": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        "2xl": "1.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .gradient-border-purple {
+            border-left: 4px solid #9333EA;
+            background: linear-gradient(90deg, rgba(147, 51, 234, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+        .gradient-border-blue {
+            border-left: 4px solid #00A3FF;
+            background: linear-gradient(90deg, rgba(0, 163, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+        .gradient-border-green {
+            border-left: 4px solid #22C55E;
+            background: linear-gradient(90deg, rgba(34, 197, 94, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+        .gradient-border-grey {
+            border-left: 4px solid #6B7280;
+            background: linear-gradient(90deg, rgba(107, 114, 128, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+        .hero-clip {
+            clip-path: ellipse(120% 100% at 50% 0%);
+        }
+        .wave-bottom {
+            background: #000;
+            position: relative;
+        }
+        .wave-bottom::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #00A3FF;
+            clip-path: ellipse(60% 100% at 50% 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-white">
+<header class="relative w-full h-[600px] overflow-hidden flex flex-col items-center pt-8">
+    <!-- bg main video -->
+    <img alt="High energy face background" class="absolute inset-0 w-full h-full object-cover brightness-75 hero-clip" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzPvQLuWfJ8n1JyGMPnay3RbzBr9qgW1uEsV3EyGJvdTMbHdWm6O-Gy7Yw9JLJkhVMEwNmFWDJTBxP1ck06sCdqilhitJEedZyInJWFlnQ-dgiu1n6Uv4C6v8LVcb6n9yhk_Ewq6bKHuxVUuG-Zw3BjJmbIfL9XB0apMB_UanoHby8q2OvdLOHBL9ZUREijhUSDqlOHkju_aKpGPYApo3T0QVVOU0M4IPzpHR-YWN3E8u9_4ugiwJet-eGf6hJSonXnrcjO3nzELvT"/>
+    <!-- bg main video -->
+<div class="relative z-10 flex flex-col items-center">
+<h1 class="text-3xl font-extrabold text-white tracking-tight">
+                Uchooseit<span class="text-primary">.us</span>
+</h1>
+<div class="w-16 h-1 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="absolute bottom-0 w-full h-24 bg-primary" style="clip-path: ellipse(70% 100% at 50% 100%);"></div>
+</header>
+<main class="bg-black text-white px-6 py-12">
+<section class="text-center mb-16">
+<h2 class="text-3xl font-extrabold mb-2 leading-tight">
+                Built for Organizations<br/>
+<span class="text-primary">With an Audience</span>
+</h2>
+<p class="text-gray-400 text-sm max-w-xs mx-auto mt-4 leading-relaxed">
+                Enhance your community engagement and build lasting loyalty with our white-label platform.
+            </p>
+</section>
+<section class="space-y-4 mb-20">
+<div class="bg-card-bg rounded-2xl p-6 border border-gray-800 gradient-border-purple flex items-start gap-4">
+<div class="bg-purple-900/30 p-3 rounded-xl">
+<span class="material-icons text-purple-500">sell</span>
+</div>
+<div>
+<h3 class="font-bold text-lg">Companies + Customers</h3>
+<p class="text-gray-400 text-sm mt-1">Reward customer loyalty with exclusive savings and lifestyle perks.</p>
+</div>
+</div>
+<div class="bg-card-bg rounded-2xl p-6 border border-gray-800 gradient-border-blue flex items-start gap-4">
+<div class="bg-blue-900/30 p-3 rounded-xl">
+<span class="material-icons text-blue-500">work</span>
+</div>
+<div>
+<h3 class="font-bold text-lg">Companies + Employees</h3>
+<p class="text-gray-400 text-sm mt-1">A modern benefit that stretches employee paychecks further every day.</p>
+</div>
+</div>
+<div class="bg-card-bg rounded-2xl p-6 border border-gray-800 gradient-border-green flex items-start gap-4">
+<div class="bg-green-900/30 p-3 rounded-xl">
+<span class="material-icons text-green-500">volunteer_activism</span>
+</div>
+<div>
+<h3 class="font-bold text-lg">Nonprofits</h3>
+<p class="text-gray-400 text-sm mt-1">Provide value back to donors while creating a recurring revenue stream.</p>
+</div>
+</div>
+<div class="bg-card-bg rounded-2xl p-6 border border-gray-800 gradient-border-grey flex items-start gap-4">
+<div class="bg-gray-800/50 p-3 rounded-xl">
+<span class="material-icons text-gray-400">groups</span>
+</div>
+<div>
+<h3 class="font-bold text-lg">Associations &amp; Communities</h3>
+<p class="text-gray-400 text-sm mt-1">The ultimate membership value add for professional groups and alumni.</p>
+</div>
+</div>
+</section>
+<section class="text-center mb-12">
+<span class="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-4">
+                Partnership Models
+            </span>
+<h2 class="text-3xl font-extrabold leading-tight">
+                Two Models.<br/>
+<span class="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">One Objective.</span>
+</h2>
+<p class="text-gray-400 text-sm mt-3">Flexible solutions to fit your organizational goals.</p>
+</section>
+<section class="grid grid-cols-2 gap-4 mb-12">
+<div class="bg-gradient-to-b from-purple-900/40 to-black rounded-3xl p-5 border border-purple-500/20">
+<span class="material-icons text-purple-400 text-2xl mb-4">payments</span>
+<h4 class="font-bold text-xl mb-1">RSM</h4>
+<p class="text-[10px] text-purple-400 font-bold uppercase tracking-wider mb-4">Revenue Sharing</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-[11px] text-gray-300">
+<span class="material-icons text-purple-500 text-[14px] mt-0.5">check_circle</span>
+<span>Zero upfront cost for partners</span>
+</li>
+<li class="flex items-start gap-2 text-[11px] text-gray-300">
+<span class="material-icons text-purple-500 text-[14px] mt-0.5">check_circle</span>
+<span>Earn 30% per membership sold</span>
+</li>
+<li class="flex items-start gap-2 text-[11px] text-gray-300">
+<span class="material-icons text-purple-500 text-[14px] mt-0.5">check_circle</span>
+<span>Automated payouts</span>
+</li>
+</ul>
+</div>
+<div class="bg-gradient-to-b from-blue-900/40 to-black rounded-3xl p-5 border border-blue-500/20">
+<span class="material-icons text-blue-400 text-2xl mb-4">inventory_2</span>
+<h4 class="font-bold text-xl mb-1">Bulk</h4>
+<p class="text-[10px] text-blue-400 font-bold uppercase tracking-wider mb-4">Enterprise Access</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-[11px] text-gray-300">
+<span class="material-icons text-blue-500 text-[14px] mt-0.5">check_circle</span>
+<span>Fixed annual enterprise rate</span>
+</li>
+<li class="flex items-start gap-2 text-[11px] text-gray-300">
+<span class="material-icons text-blue-500 text-[14px] mt-0.5">check_circle</span>
+<span>Unlimited users per tier</span>
+</li>
+<li class="flex items-start gap-2 text-[11px] text-gray-300">
+<span class="material-icons text-blue-500 text-[14px] mt-0.5">check_circle</span>
+<span>Best for employee benefits</span>
+</li>
+</ul>
+</div>
+</section>
+<section class="text-center space-y-6">
+<p class="text-gray-400 text-xs">Not sure which model fits?</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all">
+                Book a Call <span class="material-icons text-xl">calendar_today</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-gray-500 text-[10px]">
+<span class="material-icons text-[14px]">verified_user</span>
+                No obligation partnership consultation
+            </div>
+</section>
+<div class="h-24 relative mt-16 -mx-6 overflow-hidden">
+<div class="absolute top-0 w-full h-12 bg-primary" style="clip-path: ellipse(70% 100% at 50% 0%);"></div>
+</div>
+</main>
+
+</body></html>

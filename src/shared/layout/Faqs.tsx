@@ -1,6 +1,72 @@
 import { Accordion } from "../components/Accordion";
+import { useJsonLd } from "../../hooks/useJsonLd";
+
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is uchooseit.us?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "It's a private discount network exclusively for members, offering savings of up to 50% at over 1 million locations across the U.S.—including restaurants, retail, entertainment, travel, and much more.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does it cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "$47.99 per year, less than $3.99 per month. With just one discount per month, you'll cover the cost of your membership.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where can I use the discounts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'All across the United States. From major brands to local businesses. Just enable GPS and discover discounts near you.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I cancel anytime?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. No hidden fees. No hassle. You can cancel at any time from your account.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I access the discounts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You must purchase your annual membership, and then you can access the discounts through the My Deals app or from your computer. You can view offers near you by using your location and redeem them directly from your phone.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I really save money?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes! Since we have direct agreements with brands, you\'ll get the best possible discounts. Many of our members save hundreds or even thousands of dollars per year. You could save over $2,500 per year, depending on how often you use it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is my information safe?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. We take your privacy seriously. We do not sell your information like some free apps. Your data is secure and protected.',
+      },
+    },
+  ],
+};
 
 export default function Faqs() {
+  useJsonLd(FAQ_SCHEMA);
+
   return (
       <section className='relative bg-white dark:bg-black px-4 py-10 w-full'>
         <h5 className='text-black dark:text-white heading-1 text-center mb-5'>

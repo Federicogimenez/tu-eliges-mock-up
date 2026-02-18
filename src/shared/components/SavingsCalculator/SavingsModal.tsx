@@ -21,6 +21,7 @@ interface SavingsModalProps {
   categoryAnnuals: Record<CatKey, number>;
   netSavings: number;
   typicalSavings: Record<SubKey, number>;
+  hideMembershipCost?: boolean;
 }
 
 export default function SavingsModal({ 
@@ -35,6 +36,7 @@ export default function SavingsModal({
     resetAll,
     categoryAnnuals,
     typicalSavings,
+    hideMembershipCost = false,
     }: SavingsModalProps) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -97,11 +99,15 @@ export default function SavingsModal({
                 </button>
 
                 <div className="mx-auto max-w-6xl px-4 flex justify-center gap-x-4 items-stretch mb-3">
+                    {!hideMembershipCost && (
+                    <>
                     <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-black dark:text-white">
                         <span className="text-xl sm:text-3xl lg:text-4xl">You pay</span>
                         <span className="text-xl sm:text-3xl lg:text-4xl font-bold ">${membershipCost}</span>
                     </div>
                     <div className="block w-1 rounded-full bg-black dark:bg-white "></div>
+                    </>
+                    )}
                     <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-green-400">
                         <span className="text-xl sm:text-3xl lg:text-4xl">You Save</span>
                         <span className="text-xl sm:text-3xl lg:text-4xl font-bold ">{Currency(netSavings)}</span>

@@ -114,7 +114,7 @@ export default function TestimonialSection({
               </p>
 
               <button
-                onClick={openModal}
+                onClick={() => openModal?.()}
                 className={`block w-11/12 mx-auto font-semibold mb-6 text-center max-w-md px-4 py-2 cursor-pointer rounded-full bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white text-lg transition-all duration-300 hover:-translate-y-1`}
               >
                   Calculate Savings
