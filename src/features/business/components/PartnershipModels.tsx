@@ -66,7 +66,7 @@ export default function PartnershipModels({ onBookCall }: PartnershipModelsProps
       </section>
 
       {/* Models Grid */}
-      <section className="grid portrait:grid-cols-1 lanscape:grid-cols-2 gap-4 mb-12 mx-auto max-w-2xl">
+      <section className="grid portrait:grid-cols-1 landscape:grid-cols-2 gap-4 mb-12 mx-auto max-w-2xl">
         {models.map((model) => (
           <div
             key={model.title}
