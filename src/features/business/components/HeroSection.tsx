@@ -19,9 +19,9 @@ export default function HeroSection({ onBookCall }: HeroSectionProps) {
         Give your audience private access to the largest discount network in the U.S.
       </p>
       {/* CTA */}
-      <section className="text-center w-full max-w-2xl flex portrait:flex-col landscape:flex-row justify-center items-center gap-4 mt-10">
+      <section className="text-center w-full max-w-2xl flex flex-col justify-center items-center gap-4 mt-10">
         <BookCallButton onClick={onBookCall} />
-        <div className="flex flex-col landscape:items-start portrait:items-center justify-center gap-0.5 text-[12px] text-nowrap w-fit">
+        <div className="flex flex-col items-center justify-center gap-0.5 text-[12px] text-nowrap w-fit">
           <strong className="font-semibold">
             Trusted by organizations across the U.S.
           </strong>
