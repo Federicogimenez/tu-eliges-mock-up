@@ -1,7 +1,7 @@
 # SEO Static Pre-rendering — Backlog de Tareas
 
 ## Feature: seo
-## Estado global: COMPLETADA (6/6 completadas)
+## Estado global: ACTIVA (6/6 base completadas + 1 fix pendiente)
 
 ---
 
@@ -13,6 +13,7 @@
 | html-fragments | Fragmentos HTML semanticos por ruta | completada | ninguna |
 | static-seo-plugin | Plugin Vite staticSeoPlugin.ts | completada | seo-config, html-fragments |
 | build-verification | Integracion, build y verificacion | completada | static-seo-plugin, json-ld-global |
+| seo-visibility | Ocultar contenido estatico visualmente (anti-FOUC) | pendiente | static-seo-plugin |
 
 ---
 
@@ -443,3 +444,139 @@ Para verificar el output, inspeccionar manualmente al menos 3 archivos HTML gene
 5. Verificar que el JSON-LD especifico de la ruta esta presente
 
 Si `npm run preview` no resuelve las rutas correctamente por la estructura de directorios, documentarlo como nota. En produccion (AWS/Nginx) la resolucion funciona diferente que en el preview server de Vite. Lo importante es que los archivos existan en `dist/` con el contenido correcto.
+
+---
+
+### seo-visibility: Ocultar contenido estatico visualmente (anti-FOUC)
+
+- **Feature**: seo
+- **Rol**: Feature Dev
+- **Estado**: pendiente
+- **Dependencias**: static-seo-plugin
+
+## Contexto
+
+El contenido HTML semantico inyectado dentro de `<div id="root">` por el plugin es visible como texto plano durante una fraccion de segundo antes de que React monte y lo reemplace. Este flash (FOUC — Flash of Unstyled Content) es inesperado y produce una mala impresion al usuario.
+
+**Solucion**: Crear una clase CSS `.seo-only` que oculta visualmente el contenido sin sacarlo del DOM. El plugin envolvera cada fragmento inyectado en `<div class="seo-only">`. La clase se define como `<style>` inline en el `<head>` de `index.html` para que cargue ANTES de que el body se renderice (cero FOUC garantizado).
+
+## Enfoque tecnico: patron visually-hidden (sr-only)
+
+Se usa el patron estandar de accesibilidad `visually-hidden` / `sr-only`:
+
+```css
+.seo-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+```
+
+### Por que NO usar `color: #000; background: #000`
+
+Google penaliza **explicitamente** el texto del mismo color que el fondo como tecnica de spam (hidden text). De las [Search Essentials de Google](https://developers.google.com/search/docs/essentials/spam-policies#hidden-text-and-links):
+
+> *"white text on a white background"* — o cualquier texto que coincida con el color del fondo
+
+Aunque el contenido sea legitimo, el algoritmo lo detecta automaticamente y puede resultar en **penalizacion del ranking**. Otras tecnicas penalizadas incluyen `font-size: 0` y `opacity: 0`.
+
+### Por que SI usar el patron sr-only / visually-hidden
+
+- **Es un estandar de accesibilidad** — usado por Bootstrap (`.visually-hidden`), Tailwind (`.sr-only`), y practicamente todos los design systems
+- **Google lo acepta** — no es considerado cloaking porque su proposito documentado es accesibilidad
+- **Screen readers lo leen** — beneficio extra para accesibilidad
+- **No afecta el layout** — `position: absolute` lo saca del flujo, sin empujar contenido
+- **El contenido esta en el DOM** — crawlers lo ven sin restricciones
+
+## Archivos
+```
+MODIFICAR:
+  index.html                      (agregar <style> con .seo-only en <head>)
+  src/plugins/staticSeoPlugin.ts  (envolver fragmentos en <div class="seo-only">)
+```
+
+## Implementacion detallada
+
+### 1. `index.html` — Agregar estilo inline en `<head>`
+
+Insertar inmediatamente despues de `<meta name="theme-color" content="#000" />` y ANTES del bloque de JSON-LD:
+
+```html
+<!-- SEO Static Content: visually hidden, accessible to crawlers -->
+<style>
+  .seo-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+```
+
+**Razon de ubicacion**: Al estar en `<head>`, la regla CSS se aplica ANTES de que el browser renderice el `<body>`. Esto garantiza que el contenido estatico nunca sea visible, ni siquiera por un frame.
+
+### 2. `staticSeoPlugin.ts` — Envolver fragmentos
+
+Cambiar la linea de inyeccion del fragmento:
+
+**Antes**:
+```ts
+html = html.replace(
+  '<div id="root"></div>',
+  `<div id="root">${fragment}</div>`
+);
+```
+
+**Despues**:
+```ts
+html = html.replace(
+  '<div id="root"></div>',
+  `<div id="root"><div class="seo-only">${fragment}</div></div>`
+);
+```
+
+El wrapper `<div class="seo-only">` engloba TODO el fragmento semantico. Cuando React monta con `createRoot(root).render()`, reemplaza todo el contenido de `#root` incluyendo este wrapper — no queda residuo en el DOM.
+
+## Limites
+- NO agregar la clase `.seo-only` a `src/index.css` ni a ningun archivo de Tailwind — debe ser inline en `<head>` para cargar antes del body
+- NO usar `display: none` ni `visibility: hidden` — algunos crawlers ignoran contenido con estas propiedades
+- NO usar `color/background` iguales, `font-size: 0`, ni `opacity: 0` — Google los penaliza como hidden text
+- NO modificar los fragmentos HTML individuales — el wrapper se agrega en el plugin
+- NO tocar ningun componente React
+
+## Criterio de aceptacion
+- [ ] `index.html` contiene un `<style>` en `<head>` con la clase `.seo-only` usando el patron visually-hidden
+- [ ] El `<style>` esta ubicado ANTES del `<body>` (en `<head>`)
+- [ ] `staticSeoPlugin.ts` envuelve el fragmento inyectado en `<div class="seo-only">`
+- [ ] `npm run build` completa sin errores
+- [ ] Al inspeccionar `dist/index.html`: el contenido estatico esta dentro de `<div class="seo-only">` dentro de `<div id="root">`
+- [ ] Al cargar la app en el browser: NO hay flash de contenido estatico visible
+- [ ] Al inspeccionar el DOM pre-React (deshabilitando JS): el contenido HTML semantico sigue presente y legible en el source
+- [ ] Verificar en al menos 2 rutas adicionales (`/shop`, `/business`)
+
+## Notas del Arquitecto
+
+**Flujo temporal de la pagina**:
+```
+1. Browser descarga index.html
+2. Parser lee <head> → carga la regla .seo-only (CSS inline, instantaneo)
+3. Parser lee <body> → renderiza <div id="root"><div class="seo-only">...</div></div>
+4. .seo-only ya esta aplicado → contenido invisible (0ms de flash)
+5. JS bundle carga → React monta → createRoot reemplaza TODO el contenido de #root
+6. .seo-only ya no existe en el DOM → regla CSS inerte
+```
+
+**Por que inline y no en index.css**: El CSS bundle (`index.css`) se carga como recurso externo. Hay un gap entre el HTML parseado y el CSS aplicado. Si la regla `.seo-only` estuviera en `index.css`, el contenido seria visible durante ese gap. Al estar inline en `<head>`, se aplica sincrono con el parsing — cero gap.
+
+**Impacto en el build**: Solo se modifica la plantilla base (`index.html`) y el plugin. El plugin ya genera copias por ruta, por lo que la clase `.seo-only` se propaga automaticamente a todos los HTML generados (`dist/shop/index.html`, etc.).

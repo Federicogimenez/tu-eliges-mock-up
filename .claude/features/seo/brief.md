@@ -1,6 +1,6 @@
 # Feature: SEO Static Pre-rendering
 
-## Estado: COMPLETADA
+## Estado: ACTIVA (6/6 base completadas + 1 fix pendiente)
 ## Prioridad: P0
 ## Rol asignado: Feature Dev
 

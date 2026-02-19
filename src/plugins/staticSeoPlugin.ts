@@ -128,7 +128,7 @@ export function staticSeoPlugin(): Plugin {
           );
           html = html.replace(
             '<div id="root"></div>',
-            `<div id="root">${fragment}</div>`
+            `<div id="root"><div class="seo-only">${fragment}</div></div>`
           );
         } catch {
           console.warn(`[static-seo] Fragment ${seo.staticFile} not found, skipping content injection for ${route}`);
