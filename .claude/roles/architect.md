@@ -33,7 +33,7 @@ You operate with **broad context** - reading across multiple features, layout fi
 1. Read `.claude/standards/` to understand current conventions before proposing changes
 2. Read `.claude/features/` to understand existing feature documentation
 3. Read `src/shared/layout/Main.tsx` and `src/routes/AppRoutes.tsx` to understand the integration surface
-4. Check `claude-brief.md` for the project overview and business model
+4. Check `CLAUDE.md` (project root) for the project overview and business model
 
 ## Output Format
 

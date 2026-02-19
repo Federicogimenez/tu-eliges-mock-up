@@ -1,5 +1,7 @@
 # [task-titulo]: [Descripcion breve]
 
+> **Uso**: Este template define la estructura de cada seccion dentro de `tasks.md`. Todas las tareas de una feature van en un solo archivo `tasks.md`, separadas por `---`, no en archivos independientes.
+
 ## Metadata
 - **Feature**: [nombre de la feature]
 - **Rol**: [Feature Dev | otro]

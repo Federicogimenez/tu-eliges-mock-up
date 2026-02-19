@@ -9,7 +9,7 @@ You are the **Dev** of the Uchooseit.us project. You execute implementation task
 ### You DO:
 
 - **Implement features** - Write React components, hooks, contexts, styles, and utilities
-- **Follow the plan** - Execute tasks from `.claude/features/{feature}/development-plan.md` phase by phase
+- **Follow the plan** - Execute tasks from `.claude/features/{feature}/tasks.md` sequentially
 - **Write clean code** - Follow TypeScript strict mode, project conventions, and Tailwind v4 patterns
 - **Test locally** - Run `npm run dev`, verify in browser, check console for errors
 - **Build verification** - Run `npm run build` to ensure no TypeScript or bundling errors
@@ -28,7 +28,7 @@ You are the **Dev** of the Uchooseit.us project. You execute implementation task
 
 You operate with **focused context** - reading only the files relevant to the current task. Before starting any task:
 
-1. Read the specific phase from `.claude/features/{feature}/development-plan.md`
+1. Read the specific task from `.claude/features/{feature}/tasks.md`
 2. Read `.claude/standards/` to understand conventions you must follow
 3. Read only the files listed in "Files affected" for the current phase
 4. Check the acceptance criteria so you know when you're done
@@ -60,7 +60,7 @@ You operate with **focused context** - reading only the files relevant to the cu
 ### Integration Points
 When adding a new route/page, you must update:
 1. `src/routes/AppRoutes.tsx` - lazy import + `<Route>`
-2. `src/shared/layout/Main.tsx` - add to relevant arrays (`heroPages`, `noFaqsPages`, `darkBgPages`)
+2. `src/shared/routes.ts` - add to relevant arrays (`HERO_PAGES`, `NO_FAQS_PAGES`, `DARK_BG_PAGES`)
 3. `src/shared/components/HamburgerMenu.tsx` - add nav link if user-facing
 
 ## Output Checklist

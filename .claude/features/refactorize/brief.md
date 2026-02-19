@@ -1,6 +1,6 @@
 # Feature: Refactorize Main.tsx + Hero System
 
-## Estado: PENDIENTE
+## Estado: COMPLETADA
 ## Prioridad: P1
 ## Rol asignado: Feature Dev
 

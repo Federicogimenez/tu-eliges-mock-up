@@ -1,12 +1,12 @@
-# UChooseIt.us — Robots.txt
-# https://uchooseit.us
+# Uchooseit.us — Robots Directives
 
+# Default: allow all crawlers
 User-agent: *
 Allow: /
 Disallow: /thank-you
 Disallow: /activate
 
-# AI crawlers — full access
+# AI Crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
 
@@ -25,4 +25,5 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Sitemap
 Sitemap: https://uchooseit.us/sitemap.xml

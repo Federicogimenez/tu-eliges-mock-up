@@ -1,31 +1,66 @@
-# Feature: SEO Bot-Only Indexation Layer
+# Feature: SEO Static Pre-rendering
 
-## Estado: ACTIVA (6/7 completadas, prerender-build diferida)
+## Estado: COMPLETADA
 ## Prioridad: P0
 ## Rol asignado: Feature Dev
 
 ---
 
 ## Objetivo
-El sitio es una SPA que sirve un `index.html` vacio a crawlers. Google, ChatGPT, Perplexity y otros bots no pueden leer el contenido ni el storytelling del producto. Esta feature construye una capa de SEO invisible para usuarios reales que permite a los bots indexar correctamente cada ruta con contenido semantico rico, datos estructurados y meta tags diferenciados — transmitiendo la propuesta de valor B2C completa y la oportunidad B2B.
+El sitio es una SPA (React + Vite) que sirve un `index.html` con `<div id="root"></div>` vacio. Los bots de busqueda y agentes de IA que no ejecutan JavaScript ven una pagina en blanco: sin contenido, sin meta tags por ruta, sin JSON-LD. Esto causa indexacion nula y el sitio no existe para motores de busqueda ni asistentes de IA.
+
+**Solucion**: Crear un plugin de Vite que en build time genera archivos `index.html` especificos por ruta con meta tags completos en `<head>` y contenido HTML semantico dentro de `<div id="root">`. React se monta y reemplaza el contenido estatico — los bots ven HTML rico, los usuarios ven la app normal.
+
+## Por que este enfoque (vs hooks client-side)
+
+La iteracion anterior uso hooks (`usePageMeta`, `useJsonLd`) que inyectaban meta tags y JSON-LD en runtime via JavaScript. Esto fallo porque los bots que no ejecutan JS (GPTBot, ClaudeBot, Bingbot sin rendering) no veian nada. El bloque `<noscript>` paliaba parcialmente pero no resolvia los meta tags por ruta.
+
+El pre-rendering estatico resuelve todo de raiz:
+- **Meta tags en HTML estatico** — no requieren JS para estar presentes
+- **Contenido dentro de `<div id="root">`** — visible para TODOS los bots sin excepcion
+- **JSON-LD en `<head>`** — indexable sin rendering
+- **React reemplaza el contenido al montar** — UX identica para usuarios con JS
+- **Cero dependencias npm** — plugin custom con Node.js `fs`/`path` nativos
+- **Funciona con cualquier hosting** — genera archivos en `dist/` que cualquier servidor sirve
+- **Ningun componente de feature se modifica** — todo el SEO es infraestructura de build
 
 ## Alcance
 
 ### Incluido
 - Archivos estaticos para bots: `robots.txt`, `sitemap.xml`, `llms.txt` en `public/`
-- Bloque `<noscript>` semantico en `index.html` con storytelling B2C + mencion B2B (invisible con JS habilitado)
-- JSON-LD structured data global en `index.html` (Organization, WebSite)
-- Per-page meta tags dinamicos via custom hook `usePageMeta` (title, description, canonical, OG, Twitter por ruta)
-- JSON-LD por pagina (Product, FAQPage, BreadcrumbList) inyectado via helper `useJsonLd`
-- Hooks reutilizables en `src/hooks/` — cero dependencias externas
-- Pre-renderizado en build time con `vite-plugin-prerender` para generar HTML estatico por ruta
+- JSON-LD global (Organization + WebSite) en `index.html`
+- Configuracion SEO por ruta: `src/seo/seo.json` (meta tags, JSON-LD, fragmento asociado)
+- Fragmentos HTML semanticos por ruta: `src/seo/fragments/*.html` (7 archivos)
+- Plugin Vite `staticSeoPlugin.ts` que en `closeBundle`:
+  1. Lee `dist/index.html` como plantilla base
+  2. Para cada ruta en `seo.json`: inyecta meta tags en `<head>`, JSON-LD en `<head>`, HTML estatico dentro de `<div id="root">`
+  3. Escribe `dist/{ruta}/index.html` (ej: `dist/shop/index.html`)
+- Registro del plugin en `vite.config.ts`
 
 ### Excluido
-- SSR / migracion a Next.js o Remix (fuera de scope, este proyecto es SPA puro)
-- Cambios visuales a componentes existentes (la UI no cambia para el usuario real)
+- SSR / migracion a Next.js o Remix
+- Cambios visuales a componentes existentes (la UI no cambia para el usuario)
+- Hooks client-side para SEO (usePageMeta, useJsonLd) — reemplazados por build-time
+- Dynamic rendering via Cloudflare Workers o edge functions
+- Pre-rendering con Puppeteer/Chromium (pesado, fragil en CI)
 - Contenido editorial / blog / content marketing
-- Dynamic rendering via Cloudflare Workers o Netlify Edge Functions (evaluable en futuro)
-- Cambios al sistema de rutas, al DOM visible, ni a componentes de layout
+- Modificacion de ningun componente en `src/features/`
+
+## Como funciona
+
+```
+Bot visita /               -> Servidor sirve dist/index.html (contenido estatico de home)
+Bot visita /shop           -> Servidor sirve dist/shop/index.html (contenido de shop)
+Bot visita /travel         -> Servidor sirve dist/travel/index.html (contenido de travel)
+Bot visita /random-spa-url -> Servidor sirve dist/index.html (fallback SPA catch-all)
+Usuario visita /shop       -> Mismo HTML, pero React se monta y reemplaza el contenido
+```
+
+### Compatibilidad con hosting
+La estructura `dist/{ruta}/index.html` funciona con:
+- **S3 + CloudFront** (AWS): S3 resuelve `/shop` -> `shop/index.html` automaticamente
+- **Nginx**: `try_files $uri $uri/ /index.html` sirve el archivo especifico primero
+- **Netlify**: `_redirects` catch-all sigue funcionando como fallback
 
 ## Estado actual del codigo
 
@@ -34,19 +69,18 @@ El sitio es una SPA que sirve un `index.html` vacio a crawlers. Google, ChatGPT,
 - OG y Twitter cards basicos apuntando a `https://uchooseit.us/`
 - `<noscript>` contiene solo el pixel de Facebook (1x1 img tracking)
 - No hay JSON-LD de ningun tipo
-- No hay referencia a sitemap
+- `<div id="root"></div>` vacio
+
+### vite.config.ts
+- Solo plugins `@vitejs/plugin-react` y `@tailwindcss/vite`
+- No hay plugins custom
 
 ### public/
 - Existe `_redirects` para SPA catch-all
 - No existe `robots.txt`, `sitemap.xml`, ni `llms.txt`
 
-### vite.config.ts
-- Solo plugins `@vitejs/plugin-react` y `@tailwindcss/vite`
-- No hay plugin de pre-rendering
-
-### Dependencias
-- No hay `vite-plugin-prerender` instalado
-- No se usara `react-helmet-async` — se reemplaza por hooks custom sin dependencias
+### Componentes de feature
+- Limpios de cualquier logica SEO (hooks removidos en esta iteracion)
 
 ## Archivos permitidos (scope)
 ```
@@ -54,62 +88,61 @@ CREAR:
   public/robots.txt
   public/sitemap.xml
   public/llms.txt
-  src/hooks/usePageMeta.ts
-  src/hooks/useJsonLd.ts
+  src/seo/seo.json
+  src/seo/fragments/home.html
+  src/seo/fragments/shop.html
+  src/seo/fragments/travel.html
+  src/seo/fragments/dining.html
+  src/seo/fragments/entertainment.html
+  src/seo/fragments/business.html
+  src/seo/fragments/product.html
+  src/plugins/staticSeoPlugin.ts
 
 MODIFICAR:
-  index.html                                        (JSON-LD global, noscript semantico)
-  src/features/home/Home.tsx                        (usePageMeta + useJsonLd)
-  src/features/shop/Shop.tsx                        (usePageMeta + useJsonLd)
-  src/features/travel/Travel.tsx                    (usePageMeta + useJsonLd)
-  src/features/dining/Dining.tsx                    (usePageMeta + useJsonLd)
-  src/features/entertainment/Entertainment.tsx      (usePageMeta + useJsonLd)
-  src/features/business/Business.tsx                (usePageMeta + useJsonLd)
-  src/shared/layout/Faqs.tsx                        (FAQPage JSON-LD via useJsonLd)
-  vite.config.ts                                    (pre-render plugin)
-  package.json                                      (vite-plugin-prerender devDep)
+  index.html                 (JSON-LD global Organization + WebSite)
+  vite.config.ts             (registrar staticSeoPlugin)
 
 NO TOCAR:
-  src/shared/layout/Main.tsx
-  src/context/**
+  src/features/**            (ningun componente de pagina)
+  src/shared/**
   src/hooks/**
+  src/context/**
   src/main.tsx
-  src/shared/layout/Main.tsx
-  src/shared/layout/HeroVideo.tsx | HeroOverlay.tsx
-  src/shared/components/SavingsCalculator/**
-  src/shared/layout/Footer.tsx
-  src/shared/layout/HeroTrendy.tsx
+  src/routes/**
+  package.json               (no se necesitan dependencias nuevas)
 ```
 
 ## Dependencias
-- Ninguna feature previa requerida (SEO es independiente del estado de refactorize)
-- Dependencia npm nueva: `vite-plugin-prerender` (+ `puppeteer` como devDep) — solo para la fase de pre-render
-- Sin dependencias nuevas para meta tags ni JSON-LD (hooks custom con DOM API nativo)
+- Ninguna dependencia npm nueva — el plugin usa Node.js `fs` y `path` nativos
+- Ninguna feature previa requerida
 
 ## Criterios de aceptacion
 1. `robots.txt` accesible en la raiz con directivas para bots de busqueda y bots de IA
 2. `sitemap.xml` lista las 7 rutas publicas principales con prioridades correctas
 3. `llms.txt` describe el negocio en formato markdown legible por bots de IA
-4. `<noscript>` en `index.html` contiene HTML semantico con headings, links, navegacion y descripcion B2C + B2B
-5. Cada ruta publica tiene `<title>`, `<meta description>`, `<link canonical>`, OG y Twitter tags unicos
-6. JSON-LD Organization + WebSite presentes en todas las paginas
-7. JSON-LD FAQPage presente donde se renderizan FAQs
-8. JSON-LD BreadcrumbList presente en paginas de categoria
-9. `vite build` genera archivos HTML pre-renderizados para las 7 rutas principales
-10. Un usuario real con JS habilitado no ve ningun contenido adicional — la UI es identica
-11. `npm run build` pasa sin errores TypeScript
-12. No hay console errors en dev mode
+4. JSON-LD Organization + WebSite presentes en `index.html` base
+5. `vite build` genera archivos HTML en `dist/`, `dist/shop/`, `dist/travel/`, `dist/dining/`, `dist/entertainment/`, `dist/business/`, `dist/product/`
+6. Cada HTML generado tiene `<title>`, `<meta description>`, `<link canonical>`, OG y Twitter tags unicos para esa ruta
+7. Cada HTML generado tiene JSON-LD relevante (BreadcrumbList en categorias, Product en home, FAQPage en rutas con FAQ)
+8. Cada HTML generado tiene contenido semantico dentro de `<div id="root">` con headings, paragraphs, links y listas
+9. Un usuario real con JS habilitado ve la app React normalmente — el contenido estatico es reemplazado por React al montar
+10. `npm run build` pasa sin errores TypeScript
+11. Ningun componente en `src/features/` fue modificado
+
+## Referencia
+- `storytelling.md` — storytelling y mensaje B2C/B2B (contenido a usar en fragmentos HTML)
+- `.claude/SEO_STATIC_PRERENDER_PLAN.md` — plan de referencia (adaptado de otro proyecto)
 
 ## Estructura de la feature
 ```
 features/seo/
-  brief.md            → este archivo
-  feature-brief.md    → storytelling y mensaje a indexar (B2C + B2B)
-  tasks.md            → backlog de tareas
-  doc/                → registro de tareas completadas (usar templates/task-doc.md)
+  brief.md            -> este archivo
+  storytelling.md     -> storytelling y mensaje a indexar (B2C + B2B)
+  tasks.md            -> backlog de tareas
+  doc/                -> registro de tareas completadas (usar templates/task-doc.md)
 ```
 
 ---
 
 *Creado por: Arquitecto*
-*Fecha: 2026-02-17*
+*Fecha: 2026-02-18*

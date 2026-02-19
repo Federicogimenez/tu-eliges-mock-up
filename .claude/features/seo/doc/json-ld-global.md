@@ -2,14 +2,12 @@
 
 ## Feature: seo
 ## Rol: Dev
-## Fecha: 2026-02-17
-
-> Archivo: `doc/json-ld-global.md`
+## Fecha: 2026-02-18
 
 ---
 
 ## Que se hizo
-Se agrego un bloque `<script type="application/ld+json">` en el `<head>` de `index.html` con un `@graph` conteniendo dos schemas de Schema.org: Organization (con nombre, logo, descripcion, contactPoint, sameAs con 5 redes sociales) y WebSite (con publisher referenciando la Organization via `@id`). Estos schemas son globales y aplican a todas las paginas.
+Se agrego un bloque `<script type="application/ld+json">` en el `<head>` de `index.html` con un `@graph` que contiene los schemas Organization y WebSite. Organization incluye: name, legalName, url, logo (ImageObject), image, description, areaServed ("US"), contactPoint (telefono + email + idiomas), y sameAs con 5 redes sociales (Instagram, TikTok, Facebook, YouTube, LinkedIn). WebSite referencia a Organization via `@id`. El bloque se coloco antes del Meta Pixel.
 
 ## Archivos tocados
 ```
@@ -17,12 +15,9 @@ MODIFICADOS: index.html
 ```
 
 ## Decisiones tomadas
-- Se uso `@id` references (`#organization`, `#website`) para vincular ambos schemas, permitiendo que schemas por pagina (Product, BreadcrumbList) referencien la Organization
-- El logo apunta a `iso.png` (favicon existente, accesible como asset publico)
-- El `image` apunta a `site_preview.png` (mismo que OG image)
-- Se incluyeron las 5 redes sociales exactas del Footer: Instagram, TikTok, Facebook, YouTube, LinkedIn
-- Se uso `contactPoint` con telephone en formato E.164 internacional y email
-- No se incluyo `SearchAction` en WebSite porque el SPA no tiene funcionalidad de busqueda
+- Se uso `@id` references (`https://uchooseit.us/#organization`, `https://uchooseit.us/#website`) para permitir cross-referencing con schemas por pagina (Product, BreadcrumbList) que referencian la organizacion
+- El logo apunta a `/iso.png` que ya existe en `public/` como favicon
+- Se mantuvo `og:image` apuntando a `site_preview.png` que ya existia
 
 ## Pendientes o notas
-- Validar el JSON-LD en Google Rich Results Test (https://search.google.com/test/rich-results) una vez deployado
+- Ninguno

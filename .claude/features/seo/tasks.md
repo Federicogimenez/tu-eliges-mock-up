@@ -1,19 +1,18 @@
-# SEO Bot-Only Indexation Layer - Backlog de Tareas
+# SEO Static Pre-rendering — Backlog de Tareas
 
 ## Feature: seo
-## Estado global: ACTIVA (6/7 completadas)
+## Estado global: COMPLETADA (6/6 completadas)
 
 ---
 
 | ID | Titulo | Estado | Dependencias |
 |----|--------|--------|-------------|
 | static-files | robots.txt + sitemap.xml + llms.txt | completada | ninguna |
-| noscript-semantic | Bloque noscript semantico en index.html | completada | ninguna |
 | json-ld-global | JSON-LD global (Organization + WebSite) en index.html | completada | ninguna |
-| seo-hooks | Custom hooks usePageMeta + useJsonLd | completada | ninguna |
-| page-meta-tags | Meta tags por pagina en las 7 rutas principales | completada | seo-hooks |
-| json-ld-pages | JSON-LD por pagina (FAQPage, BreadcrumbList) via useJsonLd | completada | seo-hooks |
-| prerender-build | Pre-renderizado en build time | diferida | page-meta-tags, json-ld-global, json-ld-pages |
+| seo-config | Configuracion SEO por ruta (seo.json) | completada | ninguna |
+| html-fragments | Fragmentos HTML semanticos por ruta | completada | ninguna |
+| static-seo-plugin | Plugin Vite staticSeoPlugin.ts | completada | seo-config, html-fragments |
+| build-verification | Integracion, build y verificacion | completada | static-seo-plugin, json-ld-global |
 
 ---
 
@@ -29,7 +28,7 @@ Crear tres archivos estaticos en `public/` que los bots consumen directamente. `
 
 **Archivos**:
 ```
-CREAR:   public/robots.txt, public/sitemap.xml, public/llms.txt
+CREAR: public/robots.txt, public/sitemap.xml, public/llms.txt
 ```
 
 **Limites**:
@@ -39,13 +38,13 @@ CREAR:   public/robots.txt, public/sitemap.xml, public/llms.txt
 - Los archivos son puramente estaticos, sin logica
 
 **Criterio de aceptacion**:
-- [ ] `robots.txt` tiene directivas Allow/Disallow correctas, incluye User-agent para GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, y referencia a Sitemap
+- [ ] `robots.txt` tiene directivas Allow/Disallow correctas, incluye User-agent para GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, y referencia a Sitemap
 - [ ] `sitemap.xml` lista exactamente 7 URLs: `/`, `/shop`, `/travel`, `/dining`, `/entertainment`, `/product`, `/business` con prioridades (home=1.0, categorias=0.9, product=0.8, business=0.7)
-- [ ] `llms.txt` contiene descripcion del negocio en markdown: que es UChooseIt, las 4 categorias, la oferta B2B, y links a las paginas principales
+- [ ] `llms.txt` contiene descripcion del negocio en markdown: que es UChooseIt, las 4 categorias con cifras, la oferta B2B, pricing, y links a las paginas principales
 - [ ] Verificar que `_redirects` no intercepta estos archivos (los archivos en `public/` se sirven directamente)
 
 **Notas del Arquitecto**:
-Consultar `feature-brief.md` para el contenido exacto del storytelling B2C y B2B que debe reflejarse en `llms.txt`. Las cifras clave (precios, ubicaciones, marcas) estan documentadas ahi.
+Consultar `storytelling.md` para el contenido exacto del storytelling B2C y B2B que debe reflejarse en `llms.txt`. Las cifras clave (precios, ubicaciones, marcas) estan documentadas ahi.
 
 El `robots.txt` debe permitir explicitamente los bots de IA por nombre:
 ```
@@ -57,59 +56,22 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
 ```
 
----
-
-### noscript-semantic: Bloque noscript semantico en index.html
-
-- **Feature**: seo
-- **Rol**: Feature Dev
-- **Estado**: pendiente
-- **Dependencias**: ninguna
-
-**Contexto**:
-El `<noscript>` actual en `index.html` solo contiene el pixel de Facebook (1x1 img). Agregar un segundo bloque `<noscript>` despues de `<div id="root">` con HTML semantico completo: `<header>` con `<h1>` + `<nav>`, `<main>` con secciones descriptivas del negocio B2C, una mencion B2B, y `<footer>`. Este contenido es invisible para usuarios con JS habilitado pero legible por bots que no ejecutan JavaScript (GPTBot, ClaudeBot, Bingbot).
-
-**Archivos**:
+Disallow para rutas transaccionales:
 ```
-MODIFICAR: index.html
-```
-
-**Limites**:
-- No mover ni eliminar el `<noscript>` del pixel de Facebook — mantenerlo como esta
-- No agregar estilos CSS ni scripts dentro del noscript
-- No duplicar el `<div id="root">` ni interferir con el mount de React
-- El contenido debe ser puramente semantico (headings, paragraphs, links, lists)
-
-**Criterio de aceptacion**:
-- [ ] Nuevo bloque `<noscript>` presente despues de `<div id="root"></div>`
-- [ ] Contiene `<header>` con `<h1>UChooseIt.us — Smart Savings Membership</h1>` y `<nav>` con links a las 7 rutas
-- [ ] Contiene `<main>` con al menos 3 `<section>`: propuesta de valor B2C, las 4 categorias con links, y mencion B2B
-- [ ] Contiene `<footer>` con datos de contacto, ubicacion y tagline
-- [ ] El contenido refleja el storytelling documentado en `feature-brief.md`
-- [ ] Con JS habilitado, nada de este contenido es visible al usuario
-- [ ] El pixel de Facebook noscript sigue funcionando
-
-**Notas del Arquitecto**:
-El noscript es la primera linea de defensa para bots sin JS. Debe contener suficiente contenido semantico para que un bot entienda: que es UChooseIt, que categorias ofrece, cual es el precio, y como contactar. No necesita ser exhaustivo — los JSON-LD y meta tags complementan.
-
-Estructura sugerida:
-```html
-<noscript>
-  <header>
-    <h1>...</h1>
-    <p>tagline</p>
-    <nav>links a rutas</nav>
-  </header>
-  <main>
-    <section><!-- propuesta de valor --></section>
-    <section><!-- 4 categorias --></section>
-    <section><!-- B2B partnership --></section>
-    <section><!-- FAQ resumen --></section>
-  </main>
-  <footer>contacto + legal</footer>
-</noscript>
+User-agent: *
+Disallow: /thank-you
+Disallow: /activate
 ```
 
 ---
@@ -122,7 +84,7 @@ Estructura sugerida:
 - **Dependencias**: ninguna
 
 **Contexto**:
-Agregar un bloque `<script type="application/ld+json">` en el `<head>` de `index.html` con un `@graph` que contenga los schemas Organization y WebSite de Schema.org. Estos schemas son globales (aplican a todas las paginas) y ayudan a Google a entender la entidad detras del sitio, mostrar knowledge panels, y mejorar rich results.
+Agregar un bloque `<script type="application/ld+json">` en el `<head>` de `index.html` con un `@graph` que contenga los schemas Organization y WebSite de Schema.org. Estos schemas son globales (aplican a todas las paginas) y ayudan a Google a entender la entidad detras del sitio. Ademas, el plugin los heredara en cada pagina pre-renderizada.
 
 **Archivos**:
 ```
@@ -130,39 +92,63 @@ MODIFICAR: index.html
 ```
 
 **Limites**:
-- No agregar schemas especificos de pagina aqui (Product, FAQ, Breadcrumb van via useJsonLd en sus paginas)
+- No agregar schemas especificos de pagina aqui (Product, FAQ, Breadcrumb van en seo.json para el plugin)
 - No modificar los meta tags OG/Twitter existentes en esta tarea
 - Solo un bloque `<script type="application/ld+json">` con el `@graph`
+- Colocar el bloque ANTES del script del Meta Pixel
 
 **Criterio de aceptacion**:
-- [ ] `<script type="application/ld+json">` presente en `<head>` antes de `</head>`
-- [ ] Schema `Organization` con: name, url, logo (ImageObject), description, areaServed ("US"), contactPoint (telephone, email), sameAs (redes sociales: Instagram, TikTok, Facebook, YouTube, LinkedIn)
-- [ ] Schema `WebSite` con: url, name, publisher (ref a Organization), potentialAction (SearchAction — aunque el SPA no tiene busqueda, es buena practica para Google)
-- [ ] JSON valido (verificable en Google Rich Results Test)
-- [ ] Los valores coinciden con los datos reales: nombre "UChooseIt", url "https://uchooseit.us", telefono "(888) 556-2393", email "support@uchooseit.us"
+- [ ] `<script type="application/ld+json">` presente en `<head>` antes del Meta Pixel
+- [ ] Schema `Organization` con: name "UChooseIt", legalName "Uchooseit.us LLC", url, logo (ImageObject con `/iso.png`), description, areaServed "US", contactPoint (telephone "+1-888-556-2393", email "support@uchooseit.us"), sameAs (Instagram, TikTok, Facebook, YouTube, LinkedIn)
+- [ ] Schema `WebSite` con: url, name "UChooseIt.us", publisher (ref a Organization via `@id`)
+- [ ] JSON valido (estructura @context, @graph correcta)
+- [ ] Los IDs usan formato `https://uchooseit.us/#organization` y `https://uchooseit.us/#website` para cross-referencing con schemas por pagina
 
 **Notas del Arquitecto**:
 Usar `@id` references para vincular Organization y WebSite:
 ```json
 {
-  "@type": "Organization",
-  "@id": "https://uchooseit.us/#organization"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://uchooseit.us/#organization",
+      "name": "UChooseIt",
+      "legalName": "Uchooseit.us LLC",
+      "url": "https://uchooseit.us",
+      "logo": { "@type": "ImageObject", "url": "https://uchooseit.us/iso.png", "width": 512, "height": 512 },
+      "image": "https://uchooseit.us/site_preview.png",
+      "description": "UChooseIt is a VIP discount membership program offering up to 50% off at over 1 million locations across the United States.",
+      "areaServed": "US",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-888-556-2393",
+        "email": "support@uchooseit.us",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/uchooseit.us/",
+        "https://www.tiktok.com/@uchooseit.us",
+        "https://www.facebook.com/Uchooseit.us/",
+        "https://youtube.com/@uchooseit",
+        "https://www.linkedin.com/company/uchooseit-us"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://uchooseit.us/#website",
+      "url": "https://uchooseit.us",
+      "name": "UChooseIt.us",
+      "publisher": { "@id": "https://uchooseit.us/#organization" }
+    }
+  ]
 }
 ```
-```json
-{
-  "@type": "WebSite",
-  "publisher": { "@id": "https://uchooseit.us/#organization" }
-}
-```
-
-El logo debe apuntar a un archivo real accesible. Verificar cual logo existe en `public/` (probablemente `iso.png` o uno de los SVGs).
-
-Las URLs de redes sociales se pueden extraer del Footer actual del sitio.
 
 ---
 
-### seo-hooks: Custom hooks usePageMeta + useJsonLd
+### seo-config: Configuracion SEO por ruta (seo.json)
 
 - **Feature**: seo
 - **Rol**: Feature Dev
@@ -170,220 +156,290 @@ Las URLs de redes sociales se pueden extraer del Footer actual del sitio.
 - **Dependencias**: ninguna
 
 **Contexto**:
-Crear dos custom hooks en `src/hooks/` que manipulan el `<head>` del DOM directamente, sin dependencias externas. `usePageMeta` actualiza title, meta description, canonical, OG y Twitter tags. `useJsonLd` inyecta/remueve bloques `<script type="application/ld+json">` en el `<head>`. Ambos hooks usan `useEffect` con cleanup para restaurar los valores originales de `index.html` al desmontar el componente.
+Crear `src/seo/seo.json` que define la configuracion SEO para cada ruta publica. Este archivo es consumido por el plugin `staticSeoPlugin.ts` en build time para generar los HTML pre-renderizados. Cada entrada define: meta tags (title, description, canonical, og:type), referencia al fragmento HTML, y schemas JSON-LD especificos de esa pagina.
 
 **Archivos**:
 ```
-CREAR:   src/hooks/usePageMeta.ts, src/hooks/useJsonLd.ts
+CREAR: src/seo/seo.json
 ```
 
 **Limites**:
-- No instalar ninguna dependencia externa — solo DOM API nativo (`document.title`, `document.querySelector`, `document.createElement`)
-- No agregar meta tags a ninguna pagina todavia — solo crear los hooks
-- No modificar `src/main.tsx` ni ningun provider
-- No modificar ningun componente de feature en esta tarea
+- Solo las 7 rutas publicas principales — no incluir rutas transaccionales ni de afiliados
+- Los schemas JSON-LD por pagina NO incluyen Organization/WebSite (esos son globales en index.html y el plugin los hereda)
+- Los textos de meta tags deben estar en ingles
+- No incluir logica — es un archivo de datos puro
 
 **Criterio de aceptacion**:
-- [ ] `usePageMeta` acepta: `{ title: string, description: string, canonical: string, ogImage?: string }`
-- [ ] `usePageMeta` actualiza en mount: `document.title`, `<meta name="description">`, `<link rel="canonical">`, `<meta property="og:title">`, `<meta property="og:description">`, `<meta property="og:url">`, `<meta property="og:image">`, `<meta name="twitter:title">`, `<meta name="twitter:description">`
-- [ ] `usePageMeta` restaura los valores originales de `index.html` en cleanup (unmount)
-- [ ] `useJsonLd` acepta: `data: Record<string, unknown>` (o array de objects)
-- [ ] `useJsonLd` crea un `<script type="application/ld+json">` en `<head>` con el JSON stringified
-- [ ] `useJsonLd` remueve el `<script>` en cleanup (unmount) para no acumular schemas al navegar
-- [ ] Ambos hooks tienen tipos TypeScript correctos
-- [ ] `npm run build` pasa limpio
+- [ ] El archivo tiene exactamente 7 entradas: `/`, `/shop`, `/travel`, `/dining`, `/entertainment`, `/business`, `/product`
+- [ ] Cada entrada tiene: `title` (~60 chars), `description` (~155 chars), `canonical`, `type` (og:type), `staticFile` (nombre del fragmento HTML), `jsonLd` (array de schemas)
+- [ ] Home (`/`) incluye schema Product (VIP Membership, $47.99, USD, InStock)
+- [ ] Categorias (`/shop`, `/travel`, `/dining`, `/entertainment`) incluyen schema BreadcrumbList (Home > Categoria)
+- [ ] Product (`/product`) incluye schema Product
+- [ ] Business (`/business`) incluye schema BreadcrumbList (Home > Business Partners)
+- [ ] JSON valido y parseable
 
 **Notas del Arquitecto**:
-Patron sugerido para `usePageMeta`:
-```ts
-const usePageMeta = ({ title, description, canonical, ogImage }: PageMetaProps) => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = title;
-
-    const setMeta = (selector: string, attr: string, value: string) => {
-      const el = document.querySelector(selector);
-      const prev = el?.getAttribute(attr);
-      if (el) el.setAttribute(attr, value);
-      return { el, attr, prev };
-    };
-
-    const restores = [
-      setMeta('meta[name="description"]', 'content', description),
-      setMeta('link[rel="canonical"]', 'href', canonical),
-      setMeta('meta[property="og:title"]', 'content', title),
-      setMeta('meta[property="og:description"]', 'content', description),
-      setMeta('meta[property="og:url"]', 'content', canonical),
-      // ... og:image, twitter tags
-    ];
-
-    return () => {
-      document.title = prevTitle;
-      restores.forEach(({ el, attr, prev }) => {
-        if (el && prev) el.setAttribute(attr, prev);
-      });
-    };
-  }, [title, description, canonical, ogImage]);
-};
+Estructura de cada entrada en seo.json:
+```json
+{
+  "/shop": {
+    "title": "Shopping Discounts — UChooseIt VIP Membership",
+    "description": "Exclusive member discounts at 175,000+ retail locations. Save on tech, fashion, home & more with brands like Lenovo, Samsung & Chewy.",
+    "canonical": "https://uchooseit.us/shop",
+    "type": "website",
+    "staticFile": "shop.html",
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uchooseit.us/" },
+          { "@type": "ListItem", "position": 2, "name": "Shop Discounts", "item": "https://uchooseit.us/shop" }
+        ]
+      }
+    ]
+  }
+}
 ```
 
-Patron sugerido para `useJsonLd`:
-```ts
-const useJsonLd = (data: Record<string, unknown>) => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
-    return () => { document.head.removeChild(script); };
-  }, []);  // solo en mount — el data no cambia por pagina
-};
-```
+Tabla de meta tags sugeridos:
 
-Estos hooks son mas livianos que `react-helmet-async` (~30 lineas vs ~10KB), no necesitan Provider, y funcionan identico para el pre-renderer (Puppeteer captura el DOM final despues de que los effects corren).
-
----
-
-### page-meta-tags: Meta tags por pagina en las 7 rutas principales
-
-- **Feature**: seo
-- **Rol**: Feature Dev
-- **Estado**: pendiente
-- **Dependencias**: seo-hooks
-
-**Contexto**:
-Agregar `usePageMeta({...})` al inicio de cada una de las 7 paginas principales. Cada pagina necesita un title, description y canonical unicos, orientados a SEO con keywords relevantes para la categoria. Los meta tags de `index.html` actuan como fallback; el hook los sobreescribe cuando la pagina se monta y los restaura al desmontar.
-
-**Archivos**:
-```
-MODIFICAR:
-  src/features/home/Home.tsx
-  src/features/shop/Shop.tsx
-  src/features/travel/Travel.tsx
-  src/features/dining/Dining.tsx
-  src/features/entertainment/Entertainment.tsx
-  src/features/business/Business.tsx
-  (identificar el componente de /product y agregarlo tambien)
-```
-
-**Limites**:
-- Solo agregar la llamada a `usePageMeta({...})` al inicio del componente — no cambiar nada mas
-- No modificar el contenido visual ni la estructura del componente
-- Los textos deben estar en ingles (el sitio es en ingles)
-- No agregar JSON-LD en esta tarea (eso va en json-ld-pages)
-
-**Criterio de aceptacion**:
-- [ ] Home (`/`): title "UChooseIt.us — Save Up to 50% on Dining, Travel, Shopping & Entertainment", description que mencione 1M+ deals, $47.99/year, 4 categorias
-- [ ] Shop (`/shop`): title con "Shopping Discounts", description con marcas de shop y 175K locations
-- [ ] Travel (`/travel`): title con "Travel Deals", description con hotels/flights/cruises y 850K locations
-- [ ] Dining (`/dining`): title con "Restaurant Discounts", description con dining brands y 50K locations
-- [ ] Entertainment (`/entertainment`): title con "Entertainment Discounts", description con theme parks/movies y 50K locations
-- [ ] Business (`/business`): title con "B2B Partnership Program" o "White-Label Discount Platform", description con revenue share y bulk models
-- [ ] Product (`/product`): title con "Membership Plans" o "Get Your Membership", description con pricing y value prop
-- [ ] Canonical correcto para cada ruta: `https://uchooseit.us/{path}`
-- [ ] OG image apunta a `https://uchooseit.us/site_preview.png` en todas (o imagen especifica si existe)
-- [ ] Navegando entre rutas, el `<title>` del browser cambia correctamente
-
-**Notas del Arquitecto**:
-Referencia de meta tags sugeridos por pagina:
-
-| Ruta | Title (~60 chars) | Description (~155 chars) |
+| Ruta | Title | Description |
 |------|-------|-------------|
 | `/` | UChooseIt.us — Save Up to 50% on Dining, Travel, Shopping & Entertainment | One VIP membership, 1 million+ deals across the US. Save $2,000+/year on restaurants, hotels, retail & theme parks for less than $4/month. |
 | `/shop` | Shopping Discounts — UChooseIt VIP Membership | Exclusive member discounts at 175,000+ retail locations. Save on tech, fashion, home & more with brands like Lenovo, Samsung & Chewy. |
 | `/travel` | Travel Deals & Hotel Discounts — UChooseIt | Member-only savings on 850,000+ hotels, flights, cruises & car rentals. Book with Wyndham, Avis, Carnival & more for less. |
 | `/dining` | Restaurant Discounts — UChooseIt Membership | Save at 50,000+ restaurants nationwide. Member deals at Papa John's, Burger King, Domino's, Subway & local favorites. |
 | `/entertainment` | Entertainment & Theme Park Discounts — UChooseIt | Save on movies, golf, museums & theme parks. Member discounts at Disney, Universal, Six Flags, Cinemark & more. |
-| `/business` | B2B Partnership — White-Label Discount Platform \| UChooseIt | Offer 1M+ discounts to your audience. Revenue share (30%) or bulk licensing for companies, nonprofits & associations. |
+| `/business` | B2B Partnership \| UChooseIt | Offer 1M+ discounts to your audience. Revenue share (30%) or bulk licensing for companies, nonprofits & associations. |
 | `/product` | Get Your UChooseIt Membership — Plans & Pricing | Join UChooseIt for $47.99/year and start saving at 1M+ locations. 7-day refund guarantee. Cancel anytime. |
 
-Estos textos son sugerencias — el Dev puede ajustar para mejor legibilidad manteniendo las keywords clave.
+Incluir tambien schema FAQPage en las rutas que renderizan FAQs. Verificar `src/shared/routes.ts` — las rutas en `NO_FAQS_PAGES` no tienen FAQs, las demas si. Rutas con FAQs: `/`, `/shop`, `/travel`, `/dining`, `/entertainment`, `/product`.
 
 ---
 
-### json-ld-pages: JSON-LD por pagina (FAQPage, BreadcrumbList) via useJsonLd
+### html-fragments: Fragmentos HTML semanticos por ruta
 
 - **Feature**: seo
 - **Rol**: Feature Dev
 - **Estado**: pendiente
-- **Dependencias**: seo-hooks
+- **Dependencias**: ninguna
 
 **Contexto**:
-Inyectar schemas JSON-LD especificos por pagina usando el hook `useJsonLd` creado en seo-hooks. Tres tipos de schema: (1) FAQPage en el componente Faqs.tsx con las preguntas frecuentes reales del sitio, (2) BreadcrumbList en cada pagina de categoria para indicar la jerarquia Home > Categoria, (3) Product en Home o Product page con el pricing de la membresia.
+Crear 7 archivos HTML en `src/seo/fragments/` con contenido semantico para cada ruta. Estos fragmentos se inyectan dentro de `<div id="root">` por el plugin en build time. NO son documentos HTML completos — son fragmentos (sin `<html>`, `<head>`, `<body>`). React reemplaza este contenido al montar con `createRoot().render()`.
+
+El contenido debe ser semantico (headings, paragraphs, lists, links) y transmitir la propuesta de valor de cada pagina. Los bots lo leen como contenido de la pagina. Los usuarios con JS nunca lo ven (React lo reemplaza inmediatamente).
 
 **Archivos**:
 ```
-MODIFICAR:
-  src/shared/layout/Faqs.tsx                        (FAQPage schema)
-  src/features/shop/Shop.tsx                        (BreadcrumbList)
-  src/features/travel/Travel.tsx                    (BreadcrumbList)
-  src/features/dining/Dining.tsx                    (BreadcrumbList)
-  src/features/entertainment/Entertainment.tsx      (BreadcrumbList)
-  src/features/home/Home.tsx                        (Product schema)
+CREAR:
+  src/seo/fragments/home.html
+  src/seo/fragments/shop.html
+  src/seo/fragments/travel.html
+  src/seo/fragments/dining.html
+  src/seo/fragments/entertainment.html
+  src/seo/fragments/business.html
+  src/seo/fragments/product.html
 ```
 
 **Limites**:
-- No cambiar el contenido visual de ningun componente
-- Los datos del FAQ schema deben coincidir con el contenido real renderizado en Faqs.tsx
-- No crear schemas para rutas que no deberian indexarse (/thank-you, /activate)
-- El Product schema debe reflejar el precio real ($47.99)
+- Solo HTML semantico — NO incluir `<style>`, `<script>`, clases CSS, ni atributos de presentacion
+- NO son documentos completos — sin `<!doctype>`, `<html>`, `<head>`, `<body>`
+- El contenido debe reflejar fielmente el storytelling documentado en `storytelling.md`
+- Los textos deben estar en ingles
+- Cada fragmento debe ser autocontenido (no depender de otros fragmentos)
 
 **Criterio de aceptacion**:
-- [ ] `Faqs.tsx` inyecta FAQPage schema con al menos las 5 preguntas principales: "What is uchooseit.us?", "How much does it cost?", "Where can I use the discounts?", "Can I cancel anytime?", "How do I access the discounts?"
-- [ ] Cada pagina de categoria inyecta BreadcrumbList con 2 items: Home > [Categoria]
-- [ ] Home inyecta Product schema con: name "UChooseIt VIP Membership", price "47.99", priceCurrency "USD", availability "InStock"
-- [ ] Todos los JSON-LD son validos (estructura @context, @type correctos)
-- [ ] Los schemas se inyectan en `<head>` via `useJsonLd` (no inline en body)
+- [ ] Cada fragmento contiene al menos: un `<h1>`, una `<nav>` con links a las demas rutas principales, un `<main>` con secciones descriptivas, y un `<footer>` con contacto
+- [ ] `home.html`: propuesta de valor completa, 4 categorias con links y cifras, pricing ($47.99/year), beneficios, mencion B2B
+- [ ] `shop.html`: enfoque en shopping, 175K ubicaciones, marcas (Lenovo, Samsung, Chewy), testimonios, link a Home y otras categorias
+- [ ] `travel.html`: enfoque en travel, 850K ubicaciones, marcas (Wyndham, Avis, Carnival), testimonios, link a Home y otras categorias
+- [ ] `dining.html`: enfoque en dining, 50K ubicaciones, marcas (Papa John's, Burger King, Domino's), testimonios, link a Home y otras categorias
+- [ ] `entertainment.html`: enfoque en entertainment, 50K ubicaciones, marcas (Disney, Universal, Six Flags), testimonios, link a Home y otras categorias
+- [ ] `business.html`: B2B partnership, dos modelos (Revenue Share 30%, Bulk Enterprise), tipos de organizaciones, proceso de onboarding
+- [ ] `product.html`: pricing, value proposition, como funciona la membresia, garantia, CTA
+- [ ] Todos los fragmentos tienen links de navegacion cruzada (nav con las 7 rutas)
 
 **Notas del Arquitecto**:
-Para el FAQPage, extraer las preguntas y respuestas del array/datos que ya usa Faqs.tsx para renderizar. No hardcodear duplicados — reutilizar la misma fuente de datos si es posible.
-
-BreadcrumbList ejemplo para `/shop`:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uchooseit.us/" },
-    { "@type": "ListItem", "position": 2, "name": "Shop Discounts", "item": "https://uchooseit.us/shop" }
-  ]
-}
+Estructura sugerida para cada fragmento:
+```html
+<header>
+  <h1>[Titulo de la pagina]</h1>
+  <p>[Subtitulo / tagline]</p>
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/shop">Shop</a> |
+    <a href="/travel">Travel</a> |
+    <a href="/dining">Dining</a> |
+    <a href="/entertainment">Entertainment</a> |
+    <a href="/product">Get Membership</a> |
+    <a href="/business">Business Partners</a>
+  </nav>
+</header>
+<main>
+  <section><!-- contenido principal --></section>
+  <section><!-- contenido secundario --></section>
+</main>
+<footer>
+  <p>UChooseIt.us — Your VIP key to everyday savings.</p>
+  <p>Contact: <a href="mailto:support@uchooseit.us">support@uchooseit.us</a> | Phone: (888) 556-2393</p>
+  <p>Uchooseit.us LLC — Orlando, FL, USA</p>
+</footer>
 ```
 
-El Product schema debe referenciar la Organization:
-```json
-{
-  "@type": "Product",
-  "brand": { "@id": "https://uchooseit.us/#organization" }
-}
-```
+**IMPORTANTE**: El contenido dentro de `<div id="root">` tambien funciona como loading placeholder visual antes de que React monte. Aunque no tiene estilos, el texto plano aparece brevemente. Mantener el contenido limpio y profesional.
+
+Consultar `storytelling.md` para todo el contenido narrativo, cifras, y marcas por categoria.
 
 ---
 
-### prerender-build: Pre-renderizado en build time
+### static-seo-plugin: Plugin Vite staticSeoPlugin.ts
 
 - **Feature**: seo
 - **Rol**: Feature Dev
-- **Estado**: diferida
-- **Dependencias**: page-meta-tags, json-ld-global, json-ld-pages
+- **Estado**: pendiente
+- **Dependencias**: seo-config, html-fragments
 
 **Contexto**:
-Generar archivos HTML pre-renderizados para las 7 rutas principales durante el build, para que bots que no ejecutan JS reciban el contenido completo por ruta.
+Crear un plugin de Vite custom en `src/plugins/staticSeoPlugin.ts` que se ejecuta en `closeBundle` (post-build). El plugin lee `dist/index.html` como plantilla base, lee `src/seo/seo.json` para obtener la configuracion por ruta, y para cada ruta genera un archivo HTML especifico con meta tags, JSON-LD, y contenido semantico inyectados.
 
-**Motivo de diferimiento**:
-El build se ejecuta en GitHub Actions (CI/CD) y deploya a AWS. Cualquier solucion de pre-rendering requiere un browser headless (Puppeteer/Chromium ~400MB) que:
-- Aumenta significativamente el tamano de `node_modules` en CI
-- Agrega 20-30s al build time
-- Puede ser fragil en entornos CI (Chromium sandbox, dependencias de sistema)
-- Requiere que el SPA renderice correctamente sin assets de produccion
+**Archivos**:
+```
+CREAR: src/plugins/staticSeoPlugin.ts
+```
 
-**Cobertura actual sin pre-render**:
-- **Googlebot ejecuta JS** → ve todo: meta tags, JSON-LD, contenido renderizado por React
-- **Bots sin JS** (GPTBot, ClaudeBot, Bingbot) → ven: `<noscript>` semantico + `llms.txt` + JSON-LD global + sitemap
-- El 90% del valor SEO ya esta cubierto con las 6 tareas completadas
+**Limites**:
+- Solo usar APIs de Node.js nativas (`fs`, `path`) — no instalar dependencias
+- No modificar el `dist/index.html` original — crear copias modificadas por ruta
+- No ejecutar Puppeteer ni ningun browser headless
+- El plugin debe ser idempotente (correr multiples veces produce el mismo resultado)
+- No importar archivos de `src/seo/` en runtime — solo leerlos con `fs` en build time
 
-**Alternativas a evaluar en futuro** (si se necesita el 10% extra):
-1. **Servicio externo** (prerender.io, Rendertron) — cachea HTML pre-renderizado sin tocar el build
-2. **Cloudflare Worker** — intercepta requests de bots y sirve cache pre-renderizado
-3. **Script post-build local** — Puppeteer solo en un step separado del CI, no como Vite plugin
-4. **Migracion a SSR** — si el proyecto escala, evaluar React Router SSR o framework con SSR nativo
+**Criterio de aceptacion**:
+- [ ] El plugin exporta una funcion que retorna un objeto Vite plugin con `name` y `closeBundle`
+- [ ] Lee `dist/index.html` como plantilla base despues de que Vite termina el build
+- [ ] Lee `src/seo/seo.json` para obtener la configuracion de rutas
+- [ ] Para cada ruta en seo.json:
+  - [ ] Reemplaza `<title>` con el titulo de la ruta
+  - [ ] Reemplaza `<meta name="description" content="...">` con la descripcion de la ruta
+  - [ ] Reemplaza `<link rel="canonical" href="...">` con el canonical de la ruta
+  - [ ] Reemplaza meta tags OG (og:title, og:description, og:url, og:type) con valores de la ruta
+  - [ ] Reemplaza meta tags Twitter (twitter:title, twitter:description, twitter:url) con valores de la ruta
+  - [ ] Inyecta schemas JSON-LD de la ruta como `<script type="application/ld+json">` en `<head>` (antes de `</head>`)
+  - [ ] Lee el fragmento HTML de `src/seo/fragments/{staticFile}` e inyecta su contenido dentro de `<div id="root">`
+  - [ ] Crea el directorio `dist/{ruta}/` si no existe
+  - [ ] Escribe el HTML modificado en `dist/{ruta}/index.html`
+- [ ] Para la ruta `/` (home), modifica `dist/index.html` directamente (no crea subdirectorio)
+- [ ] Mantiene TODOS los scripts y assets originales del SPA intactos (JS bundles, CSS, Meta Pixel)
+- [ ] Log en consola las rutas procesadas para visibilidad durante el build
+- [ ] `npm run build` completa sin errores
+
+**Notas del Arquitecto**:
+El plugin usa el hook `closeBundle` (no `generateBundle`) porque necesita leer los archivos ya escritos en `dist/`.
+
+Estructura sugerida:
+```ts
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { resolve, dirname } from 'path';
+import type { Plugin } from 'vite';
+
+export function staticSeoPlugin(): Plugin {
+  return {
+    name: 'static-seo-plugin',
+    apply: 'build',
+    closeBundle() {
+      const distDir = resolve(__dirname, '../../dist');
+      const seoDir = resolve(__dirname, '../seo');
+
+      const template = readFileSync(resolve(distDir, 'index.html'), 'utf-8');
+      const config = JSON.parse(readFileSync(resolve(seoDir, 'seo.json'), 'utf-8'));
+
+      for (const [route, seo] of Object.entries(config)) {
+        let html = template;
+
+        // 1. Reemplazar meta tags en <head>
+        html = replaceMeta(html, seo);
+
+        // 2. Inyectar JSON-LD
+        html = injectJsonLd(html, seo.jsonLd);
+
+        // 3. Inyectar fragmento HTML en <div id="root">
+        const fragment = readFileSync(resolve(seoDir, 'fragments', seo.staticFile), 'utf-8');
+        html = html.replace('<div id="root"></div>', `<div id="root">${fragment}</div>`);
+
+        // 4. Escribir archivo
+        const outPath = route === '/'
+          ? resolve(distDir, 'index.html')
+          : resolve(distDir, route.slice(1), 'index.html');
+        mkdirSync(dirname(outPath), { recursive: true });
+        writeFileSync(outPath, html);
+
+        console.log(`[static-seo] Generated: ${route}`);
+      }
+    },
+  };
+}
+```
+
+Funciones auxiliares a implementar:
+- `replaceMeta(html, seo)` — busca y reemplaza contenido de tags existentes via regex o string replace
+- `injectJsonLd(html, schemas)` — inyecta `<script type="application/ld+json">` antes de `</head>`
+
+**IMPORTANTE**: Usar `readFileSync`/`writeFileSync` (sincronos) porque `closeBundle` puede ser sync o async. Si se usa async, asegurarse de que el hook retorna una Promise.
+
+**IMPORTANTE**: El `__dirname` puede no estar disponible en ESM. Verificar si `vite.config.ts` usa ESM o CJS y ajustar el import path. Alternativa segura: usar `import.meta.url` con `fileURLToPath` si es ESM, o recibir el root path como parametro del plugin.
+
+---
+
+### build-verification: Integracion, build y verificacion
+
+- **Feature**: seo
+- **Rol**: Feature Dev
+- **Estado**: pendiente
+- **Dependencias**: static-seo-plugin, json-ld-global
+
+**Contexto**:
+Registrar el plugin en `vite.config.ts`, ejecutar `npm run build`, e inspeccionar que los archivos generados sean correctos. Esta tarea es de integracion y QA — no crea contenido nuevo, sino que conecta las piezas y verifica el resultado.
+
+**Archivos**:
+```
+MODIFICAR: vite.config.ts
+```
+
+**Limites**:
+- No modificar el plugin ni los fragmentos en esta tarea — si algo falla, documentar el problema y crear una tarea de fix
+- No cambiar ningun componente de feature
+- No instalar dependencias nuevas
+
+**Criterio de aceptacion**:
+- [ ] `vite.config.ts` importa y registra `staticSeoPlugin` en el array de plugins
+- [ ] `npm run build` completa sin errores
+- [ ] `dist/index.html` tiene: meta tags de home, JSON-LD global + Product, contenido de `home.html` dentro de `<div id="root">`
+- [ ] `dist/shop/index.html` existe y tiene: meta tags de shop, JSON-LD BreadcrumbList, contenido de `shop.html`
+- [ ] `dist/travel/index.html` existe y tiene: meta tags de travel, JSON-LD BreadcrumbList, contenido de `travel.html`
+- [ ] `dist/dining/index.html` existe y tiene: meta tags de dining, JSON-LD BreadcrumbList, contenido de `dining.html`
+- [ ] `dist/entertainment/index.html` existe y tiene: meta tags de entertainment, JSON-LD BreadcrumbList, contenido de `entertainment.html`
+- [ ] `dist/business/index.html` existe y tiene: meta tags de business, JSON-LD BreadcrumbList, contenido de `business.html`
+- [ ] `dist/product/index.html` existe y tiene: meta tags de product, contenido de `product.html`
+- [ ] Todos los HTML generados mantienen los `<script>` del SPA intactos (el bundle JS sigue presente)
+- [ ] `npm run preview` carga la app correctamente en `/`, `/shop`, y al menos una ruta mas
+- [ ] Los archivos `robots.txt`, `sitemap.xml`, `llms.txt` estan presentes en `dist/`
+
+**Notas del Arquitecto**:
+El registro en `vite.config.ts` es simple:
+```ts
+import { staticSeoPlugin } from './src/plugins/staticSeoPlugin'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss(), staticSeoPlugin()],
+})
+```
+
+Para verificar el output, inspeccionar manualmente al menos 3 archivos HTML generados:
+1. Verificar que `<title>` es unico por ruta
+2. Verificar que `<div id="root">` contiene HTML semantico (no esta vacio)
+3. Verificar que los `<script>` del SPA estan presentes
+4. Verificar que el JSON-LD global (Organization + WebSite) esta presente
+5. Verificar que el JSON-LD especifico de la ruta esta presente
+
+Si `npm run preview` no resuelve las rutas correctamente por la estructura de directorios, documentarlo como nota. En produccion (AWS/Nginx) la resolucion funciona diferente que en el preview server de Vite. Lo importante es que los archivos existan en `dist/` con el contenido correcto.

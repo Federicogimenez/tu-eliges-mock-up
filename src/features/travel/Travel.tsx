@@ -2,8 +2,6 @@ import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/Her
 import GatewaySection from '../../shared/layout/GatewaySection';
 import PricingSection from '../../shared/layout/PricingSection';
 
-import { usePageMeta } from '../../hooks/usePageMeta';
-import { useJsonLd } from '../../hooks/useJsonLd';
 import pricing_banner from '/pricing/travel/parking.png';
 
 import profile_car from '/category-testimonials/travel/car.png';
@@ -45,21 +43,6 @@ import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 
 export default function Travel (){
-
-  usePageMeta({
-    title: 'Travel Deals & Hotel Discounts — UChooseIt',
-    description: 'Member-only savings on 850,000+ hotels, flights, cruises & car rentals. Book with Wyndham, Avis, Carnival & more for less.',
-    canonical: 'https://uchooseit.us/travel',
-  });
-
-  useJsonLd({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://uchooseit.us/' },
-      { '@type': 'ListItem', position: 2, name: 'Travel Deals', item: 'https://uchooseit.us/travel' },
-    ],
-  });
 
   const categoryTestimonials = [
     {

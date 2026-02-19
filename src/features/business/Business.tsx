@@ -9,17 +9,10 @@ import OpportunitiesSection from './components/OpportunitiesSection'
 import BrandsShowcase from './components/BrandsShowcase'
 import HowItWorks from './components/HowItWorks'
 import StrategyCallCTA from './components/StrategyCallCTA'
-import { usePageMeta } from '../../hooks/usePageMeta'
 
 const GOOGLE_APPOINTMENT_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ipovAXSIaPCYESnb0IdWex_omJ123IQSAqvXmErIXEcGvYCIRlqiWqhazgzch7_xnYpKNkANC'
 
 export default function Business() {
-
-  usePageMeta({
-    title: 'B2B Partnership — White-Label Discount Platform | UChooseIt',
-    description: 'Offer 1M+ discounts to your audience. Revenue share (30%) or bulk licensing for companies, nonprofits & associations.',
-    canonical: 'https://uchooseit.us/business',
-  });
 
   const handleBookCall = () => {
     window.open(GOOGLE_APPOINTMENT_URL, '_blank')

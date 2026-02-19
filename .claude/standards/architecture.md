@@ -15,7 +15,7 @@ src/
   shared/
     layout/                        # Layout sections reused across pages
     components/                    # Reusable UI components
-    constants.ts                   # Global constants
+    routes.ts                      # Route arrays (HERO_PAGES, NO_FAQS_PAGES, etc.)
   lib/                             # External service integrations (API clients)
   utils/                           # Pure utility functions
   types/                           # Shared TypeScript interfaces
@@ -30,11 +30,53 @@ src/
   <ThemeProvider>              ← Dark/light mode (default: dark)
     <AllyProvider>             ← Affiliate/coupon system
       <BrowserRouter>
-        <Main>                 ← Master layout (header, hero, footer)
+        <Main>                 ← Layout orchestrator (~72 lines)
           <SavingsModalProvider>  ← Savings calculator state + modal
             <Suspense>
               <Routes>         ← All lazy-loaded feature pages
 ```
+
+## Main.tsx — Layout Orchestrator
+
+`src/shared/layout/Main.tsx` (~72 lines) delegates to specialized components:
+
+```tsx
+<SavingsModalProvider>
+  <header> (logo + HamburgerMenu)
+  {isHeroPage && (
+    <section>
+      {showHeroContent && <CalculateSavingButton />}
+      <HeroVideo />
+      {showHeroContent && <HeroOverlay isHome={isHome} />}
+      <AllyPopUp visible={...} onClose={...} />
+    </section>
+  )}
+  <main>{children}</main>
+  {showFaqs && <Faqs />}
+  <Footer />
+</SavingsModalProvider>
+```
+
+`showHeroContent = isHeroPage && !isBusinessPage` — `/business` gets the video but not the overlay.
+
+## Route Configuration
+
+Route arrays live in `src/shared/routes.ts`:
+
+| Constant | Purpose | Current values |
+|----------|---------|----------------|
+| `HERO_PAGES` | Show fixed bg video + hero content | `/`, `/shop`, `/travel`, `/dining`, `/entertainment`, `/business` |
+| `NO_FAQS_PAGES` | Hide FAQ accordion | `/agency`, `/influencer`, `/company`, `/non-profit`, `/activate`, `/thank-you`, `/business` |
+| `DARK_BG_PAGES` | Force white logo (non-hero dark pages) | `[]` (empty) |
+| `CATEGORY_PAGES` | Category page slugs (typed) | `shop`, `travel`, `dining`, `entertainment` |
+
+`useRouteConfig(pathname, theme)` in `src/hooks/useRouteConfig.ts` derives layout flags:
+
+```ts
+{ isHeroPage, isBusinessPage, showFaqs, isHome, isCategoryPage, currentLogo }
+```
+
+Logo precedence: heroPage → white | darkBgPage → white | dark theme → white | else → black.
 
 ## Feature Page Pattern
 
@@ -66,19 +108,25 @@ Data (articles, testimonials) is defined inline at the top of each feature file.
 When adding a new route:
 
 1. **`src/routes/AppRoutes.tsx`** - Add `React.lazy()` import + `<Route>` element
-2. **`src/shared/layout/Main.tsx`** - Add path to relevant arrays:
-   - `heroPages` - Show fixed background video
-   - `noFaqsPages` - Hide FAQ section
-   - `darkBgPages` - Force white logo
+2. **`src/shared/routes.ts`** - Add path to relevant arrays (`HERO_PAGES`, `NO_FAQS_PAGES`, `DARK_BG_PAGES`)
 3. **`src/shared/components/HamburgerMenu.tsx`** - Add nav link (if user-facing)
 
-## Main.tsx Control Arrays
+## Hooks
 
-| Array | Purpose | Current values |
-|-------|---------|----------------|
-| `heroPages` | Show fixed bg video + hero content | `/`, `/shop`, `/travel`, `/dining`, `/entertainment`, `/business` |
-| `noFaqsPages` | Hide FAQ accordion | `/agency`, `/influencer`, `/company`, `/non-profit`, `/activate`, `/thank-you`, `/business` |
-| `darkBgPages` | Force white logo (non-hero dark pages) | `/business` |
+| Hook | File | Purpose |
+|------|------|---------|
+| `useTheme` | `src/hooks/useTheme.ts` | Access ThemeContext (dark/light) |
+| `useAllyContext` | `src/hooks/useAllyContext.ts` | Access AllyContext (coupon/partner data) |
+| `useRouteConfig` | `src/hooks/useRouteConfig.ts` | Derive layout flags from pathname + theme |
+| `useSavingsModal` | `src/hooks/useSavingsModal.ts` | Open/close savings calculator modal |
+| `useAnalytics` | `src/hooks/useAnalytics.ts` | GA4 + Meta Pixel pageview tracking |
+| `useInlineVideo` | `src/hooks/useInlineVideo.ts` | Video playsinline for iOS Safari |
+| `useWindowSize` | `src/hooks/useWindowSize.ts` | Window dimensions for responsive logic |
+| `useScrollSection` | `src/hooks/useScrollSection.ts` | Scroll position detection |
+| `useIsInView` | `src/hooks/useIsInView.ts` | Intersection observer for lazy visibility |
+| `useIsTouchDevice` | `src/hooks/useIsTouchDevice.ts` | Touch device detection |
+| `usePageMeta` | `src/hooks/usePageMeta.ts` | Dynamic page title/description/OG tags |
+| `useJsonLd` | `src/hooks/useJsonLd.ts` | Inject JSON-LD structured data in `<head>` |
 
 ## Lazy Loading
 
@@ -90,5 +138,6 @@ No external state library. All state is managed via:
 
 - **React Context** for cross-component shared state (theme, ally data, savings calculator)
 - **Local `useState`/`useEffect`** for component-level state
+- **`useMemo` derivations** for route-dependent config (`useRouteConfig`)
 - **URL query params** for affiliate codes (`?code=ALLY_CODE`)
 - **localStorage** for persistence (theme preference, ally code)

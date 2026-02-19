@@ -41,14 +41,17 @@ Category-specific data (articles, testimonials, slides) is defined at the top of
 
 | Component | Purpose | Used by |
 |-----------|---------|---------|
-| `Main.tsx` | Master layout wrapper | All routes |
+| `Main.tsx` | Layout orchestrator (~72 lines) | All routes |
+| `HeroVideo.tsx` | Fixed position background video (self-contained, zero props) | Main.tsx (when `isHeroPage`) |
+| `HeroOverlay.tsx` | Hero content: title, navlinks, CTA. Props: `{ isHome: boolean }` | Main.tsx (when `showHeroContent`) |
 | `HeroTrendy.tsx` | Category hero with Keen Slider carousel | Shop, Travel, Dining, Entertainment |
 | `TestimonialSection.tsx` | Testimonial carousel (Keen Slider) | Category pages |
 | `PricingSection.tsx` | Membership pricing card with ally discount | Category pages, Home |
 | `CalculatorTableSection.tsx` | "Transform spending" + savings display | Category pages, Home |
 | `GatewaySection.tsx` | App store download CTA | Category pages, Home |
-| `Faqs.tsx` | FAQ accordion | Pages not in `noFaqsPages` |
-| `Footer.tsx` | 4-column footer with social, nav, contact, legals |  All pages |
+| `Benefits.tsx` | Benefits section | Home |
+| `Faqs.tsx` | FAQ accordion | Pages not in `NO_FAQS_PAGES` |
+| `Footer.tsx` | 4-column footer with social, nav, contact, legals | All pages |
 
 ### UI components (`src/shared/components/`)
 
@@ -57,6 +60,7 @@ Category-specific data (articles, testimonials, slides) is defined at the top of
 | `ButtonPrimary.tsx` | Animated gradient CTA. Tracks Meta Pixel `InitiateCheckout`. Props: `text_1`, `text_2`, `src`, gradient colors |
 | `ButtonSecondary.tsx` / `ButtonTertiary.tsx` | Simpler button variants |
 | `HamburgerMenu.tsx` | Framer Motion slide-in nav panel with ThemeSwitcher |
+| `AllyPopUp.tsx` | Coupon/partner popup. Props: `{ visible, onClose }`. Uses `useAllyContext` internally for pricing |
 | `LazyLoadImage.tsx` | Blur-to-sharp image. **Uses `classnames` prop (not `className`)** |
 | `SavingsCalculator/` | `CalculateSavingButton` (floating CTA) + `SavingsModal` (full-screen Keen Slider) |
 | `RevenueCalculator.tsx` | B2B revenue projection calculator for affiliate pages |
@@ -65,16 +69,16 @@ Category-specific data (articles, testimonials, slides) is defined at the top of
 
 ## Video Background Pattern
 
-The hero video system in `Main.tsx`:
+The hero video lives in `src/shared/layout/HeroVideo.tsx` (self-contained component):
 
 1. **Fixed position** (`position: fixed; inset: 0`) - content scrolls over the video
 2. **Responsive source** - switches between mobile/desktop video at `width > 1024` via `useWindowSize`
 3. **`useInlineVideo` hook** - sets `playsinline` for iOS Safari, retries play on tab visibility change
 4. **`LazyLoadImage`** - shows preview image until video loads
-5. **Only on `heroPages`** - controlled by pathname check in Main.tsx
+5. **Only on `HERO_PAGES`** - Main.tsx mounts `<HeroVideo />` conditionally via `useRouteConfig`
 
 ### B2B page special behavior
-`/business` is in `heroPages` (gets the video) but has `businessPage` flag that suppresses the hero content overlay and floating `CalculateSavingButton`.
+`/business` is in `HERO_PAGES` (gets the video) but `useRouteConfig` sets `isBusinessPage = true`, which suppresses `showHeroContent` — hiding the overlay and floating `CalculateSavingButton`.
 
 ## Carousel Pattern (Keen Slider)
 
@@ -94,6 +98,8 @@ The `AllyContext` manages:
 - API call to `https://api.tueliges.us/user/ally-code/{code}`
 - Dynamic pricing in `PricingSection` (original vs discounted)
 - Recurly checkout URL with coupon appended
+
+The `AllyPopUp` component (`src/shared/components/AllyPopUp.tsx`) renders the coupon popup with 3 states: loading, not found (null), and success (pricing + CTA). Main.tsx controls visibility via `visible` + `onClose` props.
 
 ## Analytics
 

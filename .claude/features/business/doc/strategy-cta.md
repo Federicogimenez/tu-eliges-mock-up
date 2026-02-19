@@ -9,7 +9,7 @@
 ---
 
 ## Que se hizo
-Se creo `StrategyCallCTA.tsx` con heading "Let's Validate the Right Model for You", subtitulo invitando a llamada de 15 minutos, card oscura con 3 items de agenda (revenue share, white-labeling, transparency dashboard), BookCallButton reutilizado que abre Google Calendar, y footer con textos de confianza ("No commitment required", "Free consultation") con icono MdLock.
+Se creo `StrategyCallCTA.tsx` con heading "Let's Validate the Right Model for You", subtitulo invitando a llamada de 15 minutos, card oscura con 3 items de agenda (revenue share, transparency dashboard), BookCallButton reutilizado que abre Google Calendar, y footer con textos de confianza ("No commitment required", "Free consultation") con icono MdLock.
 
 ## Archivos tocados
 ```

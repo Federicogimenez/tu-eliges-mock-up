@@ -3,8 +3,6 @@ import HeroTrendy, { type HeroTrendyArticleProps } from '../../shared/layout/Her
 import GatewaySection from '../../shared/layout/GatewaySection';
 import PricingSection from '../../shared/layout/PricingSection';
 
-import { usePageMeta } from '../../hooks/usePageMeta';
-import { useJsonLd } from '../../hooks/useJsonLd';
 import pricing_banner from '/pricing/entertainment/drink.png';
 
 import profile_museum from '/category-testimonials/entertainment/museum.png';
@@ -51,21 +49,6 @@ import TestimonialSection from '../../shared/layout/TestimonialSection';
 
 
 export default function Entertainment (){
-
-  usePageMeta({
-    title: 'Entertainment & Theme Park Discounts — UChooseIt',
-    description: 'Save on movies, golf, museums & theme parks. Member discounts at Disney, Universal, Six Flags, Cinemark & more.',
-    canonical: 'https://uchooseit.us/entertainment',
-  });
-
-  useJsonLd({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://uchooseit.us/' },
-      { '@type': 'ListItem', position: 2, name: 'Entertainment Discounts', item: 'https://uchooseit.us/entertainment' },
-    ],
-  });
 
   const categoryTestimonials = [
     {

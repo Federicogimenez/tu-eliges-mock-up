@@ -40,7 +40,7 @@ export default function AllyPopUp({ visible, onClose }: AllyPopUpProps) {
           </div>
         ) : allyData.userNotFound ? null : (
           <div className="w-full flex flex-col justify-start items-center">
-            <h2 className="text-3xl md:text-5xl xl:text-6xl text-white font-semibold text-center mb-4">Congratulations!</h2>
+            <h2 className="text-2xl md:text-3xl xl:text-4xl text-white font-semibold text-center mb-4">Your private access is ready!</h2>
             <div className="w-fit flex flex-col landscape:flex-row-reverse justify-center items-center landscape:items-stretch gap-6 mb-6 mx-auto max-w-4xl">
 
               <picture className="portrait:w-full portrait:h-[30dvh] landscape:min-h-[40dvh] landscape:w-1/2 landscape:h-auto rounded-full p-1 overflow-hidden">
@@ -91,7 +91,7 @@ export default function AllyPopUp({ visible, onClose }: AllyPopUpProps) {
             </div>
 
             <div className="w-full max-w-lg mx-auto">
-              <ButtonPrimary src={code ? code : recurlyUrl} />
+              <ButtonPrimary src={code ? code : recurlyUrl} text_1={`Claim My ${allyData.discount_percent}% OFF`} />
               <p className="text-sm text-gray-200 flex gap-x-2 justify-center items-center mt-4 animate-appear-up" style={{ animationDelay: '.5s' }}>
                 <img src="/icons/stars.svg" alt="guarantee" className="w-[50px]" />
                 Trusted by families nationwide

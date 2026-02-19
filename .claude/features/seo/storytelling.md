@@ -8,7 +8,7 @@ Esto es un problema critico porque:
 
 1. **Los usuarios buscan "discount membership USA"** en Google y Uchooseit no aparece
 2. **ChatGPT/Perplexity no pueden recomendar Uchooseit** porque no tienen contenido indexado
-3. **Los partners B2B no encuentran la pagina /business** al buscar "white-label discount program"
+3. **Los partners B2B no encuentran la pagina /business** al buscar "US discount program"
 4. **El sitio no transmite su propuesta de valor** a ningun bot — ni el precio, ni las categorias, ni los testimonios, ni los FAQs
 
 ## A quien sirve
@@ -53,7 +53,7 @@ UChooseIt.us es tu llave VIP para ahorrar en todo lo que amas. Con una sola memb
 
 ### Narrative B2B (complementario)
 
-UChooseIt tambien ofrece un programa de partnership para organizaciones que quieran ofrecer la plataforma de descuentos a su audiencia bajo su propia marca (white-label).
+UChooseIt tambien ofrece un programa de partnership para organizaciones que quieran ofrecer la plataforma de descuentos a su audiencia.
 
 **Dos modelos de partnership:**
 1. **Revenue Share (RSM):** Cero costo inicial, gana 30% por cada membresia vendida, pagos automatizados
