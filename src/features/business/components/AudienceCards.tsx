@@ -6,7 +6,7 @@ import {
   MdStorefront,
   MdGroups,
   MdStars,
-  MdHistoryEdu,
+  MdMonetizationOn,
 } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 
@@ -69,9 +69,9 @@ const stats: {
   {
     bgTint: 'bg-cyan-100 dark:bg-cyan-900/30',
     textColor: 'text-cyan-600 dark:text-cyan-400',
-    icon: MdHistoryEdu,
-    stat: '40+',
-    label: 'Years in Loyalty Business',
+    icon: MdMonetizationOn,
+    stat: '$2,000+',
+    label: 'Potential Annual Savings',
   },
 ]
 

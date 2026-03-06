@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { useAllyContext } from '../../hooks/useAllyContext'
 import ButtonPrimary from './ButtonPrimary'
 
@@ -9,15 +10,20 @@ interface AllyPopUpProps {
 export default function AllyPopUp({ visible, onClose }: AllyPopUpProps) {
   const { code, recurlyUrl, allyData } = useAllyContext()
 
-  if (!visible) return null
-
   const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100) / 12) / 100
   const originalPrice = allyData.membership_anual_fee.toFixed(2)
   const annualPrice = allyData.new_price_after_discount.toFixed(2) || originalPrice
   const influencerName = allyData.alliedName
 
   return (
-    <div className="fixed z-[10000] inset-0 bg-gradient-to-b from-black/50 to-black flex justify-center items-center py-[5dvh] min-h-[500px] overflow-hidden">
+    <AnimatePresence>
+    {visible && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+      className="fixed z-[10000] inset-0 bg-gradient-to-b from-black/50 to-black flex justify-center items-center py-[5dvh] min-h-[500px] overflow-hidden">
       <div className="absolute inset-0" onClick={onClose} />
       <div autoFocus className="relative overflow-auto mx-auto flex justify-center items-start px-6 py-8 w-11/12 portrait:h-full landscape:h-fit min-h-[400px] max-w-5xl bg-gradient-to-b from-black/50 backdrop-blur-xl to-blue-gradient-end/50 rounded-2xl shadow-2xl">
 
@@ -100,6 +106,8 @@ export default function AllyPopUp({ visible, onClose }: AllyPopUpProps) {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
+    )}
+    </AnimatePresence>
   )
 }

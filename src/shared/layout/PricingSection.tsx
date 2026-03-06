@@ -48,7 +48,7 @@ export default function PricingSection ({
   const discount = allyData.discount_percent || 0;
 
   return (
-    <section className="relative py-10 bg-white dark:bg-black lg:bg-white/50 lg:dark:bg-black/50 h-full flex flex-col justify-center gap-y-5">
+    <section id="pricing-section" className="relative py-10 bg-white dark:bg-black lg:bg-white/50 lg:dark:bg-black/50 h-full flex flex-col justify-center gap-y-5">
       <div className="text-center mb-4 ">
         <h2 className="heading-1 mb-2 mx-auto max-w-4xl"
           dangerouslySetInnerHTML={{ __html : title}}

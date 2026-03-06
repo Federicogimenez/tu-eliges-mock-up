@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useAllyContext } from '../../hooks/useAllyContext';
 import { useRouteConfig } from '../../hooks/useRouteConfig';
 import { useAnalytics } from '../../hooks/useAnalytics';
+import useAllyPopUpTrigger from '../../hooks/useAllyPopUpTrigger';
 import { HamburgerMenu } from '../components/HamburgerMenu';
 import { SavingsModalProvider } from '../../context/SavingsCalculatorModalContext';
 import CalculateSavingButton from '../components/SavingsCalculator/CalculateSavingButton';
@@ -22,15 +23,15 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
   const { allyData } = useAllyContext();
   const { pathname } = useLocation();
   const { isHeroPage, isBusinessPage, showFaqs, isHome, currentLogo } = useRouteConfig(pathname, theme);
-  const [allyPopUp, setAllyPopUp] = useState(true);
+
+  const showHeroContent = isHeroPage && !isBusinessPage;
+  const { showPopUp, closePopUp } = useAllyPopUpTrigger(allyData.hasCoupon && showHeroContent);
 
   useAnalytics();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  const showHeroContent = isHeroPage && !isBusinessPage;
 
   return (
     <SavingsModalProvider>
@@ -52,10 +53,6 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
             {showHeroContent && <CalculateSavingButton />}
             <HeroVideo />
             {showHeroContent && <HeroOverlay isHome={isHome} />}
-            <AllyPopUp
-              visible={allyData.hasCoupon && allyPopUp && showHeroContent}
-              onClose={() => setAllyPopUp(false)}
-            />
           </section>
         )}
 
@@ -65,6 +62,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
 
         {showFaqs && <Faqs />}
         <Footer />
+        <AllyPopUp visible={showPopUp} onClose={closePopUp} />
       </div>
     </SavingsModalProvider>
   );

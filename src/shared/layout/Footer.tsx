@@ -4,7 +4,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import TermsAndConditions from './TermsAndConditions';
 import { Link } from 'react-router-dom';
 import { getCopyrightText } from '../constants';
-import { FaInstagram, FaTiktok, FaFacebook, FaYoutube, FaLinkedin, FaShoppingBag, FaPlane, FaUtensils } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaFacebook, FaYoutube, FaLinkedin, FaShoppingBag, FaPlane, FaUtensils, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { GiJewelCrown } from 'react-icons/gi';
 
 export const Footer: React.FC = () => {
@@ -107,8 +107,17 @@ export const Footer: React.FC = () => {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <div className="space-y-2 text-sm text-gray-700 *:hover:text-neutral-800 dark:text-gray-400 *:dark:hover:text-neutral-100 *:block *:w-fit">
-              <a href='mailto:support@uchooseit.us' >Email: support@uchooseit.us</a>
+            <div className="flex flex-col justify-start items-start gap-y-2 text-sm text-gray-700 *:hover:text-neutral-800 dark:text-gray-400 *:dark:hover:text-neutral-100 *:block *:w-fit">
+              <a href='tel:+15613293553'>
+                <FaPhone className='inline-block w-3.5 h-3.5 mr-2' /> 
+                <span>
+                  +1 561 329 3553
+                </span>
+              </a>
+              <a href='mailto:support@uchooseit.us' >
+                <FaEnvelope className='inline-block w-3.5 h-3.5 mr-2' />
+                <span>support@uchooseit.us</span>
+              </a>
               <a href='https://uchooseitus.recurly.com/account/create_account' target='_target'>Manage Membership</a>
             </div>
           </div>
