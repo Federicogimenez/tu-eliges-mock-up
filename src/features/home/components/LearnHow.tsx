@@ -1,16 +1,18 @@
 import { useState } from "react";
 import ReactPlayer from "react-player";
 import ButtonSecondary from "../../../shared/components/ButtonSecondary";
+import { useTranslation } from '../../../hooks/useTranslation';
 
 
 export default function LearnHow() {
   const [videoPlay, setvideoPlay] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div className="relative bg-white dark:bg-black w-full pt-16 pb-10 ">
-      <h2 className=" heading-1 text-center">Learn how to save</h2>
+      <h2 className=" heading-1 text-center">{t('home.learnHow.title')}</h2>
       <p className="subtitle text-center text-gray-600 dark:text-gray-400 my-[1vh] xl:mb-5">
-        Discounts are always 1-tap away.
+        {t('home.learnHow.subtitle')}
       </p>
 
       <div className="flex relative h-fit justify-center items-center w-11/12 max-w-5xl mx-auto">
@@ -53,7 +55,7 @@ export default function LearnHow() {
         </div>
       </div>
       <div className="mt-8 w-11/12 mx-auto flex justify-center">
-        <ButtonSecondary text={"Explore Platform"} redirect={"https://uchooseitus.enjoymydeals.com/"} anchor/>
+        <ButtonSecondary text={t('home.learnHow.button')} redirect={"https://uchooseitus.enjoymydeals.com/"} anchor/>
       </div>
     </div>
   );

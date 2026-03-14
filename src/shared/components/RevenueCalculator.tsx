@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 // Allies Revenue Calculator – uchooseit.us
 // Agencies landing page version with validations
@@ -25,6 +26,9 @@ interface RevenueCalculatorProps{
 }
 
 export default function RevenueCalculator({ buyer, default_engagementPct, default_followers, default_maxDiscountPct, default_revPerMembershipAgency }:RevenueCalculatorProps) {
+  const { t, tHtml } = useTranslation();
+  const k = 'affiliates.revenueCalculator';
+
   const membershipPrice = 47.99; // Fixed membership price
   const [followers, setFollowers] = useState<number>(default_followers);
   const [engagementPct, setEngagementPct] = useState<number>(default_engagementPct);
@@ -56,127 +60,119 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
         <header className="mb-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {buyer} Revenue Calculator
+              {t(`${k}.title`, { buyer })}
             </h1>
-            <p className="text-neutral-900 dark:text-neutral-300">
-              Edit the <span className="text-emerald-400">green</span> fields to
-              model your agency's revenue with uchooseit.us.
-            </p>
+            <p className="text-neutral-900 dark:text-neutral-300" dangerouslySetInnerHTML={tHtml(`${k}.editFields`)} />
           </div>
           <div className="rounded-2xl bg-neutral-200 dark:bg-neutral-900 px-4 py-2 text-sm text-neutral-900 dark:text-neutral-300 shadow-lg shadow-black/30">
-            Public price per year: <strong>{currency(membershipPrice)}</strong>
+            {t(`${k}.publicPriceLabel`)} <strong>{currency(membershipPrice)}</strong>
           </div>
         </header>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-white">
           <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
-            <h2 className="mb-4 text-lg font-medium">1. Negotiation Discount Community</h2>
+            <h2 className="mb-4 text-lg font-medium">{t(`${k}.section1.title`)}</h2>
             <div className="space-y-4">
-              <KPI label="Public Price per year" value={currency(membershipPrice)} />
-              <LabeledPercent label="Discount for Community. Max 25%" maxValue={25} value={maxDiscountPct} onChange={setMaxDiscountPct} help="Applied to the membership price" />
-              <KPI label="Price with discount per year (Special Price for the community)" value={currency(discountedPrice)} accent />
-              <KPI label="Price with discount per month *equivalent" value={currency(discountedMonthly)} />
+              <KPI label={t(`${k}.section1.publicPrice`)} value={currency(membershipPrice)} />
+              <LabeledPercent label={t(`${k}.section1.discountLabel`)} maxValue={25} value={maxDiscountPct} onChange={setMaxDiscountPct} help={t(`${k}.section1.appliedNote`)} />
+              <KPI label={t(`${k}.section1.priceWithDiscount`)} value={currency(discountedPrice)} accent />
+              <KPI label={t(`${k}.section1.pricePerMonth`)} value={currency(discountedMonthly)} />
             </div>
           </section>
 
           <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
-            <h2 className="mb-4 text-lg font-medium">2. {buyer} Data</h2>
+            <h2 className="mb-4 text-lg font-medium">{t(`${k}.section2.title`, { buyer })}</h2>
             <div className="space-y-4">
 
               {
-                buyer === 'Agency' ? 
+                buyer === 'Agency' ?
                 <>
-                  <LabeledNumber label="Influencers under the Agency" value={agencyInfluencers} onChange={setAgencyInfluencers} help="How many influencers your agency manages" formatter={numberFormat} />
-                  <FormattedFollowers label="Followers" value={followers} onChange={setFollowers} help="Enter followers in units; commas will be added automatically" />
-                  <LabeledPercent label="Engagement (%)" value={engagementPct} onChange={setEngagementPct} help="Average organic engagement percentage" />
+                  <LabeledNumber label={t(`${k}.section2.influencersLabel`)} value={agencyInfluencers} onChange={setAgencyInfluencers} help={t(`${k}.section2.influencersHelp`)} formatter={numberFormat} />
+                  <FormattedFollowers label={t(`${k}.section2.followersLabel`)} value={followers} onChange={setFollowers} help={t(`${k}.section2.followersHelp`)} />
+                  <LabeledPercent label={t(`${k}.section2.engagementLabel`)} value={engagementPct} onChange={setEngagementPct} help={t(`${k}.section2.engagementHelp`)} />
                 </>
                 : null
               }
               {
-                buyer === 'Influencer' ? 
+                buyer === 'Influencer' ?
                 <>
-                  {/* <LabeledNumber label="Influencers under the Agency" value={agencyInfluencers} onChange={setAgencyInfluencers} help="How many influencers your agency manages" formatter={numberFormat} /> */}
-                  <FormattedFollowers label="Followers" value={followers} onChange={setFollowers} help="Enter followers in units; commas will be added automatically" />
-                  <LabeledPercent label="Engagement (%)" value={engagementPct} onChange={setEngagementPct} help="Average organic engagement percentage" />
+                  <FormattedFollowers label={t(`${k}.section2.followersLabel`)} value={followers} onChange={setFollowers} help={t(`${k}.section2.followersHelp`)} />
+                  <LabeledPercent label={t(`${k}.section2.engagementLabel`)} value={engagementPct} onChange={setEngagementPct} help={t(`${k}.section2.engagementHelp`)} />
                 </>
                 : null
               }
               {
-                buyer === 'Company' ? 
+                buyer === 'Company' ?
                 <>
-                  {/* <LabeledNumber label="Influencers under the Agency" value={agencyInfluencers} onChange={setAgencyInfluencers} help="How many influencers your agency manages" formatter={numberFormat} /> */}
-                  <FormattedFollowers label="Clients" value={followers} onChange={setFollowers} help="Enter clients in units; commas will be added automatically" />
-                  <LabeledPercent label="Engagement (%)" value={engagementPct} onChange={setEngagementPct} help="Average organic engagement percentage" />
+                  <FormattedFollowers label={t(`${k}.section2.clientsLabel`)} value={followers} onChange={setFollowers} help={t(`${k}.section2.clientsHelp`)} />
+                  <LabeledPercent label={t(`${k}.section2.engagementLabel`)} value={engagementPct} onChange={setEngagementPct} help={t(`${k}.section2.engagementHelp`)} />
                 </>
                 : null
               }
               {
-                buyer === 'Non-Profit' ? 
+                buyer === 'Non-Profit' ?
                 <>
-                  {/* <LabeledNumber label="Influencers under the Agency" value={agencyInfluencers} onChange={setAgencyInfluencers} help="How many influencers your agency manages" formatter={numberFormat} /> */}
-                  <FormattedFollowers label="Collaborators" value={followers} onChange={setFollowers} help="Enter collaborators in units; commas will be added automatically" />
-                  <LabeledPercent label="Engagement (%)" value={engagementPct} onChange={setEngagementPct} help="Average organic engagement percentage" />
+                  <FormattedFollowers label={t(`${k}.section2.collaboratorsLabel`)} value={followers} onChange={setFollowers} help={t(`${k}.section2.collaboratorsHelp`)} />
+                  <LabeledPercent label={t(`${k}.section2.engagementLabel`)} value={engagementPct} onChange={setEngagementPct} help={t(`${k}.section2.engagementHelp`)} />
                 </>
                 : null
               }
-              <KPI label="Organic Engagement (#)" value={numberFormat(engaged)} />
+              <KPI label={t(`${k}.section2.organicEngagement`)} value={numberFormat(engaged)} />
 
             </div>
           </section>
 
           <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
-            <h2 className="mb-4 text-lg font-medium">3. Negotiation Terms</h2>
+            <h2 className="mb-4 text-lg font-medium">{t(`${k}.section3.title`)}</h2>
             <div className="space-y-4">
               {
-                buyer === 'Agency' ? 
+                buyer === 'Agency' ?
                 <>
-                  <LabeledCurrency label={`Revenue per Membership (Influencer)`} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} />
-                  <LabeledCurrency label="Revenue per Membership (Agency)" value={revPerMembershipAgency} onChange={setRevPerMembershipAgency} />
+                  <LabeledCurrency label={t(`${k}.section3.revenuePerInfluencer`)} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} />
+                  <LabeledCurrency label={t(`${k}.section3.revenuePerAgency`)} value={revPerMembershipAgency} onChange={setRevPerMembershipAgency} />
                 </>
                 : null
               }
               {
-                buyer === 'Influencer' ? 
+                buyer === 'Influencer' ?
                 <>
-                  <LabeledCurrency label={`Revenue per Membership (Influencer)`} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} />
+                  <LabeledCurrency label={t(`${k}.section3.revenuePerInfluencer`)} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} />
                 </>
                 : null
               }
               {
-                buyer === 'Company' || buyer === 'Non-Profit' ? 
+                buyer === 'Company' || buyer === 'Non-Profit' ?
                 <>
-                  <LabeledCurrency label={`Revenue per Membership (${buyer})`} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} />
+                  <LabeledCurrency label={t(`${k}.section3.revenuePerBuyer`, { buyer })} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} />
                 </>
                 : null
               }
-              {/* <LabeledCurrency label={`Revenue per Membership ${buyer}`} value={revPerMembershipAfiliate} onChange={setRevPerMembershipAfiliate} /> */}
-              {/* <LabeledCurrency label="Revenue per Membership (Agency)" value={revPerMembershipAgency} onChange={setRevPerMembershipAgency} /> */}
             </div>
           </section>
         </div>
 
         <section className="mt-8 rounded-2xl text-white border border-neutral-800 bg-neutral-900 p-5 shadow-xl shadow-black/30 backdrop-blur">
           <div className="mb-4">
-            <h2 className="text-lg font-medium">Conversion Scenarios</h2>
-            <p className="text-sm text-neutral-400">Based on estimated organic engagement: {numberFormat(engaged)} people</p>
+            <h2 className="text-lg font-medium">{t(`${k}.scenarios.title`)}</h2>
+            <p className="text-sm text-neutral-400">{t(`${k}.scenarios.basedOn`, { engaged: numberFormat(engaged) })}</p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-neutral-900 text-neutral-300">
-                  <Th>Conversion Rate</Th>
-                  <Th>Memberships Sold</Th>
+                  <Th>{t(`${k}.scenarios.conversionRate`)}</Th>
+                  <Th>{t(`${k}.scenarios.membershipsSold`)}</Th>
                   {
                     buyer === 'Agency' ?
                     <>
-                      <Th>Revenue for Influencer</Th>
-                      <Th>Revenue for Agency</Th>
-                      <Th>Total Revenue Agency per Influencers</Th>
+                      <Th>{t(`${k}.scenarios.revenueInfluencer`)}</Th>
+                      <Th>{t(`${k}.scenarios.revenueAgency`)}</Th>
+                      <Th>{t(`${k}.scenarios.totalRevenueAgency`)}</Th>
                     </>
                     :
-                    <Th>Revenue for {buyer}</Th>
+                    <Th>{t(`${k}.scenarios.revenueBuyer`, { buyer })}</Th>
                   }
-                  
+
                 </tr>
               </thead>
               <tbody>
@@ -185,7 +181,6 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
                   const afiliate = sold * (revPerMembershipAfiliate || 0);
                   const ag = sold * (revPerMembershipAgency);
                   const agTotal = ag * (agencyInfluencers || 1);
-                  // const agTotal_companies = ag * (agencyInfluencers || 1);
                   return (
                     <tr key={rate} className="border-b border-neutral-800/80 hover:bg-neutral-800/40">
                       <Td>{rate}%</Td>
@@ -193,7 +188,6 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
                       <Td>{currency(afiliate)}</Td>
                       {buyer === 'Agency' ?
                         <>
-                          {/* <Td>{currency(afiliate)}</Td> */}
                           <Td>{currency(ag)}</Td>
                           <Td>{currency(agTotal)}</Td>
                         </>
@@ -205,17 +199,17 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
               </tbody>
               <tfoot>
                 <tr className="bg-neutral-900/60">
-                  <Td className="font-semibold">GOAL (100%)</Td>
+                  <Td className="font-semibold">{t(`${k}.scenarios.goal`)}</Td>
                   <Td className="font-semibold">{numberFormat(engaged)}</Td>
 
                   {
-                    buyer === 'Agency' ? 
+                    buyer === 'Agency' ?
                     <>
                       <Td className="font-semibold">{currency(engaged * (revPerMembershipAfiliate || 0))}</Td>
                       <Td className="font-semibold">{currency(engaged * (revPerMembershipAgency || 0))}</Td>
                       <Td className="font-semibold">{currency(engaged * (revPerMembershipAgency || 0) * (agencyInfluencers || 1))}</Td>
                     </>
-                    : 
+                    :
                     <Td className="font-semibold">{currency(engaged * (revPerMembershipAfiliate || 0) * (agencyInfluencers || 1))}</Td>
                   }
 
@@ -226,8 +220,7 @@ export default function RevenueCalculator({ buyer, default_engagementPct, defaul
         </section>
 
         <p className="mt-6 text-center text-xs text-neutral-500">
-          uchooseit.us - Transparency you can trust. This calculator is a
-          planning tool and does not represent a binding offer.
+          {t(`${k}.disclaimer`)}
         </p>
       </div>
     </div>

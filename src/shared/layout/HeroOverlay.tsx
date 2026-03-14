@@ -1,18 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAllyContext } from '../../hooks/useAllyContext'
+import { useTranslation } from '../../hooks/useTranslation'
 import ButtonPrimary from '../components/ButtonPrimary'
 
 import icon_shop from '/icons/category/shop.png'
 import icon_travel from '/icons/category/travel.png'
 import icon_dining from '/icons/category/dining.png'
 import icon_entertainment from '/icons/category/entertainment.png'
-
-const navLinks = [
-  { label: 'Shop', icon: icon_shop, path: '/shop', bg_color: 'bg-purple-shop/60 hover:bg-purple-shop' },
-  { label: 'Travel', icon: icon_travel, path: '/travel', bg_color: 'bg-blue-travel/60 hover:bg-blue-travel' },
-  { label: 'Dining', icon: icon_dining, path: '/dining', bg_color: 'bg-yellow-dining/60 hover:bg-yellow-dining' },
-  { label: 'Entertainment', icon: icon_entertainment, path: '/entertainment', bg_color: 'bg-pink-entertainment/60 hover:bg-pink-entertainment' },
-]
 
 interface HeroOverlayProps {
   isHome: boolean
@@ -21,6 +15,14 @@ interface HeroOverlayProps {
 export default function HeroOverlay({ isHome }: HeroOverlayProps) {
   const { code, recurlyUrl } = useAllyContext()
   const { pathname } = useLocation()
+  const { t, tHtml } = useTranslation()
+
+  const navLinks = [
+    { label: t('layout.heroOverlay.navLinks.shop'), icon: icon_shop, path: '/shop', bg_color: 'bg-purple-shop/60 hover:bg-purple-shop' },
+    { label: t('layout.heroOverlay.navLinks.travel'), icon: icon_travel, path: '/travel', bg_color: 'bg-blue-travel/60 hover:bg-blue-travel' },
+    { label: t('layout.heroOverlay.navLinks.dining'), icon: icon_dining, path: '/dining', bg_color: 'bg-yellow-dining/60 hover:bg-yellow-dining' },
+    { label: t('layout.heroOverlay.navLinks.entertainment'), icon: icon_entertainment, path: '/entertainment', bg_color: 'bg-pink-entertainment/60 hover:bg-pink-entertainment' },
+  ]
 
   return (
     <div
@@ -30,19 +32,19 @@ export default function HeroOverlay({ isHome }: HeroOverlayProps) {
       <div className="w-full text-white flex flex-col justify-center items-center gap-y-[4dvh] lg:gap-y-[4dvh] pb-[5dvh] grow">
         <h1 className={`text-center text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-[1] max-w-[600px] lg:max-w-[600px] xl:max-w-[720px] transition-all duration-500 ${!isHome ? 'landscape:scale-90' : 'scale-100'}`}>
           <span className="font-semibold animate-appear-up">
-            One Million Deals
+            {t('layout.heroOverlay.title')}
           </span>
           <span className="animate-appear-up">
             <span className="block text-shadow-xl-blue font-medium tracking shiny-blueuchooseit-text text-2xl sm:text-4xl md:text-4xl xl:text-5xl mx-3">
-              One VIP Membership
+              {t('layout.heroOverlay.subtitle')}
             </span>
           </span>
         </h1>
 
         <div className="animate-appear-up" style={{ animationDelay: '.2s' }}>
-          <p className={`w-full mt-2 text-center md:w-full text-lg md:text-xl lg:text-2xl font-medium h-10 mx-auto transition-all duration-200 ${!isHome ? 'landscape:scale-75' : 'scale-100'}`}>
-            You Choose Where <br className="md:hidden" /> to Save
-          </p>
+          <p className={`w-full mt-2 text-center md:w-full text-lg md:text-xl lg:text-2xl font-medium h-10 mx-auto transition-all duration-200 ${!isHome ? 'landscape:scale-75' : 'scale-100'}`}
+            dangerouslySetInnerHTML={tHtml('layout.heroOverlay.tagline')}
+          />
         </div>
 
         <div className="animate-appear-up" style={{ animationDelay: '.3s' }}>
@@ -75,7 +77,7 @@ export default function HeroOverlay({ isHome }: HeroOverlayProps) {
             </div>
             <p className="text-sm pb-4 text-gray-200 flex gap-x-2 justify-center items-center mt-4 animate-appear-up" style={{ animationDelay: '.5s' }}>
               <img src="/icons/stars.svg" alt="guarantee" className="w-[50px]" />
-              Trusted by families nationwide
+              {t('layout.heroOverlay.trustedBy')}
             </p>
           </>
         )}

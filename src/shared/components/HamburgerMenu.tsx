@@ -2,24 +2,27 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import CountrySwitcher from './CountrySwitcher';
+import { useTranslation } from '../../hooks/useTranslation';
 
 interface MenuItem {
   label: string;
   path: string;
 }
 
-const menuItems: MenuItem[] = [
-  { label: 'Home', path: '/' },
-  { label: 'Shop', path: '/shop' },
-  { label: 'Travel', path: '/travel' },
-  { label: 'Dining', path: '/dining' },
-  { label: 'Entertainment', path: '/entertainment' },
-  { label: 'Learn more', path: '/product' },
-  { label: 'Business', path: '/business' },
-];
-
 export const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
+
+  const menuItems: MenuItem[] = [
+    { label: t('components.hamburgerMenu.home'), path: '/' },
+    { label: t('components.hamburgerMenu.shop'), path: '/shop' },
+    { label: t('components.hamburgerMenu.travel'), path: '/travel' },
+    { label: t('components.hamburgerMenu.dining'), path: '/dining' },
+    { label: t('components.hamburgerMenu.entertainment'), path: '/entertainment' },
+    { label: t('components.hamburgerMenu.learnMore'), path: '/product' },
+    { label: t('components.hamburgerMenu.business'), path: '/business' },
+  ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -71,12 +74,16 @@ export const HamburgerMenu: React.FC = () => {
             >
               {/* Menu Header */}
               <div className="p-6 border-b border-gray-200 dark:border-black flex justify-center items-center gap-x-3 ">
+                <div className='relative'>
+                  <CountrySwitcher />
+                </div>
                 <div className='relative '>
                   <ThemeSwitcher />
                 </div>
-                <h2 className="text-center text-xl font-semibold text-black dark:text-white grow">
-                  Navigation
-                </h2>
+                {/* <h2 className="text-center text-xl font-semibold text-black dark:text-white grow">
+                  {t('components.hamburgerMenu.navigation')}
+                </h2> */}
+        
               </div>
 
               {/* Menu Items */}
@@ -110,7 +117,7 @@ export const HamburgerMenu: React.FC = () => {
                       onClick={toggleMenu}
                       className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition-colors duration-200"
                     >
-                      Log In
+                      {t('components.hamburgerMenu.logIn')}
                     </a>
                   </motion.li>
                 </ul>

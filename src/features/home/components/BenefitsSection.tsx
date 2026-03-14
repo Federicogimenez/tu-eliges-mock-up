@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 import icon_gps from '/icons/benefits/gps.svg'
 import icon_discount from '/icons/benefits/discount.svg'
@@ -8,44 +9,7 @@ import icon_privacy from '/icons/benefits/privacy.svg'
 import icon_quick from '/icons/benefits/quick.svg'
 import icon_save from '/icons/benefits/save.svg'
 
-const benefits = [
-  {
-    icon: icon_save,
-    title: 'Save $2,000+ per year - 50% off ',
-    description: 'Travel • Dining • Shopping • Entertainment',
-    note: '*Average member savings in 2024'
-  },
-  {
-    icon: icon_discount,
-    title: 'Over 1 millon:',
-    description: 'Nationwide deals at hand.',
-    note: null
-  },
-  {
-    icon: icon_permanent,
-    title: 'Permanent discounts:',
-    description: 'Use as often as you want.',
-    note: null
-  },
-  {
-    icon: icon_gps,
-    title: 'GPS-enabled savings:',
-    description: 'Find offers near you.',
-    note: null
-  },
-  {
-    icon: icon_quick,
-    title: 'Quick and easy:',
-    description: 'Redenptions no complicated steps.',
-    note: null
-  },
-  {
-    icon: icon_privacy,
-    title: 'Privacy protected:',
-    description: 'We never sell your data.',
-    note: null
-  }
-];
+const benefitIcons = [icon_save, icon_discount, icon_permanent, icon_gps, icon_quick, icon_privacy];
 
 export interface BenefitSlide{
       color: string,
@@ -61,11 +25,13 @@ interface BenefitsSectionProps{
   slides: BenefitSlide[];
 }
 
-export default function BenefitsSection ({ 
-  slides, 
-  color='currentColor', 
-  title='One membership',
-  subtitle="Real benefits for the whole family" }: BenefitsSectionProps) {
+export default function BenefitsSection ({
+  slides,
+  color='currentColor',
+  title,
+  subtitle }: BenefitsSectionProps) {
+
+  const { t } = useTranslation();
 
   const [ dotsLength, setDotsLenght] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -139,10 +105,10 @@ export default function BenefitsSection ({
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="heading-1 mb-2">
-            {title}
+            {title ?? t('home.benefits.title')}
           </h2>
           <p className="subtitle text-neutral-800 dark:text-neutral-200" style={{color: `var(${color})`}}>
-            {subtitle}
+            {subtitle ?? t('home.benefits.subtitle')}
           </p>
         </div>
 
@@ -192,15 +158,15 @@ export default function BenefitsSection ({
 
           {/* Benefits List */}
           <div className='flex flex-col justify-center items-start gap-y-4'>
-            {benefits.map((benefit, index) => (
+            {benefitIcons.map((icon, index) => (
               <div key={index} className="flex justify-start items-start gap-x-3">
-                <img src={benefit.icon} alt="icon" className='size-8 object-contain object-center' />
+                <img src={icon} alt="icon" className='size-8 object-contain object-center' />
                 <div className=''>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {benefit.title}
+                    {t(`home.benefits.items.${index}.title`)}
                   </h3>
                   <p className="text-sm text-neutral-800 dark:text-gray-400">
-                    {benefit.description}
+                    {t(`home.benefits.items.${index}.description`)}
                   </p>
                 </div>
               </div>

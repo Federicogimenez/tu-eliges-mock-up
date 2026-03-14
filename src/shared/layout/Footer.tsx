@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import { useTranslation } from '../../hooks/useTranslation';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsAndConditions from './TermsAndConditions';
 import { Link } from 'react-router-dom';
@@ -9,6 +10,7 @@ import { GiJewelCrown } from 'react-icons/gi';
 
 export const Footer: React.FC = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   const socials = [
     {
@@ -72,7 +74,7 @@ export const Footer: React.FC = () => {
               className="h-8 mb-4"
             />
             <p className=" text-sm mb-4">
-              Your VIP key to everyday savings.
+              {t('layout.footer.description')}
             </p>
             <div className='flex justify-start items-center gap-x-2'>
               {
@@ -87,7 +89,7 @@ export const Footer: React.FC = () => {
 
 {/* Navigate */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Navigate</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('layout.footer.navigate')}</h3>
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
 
               {
@@ -99,14 +101,14 @@ export const Footer: React.FC = () => {
                 })}
               <Link to={'/product'} className='flex justify-start items-center text-gray-700 hover:text-neutral-800 dark:text-gray-400 dark:hover:text-neutral-100 w-fit'>
                 {/* <img src={} alt="entertainment" className='w-5 mr-3' /> */}
-                Learn More
+                {t('layout.footer.learnMore')}
               </Link>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('layout.footer.contact')}</h3>
             <div className="flex flex-col justify-start items-start gap-y-2 text-sm text-gray-700 *:hover:text-neutral-800 dark:text-gray-400 *:dark:hover:text-neutral-100 *:block *:w-fit">
               <a href='tel:+15613293553'>
                 <FaPhone className='inline-block w-3.5 h-3.5 mr-2' /> 
@@ -118,14 +120,14 @@ export const Footer: React.FC = () => {
                 <FaEnvelope className='inline-block w-3.5 h-3.5 mr-2' />
                 <span>support@uchooseit.us</span>
               </a>
-              <a href='https://uchooseitus.recurly.com/account/create_account' target='_target'>Manage Membership</a>
+              <a href='https://uchooseitus.recurly.com/account/create_account' target='_target'>{t('layout.footer.manageMembership')}</a>
             </div>
           </div>
           
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold  text-lg mb-4">Legals</h3>
+            <h3 className="font-semibold  text-lg mb-4">{t('layout.footer.legals')}</h3>
             <div className="space-y-2 text-sm text-gray-700 *:hover:text-neutral-800 dark:text-gray-400 *:dark:hover:text-neutral-100 *:block *:w-fit">
               <div>
                 <PrivacyPolicy />
@@ -161,7 +163,7 @@ export const Footer: React.FC = () => {
               {getCopyrightText()}
             </div>
             <div className="text-sm ">
-              <p>Based in Orlando, FL - USA</p>
+              <p>{t('layout.footer.basedIn')}</p>
             </div>
           </div>
         </div>

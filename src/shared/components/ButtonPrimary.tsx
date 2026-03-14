@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { trackMetaEvent } from "../../utils/trackMetaPixel";
 import { useAllyContext } from "../../hooks/useAllyContext";
+import { useTranslation } from "../../hooks/useTranslation";
 
 interface ButtonPrimaryProps {
   text_1?: string;
@@ -16,8 +17,8 @@ interface ButtonPrimaryProps {
 
 export default function ButtonPrimary (
   { 
-    text_1='Unlock My Private Access', 
-    text_2='Get Exclusive Discounts', 
+    text_1,
+    text_2,
     special=false, 
     src, 
     customStyle, 
@@ -28,6 +29,10 @@ export default function ButtonPrimary (
     }: ButtonPrimaryProps) {
 
        const { allyData } = useAllyContext()
+       const { t } = useTranslation()
+
+        const resolvedText1 = text_1 ?? t('components.buttons.unlockAccess')
+        const resolvedText2 = text_2 ?? t('components.buttons.getDiscounts')
 
         const intervalRef = useRef<number | null>(null)
         const [activeBtn, setActiveBtn] = useState<boolean>(false)
@@ -62,11 +67,11 @@ export default function ButtonPrimary (
         <span className={`absolute block left-0 top-0 w-full h-full bg-gradient-to-r transition-all duration-500 ${activeBtn ? 'translate-x-full' : 'translate-x-0' }  ${ fromColor + ' ' + toColor}`} />
         
         <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r flex justify-center items-center transition-all duration-500  ${activeBtn ? 'translate-x-0' : '-translate-x-full' } ${ special ? ' to-yellow-400 from-yellow-950' : (fromColor2 + ' ' + toColor2) }`} >
-            {special ? 'Get Special Discount' : text_2}
+            {special ? t('components.buttons.getSpecialDiscount') : resolvedText2}
         </span>
-        
+
         <span className={`relative transition-all duration-500  !text-white  ${activeBtn ? 'opacity-0' : 'opacity-100' }`}>
-            {text_1}
+            {resolvedText1}
         </span>
 
         <picture className={` absolute right-2 top-1/2 w-7  stroke-white dark:stroke-white scale-100 lg:-translate-x-1/2 -translate-y-1/2 transition-all duration-500 group-hover:scale-105 group-hover:translate-x-0 `}>
@@ -76,7 +81,7 @@ export default function ButtonPrimary (
           </picture>
         {/* <img src={} alt="" /> */}
         {/* <span className='absolute top-1/2 left-1/2 -translate-x-[230%] -translate-y-1/2 w-full font-semibold transition-all duration-400 delay-100 group-hover:font-bold !text-white ease-out group-hover:-translate-x-1/2'>
-            {special ? 'Get Special Discount' : text_2}
+            {special ? t('components.buttons.getSpecialDiscount') : text_2}
         </span> */}
     </a>
   )

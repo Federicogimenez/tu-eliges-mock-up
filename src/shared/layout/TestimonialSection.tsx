@@ -1,6 +1,7 @@
 import { useCallback,  useEffect,  useRef, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { useSavingsModal } from "../../hooks/useSavingsModal";
+import { useTranslation } from "../../hooks/useTranslation";
 
 
 
@@ -33,6 +34,7 @@ export default function TestimonialSection({
 
 
   const { openModal } = useSavingsModal()
+  const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
   const isPausedRef = useRef(false)
   const intervalRef = useRef<number | null>(null)
@@ -117,7 +119,7 @@ export default function TestimonialSection({
                 onClick={() => openModal?.()}
                 className={`block w-11/12 mx-auto font-semibold mb-6 text-center max-w-md px-4 py-2 cursor-pointer rounded-full bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white text-lg transition-all duration-300 hover:-translate-y-1`}
               >
-                  Calculate Savings
+                  {t('layout.testimonials.calculateSavings')}
               </button>
 
             </div>

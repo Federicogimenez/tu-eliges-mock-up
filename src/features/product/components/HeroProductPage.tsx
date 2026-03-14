@@ -1,4 +1,5 @@
 import { useAllyContext } from '../../../hooks/useAllyContext';
+import { useTranslation } from '../../../hooks/useTranslation';
 import ButtonPrimary from '../../../shared/components/ButtonPrimary'
 import { DiamondIcons } from '../../home/components/DiamondIcons'
 import presentation from '/product_page_presentation.png'
@@ -6,6 +7,7 @@ import presentation from '/product_page_presentation.png'
 
 export default function HeroProductPage() {
     const { code, recurlyUrl } = useAllyContext();
+    const { t } = useTranslation();
   
   return (
     <section className="h-full w-full min-h-dvh  pt-[25dvh]">
@@ -13,25 +15,25 @@ export default function HeroProductPage() {
         <div className="w-10/12 lg:pl-[5dvw]">
             <div className="w-fit mx-auto">
                 <h3 className="heading-1 font-semibold text-center lg:text-left">
-                    Start saving in minutes
+                    {t('product.hero.title')}
                 </h3>
                 <p className='subtitle text-balance text-gray-900 dark:text-white text-center lg:text-left my-8'>
-                    Learn how to join, activate, and save with your Uchooseit.us membership.
+                    {t('product.hero.subtitle')}
                 </p>
             </div>
 
             <div className=" flex justify-between items-center gap-x-5">
               <div className="flex flex-col text-center justify-center gap-x-3 items-center ">
                 <span className="font-finger-paint text-6xl md:text-8xl">1</span>
-                <p className="text-lg md:text-xl">Join</p>
+                <p className="text-lg md:text-xl">{t('product.hero.step1')}</p>
               </div>
               <div className="flex flex-col text-center justify-center gap-x-3 items-center ">
                 <span className="font-finger-paint text-6xl md:text-8xl">2</span>
-                <p className="text-lg md:text-xl">Activate</p>
+                <p className="text-lg md:text-xl">{t('product.hero.step2')}</p>
               </div>
               <div className="flex flex-col text-center justify-center gap-x-3 items-center ">
                 <span className="font-finger-paint text-6xl md:text-8xl">3</span>
-                <p className="text-lg md:text-xl">Save</p>
+                <p className="text-lg md:text-xl">{t('product.hero.step3')}</p>
               </div>
             </div>
 

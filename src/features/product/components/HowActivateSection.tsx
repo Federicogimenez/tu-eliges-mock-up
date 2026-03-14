@@ -2,9 +2,11 @@ import ReactPlayer from "react-player";
 
 import iphone_frame from '/frame-iphone.png'
 import { useState } from "react";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 
 export default function HowActivateSection() {
+    const { t } = useTranslation();
 
     const [videoPlay, setvideoPlay] = useState(false)  
 
@@ -14,13 +16,13 @@ export default function HowActivateSection() {
         <div className="my-8">
             <h2 className="heading-1 text-center mb-2">
                 <span className="font-semibold mr-2">
-                    Activate your 
+                    {t('product.howActivate.title')}
                 </span>
                 <br className="lg:hidden"/>
-                Member iD
+                {t('product.howActivate.titleHighlight')}
             </h2>
             <p className="subtitle text-center">
-                Learn how simple it is to activate on Web and Mobile App. 
+                {t('product.howActivate.subtitle')}
             </p>
         </div>
 

@@ -1,3 +1,4 @@
+import { useTranslation } from '../../hooks/useTranslation';
 import ButtonSecondary from '../components/ButtonSecondary';
 import ButtonTertiary from '../components/ButtonTertiary';
 
@@ -6,22 +7,23 @@ interface GatewayProps{
 }
 
 export default function GatewaySection ({ home_btn=false }:GatewayProps) {
+  const { t } = useTranslation();
   return (
     <section className="relative bg-white/80 dark:bg-black/80 py-14 px-4 w-full h-full ">
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-x-10 gap-y-8 max-w-7xl mx-auto'>
           <div className='lg:pl-[5vw] lg:pt-10'>
             <h3 className="heading-1 text-center lg:text-left">
-              Start saving in minutes
+              {t('layout.gateway.title')}
             </h3>
             <p className='subtitle text-balance text-gray-900 dark:text-white text-center lg:text-left my-8'>
-              Discover how easy it is to activate your membership and start saving every day with our Mobile & Web App.
+              {t('layout.gateway.subtitle')}
             </p>
 
             <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-x-4 gap-y-3">
-              <ButtonSecondary text={'Discover Here'} redirect={'/product'} />
+              <ButtonSecondary text={t('layout.gateway.discoverHere')} redirect={'/product'} />
               {
                 !home_btn ? null :
-                <ButtonTertiary text={'See All Categories'} redirect={'/'} />
+                <ButtonTertiary text={t('layout.gateway.seeAllCategories')} redirect={'/'} />
               }
             </div>
           </div>
@@ -37,10 +39,10 @@ export default function GatewaySection ({ home_btn=false }:GatewayProps) {
                 </a>
               </div>
             </picture>
-            <p className='text-lg mt-4 text-center'>✨500,000+ downloads and counting</p>
+            <p className='text-lg mt-4 text-center'>{t('layout.gateway.downloads')}</p>
           </div>
         </div>
-        <p className='mt-16 text-center font-semibold'>App available exclusively for Uchooseit.us members</p>
+        <p className='mt-16 text-center font-semibold'>{t('layout.gateway.appExclusive')}</p>
     </section>
   );
 };

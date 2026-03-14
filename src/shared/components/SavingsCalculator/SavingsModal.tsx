@@ -8,6 +8,7 @@ import { Currency } from "../../../utils/Currency";
 import type { CategoryConfig, CatKey, SubKey } from "../../../context/SavingsCalculatorModalContext";
 import { getSavingsDisclaimer } from "../../constants";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 interface SavingsModalProps {
   open: boolean;
@@ -39,6 +40,7 @@ export default function SavingsModal({
     hideMembershipCost = false,
     }: SavingsModalProps) {
 
+    const { t } = useTranslation();
     const [currentSlide, setCurrentSlide] = useState(0);
     const {pathname} = useLocation();
     const modal = useRef<HTMLDivElement | null>(null);
@@ -102,14 +104,14 @@ export default function SavingsModal({
                     {!hideMembershipCost && (
                     <>
                     <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-black dark:text-white">
-                        <span className="text-xl sm:text-3xl lg:text-4xl">You pay</span>
+                        <span className="text-xl sm:text-3xl lg:text-4xl">{t('components.savingsModal.youPay')}</span>
                         <span className="text-xl sm:text-3xl lg:text-4xl font-bold ">${membershipCost}</span>
                     </div>
                     <div className="block w-1 rounded-full bg-black dark:bg-white "></div>
                     </>
                     )}
                     <div className="w-fit flex flex-col items-center justify-center gap-y-2 md:gap-y-4 text-green-400">
-                        <span className="text-xl sm:text-3xl lg:text-4xl">You Save</span>
+                        <span className="text-xl sm:text-3xl lg:text-4xl">{t('components.savingsModal.youSave')}</span>
                         <span className="text-xl sm:text-3xl lg:text-4xl font-bold ">{Currency(netSavings)}</span>
                     </div>
                     {/* <p className="mt-2 text-center text-sm md:text-lg max-w-xl mx-auto ">Set your <span className="font-medium">annual usage</span> for each subcategory. Savings use fixed typical averages per purchase.</p> */}
@@ -161,7 +163,7 @@ export default function SavingsModal({
                         className="font-semibold border-b-2 text-black dark:text-white cursor-pointer" 
                         onClick={resetAll}>
                             <span className="block transition-all hover:-translate-y-1">
-                                Reset <br className="block md:hidden"/> All
+                                {t('components.savingsModal.reset')} <br className="block md:hidden"/> {t('components.savingsModal.all')}
                             </span>
                     </button>
                 </div>

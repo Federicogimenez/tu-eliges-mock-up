@@ -39,67 +39,70 @@ import article_6_brand from '/trendy/travel/articles/alamo.png';
 import article_7_brand from '/trendy/travel/articles/flights.png';
 import Benefits from '../../shared/layout/Benefits';
 import TestimonialSection from '../../shared/layout/TestimonialSection';
+import { useTranslation } from '../../hooks/useTranslation';
 
 
 
 export default function Travel (){
 
+  const { t } = useTranslation();
+
   const categoryTestimonials = [
     {
       icon: icon_bag,
       img: profile_bag,
-      text: '“We used the discount program to go to SeaWorld and swim with the dolphins at Christmas time. It was amazing!” - Mariann C.',
+      text: t('travel.testimonials.items.0.text'),
     },
     {
       icon: icon_beach,
       img: profile_beach,
-      text: '“My discount program has saved me hundreds of dollars traveling on hotels and excursions. It is a real deal saver.” - Amador S.',
+      text: t('travel.testimonials.items.1.text'),
     },
     {
       icon: icon_hotel,
       img: profile_hotel,
-      text: '“I have been surprised by the money I saved in just one use of my discount when booking a room last minute!” - Monica P.',
+      text: t('travel.testimonials.items.2.text'),
     },
     {
       icon: icon_car,
       img: profile_car,
-      text: '“I saved over $100 on a rental car by using my discount program.” - John C.',
+      text: t('travel.testimonials.items.3.text'),
     },
     {
       icon: icon_flight,
       img: profile_flight,
-      text: '“The airline tickets with Delta are usually expensive, and I saved a lot through this discount program!” - Lucrecia M.',
+      text: t('travel.testimonials.items.4.text'),
     },
   ]
 
   const trendyArticles: HeroTrendyArticleProps[] = [
 
     {
-      description:"Member-only hotel deals—nationwide.",
+      description: t('travel.articles.0.description'),
       brandImg: article_1_brand,
     },
     {
-      description:'Long stays, low rates for members.',
+      description: t('travel.articles.1.description'),
       brandImg: article_2_brand,
     },
     {
-      description:"Family-ready cruises with exclusive savings.",
+      description: t('travel.articles.2.description'),
       brandImg: article_3_brand,
     },
     {
-      description:"Drive away with member savings.",
+      description: t('travel.articles.3.description'),
       brandImg: article_4_brand,
     },
     {
-      description:"Drive away with member savings.",
+      description: t('travel.articles.4.description'),
       brandImg: article_5_brand,
     },
     {
-      description:"Vacation-ready rentals at member value.",
+      description: t('travel.articles.5.description'),
       brandImg: article_6_brand,
     },
     {
-      description:"Save on Flights Worldwide.",
+      description: t('travel.articles.6.description'),
       brandImg: article_7_brand,
     },
 
@@ -151,20 +154,20 @@ export default function Travel (){
         border='border-blue-travel'
         shiny_color={'shiny-blue-text'} 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile} /> */}
-      <HeroTrendy 
-        color={'--color-blue-travel'} 
-        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'} 
-        wrapperClass={'bg-gradient-to-b from-transparent via-blue-travel/50 to-blue-travel/80'} 
-        title={'Smarter Travel,'} 
-        subtitle={'Bigger Adventures!'} 
-        description={'Hotels, Rental Cars, Flights & Cruises—member-only savings wherever you go.'} 
-        ctaGradientFrom='from-blue-travel' 
+      <HeroTrendy
+        color={'--color-blue-travel'}
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-blue-travel/20 to-blue-travel/45'}
+        wrapperClass={'bg-gradient-to-b from-transparent via-blue-travel/50 to-blue-travel/80'}
+        title={t('travel.hero.title1')}
+        subtitle={t('travel.hero.title2')}
+        description={t('travel.hero.description')}
+        ctaGradientFrom='from-blue-travel'
         ctaGradientTo='to-blue-travel'
         articles={trendyArticles} />
       <Benefits />
       <PricingSection
-        title='Cheaper than an <br /> hour of parking.'
-        subtitle='And it helps you save even more.' 
+        title={t('travel.pricing.title')}
+        subtitle={t('travel.pricing.subtitle')} 
         color='--color-blue-travel'
         img={pricing_banner}
         ctaGradientFrom='from-black' 
@@ -176,9 +179,9 @@ export default function Travel (){
         subtitle='More Adventures, Less Spending' 
         color='--color-blue-travel' /> */}
       <TestimonialSection
-        title={'Travel big,'} 
-        subtitle={'Spend Small.'} 
-        description={'Instant savings on Hotels, Flights & Cars so you can travel more and spend less.'} 
+        title={t('travel.testimonials.title')}
+        subtitle={t('travel.testimonials.subtitle')}
+        description={t('travel.testimonials.description')} 
         retailers={850}
         color={'--color-blue-travel'} 
         dotsColor={'bg-blue-travel'}

@@ -5,12 +5,13 @@ import LoaderSimple from "../../../shared/components/LoaderSimple";
 // import type { AllyDataProps } from "../../../types/ally";
 import ButtonPrimary from "../../../shared/components/ButtonPrimary";
 import { useAllyContext } from "../../../hooks/useAllyContext";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const slides = [
-  { youtubeShortId: "3hSU8lpr5rA", color: "--color-pink-entertainment", icon:'/icons/category/entertainment.png', category: 'Entertainment', preview: '/testimonials/entertainment-preview.png'  },
-  { youtubeShortId: "x1DutiUd-Ys", color: "--color-yellow-dining", icon:'/icons/category/dining.png', category: 'Dining', preview: '/testimonials/dining-preview.png'  },
-  { youtubeShortId: "ziX-IDfNlt4", color: "--color-blue-travel", icon:'/icons/category/travel.png', category: 'Travel', preview: '/testimonials/travel-preview.png'  },
-  { youtubeShortId: "WBJKvF58G9g", color: "--color-purple-shop", icon:'/icons/category/shop.png', category: 'Shop', preview: '/testimonials/shop-preview.png' },
+  { youtubeShortId: "3hSU8lpr5rA", color: "--color-pink-entertainment", icon:'/icons/category/entertainment.png', categoryKey: 'entertainment' as const, preview: '/testimonials/entertainment-preview.png'  },
+  { youtubeShortId: "x1DutiUd-Ys", color: "--color-yellow-dining", icon:'/icons/category/dining.png', categoryKey: 'dining' as const, preview: '/testimonials/dining-preview.png'  },
+  { youtubeShortId: "ziX-IDfNlt4", color: "--color-blue-travel", icon:'/icons/category/travel.png', categoryKey: 'travel' as const, preview: '/testimonials/travel-preview.png'  },
+  { youtubeShortId: "WBJKvF58G9g", color: "--color-purple-shop", icon:'/icons/category/shop.png', categoryKey: 'shop' as const, preview: '/testimonials/shop-preview.png' },
 ];
 
 // interface TestimonialSectionProps{
@@ -22,6 +23,7 @@ const slides = [
 export default function TestimonialSection() {
 
   const { code, recurlyUrl, allyData } = useAllyContext();
+  const { t } = useTranslation();
   
 
   const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
@@ -68,15 +70,13 @@ export default function TestimonialSection() {
     <section className="relative mx-auto w-full lg:w-11/12 max-w-[1400px] h-full min-h-[90dvh]  bg-transparent py-20 flex flex-col  justify-center items-center gap-y-[0vh] gap-x-[2vw]">
       <div className="w-11/12 mb-10">
         <h1 className=" text-center heading-1">
-          Happy Members, <br />Real Savings!
+          {t('product.testimonials.title1')} <br />{t('product.testimonials.title2')}
         </h1>
         <p className="my-3 subtitle text-center bg-clip-text text-transparent bg-gradient-to-b text-shadow-2xs to-gray-200 from-black dark:from-gray-300  max-w-2xl px-2 mx-auto">
-          {/* See how real members save on travel, dining, entertainment and
-          shopping every day. */}
-          Join smart savers community for only
+          {t('product.testimonials.joinText')}
         </p>
         <p className={`relative w-full text-nowrap font-semibold text-center text-4xl md:text-5xl xl:text-6xl shiny-lightblue-text`}>
-            {perMonthPrice}/month
+            {t('product.testimonials.perMonth', { price: String(perMonthPrice) })}
         </p>
         {/* <div className='hidden relative w-full xl:flex justify-center mt-5'>
           <ButtonPrimary src={code ? code : recurlyUrl}  />
@@ -131,7 +131,7 @@ export default function TestimonialSection() {
               </div>
               <div className={`mt-3 flex justify-center items-center gap-x-2 transition-all duration-300 ${currentSlide == index ? 'translate-y-0' : '-translate-y-[200%]'}`}>
                 <img src={slide.icon} alt="icon" className="size-10 object-contain object-center " />
-                <p className="text-center">{slide.category}</p>
+                <p className="text-center">{t(`product.testimonials.categories.${slide.categoryKey}`)}</p>
               </div>
             </div>
           ))}

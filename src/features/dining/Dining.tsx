@@ -39,66 +39,69 @@ import article_6_brand from '/trendy/dining/articles/papaj.png';
 
 import Benefits from '../../shared/layout/Benefits';
 import TestimonialSection from '../../shared/layout/TestimonialSection';
+import { useTranslation } from '../../hooks/useTranslation';
 
 export default function Dining () {
+
+  const { t } = useTranslation();
 
   const categoryTestimonials = [
     {
       icon: icon_pizza,
       img: profile_pizza,
-      text: '“I used a Papa John`s deal! It was a great experience!” - Brittany S',
+      text: t('dining.testimonials.items.0.text'),
     },
     {
       icon: icon_dumpling,
       img: profile_dumpling,
-      text: '“I used a discount on Panda Express. It worked well, was easy to use and now I look for deals every time I go out!” - Darek H.',
+      text: t('dining.testimonials.items.1.text'),
     },
     {
       icon: icon_wine,
       img: profile_wine,
-      text: '“I tried a new restaurant thanks to the deal — a great way to branch out!” - Josh T.',
+      text: t('dining.testimonials.items.2.text'),
     },
     {
       icon: icon_buffet,
       img: profile_buffet,
-      text: '“This discount program is my go-to for deals on dinners!” - Kelly K.',
+      text: t('dining.testimonials.items.3.text'),
     },
     {
       icon: icon_meat,
       img: profile_meat,
-      text: '“I was so excited to see a Texas De Brazil coupon for $10 off an entree. My fiance and I used it for our anniversary dinner!” - Nicole P.',
+      text: t('dining.testimonials.items.4.text'),
     },
   ]
 
   const trendyArticles: HeroTrendyArticleProps[] = [
     {
       discount:'',
-      description:"Fresh picks, sweeter member price.",
+      description: t('dining.articles.0.description'),
       brandImg: article_1_brand,
     },
     {
       discount:'',
-      description:'Crave-worthy deals for members.',
+      description: t('dining.articles.1.description'),
       brandImg: article_2_brand,
     },
     {
       discount:"",
-      description:"Pizza night, member-only savings.",
+      description: t('dining.articles.2.description'),
       brandImg: article_3_brand,
     },
     {
       discount:"",
-      description:"Authentic flavors with exclusive member perks.",
+      description: t('dining.articles.3.description'),
       brandImg: article_4_brand,
     },
     {
       discount:"",
-      description:"Treats & eats with member perks.",
+      description: t('dining.articles.4.description'),
       brandImg: article_5_brand,
     },
     {
       discount:"",
-      description:"Better ingredients, better member price.",
+      description: t('dining.articles.5.description'),
       brandImg: article_6_brand,
     },
   ]
@@ -146,45 +149,45 @@ export default function Dining () {
     <>
       {/* <Hero2
         categoryName='Dining'
-        ctaGradientFrom='from-yellow-dining' 
-        ctaGradientTo='to-yellow-dining' 
+        ctaGradientFrom='from-yellow-dining'
+        ctaGradientTo='to-yellow-dining'
         border='border-yellow-dining'
-        shiny_color='shiny-yellow-text' 
+        shiny_color='shiny-yellow-text'
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         /> */}
-      <HeroTrendy 
-        color={'--color-yellow-dining'} 
-        wrapperClass={'bg-gradient-to-b from-yellow-dining/0 via-yellow-dining/50 to-yellow-dining/80'} 
-        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-yellow-dining/20 to-yellow-dining/45'} 
-        title={'Smarter Dining,'} 
-        subtitle={'Bigger Flavors!'} 
-        description={'From family pizza nights to local diners, exclusive savings you’ll love.'} 
-        ctaGradientFrom='from-yellow-dining' 
+      <HeroTrendy
+        color={'--color-yellow-dining'}
+        wrapperClass={'bg-gradient-to-b from-yellow-dining/0 via-yellow-dining/50 to-yellow-dining/80'}
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-yellow-dining/20 to-yellow-dining/45'}
+        title={t('dining.hero.title1')}
+        subtitle={t('dining.hero.title2')}
+        description={t('dining.hero.description')}
+        ctaGradientFrom='from-yellow-dining'
         ctaGradientTo='to-yellow-dining'
         articles={trendyArticles} />
       <Benefits />
-      <PricingSection 
-        title='Cheaper than a <br /> New York coffee.'
-        subtitle='And it helps you save even more.'
+      <PricingSection
+        title={t('dining.pricing.title')}
+        subtitle={t('dining.pricing.subtitle')}
         color='--color-yellow-dining'
         img={pricing_banner}
-        ctaGradientFrom='from-black' 
-        ctaGradientTo='to-yellow-dining' 
-        ctaGradientFrom2='from-yellow-dining' 
+        ctaGradientFrom='from-black'
+        ctaGradientTo='to-yellow-dining'
+        ctaGradientFrom2='from-yellow-dining'
         ctaGradientTo2='to-black' />
-      {/* <BenefitsSection 
-        slides={benefitSlides} 
-        subtitle='Bite Into Bigger Savings' 
+      {/* <BenefitsSection
+        slides={benefitSlides}
+        subtitle='Bite Into Bigger Savings'
         color='--color-yellow-dining' /> */}
       <TestimonialSection
-        title={'Taste More,'} 
-        subtitle={'Pay Less.'} 
-        description={'Big flavors, small bills — that’s the Uchooseit.us way.'}
-        retailers={50} 
-        color={'--color-yellow-dining'} 
-        dotsColor={'bg-yellow-dining'} 
-        testimonials={categoryTestimonials} 
-        ctaGradientFrom='from-yellow-dining' 
+        title={t('dining.testimonials.title')}
+        subtitle={t('dining.testimonials.subtitle')}
+        description={t('dining.testimonials.description')}
+        retailers={50}
+        color={'--color-yellow-dining'}
+        dotsColor={'bg-yellow-dining'}
+        testimonials={categoryTestimonials}
+        ctaGradientFrom='from-yellow-dining'
         ctaGradientTo='to-yellow-dining' />
       <GatewaySection home_btn />
     </>

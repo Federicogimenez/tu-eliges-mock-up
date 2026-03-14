@@ -1,6 +1,9 @@
 import { MdSignalCellularAlt, MdWifi, MdBatteryFull, MdSearch } from 'react-icons/md'
+import { useTranslation } from '../../../hooks/useTranslation';
 
 export default function OpportunitiesSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Gradient overlay on fixed video */}
@@ -11,12 +14,12 @@ export default function OpportunitiesSection() {
         {/* Text */}
         <div className="text-center md:text-left md:flex-1">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">
-            1 Million+ Opportunities
+            {t('business.opportunities.title1')}
           </h2>
           <h3 className="text-3xl md:text-4xl mt-5 font-extrabold">
-            <span className="text-blue-b2b">Always near to your</span>
+            <span className="text-blue-b2b">{t('business.opportunities.title2')}</span>
             <br />
-            <span className="text-green-b2b">Audience</span>
+            <span className="text-green-b2b">{t('business.opportunities.title3')}</span>
           </h3>
         </div>
 
@@ -37,19 +40,19 @@ export default function OpportunitiesSection() {
             <div className="w-full h-full bg-gray-50 dark:bg-zinc-900 relative">
               <img
                 src="/Mobile_Deals-Map.webp"
-                alt="Uchooseit App - Deals Map"
+                alt={t('business.opportunities.appTitle')}
                 className="w-full h-full object-cover"
               />
 
               {/* Search bar */}
               <div className="absolute top-10 left-4 right-4 h-10 bg-gray-200/90 dark:bg-zinc-800/90 rounded-full shadow-md flex items-center px-4">
                 <MdSearch className="text-gray-500 dark:text-zinc-400 text-sm" />
-                <span className="text-gray-500 dark:text-zinc-400 text-xs ml-2">Search...</span>
+                <span className="text-gray-500 dark:text-zinc-400 text-xs ml-2">{t('business.opportunities.search')}</span>
               </div>
             </div>
           </div>
           <p className="mt-3 text-gray-500 dark:text-zinc-400 text-sm font-medium italic md:mt-4">
-            More than 500k downloads
+            {t('business.opportunities.downloads')}
           </p>
         </div>
       </div>

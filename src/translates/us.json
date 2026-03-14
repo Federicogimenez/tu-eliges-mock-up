@@ -1,0 +1,788 @@
+{
+  "layout": {
+    "heroOverlay": {
+      "title": "One Million Deals",
+      "subtitle": "One VIP Membership",
+      "tagline": "You Choose Where <br class='md:hidden' /> to Save",
+      "trustedBy": "Trusted by families nationwide",
+      "navLinks": {
+        "shop": "Shop",
+        "travel": "Travel",
+        "dining": "Dining",
+        "entertainment": "Entertainment"
+      }
+    },
+    "footer": {
+      "description": "Your VIP key to everyday savings.",
+      "navigate": "Navigate",
+      "learnMore": "Learn More",
+      "contact": "Contact",
+      "manageMembership": "Manage Membership",
+      "legals": "Legals",
+      "basedIn": "Based in Orlando, FL - USA"
+    },
+    "faqs": {
+      "title": "Frequent Ask Questions",
+      "general": {
+        "label": "General FAQs",
+        "items": {
+          "0": {
+            "question": "What is uchooseit.us?",
+            "answer": "It's a private discount network exclusively for members, offering savings of up to 50% at over 1 million locations across the U.S.—including restaurants, retail, entertainment, travel, and much more. Our mission is to help you and your family save thousands of dollars every year on everyday purchases and experiences."
+          },
+          "1": {
+            "question": "How do I access the discounts?",
+            "answer": "You must purchase your annual membership, and then you can access the discounts through the <strong class='mx-1'>My Deals®</strong> app or from your computer. You can view offers near you by using your location and redeem them directly from your phone."
+          },
+          "2": {
+            "question": "Where can I use the discounts?",
+            "answer": "<strong class='mr-2'>All across the United States</strong>. From major brands to local businesses. Just enable GPS and discover discounts near you."
+          },
+          "3": {
+            "question": "Do I really save money?",
+            "answer": "Yes! Since we have direct agreements with brands, you'll get the best possible discounts. Many of our members save <strong class='mx-1'>hundreds or even thousands of dollars per year</strong>. Use just 1 or 2 discounts per month and you'll already cover the cost of your membership. <strong class='mx-1'>You could save over $2,500 per year</strong>, depending on how often you use it."
+          },
+          "4": {
+            "question": "Is it available in Spanish?",
+            "answer": "Yes! The platform is available in <strong class='mx-1'>10 different languages, including Spanish.</strong>"
+          },
+          "5": {
+            "question": "Is my information safe?",
+            "answer": "Absolutely. We take your privacy seriously. <strong class='mx-1'>We do not sell your information like some free apps</strong>. Your data is secure and protected."
+          },
+          "6": {
+            "question": "Does the membership auto-renew?",
+            "answer": "Yes, but you can cancel at any time. No commitments. No fine print. Simply go to: <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Manage My Account</a>"
+          },
+          "7": {
+            "question": "How much does it cost?",
+            "answer": "<strong>$47.99 per year</strong>, less than $3.99 per month. With just one discount per month, you'll cover the cost of your membership."
+          },
+          "8": {
+            "question": "Can I cancel anytime?",
+            "answer": "Yes. You can do it yourself in just seconds from your account. <strong class='mx-1'>No hidden fees. No hassle:</strong> <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Cancel Here</a>"
+          },
+          "9": {
+            "question": "Is customer support available?",
+            "answer": "Yes—we're here to help. Reach us by <strong class='mx-1'>in-app chat</strong>, email at <strong>support@uchooseit.us</strong>, or our <strong>toll-free line (888) 556-2393.</strong>"
+          },
+          "10": {
+            "question": "Can I explore the discounts without being a member?",
+            "answer": "Yes, you can! You're welcome to explore most of the available discounts by browsing through categories, cities, or ZIP codes. Just click the link below to start discovering how much you could be saving — no membership required (yet). <a href='https://uchooseitus.enjoymydeals.com/' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Explore MyDeals</a>"
+          },
+          "11": {
+            "question": "What if a merchant won't honor my discount?",
+            "answer": "Some users run into this issue, but very infrequently. Every once in a while, a merchant's ownership will change hands, or the staff behind the counter hasn't been trained to recognize our discount offer. We're committed to making sure merchants honor their contracted discount offer. Our customer service team is available by voice, email, or chat to help resolve the issues. Call the number on your mobile app or printed coupon if you need assistance."
+          },
+          "12": {
+            "question": "How do these discounts differ from other coupons I see online, or the ones I get in my mailbox?",
+            "answer": "Because our network is private, retailers can give us deeper discounts than what you'll see elsewhere. Only users who have a login can get access to our discounts. That way, retailers or service providers are more likely to provide a discount to a members-only website like ours."
+          },
+          "13": {
+            "question": "What's the best way to search for shopping deals?",
+            "answer": "You can use your PC or mobile device to find deals. Input what you are searching for in the search bar on the top of the page as well as the location you want to search. Click the search icon and your results will appear. You also have the option to further refine your results. For mobile, select the filter icon on the top right; or on PC, select from the filters on the left side of the page. You can also switch from a list view to a map view to see how close the establishment is to your location."
+          },
+          "14": {
+            "question": "How do I find out the details about the coupon or deal?",
+            "answer": "Select the deal by clicking on the \"View Deals\" button. The site will then display a page that will tell you exactly what the discount offer is. You can also view the fine print by clicking on the \"offer terms\" link for more details. We'll also show you how it works - whether you need to print or show the coupon on your phone."
+          },
+          "15": {
+            "question": "How do you redeem a coupon?",
+            "answer": "There are two types of deals: 1) those you bring with you to show at a physical location; or 2) an online deal. For a physical location deal, once you click on the \"View Deals\" link, select the \"Use Coupon\" button. There might be an option to either print or show the coupon. You can either show your coupon on your phone once you arrive at the venue or bring in your printed coupon. If it is an online deal, select \"Shop Now\". You'll be able to copy the coupon code and then select the \"Continue to Site\" text to go directly to that business' website."
+          },
+          "16": {
+            "question": "How does the discount platform work?",
+            "answer": "<ol><li>Sign up by entering your contact information at checkout.</li><li>If you have a promotional code from one of our ambassadors, enter it in the \"Promotional Code\" field and click Apply.</li><li>After completing your annual membership payment, you'll be redirected to a Thank You page with your login details.</li><li>You can then access the platform at <a href='uchooseitus.enjoymydeals.com' target='_blank' rel='noopener noreferrer' class='mx-1'>Enjoy My Deals</a> or download the <strong class='mx-1'>My Deals®</strong> mobile app to use your discounts on the go.</li><li>Your <strong class='mx-1'>Unique Member ID</strong> will also be emailed to you.</li><li>You'll receive a reminder email <strong class='mx-1'>30 days before automatic renewal</strong>, giving you time to cancel if you wish.</li><li>You can cancel at any time via <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Cancel Here</a>.</li><li>Discounts can be redeemed in three ways:<ul><li><strong>In-store</strong> (show from your mobile)</li><li><strong>Online</strong> (with a coupon code or link)</li><li><strong>By phone</strong> (for specific services)</li></ul></li><li>We offer an <strong>8-day money-back guarantee</strong>. If you're not satisfied, email us at <strong>support@uchooseit.us</strong>, and we'll do our best to help.</li><li>We accept all major credit/debit cards: <strong>Visa, MasterCard, Amex, Discover, Diners Club, JCB, UnionPay</strong>.</li></ol>"
+          }
+        }
+      },
+      "shop": {
+        "label": "Shop",
+        "items": {
+          "0": {
+            "question": "What kind of discounts are available?",
+            "answer": "Discounts are available for both national as well as local shopping establishments. Whether you want to save on clothing, electronics, furniture, office supplies, sporting goods, or pet supplies, we have those deals available (based on location)."
+          },
+          "1": {
+            "question": "How much can I save?",
+            "answer": "It all depends on what you purchase, but, on average, users save an average of $335 on auto services, and $57 on things like retail shopping, home and garden and other services in the Shop category. However, some coupons are based on a percent discount, so you could save even more depending on what you are buying."
+          }
+        }
+      },
+      "travel": {
+        "label": "Travel",
+        "items": {
+          "0": {
+            "question": "What is the cancellation policy?",
+            "answer": "Cancellation policies vary by hotel and dates of stay. Prior to booking, the cancellation policy is listed once you've selected your room type under the Additional Details section. If you've already booked, the cancellation policy is included in your reservation confirmation email as well."
+          },
+          "1": {
+            "question": "Are resort fees, parking and other hotel charges included in the rate?",
+            "answer": "The rate we charge up front includes the nightly charge plus taxes. Some hotels charge other fees that are not included in your nightly rate such as a deposit, resort fee, parking or other. These types of charges are not included in the nightly rate and will be charged by the hotel or property directly."
+          },
+          "2": {
+            "question": "Is my reservation confirmed with the hotel immediately after I book it?",
+            "answer": "After you complete your booking, you'll receive an email to confirm your reservation. If your travel plans change, please call our Member Services team and NOT the hotel directly. While we reserve the hotel room(s) for your booking, your specific contact information (name, etc.) will not be available in the hotel's system until two weeks prior to your check-in date. Don't worry, we still have your booking secured in our systems. As a courtesy to you, our Member Services team performs a pre-arrival confirmation within 5 days of your check-in date to double check that everything is on track with your reservation. We call the property directly to confirm your specific reservation. So, all you have to do is show up with your identification and credit card to check in."
+          },
+          "3": {
+            "question": "When is my card charged?",
+            "answer": "In order to lock in your discount, we charge your credit card at the time you make your reservation."
+          },
+          "4": {
+            "question": "How do I know my booking went through?",
+            "answer": "There are a couple of ways to determine if your booking went through. First, upon booking the room, you should see a confirmation page that the booking was successful. Second, you should receive an email confirmation outlining your trip details. Lastly, you can always log back into the site, and on the top right side of the page, click on \"My Trips\" where you can see your upcoming trip information. You may call our Member Services team to verify your reservation in our system at (888) 556-2393 (toll-free), or (801) 656-1460 (international) at any time."
+          },
+          "5": {
+            "question": "Can I book on the same day I want to check in?",
+            "answer": "Absolutely! Feel free to make last minute travel plans and enjoy your hotel discounts."
+          },
+          "6": {
+            "question": "Does the car rental rate include all taxes and fees?",
+            "answer": "Sometimes, but not always, and varies by rental car company. The car rental rate you see on our site includes the daily rental fee and applicable taxes. Those are itemized for you during checkout. It does not include any additional fees paid at the counter such as insurance coverage, extra features or services, or deposits. Those will be charged by the car rental company upon pick up of the vehicle. Please also review the accompanying Rental Policies and our Important Information section during checkout for more details for your specific rental."
+          },
+          "7": {
+            "question": "Are debit cards or cash accepted at the rental car counter?",
+            "answer": "Cash, debit cards, virtual card or prepaid cards will not be accepted at the rental car counter. You will need a credit card that it is in the name of the driver in order to pick up the car. The credit card must have enough available funds to cover any deposits or additional charges required for the rental."
+          },
+          "8": {
+            "question": "What identification is required to rent a car?",
+            "answer": "You will need a valid driver's license in the driver's name - the actual physical card. A digital or electronic version of your driver's license will not be accepted. The name on the driver's license will need to match the name on the reservation in order to pick up the car. If the name on the driver's license does not match the name on the reservation you will be unable to pick up the car and may not be eligible for a refund. You will also need to provide a valid credit card. The cardholder's name on the provided credit card must also match that of the name on the reservation and the driver's license. If you are renting a car outside the country where your license was issued, and your license is in non-Latin characters (e.g., Arabic, Chinese, Cyrillic, etc.), you may need to provide an International Driving Permit."
+          },
+          "9": {
+            "question": "Can I get a refund if I return the car earlier than I reserved it for?",
+            "answer": "No. Rental car prices are based on the pick-up and drop-off times and dates when the reservation was made. If you bring the car back earlier, you will not receive a refund for any of that unused time."
+          },
+          "10": {
+            "question": "What happens if I return the car late?",
+            "answer": "Depending upon the car rental company, there can be a grace period of up to 29 minutes after the agreed upon drop off time where you will not be charged any additional fees. However, after that initial grace period you may be charged for additional hours or an additional day depending upon how late you are. We advise you to check the rental contract received when you pick up the car for additional details on any charges if the car is returned late."
+          },
+          "11": {
+            "question": "Can I pick up the car and return it to a different location from where I picked it up?",
+            "answer": "Yes. On the main search page, click on the box for \"Drop off at a different location\". Then input the drop off location in the search box form. Please note, that our site only allows for pick-up and drop-off at airport locations only. There may be an additional fee for returning a car to a different drop-off location than the pick-up location. Any additional drop-off fees will be indicated at checkout."
+          },
+          "12": {
+            "question": "Do I need to purchase car rental insurance?",
+            "answer": "Car rental insurance is not required. We recommend that if you currently have your own auto insurance that you check with your provider as to whether that extends to a rental car. If not, most rental car companies have several insurance options to choose from. The cost of optional rental car insurance varies by plan and location. Our website does not offer the option to add on car rental insurance."
+          }
+        }
+      },
+      "dining": {
+        "label": "Dining",
+        "items": {
+          "0": {
+            "question": "What kind of discounts are available?",
+            "answer": "Discounts are available for both nationwide chains as well as local restaurants. Whether you want to save on pizza or try out a local fine dining restaurant, we typically have those types of deals available (based on location)."
+          },
+          "1": {
+            "question": "How much can I save?",
+            "answer": "It all depends on what you purchase, but, on average, you can save over $5.50 in the Eat category. However, some coupons are based on a percent discount, so you could save more depending on the restaurant or other establishment you choose."
+          }
+        }
+      },
+      "entertainment": {
+        "label": "Entertainment",
+        "items": {
+          "0": {
+            "question": "What kind of discounts are available?",
+            "answer": "Discounts are available for both nationally recognized entertainment venues as well as local attractions and activities. Whether you want to save on movie tickets, golf, amusement park tickets or classes, concerts, or outdoor adventures, we have those deals available (based on location)."
+          },
+          "1": {
+            "question": "How much can I save?",
+            "answer": "It all depends on what you purchase, but, on average, you can save over $5.50 on movie tickets, $25 on recreation/entertainment, and $28 on golf and snow sports in the Play category. However, some coupons are based on a percent discount, so you could save even more depending on the activity you choose."
+          },
+          "2": {
+            "question": "How much can I save on theme park tickets?",
+            "answer": "You can save up to 50% on park tickets. However, it really depends on which park you choose and how many days you plan on visiting the park. When you conduct a search, you will see a strikethrough price so you can see how much it would have cost if you purchased the tickets elsewhere."
+          },
+          "3": {
+            "question": "Do ticket prices and availability vary by the date of the visit?",
+            "answer": "Yes, they can vary. Please ensure that you pick the correct first date you plan on visiting the park and then the number of days you want admission to the park(s). We encourage you to fully read the description under the ticket type to understand the exact details of the ticket type you want to purchase."
+          },
+          "4": {
+            "question": "Do theme park tickets expire? When do I have to use them by?",
+            "answer": "When you want to purchase tickets, you will need to select that date of when you will start your park visit. If you are visiting multiple days, there may be some restrictions of whether you have to use the tickets on consecutive days or not. Also, there may be a date restriction as well when you need to use the tickets by. Once you select your ticket type on the site, please read the detailed description of the ticket which will outline any restrictions or expiration."
+          },
+          "5": {
+            "question": "Can I purchase the tickets and give them to someone else as a gift?",
+            "answer": "Yes, you can purchase tickets on this site and have someone else use them. During the checkout process under \"Guest Information\", please fill in all the guests' first names and last names that will be entering the park. You can then use your credit card to purchase the tickets on their behalf."
+          }
+        }
+      }
+    },
+    "pricing": {
+      "defaultTitle": "Share the Savings",
+      "defaultSubtitle": "Enjoy More Together!",
+      "equivalentTo": "Equivalent to",
+      "perMonth": "per month",
+      "billedAnnually": "Billed annually at",
+      "offWithCode": "{{discount}}% OFF with code {{code}}",
+      "benefits": {
+        "0": "Start saving immediately",
+        "1": "Access 1M+ exclusive deals",
+        "2": "Save on the go (Web & App)",
+        "3": "Risk-free: 7-day refund guarantee",
+        "4": "No commitments - cancel anytime"
+      },
+      "securePayments": "Secure Payments",
+      "noAdsNoSpam": "| No Ads | No Spam |",
+      "satisfactionGuarantee": "Satisfaction guarantee"
+    },
+    "calculator": {
+      "title": "Transform Your Daily Spending Into Big Yearly Savings",
+      "subtitle": "Cover the cost in just a few uses—everything else is pure savings.",
+      "youPay": "You pay",
+      "youSave": "You Save",
+      "calculateSavings": "Calculate Savings"
+    },
+    "gateway": {
+      "title": "Start saving in minutes",
+      "subtitle": "Discover how easy it is to activate your membership and start saving every day with our Mobile & Web App.",
+      "discoverHere": "Discover Here",
+      "seeAllCategories": "See All Categories",
+      "downloads": "✨500,000+ downloads and counting",
+      "appExclusive": "App available exclusively for Uchooseit.us members"
+    },
+    "benefits": {
+      "title": "Exclusive Benefits",
+      "items": {
+        "0": {
+          "title": "Save $2,000+ per year - 50% off ",
+          "description": "Travel • Dining • Shopping • Entertainment",
+          "note": "*Average member savings in 2024"
+        },
+        "1": {
+          "title": "Permanent discounts:",
+          "description": "Use as often as you want."
+        },
+        "2": {
+          "title": "Quick and easy:",
+          "description": "Redenptions no complicated steps."
+        },
+        "3": {
+          "title": "GPS-enabled savings:",
+          "description": "Find offers near you."
+        },
+        "4": {
+          "title": "Over 1 millon:",
+          "description": "Nationwide deals at hand."
+        },
+        "5": {
+          "title": "Privacy protected:",
+          "description": "We never sell your data."
+        }
+      }
+    },
+    "testimonials": {
+      "calculateSavings": "Calculate Savings"
+    }
+  },
+  "home": {
+    "hero": {
+      "upTo": "Up to",
+      "discount": "50% OFF",
+      "headline": "on millions of moments",
+      "tagline": "Your VIP key to everyday savings starts right here.",
+      "trustedBy": "Trusted by families nationwide"
+    },
+    "categories": {
+      "title": "Discover amazing savings",
+      "subtitle": "Explore across all your favorite categories and brands",
+      "items": {
+        "shop": {
+          "name": "Shop",
+          "description": "Technology, Cars, Home, Health, Fitness, and more."
+        },
+        "travel": {
+          "name": "Travel",
+          "description": "Hotel, Car rentals, Resorts, Cruises, Tours, and more."
+        },
+        "dining": {
+          "name": "Dining",
+          "description": "Casual and Fine Dining, Fast food, Catering, and more."
+        },
+        "entertainment": {
+          "name": "Entertainment",
+          "description": "Theme parks, Adventure, Movies, Golf, and more."
+        }
+      }
+    },
+    "benefits": {
+      "title": "One membership",
+      "subtitle": "Real benefits for the whole family",
+      "items": {
+        "0": {
+          "title": "Save $2,000+ per year - 50% off",
+          "description": "Travel • Dining • Shopping • Entertainment",
+          "note": "*Average member savings in 2024"
+        },
+        "1": {
+          "title": "Over 1 millon:",
+          "description": "Nationwide deals at hand."
+        },
+        "2": {
+          "title": "Permanent discounts:",
+          "description": "Use as often as you want."
+        },
+        "3": {
+          "title": "GPS-enabled savings:",
+          "description": "Find offers near you."
+        },
+        "4": {
+          "title": "Quick and easy:",
+          "description": "Redenptions no complicated steps."
+        },
+        "5": {
+          "title": "Privacy protected:",
+          "description": "We never sell your data."
+        }
+      }
+    },
+    "learnHow": {
+      "title": "Learn how to save",
+      "subtitle": "Discounts are always 1-tap away.",
+      "button": "Explore Platform"
+    }
+  },
+  "shop": {
+    "hero": {
+      "title1": "Smarter Shopping,",
+      "title2": "Bigger Finds!",
+      "description": "From fashion to tech, member-only deals on the things you love."
+    },
+    "pricing": {
+      "title": "Cheaper than your monthly streaming subscription.",
+      "subtitle": "And it helps you save even more."
+    },
+    "testimonials": {
+      "title": "Shop savvy",
+      "subtitle": "Bag up to 50% OFF!",
+      "description": "Shop smarter and save with their members-only discounts.",
+      "items": {
+        "0": { "text": "\"I regularly use the Jiffy Lube discount. Makes the basic car maintenance I need done a little less expensive.\" — David M." },
+        "1": { "text": "\"I saved around $800 on a new laptop with the Lenovo discount.\" — Debbie R." },
+        "2": { "text": "\"I utilized the promo code for chewy.com after adopting my first dog. It was a great way to get her what she needed.\" — Monica N." },
+        "3": { "text": "\"When buying shoes the discounts have been amazing, especially with 4 kids. I need all the discounts I can get.\" — David S." },
+        "4": { "text": "\"I was able to get the Samsung TV I was looking for for $300 less than the lowest price I found in retail stores.\" - Jared S." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Step up your style & savings" },
+      "1": { "description": "Fashion finds made smarter" },
+      "2": { "description": "Extra chic, extra savings" },
+      "3": { "description": "Comfort never felt this affordable" },
+      "4": { "description": "Frame your look for less" },
+      "5": { "description": "Gear up & save big" },
+      "6": { "description": "Power your day smarter" },
+      "7": { "description": "Back to school, back to savings." },
+      "8": { "description": "Work smarter, save harder" },
+      "9": { "description": "Everyday essentials, extraordinary savings" }
+    },
+    "brandsTitle": "Everything Your Members Want"
+  },
+  "travel": {
+    "hero": {
+      "title1": "Smarter Travel,",
+      "title2": "Bigger Adventures!",
+      "description": "Hotels, Rental Cars, Flights & Cruises—member-only savings wherever you go."
+    },
+    "pricing": {
+      "title": "Cheaper than an <br /> hour of parking.",
+      "subtitle": "And it helps you save even more."
+    },
+    "testimonials": {
+      "title": "Travel big,",
+      "subtitle": "Spend Small.",
+      "description": "Instant savings on Hotels, Flights & Cars so you can travel more and spend less.",
+      "items": {
+        "0": { "text": "\"We used the discount program to go to SeaWorld and swim with the dolphins at Christmas time. It was amazing!\" - Mariann C." },
+        "1": { "text": "\"My discount program has saved me hundreds of dollars traveling on hotels and excursions. It is a real deal saver.\" - Amador S." },
+        "2": { "text": "\"I have been surprised by the money I saved in just one use of my discount when booking a room last minute!\" - Monica P." },
+        "3": { "text": "\"I saved over $100 on a rental car by using my discount program.\" - John C." },
+        "4": { "text": "\"The airline tickets with Delta are usually expensive, and I saved a lot through this discount program!\" - Lucrecia M." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Member-only hotel deals—nationwide." },
+      "1": { "description": "Long stays, low rates for members." },
+      "2": { "description": "Family-ready cruises with exclusive savings." },
+      "3": { "description": "Drive away with member savings." },
+      "4": { "description": "Vacation-ready rentals at member value." },
+      "5": { "description": "Save on Flights Worldwide." }
+    }
+  },
+  "dining": {
+    "hero": {
+      "title1": "Smarter Dining,",
+      "title2": "Bigger Flavors!",
+      "description": "From family pizza nights to local diners, exclusive savings you'll love."
+    },
+    "pricing": {
+      "title": "Cheaper than a <br /> New York coffee.",
+      "subtitle": "And it helps you save even more."
+    },
+    "testimonials": {
+      "title": "Taste More,",
+      "subtitle": "Pay Less.",
+      "description": "Big flavors, small bills — that's the Uchooseit.us way.",
+      "items": {
+        "0": { "text": "\"I used a Papa John's deal! It was a great experience!\" - Brittany S" },
+        "1": { "text": "\"I used a discount on Panda Express. It worked well, was easy to use and now I look for deals every time I go out!\" - Darek H." },
+        "2": { "text": "\"I tried a new restaurant thanks to the deal — a great way to branch out!\" - Josh T." },
+        "3": { "text": "\"This discount program is my go-to for deals on dinners!\" - Kelly K." },
+        "4": { "text": "\"I was so excited to see a Texas De Brazil coupon for $10 off an entree. My fiance and I used it for our anniversary dinner!\" - Nicole P." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Fresh picks, sweeter member price." },
+      "1": { "description": "Crave-worthy deals for members." },
+      "2": { "description": "Pizza night, member-only savings." },
+      "3": { "description": "Authentic flavors with exclusive member perks." },
+      "4": { "description": "Treats & eats with member perks." },
+      "5": { "description": "Better ingredients, better member price." }
+    }
+  },
+  "entertainment": {
+    "hero": {
+      "title1": "Smarter Entertainment,",
+      "title2": "Bigger Smiles!",
+      "description": "From theme parks to movie nights—exclusive savings on the fun you love."
+    },
+    "pricing": {
+      "title": "Cheaper Than a <br /> Concert Drink.",
+      "subtitle": "And it helps you save even more."
+    },
+    "testimonials": {
+      "title": "Entertainment",
+      "subtitle": "Without Limits",
+      "description": "Save on concerts, parks & events and make every outing unforgettable.",
+      "items": {
+        "0": { "text": "\"At the New Bedford Whaling Museum, my discount membership gave me free entry.\" - Karen D." },
+        "1": { "text": "\"I use this program for local zoo membership. My family loves it.\" - Andrea E." },
+        "2": { "text": "\"My son and I enjoyed an outing to Topgolf. It was great to use the coupon to save an extra $10 so I could splurge on everything my son wanted.\" - Don A." },
+        "3": { "text": "\"I love how much I save going to Cinemark with the discounts.\" - Krisnet H." },
+        "4": { "text": "\"I saved major money on a Walt Disney World 4-day pass.\" - David R." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Turn Every Visit into a Lifetime Memory!" },
+      "1": { "description": "The Happiest Place, Now with Happier Prices!" },
+      "2": { "description": "Wild Adventures, Tamed Costs!" },
+      "3": { "description": "Explore the Wild, Save in Style!" },
+      "4": { "description": "Reach for the Stars, Spend Less on the Journey!" },
+      "5": { "description": "Feel the Rush, Not the Price Tag!" },
+      "6": { "description": "Build Memories, Not Expenses!" },
+      "7": { "description": "Big Screens, Small Prices." },
+      "8": { "description": "Show Tickets Curtains Up, Prices Down!" },
+      "9": { "description": "Sporting Events Where Every Seat Feels Like Front Row!" }
+    }
+  },
+  "business": {
+    "hero": {
+      "title1": "Turn Your Community",
+      "title2": "Into a Buying Power Network",
+      "description": "Give your audience private access to the largest discount network in the U.S.",
+      "trustedBy": "Trusted by organizations across the U.S.",
+      "plugAndPlay": "Plug & Play · No Tecnology integration"
+    },
+    "audienceCards": {
+      "items": {
+        "0": { "value": "Up to 50%", "label": "Savings" },
+        "1": { "value": "1M+", "label": "Offers Nationwide" },
+        "2": { "value": "94%", "label": "U.S. Counties Covered" },
+        "3": { "value": "98%", "label": "Client Retention" },
+        "4": { "value": "382", "label": "Major North American Markets" },
+        "5": { "value": "99.6%", "label": "U.S. Consumers Served" },
+        "6": { "value": "750+", "label": "National Brand Partners" },
+        "7": { "value": "$2,000+", "label": "Potential Annual Savings" }
+      }
+    },
+    "partnershipModels": {
+      "badge": "Partnership Models",
+      "title1": "Two Models.",
+      "title2": "One Objective.",
+      "subtitle": "Flexible solutions to fit your organizational goals.",
+      "rsm": {
+        "tag": "RSM",
+        "title": "Revenue Sharing Model",
+        "description": "Deploy private access with no upfront cost and performance-based revenue.",
+        "bullets": {
+          "0": "No upfront investment",
+          "1": "Earn per activation",
+          "2": "Transparent reporting"
+        },
+        "bestFor": "Best for nonprofits, associations and customer programs."
+      },
+      "bulk": {
+        "tag": "Bulk",
+        "title": "Scalable Licence Model",
+        "description": "Deploy private access through a scalable, license-based model.",
+        "bullets": {
+          "0": "Purchase access in volume",
+          "1": "Fixed, forecastable cost",
+          "2": "Designed to support measurable retention outcomes"
+        },
+        "bestFor": "Best for employee and formal member programs."
+      },
+      "notSure": "Not sure which model fits?",
+      "bookACall": "Book a Call",
+      "letsTalkStrategy": "Let's Talk Strategy",
+      "noObligation": "No obligation partnership consultation"
+    },
+    "howItWorks": {
+      "title": "Go Live Fast",
+      "steps": {
+        "0": {
+          "title": "Model Validation",
+          "description": "Confirm the right access model (RSM or Bulk) based on your audience structure, goals and budget framework."
+        },
+        "1": {
+          "title": "Access Configuration",
+          "description": "Set up private access through a smart link, no technology integration required. *Applied to RSM."
+        },
+        "2": {
+          "title": "Audience Launch",
+          "description": "Deploy access to your customers, employees or members."
+        },
+        "3": {
+          "title": "Performance Visibility",
+          "description": "Track activations, engagement and revenue (RSM) to optimize impact over time."
+        }
+      }
+    },
+    "lookingToAchieve": {
+      "title": "Built for organizations with",
+      "titleHighlight": "customers, employees or members.",
+      "subtitle": "Find the path that fits your organization.",
+      "slides": {
+        "0": {
+          "title": "Organization & Customers",
+          "items": {
+            "0": "I'm looking for a value-added benefit",
+            "1": "I'm looking to improve customer acquisition",
+            "2": "I'm looking for travel solutions"
+          }
+        },
+        "1": {
+          "title": "Organization & Employees",
+          "items": {
+            "0": "I'm looking to offer perks without increasing payroll costs",
+            "1": "I'm looking for a value-added benefit for my employees"
+          }
+        },
+        "2": {
+          "title": "Non-Profit Organizations",
+          "items": {
+            "0": "I'm looking for a fundraising incentive"
+          }
+        },
+        "3": {
+          "title": "Organization + Members",
+          "items": {
+            "0": "I'm looking for a value-added benefit for my members"
+          }
+        }
+      }
+    },
+    "strategyCall": {
+      "title1": "Let's Activate",
+      "title2": "Your Buying Power Network",
+      "description": "Join a 15-minute strategy call to determine the right access model for your organization.",
+      "cardTitle": "In this call we will:",
+      "bullets": {
+        "0": "Identify the right access model (RSM or Bulk).",
+        "1": "Map it to your audience structure.",
+        "2": "Outline launch steps.",
+        "3": "Clarify reporting and revenue visibility."
+      },
+      "liveProgram": {
+        "0": "No Technology integration required.",
+        "1": "No merchant negotiations.",
+        "2": "No operational burden."
+      },
+      "scheduleCall": "Schedule a Strategy Call",
+      "reserveSession": "Reserve Your Free Session",
+      "noCommitment": "No commitment required",
+      "freeConsultation": "Free consultation"
+    },
+    "opportunities": {
+      "title1": "1 Million+ Opportunities",
+      "title2": "Always near to your",
+      "title3": "Audience",
+      "search": "Search...",
+      "appTitle": "Uchooseit App - Deals Map",
+      "downloads": "More than 500k downloads"
+    },
+    "brandsShowcase": {
+      "categoryLabel": "EVERYTHING YOUR MEMBERS WANT",
+      "categories": {
+        "shop": "Shop",
+        "travel": "Travel",
+        "dining": "Dining",
+        "entertainment": "Entertainment"
+      },
+      "savingsTitle": "Big Yearly Savings",
+      "savingsSubtitle": "FOR YOUR AUDIENCE",
+      "calculateSavings": "Calculate Savings"
+    }
+  },
+  "affiliates": {
+    "revenueCalculator": {
+      "title": "{{buyer}} Revenue Calculator",
+      "editFields": "Edit the <span class='text-green-500 font-bold'>green</span> fields to model your agency's revenue with uchooseit.us.",
+      "publicPriceLabel": "Public price per year:",
+      "section1": {
+        "title": "1. Negotiation Discount Community",
+        "publicPrice": "Public Price per year",
+        "discountLabel": "Discount for Community. Max 25%",
+        "appliedNote": "Applied to the membership price",
+        "priceWithDiscount": "Price with discount per year (Special Price for the community)",
+        "pricePerMonth": "Price with discount per month *equivalent"
+      },
+      "section2": {
+        "title": "2. {{buyer}} Data",
+        "influencersLabel": "Influencers under the Agency",
+        "influencersHelp": "How many influencers your agency manages",
+        "followersLabel": "Followers",
+        "followersHelp": "Enter followers in units; commas will be added automatically",
+        "engagementLabel": "Engagement (%)",
+        "engagementHelp": "Average organic engagement percentage",
+        "clientsLabel": "Clients",
+        "clientsHelp": "Enter clients in units; commas will be added automatically",
+        "collaboratorsLabel": "Collaborators",
+        "collaboratorsHelp": "Enter collaborators in units; commas will be added automatically",
+        "organicEngagement": "Organic Engagement (#)"
+      },
+      "section3": {
+        "title": "3. Negotiation Terms",
+        "revenuePerInfluencer": "Revenue per Membership (Influencer)",
+        "revenuePerAgency": "Revenue per Membership (Agency)",
+        "revenuePerBuyer": "Revenue per Membership ({{buyer}})"
+      },
+      "scenarios": {
+        "title": "Conversion Scenarios",
+        "basedOn": "Based on estimated organic engagement: {{engaged}} people",
+        "conversionRate": "Conversion Rate",
+        "membershipsSold": "Memberships Sold",
+        "revenueInfluencer": "Revenue for Influencer",
+        "revenueAgency": "Revenue for Agency",
+        "totalRevenueAgency": "Total Revenue Agency per Influencers",
+        "revenueBuyer": "Revenue for {{buyer}}",
+        "goal": "GOAL (100%)"
+      },
+      "disclaimer": "uchooseit.us - Transparency you can trust. This calculator is a planning tool and does not represent a binding offer."
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "Start saving in minutes",
+      "subtitle": "Learn how to join, activate, and save with your Uchooseit.us membership.",
+      "step1": "Join",
+      "step2": "Activate",
+      "step3": "Save"
+    },
+    "howActivate": {
+      "title": "Activate your",
+      "titleHighlight": "Member iD",
+      "subtitle": "Learn how simple it is to activate on Web and Mobile App."
+    },
+    "howSection": {
+      "title": "Learn how to save",
+      "subtitle": "Discounts are always 1-tap away.",
+      "button": "Discover More"
+    },
+    "testimonials": {
+      "title1": "Happy Members,",
+      "title2": "Real Savings!",
+      "joinText": "Join smart savers community for only",
+      "perMonth": "{{price}}/month",
+      "categories": {
+        "entertainment": "Entertainment",
+        "dining": "Dining",
+        "travel": "Travel",
+        "shop": "Shop"
+      }
+    }
+  },
+  "activate": {
+    "title": "Here is the necessary information to",
+    "titleHighlight": "activate your membership.",
+    "tabWeb": "From Web",
+    "tabMobile": "From Mobile",
+    "web": {
+      "infoBox": "This information will be used on <strong>My Deals Web.</strong>",
+      "step1": "1. Locate the \"Sign Up\" or \"Regístrate\" button.",
+      "step2": "2. Fill in the required fields.",
+      "step3": "3. Enter your Member ID:",
+      "step4": "4. Create a secure password."
+    },
+    "mobile": {
+      "infoBox": "This information will be used on <strong>My Deals Mobile App.</strong>",
+      "step1": "1. Locate the \"Sign Up\" or \"Regístrate\" button.",
+      "step2": "2. Follow the step-by-step instructions and complete the required fields.",
+      "step3": "3. Keep these two key details in mind:",
+      "orgName": "Organization Name:",
+      "orgValue": "uchooseit.us",
+      "memberId": "Member Id",
+      "step4": "4. Create a secure password.",
+      "downloadNote": "Be sure you download the App to complete the activation from here."
+    },
+    "activateButton": "Activate",
+    "copied": "Copied!",
+    "idError": "ID Error!"
+  },
+  "thankYou": {
+    "congratulations": "Congratulations!",
+    "partOfCommunity": "you are now part of our community!",
+    "vipMembership": "vip membership",
+    "youChoose": "You choose where to save",
+    "visualRepresentation": "Visual representation of your membership",
+    "activateMembership": "Activate Membership",
+    "emailSent": "We sent you an email from noreply@uchooseit.us",
+    "instructions": "You have received everything you need to your email! Now you just have to activate the membership to start using it wherever you want.",
+    "questionsContact": "If you have questions, write to us at support@uchooseit.us"
+  },
+  "components": {
+    "hamburgerMenu": {
+      "navigation": "Navigation",
+      "home": "Home",
+      "shop": "Shop",
+      "travel": "Travel",
+      "dining": "Dining",
+      "entertainment": "Entertainment",
+      "learnMore": "Learn more",
+      "business": "Business",
+      "logIn": "Log In"
+    },
+    "allyPopUp": {
+      "loading": "Loading Your Exclusive Discount",
+      "title": "Your private access is ready!",
+      "joinCommunity": "Join {{name}}'s community of Smart Savers, with",
+      "discountOff": "{{discount}}%Off",
+      "membershipPurchase": "your membership purchase!",
+      "equivalentTo": "Equivalent to",
+      "perMonth": "per month",
+      "billedAnnually": "Billed annually at",
+      "claimDiscount": "Claim My {{discount}}% OFF",
+      "trustedBy": "Trusted by families nationwide"
+    },
+    "buttons": {
+      "unlockAccess": "Unlock My Private Access",
+      "getDiscounts": "Get Exclusive Discounts",
+      "getSpecialDiscount": "Get Special Discount"
+    },
+    "savingsModal": {
+      "youPay": "You pay",
+      "youSave": "You Save",
+      "reset": "Reset",
+      "all": "All"
+    },
+    "savingsButton": {
+      "calculate": "Calculate",
+      "savings": "Savings"
+    }
+  },
+  "constants": {
+    "copyright": "© {{year}} Uchooseit.us LLC. All rights reserved.",
+    "savingsDisclaimer": "© {{year}} Uchooseit.us — Savings are estimates; actual savings vary by offer and usage."
+  }
+}

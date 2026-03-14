@@ -59,77 +59,80 @@ import article_10_brand from '/trendy/shop/articles/10/brand.png';
 // import { Link } from 'react-router-dom';
 import Benefits from '../../shared/layout/Benefits';
 import TestimonialSection from '../../shared/layout/TestimonialSection';
+import { useTranslation } from '../../hooks/useTranslation';
 
 
 export default function Shop (){
+
+  const { t } = useTranslation();
 
   const categoryTestimonials = [
     {
       icon: icon_car,
       img: profile_car,
-      text: '“I regularly use the Jiffy Lube discount. Makes the basic car maintenance I need done a little less expensive.” — David M.',
+      text: t('shop.testimonials.items.0.text'),
     },
     {
       icon: icon_pc,
       img: profile_pc,
-      text: '“I saved around $800 on a new laptop with the Lenovo discount.” — Debbie R.',
+      text: t('shop.testimonials.items.1.text'),
     },
     {
       icon: icon_pet,
       img: profile_pet,
-      text: '“I utilized the promo code for chewy.com after adopting my first dog. It was a great way to get her what she needed.” — Monica N.',
+      text: t('shop.testimonials.items.2.text'),
     },
     {
       icon: icon_clothes,
       img: profile_clothes,
-      text: '“When buying shoes the discounts have been amazing, especially with 4 kids. I need all the discounts I can get.” — David S.',
+      text: t('shop.testimonials.items.3.text'),
     },
     {
       icon: icon_tv,
       img: profile_tv,
-      text: 'I was able to get the Samsung TV I was looking for for $300 less than the lowest price I found in retail stores.” - Jared S.',
+      text: t('shop.testimonials.items.4.text'),
     },
   ]
 
   const trendyArticles: HeroTrendyArticleProps[] = [
     {
-      description:"Step up your style & savings",
+      description: t('shop.articles.0.description'),
       brandImg: article_1_brand,
     },
     {
-      description:'Fashion finds made smarter',
+      description: t('shop.articles.1.description'),
       brandImg: article_2_brand,
     },
     {
-      description:"Extra chic, extra savings ",
+      description: t('shop.articles.2.description'),
       brandImg: article_3_brand,
     },
     {
-      description:"Comfort never felt this affordable",
+      description: t('shop.articles.3.description'),
       brandImg: article_4_brand,
     },
     {
-      description:"Frame your look for less ",
+      description: t('shop.articles.4.description'),
       brandImg: article_5_brand,
     },
     {
-      description:"Gear up & save big",
+      description: t('shop.articles.5.description'),
       brandImg: article_6_brand,
     },
     {
-      description:"Power your day smarter",
+      description: t('shop.articles.6.description'),
       brandImg: article_7_brand,
     },
     {
-      description:" Back to school, back to savings.",
+      description: t('shop.articles.7.description'),
       brandImg: article_8_brand,
     },
     {
-      description:"Work smarter, save harder",
+      description: t('shop.articles.8.description'),
       brandImg: article_9_brand,
     },
     {
-      description:"Everyday essentials, extraordinary savings",
+      description: t('shop.articles.9.description'),
       brandImg: article_10_brand,
     },
   ]
@@ -203,20 +206,20 @@ export default function Shop (){
         shiny_color='shiny-purple-text' 
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         /> */}
-      <HeroTrendy 
-        color={'--color-purple-shop'} 
-        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'} 
-        wrapperClass={'bg-gradient-to-b from-transparent via-purple-shop/50 to-purple-shop/80 '} 
-        title={'Smarter Shopping,'} 
-        subtitle={'Bigger Finds!'} 
-        description={'From fashion to tech, member-only deals on the things you love.'} 
-        ctaGradientFrom='from-purple-shop' 
+      <HeroTrendy
+        color={'--color-purple-shop'}
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-purple-shop/20 to-purple-shop/45'}
+        wrapperClass={'bg-gradient-to-b from-transparent via-purple-shop/50 to-purple-shop/80 '}
+        title={t('shop.hero.title1')}
+        subtitle={t('shop.hero.title2')}
+        description={t('shop.hero.description')}
+        ctaGradientFrom='from-purple-shop'
         ctaGradientTo='to-purple-shop'
         articles={trendyArticles} />
       <Benefits />
-      <PricingSection 
-        title='Cheaper than your monthly streaming subscription.'
-        subtitle='And it helps you save even more.'
+      <PricingSection
+        title={t('shop.pricing.title')}
+        subtitle={t('shop.pricing.subtitle')}
         color='--color-purple-shop'
         img={pricing_banner}
         ctaGradientFrom='from-black' 
@@ -228,11 +231,11 @@ export default function Shop (){
         subtitle='Fashion, Tech & More for Less' 
         color='--color-purple-shop' /> */}
       <TestimonialSection
-        title='Shop savvy'
-        subtitle='Bag up to 50% OFF!'
-        color={'--color-purple-shop'} 
+        title={t('shop.testimonials.title')}
+        subtitle={t('shop.testimonials.subtitle')}
+        color={'--color-purple-shop'}
         retailers={175}
-        description='Shop smarter and save with their members-only discounts.'
+        description={t('shop.testimonials.description')}
         dotsColor={'bg-purple-shop'} 
         testimonials={categoryTestimonials} 
         ctaGradientFrom='from-purple-shop' 

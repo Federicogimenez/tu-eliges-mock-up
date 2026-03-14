@@ -1,4 +1,5 @@
 import { useAllyContext } from '../../hooks/useAllyContext';
+import { useTranslation } from '../../hooks/useTranslation';
 import ButtonPrimary from '../components/ButtonPrimary';
 import LoaderSimple from '../components/LoaderSimple';
 
@@ -42,6 +43,7 @@ export default function PricingSection ({
   ctaGradientFrom, ctaGradientTo, ctaGradientFrom2, ctaGradientTo2 }:PricingSectionProps) {
   
   const { allyData, code, recurlyUrl } = useAllyContext();
+  const { t } = useTranslation();
 
   const perMonthPrice = Math.floor((allyData.new_price_after_discount * 100 )/12) / 100 ;
   const annualPrice = allyData.new_price_after_discount.toFixed(2) || allyData.membership_anual_fee.toFixed(2);
@@ -70,31 +72,31 @@ export default function PricingSection ({
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
                 <span className="text-gray-700 dark:text-gray-300 font-semibold">
-                  Start saving immediately
+                  {t('layout.pricing.benefits.0')}
                 </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  Access 1M+ exclusive deals
+                  {t('layout.pricing.benefits.1')}
                 </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  Save on the go (Web & App)
+                  {t('layout.pricing.benefits.2')}
                 </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  Risk-free: 7-day refund guarantee
+                  {t('layout.pricing.benefits.3')}
                 </span>
               </div>
               <div className="flex items-center">
                 <div className="text-green-500 mr-3">✓</div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  No commitments - cancel anytime
+                  {t('layout.pricing.benefits.4')}
                 </span>
               </div>
             </div>
@@ -107,12 +109,12 @@ export default function PricingSection ({
               <div className='w-full h-full bg-gradient-to-b from-white to-black/5 dark:from-white/5 dark:to-white/15 px-2 md:px-5 lg:px-8 py-6 rounded-4xl'>
                 <div className="relative text-center mb-6">
                   <h3 className="relative text-2xl  text-gray-900 dark:text-white mb-2">
-                    Equivalent to <br /> 
+                    {t('layout.pricing.equivalentTo')} <br />
                     <span className='shiny-lightblue-text font-semibold text-4xl '>
                       <span className='mx-2'>
-                        ${perMonthPrice} 
+                        ${perMonthPrice}
                       </span>
-                      per month
+                      {t('layout.pricing.perMonth')}
                     </span>
                   </h3>
                   {
@@ -126,7 +128,7 @@ export default function PricingSection ({
                               {allyData.alliedName}
                             </p>
                             <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-5 py-1 rounded-full text-nowrap text-xs sm:text-sm font-semibold">
-                              {discount}% OFF with code {allyData.alliedCuponCode}
+                              {t('layout.pricing.offWithCode', { discount: String(discount), code: allyData.alliedCuponCode })}
                             </span>
                           </div>
                         </div>
@@ -136,7 +138,7 @@ export default function PricingSection ({
                 </div>
 
                 <div className="text-center mb-6">
-                  <p className="text-gray-600 dark:text-gray-400">Billed annually at</p>
+                  <p className="text-gray-600 dark:text-gray-400">{t('layout.pricing.billedAnnually')}</p>
                   {discount > 0 ? 
                     <div className='flex justify-center items-center gap-x-2 font-semibold'>
                       <div className="text-2xl text-red-800 dark:text-red-400 line-through">
@@ -157,31 +159,31 @@ export default function PricingSection ({
                   <div className="flex items-center">
                     <div className="text-green-500 mr-3">✓</div>
                       <span className="text-gray-700 dark:text-gray-300 font-semibold">
-                        Start saving immediately
+                        {t('layout.pricing.benefits.0')}
                       </span>
                     </div>
                     <div className="flex items-center">
                       <div className="text-green-500 mr-3">✓</div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        Access 1M+ exclusive deals
+                        {t('layout.pricing.benefits.1')}
                       </span>
                     </div>
                     <div className="flex items-center">
                       <div className="text-green-500 mr-3">✓</div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        Save on the go (Web & App)
+                        {t('layout.pricing.benefits.2')}
                       </span>
                     </div>
                     <div className="flex items-center">
                       <div className="text-green-500 mr-3">✓</div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        Risk-free: 7-day refund guarantee
+                        {t('layout.pricing.benefits.3')}
                       </span>
                     </div>
                     <div className="flex items-center">
                       <div className="text-green-500 mr-3">✓</div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        No commitments - cancel anytime
+                        {t('layout.pricing.benefits.4')}
                       </span>
                     </div>
                 </div>
@@ -190,14 +192,14 @@ export default function PricingSection ({
                 <div className='w-fit mx-auto text-center text-sm md:text-lg text-black dark:text-white '>
                   <p className='flex justify-center items-center gap-x-2'>
                     <img src="/icons/padlock.png" alt="secure" className='size-7 object-contain object-center' />
-                    Secure Payments
+                    {t('layout.pricing.securePayments')}
                   </p>
                   <p>
-                    | No Ads | No Spam |
+                    {t('layout.pricing.noAdsNoSpam')}
                   </p>
                   <p className='flex justify-center items-center gap-x-2'>
                     <img src="/icons/protected.png" alt="protect" className='size-7 object-contain object-center' />
-                    Satisfaction guarantee
+                    {t('layout.pricing.satisfactionGuarantee')}
                   </p>
                   <div className='flex justify-center items-center w-full gap-x-2 mt-7'>
                     {

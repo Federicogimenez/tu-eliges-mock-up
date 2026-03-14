@@ -1,0 +1,788 @@
+{
+  "layout": {
+    "heroOverlay": {
+      "title": "Um Milhão de Ofertas",
+      "subtitle": "Uma Assinatura VIP",
+      "tagline": "Você Escolhe Onde <br class='md:hidden' /> Economizar",
+      "trustedBy": "Confiança de famílias em todo o país",
+      "navLinks": {
+        "shop": "Compras",
+        "travel": "Viagens",
+        "dining": "Gastronomia",
+        "entertainment": "Entretenimento"
+      }
+    },
+    "footer": {
+      "description": "Sua chave VIP para economias do dia a dia.",
+      "navigate": "Navegar",
+      "learnMore": "Saiba Mais",
+      "contact": "Contato",
+      "manageMembership": "Gerenciar Assinatura",
+      "legals": "Termos Legais",
+      "basedIn": "Sede em Orlando, FL - EUA"
+    },
+    "faqs": {
+      "title": "Perguntas Frequentes",
+      "general": {
+        "label": "Perguntas Gerais",
+        "items": {
+          "0": {
+            "question": "O que é o uchooseit.us?",
+            "answer": "É uma rede privada de descontos exclusiva para assinantes, oferecendo economias de até 50% em mais de 1 milhão de estabelecimentos nos EUA—incluindo restaurantes, varejo, entretenimento, viagens e muito mais. Nossa missão é ajudar você e sua família a economizar milhares de dólares por ano em compras e experiências do dia a dia."
+          },
+          "1": {
+            "question": "Como acesso os descontos?",
+            "answer": "Você precisa adquirir sua assinatura anual e depois pode acessar os descontos pelo aplicativo <strong class='mx-1'>My Deals®</strong> ou pelo computador. Você pode visualizar ofertas próximas usando sua localização e resgatá-las diretamente do seu celular."
+          },
+          "2": {
+            "question": "Onde posso usar os descontos?",
+            "answer": "<strong class='mr-2'>Em todos os Estados Unidos</strong>. De grandes marcas a negócios locais. Basta ativar o GPS e descobrir descontos perto de você."
+          },
+          "3": {
+            "question": "Eu realmente economizo dinheiro?",
+            "answer": "Sim! Como temos acordos diretos com as marcas, você terá os melhores descontos possíveis. Muitos dos nossos assinantes economizam <strong class='mx-1'>centenas ou até milhares de dólares por ano</strong>. Use apenas 1 ou 2 descontos por mês e você já cobre o custo da sua assinatura. <strong class='mx-1'>Você pode economizar mais de $2,500 por ano</strong>, dependendo da frequência de uso."
+          },
+          "4": {
+            "question": "Está disponível em português?",
+            "answer": "Sim! A plataforma está disponível em <strong class='mx-1'>10 idiomas diferentes, incluindo português.</strong>"
+          },
+          "5": {
+            "question": "Minhas informações estão seguras?",
+            "answer": "Com certeza. Levamos sua privacidade a sério. <strong class='mx-1'>Não vendemos suas informações como alguns aplicativos gratuitos</strong>. Seus dados estão seguros e protegidos."
+          },
+          "6": {
+            "question": "A assinatura renova automaticamente?",
+            "answer": "Sim, mas você pode cancelar a qualquer momento. Sem compromissos. Sem letras miúdas. Basta acessar: <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Gerenciar Minha Conta</a>"
+          },
+          "7": {
+            "question": "Quanto custa?",
+            "answer": "<strong>$47.99 por ano</strong>, menos de $3.99 por mês. Com apenas um desconto por mês, você já cobre o custo da sua assinatura."
+          },
+          "8": {
+            "question": "Posso cancelar a qualquer momento?",
+            "answer": "Sim. Você mesmo pode fazer isso em poucos segundos pela sua conta. <strong class='mx-1'>Sem taxas ocultas. Sem complicação:</strong> <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Cancelar Aqui</a>"
+          },
+          "9": {
+            "question": "O suporte ao cliente está disponível?",
+            "answer": "Sim—estamos aqui para ajudar. Entre em contato pelo <strong class='mx-1'>chat do aplicativo</strong>, e-mail em <strong>support@uchooseit.us</strong>, ou nossa <strong>linha gratuita (888) 556-2393.</strong>"
+          },
+          "10": {
+            "question": "Posso explorar os descontos sem ser assinante?",
+            "answer": "Sim, pode! Você pode explorar a maioria dos descontos disponíveis navegando por categorias, cidades ou códigos postais. Basta clicar no link abaixo para começar a descobrir quanto você pode economizar — sem necessidade de assinatura (ainda). <a href='https://uchooseitus.enjoymydeals.com/' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Explorar MyDeals</a>"
+          },
+          "11": {
+            "question": "E se um estabelecimento não aceitar meu desconto?",
+            "answer": "Alguns usuários enfrentam esse problema, mas com pouca frequência. De vez em quando, um estabelecimento muda de dono, ou a equipe no balcão não foi treinada para reconhecer nossa oferta de desconto. Estamos comprometidos em garantir que os estabelecimentos honrem os descontos contratados. Nossa equipe de atendimento ao cliente está disponível por telefone, e-mail ou chat para ajudar a resolver qualquer problema. Ligue para o número no seu aplicativo ou cupom impresso se precisar de assistência."
+          },
+          "12": {
+            "question": "Como esses descontos são diferentes de outros cupons que vejo online ou recebo pelo correio?",
+            "answer": "Como nossa rede é privada, os varejistas podem nos oferecer descontos mais profundos do que os que você encontra em outros lugares. Apenas usuários com login podem acessar nossos descontos. Dessa forma, varejistas e prestadores de serviços têm mais probabilidade de oferecer descontos para um site exclusivo para assinantes como o nosso."
+          },
+          "13": {
+            "question": "Qual a melhor forma de buscar ofertas de compras?",
+            "answer": "Você pode usar seu computador ou celular para encontrar ofertas. Digite o que está procurando na barra de busca no topo da página, junto com a localização desejada. Clique no ícone de busca e os resultados aparecerão. Você também pode refinar seus resultados. No celular, selecione o ícone de filtro no canto superior direito; no computador, selecione os filtros no lado esquerdo da página. Você também pode alternar entre visualização em lista e visualização em mapa para ver a proximidade do estabelecimento."
+          },
+          "14": {
+            "question": "Como descubro os detalhes sobre o cupom ou oferta?",
+            "answer": "Selecione a oferta clicando no botão \"View Deals\". O site exibirá uma página com os detalhes exatos do desconto. Você também pode ver as condições clicando no link \"offer terms\" para mais detalhes. Também mostraremos como funciona — se você precisa imprimir ou mostrar o cupom no celular."
+          },
+          "15": {
+            "question": "Como resgato um cupom?",
+            "answer": "Existem dois tipos de ofertas: 1) aquelas que você leva para mostrar em um local físico; ou 2) uma oferta online. Para ofertas em local físico, depois de clicar em \"View Deals\", selecione o botão \"Use Coupon\". Pode haver a opção de imprimir ou mostrar o cupom. Você pode mostrar o cupom no celular ao chegar no estabelecimento ou levar o cupom impresso. Se for uma oferta online, selecione \"Shop Now\". Você poderá copiar o código do cupom e selecionar \"Continue to Site\" para ir diretamente ao site do estabelecimento."
+          },
+          "16": {
+            "question": "Como funciona a plataforma de descontos?",
+            "answer": "<ol><li>Cadastre-se inserindo suas informações de contato no checkout.</li><li>Se você tiver um código promocional de um dos nossos embaixadores, insira-o no campo \"Código Promocional\" e clique em Aplicar.</li><li>Após concluir o pagamento da assinatura anual, você será redirecionado para uma página de Agradecimento com seus dados de login.</li><li>Você pode acessar a plataforma em <a href='uchooseitus.enjoymydeals.com' target='_blank' rel='noopener noreferrer' class='mx-1'>Enjoy My Deals</a> ou baixar o aplicativo <strong class='mx-1'>My Deals®</strong> para usar seus descontos em qualquer lugar.</li><li>Seu <strong class='mx-1'>ID de Membro Único</strong> também será enviado por e-mail.</li><li>Você receberá um e-mail de lembrete <strong class='mx-1'>30 dias antes da renovação automática</strong>, dando tempo para cancelar se desejar.</li><li>Você pode cancelar a qualquer momento em <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Cancelar Aqui</a>.</li><li>Os descontos podem ser resgatados de três formas:<ul><li><strong>Na loja</strong> (mostrar pelo celular)</li><li><strong>Online</strong> (com código de cupom ou link)</li><li><strong>Por telefone</strong> (para serviços específicos)</li></ul></li><li>Oferecemos <strong>garantia de reembolso de 8 dias</strong>. Se não estiver satisfeito, envie um e-mail para <strong>support@uchooseit.us</strong> e faremos o possível para ajudar.</li><li>Aceitamos todos os principais cartões de crédito/débito: <strong>Visa, MasterCard, Amex, Discover, Diners Club, JCB, UnionPay</strong>.</li></ol>"
+          }
+        }
+      },
+      "shop": {
+        "label": "Compras",
+        "items": {
+          "0": {
+            "question": "Que tipos de descontos estão disponíveis?",
+            "answer": "Descontos estão disponíveis tanto para redes nacionais quanto para estabelecimentos locais. Se você quer economizar em roupas, eletrônicos, móveis, materiais de escritório, artigos esportivos ou produtos para pets, temos essas ofertas disponíveis (conforme a localização)."
+          },
+          "1": {
+            "question": "Quanto posso economizar?",
+            "answer": "Depende do que você compra, mas, em média, os usuários economizam cerca de $335 em serviços automotivos e $57 em itens como compras no varejo, casa e jardim e outros serviços na categoria Compras. No entanto, alguns cupons são baseados em desconto percentual, então você pode economizar ainda mais dependendo do que estiver comprando."
+          }
+        }
+      },
+      "travel": {
+        "label": "Viagens",
+        "items": {
+          "0": {
+            "question": "Qual é a política de cancelamento?",
+            "answer": "As políticas de cancelamento variam por hotel e datas de estadia. Antes de reservar, a política de cancelamento está listada após selecionar o tipo de quarto na seção Detalhes Adicionais. Se você já fez a reserva, a política de cancelamento também está incluída no e-mail de confirmação."
+          },
+          "1": {
+            "question": "As taxas de resort, estacionamento e outras cobranças do hotel estão incluídas na tarifa?",
+            "answer": "A tarifa que cobramos antecipadamente inclui a diária mais impostos. Alguns hotéis cobram outras taxas que não estão incluídas na diária, como depósito, taxa de resort, estacionamento ou outras. Esses tipos de cobranças não estão incluídos na diária e serão cobrados diretamente pelo hotel ou propriedade."
+          },
+          "2": {
+            "question": "Minha reserva é confirmada com o hotel imediatamente após eu reservar?",
+            "answer": "Após concluir sua reserva, você receberá um e-mail para confirmar. Se seus planos de viagem mudarem, ligue para nossa equipe de Serviços ao Membro e NÃO diretamente para o hotel. Embora reservemos o(s) quarto(s) para sua reserva, suas informações de contato específicas (nome, etc.) não estarão disponíveis no sistema do hotel até duas semanas antes do check-in. Não se preocupe, sua reserva ainda está garantida em nossos sistemas. Como cortesia, nossa equipe de Serviços ao Membro realiza uma confirmação pré-chegada dentro de 5 dias do seu check-in para verificar se tudo está em ordem. Ligamos diretamente para a propriedade para confirmar sua reserva específica. Então, tudo o que você precisa fazer é comparecer com sua identificação e cartão de crédito para o check-in."
+          },
+          "3": {
+            "question": "Quando meu cartão é cobrado?",
+            "answer": "Para garantir seu desconto, cobramos seu cartão de crédito no momento em que você faz a reserva."
+          },
+          "4": {
+            "question": "Como sei se minha reserva foi confirmada?",
+            "answer": "Existem algumas formas de verificar se sua reserva foi concluída. Primeiro, ao reservar o quarto, você verá uma página de confirmação de que a reserva foi bem-sucedida. Segundo, você receberá um e-mail de confirmação com os detalhes da viagem. Por último, você pode acessar o site novamente, e no canto superior direito, clicar em \"My Trips\" para ver as informações da sua próxima viagem. Você pode ligar para nossa equipe de Serviços ao Membro para verificar sua reserva pelo (888) 556-2393 (ligação gratuita), ou (801) 656-1460 (internacional) a qualquer momento."
+          },
+          "5": {
+            "question": "Posso reservar no mesmo dia em que quero fazer o check-in?",
+            "answer": "Com certeza! Fique à vontade para fazer planos de viagem de última hora e aproveite seus descontos em hotéis."
+          },
+          "6": {
+            "question": "A tarifa do aluguel de carro inclui todos os impostos e taxas?",
+            "answer": "Às vezes sim, mas nem sempre, e varia por locadora. A tarifa de aluguel de carro que você vê em nosso site inclui a diária e os impostos aplicáveis, detalhados no checkout. Não inclui taxas adicionais pagas no balcão, como cobertura de seguro, recursos extras ou serviços, ou depósitos. Essas serão cobradas pela locadora na retirada do veículo. Por favor, revise também as Políticas de Locação e nossa seção de Informações Importantes durante o checkout para mais detalhes sobre sua locação específica."
+          },
+          "7": {
+            "question": "Cartões de débito ou dinheiro são aceitos no balcão da locadora?",
+            "answer": "Dinheiro, cartões de débito, cartões virtuais ou pré-pagos não serão aceitos no balcão da locadora. Você precisará de um cartão de crédito em nome do motorista para retirar o carro. O cartão de crédito deve ter fundos disponíveis suficientes para cobrir quaisquer depósitos ou cobranças adicionais exigidas para a locação."
+          },
+          "8": {
+            "question": "Qual identificação é necessária para alugar um carro?",
+            "answer": "Você precisará de uma carteira de motorista válida em nome do motorista — o documento físico. Uma versão digital ou eletrônica da carteira não será aceita. O nome na carteira deve corresponder ao nome na reserva para retirar o carro. Se o nome na carteira não corresponder ao nome na reserva, você não poderá retirar o carro e pode não ter direito a reembolso. Você também precisará fornecer um cartão de crédito válido. O nome do titular no cartão de crédito também deve corresponder ao nome na reserva e na carteira de motorista. Se você estiver alugando um carro fora do país onde sua carteira foi emitida, e sua carteira estiver em caracteres não latinos (ex.: árabe, chinês, cirílico, etc.), pode ser necessário apresentar uma Permissão Internacional para Dirigir."
+          },
+          "9": {
+            "question": "Posso obter reembolso se devolver o carro antes do previsto?",
+            "answer": "Não. Os preços de aluguel de carros são baseados nos horários e datas de retirada e devolução definidos na reserva. Se você devolver o carro antes, não receberá reembolso pelo tempo não utilizado."
+          },
+          "10": {
+            "question": "O que acontece se eu devolver o carro com atraso?",
+            "answer": "Dependendo da locadora, pode haver um período de tolerância de até 29 minutos após o horário de devolução acordado, sem cobranças adicionais. No entanto, após esse período inicial de tolerância, você pode ser cobrado por horas adicionais ou um dia adicional, dependendo do atraso. Recomendamos verificar o contrato de locação recebido na retirada do carro para detalhes sobre cobranças por devolução com atraso."
+          },
+          "11": {
+            "question": "Posso retirar o carro em um local e devolver em outro?",
+            "answer": "Sim. Na página principal de busca, clique na opção \"Devolver em local diferente\". Em seguida, insira o local de devolução no formulário de busca. Por favor, note que nosso site permite apenas retirada e devolução em locais de aeroporto. Pode haver uma taxa adicional para devolver um carro em um local diferente do de retirada. Quaisquer taxas adicionais de devolução serão indicadas no checkout."
+          },
+          "12": {
+            "question": "Preciso contratar seguro para o aluguel de carro?",
+            "answer": "O seguro de aluguel de carro não é obrigatório. Recomendamos que, se você já possui seguro auto, verifique com sua seguradora se ele se estende a carros alugados. Caso contrário, a maioria das locadoras oferece várias opções de seguro. O custo do seguro opcional varia por plano e localização. Nosso site não oferece a opção de adicionar seguro de aluguel de carro."
+          }
+        }
+      },
+      "dining": {
+        "label": "Gastronomia",
+        "items": {
+          "0": {
+            "question": "Que tipos de descontos estão disponíveis?",
+            "answer": "Descontos estão disponíveis tanto para redes nacionais quanto para restaurantes locais. Se você quer economizar em pizza ou experimentar um restaurante local sofisticado, geralmente temos esses tipos de ofertas disponíveis (conforme a localização)."
+          },
+          "1": {
+            "question": "Quanto posso economizar?",
+            "answer": "Depende do que você compra, mas, em média, você pode economizar mais de $5.50 na categoria Gastronomia. No entanto, alguns cupons são baseados em desconto percentual, então você pode economizar mais dependendo do restaurante ou estabelecimento escolhido."
+          }
+        }
+      },
+      "entertainment": {
+        "label": "Entretenimento",
+        "items": {
+          "0": {
+            "question": "Que tipos de descontos estão disponíveis?",
+            "answer": "Descontos estão disponíveis tanto para atrações de entretenimento reconhecidas nacionalmente quanto para atrações e atividades locais. Se você quer economizar em ingressos de cinema, golfe, ingressos para parques de diversão ou aulas, shows ou aventuras ao ar livre, temos essas ofertas disponíveis (conforme a localização)."
+          },
+          "1": {
+            "question": "Quanto posso economizar?",
+            "answer": "Depende do que você compra, mas, em média, você pode economizar mais de $5.50 em ingressos de cinema, $25 em recreação/entretenimento e $28 em golfe e esportes de neve na categoria Diversão. No entanto, alguns cupons são baseados em desconto percentual, então você pode economizar ainda mais dependendo da atividade escolhida."
+          },
+          "2": {
+            "question": "Quanto posso economizar em ingressos de parques temáticos?",
+            "answer": "Você pode economizar até 50% em ingressos de parques. No entanto, depende realmente de qual parque você escolher e quantos dias pretende visitar. Ao fazer uma busca, você verá um preço riscado para comparar quanto custaria se comprasse os ingressos em outro lugar."
+          },
+          "3": {
+            "question": "Os preços e a disponibilidade dos ingressos variam pela data da visita?",
+            "answer": "Sim, podem variar. Certifique-se de selecionar a data correta da primeira visita ao parque e depois o número de dias de acesso. Recomendamos que você leia completamente a descrição do tipo de ingresso para entender os detalhes exatos do ingresso que deseja comprar."
+          },
+          "4": {
+            "question": "Os ingressos de parques temáticos expiram? Até quando preciso usá-los?",
+            "answer": "Ao comprar ingressos, você precisará selecionar a data de início da visita ao parque. Se estiver visitando por vários dias, pode haver restrições sobre se os ingressos devem ser usados em dias consecutivos ou não. Também pode haver uma data limite para o uso dos ingressos. Ao selecionar o tipo de ingresso no site, leia a descrição detalhada que indicará quaisquer restrições ou validade."
+          },
+          "5": {
+            "question": "Posso comprar os ingressos e dar para outra pessoa como presente?",
+            "answer": "Sim, você pode comprar ingressos neste site e outra pessoa usá-los. Durante o processo de checkout em \"Informações do Visitante\", preencha os nomes e sobrenomes de todos os visitantes que entrarão no parque. Você pode então usar seu cartão de crédito para comprar os ingressos em nome deles."
+          }
+        }
+      }
+    },
+    "pricing": {
+      "defaultTitle": "Compartilhe as Economias",
+      "defaultSubtitle": "Aproveite Mais Juntos!",
+      "equivalentTo": "Equivalente a",
+      "perMonth": "por mês",
+      "billedAnnually": "Cobrado anualmente por",
+      "offWithCode": "{{discount}}% OFF com o código {{code}}",
+      "benefits": {
+        "0": "Comece a economizar imediatamente",
+        "1": "Acesse 1M+ de ofertas exclusivas",
+        "2": "Economize em qualquer lugar (Web e Aplicativo)",
+        "3": "Sem risco: garantia de reembolso de 7 dias",
+        "4": "Sem compromisso - cancele quando quiser"
+      },
+      "securePayments": "Pagamentos Seguros",
+      "noAdsNoSpam": "| Sem Anúncios | Sem Spam |",
+      "satisfactionGuarantee": "Garantia de satisfação"
+    },
+    "calculator": {
+      "title": "Transforme Seus Gastos Diários em Grandes Economias Anuais",
+      "subtitle": "Cubra o custo em poucos usos — todo o resto é economia pura.",
+      "youPay": "Você paga",
+      "youSave": "Você Economiza",
+      "calculateSavings": "Calcular Economias"
+    },
+    "gateway": {
+      "title": "Comece a economizar em minutos",
+      "subtitle": "Descubra como é fácil ativar sua assinatura e começar a economizar todos os dias com nosso Aplicativo Móvel e Web.",
+      "discoverHere": "Descubra Aqui",
+      "seeAllCategories": "Ver Todas as Categorias",
+      "downloads": "✨Mais de 500.000 downloads e crescendo",
+      "appExclusive": "Aplicativo disponível exclusivamente para assinantes Uchooseit.us"
+    },
+    "benefits": {
+      "title": "Benefícios Exclusivos",
+      "items": {
+        "0": {
+          "title": "Economize $2,000+ por ano - 50% off",
+          "description": "Viagens • Gastronomia • Compras • Entretenimento",
+          "note": "*Economia média dos assinantes em 2024"
+        },
+        "1": {
+          "title": "Descontos permanentes:",
+          "description": "Use quantas vezes quiser."
+        },
+        "2": {
+          "title": "Rápido e fácil:",
+          "description": "Resgate sem etapas complicadas."
+        },
+        "3": {
+          "title": "Economias por GPS:",
+          "description": "Encontre ofertas perto de você."
+        },
+        "4": {
+          "title": "Mais de 1 milhão:",
+          "description": "Ofertas em todo o país ao seu alcance."
+        },
+        "5": {
+          "title": "Privacidade protegida:",
+          "description": "Nunca vendemos seus dados."
+        }
+      }
+    },
+    "testimonials": {
+      "calculateSavings": "Calcular Economias"
+    }
+  },
+  "home": {
+    "hero": {
+      "upTo": "Até",
+      "discount": "50% OFF",
+      "headline": "em milhões de momentos",
+      "tagline": "Sua chave VIP para economias do dia a dia começa aqui.",
+      "trustedBy": "Confiança de famílias em todo o país"
+    },
+    "categories": {
+      "title": "Descubra economias incríveis",
+      "subtitle": "Explore todas as suas categorias e marcas favoritas",
+      "items": {
+        "shop": {
+          "name": "Compras",
+          "description": "Tecnologia, Carros, Casa, Saúde, Fitness e mais."
+        },
+        "travel": {
+          "name": "Viagens",
+          "description": "Hotel, Aluguel de carros, Resorts, Cruzeiros, Passeios e mais."
+        },
+        "dining": {
+          "name": "Gastronomia",
+          "description": "Casual e Fine Dining, Fast food, Buffet e mais."
+        },
+        "entertainment": {
+          "name": "Entretenimento",
+          "description": "Parques temáticos, Aventura, Cinema, Golfe e mais."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Uma assinatura",
+      "subtitle": "Benefícios reais para toda a família",
+      "items": {
+        "0": {
+          "title": "Economize $2,000+ por ano - 50% off",
+          "description": "Viagens • Gastronomia • Compras • Entretenimento",
+          "note": "*Economia média dos assinantes em 2024"
+        },
+        "1": {
+          "title": "Mais de 1 milhão:",
+          "description": "Ofertas em todo o país ao seu alcance."
+        },
+        "2": {
+          "title": "Descontos permanentes:",
+          "description": "Use quantas vezes quiser."
+        },
+        "3": {
+          "title": "Economias por GPS:",
+          "description": "Encontre ofertas perto de você."
+        },
+        "4": {
+          "title": "Rápido e fácil:",
+          "description": "Resgate sem etapas complicadas."
+        },
+        "5": {
+          "title": "Privacidade protegida:",
+          "description": "Nunca vendemos seus dados."
+        }
+      }
+    },
+    "learnHow": {
+      "title": "Aprenda como economizar",
+      "subtitle": "Descontos estão sempre a 1 toque de distância.",
+      "button": "Explorar Plataforma"
+    }
+  },
+  "shop": {
+    "hero": {
+      "title1": "Compras Inteligentes,",
+      "title2": "Grandes Achados!",
+      "description": "De moda a tecnologia, ofertas exclusivas para assinantes nas coisas que você ama."
+    },
+    "pricing": {
+      "title": "Mais barato que sua assinatura mensal de streaming.",
+      "subtitle": "E ainda te ajuda a economizar mais."
+    },
+    "testimonials": {
+      "title": "Compre com sabedoria",
+      "subtitle": "Garanta até 50% OFF!",
+      "description": "Compre de forma mais inteligente e economize com descontos exclusivos para assinantes.",
+      "items": {
+        "0": { "text": "\"Eu uso regularmente o desconto do Jiffy Lube. Torna a manutenção básica do carro um pouco mais barata.\" — David M." },
+        "1": { "text": "\"Economizei cerca de $800 em um notebook novo com o desconto da Lenovo.\" — Debbie R." },
+        "2": { "text": "\"Utilizei o código promocional do chewy.com depois de adotar meu primeiro cachorro. Foi uma ótima forma de conseguir tudo que ela precisava.\" — Monica N." },
+        "3": { "text": "\"Na hora de comprar sapatos, os descontos foram incríveis, especialmente com 4 filhos. Preciso de todos os descontos que puder conseguir.\" — David S." },
+        "4": { "text": "\"Consegui a TV Samsung que eu procurava por $300 a menos que o menor preço que encontrei nas lojas.\" - Jared S." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Eleve seu estilo e suas economias" },
+      "1": { "description": "Achados de moda mais inteligentes" },
+      "2": { "description": "Extra chique, extra economia" },
+      "3": { "description": "Conforto nunca foi tão acessível" },
+      "4": { "description": "Monte seu visual por menos" },
+      "5": { "description": "Equipe-se e economize muito" },
+      "6": { "description": "Potencialize seu dia de forma inteligente" },
+      "7": { "description": "Volta às aulas, volta às economias." },
+      "8": { "description": "Trabalhe melhor, economize mais" },
+      "9": { "description": "Itens essenciais, economias extraordinárias" }
+    },
+    "brandsTitle": "Tudo Que Seus Assinantes Querem"
+  },
+  "travel": {
+    "hero": {
+      "title1": "Viagens Inteligentes,",
+      "title2": "Grandes Aventuras!",
+      "description": "Hotéis, Aluguel de Carros, Voos e Cruzeiros — economias exclusivas para assinantes onde quer que você vá."
+    },
+    "pricing": {
+      "title": "Mais barato que uma <br /> hora de estacionamento.",
+      "subtitle": "E ainda te ajuda a economizar mais."
+    },
+    "testimonials": {
+      "title": "Viaje muito,",
+      "subtitle": "Gaste Pouco.",
+      "description": "Economias instantâneas em Hotéis, Voos e Carros para que você viaje mais e gaste menos.",
+      "items": {
+        "0": { "text": "\"Usamos o programa de descontos para ir ao SeaWorld e nadar com golfinhos no Natal. Foi incrível!\" - Mariann C." },
+        "1": { "text": "\"Meu programa de descontos me economizou centenas de dólares viajando em hotéis e excursões. É uma economia real.\" - Amador S." },
+        "2": { "text": "\"Fiquei surpresa com o dinheiro que economizei em apenas um uso do meu desconto ao reservar um quarto de última hora!\" - Monica P." },
+        "3": { "text": "\"Economizei mais de $100 em um aluguel de carro usando meu programa de descontos.\" - John C." },
+        "4": { "text": "\"As passagens aéreas com a Delta costumam ser caras, e economizei muito com esse programa de descontos!\" - Lucrecia M." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Ofertas de hotéis exclusivas para assinantes — em todo o país." },
+      "1": { "description": "Estadias longas, tarifas baixas para assinantes." },
+      "2": { "description": "Cruzeiros para a família com economias exclusivas." },
+      "3": { "description": "Saia dirigindo com economias de assinante." },
+      "4": { "description": "Aluguéis para férias com preço de assinante." },
+      "5": { "description": "Economize em Voos pelo Mundo." }
+    }
+  },
+  "dining": {
+    "hero": {
+      "title1": "Gastronomia Inteligente,",
+      "title2": "Grandes Sabores!",
+      "description": "De noites de pizza em família a restaurantes locais, economias exclusivas que você vai adorar."
+    },
+    "pricing": {
+      "title": "Mais barato que um <br /> café em Nova York.",
+      "subtitle": "E ainda te ajuda a economizar mais."
+    },
+    "testimonials": {
+      "title": "Saboreie Mais,",
+      "subtitle": "Pague Menos.",
+      "description": "Grandes sabores, contas pequenas — esse é o jeito Uchooseit.us.",
+      "items": {
+        "0": { "text": "\"Usei uma oferta do Papa John's! Foi uma ótima experiência!\" - Brittany S" },
+        "1": { "text": "\"Usei um desconto no Panda Express. Funcionou bem, foi fácil de usar e agora procuro ofertas toda vez que saio!\" - Darek H." },
+        "2": { "text": "\"Experimentei um novo restaurante graças à oferta — uma ótima forma de conhecer novos lugares!\" - Josh T." },
+        "3": { "text": "\"Este programa de descontos é minha escolha número um para ofertas em jantares!\" - Kelly K." },
+        "4": { "text": "\"Fiquei tão animada ao ver um cupom do Texas De Brazil de $10 de desconto em um prato. Meu noivo e eu usamos no nosso jantar de aniversário!\" - Nicole P." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Produtos frescos, preço especial de assinante." },
+      "1": { "description": "Ofertas irresistíveis para assinantes." },
+      "2": { "description": "Noite de pizza, economias exclusivas." },
+      "3": { "description": "Sabores autênticos com vantagens exclusivas." },
+      "4": { "description": "Doces e delícias com vantagens de assinante." },
+      "5": { "description": "Ingredientes melhores, preço melhor para assinantes." }
+    }
+  },
+  "entertainment": {
+    "hero": {
+      "title1": "Entretenimento Inteligente,",
+      "title2": "Grandes Sorrisos!",
+      "description": "De parques temáticos a noites de cinema — economias exclusivas na diversão que você ama."
+    },
+    "pricing": {
+      "title": "Mais Barato Que Uma <br /> Bebida no Show.",
+      "subtitle": "E ainda te ajuda a economizar mais."
+    },
+    "testimonials": {
+      "title": "Entretenimento",
+      "subtitle": "Sem Limites",
+      "description": "Economize em shows, parques e eventos e torne cada passeio inesquecível.",
+      "items": {
+        "0": { "text": "\"No New Bedford Whaling Museum, minha assinatura de descontos me deu entrada gratuita.\" - Karen D." },
+        "1": { "text": "\"Uso este programa para assinatura do zoológico local. Minha família adora.\" - Andrea E." },
+        "2": { "text": "\"Meu filho e eu aproveitamos um passeio ao Topgolf. Foi ótimo usar o cupom para economizar $10 extras e poder comprar tudo que meu filho queria.\" - Don A." },
+        "3": { "text": "\"Adoro quanto economizo indo ao Cinemark com os descontos.\" - Krisnet H." },
+        "4": { "text": "\"Economizei muito em um passe de 4 dias para o Walt Disney World.\" - David R." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Transforme Cada Visita em uma Memória para a Vida!" },
+      "1": { "description": "O Lugar Mais Feliz, Agora com Preços Ainda Melhores!" },
+      "2": { "description": "Aventuras Selvagens, Custos Controlados!" },
+      "3": { "description": "Explore a Natureza, Economize com Estilo!" },
+      "4": { "description": "Alcance as Estrelas, Gaste Menos na Jornada!" },
+      "5": { "description": "Sinta a Adrenalina, Não o Preço!" },
+      "6": { "description": "Construa Memórias, Não Despesas!" },
+      "7": { "description": "Telonas, Preços Pequenos." },
+      "8": { "description": "Ingressos para Shows: Cortinas Abrem, Preços Baixam!" },
+      "9": { "description": "Eventos Esportivos: Todo Assento é Primeira Fila!" }
+    }
+  },
+  "business": {
+    "hero": {
+      "title1": "Transforme Sua Comunidade",
+      "title2": "Em uma Rede de Poder de Compra",
+      "description": "Dê ao seu público acesso privado à maior rede de descontos dos EUA.",
+      "trustedBy": "Confiança de organizações em todos os EUA.",
+      "plugAndPlay": "Plug & Play · Sem integração tecnológica"
+    },
+    "audienceCards": {
+      "items": {
+        "0": { "value": "Até 50%", "label": "Economias" },
+        "1": { "value": "1M+", "label": "Ofertas em Todo o País" },
+        "2": { "value": "94%", "label": "Condados dos EUA Cobertos" },
+        "3": { "value": "98%", "label": "Retenção de Clientes" },
+        "4": { "value": "382", "label": "Principais Mercados Norte-Americanos" },
+        "5": { "value": "99.6%", "label": "Consumidores dos EUA Atendidos" },
+        "6": { "value": "750+", "label": "Marcas Parceiras Nacionais" },
+        "7": { "value": "$2,000+", "label": "Economia Anual Potencial" }
+      }
+    },
+    "partnershipModels": {
+      "badge": "Modelos de Parceria",
+      "title1": "Dois Modelos.",
+      "title2": "Um Objetivo.",
+      "subtitle": "Soluções flexíveis para atender aos objetivos da sua organização.",
+      "rsm": {
+        "tag": "RSM",
+        "title": "Modelo de Compartilhamento de Receita",
+        "description": "Implante acesso privado sem custo inicial e receita baseada em desempenho.",
+        "bullets": {
+          "0": "Sem investimento inicial",
+          "1": "Ganhe por ativação",
+          "2": "Relatórios transparentes"
+        },
+        "bestFor": "Ideal para ONGs, associações e programas de clientes."
+      },
+      "bulk": {
+        "tag": "Bulk",
+        "title": "Modelo de Licença Escalável",
+        "description": "Implante acesso privado através de um modelo escalável baseado em licenças.",
+        "bullets": {
+          "0": "Compre acesso em volume",
+          "1": "Custo fixo e previsível",
+          "2": "Projetado para apoiar resultados mensuráveis de retenção"
+        },
+        "bestFor": "Ideal para programas de funcionários e assinantes formais."
+      },
+      "notSure": "Não tem certeza de qual modelo é ideal?",
+      "bookACall": "Agende uma Ligação",
+      "letsTalkStrategy": "Vamos Falar de Estratégia",
+      "noObligation": "Consultoria de parceria sem compromisso"
+    },
+    "howItWorks": {
+      "title": "Comece Rápido",
+      "steps": {
+        "0": {
+          "title": "Validação do Modelo",
+          "description": "Confirme o modelo de acesso certo (RSM ou Bulk) com base na estrutura do seu público, objetivos e orçamento."
+        },
+        "1": {
+          "title": "Configuração de Acesso",
+          "description": "Configure o acesso privado através de um link inteligente, sem necessidade de integração tecnológica. *Aplicado ao RSM."
+        },
+        "2": {
+          "title": "Lançamento para o Público",
+          "description": "Implante o acesso para seus clientes, funcionários ou assinantes."
+        },
+        "3": {
+          "title": "Visibilidade de Desempenho",
+          "description": "Acompanhe ativações, engajamento e receita (RSM) para otimizar o impacto ao longo do tempo."
+        }
+      }
+    },
+    "lookingToAchieve": {
+      "title": "Feito para organizações com",
+      "titleHighlight": "clientes, funcionários ou assinantes.",
+      "subtitle": "Encontre o caminho que se encaixa na sua organização.",
+      "slides": {
+        "0": {
+          "title": "Organização e Clientes",
+          "items": {
+            "0": "Estou buscando um benefício de valor agregado",
+            "1": "Estou buscando melhorar a aquisição de clientes",
+            "2": "Estou buscando soluções de viagem"
+          }
+        },
+        "1": {
+          "title": "Organização e Funcionários",
+          "items": {
+            "0": "Estou buscando oferecer benefícios sem aumentar custos com folha de pagamento",
+            "1": "Estou buscando um benefício de valor agregado para meus funcionários"
+          }
+        },
+        "2": {
+          "title": "Organizações Sem Fins Lucrativos",
+          "items": {
+            "0": "Estou buscando um incentivo para arrecadação de fundos"
+          }
+        },
+        "3": {
+          "title": "Organização + Assinantes",
+          "items": {
+            "0": "Estou buscando um benefício de valor agregado para meus assinantes"
+          }
+        }
+      }
+    },
+    "strategyCall": {
+      "title1": "Vamos Ativar",
+      "title2": "Sua Rede de Poder de Compra",
+      "description": "Participe de uma ligação estratégica de 15 minutos para determinar o modelo de acesso certo para sua organização.",
+      "cardTitle": "Nesta ligação vamos:",
+      "bullets": {
+        "0": "Identificar o modelo de acesso certo (RSM ou Bulk).",
+        "1": "Mapear para a estrutura do seu público.",
+        "2": "Definir as etapas de lançamento.",
+        "3": "Esclarecer relatórios e visibilidade de receita."
+      },
+      "liveProgram": {
+        "0": "Sem necessidade de integração tecnológica.",
+        "1": "Sem negociações com estabelecimentos.",
+        "2": "Sem sobrecarga operacional."
+      },
+      "scheduleCall": "Agendar uma Ligação Estratégica",
+      "reserveSession": "Reserve Sua Sessão Gratuita",
+      "noCommitment": "Sem compromisso",
+      "freeConsultation": "Consultoria gratuita"
+    },
+    "opportunities": {
+      "title1": "1 Milhão+ de Oportunidades",
+      "title2": "Sempre perto do seu",
+      "title3": "Público",
+      "search": "Buscar...",
+      "appTitle": "Uchooseit App - Mapa de Ofertas",
+      "downloads": "Mais de 500 mil downloads"
+    },
+    "brandsShowcase": {
+      "categoryLabel": "TUDO QUE SEUS ASSINANTES QUEREM",
+      "categories": {
+        "shop": "Compras",
+        "travel": "Viagens",
+        "dining": "Gastronomia",
+        "entertainment": "Entretenimento"
+      },
+      "savingsTitle": "Grandes Economias Anuais",
+      "savingsSubtitle": "PARA SEU PÚBLICO",
+      "calculateSavings": "Calcular Economias"
+    }
+  },
+  "affiliates": {
+    "revenueCalculator": {
+      "title": "Calculadora de Receita {{buyer}}",
+      "editFields": "Edite os campos em <span class='text-green-500 font-bold'>verde</span> para modelar a receita da sua agência com uchooseit.us.",
+      "publicPriceLabel": "Preço público por ano:",
+      "section1": {
+        "title": "1. Desconto Negociado para a Comunidade",
+        "publicPrice": "Preço público por ano",
+        "discountLabel": "Desconto para a Comunidade. Máx. 25%",
+        "appliedNote": "Aplicado ao preço da assinatura",
+        "priceWithDiscount": "Preço com desconto por ano (Preço Especial para a comunidade)",
+        "pricePerMonth": "Preço com desconto por mês *equivalente"
+      },
+      "section2": {
+        "title": "2. Dados do {{buyer}}",
+        "influencersLabel": "Influenciadores sob a Agência",
+        "influencersHelp": "Quantos influenciadores sua agência gerencia",
+        "followersLabel": "Seguidores",
+        "followersHelp": "Insira seguidores em unidades; vírgulas serão adicionadas automaticamente",
+        "engagementLabel": "Engajamento (%)",
+        "engagementHelp": "Percentual médio de engajamento orgânico",
+        "clientsLabel": "Clientes",
+        "clientsHelp": "Insira clientes em unidades; vírgulas serão adicionadas automaticamente",
+        "collaboratorsLabel": "Colaboradores",
+        "collaboratorsHelp": "Insira colaboradores em unidades; vírgulas serão adicionadas automaticamente",
+        "organicEngagement": "Engajamento Orgânico (#)"
+      },
+      "section3": {
+        "title": "3. Termos de Negociação",
+        "revenuePerInfluencer": "Receita por Assinatura (Influenciador)",
+        "revenuePerAgency": "Receita por Assinatura (Agência)",
+        "revenuePerBuyer": "Receita por Assinatura ({{buyer}})"
+      },
+      "scenarios": {
+        "title": "Cenários de Conversão",
+        "basedOn": "Baseado no engajamento orgânico estimado: {{engaged}} pessoas",
+        "conversionRate": "Taxa de Conversão",
+        "membershipsSold": "Assinaturas Vendidas",
+        "revenueInfluencer": "Receita para o Influenciador",
+        "revenueAgency": "Receita para a Agência",
+        "totalRevenueAgency": "Receita Total da Agência por Influenciadores",
+        "revenueBuyer": "Receita para {{buyer}}",
+        "goal": "META (100%)"
+      },
+      "disclaimer": "uchooseit.us - Transparência em que você pode confiar. Esta calculadora é uma ferramenta de planejamento e não representa uma oferta vinculante."
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "Comece a economizar em minutos",
+      "subtitle": "Saiba como se cadastrar, ativar e economizar com sua assinatura Uchooseit.us.",
+      "step1": "Cadastre-se",
+      "step2": "Ative",
+      "step3": "Economize"
+    },
+    "howActivate": {
+      "title": "Ative seu",
+      "titleHighlight": "Member iD",
+      "subtitle": "Saiba como é simples ativar na Web e no Aplicativo Móvel."
+    },
+    "howSection": {
+      "title": "Aprenda como economizar",
+      "subtitle": "Descontos estão sempre a 1 toque de distância.",
+      "button": "Descubra Mais"
+    },
+    "testimonials": {
+      "title1": "Assinantes Felizes,",
+      "title2": "Economias Reais!",
+      "joinText": "Junte-se à comunidade de economizadores inteligentes por apenas",
+      "perMonth": "{{price}}/mês",
+      "categories": {
+        "entertainment": "Entretenimento",
+        "dining": "Gastronomia",
+        "travel": "Viagens",
+        "shop": "Compras"
+      }
+    }
+  },
+  "activate": {
+    "title": "Aqui estão as informações necessárias para",
+    "titleHighlight": "ativar sua assinatura.",
+    "tabWeb": "Pela Web",
+    "tabMobile": "Pelo Celular",
+    "web": {
+      "infoBox": "Essas informações serão usadas no <strong>My Deals Web.</strong>",
+      "step1": "1. Localize o botão \"Sign Up\" ou \"Regístrate\".",
+      "step2": "2. Preencha os campos obrigatórios.",
+      "step3": "3. Insira seu Member ID:",
+      "step4": "4. Crie uma senha segura."
+    },
+    "mobile": {
+      "infoBox": "Essas informações serão usadas no <strong>My Deals Mobile App.</strong>",
+      "step1": "1. Localize o botão \"Sign Up\" ou \"Regístrate\".",
+      "step2": "2. Siga as instruções passo a passo e preencha os campos obrigatórios.",
+      "step3": "3. Tenha em mente estes dois dados importantes:",
+      "orgName": "Nome da Organização:",
+      "orgValue": "uchooseit.us",
+      "memberId": "Member Id",
+      "step4": "4. Crie uma senha segura.",
+      "downloadNote": "Certifique-se de baixar o Aplicativo para concluir a ativação por aqui."
+    },
+    "activateButton": "Ativar",
+    "copied": "Copiado!",
+    "idError": "Erro no ID!"
+  },
+  "thankYou": {
+    "congratulations": "Parabéns!",
+    "partOfCommunity": "você agora faz parte da nossa comunidade!",
+    "vipMembership": "assinatura vip",
+    "youChoose": "Você escolhe onde economizar",
+    "visualRepresentation": "Representação visual da sua assinatura",
+    "activateMembership": "Ativar Assinatura",
+    "emailSent": "Enviamos um e-mail de noreply@uchooseit.us",
+    "instructions": "Você recebeu tudo que precisa no seu e-mail! Agora é só ativar a assinatura para começar a usá-la onde quiser.",
+    "questionsContact": "Se tiver dúvidas, escreva para support@uchooseit.us"
+  },
+  "components": {
+    "hamburgerMenu": {
+      "navigation": "Navegação",
+      "home": "Início",
+      "shop": "Compras",
+      "travel": "Viagens",
+      "dining": "Gastronomia",
+      "entertainment": "Entretenimento",
+      "learnMore": "Saiba mais",
+      "business": "Negócios",
+      "logIn": "Entrar"
+    },
+    "allyPopUp": {
+      "loading": "Carregando Seu Desconto Exclusivo",
+      "title": "Seu acesso privado está pronto!",
+      "joinCommunity": "Junte-se à comunidade de Economizadores Inteligentes de {{name}}, com",
+      "discountOff": "{{discount}}%Off",
+      "membershipPurchase": "na compra da sua assinatura!",
+      "equivalentTo": "Equivalente a",
+      "perMonth": "por mês",
+      "billedAnnually": "Cobrado anualmente por",
+      "claimDiscount": "Garantir Meus {{discount}}% OFF",
+      "trustedBy": "Confiança de famílias em todo o país"
+    },
+    "buttons": {
+      "unlockAccess": "Liberar Meu Acesso Privado",
+      "getDiscounts": "Obter Descontos Exclusivos",
+      "getSpecialDiscount": "Obter Desconto Especial"
+    },
+    "savingsModal": {
+      "youPay": "Você paga",
+      "youSave": "Você Economiza",
+      "reset": "Redefinir",
+      "all": "Todos"
+    },
+    "savingsButton": {
+      "calculate": "Calcular",
+      "savings": "Economias"
+    }
+  },
+  "constants": {
+    "copyright": "© {{year}} Uchooseit.us LLC. Todos os direitos reservados.",
+    "savingsDisclaimer": "© {{year}} Uchooseit.us — As economias são estimativas; os valores reais variam conforme a oferta e o uso."
+  }
+}

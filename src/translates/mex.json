@@ -1,0 +1,788 @@
+{
+  "layout": {
+    "heroOverlay": {
+      "title": "Un Millón de Ofertas",
+      "subtitle": "Una Membresía VIP",
+      "tagline": "Tú Eliges Dónde <br class='md:hidden' /> Ahorrar",
+      "trustedBy": "Miles de familias ya confían en nosotros",
+      "navLinks": {
+        "shop": "Compras",
+        "travel": "Viajes",
+        "dining": "Comida",
+        "entertainment": "Entretenimiento"
+      }
+    },
+    "footer": {
+      "description": "Tu llave VIP para ahorros de todos los días.",
+      "navigate": "Navegar",
+      "learnMore": "Conoce Más",
+      "contact": "Contacto",
+      "manageMembership": "Administrar Membresía",
+      "legals": "Legales",
+      "basedIn": "Con sede en Orlando, FL - USA"
+    },
+    "faqs": {
+      "title": "Preguntas Frecuentes",
+      "general": {
+        "label": "Preguntas Generales",
+        "items": {
+          "0": {
+            "question": "¿Qué es uchooseit.us?",
+            "answer": "Es una red privada de descuentos exclusiva para miembros, que te ofrece ahorros de hasta el 50% en más de 1 millón de ubicaciones en todo Estados Unidos, incluyendo restaurantes, tiendas, entretenimiento, viajes y mucho más. Nuestra misión es ayudarte a ti y a tu familia a ahorrar miles de dólares cada año en compras y experiencias de todos los días."
+          },
+          "1": {
+            "question": "¿Cómo accedo a los descuentos?",
+            "answer": "Tienes que comprar tu membresía anual, y después puedes acceder a los descuentos a través de la app <strong class='mx-1'>My Deals®</strong> o desde tu computadora. Puedes ver ofertas cerca de ti usando tu ubicación y canjearlas directo desde tu celular."
+          },
+          "2": {
+            "question": "¿Dónde puedo usar los descuentos?",
+            "answer": "<strong class='mr-2'>En todo Estados Unidos</strong>. Desde marcas grandes hasta negocios locales. Solo activa el GPS y descubre descuentos cerca de ti."
+          },
+          "3": {
+            "question": "¿De verdad ahorro dinero?",
+            "answer": "¡Claro que sí! Como tenemos acuerdos directos con las marcas, obtienes los mejores descuentos posibles. Muchos de nuestros miembros ahorran <strong class='mx-1'>cientos e incluso miles de dólares al año</strong>. Usa solo 1 o 2 descuentos al mes y ya cubriste el costo de tu membresía. <strong class='mx-1'>Podrías ahorrar más de $2,500 al año</strong>, dependiendo de qué tanto lo uses."
+          },
+          "4": {
+            "question": "¿Está disponible en español?",
+            "answer": "¡Sí! La plataforma está disponible en <strong class='mx-1'>10 idiomas diferentes, incluyendo español.</strong>"
+          },
+          "5": {
+            "question": "¿Mi información está segura?",
+            "answer": "¡Por supuesto! Nos tomamos tu privacidad muy en serio. <strong class='mx-1'>No vendemos tu información como algunas apps gratuitas</strong>. Tus datos están seguros y protegidos."
+          },
+          "6": {
+            "question": "¿La membresía se renueva automáticamente?",
+            "answer": "Sí, pero puedes cancelar en cualquier momento. Sin compromisos. Sin letras chiquitas. Simplemente ve a: <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Administrar Mi Cuenta</a>"
+          },
+          "7": {
+            "question": "¿Cuánto cuesta?",
+            "answer": "<strong>$47.99 al año</strong>, menos de $3.99 al mes. Con un solo descuento al mes, ya cubres el costo de tu membresía."
+          },
+          "8": {
+            "question": "¿Puedo cancelar en cualquier momento?",
+            "answer": "Sí. Puedes hacerlo tú mismo en segundos desde tu cuenta. <strong class='mx-1'>Sin cargos ocultos. Sin complicaciones:</strong> <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Cancelar Aquí</a>"
+          },
+          "9": {
+            "question": "¿Hay soporte al cliente disponible?",
+            "answer": "Sí, estamos para ayudarte. Contáctanos por <strong class='mx-1'>chat en la app</strong>, correo electrónico a <strong>support@uchooseit.us</strong>, o nuestra <strong>línea gratuita (888) 556-2393.</strong>"
+          },
+          "10": {
+            "question": "¿Puedo explorar los descuentos sin ser miembro?",
+            "answer": "¡Sí, claro que puedes! Te invitamos a explorar la mayoría de los descuentos disponibles navegando por categorías, ciudades o códigos postales. Da clic en el enlace de abajo para empezar a descubrir cuánto podrías estar ahorrando — no necesitas membresía (todavía). <a href='https://uchooseitus.enjoymydeals.com/' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Explorar MyDeals</a>"
+          },
+          "11": {
+            "question": "¿Qué pasa si un comercio no acepta mi descuento?",
+            "answer": "Algunos usuarios se topan con este problema, pero es muy poco frecuente. De vez en cuando, un negocio cambia de dueño, o el personal no ha sido capacitado para reconocer nuestra oferta de descuento. Estamos comprometidos a asegurar que los comercios respeten su oferta de descuento contratada. Nuestro equipo de atención al cliente está disponible por teléfono, correo electrónico o chat para ayudarte a resolver cualquier problema. Llama al número en tu app o cupón impreso si necesitas ayuda."
+          },
+          "12": {
+            "question": "¿En qué se diferencian estos descuentos de otros cupones que veo en internet o recibo en mi buzón?",
+            "answer": "Como nuestra red es privada, los comercios nos dan descuentos más fuertes de los que encuentras en otros lados. Solo los usuarios con acceso pueden obtener nuestros descuentos. De esta forma, los comercios o proveedores de servicios están más dispuestos a ofrecer un descuento a un sitio exclusivo para miembros como el nuestro."
+          },
+          "13": {
+            "question": "¿Cuál es la mejor forma de buscar ofertas de compras?",
+            "answer": "Puedes usar tu computadora o celular para encontrar ofertas. Escribe lo que estás buscando en la barra de búsqueda en la parte de arriba de la página, así como la ubicación donde quieres buscar. Da clic en el ícono de búsqueda y aparecerán tus resultados. También tienes la opción de refinar más tus resultados. Desde el celular, selecciona el ícono de filtro en la parte superior derecha; o desde la computadora, selecciona los filtros del lado izquierdo de la página. También puedes cambiar de vista de lista a vista de mapa para ver qué tan cerca está el establecimiento de tu ubicación."
+          },
+          "14": {
+            "question": "¿Cómo puedo ver los detalles del cupón u oferta?",
+            "answer": "Selecciona la oferta dando clic en el botón \"View Deals\". El sitio te mostrará una página con los detalles exactos del descuento. También puedes ver la letra chiquita dando clic en el enlace \"offer terms\" para más detalles. Además, te mostraremos cómo funciona, ya sea que necesites imprimir o mostrar el cupón en tu celular."
+          },
+          "15": {
+            "question": "¿Cómo se canjea un cupón?",
+            "answer": "Hay dos tipos de ofertas: 1) las que llevas contigo para mostrar en un lugar físico; o 2) una oferta en línea. Para una oferta en un lugar físico, una vez que des clic en el enlace \"View Deals\", selecciona el botón \"Use Coupon\". Puede haber una opción para imprimir o mostrar el cupón. Puedes mostrar tu cupón en el celular cuando llegues al lugar o llevar tu cupón impreso. Si es una oferta en línea, selecciona \"Shop Now\". Podrás copiar el código del cupón y luego seleccionar el texto \"Continue to Site\" para ir directo al sitio web de ese negocio."
+          },
+          "16": {
+            "question": "¿Cómo funciona la plataforma de descuentos?",
+            "answer": "<ol><li>Regístrate ingresando tu información de contacto en el checkout.</li><li>Si tienes un código promocional de uno de nuestros embajadores, ingrésalo en el campo \"Promotional Code\" y da clic en Apply.</li><li>Después de completar el pago de tu membresía anual, serás redirigido a una página de agradecimiento con tus datos de acceso.</li><li>Luego puedes acceder a la plataforma en <a href='uchooseitus.enjoymydeals.com' target='_blank' rel='noopener noreferrer' class='mx-1'>Enjoy My Deals</a> o descargar la app <strong class='mx-1'>My Deals®</strong> para usar tus descuentos donde quieras.</li><li>Tu <strong class='mx-1'>ID de Miembro Único</strong> también te será enviado por correo electrónico.</li><li>Recibirás un correo recordatorio <strong class='mx-1'>30 días antes de la renovación automática</strong>, dándote tiempo para cancelar si lo deseas.</li><li>Puedes cancelar en cualquier momento desde <a href='https://uchooseitus.recurly.com/account/create_account' target='_blank' rel='noopener noreferrer' class='mx-1 underline underline-offset-2'>Cancelar Aquí</a>.</li><li>Los descuentos se pueden canjear de tres formas:<ul><li><strong>En tienda</strong> (mostrar desde tu celular)</li><li><strong>En línea</strong> (con un código de cupón o enlace)</li><li><strong>Por teléfono</strong> (para servicios específicos)</li></ul></li><li>Ofrecemos una <strong>garantía de devolución de 8 días</strong>. Si no quedas satisfecho, escríbenos a <strong>support@uchooseit.us</strong> y haremos lo posible por ayudarte.</li><li>Aceptamos todas las tarjetas de crédito/débito principales: <strong>Visa, MasterCard, Amex, Discover, Diners Club, JCB, UnionPay</strong>.</li></ol>"
+          }
+        }
+      },
+      "shop": {
+        "label": "Compras",
+        "items": {
+          "0": {
+            "question": "¿Qué tipo de descuentos hay disponibles?",
+            "answer": "Hay descuentos disponibles tanto para cadenas nacionales como para tiendas locales. Ya sea que quieras ahorrar en ropa, electrónica, muebles, artículos de oficina, artículos deportivos o productos para mascotas, tenemos esas ofertas disponibles (según la ubicación)."
+          },
+          "1": {
+            "question": "¿Cuánto puedo ahorrar?",
+            "answer": "Todo depende de lo que compres, pero, en promedio, los usuarios ahorran un promedio de $335 en servicios automotrices y $57 en cosas como compras en tiendas, hogar y jardín y otros servicios en la categoría de Compras. Sin embargo, algunos cupones se basan en un porcentaje de descuento, así que podrías ahorrar todavía más dependiendo de lo que estés comprando."
+          }
+        }
+      },
+      "travel": {
+        "label": "Viajes",
+        "items": {
+          "0": {
+            "question": "¿Cuál es la política de cancelación?",
+            "answer": "Las políticas de cancelación varían según el hotel y las fechas de estadía. Antes de reservar, la política de cancelación aparece una vez que hayas seleccionado tu tipo de habitación en la sección de Detalles Adicionales. Si ya reservaste, la política de cancelación también está incluida en el correo de confirmación de tu reserva."
+          },
+          "1": {
+            "question": "¿Las tarifas del resort, estacionamiento y otros cargos del hotel están incluidos en la tarifa?",
+            "answer": "La tarifa que cobramos por adelantado incluye el cargo por noche más impuestos. Algunos hoteles cobran otros cargos que no están incluidos en tu tarifa por noche como depósito, tarifa del resort, estacionamiento u otros. Este tipo de cargos no están incluidos en la tarifa por noche y serán cobrados por el hotel o la propiedad directamente."
+          },
+          "2": {
+            "question": "¿Mi reservación se confirma con el hotel inmediatamente después de hacerla?",
+            "answer": "Después de completar tu reservación, recibirás un correo electrónico para confirmarla. Si tus planes de viaje cambian, por favor llama a nuestro equipo de Servicio al Miembro y NO al hotel directamente. Aunque reservamos la(s) habitación(es) del hotel para tu reservación, tu información de contacto específica (nombre, etc.) no estará disponible en el sistema del hotel hasta dos semanas antes de tu fecha de llegada. No te preocupes, todavía tenemos tu reserva asegurada en nuestros sistemas. Como cortesía, nuestro equipo de Servicio al Miembro realiza una confirmación previa a la llegada dentro de los 5 días antes de tu fecha de check-in para checar que todo esté en orden con tu reservación. Llamamos directamente a la propiedad para confirmar tu reserva específica. Así que lo único que tienes que hacer es presentarte con tu identificación y tarjeta de crédito para registrarte."
+          },
+          "3": {
+            "question": "¿Cuándo se hace el cargo a mi tarjeta?",
+            "answer": "Para asegurar tu descuento, hacemos el cargo a tu tarjeta de crédito en el momento en que realizas tu reservación."
+          },
+          "4": {
+            "question": "¿Cómo sé que mi reservación se procesó correctamente?",
+            "answer": "Hay varias formas de checar si tu reservación se procesó. Primero, al reservar la habitación, deberías ver una página de confirmación indicando que la reservación fue exitosa. Segundo, deberías recibir un correo electrónico de confirmación con los detalles de tu viaje. Por último, siempre puedes volver a entrar al sitio y en la parte superior derecha de la página, dar clic en \"My Trips\" donde puedes ver la información de tu próximo viaje. Puedes llamar a nuestro equipo de Servicio al Miembro para verificar tu reservación en nuestro sistema al (888) 556-2393 (línea gratuita), o al (801) 656-1460 (internacional) en cualquier momento."
+          },
+          "5": {
+            "question": "¿Puedo reservar el mismo día que quiero hacer el check-in?",
+            "answer": "¡Claro que sí! Siéntete libre de hacer planes de viaje de último momento y disfruta tus descuentos en hoteles."
+          },
+          "6": {
+            "question": "¿La tarifa de renta de auto incluye todos los impuestos y cargos?",
+            "answer": "A veces sí, pero no siempre, y varía según la compañía de renta de autos. La tarifa de renta de auto que ves en nuestro sitio incluye la tarifa diaria de renta e impuestos aplicables. Estos se desglosan durante el proceso de pago. No incluye cargos adicionales pagados en el mostrador como cobertura de seguro, funciones o servicios extra, o depósitos. Estos serán cobrados por la compañía de renta de autos al momento de recoger el vehículo. Por favor también revisa las Políticas de Renta adjuntas y nuestra sección de Información Importante durante el proceso de pago para más detalles de tu renta específica."
+          },
+          "7": {
+            "question": "¿Se aceptan tarjetas de débito o efectivo en el mostrador de renta de autos?",
+            "answer": "Efectivo, tarjetas de débito, tarjetas virtuales o tarjetas de prepago no serán aceptadas en el mostrador de renta de autos. Necesitarás una tarjeta de crédito que esté a nombre del conductor para recoger el auto. La tarjeta de crédito debe tener fondos disponibles suficientes para cubrir cualquier depósito o cargo adicional requerido para la renta."
+          },
+          "8": {
+            "question": "¿Qué identificación se necesita para rentar un auto?",
+            "answer": "Necesitarás una licencia de conducir vigente a nombre del conductor — la tarjeta física. No se aceptará una versión digital o electrónica de tu licencia de conducir. El nombre en la licencia de conducir deberá coincidir con el nombre en la reservación para poder recoger el auto. Si el nombre en la licencia no coincide con el nombre en la reservación, no podrás recoger el auto y podrías no ser elegible para un reembolso. También necesitarás proporcionar una tarjeta de crédito válida. El nombre del titular en la tarjeta de crédito proporcionada también deberá coincidir con el nombre en la reservación y la licencia de conducir. Si estás rentando un auto fuera del país donde se emitió tu licencia, y tu licencia está en caracteres no latinos (por ejemplo, árabe, chino, cirílico, etc.), podrías necesitar proporcionar un Permiso de Conducir Internacional."
+          },
+          "9": {
+            "question": "¿Puedo obtener un reembolso si devuelvo el auto antes de lo reservado?",
+            "answer": "No. Los precios de renta de autos se basan en las horas y fechas de recogida y devolución cuando se hizo la reservación. Si devuelves el auto antes, no recibirás un reembolso por el tiempo no utilizado."
+          },
+          "10": {
+            "question": "¿Qué pasa si devuelvo el auto tarde?",
+            "answer": "Dependiendo de la compañía de renta de autos, puede haber un período de gracia de hasta 29 minutos después de la hora de devolución acordada donde no te cobrarán cargos adicionales. Sin embargo, después de ese período de gracia inicial, te podrían cobrar horas adicionales o un día adicional dependiendo de qué tan tarde sea. Te aconsejamos revisar el contrato de renta que recibes cuando recojas el auto para detalles adicionales sobre cualquier cargo si el auto se devuelve tarde."
+          },
+          "11": {
+            "question": "¿Puedo recoger el auto y devolverlo en un lugar diferente al de recogida?",
+            "answer": "Sí. En la página principal de búsqueda, da clic en la casilla \"Drop off at a different location\". Luego ingresa la ubicación de devolución en el formulario de búsqueda. Toma en cuenta que nuestro sitio solo permite recogida y devolución en ubicaciones de aeropuerto únicamente. Puede haber un cargo adicional por devolver un auto en un lugar diferente al de recogida. Cualquier cargo adicional por devolución se indicará en el proceso de pago."
+          },
+          "12": {
+            "question": "¿Necesito comprar seguro de renta de auto?",
+            "answer": "El seguro de renta de auto no es obligatorio. Te recomendamos que si actualmente tienes tu propio seguro de auto, cheques con tu proveedor si este se extiende a un auto rentado. Si no, la mayoría de las compañías de renta de autos tienen varias opciones de seguro para elegir. El costo del seguro opcional de renta de auto varía según el plan y la ubicación. Nuestro sitio web no ofrece la opción de agregar seguro de renta de auto."
+          }
+        }
+      },
+      "dining": {
+        "label": "Comida",
+        "items": {
+          "0": {
+            "question": "¿Qué tipo de descuentos hay disponibles?",
+            "answer": "Hay descuentos disponibles tanto para cadenas nacionales como para restaurantes locales. Ya sea que quieras ahorrar en pizza o probar un restaurante de alta cocina local, generalmente tenemos ese tipo de ofertas disponibles (según la ubicación)."
+          },
+          "1": {
+            "question": "¿Cuánto puedo ahorrar?",
+            "answer": "Todo depende de lo que compres, pero, en promedio, puedes ahorrar más de $5.50 en la categoría de Comida. Sin embargo, algunos cupones se basan en un porcentaje de descuento, así que podrías ahorrar más dependiendo del restaurante u otro establecimiento que elijas."
+          }
+        }
+      },
+      "entertainment": {
+        "label": "Entretenimiento",
+        "items": {
+          "0": {
+            "question": "¿Qué tipo de descuentos hay disponibles?",
+            "answer": "Hay descuentos disponibles tanto para lugares de entretenimiento reconocidos a nivel nacional como para atracciones y actividades locales. Ya sea que quieras ahorrar en boletos de cine, golf, boletos para parques de diversiones o clases, conciertos o aventuras al aire libre, tenemos esas ofertas disponibles (según la ubicación)."
+          },
+          "1": {
+            "question": "¿Cuánto puedo ahorrar?",
+            "answer": "Todo depende de lo que compres, pero, en promedio, puedes ahorrar más de $5.50 en boletos de cine, $25 en recreación/entretenimiento y $28 en golf y deportes de nieve en la categoría de Entretenimiento. Sin embargo, algunos cupones se basan en un porcentaje de descuento, así que podrías ahorrar todavía más dependiendo de la actividad que elijas."
+          },
+          "2": {
+            "question": "¿Cuánto puedo ahorrar en boletos para parques temáticos?",
+            "answer": "Puedes ahorrar hasta un 50% en boletos del parque. Sin embargo, realmente depende del parque que elijas y cuántos días planeas visitar el parque. Cuando hagas una búsqueda, verás un precio tachado para que puedas ver cuánto habría costado si hubieras comprado los boletos en otro lado."
+          },
+          "3": {
+            "question": "¿Los precios y la disponibilidad de los boletos varían según la fecha de visita?",
+            "answer": "Sí, pueden variar. Por favor asegúrate de seleccionar la fecha correcta en la que planeas visitar el parque y luego la cantidad de días que quieres admisión al(los) parque(s). Te recomendamos leer completamente la descripción debajo del tipo de boleto para entender los detalles exactos del tipo de boleto que quieres comprar."
+          },
+          "4": {
+            "question": "¿Los boletos para parques temáticos se vencen? ¿Hasta cuándo tengo que usarlos?",
+            "answer": "Cuando quieras comprar boletos, necesitarás seleccionar la fecha en que empezarás tu visita al parque. Si vas a visitar varios días, puede haber algunas restricciones sobre si tienes que usar los boletos en días consecutivos o no. Además, puede haber una restricción de fecha para cuando necesites usar los boletos. Una vez que selecciones tu tipo de boleto en el sitio, por favor lee la descripción detallada del boleto que indicará cualquier restricción o vencimiento."
+          },
+          "5": {
+            "question": "¿Puedo comprar los boletos y dárselos a alguien más como regalo?",
+            "answer": "Sí, puedes comprar boletos en este sitio y que otra persona los use. Durante el proceso de pago, en \"Guest Information\", por favor llena los nombres y apellidos de todos los invitados que entrarán al parque. Luego puedes usar tu tarjeta de crédito para comprar los boletos a su nombre."
+          }
+        }
+      }
+    },
+    "pricing": {
+      "defaultTitle": "Comparte el Ahorro",
+      "defaultSubtitle": "¡Disfruten Más Juntos!",
+      "equivalentTo": "Equivalente a",
+      "perMonth": "al mes",
+      "billedAnnually": "Facturado anualmente a",
+      "offWithCode": "{{discount}}% DE DESCUENTO con el código {{code}}",
+      "benefits": {
+        "0": "Empieza a ahorrar de inmediato",
+        "1": "Accede a más de 1M de ofertas exclusivas",
+        "2": "Ahorra donde quieras (Web y App)",
+        "3": "Sin riesgo: garantía de reembolso de 7 días",
+        "4": "Sin compromisos - cancela cuando quieras"
+      },
+      "securePayments": "Pagos Seguros",
+      "noAdsNoSpam": "| Sin Anuncios | Sin Spam |",
+      "satisfactionGuarantee": "Garantía de satisfacción"
+    },
+    "calculator": {
+      "title": "Transforma Tus Gastos Diarios en Grandes Ahorros Anuales",
+      "subtitle": "Cubre el costo en solo unos cuantos usos — todo lo demás es ahorro puro.",
+      "youPay": "Tú pagas",
+      "youSave": "Tú Ahorras",
+      "calculateSavings": "Calcular Ahorros"
+    },
+    "gateway": {
+      "title": "Empieza a ahorrar en minutos",
+      "subtitle": "Descubre lo fácil que es activar tu membresía y empezar a ahorrar todos los días con nuestra App Móvil y Web.",
+      "discoverHere": "Descúbrelo Aquí",
+      "seeAllCategories": "Ver Todas las Categorías",
+      "downloads": "✨Más de 500,000 descargas y contando",
+      "appExclusive": "App disponible exclusivamente para miembros de Uchooseit.us"
+    },
+    "benefits": {
+      "title": "Beneficios Exclusivos",
+      "items": {
+        "0": {
+          "title": "Ahorra más de $2,000 al año - 50% de descuento",
+          "description": "Viajes • Comida • Compras • Entretenimiento",
+          "note": "*Ahorro promedio de los miembros en 2024"
+        },
+        "1": {
+          "title": "Descuentos permanentes:",
+          "description": "Úsalos cuantas veces quieras."
+        },
+        "2": {
+          "title": "Rápido y fácil:",
+          "description": "Canjes sin pasos complicados."
+        },
+        "3": {
+          "title": "Ahorro con GPS:",
+          "description": "Encuentra ofertas cerca de ti."
+        },
+        "4": {
+          "title": "Más de 1 millón:",
+          "description": "Ofertas en todo el país a tu alcance."
+        },
+        "5": {
+          "title": "Privacidad protegida:",
+          "description": "Nunca vendemos tus datos."
+        }
+      }
+    },
+    "testimonials": {
+      "calculateSavings": "Calcular Ahorros"
+    }
+  },
+  "home": {
+    "hero": {
+      "upTo": "Hasta",
+      "discount": "50% DE DESCUENTO",
+      "headline": "en millones de momentos",
+      "tagline": "Tu llave VIP para ahorros de todos los días empieza aquí.",
+      "trustedBy": "Miles de familias ya confían en nosotros"
+    },
+    "categories": {
+      "title": "Descubre ahorros increíbles",
+      "subtitle": "Explora en todas tus categorías y marcas favoritas",
+      "items": {
+        "shop": {
+          "name": "Compras",
+          "description": "Tecnología, Autos, Hogar, Salud, Fitness y más."
+        },
+        "travel": {
+          "name": "Viajes",
+          "description": "Hoteles, Renta de autos, Resorts, Cruceros, Tours y más."
+        },
+        "dining": {
+          "name": "Comida",
+          "description": "Comida casual y alta cocina, Comida rápida, Catering y más."
+        },
+        "entertainment": {
+          "name": "Entretenimiento",
+          "description": "Parques temáticos, Aventura, Cine, Golf y más."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Una membresía",
+      "subtitle": "Beneficios reales para toda la familia",
+      "items": {
+        "0": {
+          "title": "Ahorra más de $2,000 al año - 50% de descuento",
+          "description": "Viajes • Comida • Compras • Entretenimiento",
+          "note": "*Ahorro promedio de los miembros en 2024"
+        },
+        "1": {
+          "title": "Más de 1 millón:",
+          "description": "Ofertas en todo el país a tu alcance."
+        },
+        "2": {
+          "title": "Descuentos permanentes:",
+          "description": "Úsalos cuantas veces quieras."
+        },
+        "3": {
+          "title": "Ahorro con GPS:",
+          "description": "Encuentra ofertas cerca de ti."
+        },
+        "4": {
+          "title": "Rápido y fácil:",
+          "description": "Canjes sin pasos complicados."
+        },
+        "5": {
+          "title": "Privacidad protegida:",
+          "description": "Nunca vendemos tus datos."
+        }
+      }
+    },
+    "learnHow": {
+      "title": "Aprende cómo ahorrar",
+      "subtitle": "Los descuentos siempre están a un toque de distancia.",
+      "button": "Explorar Plataforma"
+    }
+  },
+  "shop": {
+    "hero": {
+      "title1": "Compras Más Inteligentes,",
+      "title2": "¡Mejores Hallazgos!",
+      "description": "Desde moda hasta tecnología, ofertas exclusivas para miembros en lo que más te gusta."
+    },
+    "pricing": {
+      "title": "Más barato que tu suscripción mensual de streaming.",
+      "subtitle": "Y te ayuda a ahorrar todavía más."
+    },
+    "testimonials": {
+      "title": "Compra inteligente",
+      "subtitle": "¡Ahorra hasta 50%!",
+      "description": "Compra más inteligente y ahorra con descuentos exclusivos para miembros.",
+      "items": {
+        "0": { "text": "\"Uso regularmente el descuento de Jiffy Lube. Hace que el mantenimiento básico del carro sea un poco más barato.\" — David M." },
+        "1": { "text": "\"Me ahorré como $800 en una laptop nueva con el descuento de Lenovo.\" — Debbie R." },
+        "2": { "text": "\"Usé el código promocional para chewy.com después de adoptar a mi primer perro. Fue una manera padre de conseguirle lo que necesitaba.\" — Monica N." },
+        "3": { "text": "\"A la hora de comprar zapatos, los descuentos han estado increíbles, sobre todo con 4 hijos. Necesito todos los descuentos que pueda conseguir.\" — David S." },
+        "4": { "text": "\"Pude conseguir la tele Samsung que estaba buscando por $300 menos que el precio más bajo que encontré en tiendas.\" - Jared S." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Dale un upgrade a tu estilo y tus ahorros" },
+      "1": { "description": "Hallazgos de moda más inteligentes" },
+      "2": { "description": "Más estilo, más ahorro" },
+      "3": { "description": "La comodidad nunca fue tan accesible" },
+      "4": { "description": "Enmarca tu look por menos" },
+      "5": { "description": "Equípate y ahorra en grande" },
+      "6": { "description": "Potencia tu día de forma inteligente" },
+      "7": { "description": "De vuelta a clases, de vuelta al ahorro." },
+      "8": { "description": "Trabaja más inteligente, ahorra más" },
+      "9": { "description": "Lo esencial del día a día, ahorros extraordinarios" }
+    },
+    "brandsTitle": "Todo Lo Que Tus Miembros Quieren"
+  },
+  "travel": {
+    "hero": {
+      "title1": "Viajes Más Inteligentes,",
+      "title2": "¡Aventuras Más Grandes!",
+      "description": "Hoteles, Renta de Autos, Vuelos y Cruceros — ahorros exclusivos para miembros a donde vayas."
+    },
+    "pricing": {
+      "title": "Más barato que una <br /> hora de estacionamiento.",
+      "subtitle": "Y te ayuda a ahorrar todavía más."
+    },
+    "testimonials": {
+      "title": "Viaja en grande,",
+      "subtitle": "Gasta poco.",
+      "description": "Ahorros al instante en Hoteles, Vuelos y Autos para que viajes más y gastes menos.",
+      "items": {
+        "0": { "text": "\"Usamos el programa de descuentos para ir a SeaWorld y nadar con delfines en Navidad. ¡Estuvo padrísimo!\" - Mariann C." },
+        "1": { "text": "\"Mi programa de descuentos me ha ahorrado cientos de dólares viajando en hoteles y excursiones. Es un ahorro de verdad.\" - Amador S." },
+        "2": { "text": "\"Me sorprendí con el dinero que me ahorré en un solo uso de mi descuento al reservar un cuarto de último momento.\" - Monica P." },
+        "3": { "text": "\"Me ahorré más de $100 en renta de auto usando mi programa de descuentos.\" - John C." },
+        "4": { "text": "\"Los boletos de avión con Delta normalmente están caros, ¡y me ahorré un buen a través de este programa de descuentos!\" - Lucrecia M." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Ofertas de hotel exclusivas para miembros — en todo el país." },
+      "1": { "description": "Estancias largas, tarifas bajas para miembros." },
+      "2": { "description": "Cruceros familiares con ahorros exclusivos." },
+      "3": { "description": "Arranca con ahorros de miembro." },
+      "4": { "description": "Rentas vacacionales a precio de miembro." },
+      "5": { "description": "Ahorra en Vuelos a Todo el Mundo." }
+    }
+  },
+  "dining": {
+    "hero": {
+      "title1": "Comida Más Inteligente,",
+      "title2": "¡Sabores Más Grandes!",
+      "description": "Desde noches de pizza en familia hasta fondas locales, ahorros exclusivos que te van a encantar."
+    },
+    "pricing": {
+      "title": "Más barato que un <br /> café en Nueva York.",
+      "subtitle": "Y te ayuda a ahorrar todavía más."
+    },
+    "testimonials": {
+      "title": "Prueba Más,",
+      "subtitle": "Paga Menos.",
+      "description": "Grandes sabores, cuentas chiquitas — esa es la onda Uchooseit.us.",
+      "items": {
+        "0": { "text": "\"¡Usé una oferta de Papa John's! ¡Estuvo muy padre la experiencia!\" - Brittany S" },
+        "1": { "text": "\"Usé un descuento en Panda Express. Funcionó bien, fue fácil de usar y ahora busco ofertas cada vez que salgo a comer.\" - Darek H." },
+        "2": { "text": "\"Probé un restaurante nuevo gracias a la oferta — ¡una forma padre de probar algo diferente!\" - Josh T." },
+        "3": { "text": "\"¡Este programa de descuentos es mi favorito para ofertas en cenas!\" - Kelly K." },
+        "4": { "text": "\"¡Me emocioné un buen al ver un cupón de Texas De Brazil de $10 de descuento en un platillo. Mi prometido y yo lo usamos para nuestra cena de aniversario!\" - Nicole P." }
+      }
+    },
+    "articles": {
+      "0": { "description": "Productos frescos, mejor precio para miembros." },
+      "1": { "description": "Ofertas que se te van a antojar." },
+      "2": { "description": "Noche de pizza, ahorros exclusivos para miembros." },
+      "3": { "description": "Sabores auténticos con beneficios exclusivos de miembro." },
+      "4": { "description": "Antojitos y delicias con beneficios de miembro." },
+      "5": { "description": "Mejores ingredientes, mejor precio para miembros." }
+    }
+  },
+  "entertainment": {
+    "hero": {
+      "title1": "Entretenimiento Más Inteligente,",
+      "title2": "¡Sonrisas Más Grandes!",
+      "description": "Desde parques temáticos hasta noches de cine — ahorros exclusivos en la diversión que más te gusta."
+    },
+    "pricing": {
+      "title": "Más Barato Que Una <br /> Bebida en un Concierto.",
+      "subtitle": "Y te ayuda a ahorrar todavía más."
+    },
+    "testimonials": {
+      "title": "Entretenimiento",
+      "subtitle": "Sin Límites",
+      "description": "Ahorra en conciertos, parques y eventos y haz de cada salida algo inolvidable.",
+      "items": {
+        "0": { "text": "\"En el Museo de la Ballena de New Bedford, mi membresía de descuento me dio entrada gratis.\" - Karen D." },
+        "1": { "text": "\"Uso este programa para la membresía del zoológico local. A mi familia le encanta.\" - Andrea E." },
+        "2": { "text": "\"Mi hijo y yo disfrutamos una salida a Topgolf. Estuvo padre usar el cupón para ahorrarme $10 extras y así consentirlo con todo lo que quería.\" - Don A." },
+        "3": { "text": "\"Me encanta cuánto ahorro yendo a Cinemark con los descuentos.\" - Krisnet H." },
+        "4": { "text": "\"Me ahorré un buen en un pase de 4 días para Walt Disney World.\" - David R." }
+      }
+    },
+    "articles": {
+      "0": { "description": "¡Convierte Cada Visita en un Recuerdo para Toda la Vida!" },
+      "1": { "description": "¡El Lugar Más Feliz, Ahora con Precios Más Felices!" },
+      "2": { "description": "¡Aventuras Salvajes, Costos Controlados!" },
+      "3": { "description": "¡Explora la Naturaleza, Ahorra con Estilo!" },
+      "4": { "description": "¡Alcanza las Estrellas, Gasta Menos en el Camino!" },
+      "5": { "description": "¡Siente la Adrenalina, No el Precio!" },
+      "6": { "description": "¡Construye Recuerdos, No Gastos!" },
+      "7": { "description": "Pantallas Grandes, Precios Chiquitos." },
+      "8": { "description": "¡Boletos para Shows: Se Abre el Telón, Bajan los Precios!" },
+      "9": { "description": "¡Eventos Deportivos Donde Cada Asiento se Siente de Primera Fila!" }
+    }
+  },
+  "business": {
+    "hero": {
+      "title1": "Convierte Tu Comunidad",
+      "title2": "En una Red de Poder de Compra",
+      "description": "Dale a tu audiencia acceso privado a la red de descuentos más grande de EE. UU.",
+      "trustedBy": "Organizaciones en todo EE. UU. ya confían en nosotros",
+      "plugAndPlay": "Plug & Play · Sin integración tecnológica"
+    },
+    "audienceCards": {
+      "items": {
+        "0": { "value": "Hasta 50%", "label": "Ahorros" },
+        "1": { "value": "1M+", "label": "Ofertas en Todo el País" },
+        "2": { "value": "94%", "label": "Condados de EE. UU. Cubiertos" },
+        "3": { "value": "98%", "label": "Retención de Clientes" },
+        "4": { "value": "382", "label": "Principales Mercados de Norteamérica" },
+        "5": { "value": "99.6%", "label": "Consumidores de EE. UU. Atendidos" },
+        "6": { "value": "750+", "label": "Marcas Aliadas Nacionales" },
+        "7": { "value": "$2,000+", "label": "Ahorro Anual Potencial" }
+      }
+    },
+    "partnershipModels": {
+      "badge": "Modelos de Alianza",
+      "title1": "Dos Modelos.",
+      "title2": "Un Objetivo.",
+      "subtitle": "Soluciones flexibles para adaptarse a los objetivos de tu organización.",
+      "rsm": {
+        "tag": "RSM",
+        "title": "Modelo de Participación en Ingresos",
+        "description": "Implementa acceso privado sin costo inicial y con ingresos basados en rendimiento.",
+        "bullets": {
+          "0": "Sin inversión inicial",
+          "1": "Gana por cada activación",
+          "2": "Reportes transparentes"
+        },
+        "bestFor": "Ideal para organizaciones sin fines de lucro, asociaciones y programas de clientes."
+      },
+      "bulk": {
+        "tag": "Bulk",
+        "title": "Modelo de Licencia Escalable",
+        "description": "Implementa acceso privado a través de un modelo escalable basado en licencias.",
+        "bullets": {
+          "0": "Compra acceso en volumen",
+          "1": "Costo fijo y predecible",
+          "2": "Diseñado para respaldar resultados medibles de retención"
+        },
+        "bestFor": "Ideal para programas de empleados y programas formales de miembros."
+      },
+      "notSure": "¿No sabes cuál modelo te queda?",
+      "bookACall": "Agenda una Llamada",
+      "letsTalkStrategy": "Hablemos de Estrategia",
+      "noObligation": "Consulta de alianza sin compromiso"
+    },
+    "howItWorks": {
+      "title": "Sal al Aire Rápido",
+      "steps": {
+        "0": {
+          "title": "Validación del Modelo",
+          "description": "Confirma el modelo de acceso adecuado (RSM o Bulk) según la estructura de tu audiencia, objetivos y presupuesto."
+        },
+        "1": {
+          "title": "Configuración del Acceso",
+          "description": "Configura el acceso privado a través de un enlace inteligente, sin necesidad de integración tecnológica. *Aplica para RSM."
+        },
+        "2": {
+          "title": "Lanzamiento a la Audiencia",
+          "description": "Implementa el acceso para tus clientes, empleados o miembros."
+        },
+        "3": {
+          "title": "Visibilidad del Rendimiento",
+          "description": "Checa activaciones, engagement e ingresos (RSM) para optimizar el impacto con el tiempo."
+        }
+      }
+    },
+    "lookingToAchieve": {
+      "title": "Diseñado para organizaciones con",
+      "titleHighlight": "clientes, empleados o miembros.",
+      "subtitle": "Encuentra el camino que se ajuste a tu organización.",
+      "slides": {
+        "0": {
+          "title": "Organización y Clientes",
+          "items": {
+            "0": "Busco un beneficio de valor agregado",
+            "1": "Busco mejorar la adquisición de clientes",
+            "2": "Busco soluciones de viajes"
+          }
+        },
+        "1": {
+          "title": "Organización y Empleados",
+          "items": {
+            "0": "Busco ofrecer beneficios sin aumentar los costos de nómina",
+            "1": "Busco un beneficio de valor agregado para mis empleados"
+          }
+        },
+        "2": {
+          "title": "Organizaciones Sin Fines de Lucro",
+          "items": {
+            "0": "Busco un incentivo para recaudación de fondos"
+          }
+        },
+        "3": {
+          "title": "Organización + Miembros",
+          "items": {
+            "0": "Busco un beneficio de valor agregado para mis miembros"
+          }
+        }
+      }
+    },
+    "strategyCall": {
+      "title1": "Activemos",
+      "title2": "Tu Red de Poder de Compra",
+      "description": "Únete a una llamada estratégica de 15 minutos para determinar el modelo de acceso adecuado para tu organización.",
+      "cardTitle": "En esta llamada vamos a:",
+      "bullets": {
+        "0": "Identificar el modelo de acceso adecuado (RSM o Bulk).",
+        "1": "Mapearlo a la estructura de tu audiencia.",
+        "2": "Definir los pasos de lanzamiento.",
+        "3": "Aclarar reportes y visibilidad de ingresos."
+      },
+      "liveProgram": {
+        "0": "Sin necesidad de integración tecnológica.",
+        "1": "Sin negociación con comercios.",
+        "2": "Sin carga operativa."
+      },
+      "scheduleCall": "Agenda una Llamada Estratégica",
+      "reserveSession": "Reserva Tu Sesión Gratuita",
+      "noCommitment": "Sin compromiso requerido",
+      "freeConsultation": "Consulta gratuita"
+    },
+    "opportunities": {
+      "title1": "Más de 1 Millón de Oportunidades",
+      "title2": "Siempre cerca de tu",
+      "title3": "Audiencia",
+      "search": "Buscar...",
+      "appTitle": "Uchooseit App - Mapa de Ofertas",
+      "downloads": "Más de 500k descargas"
+    },
+    "brandsShowcase": {
+      "categoryLabel": "TODO LO QUE TUS MIEMBROS QUIEREN",
+      "categories": {
+        "shop": "Compras",
+        "travel": "Viajes",
+        "dining": "Comida",
+        "entertainment": "Entretenimiento"
+      },
+      "savingsTitle": "Grandes Ahorros Anuales",
+      "savingsSubtitle": "PARA TU AUDIENCIA",
+      "calculateSavings": "Calcular Ahorros"
+    }
+  },
+  "affiliates": {
+    "revenueCalculator": {
+      "title": "Calculadora de Ingresos {{buyer}}",
+      "editFields": "Edita los campos en <span class='text-green-500 font-bold'>verde</span> para modelar los ingresos de tu agencia con uchooseit.us.",
+      "publicPriceLabel": "Precio público por año:",
+      "section1": {
+        "title": "1. Descuento Negociado para la Comunidad",
+        "publicPrice": "Precio Público por año",
+        "discountLabel": "Descuento para la Comunidad. Máx 25%",
+        "appliedNote": "Aplicado al precio de la membresía",
+        "priceWithDiscount": "Precio con descuento por año (Precio Especial para la comunidad)",
+        "pricePerMonth": "Precio con descuento por mes *equivalente"
+      },
+      "section2": {
+        "title": "2. Datos de {{buyer}}",
+        "influencersLabel": "Influencers bajo la Agencia",
+        "influencersHelp": "Cuántos influencers maneja tu agencia",
+        "followersLabel": "Seguidores",
+        "followersHelp": "Ingresa seguidores en unidades; las comas se agregan automáticamente",
+        "engagementLabel": "Engagement (%)",
+        "engagementHelp": "Porcentaje promedio de engagement orgánico",
+        "clientsLabel": "Clientes",
+        "clientsHelp": "Ingresa clientes en unidades; las comas se agregan automáticamente",
+        "collaboratorsLabel": "Colaboradores",
+        "collaboratorsHelp": "Ingresa colaboradores en unidades; las comas se agregan automáticamente",
+        "organicEngagement": "Engagement Orgánico (#)"
+      },
+      "section3": {
+        "title": "3. Términos de Negociación",
+        "revenuePerInfluencer": "Ingreso por Membresía (Influencer)",
+        "revenuePerAgency": "Ingreso por Membresía (Agencia)",
+        "revenuePerBuyer": "Ingreso por Membresía ({{buyer}})"
+      },
+      "scenarios": {
+        "title": "Escenarios de Conversión",
+        "basedOn": "Basado en engagement orgánico estimado: {{engaged}} personas",
+        "conversionRate": "Tasa de Conversión",
+        "membershipsSold": "Membresías Vendidas",
+        "revenueInfluencer": "Ingreso para el Influencer",
+        "revenueAgency": "Ingreso para la Agencia",
+        "totalRevenueAgency": "Ingreso Total de la Agencia por Influencers",
+        "revenueBuyer": "Ingreso para {{buyer}}",
+        "goal": "META (100%)"
+      },
+      "disclaimer": "uchooseit.us - Transparencia en la que puedes confiar. Esta calculadora es una herramienta de planeación y no representa una oferta vinculante."
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "Empieza a ahorrar en minutos",
+      "subtitle": "Aprende cómo unirte, activar y ahorrar con tu membresía de Uchooseit.us.",
+      "step1": "Únete",
+      "step2": "Activa",
+      "step3": "Ahorra"
+    },
+    "howActivate": {
+      "title": "Activa tu",
+      "titleHighlight": "Member iD",
+      "subtitle": "Descubre lo fácil que es activar en Web y la App Móvil."
+    },
+    "howSection": {
+      "title": "Aprende cómo ahorrar",
+      "subtitle": "Los descuentos siempre están a un toque de distancia.",
+      "button": "Descubre Más"
+    },
+    "testimonials": {
+      "title1": "Miembros Felices,",
+      "title2": "¡Ahorros Reales!",
+      "joinText": "Únete a la comunidad de ahorradores inteligentes por solo",
+      "perMonth": "{{price}}/mes",
+      "categories": {
+        "entertainment": "Entretenimiento",
+        "dining": "Comida",
+        "travel": "Viajes",
+        "shop": "Compras"
+      }
+    }
+  },
+  "activate": {
+    "title": "Aquí está la información necesaria para",
+    "titleHighlight": "activar tu membresía.",
+    "tabWeb": "Desde Web",
+    "tabMobile": "Desde Celular",
+    "web": {
+      "infoBox": "Esta información se usará en <strong>My Deals Web.</strong>",
+      "step1": "1. Ubica el botón \"Sign Up\" o \"Regístrate\".",
+      "step2": "2. Llena los campos requeridos.",
+      "step3": "3. Ingresa tu Member ID:",
+      "step4": "4. Crea una contraseña segura."
+    },
+    "mobile": {
+      "infoBox": "Esta información se usará en la <strong>App Móvil My Deals.</strong>",
+      "step1": "1. Ubica el botón \"Sign Up\" o \"Regístrate\".",
+      "step2": "2. Sigue las instrucciones paso a paso y llena los campos requeridos.",
+      "step3": "3. Ten en cuenta estos dos datos clave:",
+      "orgName": "Nombre de la Organización:",
+      "orgValue": "uchooseit.us",
+      "memberId": "Member Id",
+      "step4": "4. Crea una contraseña segura.",
+      "downloadNote": "Asegúrate de descargar la App para completar la activación desde aquí."
+    },
+    "activateButton": "Activar",
+    "copied": "¡Copiado!",
+    "idError": "¡Error de ID!"
+  },
+  "thankYou": {
+    "congratulations": "¡Felicidades!",
+    "partOfCommunity": "¡ya eres parte de nuestra comunidad!",
+    "vipMembership": "membresía vip",
+    "youChoose": "Tú eliges dónde ahorrar",
+    "visualRepresentation": "Representación visual de tu membresía",
+    "activateMembership": "Activar Membresía",
+    "emailSent": "Te enviamos un correo electrónico desde noreply@uchooseit.us",
+    "instructions": "¡Ya recibiste todo lo que necesitas en tu correo electrónico! Ahora solo tienes que activar la membresía para empezar a usarla donde quieras.",
+    "questionsContact": "Si tienes preguntas, escríbenos a support@uchooseit.us"
+  },
+  "components": {
+    "hamburgerMenu": {
+      "navigation": "Navegación",
+      "home": "Inicio",
+      "shop": "Compras",
+      "travel": "Viajes",
+      "dining": "Comida",
+      "entertainment": "Entretenimiento",
+      "learnMore": "Conoce más",
+      "business": "Negocios",
+      "logIn": "Iniciar Sesión"
+    },
+    "allyPopUp": {
+      "loading": "Cargando Tu Descuento Exclusivo",
+      "title": "¡Tu acceso privado está listo!",
+      "joinCommunity": "Únete a la comunidad de Ahorradores Inteligentes de {{name}}, con",
+      "discountOff": "{{discount}}% de Descuento",
+      "membershipPurchase": "en la compra de tu membresía.",
+      "equivalentTo": "Equivalente a",
+      "perMonth": "al mes",
+      "billedAnnually": "Facturado anualmente a",
+      "claimDiscount": "Obtén Mi {{discount}}% DE DESCUENTO",
+      "trustedBy": "Miles de familias ya confían en nosotros"
+    },
+    "buttons": {
+      "unlockAccess": "Desbloquea Mi Acceso Privado",
+      "getDiscounts": "Obtén Descuentos Exclusivos",
+      "getSpecialDiscount": "Obtén Descuento Especial"
+    },
+    "savingsModal": {
+      "youPay": "Tú pagas",
+      "youSave": "Tú Ahorras",
+      "reset": "Reiniciar",
+      "all": "Todos"
+    },
+    "savingsButton": {
+      "calculate": "Calcular",
+      "savings": "Ahorros"
+    }
+  },
+  "constants": {
+    "copyright": "© {{year}} Uchooseit.us LLC. Todos los derechos reservados.",
+    "savingsDisclaimer": "© {{year}} Uchooseit.us — Los ahorros son estimados; los ahorros reales varían según la oferta y el uso."
+  }
+}

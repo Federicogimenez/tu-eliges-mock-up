@@ -46,87 +46,90 @@ import article_10_brand from '/trendy/entertainment/articles/sporting.png';
 
 import Benefits from '../../shared/layout/Benefits';
 import TestimonialSection from '../../shared/layout/TestimonialSection';
+import { useTranslation } from '../../hooks/useTranslation';
 
 
 export default function Entertainment (){
+
+  const { t } = useTranslation();
 
   const categoryTestimonials = [
     {
       icon: icon_museum,
       img: profile_museum,
-      text: '“At the New Bedford Whaling Museum, my discount membership gave me free entry.” - Karen D.',
+      text: t('entertainment.testimonials.items.0.text'),
     },
     {
       icon: icon_zoo,
       img: profile_zoo,
-      text: '“I use this program for local zoo membership. My family loves it.” - Andrea E.',
+      text: t('entertainment.testimonials.items.1.text'),
     },
     {
       icon: icon_golf,
       img: profile_golf,
-      text: '“My son and I enjoyed an outing to Topgolf. It was great to use the coupon to save an extra $10 so I could splurge on everything my son wanted.” - Don A.',
+      text: t('entertainment.testimonials.items.2.text'),
     },
     {
       icon: icon_cine,
       img: profile_cine,
-      text: '“I love how much I save going to Cinemark with the discounts.” - Krisnet H.',
+      text: t('entertainment.testimonials.items.3.text'),
     },
     {
       icon: icon_park,
       img: profile_park,
-      text: '“I saved major money on a Walt Disney World 4-day pass.” - David R.',
+      text: t('entertainment.testimonials.items.4.text'),
     },
   ]
 
   const trendyArticles: HeroTrendyArticleProps[] = [
     {
       discount:'',
-      description:"Turn Every Visit into a Lifetime Memory!",
+      description: t('entertainment.articles.0.description'),
       brandImg: article_1_brand,
     },
     {
       discount:'',
-      description:'The Happiest Place, Now with Happier Prices!',
+      description: t('entertainment.articles.1.description'),
       brandImg: article_2_brand,
     },
     {
       discount:'',
-      description:'Wild Adventures, Tamed Costs!',
+      description: t('entertainment.articles.2.description'),
       brandImg: article_3_brand,
     },
     {
       discount:"",
-      description:"Explore the Wild, Save in Style!",
+      description: t('entertainment.articles.3.description'),
       brandImg: article_4_brand,
     },
     {
       discount:"",
-      description:"Reach for the Stars, Spend Less on the Journey!",
+      description: t('entertainment.articles.4.description'),
       brandImg: article_5_brand,
     },
     {
       discount:"",
-      description:"Feel the Rush, Not the Price Tag!",
+      description: t('entertainment.articles.5.description'),
       brandImg: article_6_brand,
     },
     {
       discount:"",
-      description:"Build Memories, Not Expenses!",
+      description: t('entertainment.articles.6.description'),
       brandImg: article_7_brand,
     },
     {
       discount:"",
-      description:"Big Screens, Small Prices.",
+      description: t('entertainment.articles.7.description'),
       brandImg: article_8_brand,
     },
     {
       discount:"",
-      description:"Show Tickets Curtains Up, Prices Down!",
+      description: t('entertainment.articles.8.description'),
       brandImg: article_9_brand,
     },
     {
       discount:"",
-      description:"Sporting Events Where Every Seat Feels Like Front Row!",
+      description: t('entertainment.articles.9.description'),
       brandImg: article_10_brand,
     },
   ]
@@ -183,44 +186,44 @@ export default function Entertainment (){
       </div> */}
       {/* <Hero2
         categoryName='Entertainment'
-        ctaGradientFrom='from-pink-entertainment' 
-        ctaGradientTo='to-pink-entertainment' 
+        ctaGradientFrom='from-pink-entertainment'
+        ctaGradientTo='to-pink-entertainment'
         border='border-pink-entertainment'
-        shiny_color='shiny-pink-text' 
+        shiny_color='shiny-pink-text'
         hero_slides={width > 600 ? bannerCollageDesktop : bannerCollageMobile}
         /> */}
-      <HeroTrendy 
-        color={'--color-pink-entertainment'} 
-        wrapperClass={'bg-gradient-to-b from-transparent via-pink-entertainment/50 to-pink-entertainment/80'} 
-        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'} 
-        title={'Smarter Entertainment,'} 
-        subtitle={'Bigger Smiles!'} 
-        description={'From theme parks to movie nights—exclusive savings on the fun you love.'} 
-        ctaGradientFrom='from-pink-entertainment' 
+      <HeroTrendy
+        color={'--color-pink-entertainment'}
+        wrapperClass={'bg-gradient-to-b from-transparent via-pink-entertainment/50 to-pink-entertainment/80'}
+        // wrapperClass={'bg-gradient-to-b from-transparent to-20% dark:to-pink-entertainment/20 to-pink-entertainment/45'}
+        title={t('entertainment.hero.title1')}
+        subtitle={t('entertainment.hero.title2')}
+        description={t('entertainment.hero.description')}
+        ctaGradientFrom='from-pink-entertainment'
         ctaGradientTo='to-pink-entertainment'
         articles={trendyArticles} />
       <Benefits />
-      <PricingSection 
-        title='Cheaper Than a <br /> Concert Drink.'
-        subtitle='And it helps you save even more.'
+      <PricingSection
+        title={t('entertainment.pricing.title')}
+        subtitle={t('entertainment.pricing.subtitle')}
         color='--color-pink-entertainment'
         img={pricing_banner}
-        ctaGradientFrom='from-black' 
-        ctaGradientTo='to-pink-entertainment' 
+        ctaGradientFrom='from-black'
+        ctaGradientTo='to-pink-entertainment'
         ctaGradientFrom2='from-pink-entertainment' ctaGradientTo2='to-black' />
-      {/* <BenefitsSection 
-        slides={benefitSlides} 
-        subtitle='More Entertainment, Less Expense' 
+      {/* <BenefitsSection
+        slides={benefitSlides}
+        subtitle='More Entertainment, Less Expense'
         color='--color-pink-entertainment' /> */}
       <TestimonialSection
-        title='Entertainment'
-        subtitle='Without Limits'
-        description='Save on concerts, parks & events and make every outing unforgettable.'
+        title={t('entertainment.testimonials.title')}
+        subtitle={t('entertainment.testimonials.subtitle')}
+        description={t('entertainment.testimonials.description')}
         retailers={50}
-        color={'--color-pink-entertainment'} 
-        dotsColor={'bg-pink-entertainment'} 
-        testimonials={categoryTestimonials} 
-        ctaGradientFrom='from-pink-entertainment' 
+        color={'--color-pink-entertainment'}
+        dotsColor={'bg-pink-entertainment'}
+        testimonials={categoryTestimonials}
+        ctaGradientFrom='from-pink-entertainment'
         ctaGradientTo='to-pink-entertainment' />
       <GatewaySection home_btn />
     </>

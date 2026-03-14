@@ -2,10 +2,12 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useSavingsModal } from "../../../hooks/useSavingsModal"
 import { useState } from "react";
 import { useWindowSize } from "../../../hooks/useWindowSize";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 export default function CalculateSavingButton() {
 
     const { openModal } = useSavingsModal()
+    const { t } = useTranslation()
     const {height} = useWindowSize()
     const { scrollY } = useScroll(); 
     const [savingsBtn, setSavingsBtn] = useState(false)
@@ -32,7 +34,7 @@ export default function CalculateSavingButton() {
             <img src="/icons/dollar.svg" alt="dollar" className="w-8" />
             <motion.span className={`transition-all ${ savingsBtn ? 'opacity-0 group-hover:opacity-100' : 'block'}`}
             >
-              Calculate <br /> Savings
+              {t('components.savingsButton.calculate')} <br /> {t('components.savingsButton.savings')}
             </motion.span>
       </motion.button>
     </div>

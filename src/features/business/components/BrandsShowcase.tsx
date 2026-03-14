@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import { useSavingsModal } from '../../../hooks/useSavingsModal';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 import icon_dining from '/icons/category/dining.png'
 import icon_travel from '/icons/category/travel.png'
@@ -10,11 +11,11 @@ import icon_entertainment from '/icons/category/entertainment.png'
 
 type Category = 'dining' | 'shop' | 'travel' | 'entertainment'
 
-const categories: { key: Category; label: string; color: string; icon: string }[] = [
-  { key: 'shop', label: 'Shop', color: '#884cfc', icon: icon_shop },
-  { key: 'travel', label: 'Travel', color: '#00b3eb', icon: icon_travel },
-  { key: 'dining', label: 'Dining', color: '#f5b800', icon: icon_dining },
-  { key: 'entertainment', label: 'Entertainment', color: '#e82c8d', icon: icon_entertainment },
+const categories: { key: Category; color: string; icon: string }[] = [
+  { key: 'shop', color: '#884cfc', icon: icon_shop },
+  { key: 'travel', color: '#00b3eb', icon: icon_travel },
+  { key: 'dining', color: '#f5b800', icon: icon_dining },
+  { key: 'entertainment', color: '#e82c8d', icon: icon_entertainment },
 ]
 
 const brandsByCategory: Record<Category, string[]> = {
@@ -55,6 +56,7 @@ const brandsByCategory: Record<Category, string[]> = {
 export default function BrandsShowcase() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const { openModal } = useSavingsModal()
+  const { t } = useTranslation();
 
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
@@ -73,7 +75,7 @@ export default function BrandsShowcase() {
     <section className="bg-white dark:bg-black py-12 px-4">
       {/* Category Pills */}
       <p className="mx-auto w-fit text-center text-lg font-bold tracking-widest uppercase">
-        EVERYTHING YOUR MEMBERS WANT
+        {t('business.brandsShowcase.categoryLabel')}
       </p>
 
       <div className='flex flex-wrap gap-20 justify-center items-center'>
@@ -92,9 +94,9 @@ export default function BrandsShowcase() {
                 }}
                 className="cursor-pointer flex justify-center items-center px-3 py-0.5 gap-0.5 rounded-full transition-transform"
               >
-                <img src={cat.icon} alt={cat.label} className="size-6" />
+                <img src={cat.icon} alt={t(`business.brandsShowcase.categories.${cat.key}`)} className="size-6" />
                 <span className="text-xs hidden md:inline-block">
-                  {cat.label}
+                  {t(`business.brandsShowcase.categories.${cat.key}`)}
                 </span>
               </button>
             ))}
@@ -126,9 +128,9 @@ export default function BrandsShowcase() {
         </div>
         <div className="bg-white dark:bg-black pt-16 pb-24 text-center">
           <div className="max-w-md mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-2">Big Yearly Savings</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-2">{t('business.brandsShowcase.savingsTitle')}</h2>
             <p className="text-green-600 dark:text-green-500 text-sm font-bold uppercase tracking-widest mb-8">
-              FOR YOUR AUDIENCE
+              {t('business.brandsShowcase.savingsSubtitle')}
             </p>
 
             <div className="relative py-4 mb-10">
@@ -143,7 +145,7 @@ export default function BrandsShowcase() {
               onClick={() => openModal?.({ hideMembershipCost: true })}
               className={`block w-11/12 mt-7 mx-auto font-semibold mb-6 text-center max-w-md px-4 py-3 cursor-pointer rounded-full bg-green-500  text-white text-lg transition-all duration-300 hover:-translate-y-1`}
             >
-                Calculate Savings
+                {t('business.brandsShowcase.calculateSavings')}
             </button>
           </div>
         </div>

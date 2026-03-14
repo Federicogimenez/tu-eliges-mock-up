@@ -5,8 +5,10 @@ import ReactPlayer from "react-player";
 import iphone_frame from '/frame-iphone.png'
 import { useState } from "react";
 import ButtonSecondary from "../../../shared/components/ButtonSecondary";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 export default function HowSection() {
+  const { t } = useTranslation();
 
   const [videoPlay, setvideoPlay] = useState(false)  
 
@@ -14,10 +16,10 @@ export default function HowSection() {
       <section className='pb-[8dvh] flex flex-col justify-center items-center  h-full min-h-[90dvh] w-full bg-gradient-to-b to-blue-gradient-start from-blue-gradient-end'>
         
           <h2 className=' heading-1 text-center'>
-            Learn how to save
+            {t('product.howSection.title')}
           </h2>
           <p className="subtitle text-center my-[1vh] xl:mb-5">
-            Discounts are always 1-tap away.
+            {t('product.howSection.subtitle')}
           </p>
 
           <div className="lg:hidden relative h-fit  flex justify-center items-center">
@@ -101,7 +103,7 @@ export default function HowSection() {
           </div>
       
       <div className="mt-10 w-11/12 mx-auto flex justify-center">
-        <ButtonSecondary text={"Discover More"} anchor redirect="https://uchooseitus.enjoymydeals.com/" classnames="bg-white border-white !text-black" />
+        <ButtonSecondary text={t('product.howSection.button')} anchor redirect="https://uchooseitus.enjoymydeals.com/" classnames="bg-white border-white !text-black" />
       </div>
 
       
