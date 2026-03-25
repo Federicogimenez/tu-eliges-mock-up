@@ -12,7 +12,6 @@ const topBrands = [
   '/brands/1/7.png',
   '/brands/1/8.png',
   '/brands/1/9.png',
-  '/brands/1/10.png',
 
   '/brands/2/1.png',
   '/brands/2/2.png',
