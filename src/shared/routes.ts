@@ -15,9 +15,13 @@ export const NO_FAQS_PAGES = [
   '/activate',
   '/thank-you',
   '/business',
+  '/save',
+  '/ahorra',
 ]
 
 export const DARK_BG_PAGES: string[] = []
+
+export const LANDING_EMAIL_PAGES = ['/save', '/ahorra']
 
 export const CATEGORY_PAGES = ['shop', 'travel', 'dining', 'entertainment'] as const
 

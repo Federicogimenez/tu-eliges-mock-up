@@ -781,6 +781,150 @@
       "savings": "Economias"
     }
   },
+  "landingEmail": {
+    "usa": {
+      "hero": {
+        "cold": {
+          "headline": "Everything is getting more expensive.",
+          "subheadline": "But many people don't realize there are private discounts on travel, dining and everyday spending.",
+          "supporting": "Some communities already know where to find them."
+        },
+        "warm": {
+          "headline": "What if you didn't have to pay full price anymore?",
+          "subheadline": "Many brands offer private pricing on travel, restaurants and shopping.",
+          "supporting": "Some communities already know how to access it."
+        },
+        "hot": {
+          "headline": "Unlock private discounts across the United States.",
+          "subheadline": "Travel, dining, shopping and everyday experiences.",
+          "supporting": "A smarter way to spend on the things you already do."
+        },
+        "scrollCta": "See more"
+      },
+      "insight": {
+        "title": "What Most People Don't Know",
+        "description": "Many hotels, restaurants and brands offer private prices that are not visible to the public.",
+        "channelsIntro": "These prices are usually available through:",
+        "channels": {
+          "0": "Employee benefit programs",
+          "1": "Credit card partnerships",
+          "2": "Member communities"
+        },
+        "closing": "Uchooseit.us gives members access to that same ecosystem."
+      },
+      "form": {
+        "title": "Unlock your private access",
+        "description": "For a limited time we're offering 25% off the membership for 30 days. Enter your email and we'll send you access.",
+        "includes": {
+          "0": "25% membership discount",
+          "1": "Access to private deals across the U.S.",
+          "2": "Tips to help you save on everyday spending"
+        },
+        "fieldPlaceholder": "Your email address",
+        "button": "Get my 25% discount",
+        "microcopy": "We'll send your access to your email.",
+        "successMessage": "Your email has been registered successfully. We'll be in touch shortly. Check your spam folder."
+      },
+      "savings": {
+        "title": "Save With Your Private Access",
+        "subtitle": "Top recommended categories — up to 50% OFF",
+        "topics": {
+          "0": { "label": "Shop" },
+          "1": { "label": "Travel" },
+          "2": { "label": "Dining" },
+          "3": { "label": "Entertainment" }
+        },
+        "footer": "Small savings can add up to hundreds or even thousands of dollars.",
+        "disclaimer": "Discounts shown are seasonal specials and may vary."
+      },
+      "howItWorks": {
+        "title": "How It Works",
+        "steps": {
+          "0": { "title": "Activate your access", "description": "Sign up and unlock your membership" },
+          "1": { "title": "Browse deals", "description": "Search shops, travel, restaurants and activities" },
+          "2": { "title": "Use the discounts", "description": "Save on the things you already do" }
+        },
+        "closing": "That's it."
+      },
+      "closing": {
+        "line1": "Your money should go further.",
+        "line2": "Not full price on everything.",
+        "line3": "Enter your email and get 25% off for 30 days.",
+        "disclaimer": "Discount available for a limited time for new members."
+      }
+    },
+    "latam": {
+      "hero": {
+        "cold": {
+          "headline": "Viajar para os Estados Unidos para a Copa do Mundo 2026 vai ser caro.",
+          "subheadline": "Milhões de pessoas vão viajar ao país e os preços de hotéis, restaurantes e atividades vão subir.",
+          "supporting": "Mas muitos viajantes não sabem que existem preços privados nos Estados Unidos."
+        },
+        "warm": {
+          "headline": "Imagine viajar para a Copa do Mundo 2026 sem pagar preço cheio.",
+          "subheadline": "Muitos hotéis, restaurantes e atividades nos Estados Unidos têm preços privados que não aparecem na internet.",
+          "supporting": "Alguns viajantes já sabem como acessá-los."
+        },
+        "hot": {
+          "headline": "Acesse descontos privados para sua viagem à Copa do Mundo 2026.",
+          "subheadline": "Hotéis, restaurantes, atividades e experiências em todos os Estados Unidos.",
+          "supporting": "Uma forma inteligente de planejar sua viagem."
+        },
+        "scrollCta": "Ver mais"
+      },
+      "insight": {
+        "title": "O que muitos viajantes não sabem",
+        "description": "Muitos hotéis, restaurantes e atrações nos Estados Unidos têm preços privados que não aparecem na internet.",
+        "channelsIntro": "Esses preços normalmente estão disponíveis para pessoas que fazem parte de programas como:",
+        "channels": {
+          "0": "Benefícios para funcionários",
+          "1": "Clientes de bancos ou cartões de crédito",
+          "2": "Membros de associações ou comunidades"
+        },
+        "closing": "Uchooseit.us permite que viajantes internacionais acessem esse mesmo ecossistema."
+      },
+      "form": {
+        "title": "Desbloqueie seu acesso para planejar sua viagem à Copa",
+        "description": "Por tempo limitado estamos oferecendo 25% de desconto na assinatura por 30 dias para viajantes que querem planejar sua viagem à Copa do Mundo 2026. Deixe seu e-mail e enviaremos o acesso.",
+        "includes": {
+          "0": "25% de desconto na sua assinatura",
+          "1": "Dicas para economizar durante sua viagem",
+          "2": "Ofertas da semana"
+        },
+        "fieldPlaceholder": "Seu e-mail",
+        "button": "Quero meu desconto de 25%",
+        "microcopy": "Enviaremos seu acesso por e-mail. Verifique sua caixa de entrada ou spam.",
+        "successMessage": "Seu e-mail foi registrado com sucesso. Em breve entraremos em contato. Verifique o spam."
+      },
+      "savings": {
+        "title": "Economize com seu acesso privado",
+        "subtitle": "Os tópicos mais recomendados — até 50% OFF",
+        "topics": {
+          "0": { "label": "Aluguel de carro" },
+          "1": { "label": "Hotel em Las Vegas" },
+          "2": { "label": "Hotel em Nova York" },
+          "3": { "label": "Restaurantes em Miami" }
+        },
+        "footer": "Durante uma viagem, pequenas economias podem somar centenas ou até milhares de dólares.",
+        "disclaimer": "Os descontos mostrados são de temporadas especiais e podem variar."
+      },
+      "howItWorks": {
+        "title": "Como funciona",
+        "steps": {
+          "0": { "title": "Ative seu acesso", "description": "Cadastre-se e desbloqueie sua assinatura" },
+          "1": { "title": "Busque ofertas", "description": "Hotéis, restaurantes e atividades" },
+          "2": { "title": "Use os descontos", "description": "Economize durante sua viagem" }
+        },
+        "closing": "É só isso."
+      },
+      "closing": {
+        "line1": "Sua viagem à Copa deveria criar memórias.",
+        "line2": "Não estresse com os preços.",
+        "line3": "Deixe seu e-mail e receba 25% de desconto por 30 dias.",
+        "disclaimer": "Desconto disponível por tempo limitado para novos membros."
+      }
+    }
+  },
   "constants": {
     "copyright": "© {{year}} Uchooseit.us LLC. Todos os direitos reservados.",
     "savingsDisclaimer": "© {{year}} Uchooseit.us — As economias são estimativas; os valores reais variam conforme a oferta e o uso."

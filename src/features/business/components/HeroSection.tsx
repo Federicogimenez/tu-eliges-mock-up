@@ -1,5 +1,5 @@
 import BookCallButton from "./BookCallButton";
-import WaveSeparator from "./WaveSeparator";
+import WaveSeparator from "../../../shared/components/WaveSeparator";
 import { useTranslation } from '../../../hooks/useTranslation';
 
 interface HeroSectionProps {

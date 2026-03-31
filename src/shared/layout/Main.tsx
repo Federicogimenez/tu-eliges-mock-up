@@ -22,7 +22,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
   const { theme } = useTheme();
   const { allyData } = useAllyContext();
   const { pathname } = useLocation();
-  const { isHeroPage, isBusinessPage, showFaqs, isHome, currentLogo } = useRouteConfig(pathname, theme);
+  const { isHeroPage, isBusinessPage, isLandingEmail, showFaqs, isHome, currentLogo } = useRouteConfig(pathname, theme);
 
   const showHeroContent = isHeroPage && !isBusinessPage;
   const { showPopUp, closePopUp } = useAllyPopUpTrigger(allyData.hasCoupon && showHeroContent);
@@ -38,7 +38,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
       <div className="relative transition-colors duration-300">
 
         <header className="animate-header-initial absolute top-0 left-0 z-[100] w-full flex items-center justify-center min-h-[70px] h-[15dvh] max-h-[120px] md:max-h-[120px]">
-          <HamburgerMenu />
+          {!isLandingEmail && <HamburgerMenu />}
           <Link to="/" preventScrollReset={false} className="relative h-2/3 max-md:max-w-[40%] lg:max-h-[70px]">
             <img
               src={currentLogo}
@@ -61,7 +61,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
         </main>
 
         {showFaqs && <Faqs />}
-        <Footer />
+        {!isLandingEmail && <Footer />}
         <AllyPopUp visible={showPopUp} onClose={closePopUp} />
       </div>
     </SavingsModalProvider>
