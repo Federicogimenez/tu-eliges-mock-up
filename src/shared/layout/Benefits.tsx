@@ -40,18 +40,16 @@ export default function Benefits () {
 
 
           {/* Benefits List */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr  place-content-center place-items-center gap-x-8 gap-y-12 py-[5dvh]'>
+          <div className='grid grid-cols-2 lg:grid-cols-3 auto-rows-fr  place-content-center place-items-center gap-x-8 gap-y-12 py-[5dvh]'>
             {benefits.map((benefit, index) => (
-              <div key={index} className="w-fit flex flex-col justify-center items-center gap-3">
-                <img src={benefit.icon} alt="icon" className='size-20 object-contain object-center' />
-                <div className='text-center'>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {benefit.description}
-                  </p>
-                </div>
+              <div key={index} className="w-fit flex flex-col justify-start h-full items-center gap-3">
+                <img src={benefit.icon} alt="icon" className='size-12 md:size-20 object-contain object-center' />
+                <h3 className="text-base lg:text-xl text-center font-semibold text-gray-900 dark:text-white ">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm text-center text-gray-600 dark:text-gray-400">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>

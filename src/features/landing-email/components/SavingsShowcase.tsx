@@ -1,10 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from '../../../hooks/useTranslation'
+import { useCountry } from '../../../hooks/useCountry'
 import WaveSeparator from '../../../shared/components/WaveSeparator'
-
-interface SavingsShowcaseProps {
-  variant: 'usa' | 'latam'
-}
 
 type TopicKey = 0 | 1 | 2 | 3
 
@@ -54,19 +51,20 @@ const brandsByTopic: Record<TopicKey, string[]> = {
 // TODO: Add LATAM-specific brand categorization when available
 const brandsByTopicLatam = brandsByTopic
 
-export default function SavingsShowcase({ variant }: SavingsShowcaseProps) {
+export default function SavingsShowcase() {
   const { t } = useTranslation()
+  const { country } = useCountry()
   const [activeTopic, setActiveTopic] = useState<TopicKey>(0)
 
-  const prefix = `landingEmail.${variant}`
-  const brands = variant === 'latam' ? brandsByTopicLatam : brandsByTopic
+  const prefix = 'landingEmail'
+  const brands = country !== 'usa' ? brandsByTopicLatam : brandsByTopic
 
   return (
-    <section className="relative z-10 bg-white dark:bg-neutral-950 transition-colors duration-300 pt-4 pb-0 -translate-y-1">
+    <section className="relative z-10 bg-white dark:bg-black transition-colors duration-300 pt-4 pb-0 -translate-y-1">
       <div className="max-w-6xl mx-auto px-4 py-12">
 
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-neutral-900 dark:text-white mb-2">
+        <h2 className="heading-1 text-lg text-center text-neutral-900 dark:text-white mb-2">
           {t(`${prefix}.savings.title`)}
         </h2>
         <p className="text-center text-sm text-neutral-500 dark:text-neutral-400 mb-8">

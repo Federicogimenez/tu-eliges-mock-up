@@ -1,69 +1,116 @@
 import { useTranslation } from '../../../hooks/useTranslation'
+import { useMemo } from 'react'
 import EmailCaptureForm from './EmailCaptureForm'
 
+const BRAND_COLORS = ['#2995fc', '#e82c8d', '#ffb807', '#884cfc']
+
+const CONFETTI_SHAPES = [
+  // Rectangulo (papelito clasico)
+  (color: string) => (
+    <rect x="2" y="4" width="16" height="12" fill={color} />
+  ),
+  // Rombo
+  (color: string) => (
+    <polygon points="10,1 18,10 10,19 2,10" fill={color} />
+  ),
+  // Triangulo
+  (color: string) => (
+    <polygon points="10,2 18,18 2,18" fill={color} />
+  ),
+]
+
+interface ConfettiPiece {
+  id: number
+  x: number
+  color: string
+  shape: number
+  scale: number
+  delay: number
+  duration: number
+}
+
+function generateConfetti(count: number): ConfettiPiece[] {
+  return Array.from({ length: count }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    color: BRAND_COLORS[i % BRAND_COLORS.length],
+    shape: i % CONFETTI_SHAPES.length,
+    scale: 0.6 + Math.random() * 0.6,
+    delay: Math.random() * 8,
+    duration: 6 + Math.random() * 6,
+  }))
+}
+
 interface InsightFormProps {
-  variant: 'usa' | 'latam'
   isRegistered: boolean
   onRegister: (email: string) => void
 }
 
-export default function InsightForm({ variant, isRegistered, onRegister }: InsightFormProps) {
+export default function InsightForm({ isRegistered, onRegister }: InsightFormProps) {
   const { t } = useTranslation()
+  const confetti = useMemo(() => generateConfetti(15), [])
 
-  const insightPrefix = `landingEmail.${variant}.insight`
-  const formPrefix = `landingEmail.${variant}.form`
+  const insightPrefix = 'landingEmail.insight'
+  const formPrefix = 'landingEmail.form'
 
   return (
-    <section className="relative z-10 bg-linear-180 from-white/80 to-white to-[100px] dark:from-neutral-950/80 dark:to-neutral-950 transition-colors duration-300">
+    <section className="relative pb-10 z-10 overflow-hidden backdrop-blur-lg bg-linear-180 from-white/80 to-white to-25% dark:from-neutral-950/40 dark:to-black transition-colors duration-300">
 
-      <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-
-          {/* Insight — Problem Agitation */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-6">
-              {t(`${insightPrefix}.title`)}
-            </h2>
-            <p className="text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">
-              {t(`${insightPrefix}.description`)}
-            </p>
-            <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-3">
-              {t(`${insightPrefix}.channelsIntro`)}
-            </p>
-            <ul className="space-y-2 mb-6">
-              {[0, 1, 2].map((i) => (
-                <li key={i} className="flex items-start gap-2 text-neutral-600 dark:text-neutral-300 text-sm">
-                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-uchooseit shrink-0" />
-                  {t(`${insightPrefix}.channels.${i}`)}
-                </li>
-              ))}
-            </ul>
-            <p className="text-neutral-700 dark:text-neutral-200 font-medium">
-              {t(`${insightPrefix}.closing`)}
-            </p>
-          </div>
-
-          {/* Form — Email Capture */}
-          <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 md:p-8 flex flex-col items-center md:items-start">
-            <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-3">
-              {t(`${formPrefix}.title`)}
-            </h3>
-            <p className="text-neutral-600 dark:text-neutral-300 text-sm mb-4 leading-relaxed">
-              {t(`${formPrefix}.description`)}
-            </p>
-            <ul className="space-y-2 mb-6 w-full">
-              {[0, 1, 2].map((i) => (
-                <li key={i} className="flex items-start gap-2 text-neutral-600 dark:text-neutral-300 text-sm">
-                  <span className="text-blue-uchooseit font-bold">✓</span>
-                  {t(`${formPrefix}.includes.${i}`)}
-                </li>
-              ))}
-            </ul>
-            <EmailCaptureForm variant={variant} context="form" isRegistered={isRegistered} onRegister={onRegister} />
-          </div>
-
-        </div>
+      {/* Confetti — falling loop full width */}
+      <div className="absolute inset-x-0 top-0 h-screen min-h-[500px] pointer-events-none" aria-hidden="true">
+        {confetti.map((p) => (
+          <svg
+            key={p.id}
+            viewBox="0 0 20 20"
+            className="absolute w-5 h-5 md:w-6 md:h-6"
+            style={{
+              left: `${p.x}%`,
+              top: 0,
+              opacity: 0,
+              transform: `scale(${p.scale})`,
+              animation: `confetti-fall ${p.duration}s ${p.delay}s linear infinite`,
+              animationFillMode: 'backwards',
+            }}
+          >
+            {CONFETTI_SHAPES[p.shape](p.color)}
+          </svg>
+        ))}
       </div>
-    </section>
+
+      <div className="relative max-w-3xl mx-auto px-4 pt-20 md:pt-28">
+        <div className="relative bg-neutral-600/5  border-blue-uchooseit/20 shadow-md shadow-blue-uchooseit/50 backdrop-blur-sm rounded-2xl p-6 md:p-10 text-center">
+
+          {/* Insight — condensed */}
+          <h2 className="heading-2 text-lg uppercase text-blue-uchooseit mb-4">
+            -{t(`${insightPrefix}.title`)}-
+          </h2>
+          <p className="text-white text-xs md:text-base mb-2 leading-relaxed">
+            {t(`${insightPrefix}.description`)}
+          </p>
+          <p className="text-white font-medium text-sm md:text-base mb-8">
+            {t(`${insightPrefix}.closing`)}
+          </p>
+
+          {/* Form — offer + email capture */}
+          <h3 className="heading-1 text-blue-uchooseit mb-2">
+            {t(`${formPrefix}.title`)}
+          </h3>
+          <p className="text-white text-sm mb-3">
+            {t(`${formPrefix}.description`)}
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mb-6">
+            {[0, 1].map((i) => (
+              <span key={i} className="text-white text-sm">
+                <span className="text-white font-bold mr-1">✓</span>
+                {t(`${formPrefix}.includes.${i}`)}
+              </span>
+            ))}
+          </div>
+
+          <EmailCaptureForm context="form" isRegistered={isRegistered} onRegister={onRegister} />
+
+          </div>
+        </div>
+      </section>
   )
 }

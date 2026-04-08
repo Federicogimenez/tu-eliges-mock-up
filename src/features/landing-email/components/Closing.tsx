@@ -2,15 +2,14 @@ import { useTranslation } from '../../../hooks/useTranslation'
 import EmailCaptureForm from './EmailCaptureForm'
 
 interface ClosingProps {
-  variant: 'usa' | 'latam'
   isRegistered: boolean
   onRegister: (email: string) => void
 }
 
-export default function Closing({ variant, isRegistered, onRegister }: ClosingProps) {
+export default function Closing({ isRegistered, onRegister }: ClosingProps) {
   const { t } = useTranslation()
 
-  const prefix = `landingEmail.${variant}.closing`
+  const prefix = 'landingEmail.closing'
 
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-24 md:py-32 text-white text-center">
@@ -23,12 +22,12 @@ export default function Closing({ variant, isRegistered, onRegister }: ClosingPr
         <p className="text-lg md:text-xl text-neutral-200 mb-2">
           {t(`${prefix}.line2`)}
         </p>
-        <p className="text-base md:text-lg text-neutral-300 mb-10">
+        <p className="text-base max-w-[350px] md:max-w-full mx-auto md:text-lg text-neutral-300 mb-10">
           {t(`${prefix}.line3`)}
         </p>
 
         <div className="flex justify-center">
-          <EmailCaptureForm variant={variant} context="closing" isRegistered={isRegistered} onRegister={onRegister} />
+          <EmailCaptureForm context="closing" isRegistered={isRegistered} onRegister={onRegister} />
         </div>
 
         <p className="mt-8 text-xs text-white">

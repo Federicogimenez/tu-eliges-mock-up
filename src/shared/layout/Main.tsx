@@ -61,7 +61,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
         </main>
 
         {showFaqs && <Faqs />}
-        {!isLandingEmail && <Footer />}
+        <Footer hideNavigation={isLandingEmail} />
         <AllyPopUp visible={showPopUp} onClose={closePopUp} />
       </div>
     </SavingsModalProvider>

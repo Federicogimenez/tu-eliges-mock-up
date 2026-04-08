@@ -45,8 +45,7 @@ export const AppRoutes: React.FC = () => {
             <Route path="/company" element={<Company />} />
             <Route path="/non-profit" element={<NonProfit />} />
             <Route path="/business" element={<Business />} />
-            <Route path="/save" element={<LandingEmail variant="usa" />} />
-            <Route path="/ahorra" element={<LandingEmail variant="latam" />} />
+            <Route path="/save" element={<LandingEmail />} />
           </Routes>
         </Suspense>
       </Main>

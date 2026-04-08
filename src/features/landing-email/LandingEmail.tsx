@@ -4,15 +4,11 @@ import Hero from './components/Hero'
 import InsightForm from './components/InsightForm'
 import SavingsShowcase from './components/SavingsShowcase'
 import Closing from './components/Closing'
-import LandingFooter from './components/LandingFooter'
+import Benefits from '../../shared/layout/Benefits'
 
 const STORAGE_KEY = 'uchooseit-email-registered'
 
-interface LandingEmailProps {
-  variant: 'usa' | 'latam'
-}
-
-export default function LandingEmail({ variant }: LandingEmailProps) {
+export default function LandingEmail() {
   const [isRegistered, setIsRegistered] = useState(() => {
     return localStorage.getItem(STORAGE_KEY) === 'true'
   })
@@ -25,14 +21,14 @@ export default function LandingEmail({ variant }: LandingEmailProps) {
 
   return (
     <>
-      <VideoBackground variant={variant} />
+      <VideoBackground />
 
       <div className="relative z-10 animate-appear-up">
-        <Hero variant={variant} />
-        <InsightForm variant={variant} isRegistered={isRegistered} onRegister={handleRegister} />
-        <SavingsShowcase variant={variant} />
-        <Closing variant={variant} isRegistered={isRegistered} onRegister={handleRegister} />
-        <LandingFooter />
+        <Hero />
+        <InsightForm isRegistered={isRegistered} onRegister={handleRegister} />
+        <Benefits />
+        <SavingsShowcase />
+        <Closing isRegistered={isRegistered} onRegister={handleRegister} />
       </div>
     </>
   )

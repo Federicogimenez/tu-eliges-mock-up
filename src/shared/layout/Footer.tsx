@@ -8,7 +8,11 @@ import { getCopyrightText } from '../constants';
 import { FaInstagram, FaTiktok, FaFacebook, FaYoutube, FaLinkedin, FaShoppingBag, FaPlane, FaUtensils, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { GiJewelCrown } from 'react-icons/gi';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  hideNavigation?: boolean
+}
+
+export const Footer: React.FC<FooterProps> = ({ hideNavigation = false }) => {
   const { theme } = useTheme();
   const { t } = useTranslation();
 
@@ -88,6 +92,7 @@ export const Footer: React.FC = () => {
           </div>
 
 {/* Navigate */}
+          {!hideNavigation && (
           <div>
             <h3 className="font-semibold text-lg mb-4">{t('layout.footer.navigate')}</h3>
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
@@ -105,6 +110,7 @@ export const Footer: React.FC = () => {
               </Link>
             </div>
           </div>
+          )}
 
           {/* Contact */}
           <div>

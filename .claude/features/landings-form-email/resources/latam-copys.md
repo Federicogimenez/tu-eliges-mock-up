@@ -84,7 +84,7 @@ Los descuentos que se muestran son por temporadas especiales y varian su tendenc
 
 CÓMO FUNCIONA
 (un dos tres simple y rapido luego de ver la info mas relevante)
-1️⃣ Activa tu acceso
+1️⃣ Acceso Privado
 2️⃣ Busca hoteles, restaurantes y actividades
 3️⃣ Usa los descuentos durante tu viaje
 Eso es todo.

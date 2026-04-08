@@ -1,5 +1,6 @@
 import { useInlineVideo } from '../../../hooks/useInlineVideo'
 import { useWindowSize } from '../../../hooks/useWindowSize'
+import { useCountry } from '../../../hooks/useCountry'
 import LazyLoadImage from '../../../shared/components/LazyLoadImage'
 
 import videoHeroMobile from '/hero-video-mobile.mp4'
@@ -9,16 +10,13 @@ import videoHeroPreviewDesk from '/preview-hero-video-desk.png'
 import videoLatamMobile from '/latam-hero-mobile.mp4'
 import videoLatamDesk from '/latam-hero-desk.mp4'
 
-interface VideoBackgroundProps {
-  variant: 'usa' | 'latam'
-}
-
-export default function VideoBackground({ variant }: VideoBackgroundProps) {
+export default function VideoBackground() {
   const { width } = useWindowSize()
+  const { country } = useCountry()
   const videoRef = useInlineVideo<HTMLVideoElement>()
 
   const isDesktop = width > 1024
-  const source = variant === 'latam'
+  const source = country !== 'usa'
     ? (isDesktop ? videoLatamDesk : videoLatamMobile)
     : (isDesktop ? videoHeroDesk : videoHeroMobile)
   const preview = isDesktop ? videoHeroPreviewDesk : videoHeroPreviewMobile

@@ -4,24 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MdCheckCircle } from 'react-icons/md'
 
 interface EmailCaptureFormProps {
-  variant: 'usa' | 'latam'
   context: 'form' | 'closing'
   isRegistered: boolean
   onRegister: (email: string) => void
 }
 
-export default function EmailCaptureForm({ variant, context, isRegistered, onRegister }: EmailCaptureFormProps) {
+export default function EmailCaptureForm({ context, isRegistered, onRegister }: EmailCaptureFormProps) {
   const { t } = useTranslation()
   const [email, setEmail] = useState('')
 
-  const prefix = `landingEmail.${variant}.form`
+  const prefix = 'landingEmail.form'
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (!email) return
 
     // TODO: integrar con HubSpot — opciones: API propia en backend o form embedding
-    console.log(`[LandingEmail] Email captured (${variant}):`, email)
+    console.log('[LandingEmail] Email captured:', email)
 
     setTimeout(() => {
       onRegister(email)
@@ -31,7 +30,7 @@ export default function EmailCaptureForm({ variant, context, isRegistered, onReg
   const isClosing = context === 'closing'
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-xl mx-auto">
       <AnimatePresence mode="wait">
         {!isRegistered ? (
           <motion.form
@@ -50,8 +49,8 @@ export default function EmailCaptureForm({ variant, context, isRegistered, onReg
               placeholder={t(`${prefix}.fieldPlaceholder`)}
               className={`w-full px-4 py-3 rounded-lg text-sm outline-none transition-colors ${
                 isClosing
-                  ? 'bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:border-white/40'
-                  : 'bg-white border border-neutral-200 text-neutral-900 placeholder:text-neutral-400 focus:border-blue-uchooseit dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:placeholder:text-neutral-500'
+                  ? 'bg-white border border-white/20 text-black placeholder:text-neutral-700 focus:border-white/40'
+                  : 'bg-white border border-neutral-200 text-neutral-900 placeholder:text-neutral-700 focus:border-blue-uchooseit dark:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-700 dark:placeholder:text-neutral-700'
               }`}
             />
             <button

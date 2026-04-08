@@ -782,147 +782,74 @@
     }
   },
   "landingEmail": {
-    "usa": {
-      "hero": {
-        "cold": {
-          "headline": "Everything is getting more expensive.",
-          "subheadline": "But many people don't realize there are private discounts on travel, dining and everyday spending.",
-          "supporting": "Some communities already know where to find them."
-        },
-        "warm": {
-          "headline": "What if you didn't have to pay full price anymore?",
-          "subheadline": "Many brands offer private pricing on travel, restaurants and shopping.",
-          "supporting": "Some communities already know how to access it."
-        },
-        "hot": {
-          "headline": "Unlock private discounts across the United States.",
-          "subheadline": "Travel, dining, shopping and everyday experiences.",
-          "supporting": "A smarter way to spend on the things you already do."
-        },
-        "scrollCta": "See more"
+    "hero": {
+      "cold": {
+        "headline": "Everything is getting more expensive.",
+        "subheadline": "But many people don't realize there are private discounts on travel, dining and everyday spending.",
+        "supporting": "Some communities already know where to find them."
       },
-      "insight": {
-        "title": "What Most People Don't Know",
-        "description": "Many hotels, restaurants and brands offer private prices that are not visible to the public.",
-        "channelsIntro": "These prices are usually available through:",
-        "channels": {
-          "0": "Employee benefit programs",
-          "1": "Credit card partnerships",
-          "2": "Member communities"
-        },
-        "closing": "Uchooseit.us gives members access to that same ecosystem."
+      "warm": {
+        "headline": "What if you didn't have to pay full price anymore?",
+        "subheadline": "Many brands offer private pricing on travel, restaurants and shopping.",
+        "supporting": "Some communities already know how to access it."
       },
-      "form": {
-        "title": "Unlock your private access",
-        "description": "For a limited time we're offering 25% off the membership for 30 days. Enter your email and we'll send you access.",
-        "includes": {
-          "0": "25% membership discount",
-          "1": "Access to private deals across the U.S.",
-          "2": "Tips to help you save on everyday spending"
-        },
-        "fieldPlaceholder": "Your email address",
-        "button": "Get my 25% discount",
-        "microcopy": "We'll send your access to your email.",
-        "successMessage": "Your email has been registered successfully. We'll be in touch shortly. Check your spam folder."
+      "hot": {
+        "headline": "Unlock private discounts across the United States.",
+        "subheadline": "Travel, dining, shopping and everyday experiences.",
+        "supporting": "A smarter way to spend on the things you already do."
       },
-      "savings": {
-        "title": "Save With Your Private Access",
-        "subtitle": "Top recommended categories — up to 50% OFF",
-        "topics": {
-          "0": { "label": "Shop" },
-          "1": { "label": "Travel" },
-          "2": { "label": "Dining" },
-          "3": { "label": "Entertainment" }
-        },
-        "footer": "Small savings can add up to hundreds or even thousands of dollars.",
-        "disclaimer": "Discounts shown are seasonal specials and may vary."
-      },
-      "howItWorks": {
-        "title": "How It Works",
-        "steps": {
-          "0": { "title": "Activate your access", "description": "Sign up and unlock your membership" },
-          "1": { "title": "Browse deals", "description": "Search shops, travel, restaurants and activities" },
-          "2": { "title": "Use the discounts", "description": "Save on the things you already do" }
-        },
-        "closing": "That's it."
-      },
-      "closing": {
-        "line1": "Your money should go further.",
-        "line2": "Not full price on everything.",
-        "line3": "Enter your email and get 25% off for 30 days.",
-        "disclaimer": "Discount available for a limited time for new members."
-      }
+      "scrollCta": "See more"
     },
-    "latam": {
-      "hero": {
-        "cold": {
-          "headline": "Viajar a Estados Unidos para el Mundial 2026 será caro.",
-          "subheadline": "Millones de personas viajarán al país y los precios de hoteles, restaurantes y actividades subirán.",
-          "supporting": "Pero muchos viajeros no saben que existen precios privados en Estados Unidos."
-        },
-        "warm": {
-          "headline": "Imagina viajar al Mundial 2026 sin pagar precio completo.",
-          "subheadline": "Muchos hoteles, restaurantes y actividades en Estados Unidos tienen precios privados que no aparecen en internet.",
-          "supporting": "Algunos viajeros ya saben cómo acceder a ellos."
-        },
-        "hot": {
-          "headline": "Accede a descuentos privados para tu viaje al Mundial 2026.",
-          "subheadline": "Hoteles, restaurantes, actividades y experiencias en todo Estados Unidos.",
-          "supporting": "Una forma inteligente de planear tu viaje."
-        },
-        "scrollCta": "Ver más"
+    "insight": {
+      "title": "What most people don't know",
+      "description": "Many of the best prices in the United States aren't public. They're private rates reserved for members of select communities.",
+      "channelsIntro": "These prices are usually available through:",
+      "channels": {
+        "0": "Employee benefit programs",
+        "1": "Credit card partnerships",
+        "2": "Member communities"
       },
-      "insight": {
-        "title": "Lo que muchos viajeros no saben",
-        "description": "Muchos hoteles, restaurantes y atracciones en Estados Unidos tienen precios privados que no aparecen en internet.",
-        "channelsIntro": "Estos precios normalmente están disponibles para personas que forman parte de programas como:",
-        "channels": {
-          "0": "Beneficios para empleados",
-          "1": "Clientes de bancos o tarjetas de crédito",
-          "2": "Miembros de asociaciones o comunidades"
-        },
-        "closing": "Uchooseit.us permite que viajeros internacionales accedan a ese mismo ecosistema."
+      "closing": "Uchooseit.us gives you that access."
+    },
+    "form": {
+      "title": "Limited-time offer for new members.",
+      "description": "Leave your email and get 25% off for 30 days.",
+      "includes": {
+        "0": "Access to private deals across the U.S.",
+        "1": "Tips to help you save on everyday spending",
+        "2": "Tips to help you save on everyday spending"
       },
-      "form": {
-        "title": "Desbloquea tu acceso para planear tu viaje al Mundial",
-        "description": "Por tiempo limitado estamos ofreciendo 25% de descuento en la membresía por 30 días para viajeros que quieren planear su viaje al Mundial 2026. Déjanos tu correo y te enviaremos el acceso.",
-        "includes": {
-          "0": "25% de descuento en tu membresía",
-          "1": "Tips para ahorrar durante tu viaje",
-          "2": "Ofertas de la semana"
-        },
-        "fieldPlaceholder": "Tu correo electrónico",
-        "button": "Quiero mi 25% de descuento",
-        "microcopy": "Te enviaremos tu acceso por correo. Revisa tu bandeja o spam.",
-        "successMessage": "Tu email se ha registrado correctamente, en breve nos comunicaremos contigo. Revisa spam."
+      "fieldPlaceholder": "Your email address",
+      "button": "Get my 25% discount",
+      "microcopy": "We'll send your discount to your email. Check your inbox or spam.",
+      "successMessage": "Your email has been registered successfully. We'll be in touch shortly. Check your spam folder."
+    },
+    "savings": {
+      "title": "Save With Your Private Access",
+      "subtitle": "Top recommended categories — up to 50% OFF",
+      "topics": {
+        "0": { "label": "Shop" },
+        "1": { "label": "Travel" },
+        "2": { "label": "Dining" },
+        "3": { "label": "Entertainment" }
       },
-      "savings": {
-        "title": "Ahorra con tu acceso privado",
-        "subtitle": "Los tópicos más recomendados — hasta 50% OFF",
-        "topics": {
-          "0": { "label": "Rent a car" },
-          "1": { "label": "Hotel en Las Vegas" },
-          "2": { "label": "Hotel en Nueva York" },
-          "3": { "label": "Restaurantes en Miami" }
-        },
-        "footer": "Durante un viaje, pequeños ahorros pueden sumar cientos o incluso miles de dólares.",
-        "disclaimer": "Los descuentos que se muestran son por temporadas especiales y varían su tendencia."
+      "footer": "Small savings can add up to hundreds or even thousands of dollars.",
+      "disclaimer": "Discounts shown are seasonal specials and may vary."
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "0": { "title": "Activate your access", "description": "Sign up and unlock your membership" },
+        "1": { "title": "Browse deals", "description": "Search shops, travel, restaurants and activities" },
+        "2": { "title": "Use the discounts", "description": "Save on the things you already do" }
       },
-      "howItWorks": {
-        "title": "Cómo funciona",
-        "steps": {
-          "0": { "title": "Activa tu acceso", "description": "Regístrate y desbloquea tu membresía" },
-          "1": { "title": "Busca ofertas", "description": "Hoteles, restaurantes y actividades" },
-          "2": { "title": "Usa los descuentos", "description": "Ahorra durante tu viaje" }
-        },
-        "closing": "Eso es todo."
-      },
-      "closing": {
-        "line1": "Tu viaje al Mundial debería crear recuerdos.",
-        "line2": "No estrés por los precios.",
-        "line3": "Deja tu correo y recibe 25% de descuento por 30 días.",
-        "disclaimer": "Descuento disponible por tiempo limitado para nuevos miembros."
-      }
+      "closing": "That's it."
+    },
+    "closing": {
+      "line1": "Your money should go further.",
+      "line2": "Not full price on everything.",
+      "line3": "Enter your email and get 25% off for 30 days.",
+      "disclaimer": "Discount available for a limited time for new members."
     }
   },
   "constants": {
