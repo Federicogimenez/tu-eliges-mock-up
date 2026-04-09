@@ -1,6 +1,6 @@
 import { useTranslation } from '../../../hooks/useTranslation'
 import { useMemo } from 'react'
-import EmailCaptureForm from './EmailCaptureForm'
+import HubSpotForm from './HubSpotForm'
 
 const BRAND_COLORS = ['#2995fc', '#e82c8d', '#ffb807', '#884cfc']
 
@@ -41,12 +41,7 @@ function generateConfetti(count: number): ConfettiPiece[] {
   }))
 }
 
-interface InsightFormProps {
-  isRegistered: boolean
-  onRegister: (email: string) => void
-}
-
-export default function InsightForm({ isRegistered, onRegister }: InsightFormProps) {
+export default function InsightForm() {
   const { t } = useTranslation()
   const confetti = useMemo(() => generateConfetti(15), [])
 
@@ -107,7 +102,7 @@ export default function InsightForm({ isRegistered, onRegister }: InsightFormPro
             ))}
           </div>
 
-          <EmailCaptureForm context="form" isRegistered={isRegistered} onRegister={onRegister} />
+          <HubSpotForm context="form" />
 
           </div>
         </div>

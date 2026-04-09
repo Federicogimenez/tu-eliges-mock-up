@@ -1,12 +1,7 @@
 import { useTranslation } from '../../../hooks/useTranslation'
-import EmailCaptureForm from './EmailCaptureForm'
+import HubSpotForm from './HubSpotForm'
 
-interface ClosingProps {
-  isRegistered: boolean
-  onRegister: (email: string) => void
-}
-
-export default function Closing({ isRegistered, onRegister }: ClosingProps) {
+export default function Closing() {
   const { t } = useTranslation()
 
   const prefix = 'landingEmail.closing'
@@ -27,7 +22,7 @@ export default function Closing({ isRegistered, onRegister }: ClosingProps) {
         </p>
 
         <div className="flex justify-center">
-          <EmailCaptureForm context="closing" isRegistered={isRegistered} onRegister={onRegister} />
+          <HubSpotForm context="closing" />
         </div>
 
         <p className="mt-8 text-xs text-white">
