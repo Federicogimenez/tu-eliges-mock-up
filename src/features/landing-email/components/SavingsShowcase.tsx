@@ -48,16 +48,64 @@ const brandsByTopic: Record<TopicKey, string[]> = {
   ],
 }
 
-// TODO: Add LATAM-specific brand categorization when available
-const brandsByTopicLatam = brandsByTopic
+const brandsByTopicLatam: Record<TopicKey, string[]> = {
+  0: [
+    '/landing-email/brands-latam/Car-Rental1.png',
+    '/landing-email/brands-latam/Car-Rental2.png',
+    '/landing-email/brands-latam/Car-Rental3.png',
+    '/landing-email/brands-latam/Car-Rental4.png',
+    '/landing-email/brands-latam/Car-Rental5.png',
+    '/landing-email/brands-latam/Car-Rental6.png',
+  ],
+  1: [
+    '/landing-email/brands-latam/Hotels1.png',
+    '/landing-email/brands-latam/Hotels2.png',
+    '/landing-email/brands-latam/Hotels3.png',
+    '/landing-email/brands-latam/Hotels4.png',
+    '/landing-email/brands-latam/Hotels5.png',
+    '/landing-email/brands-latam/Hotels6.jpeg',
+  ],
+  2: [
+    '/landing-email/brands-latam/Dining1.png',
+    '/landing-email/brands-latam/Dining2.png',
+    '/landing-email/brands-latam/Dining3.png',
+    '/landing-email/brands-latam/Dining4.png',
+    '/landing-email/brands-latam/Dining5.png',
+    '/landing-email/brands-latam/Dining6.png',
+  ],
+  3: [
+    '/landing-email/brands-latam/Park1.png',
+    '/landing-email/brands-latam/Park2.png',
+    '/landing-email/brands-latam/Park3.png',
+    '/landing-email/brands-latam/Park4.png',
+    '/landing-email/brands-latam/Park5.png',
+    '/landing-email/brands-latam/Park6.png',
+  ],
+}
+
+const videosByTopicLatam: Record<TopicKey, string> = {
+  0: '/landing-email/rent.webm',
+  1: '/landing-email/hoteles.webm',
+  2: '/landing-email/comida.webm',
+  3: '/landing-email/parque.webm',
+}
+
+const videoUsa = '/landing-email/comida.webm'
 
 export default function SavingsShowcase() {
   const { t } = useTranslation()
   const { country } = useCountry()
   const [activeTopic, setActiveTopic] = useState<TopicKey>(0)
+  const [videoLoading, setVideoLoading] = useState(true)
+
+  const handleTopicChange = (topic: TopicKey) => {
+    setActiveTopic(topic)
+    setVideoLoading(true)
+  }
 
   const prefix = 'landingEmail'
   const brands = country !== 'usa' ? brandsByTopicLatam : brandsByTopic
+  const videoSrc = country !== 'usa' ? videosByTopicLatam[activeTopic] : videoUsa
 
   return (
     <section className="relative z-10 bg-white dark:bg-black transition-colors duration-300 pt-4 pb-0 -translate-y-1">
@@ -72,11 +120,11 @@ export default function SavingsShowcase() {
         </p>
 
         {/* Topic Chips */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex md:hidden flex-wrap justify-center gap-3 mb-10">
           {([0, 1, 2, 3] as TopicKey[]).map((i) => (
             <button
               key={i}
-              onClick={() => setActiveTopic(i)}
+              onClick={() => handleTopicChange(i)}
               style={{
                 background: activeTopic === i ? TOPIC_COLORS[i] : 'transparent',
                 border: `1px solid ${TOPIC_COLORS[i]}`,
@@ -93,17 +141,45 @@ export default function SavingsShowcase() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
           {/* Phone Frame placeholder */}
           <div
-            className="shrink-0 w-48 rounded-[2rem] border-4 border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 overflow-hidden shadow-xl"
+            className="relative shrink-0 w-48 rounded-[2rem] border-4 border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 overflow-hidden shadow-xl"
             style={{ aspectRatio: '9/18.5' }}
           >
-            <div className="w-full h-full flex items-center justify-center text-neutral-400 dark:text-neutral-500 text-xs text-center p-4">
-              {/* TODO: Add phone-frame video per topic */}
-              <span>Preview<br />{t(`${prefix}.savings.topics.${activeTopic}.label`)}</span>
-            </div>
+            {videoLoading && (
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="w-8 h-8 border-3 border-neutral-300 border-t-blue-uchooseit rounded-full animate-spin" />
+              </div>
+            )}
+            <video
+              key={videoSrc}
+              src={videoSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              onCanPlayThrough={() => setVideoLoading(false)}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${videoLoading ? 'opacity-0' : 'opacity-100'}`}
+            />
           </div>
 
           {/* Brands Grid */}
-          <div className="w-full max-w-xs">
+          <div className="w-full max-w-md">
+            {/* Topic Chips Desktop */}
+            <div className="hidden md:flex flex-wrap justify-center gap-3 mb-10">
+              {([0, 1, 2, 3] as TopicKey[]).map((i) => (
+                <button
+                  key={i}
+                  onClick={() => handleTopicChange(i)}
+                  style={{
+                    background: activeTopic === i ? TOPIC_COLORS[i] : 'transparent',
+                    border: `1px solid ${TOPIC_COLORS[i]}`,
+                    color: activeTopic === i ? '#fff' : TOPIC_COLORS[i],
+                  }}
+                  className="cursor-pointer px-4 py-1.5 rounded-full text-sm font-medium transition-all"
+                >
+                  {t(`${prefix}.savings.topics.${i}.label`)}
+                </button>
+              ))}
+            </div>
             <div className="grid grid-cols-3 gap-3">
               {brands[activeTopic].map((brand, i) => (
                 <div
@@ -122,10 +198,10 @@ export default function SavingsShowcase() {
         </div>
 
         {/* Footer text */}
-        <p className="text-center text-sm text-neutral-600 dark:text-neutral-300 mb-2">
+        <p className="text-center text-sm text-neutral-600 dark:text-neutral-300 mb-6">
           {t(`${prefix}.savings.footer`)}
         </p>
-        <p className="text-center text-xs text-neutral-400 dark:text-neutral-500 mb-16">
+        <p className="text-center text-xs text-neutral-600 dark:text-neutral-300 mb-10">
           {t(`${prefix}.savings.disclaimer`)}
         </p>
 

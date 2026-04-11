@@ -11,7 +11,7 @@ const SCRIPT_SRC = `https://js.hsforms.net/forms/embed/${PORTAL_ID}.js`
 
 // TODO: completar con los form IDs reales de cada país
 const FORM_IDS: Record<CountryCode, string> = {
-  usa: '891f31d4-f74d-4278-8639-34bfcf68d387',
+  usa: '8c53addb-cd1c-468f-a653-e5ab63720c57',
   bra: '891f31d4-f74d-4278-8639-34bfcf68d387',
   arg: '891f31d4-f74d-4278-8639-34bfcf68d387',
   col: '891f31d4-f74d-4278-8639-34bfcf68d387',
@@ -63,14 +63,8 @@ export default function HubSpotForm({ context }: HubSpotFormProps) {
       {/* Loader */}
       {isLoading && (
         <div className="flex items-center justify-center py-6 gap-2">
-          <div className={`w-5 h-5 border-2 rounded-full animate-spin ${
-            isClosing
-              ? 'border-white/30 border-t-white'
-              : 'border-blue-uchooseit/30 border-t-blue-uchooseit'
-          }`} />
-          <span className={`text-sm ${
-            isClosing ? 'text-white/60' : 'text-neutral-500 dark:text-neutral-400'
-          }`}>
+          <div className={`w-5 h-5 border-2 rounded-full animate-spin border-white/30 border-t-white`} />
+          <span className={`text-sm text-white`}>
             Loading...
           </span>
         </div>
@@ -79,7 +73,7 @@ export default function HubSpotForm({ context }: HubSpotFormProps) {
       {/* HubSpot embed target */}
       <div
         ref={containerRef}
-        className={`hs-form-frame ${isClosing ? 'hubspot-closing' : 'hubspot-form'} ${isLoading ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'} transition-opacity duration-300`}
+        className={`hs-form-frame -my-8 ${isClosing ? 'hubspot-closing' : 'hubspot-form'} ${isLoading ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'} transition-opacity duration-300`}
         data-region="na1"
         data-form-id={formId}
         data-portal-id={PORTAL_ID}

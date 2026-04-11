@@ -111,7 +111,7 @@ export default function TestimonialSection({
                 </span>
               </h1>
 
-              <p className="subtitle text-center px-2 max-w-md pb-2">
+              <p className="subtitle text-center px-2 max-w-md pb-2 mx-auto">
                 {description}
               </p>
 

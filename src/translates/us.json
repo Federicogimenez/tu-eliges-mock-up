@@ -785,42 +785,43 @@
     "hero": {
       "cold": {
         "headline": "Everything is getting more expensive.",
-        "subheadline": "But many people don't realize there are private discounts on travel, dining and everyday spending.",
-        "supporting": "Some communities already know where to find them."
+        "subheadline": "But many people don't realize there are private discounts on travel, dining and everyday spending."
       },
       "warm": {
         "headline": "What if you didn't have to pay full price anymore?",
-        "subheadline": "Many brands offer private pricing on travel, restaurants and shopping.",
-        "supporting": "Some communities already know how to access it."
+        "subheadline": "Many brands offer private pricing on travel, restaurants and shopping."
       },
       "hot": {
         "headline": "Unlock private discounts across the United States.",
-        "subheadline": "Travel, dining, shopping and everyday experiences.",
-        "supporting": "A smarter way to spend on the things you already do."
+        "subheadline": "Travel, dining, shopping and everyday experiences."
       },
       "scrollCta": "See more"
     },
     "insight": {
-      "title": "What most people don't know",
-      "description": "Many of the best prices in the United States aren't public. They're private rates reserved for members of select communities.",
-      "channelsIntro": "These prices are usually available through:",
-      "channels": {
-        "0": "Employee benefit programs",
-        "1": "Credit card partnerships",
-        "2": "Member communities"
+      "cold": {
+        "title": "What many people don't realize",
+        "description": "Prices across the United States keep going up. Travel, dining, shopping and everyday spending cost more than they used to. Better prices already exist behind private access."
       },
-      "closing": "Uchooseit.us gives you that access."
+      "warm": {
+        "title": "What many people don't realize",
+        "description": "Many brands already offer private discounts on travel, restaurants and everyday spending. But most consumers never see those prices."
+      },
+      "hot": {
+        "title": "What many people don't realize",
+        "description": "Many of the best prices in the United States are not public. They are private discounts normally reserved for members of certain communities."
+      },
+      "closing": "Uchooseit.us gives you access."
     },
     "form": {
       "title": "Limited-time offer for new members.",
-      "description": "Leave your email and get 25% off for 30 days.",
+      "description": "Leave your email and get 30% off for 30 days.",
       "includes": {
         "0": "Access to private deals across the U.S.",
         "1": "Tips to help you save on everyday spending",
         "2": "Tips to help you save on everyday spending"
       },
       "fieldPlaceholder": "Your email address",
-      "button": "Get my 25% discount",
+      "button": "Get my 30% discount",
       "microcopy": "We'll send your discount to your email. Check your inbox or spam.",
       "successMessage": "Your email has been registered successfully. We'll be in touch shortly. Check your spam folder."
     },
@@ -848,7 +849,7 @@
     "closing": {
       "line1": "Your money should go further.",
       "line2": "Not full price on everything.",
-      "line3": "Enter your email and get 25% off for 30 days.",
+      "line3": "Enter your email and get 30% off for 30 days.",
       "disclaimer": "Discount available for a limited time for new members."
     }
   },

@@ -669,6 +669,167 @@ Esta tarea es de integracion. El Dev debe probar el flujo completo navegando a `
 
 ---
 
+# TASK-09: Actualizar copys landing email + eliminar clave `supporting`
+
+## Metadata
+- **Feature**: landings-form-email
+- **Rol**: Feature Dev
+- **Estado**: pendiente
+- **Dependencias**: ninguna (los componentes ya estan implementados)
+
+## Contexto
+Los copys de la landing de email necesitan actualizacion en hero e insight. Ademas, la clave `supporting` dentro de `hero.cold/warm/hot` nunca se consumio en ningun componente (Hero.tsx solo lee `headline` y `subheadline`) y debe eliminarse de los 5 JSONs.
+
+La seccion insight NECESITA variar por temperatura del trafico. Actualmente InsightForm.tsx usa un prefijo plano (`landingEmail.insight.*`) pero los copy files definen textos distintos de insight por cold/warm/hot en ambos mercados. Esto requiere:
+1. Reestructurar las claves `insight` en los JSONs para incluir variantes por temperatura
+2. Actualizar InsightForm.tsx para leer la temperatura via `useTrafficTemp()` (mismo patron que Hero.tsx)
+
+## Archivos
+```
+MODIFICAR:
+  src/translates/us.json
+  src/translates/mex.json
+  src/translates/col.json
+  src/translates/arg.json
+  src/translates/bra.json
+  src/features/landing-email/components/InsightForm.tsx  ← agregar useTrafficTemp para insight
+```
+
+## Cambios especificos
+
+### 1. Eliminar `supporting` de TODOS los archivos (us, mex, col, arg, bra)
+
+Eliminar estas 3 claves en cada JSON:
+- `landingEmail.hero.cold.supporting`
+- `landingEmail.hero.warm.supporting`
+- `landingEmail.hero.hot.supporting`
+
+### 2. Reestructurar insight para variantes por temperatura
+
+Estructura actual (plana):
+```json
+"insight": {
+  "title": "...",
+  "description": "...",
+  "channelsIntro": "...",
+  "channels": { "0": "...", "1": "...", "2": "..." },
+  "closing": "..."
+}
+```
+
+Estructura nueva (por temperatura, conservando claves compartidas):
+```json
+"insight": {
+  "cold": {
+    "title": "...",
+    "description": "..."
+  },
+  "warm": {
+    "title": "...",
+    "description": "..."
+  },
+  "hot": {
+    "title": "...",
+    "description": "..."
+  },
+  "channelsIntro": "...",
+  "channels": { "0": "...", "1": "...", "2": "..." },
+  "closing": "..."
+}
+```
+
+`channelsIntro`, `channels` y `closing` quedan fuera de las variantes (no cambian por temperatura).
+
+### 3. us.json — Copys de insight por temperatura
+
+Hero USA: sin cambios en headline/subheadline (ya coinciden con usa-copys.md).
+
+```
+insight.cold.title:       "What many people don't realize"
+insight.cold.description: "Prices across the United States keep going up. Travel, dining, shopping and everyday spending cost more than they used to. Better prices already exist behind private access."
+
+insight.warm.title:       "What many people don't realize"
+insight.warm.description: "Many brands already offer private discounts on travel, restaurants and everyday spending. But most consumers never see those prices."
+
+insight.hot.title:        "What many people don't realize"
+insight.hot.description:  "Many of the best prices in the United States are not public. They are private discounts normally reserved for members of certain communities."
+```
+
+### 4. mex.json, col.json, arg.json — Actualizar hero cold + insight por temperatura (identicos los 3)
+
+```
+hero.cold.headline:  "Viajar a Estados Unidos para el Mundial 2026 será caro."
+                   → "Viajar a Estados Unidos para el Mundial 2026 podría ser caro."
+
+insight.cold.title:       "La mayoría de viajeros paga de más…"
+insight.cold.description: "Porque muchos de los mejores precios en EE. UU. son privados. Solo los ven miembros"
+
+insight.warm.title:       "Seguir pagando precio completo… o acceder a precios privados"
+insight.warm.description: "Muchos de los mejores precios en Estados Unidos no son públicos."
+
+insight.hot.title:        "Seguir pagando precio completo… o acceder a precios privados"
+insight.hot.description:  "Muchos de los mejores precios en Estados Unidos no son públicos."
+```
+
+### 5. bra.json — Traducir al portugues los cambios LATAM
+
+```
+hero.cold.headline:  "Viajar para os Estados Unidos para a Copa do Mundo 2026 vai ser caro."
+                   → "Viajar para os Estados Unidos para a Copa do Mundo 2026 pode ser caro."
+
+insight.cold.title:       "A maioria dos viajantes paga mais do que deveria…"
+insight.cold.description: "Porque muitos dos melhores preços nos EUA são privados. Só membros têm acesso"
+
+insight.warm.title:       "Continuar pagando preço cheio… ou acessar preços privados"
+insight.warm.description: "Muitos dos melhores preços nos Estados Unidos não são públicos."
+
+insight.hot.title:        "Continuar pagando preço cheio… ou acessar preços privados"
+insight.hot.description:  "Muitos dos melhores preços nos Estados Unidos não são públicos. São descontos privados normalmente reservados para membros de certas comunidades."
+```
+
+### 6. Actualizar InsightForm.tsx — agregar useTrafficTemp
+
+El componente debe importar `useTrafficTemp` y el mapeo `TEMP_MAP` (mismo patron que Hero.tsx) para construir el prefijo de insight por temperatura:
+
+```
+Antes:  const insightPrefix = 'landingEmail.insight'
+        t(`${insightPrefix}.title`)
+        t(`${insightPrefix}.description`)
+
+Despues: const temp = useTrafficTemp()
+         const tempKey = TEMP_MAP[temp]  // 'cold' | 'warm' | 'hot'
+         t(`landingEmail.insight.${tempKey}.title`)
+         t(`landingEmail.insight.${tempKey}.description`)
+```
+
+Las claves compartidas (`closing`) siguen con prefijo plano: `t('landingEmail.insight.closing')`.
+
+## Limites
+- No modificar claves fuera de hero.supporting e insight.title/description
+- No tocar form, savings, howItWorks, closing (secciones fuera de scope)
+- channelsIntro, channels y closing de insight se mantienen intactos (solo se mueven al mismo nivel, fuera de las variantes)
+- El cambio en InsightForm.tsx es minimo: solo agregar useTrafficTemp y ajustar los prefijos de title/description
+
+## Criterio de aceptacion
+- [ ] `supporting` eliminado de hero.cold, hero.warm, hero.hot en los 5 JSONs
+- [ ] insight reestructurado con cold/warm/hot en los 5 JSONs
+- [ ] us.json: 3 variantes de insight en ingles (titulo igual, descripcion distinta por temp)
+- [ ] mex.json, col.json, arg.json: hero.cold.headline actualizado + 3 variantes de insight en espanol (identicos los 3 paises)
+- [ ] bra.json: hero.cold.headline actualizado + 3 variantes de insight traducidas al portugues
+- [ ] InsightForm.tsx usa useTrafficTemp para seleccionar insight.cold/warm/hot
+- [ ] Los 5 JSONs parsean sin error (JSON valido)
+- [ ] No hay console errors al navegar a /save con ?t=c, ?t=w, ?t=h
+- [ ] TypeScript compila sin errores
+
+## Notas del Arquitecto
+- La clave `supporting` nunca fue consumida por Hero.tsx (solo lee headline y subheadline, lineas 25-29).
+- El patron para insight por temperatura es identico al de Hero.tsx: importar `useTrafficTemp` + `TEMP_MAP`, construir prefijo dinamico. Reutilizar el mismo mapeo.
+- "podria ser" en lugar de "sera" suaviza el headline cold LATAM (de afirmacion a posibilidad).
+- USA: el titulo de insight es el mismo en las 3 temperaturas ("What many people don't realize"), pero la descripcion cambia — la progresion va de problema general (cold) a revelacion de precios privados (hot).
+- LATAM: cold tiene titulo unico ("La mayoria de viajeros paga de mas…"), warm/hot comparten titulo y descripcion ("Seguir pagando precio completo… o acceder a precios privados").
+
+---
+
 # Orden de ejecucion recomendado
 
 ```

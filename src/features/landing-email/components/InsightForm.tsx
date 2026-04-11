@@ -1,6 +1,13 @@
 import { useTranslation } from '../../../hooks/useTranslation'
+import { useTrafficTemp, type TrafficTemp } from '../../../hooks/useTrafficTemp'
 import { useMemo } from 'react'
 import HubSpotForm from './HubSpotForm'
+
+const TEMP_MAP: Record<TrafficTemp, string> = {
+  c: 'cold',
+  w: 'warm',
+  h: 'hot',
+}
 
 const BRAND_COLORS = ['#2995fc', '#e82c8d', '#ffb807', '#884cfc']
 
@@ -43,9 +50,11 @@ function generateConfetti(count: number): ConfettiPiece[] {
 
 export default function InsightForm() {
   const { t } = useTranslation()
+  const temp = useTrafficTemp()
   const confetti = useMemo(() => generateConfetti(15), [])
 
-  const insightPrefix = 'landingEmail.insight'
+  const tempKey = TEMP_MAP[temp]
+  const insightPrefix = `landingEmail.insight.${tempKey}`
   const formPrefix = 'landingEmail.form'
 
   return (
@@ -83,7 +92,7 @@ export default function InsightForm() {
             {t(`${insightPrefix}.description`)}
           </p>
           <p className="text-white font-medium text-sm md:text-base mb-8">
-            {t(`${insightPrefix}.closing`)}
+            {t('landingEmail.insight.closing')}
           </p>
 
           {/* Form — offer + email capture */}
