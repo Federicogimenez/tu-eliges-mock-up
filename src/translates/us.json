@@ -814,7 +814,7 @@
     },
     "form": {
       "title": "Limited-time offer for new members.",
-      "description": "Leave your email and get 30% off for 30 days.",
+      "description": "Leave your email and get 30% off for 15 days.",
       "includes": {
         "0": "Access to private deals across the U.S.",
         "1": "Tips to help you save on everyday spending",
@@ -849,7 +849,7 @@
     "closing": {
       "line1": "Your money should go further.",
       "line2": "Not full price on everything.",
-      "line3": "Enter your email and get 30% off for 30 days.",
+      "line3": "Enter your email and get 30% off for 15 days.",
       "disclaimer": "Discount available for a limited time for new members."
     }
   },

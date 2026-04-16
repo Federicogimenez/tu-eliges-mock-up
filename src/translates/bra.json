@@ -814,7 +814,7 @@
     },
     "form": {
       "title": "Oferta limitada para viajantes da Copa 2026.",
-      "description": "Deixe seu e-mail e receba 30% de desconto por 30 dias.",
+      "description": "Deixe seu e-mail e receba 30% de desconto por 15 dias.",
       "includes": {
         "0": "Dicas para economizar durante sua viagem",
         "1": "Ofertas da semana",
@@ -849,7 +849,7 @@
     "closing": {
       "line1": "Sua viagem à Copa deveria criar memórias.",
       "line2": "Não estresse com os preços.",
-      "line3": "Deixe seu e-mail e receba 30% de desconto por 30 dias.",
+      "line3": "Deixe seu e-mail e receba 30% de desconto por 15 dias.",
       "disclaimer": "Desconto disponível por tempo limitado para novos membros."
     }
   },

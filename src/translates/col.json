@@ -814,7 +814,7 @@
     },
     "form": {
       "title": "Oferta limitada para viajeros del Mundial 2026.",
-      "description": "Deja tu correo y recibe 30% de descuento por 30 días.",
+      "description": "Deja tu correo y recibe 30% de descuento por 15 días.",
       "includes": {
         "0": "Tips para ahorrar durante tu viaje",
         "1": "Ofertas de la semana",
@@ -849,7 +849,7 @@
     "closing": {
       "line1": "Tu viaje al Mundial debería crear recuerdos.",
       "line2": "No estrés por los precios.",
-      "line3": "Deja tu correo y recibe 30% de descuento por 30 días.",
+      "line3": "Deja tu correo y recibe 30% de descuento por 15 días.",
       "disclaimer": "Descuento disponible por tiempo limitado para nuevos miembros."
     }
   },

@@ -83,29 +83,34 @@ const brandsByTopicLatam: Record<TopicKey, string[]> = {
   ],
 }
 
-const videosByTopicLatam: Record<TopicKey, string> = {
+const videosByTopic: Record<TopicKey, string> = {
   0: '/landing-email/rent.webm',
   1: '/landing-email/hoteles.webm',
   2: '/landing-email/comida.webm',
   3: '/landing-email/parque.webm',
 }
 
-const videoUsa = '/landing-email/comida.webm'
-
 export default function SavingsShowcase() {
   const { t } = useTranslation()
   const { country } = useCountry()
   const [activeTopic, setActiveTopic] = useState<TopicKey>(0)
-  const [videoLoading, setVideoLoading] = useState(true)
+  const [videosReady, setVideosReady] = useState<Set<number>>(new Set())
 
   const handleTopicChange = (topic: TopicKey) => {
     setActiveTopic(topic)
-    setVideoLoading(true)
   }
 
+  const handleVideoReady = (topic: TopicKey) => {
+    setVideosReady(prev => {
+      const next = new Set(prev)
+      next.add(topic)
+      return next
+    })
+  }
+
+  const isLatam = country !== 'usa'
   const prefix = 'landingEmail'
-  const brands = country !== 'usa' ? brandsByTopicLatam : brandsByTopic
-  const videoSrc = country !== 'usa' ? videosByTopicLatam[activeTopic] : videoUsa
+  const brands = isLatam ? brandsByTopicLatam : brandsByTopic
 
   return (
     <section className="relative z-10 bg-white dark:bg-black transition-colors duration-300 pt-4 pb-0 -translate-y-1">
@@ -144,21 +149,23 @@ export default function SavingsShowcase() {
             className="relative shrink-0 w-48 rounded-[2rem] border-4 border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 overflow-hidden shadow-xl"
             style={{ aspectRatio: '9/18.5' }}
           >
-            {videoLoading && (
+            {!videosReady.has(activeTopic) && (
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="w-8 h-8 border-3 border-neutral-300 border-t-blue-uchooseit rounded-full animate-spin" />
               </div>
             )}
-            <video
-              key={videoSrc}
-              src={videoSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              onCanPlayThrough={() => setVideoLoading(false)}
-              className={`w-full h-full object-cover transition-opacity duration-300 ${videoLoading ? 'opacity-0' : 'opacity-100'}`}
-            />
+            {([0, 1, 2, 3] as TopicKey[]).map((topic) => (
+              <video
+                key={topic}
+                src={videosByTopic[topic]}
+                autoPlay
+                muted
+                loop
+                playsInline
+                onCanPlayThrough={() => handleVideoReady(topic)}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${activeTopic === topic && videosReady.has(topic) ? 'opacity-100' : 'opacity-0'}`}
+              />
+            ))}
           </div>
 
           {/* Brands Grid */}
