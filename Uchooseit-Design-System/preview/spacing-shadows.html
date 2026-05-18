@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .demo {
+    aspect-ratio: 1 / 0.55;
+    border-radius: 16px;
+    background: #14181F;
+    border: 1px solid var(--uc-line);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 14px;
+  }
+  .demo.soft { box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .demo.pop  { box-shadow: 0 14px 40px rgba(41,149,252,0.25); }
+  .demo.glow { box-shadow: 0 0 40px rgba(41,149,252,0.45); }
+  .demo span { display: block; font-size: 11px; }
+  .demo .name { color: #fff; font-weight: 700; font-size: 13px; }
+  .demo .hex { color: rgba(255,255,255,0.55); font-family: monospace; margin-top: 2px; }
+</style>
+</head><body>
+  <div class="label">Shadows · used on hover or on photo backgrounds</div>
+  <div class="grid">
+    <div class="demo soft"><span class="name">--uc-shadow-soft</span><span class="hex">0 10 30 black/35</span></div>
+    <div class="demo pop"><span class="name">--uc-shadow-pop</span><span class="hex">0 14 40 blue/25 · CTA hover</span></div>
+    <div class="demo glow"><span class="name">--uc-shadow-glow</span><span class="hex">0 0 40 blue/45 · halo</span></div>
+  </div>
+</body></html>

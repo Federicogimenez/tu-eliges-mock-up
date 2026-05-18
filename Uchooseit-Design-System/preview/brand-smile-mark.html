@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; display:flex; gap: 26px; align-items: center; }
+  .mark {
+    width: 140px; aspect-ratio: 1/1;
+    background: #000; border: 4px solid var(--uc-blue);
+    border-radius: 28px;
+    position: relative;
+    transform: rotate(-10deg);
+    box-shadow: 0 0 0 6px #000, 0 0 0 10px var(--uc-blue);
+  }
+  .mark::after {
+    content: "";
+    position: absolute;
+    left: 22%; right: 22%; top: 50%;
+    height: 28px;
+    border: 6px solid var(--uc-blue);
+    border-top: 0;
+    border-radius: 0 0 80px 80px / 0 0 40px 40px;
+    transform: rotate(10deg);
+  }
+  .stack { display:flex; flex-direction:column; gap: 8px; }
+  .stack h3 { font-weight: 700; font-size: 18px; color: #fff; }
+  .stack p { color: rgba(255,255,255,0.66); font-size: 13px; line-height:1.5; max-width: 360px; }
+  .stack code { font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.5); }
+</style>
+</head><body>
+  <div class="mark"></div>
+  <div class="stack">
+    <h3>Smile Mark</h3>
+    <p>A rotated square with a blue smile inside. Stand-alone use: app icon, favicon, watermark on imagery. Tilt = always −10°. The arc carries the brand mood: friendly, generous.</p>
+    <code>border-radius 28px · stroke #2995FC · rotate(−10deg)</code>
+  </div>
+</body></html>

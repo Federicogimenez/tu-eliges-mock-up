@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 30px 32px; }
+  .capture {
+    display:flex; align-items: center;
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    padding: 6px 6px 6px 24px;
+    max-width: 540px;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .capture input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-family: var(--uc-font);
+    font-size: 16px;
+    padding: 14px 8px;
+    outline: none;
+  }
+  .capture input::placeholder { color: rgba(255,255,255,0.55); }
+  .capture button {
+    background: var(--uc-blue);
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-family: var(--uc-font);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  p.hint { color: var(--uc-blue); font-size: 12px; margin-top: 14px; font-weight: 600;}
+  p.disc { color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 4px; }
+</style>
+</head><body>
+  <div class="label">Email capture · the conversion atom of /save</div>
+  <div class="capture">
+    <input type="email" placeholder="Tu correo">
+    <button type="button">Unirme</button>
+  </div>
+  <p class="hint">Recibe tips de ahorro, historias de consumo y ofertas exclusivas.</p>
+  <p class="disc">30% OFF en tu primer año como miembro premium.</p>
+</body></html>

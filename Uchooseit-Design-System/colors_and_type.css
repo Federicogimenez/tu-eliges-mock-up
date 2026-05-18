@@ -1,0 +1,269 @@
+/* =====================================================================
+   uchooseit — colors & type
+   Source of truth for color tokens, typography and base font-faces.
+   Brand spec derived from the production codebase
+   (Federicogimenez/tu-eliges-mock-up — Tailwind config + main.scss).
+   ===================================================================== */
+
+/* ---------- Fonts ---------- */
+/* Montserrat is the single brand typeface across the product.
+   The repo loads ~5 weights via @font-face. We expose 7 here so display
+   work (the hero, calculator, premium card) has enough weight ramp. */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+
+
+:root {
+  /* ============================================================
+     COLOR — Brand
+     ============================================================
+     The brand world is built on a black backdrop with a single
+     electric "save blue" as the action / highlight color. Pink
+     and green show up as accents (price savings, secondary CTAs).
+     Values lifted verbatim from tailwind.config.js. */
+
+  --uc-blue:        #2995FC;  /* lightblue-primary — primary action, links, "comunidad" word */
+  --uc-blue-soft:   #E7FBFE;  /* littleblue       — soft section bg (rare) */
+  --uc-blue-deep:   #6166FD;  /* blue-primary     — used sparingly for secondary chrome */
+  --uc-pink:        #DA82FF;  /* pink-primary     — hover state on premium CTA */
+  --uc-green:       #00BF63;  /* green-primary    — savings price text */
+  --uc-orange:      #FFB200;  /* derived from explosion-naranja / regalito illustration */
+  --uc-red:         #FF3131;  /* in-codebase strikethrough on old price */
+
+  /* ============================================================
+     COLOR — Neutrals
+     ============================================================
+     The product is almost always white-on-black. We carry only a
+     handful of tinted grays so dimmed copy still feels like the
+     brand and not "off-the-shelf gray". */
+
+  --uc-black:       #000000;  /* default page background */
+  --uc-ink:         #0A0E16;  /* slightly tinted black for layered cards */
+  --uc-ink-2:       #14181F;  /* card-on-card surface */
+  --uc-line:        #1F2530;  /* hairline borders on black */
+  --uc-fg-dim:      rgba(255,255,255,0.72); /* subtitle copy */
+  --uc-fg-mute:     rgba(255,255,255,0.55); /* meta / disclaimer */
+  --uc-fg-faint:    rgba(255,255,255,0.32); /* placeholder */
+  --uc-white:       #FFFFFF;
+  --uc-paper:       #F6F8FB;  /* light footer access bar */
+  --uc-paper-ink:   #313033;  /* dark text on paper */
+
+  /* ============================================================
+     COLOR — Semantic
+     ============================================================ */
+  --uc-bg:          var(--uc-black);
+  --uc-bg-elev:     var(--uc-ink);
+  --uc-fg:          var(--uc-white);
+  --uc-fg-muted:    var(--uc-fg-dim);
+  --uc-accent:      var(--uc-blue);
+  --uc-accent-hover: #4DA9FD; /* lightened blue used on hover */
+  --uc-success:     var(--uc-green);
+  --uc-warning:     var(--uc-orange);
+  --uc-danger:      var(--uc-red);
+  --uc-selection-bg: var(--uc-blue);
+  --uc-selection-fg: var(--uc-white);
+
+
+  /* ============================================================
+     TYPE — Family + base size
+     ============================================================
+     The repo runs html { font-size: 62.5% } so 1rem = 10px and
+     copy is sized with clamp(min, vw, max). We keep that contract
+     here so existing component CSS still maps cleanly. */
+
+  --uc-font: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Weight ramp */
+  --uc-w-light:    300;
+  --uc-w-regular:  400;
+  --uc-w-medium:   500;
+  --uc-w-semibold: 600;
+  --uc-w-bold:     700;
+  --uc-w-extrabold:800;
+  --uc-w-black:    900;
+
+  /* Display / heading scale — fluid (mobile → 1440 desktop) */
+  --uc-fs-display:   clamp(2.8rem, 4.4vw, 5.6rem);  /* /save hero, "Somos una comunidad…" */
+  --uc-fs-h1:        clamp(2.4rem, 3.4vw, 4.0rem);  /* page H1 */
+  --uc-fs-h2:        clamp(2.0rem, 2.6vw, 3.2rem);  /* section title */
+  --uc-fs-h3:        clamp(1.8rem, 2.2vw, 2.6rem);  /* card title */
+  --uc-fs-lead:      clamp(1.6rem, 1.8vw, 2.0rem);  /* deck */
+  --uc-fs-body:      clamp(1.4rem, 1.4vw, 1.6rem);
+  --uc-fs-small:     clamp(1.2rem, 1.2vw, 1.4rem);
+  --uc-fs-micro:     1.1rem;
+
+  /* Line heights */
+  --uc-lh-tight:   1.05;  /* big display */
+  --uc-lh-snug:    1.2;
+  --uc-lh-normal:  1.45;
+  --uc-lh-loose:   1.65;
+
+  /* Letter spacing — uppercase tags lean wide. CTAs do too. */
+  --uc-ls-cta:    0.04em;
+  --uc-ls-tag:    0.12em;
+
+  /* ============================================================
+     SPACING & SHAPE
+     ============================================================ */
+  --uc-radius-sm:  6px;
+  --uc-radius-md:  12px;
+  --uc-radius-lg:  20px;   /* default CTA */
+  --uc-radius-xl:  32px;
+  --uc-radius-pill: 999px;
+
+  --uc-pad-card:   clamp(2rem, 3vw, 3.6rem);
+
+  --uc-shadow-soft:   0 10px 30px rgba(0,0,0,0.35);
+  --uc-shadow-glow:   0 0 40px rgba(41,149,252,0.45);   /* blue halo on hero / CTA */
+  --uc-shadow-pop:    0 14px 40px rgba(41,149,252,0.25);
+
+  --uc-hairline:   1px solid var(--uc-line);
+
+  /* Motion — all anims in the codebase fade in over ~0.8s,
+     staggered 0.5s/0.7s/1s/1.5s/2s. CTAs do a 0.3s ease swap. */
+  --uc-ease:       cubic-bezier(.4,0,.2,1);
+  --uc-ease-pop:   cubic-bezier(.34,1.56,.64,1);
+  --uc-dur-fast:   200ms;
+  --uc-dur-med:    300ms;
+  --uc-dur-slow:   800ms;
+}
+
+/* ============================================================
+   BASE — element defaults
+   ============================================================ */
+html  { font-size: 62.5%; -webkit-font-smoothing: antialiased; }
+body  {
+  font-family: var(--uc-font);
+  font-size: var(--uc-fs-body);
+  font-weight: var(--uc-w-regular);
+  color: var(--uc-fg);
+  background: var(--uc-bg);
+  line-height: var(--uc-lh-normal);
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--uc-selection-bg); color: var(--uc-selection-fg); }
+
+h1, .uc-h1 {
+  font-size: var(--uc-fs-h1);
+  font-weight: var(--uc-w-bold);
+  line-height: var(--uc-lh-tight);
+  margin: 0;
+}
+h2, .uc-h2 {
+  font-size: var(--uc-fs-h2);
+  font-weight: var(--uc-w-bold);
+  line-height: var(--uc-lh-snug);
+  margin: 0;
+}
+h3, .uc-h3 {
+  font-size: var(--uc-fs-h3);
+  font-weight: var(--uc-w-semibold);
+  line-height: var(--uc-lh-snug);
+  margin: 0;
+}
+
+/* Display headline ("Somos una comunidad…") */
+.uc-display {
+  font-size: var(--uc-fs-display);
+  font-weight: var(--uc-w-bold);
+  line-height: var(--uc-lh-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.uc-lead {
+  font-size: var(--uc-fs-lead);
+  font-weight: var(--uc-w-light);
+  line-height: var(--uc-lh-normal);
+  color: var(--uc-fg-dim);
+}
+
+/* Highlighted word (e.g. "comunidad") */
+.uc-hl, .uc-display .hl, .uc-h1 .hl { color: var(--uc-accent); }
+
+/* Eyebrow / uppercase tag */
+.uc-eyebrow {
+  font-size: var(--uc-fs-small);
+  font-weight: var(--uc-w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--uc-ls-tag);
+  color: var(--uc-accent);
+}
+
+.uc-micro {
+  font-size: var(--uc-fs-micro);
+  color: var(--uc-fg-mute);
+  letter-spacing: 0.01em;
+}
+
+/* The pill CTA — used at every conversion point. */
+.uc-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 3.2rem;
+  border: 0;
+  border-radius: var(--uc-radius-lg);
+  background: var(--uc-accent);
+  color: var(--uc-white);
+  font-family: var(--uc-font);
+  font-size: clamp(1.6rem, 1.6vw, 2.0rem);
+  font-weight: var(--uc-w-semibold);
+  letter-spacing: var(--uc-ls-cta);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--uc-dur-fast) var(--uc-ease),
+              background var(--uc-dur-med) var(--uc-ease),
+              box-shadow var(--uc-dur-med) var(--uc-ease);
+}
+.uc-cta:hover { transform: translateY(-2px); box-shadow: var(--uc-shadow-pop); }
+.uc-cta:active { transform: translateY(0); }
+.uc-cta--pink { background: var(--uc-pink); }
+.uc-cta--ghost {
+  background: transparent;
+  border: 2px solid var(--uc-accent);
+  color: var(--uc-accent);
+}

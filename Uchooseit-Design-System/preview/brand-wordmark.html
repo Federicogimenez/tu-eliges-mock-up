@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 30px; }
+  .stack { display:flex; flex-direction:column; align-items:flex-start; gap: 22px; }
+  .wm {
+    font-family: var(--uc-font);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 18px;
+  }
+  .wm .dot-us { color: var(--uc-blue); }
+  /* the smile arc */
+  .wm::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 6%; right: 6%;
+    height: 14px;
+    border: 4px solid var(--uc-blue);
+    border-top: 0;
+    border-radius: 0 0 80px 80px / 0 0 40px 40px;
+  }
+  .wm.small { font-size: 30px; padding-bottom: 10px; }
+  .wm.small::after { height: 8px; border-width: 3px; }
+  .wm.tiny { font-size: 20px; padding-bottom: 7px; }
+  .wm.tiny::after { height: 6px; border-width: 2px; }
+  .note { font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.5); }
+</style>
+</head><body>
+  <div class="stack">
+    <span class="wm">uchooseit<span class="dot-us">.us</span></span>
+    <div style="display:flex; gap:32px; align-items:flex-end;">
+      <span class="wm small">uchooseit<span class="dot-us">.us</span></span>
+      <span class="wm tiny">uchooseit<span class="dot-us">.us</span></span>
+    </div>
+    <p class="note">Montserrat 800 + blue arc · arc inset 6% L/R · CSS-only lockup until official SVG ships</p>
+  </div>
+</body></html>

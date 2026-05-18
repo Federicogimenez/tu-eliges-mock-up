@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; }
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .demo {
+    aspect-ratio: 1 / 0.85;
+    background: var(--uc-ink-2);
+    border: 1px solid var(--uc-line);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 12px; box-sizing: border-box;
+  }
+  .demo span { display: block; font-size: 11px; }
+  .demo .name { color: #fff; font-weight: 700; }
+  .demo .hex { color: rgba(255,255,255,0.55); font-family: monospace; margin-top: 2px; }
+</style>
+</head><body>
+  <div class="label">Corner radii</div>
+  <div class="grid">
+    <div class="demo" style="border-radius:6px;"><span class="name">sm</span><span class="hex">6px</span></div>
+    <div class="demo" style="border-radius:12px;"><span class="name">md</span><span class="hex">12px</span></div>
+    <div class="demo" style="border-radius:20px;"><span class="name">lg · CTA</span><span class="hex">20px</span></div>
+    <div class="demo" style="border-radius:32px;"><span class="name">xl · card</span><span class="hex">32px</span></div>
+    <div class="demo" style="border-radius:999px;"><span class="name">pill</span><span class="hex">999px</span></div>
+  </div>
+</body></html>

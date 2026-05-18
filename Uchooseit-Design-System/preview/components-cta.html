@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 26px 30px; }
+  .row { display:flex; flex-wrap: wrap; gap: 16px 22px; align-items:center; }
+  .row + .row { margin-top: 18px; }
+  .tag { font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.55); min-width: 90px; }
+</style>
+</head><body>
+  <div class="label">Calls to action</div>
+
+  <div class="row">
+    <span class="tag">primary</span>
+    <a href="#" class="uc-cta">¡Ahorra dinero ya!</a>
+    <a href="#" class="uc-cta" style="background:#000; box-shadow: 0 0 0 2px var(--uc-blue) inset; color: var(--uc-blue);">JOIN NOW!</a>
+  </div>
+
+  <div class="row">
+    <span class="tag">pink alt</span>
+    <a href="#" class="uc-cta uc-cta--pink">Quiero descuentos</a>
+  </div>
+
+  <div class="row">
+    <span class="tag">ghost</span>
+    <a href="#" class="uc-cta uc-cta--ghost">Ver más</a>
+  </div>
+
+  <div class="row">
+    <span class="tag">hover state</span>
+    <a href="#" class="uc-cta" style="transform: translateY(-2px); box-shadow: var(--uc-shadow-pop);">Unirme</a>
+    <span style="font-size:12px; color: rgba(255,255,255,0.55);">↑ −2px lift + blue halo</span>
+  </div>
+</body></html>

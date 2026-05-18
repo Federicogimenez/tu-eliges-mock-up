@@ -1,0 +1,38 @@
+/* shared base for preview cards */
+@import url("../colors_and_type.css");
+
+html, body { width: 100%; }
+body {
+  padding: 28px 32px;
+  background: var(--uc-bg);
+  color: var(--uc-fg);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.card-row { display: flex; gap: 18px; align-items: stretch; flex-wrap: wrap; }
+.card-col { display: flex; flex-direction: column; gap: 14px; }
+.swatch {
+  width: 100%; aspect-ratio: 1.4 / 1;
+  border-radius: var(--uc-radius-md);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 14px 16px; box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.swatch .name { font-weight: 700; font-size: 13px; }
+.swatch .hex  { font-size: 12px; font-weight: 500; opacity: 0.85; letter-spacing: 0.04em; }
+.swatch.on-light { color: #000; border-color: rgba(0,0,0,0.08); }
+.label {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--uc-fg-mute);
+  margin-bottom: 10px;
+}
+.row { display: flex; align-items: center; gap: 14px; }
+.tile {
+  background: var(--uc-ink);
+  border: 1px solid var(--uc-line);
+  border-radius: var(--uc-radius-md);
+  padding: 14px 16px;
+}

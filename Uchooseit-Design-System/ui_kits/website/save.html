@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>uchooseit · /save · comunidad de ahorradores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="kit.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Wordmark.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="CTAButton.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="NavBar.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="EmailCapture.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="TipVideoCard.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="CommunityCarousel.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="TrendCalculator.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="ChoosyCTA.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="Footer.jsx" data-presets="env,react"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    const MEMBERS = [
+      { name: "Mariana", title: "Cómo bajé $4,200 en mi seguro de auto", tag: "Tip · Auto", hue: 24  },
+      { name: "Diego",   title: "Tarjetas de crédito sin annual fee",     tag: "Tip · Crédito", hue: 200 },
+      { name: "Carla",   title: "Compré mi casa con $0 down payment",     tag: "Tip · Vivienda", hue: 280 },
+      { name: "Iván",    title: "Viajé a Disney por menos de $1,000",     tag: "Tip · Viajes", hue: 140 },
+      { name: "Sofía",   title: "Truco para envíos baratos a México",     tag: "Tip · Remesas", hue: 340 },
+      { name: "Lucas",   title: "Ahorré $1,800 al año en celular",        tag: "Tip · Servicios", hue: 50 },
+      { name: "Renata",  title: "Apps de cashback que sí funcionan",      tag: "Tip · Compras", hue: 230 },
+      { name: "Tomás",   title: "Cómo construí 720 de credit score",      tag: "Tip · Crédito", hue: 12 },
+    ];
+
+    function SavePage() {
+      return (
+        <main>
+          <NavBar />
+
+          <section className="uc-hero" id="hero">
+            <div className="uc-hero__photo" aria-hidden="true"></div>
+            <div className="uc-hero__overlay" aria-hidden="true"></div>
+            <div className="uc-hero__content">
+              <Wordmark size={48} />
+              <h1 style={{ marginTop: 24 }}>
+                Somos una <span className="hl">comunidad</span> de ahorradores
+                con acceso a descuentos exclusivos.
+              </h1>
+              <div className="uc-hero__capture-wrap" id="capture">
+                <EmailCapture cta="Unirme" />
+              </div>
+              <p className="uc-hero__hint">
+                Recibe tips de ahorro, historias de consumo y ofertas exclusivas.
+              </p>
+              <p className="uc-hero__disc">
+                <strong>30% OFF</strong> en tu primer año como miembro premium.
+              </p>
+            </div>
+          </section>
+
+          <div className="uc-ribbon" aria-hidden="true"></div>
+
+          <section className="uc-section" id="community">
+            <h2>Voces de la <span className="hl">comunidad</span></h2>
+            <p className="uc-section__intro">
+              Cada miembro comparte un tip en video. Toca cualquier rostro para
+              ver su historia — todos los tips son gratis.
+            </p>
+            <CommunityCarousel members={MEMBERS} />
+          </section>
+
+          <section className="uc-section" id="calc" style={{ paddingTop: 0 }}>
+            <h2>Tendencia: <span className="hl">Mundial 2026</span></h2>
+            <p className="uc-section__intro">
+              Lo que cuesta ir hoy — y lo que ahorrás con uchooseit. Editá los
+              precios con tus propios datos.
+            </p>
+            <TrendCalculator />
+          </section>
+
+          <ChoosyCTA />
+
+          <Footer />
+
+          {/* floating WhatsApp button — brand pattern */}
+          <a
+            href="https://wa.me/17869393494"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              position: "fixed", right: 18, bottom: 18, zIndex: 60,
+              width: 60, height: 60, borderRadius: 999,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              background: "#fff", boxShadow: "0 8px 22px rgba(0,0,0,0.35)"
+            }}
+            aria-label="WhatsApp"
+          >
+            <img src="../../assets/whatsapp.png" alt="" width="44" />
+          </a>
+        </main>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<SavePage />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; }
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .swatch { aspect-ratio: 1/1; padding: 12px; }
+  .swatch .name { font-size: 12px; }
+  .swatch .hex { font-size: 11px; }
+</style>
+</head><body>
+  <div class="label">Neutrals · black-first surface system</div>
+  <div class="grid">
+    <div class="swatch" style="background:#000;">
+      <span class="name">Black</span><span class="hex">#000000 · bg</span>
+    </div>
+    <div class="swatch" style="background:#0A0E16;">
+      <span class="name">Ink</span><span class="hex">#0A0E16 · elev</span>
+    </div>
+    <div class="swatch" style="background:#14181F;">
+      <span class="name">Ink-2</span><span class="hex">#14181F · card</span>
+    </div>
+    <div class="swatch" style="background:#1F2530;">
+      <span class="name">Line</span><span class="hex">#1F2530 · 1px</span>
+    </div>
+    <div class="swatch on-light" style="background:#F6F8FB;">
+      <span class="name">Paper</span><span class="hex">#F6F8FB · footer</span>
+    </div>
+    <div class="swatch on-light" style="background:#fff;">
+      <span class="name">White</span><span class="hex">#FFFFFF · fg</span>
+    </div>
+  </div>
+
+  <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+    <div class="tile" style="flex:1; min-width:180px;">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:6px;">Foreground opacity ramp</div>
+      <div style="color:#fff;          font-weight:600; font-size:14px;">fg / pure white</div>
+      <div style="color:rgba(255,255,255,.72); font-size:13px;">fg-dim · subtitle copy 72%</div>
+      <div style="color:rgba(255,255,255,.55); font-size:12px;">fg-mute · meta 55%</div>
+      <div style="color:rgba(255,255,255,.32); font-size:12px;">fg-faint · placeholder 32%</div>
+    </div>
+  </div>
+</body></html>

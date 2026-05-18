@@ -35,6 +35,35 @@
   --color-b2b-surface: #111111;
   --color-b2b-card: #0A0A0A;
 
+  /* ── Uchooseit Design System (capa aditiva — feature landing-latam) ──
+     Tokens del nuevo DS (Uchooseit-Design-System/colors_and_type.css).
+     Prefijo uc-* para no colisionar con la marca actual. El azul de marca
+     ya existe como --color-blue-uchooseit (= --uc-blue del DS), se reutiliza. */
+  --color-uc-black:     #000000;
+  --color-uc-ink:       #0A0E16;
+  --color-uc-ink-2:     #14181F;
+  --color-uc-line:      #1F2530;
+  --color-uc-blue-soft: #E7FBFE;
+  --color-uc-blue-deep: #6166FD;
+  --color-uc-pink:      #DA82FF;
+  --color-uc-green:     #00BF63;
+  --color-uc-orange:    #FFB200;
+  --color-uc-red:       #FF3131;
+  --color-uc-paper:     #F6F8FB;
+  --color-uc-fg-dim:    rgba(255, 255, 255, 0.72);
+  --color-uc-fg-mute:   rgba(255, 255, 255, 0.55);
+  --color-uc-fg-faint:  rgba(255, 255, 255, 0.32);
+
+  /* Shape & shadow (custom props — usadas vía var(), no como utilities) */
+  --uc-radius-sm:   6px;
+  --uc-radius-md:   12px;
+  --uc-radius-lg:   20px;
+  --uc-radius-xl:   32px;
+  --uc-radius-pill: 999px;
+  --uc-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --uc-shadow-pop:  0 14px 40px rgba(41, 149, 252, 0.25);
+  --uc-shadow-glow: 0 0 40px rgba(41, 149, 252, 0.45);
+
    --text-shadow-xl-blue: 2px 0px 0px #2995fc90; 
    
    --text-shadow-xl-dark: 2px 1px 2px #000; 
@@ -142,6 +171,35 @@
 
   .heading-1{@apply text-3xl sm:text-5xl md:text-5xl xl:text-6xl}
   .subtitle{@apply text-lg md:text-2xl }
+
+  /* ── Uchooseit DS typography utilities (feature landing-latam) ──
+     Escala adaptada al root de 16px de este repo (el DS asume 62.5%). */
+  .hl { color: var(--color-blue-uchooseit); }
+  .uc-display {
+    font-size: clamp(2.25rem, 4.6vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .uc-eyebrow {
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-blue-uchooseit);
+  }
+  .uc-lead {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--color-uc-fg-dim);
+  }
+  .uc-micro {
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+    color: var(--color-uc-fg-mute);
+  }
 
   .perspective-1000 {
     perspective: 1000px;

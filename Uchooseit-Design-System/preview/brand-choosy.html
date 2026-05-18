@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; display:flex; gap: 24px; align-items: center; }
+  .placeholder {
+    width: 160px; aspect-ratio: 1/1.2;
+    border: 2px dashed var(--uc-blue);
+    border-radius: 16px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap: 8px;
+    color: rgba(255,255,255,0.55);
+    text-align:center; padding: 12px;
+    background:
+      radial-gradient(60% 50% at 50% 35%, rgba(41,149,252,0.18), transparent 70%),
+      var(--uc-ink);
+  }
+  .placeholder .who { font-weight: 800; font-size: 18px; color: #fff; letter-spacing:.02em; }
+  .placeholder .role { font-size: 11px; text-transform: uppercase; letter-spacing:.15em; color: var(--uc-blue); }
+  .placeholder .pill { margin-top: 4px; font-size: 10px; padding: 4px 8px; border-radius:999px; background:#000; border:1px solid var(--uc-line); }
+  .stack { display:flex; flex-direction:column; gap: 8px; flex:1; }
+  .stack h3 { font-weight: 700; font-size: 18px; color: #fff; }
+  .stack p { color: rgba(255,255,255,0.66); font-size: 13px; line-height:1.5; max-width: 420px; }
+  .stack ul { font-size: 12px; color: rgba(255,255,255,0.66); padding-left: 18px; line-height: 1.6; }
+</style>
+</head><body>
+  <div class="placeholder">
+    <span class="role">Mascota</span>
+    <span class="who">Choosy</span>
+    <span class="pill">PNG pendiente</span>
+  </div>
+  <div class="stack">
+    <h3>Choosy — el zorro ahorrador</h3>
+    <p>Choosy es un zorro con antifaz azul y capa azul que carga una bolsa de billetes. Aparece en momentos cálidos: bienvenida, upsell a premium, vacíos.</p>
+    <ul>
+      <li>Pose por defecto: de pie, índice apuntando arriba.</li>
+      <li>Acompaña copy en mayúsculas iniciales (ej. <em>"MUCHOS VIAJEROS NO SABEN…"</em>).</li>
+      <li>Tamaño mínimo en pantalla: 220 px de alto.</li>
+    </ul>
+  </div>
+</body></html>

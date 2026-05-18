@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>uchooseit · website UI kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="kit.css">
+  <style>
+    .kit-pad { padding: 6vh 6vw; max-width: 1280px; margin: 0 auto; }
+    .kit-pad h1 { font-size: clamp(3.2rem, 4vw, 5rem); font-weight: 800; letter-spacing: -0.01em; }
+    .kit-pad p.lead { color: var(--uc-fg-dim); font-size: 18px; max-width: 680px; line-height:1.5; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 40px 0; }
+    @media (max-width: 760px) { .row-2 { grid-template-columns: 1fr; } }
+    .demo-card {
+      background: var(--uc-ink);
+      border: 1px solid var(--uc-line);
+      border-radius: 24px;
+      padding: 24px;
+      display:flex; flex-direction: column; gap: 18px;
+    }
+    .demo-card h3 { font-size: 18px; font-weight: 700; }
+    .demo-card .meta { color: var(--uc-fg-mute); font-size: 12px; font-family: monospace; }
+    .kit-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--uc-blue);
+      color: #fff; text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700; letter-spacing: 0.04em;
+      transition: transform var(--uc-dur-fast);
+    }
+    .kit-link:hover { transform: translateY(-2px); box-shadow: var(--uc-shadow-pop); }
+    .toc {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;
+    }
+    .toc a {
+      font-size: 12px; padding: 6px 12px; border-radius: 999px;
+      background: var(--uc-ink); border: 1px solid var(--uc-line);
+      color: var(--uc-fg-dim); text-decoration: none;
+    }
+    .toc a:hover { color: #fff; border-color: var(--uc-blue); }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Wordmark.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="CTAButton.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="EmailCapture.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="TipVideoCard.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="CommunityCarousel.jsx" data-presets="env,react"></script>
+  <script type="text/babel" src="Footer.jsx" data-presets="env,react"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    function KitIndex() {
+      return (
+        <main>
+          <nav className="uc-nav">
+            <Wordmark size={26} />
+            <div className="uc-nav__menu">
+              <a href="save.html"><strong style={{color:"var(--uc-blue)"}}>Ver /save</strong></a>
+              <a href="#wordmark">Wordmark</a>
+              <a href="#cta">CTA</a>
+              <a href="#capture">Email capture</a>
+              <a href="#tip">Tip card</a>
+            </div>
+          </nav>
+
+          <section className="kit-pad">
+            <span className="uc-eyebrow">UI kit · website</span>
+            <h1 style={{ marginTop: 14 }}>
+              uchooseit, <span style={{ color: "var(--uc-blue)" }}>componente por componente</span>.
+            </h1>
+            <p className="lead">
+              Esto no es la página final — es el inventario. Cada bloque acá
+              es exactamente lo que se usa en{" "}
+              <a href="save.html" style={{ color: "var(--uc-blue)" }}><strong>/save</strong></a>.
+              Importá un .jsx por componente y juntá pantallas nuevas en minutos.
+            </p>
+            <div style={{ marginTop: 24, display:"flex", gap: 16, flexWrap:"wrap" }}>
+              <a className="kit-link" href="save.html">→ Abrir el rediseño completo de /save</a>
+            </div>
+            <div className="toc">
+              <a href="#wordmark">Wordmark</a>
+              <a href="#cta">CTAButton</a>
+              <a href="#capture">EmailCapture</a>
+              <a href="#tip">TipVideoCard</a>
+              <a href="#carousel">CommunityCarousel</a>
+              <a href="#footer">Footer</a>
+            </div>
+          </section>
+
+          <section className="kit-pad" style={{ paddingTop: 0 }}>
+            <div className="row-2">
+              <div className="demo-card" id="wordmark">
+                <h3>Wordmark</h3>
+                <span className="meta">{`<Wordmark size={48} />`}</span>
+                <Wordmark size={48} />
+              </div>
+
+              <div className="demo-card" id="cta">
+                <h3>CTAButton · 3 variantes</h3>
+                <span className="meta">{`variant: primary | pink | ghost`}</span>
+                <div style={{ display:"flex", gap: 12, flexWrap:"wrap" }}>
+                  <CTAButton>¡Ahorra ya!</CTAButton>
+                  <CTAButton variant="pink">Quiero descuentos</CTAButton>
+                  <CTAButton variant="ghost">Ver más</CTAButton>
+                </div>
+              </div>
+
+              <div className="demo-card" id="capture" style={{ gridColumn: "1 / -1" }}>
+                <h3>EmailCapture</h3>
+                <span className="meta">{`<EmailCapture cta="Unirme" />`}</span>
+                <EmailCapture cta="Unirme" />
+              </div>
+
+              <div className="demo-card" id="tip">
+                <h3>TipVideoCard</h3>
+                <span className="meta">{`name · title · tag · hue`}</span>
+                <TipVideoCard name="Mariana" title="Bajé $4,200 en seguro de auto" tag="Tip · Auto" hue={24} />
+              </div>
+
+              <div className="demo-card" id="carousel">
+                <h3>CommunityCarousel</h3>
+                <span className="meta">{`Toca ‹ / › para rolar`}</span>
+                <CommunityCarousel members={[
+                  { name: "Diego", title: "Crédito sin annual fee", tag: "Crédito", hue: 200 },
+                  { name: "Carla", title: "Casa con $0 down", tag: "Vivienda", hue: 280 },
+                  { name: "Iván",  title: "Disney por <$1k",   tag: "Viajes", hue: 140 },
+                ]} />
+              </div>
+            </div>
+          </section>
+
+          <Footer />
+        </main>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<KitIndex />);
+  </script>
+</body>
+</html>
