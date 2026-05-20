@@ -22,7 +22,6 @@ const Company = lazy( () => import('../features/afiliates/Company') )
 const NonProfit = lazy( () => import('../features/afiliates/NonProfit') )
 const Business = lazy( () => import('../features/business/Business') )
 const LandingEmail = lazy( () => import('../features/landing-email/LandingEmail') )
-const LandingLatam = lazy( () => import('../features/landing-latam/LandingLatam') )
 
 export const AppRoutes: React.FC = () => {
 
@@ -47,7 +46,6 @@ export const AppRoutes: React.FC = () => {
             <Route path="/non-profit" element={<NonProfit />} />
             <Route path="/business" element={<Business />} />
             <Route path="/save" element={<LandingEmail />} />
-            <Route path="/save-latam" element={<LandingLatam />} />
           </Routes>
         </Suspense>
       </Main>

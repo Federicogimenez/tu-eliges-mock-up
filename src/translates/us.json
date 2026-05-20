@@ -783,74 +783,72 @@
   },
   "landingEmail": {
     "hero": {
-      "cold": {
-        "headline": "Everything is getting more expensive.",
-        "subheadline": "But many people don't realize there are private discounts on travel, dining and everyday spending."
-      },
-      "warm": {
-        "headline": "What if you didn't have to pay full price anymore?",
-        "subheadline": "Many brands offer private pricing on travel, restaurants and shopping."
-      },
-      "hot": {
-        "headline": "Unlock private discounts across the United States.",
-        "subheadline": "Travel, dining, shopping and everyday experiences."
-      },
-      "scrollCta": "See more"
+      "headline": "We are a <span class=\"hl\">community</span> of savers with access to private discounts.",
+      "subcopy": "Join for free and get tips to save on your trip to the United States.",
+      "freeLine": "The community is free — and whenever you want to go premium, a special invitation with <strong class=\"font-bold\">30% OFF</strong> on your first year is waiting for you."
     },
-    "insight": {
-      "cold": {
-        "title": "What many people don't realize",
-        "description": "Prices across the United States keep going up. Travel, dining, shopping and everyday spending cost more than they used to. Better prices already exist behind private access."
-      },
-      "warm": {
-        "title": "What many people don't realize",
-        "description": "Many brands already offer private discounts on travel, restaurants and everyday spending. But most consumers never see those prices."
-      },
-      "hot": {
-        "title": "What many people don't realize",
-        "description": "Many of the best prices in the United States are not public. They are private discounts normally reserved for members of certain communities."
-      },
-      "closing": "Uchooseit.us gives you access."
+    "community": {
+      "title": "How the <span class=\"hl\">community</span> saves",
+      "subtitle": "Discover real travel, shopping and everyday moments shared by our community of savers."
     },
-    "form": {
-      "title": "Limited-time offer for new members.",
-      "description": "Leave your email and get 30% off for 15 days.",
-      "includes": {
-        "0": "Access to private deals across the U.S.",
-        "1": "Tips to help you save on everyday spending",
-        "2": "Tips to help you save on everyday spending"
-      },
-      "fieldPlaceholder": "Your email address",
-      "button": "Get my 30% discount",
-      "microcopy": "We'll send your discount to your email. Check your inbox or spam.",
-      "successMessage": "Your email has been registered successfully. We'll be in touch shortly. Check your spam folder."
+    "calculator": {
+      "title": "Trend: <span class=\"hl\">World Cup 2026</span>",
+      "subtitle": "What your trip could cost… and how you could save with access to private discounts.",
+      "budgetLabel": "Realistic budget · editable",
+      "totalLabel": "Estimated total",
+      "linesLabel": "lines",
+      "addExpense": "+ Add expense",
+      "namePlaceholder": "Expense name",
+      "detailPlaceholder": "Detail (optional)",
+      "amountPlaceholder": "0",
+      "defaultSub": "Added expense",
+      "cancel": "Cancel",
+      "confirm": "Add",
+      "pitchEyebrow": "Trend · World Cup 2026",
+      "pitchTitle": "Traveling to the World Cup is expensive!",
+      "pitchBody": "A trip to the USA could cost at least $9,500 USD. Premium members could save on hotels, restaurants, car rentals and attractions.",
+      "percentLabel": "Average premium savings",
+      "savingsPre": "We can help you save ",
+      "savingsPost": ". Want to know how?",
+      "cta": "I want to save",
+      "modalTitle": "Save on your World Cup trip",
+      "modalSubtitle": "Leave us your email: we'll send you the private prices on hotels, flights, parks and rentals for the community.",
+      "budgetSectionTitle": "Your estimated budget",
+      "savingsSectionTitle": "Your potential savings",
+      "countryLabel": "Departure country",
+      "countryArgentina": "Argentina",
+      "countryColombia": "Colombia",
+      "countryMexico": "Mexico",
+      "travelersLabel": "Travelers",
+      "travelerSingular": "{{count}} traveler",
+      "travelerPlural": "{{count}} travelers",
+      "durationLabel": "Duration",
+      "daysOption": "{{days}} days",
+      "destinationLabel": "Destination",
+      "destinationValue": "Miami / Orlando",
+      "typeShared": "SHARED",
+      "typePerPerson": "PER PERSON",
+      "perNightNote": "{{nights}} nights · {{rate}}/night",
+      "perDayNote": "{{days}} days · {{rate}}/day",
+      "perMatchSingular": "1 match · {{rate}} each",
+      "perMatchPlural": "{{count}} matches · {{rate}} each",
+      "savingsEstimatedLabel": "Estimated savings",
+      "savingsDisclaimer": "Calculated based on your budget, trip duration and membership usage."
     },
-    "savings": {
-      "title": "Save With Your Private Access",
-      "subtitle": "Top recommended categories — up to 50% OFF",
-      "topics": {
-        "0": { "label": "Shop" },
-        "1": { "label": "Travel" },
-        "2": { "label": "Dining" },
-        "3": { "label": "Entertainment" }
-      },
-      "footer": "Small savings can add up to hundreds or even thousands of dollars.",
-      "disclaimer": "Discounts shown are seasonal specials and may vary."
+    "choosy": {
+      "headline": "The best prices in the USA <span class=\"hl\">aren't always public</span>.",
+      "subcopy": "Join our community for free, get ideas to save and discover how to become a premium member for more benefits.",
+      "cta": "I want to join",
+      "micro": "The community is free. You Choose if you want to go premium.",
+      "bubble": "I'm Choosy, your discount hunter",
+      "modalTitle": "Start saving for free",
+      "modalSubtitle": "Leave us your email and get the saving tips and a special invitation to become a premium member."
     },
-    "howItWorks": {
-      "title": "How It Works",
-      "steps": {
-        "0": { "title": "Activate your access", "description": "Sign up and unlock your membership" },
-        "1": { "title": "Browse deals", "description": "Search shops, travel, restaurants and activities" },
-        "2": { "title": "Use the discounts", "description": "Save on the things you already do" }
-      },
-      "closing": "That's it."
-    },
-    "closing": {
-      "line1": "Your money should go further.",
-      "line2": "Not full price on everything.",
-      "line3": "Enter your email and get 30% off for 15 days.",
-      "disclaimer": "Discount available for a limited time for new members."
+    "modal": {
+      "title": "Join the community",
+      "subtitle": "Get tips to save on your trip to the United States and a special invitation with 30% OFF on your first premium year.",
+      "micro": "The community is free. You Choose if you want to go premium.",
+      "cta": "Join"
     }
   },
   "constants": {

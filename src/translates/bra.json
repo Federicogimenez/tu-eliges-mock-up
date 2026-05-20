@@ -783,74 +783,72 @@
   },
   "landingEmail": {
     "hero": {
-      "cold": {
-        "headline": "Viajar para os Estados Unidos para a Copa do Mundo 2026 pode ser caro.",
-        "subheadline": "Milhões de pessoas vão viajar ao país e os preços de hotéis, restaurantes e atividades vão subir."
-      },
-      "warm": {
-        "headline": "Imagine viajar para a Copa do Mundo 2026 sem pagar preço cheio.",
-        "subheadline": "Muitos hotéis, restaurantes e atividades nos Estados Unidos têm preços privados que não aparecem na internet."
-      },
-      "hot": {
-        "headline": "Acesse descontos privados para sua viagem à Copa do Mundo 2026.",
-        "subheadline": "Hotéis, restaurantes, atividades e experiências em todos os Estados Unidos."
-      },
-      "scrollCta": "Ver mais"
+      "headline": "Somos uma <span class=\"hl\">comunidade</span> de poupadores com acesso a descontos privados.",
+      "subcopy": "Participe grátis e receba dicas para economizar na sua viagem aos Estados Unidos.",
+      "freeLine": "A comunidade é grátis — e quando você quiser ser premium, um convite especial com <strong class=\"font-bold\">30% OFF</strong> no seu primeiro ano espera por você."
     },
-    "insight": {
-      "cold": {
-        "title": "A maioria dos viajantes paga mais do que deveria…",
-        "description": "Porque muitos dos melhores preços nos EUA são privados. Só membros têm acesso"
-      },
-      "warm": {
-        "title": "Continuar pagando preço cheio… ou acessar preços privados",
-        "description": "Muitos dos melhores preços nos Estados Unidos não são públicos."
-      },
-      "hot": {
-        "title": "Continuar pagando preço cheio… ou acessar preços privados",
-        "description": "Muitos dos melhores preços nos Estados Unidos não são públicos."
-      },
-      "closing": "Uchooseit.us te dá esse acesso."
+    "community": {
+      "title": "Como a <span class=\"hl\">comunidade</span> economiza",
+      "subtitle": "Descubra experiências reais de viagem, compras e momentos compartilhados pela nossa comunidade de poupadores."
     },
-    "form": {
-      "title": "Oferta limitada para viajantes da Copa 2026.",
-      "description": "Deixe seu e-mail e receba 30% de desconto por 15 dias.",
-      "includes": {
-        "0": "Dicas para economizar durante sua viagem",
-        "1": "Ofertas da semana",
-        "2": "Ofertas da semana"
-      },
-      "fieldPlaceholder": "Seu e-mail",
-      "button": "Quero meu desconto de 30%",
-      "microcopy": "Receba o desconto no seu e-mail para acessar. Verifique sua caixa de entrada ou spam.",
-      "successMessage": "Seu e-mail foi registrado com sucesso. Em breve entraremos em contato. Verifique o spam."
+    "calculator": {
+      "title": "Tendência: <span class=\"hl\">Copa 2026</span>",
+      "subtitle": "Quanto sua viagem poderia custar… e quanto você poderia economizar com acesso a descontos privados.",
+      "budgetLabel": "Orçamento realista · editável",
+      "totalLabel": "Total estimado",
+      "linesLabel": "itens",
+      "addExpense": "+ Adicionar gasto",
+      "namePlaceholder": "Nome do gasto",
+      "detailPlaceholder": "Detalhe (opcional)",
+      "amountPlaceholder": "0",
+      "defaultSub": "Gasto adicionado",
+      "cancel": "Cancelar",
+      "confirm": "Adicionar",
+      "pitchEyebrow": "Tendência · Copa 2026",
+      "pitchTitle": "Que caro viajar para a Copa!",
+      "pitchBody": "Uma viagem aos EUA poderia custar pelo menos US$ 9.500. Os membros premium poderiam economizar em hotéis, restaurantes, aluguel de carros e atrações.",
+      "percentLabel": "Economia média premium",
+      "savingsPre": "Podemos te ajudar a economizar ",
+      "savingsPost": ". Quer saber como?",
+      "cta": "Quero economizar",
+      "modalTitle": "Economize na sua viagem para a Copa",
+      "modalSubtitle": "Deixe seu e-mail: enviamos os preços privados de hotéis, voos, parques e aluguéis para a comunidade.",
+      "budgetSectionTitle": "Seu orçamento estimado",
+      "savingsSectionTitle": "Sua economia potencial",
+      "countryLabel": "País de partida",
+      "countryArgentina": "Argentina",
+      "countryColombia": "Colômbia",
+      "countryMexico": "México",
+      "travelersLabel": "Viajantes",
+      "travelerSingular": "{{count}} viajante",
+      "travelerPlural": "{{count}} viajantes",
+      "durationLabel": "Duração",
+      "daysOption": "{{days}} dias",
+      "destinationLabel": "Destino",
+      "destinationValue": "Miami / Orlando",
+      "typeShared": "COMPARTILHADO",
+      "typePerPerson": "POR PESSOA",
+      "perNightNote": "{{nights}} noites · {{rate}}/noite",
+      "perDayNote": "{{days}} dias · {{rate}}/dia",
+      "perMatchSingular": "1 jogo · {{rate}} cada",
+      "perMatchPlural": "{{count}} jogos · {{rate}} cada",
+      "savingsEstimatedLabel": "Economia estimada",
+      "savingsDisclaimer": "Calculado com base no seu orçamento, duração da viagem e uso da assinatura."
     },
-    "savings": {
-      "title": "Economize com seu acesso privado",
-      "subtitle": "Os tópicos mais recomendados — até 50% OFF",
-      "topics": {
-        "0": { "label": "Rent a car" },
-        "1": { "label": "Hotéis" },
-        "2": { "label": "Comida" },
-        "3": { "label": "Parques" }
-      },
-      "footer": "Durante uma viagem, pequenas economias podem somar centenas ou até milhares de dólares.",
-      "disclaimer": "Os descontos mostrados são de temporadas especiais e podem variar."
+    "choosy": {
+      "headline": "Os melhores preços nos EUA <span class=\"hl\">nem sempre são públicos</span>.",
+      "subcopy": "Participe grátis da nossa comunidade, receba ideias para economizar e descubra como ser membro premium para ter mais benefícios.",
+      "cta": "Quero participar",
+      "micro": "A comunidade é grátis. Você Escolhe se quer ser premium.",
+      "bubble": "eu sou o Choosy, seu caçador de descontos",
+      "modalTitle": "Comece a economizar grátis",
+      "modalSubtitle": "Deixe seu e-mail e receba as dicas de economia e um convite especial para ser membro premium."
     },
-    "howItWorks": {
-      "title": "Como funciona",
-      "steps": {
-        "0": { "title": "Ative seu acesso", "description": "Cadastre-se e desbloqueie sua assinatura" },
-        "1": { "title": "Busque ofertas", "description": "Hotéis, restaurantes e atividades" },
-        "2": { "title": "Use os descontos", "description": "Economize durante sua viagem" }
-      },
-      "closing": "É só isso."
-    },
-    "closing": {
-      "line1": "Sua viagem à Copa deveria criar memórias.",
-      "line2": "Não estresse com os preços.",
-      "line3": "Deixe seu e-mail e receba 30% de desconto por 15 dias.",
-      "disclaimer": "Desconto disponível por tempo limitado para novos membros."
+    "modal": {
+      "title": "Participe da comunidade",
+      "subtitle": "Receba dicas para economizar na sua viagem aos Estados Unidos e um convite especial com 30% OFF no seu primeiro ano premium.",
+      "micro": "A comunidade é grátis. Você Escolhe se quer ser premium.",
+      "cta": "Participar"
     }
   },
   "constants": {

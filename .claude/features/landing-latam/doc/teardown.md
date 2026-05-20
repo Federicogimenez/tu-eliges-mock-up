@@ -30,6 +30,12 @@ MODIFICADOS (3 archivos, cambios aditivos a revertir):
 `src/features/landing-email/**` quedó **100% intacto** (verificado: `git status
 --porcelain src/features/landing-email/` vacío).
 
+> ⚠️ **Dependencia externa (desde CHANGES-05):** `landing-latam` importa
+> `landing-email/components/HubSpotForm` (Hero + SubscribeModal). Borrar
+> `landing-latam` sigue siendo seguro; pero si se elimina `landing-email`
+> ANTES de promover la maqueta, el build rompe hasta internalizar o quitar
+> ese import.
+
 ## Para ELIMINAR la maqueta
 
 1. Borrar la carpeta completa:

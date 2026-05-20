@@ -783,74 +783,72 @@
   },
   "landingEmail": {
     "hero": {
-      "cold": {
-        "headline": "Viajar a Estados Unidos para el Mundial 2026 podría ser caro.",
-        "subheadline": "Millones de personas viajarán al país y los precios de hoteles, restaurantes y actividades subirán."
-      },
-      "warm": {
-        "headline": "Imagina viajar al Mundial 2026 sin pagar precio completo.",
-        "subheadline": "Muchos hoteles, restaurantes y actividades en Estados Unidos tienen precios privados que no aparecen en internet."
-      },
-      "hot": {
-        "headline": "Accede a descuentos privados para tu viaje al Mundial 2026.",
-        "subheadline": "Hoteles, restaurantes, actividades y experiencias en todo Estados Unidos."
-      },
-      "scrollCta": "Ver más"
+      "headline": "Somos una <span class=\"hl\">comunidad</span> de ahorradores con acceso a descuentos privados.",
+      "subcopy": "Únete gratis y recibe consejos para ahorrar en tu viaje a Estados Unidos.",
+      "freeLine": "La comunidad es gratis — y cuando quieras ser premium, te espera una invitación especial con <strong class=\"font-bold\">30% OFF</strong> en tu primer año."
     },
-    "insight": {
-      "cold": {
-        "title": "La mayoría de viajeros paga de más…",
-        "description": "Porque muchos de los mejores precios en EE. UU. son privados. Solo los ven miembros"
-      },
-      "warm": {
-        "title": "Seguir pagando precio completo… o acceder a precios privados",
-        "description": "Muchos de los mejores precios en Estados Unidos no son públicos."
-      },
-      "hot": {
-        "title": "Seguir pagando precio completo… o acceder a precios privados",
-        "description": "Muchos de los mejores precios en Estados Unidos no son públicos."
-      },
-      "closing": "Uchooseit.us te da ese acceso"
+    "community": {
+      "title": "Así ahorra la <span class=\"hl\">comunidad</span>",
+      "subtitle": "Descubre experiencias de viajes, compras y momentos reales compartidos por nuestra comunidad de ahorradores."
     },
-    "form": {
-      "title": "Oferta limitada para viajeros del Mundial 2026.",
-      "description": "Deja tu correo y recibe 30% de descuento por 15 días.",
-      "includes": {
-        "0": "Tips para ahorrar durante tu viaje",
-        "1": "Ofertas de la semana",
-        "2": "Ofertas de la semana"
-      },
-      "fieldPlaceholder": "Tu correo electrónico",
-      "button": "Quiero mi 30% de descuento",
-      "microcopy": "Recibe el descuento a tu correo para que accedas. Revisa tu bandeja o spam.",
-      "successMessage": "Tu email se ha registrado correctamente, en breve nos comunicaremos contigo. Revisa spam."
+    "calculator": {
+      "title": "Tendencia: <span class=\"hl\">Mundial 2026</span>",
+      "subtitle": "Lo que podría costar tu viaje… y cómo podrías ahorrar con acceso a descuentos privados.",
+      "budgetLabel": "Presupuesto realista · editable",
+      "totalLabel": "Total estimado",
+      "linesLabel": "líneas",
+      "addExpense": "+ Agregar gasto",
+      "namePlaceholder": "Nombre del gasto",
+      "detailPlaceholder": "Detalle (opcional)",
+      "amountPlaceholder": "0",
+      "defaultSub": "Gasto agregado",
+      "cancel": "Cancelar",
+      "confirm": "Agregar",
+      "pitchEyebrow": "Tendencia · Mundial 2026",
+      "pitchTitle": "¡Qué caro viajar al Mundial!",
+      "pitchBody": "Un viaje a USA podría costar por lo menos $9,000 USD. Los miembros premium podrían ahorrar en hoteles, restaurantes, renta de autos y atracciones.",
+      "percentLabel": "Ahorro promedio premium",
+      "savingsPre": "Podemos ayudarte a ahorrar ",
+      "savingsPost": ". ¿Quieres saber cómo?",
+      "cta": "Quiero ahorrar",
+      "modalTitle": "Ahorra en tu viaje al Mundial",
+      "modalSubtitle": "Déjanos tu correo: te enviamos los precios privados de hoteles, vuelos, parques y rentas para la comunidad.",
+      "budgetSectionTitle": "Tu presupuesto estimado",
+      "savingsSectionTitle": "Tu ahorro potencial",
+      "countryLabel": "País de salida",
+      "countryArgentina": "Argentina",
+      "countryColombia": "Colombia",
+      "countryMexico": "México",
+      "travelersLabel": "Viajeros",
+      "travelerSingular": "{{count}} viajero",
+      "travelerPlural": "{{count}} viajeros",
+      "durationLabel": "Duración",
+      "daysOption": "{{days}} días",
+      "destinationLabel": "Destino",
+      "destinationValue": "Miami / Orlando",
+      "typeShared": "COMPARTIDO",
+      "typePerPerson": "POR PERSONA",
+      "perNightNote": "{{nights}} noches · {{rate}}/noche",
+      "perDayNote": "{{days}} días · {{rate}}/día",
+      "perMatchSingular": "1 partido · {{rate}} c/u",
+      "perMatchPlural": "{{count}} partidos · {{rate}} c/u",
+      "savingsEstimatedLabel": "Ahorro estimado",
+      "savingsDisclaimer": "Calculado según tu presupuesto, duración del viaje y uso de la membresía."
     },
-    "savings": {
-      "title": "Ahorra con tu acceso privado",
-      "subtitle": "Los tópicos más recomendados — hasta 50% OFF",
-      "topics": {
-        "0": { "label": "Rent a car" },
-        "1": { "label": "Hoteles" },
-        "2": { "label": "Comida" },
-        "3": { "label": "Parques" }
-      },
-      "footer": "Durante un viaje, pequeños ahorros pueden sumar cientos o incluso miles de dólares.",
-      "disclaimer": "Los descuentos que se muestran son por temporadas especiales y varían su tendencia."
+    "choosy": {
+      "headline": "Los mejores precios en USA <span class=\"hl\">no siempre son públicos</span>.",
+      "subcopy": "Únete gratis a nuestra comunidad, recibe ideas para ahorrar y descubre cómo ser miembro premium para acceder a más beneficios.",
+      "cta": "Quiero unirme",
+      "micro": "La comunidad es gratis. Tú Eliges si quieres ser premium.",
+      "bubble": "soy Choosy, tu caza descuentos",
+      "modalTitle": "Empieza a ahorrar gratis",
+      "modalSubtitle": "Déjanos tu correo y recibe los consejos de ahorro y una invitación especial a miembro premium."
     },
-    "howItWorks": {
-      "title": "Cómo funciona",
-      "steps": {
-        "0": { "title": "Acceso Privado", "description": "Regístrate y desbloquea tu membresía" },
-        "1": { "title": "Cosas para hacer", "description": "Hoteles, restaurantes y actividades" },
-        "2": { "title": "Usa los descuentos", "description": "Ahorra durante tu viaje" }
-      },
-      "closing": "Eso es todo."
-    },
-    "closing": {
-      "line1": "Tu viaje al Mundial debería crear recuerdos.",
-      "line2": "No estrés por los precios.",
-      "line3": "Deja tu correo y recibe 30% de descuento por 15 días.",
-      "disclaimer": "Descuento disponible por tiempo limitado para nuevos miembros."
+    "modal": {
+      "title": "Únete a la comunidad",
+      "subtitle": "Recibe consejos para ahorrar en tu viaje a Estados Unidos y una invitación especial con 30% OFF en tu primer año premium.",
+      "micro": "La comunidad es gratis. Tú Eliges si quieres ser premium.",
+      "cta": "Unirme"
     }
   },
   "constants": {

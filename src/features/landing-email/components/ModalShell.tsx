@@ -11,7 +11,6 @@ interface ModalShellProps {
 /**
  * Shell de modal reutilizable: portal a body, overlay fijo centrado,
  * scrim con click-outside, ESC para cerrar y bloqueo de scroll.
- * El panel (estilos/contenido) lo aporta cada modal vía children.
  */
 export default function ModalShell({
   open,

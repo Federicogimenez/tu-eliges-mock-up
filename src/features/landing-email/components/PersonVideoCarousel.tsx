@@ -8,11 +8,9 @@ interface PersonVideoCarouselProps {
 
 /**
  * Carrusel de videos de UNA persona — CARGA ON-DEMAND.
- *
- * Sólo el slide activo monta un <video> real (con `key={activeIndex}` para
- * que React remonte y libere el anterior al cambiar de slide). Los slides
- * inactivos NO existen en el DOM → no se descargan. `preload="none"`.
- * Al desmontar este componente (cerrar/cambiar persona) el video se libera.
+ * Sólo el slide activo monta un <video> real (key={activeIndex} → remonta y
+ * libera el anterior). Slides inactivos no existen en el DOM. preload="none".
+ * Formato vertical tipo historia (9:16), object-contain (formato nativo).
  */
 export default function PersonVideoCarousel({
   memberName,
@@ -30,8 +28,6 @@ export default function PersonVideoCarousel({
   return (
     <div className="mx-auto w-full">
       <div className="relative mx-auto aspect-[9/16] h-[68vh] max-h-[620px] w-auto overflow-hidden rounded-[20px] border border-uc-line bg-black">
-        {/* Sólo el slide activo monta el <video>. key → remonta por slide.
-            object-contain → respeta el formato nativo del video (sin crop). */}
         <video
           key={activeIndex}
           src={active.src}
@@ -44,7 +40,6 @@ export default function PersonVideoCarousel({
           className="h-full w-full object-contain"
         />
 
-        {/* Caption — solo si hay descripción o múltiples videos */}
         {(active.caption || videos.length > 1) && (
           <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
             {active.caption && (
@@ -65,7 +60,7 @@ export default function PersonVideoCarousel({
             <button
               type="button"
               onClick={() => go(-1)}
-              aria-label="Video anterior"
+              aria-label="←"
               className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-uc-line bg-black/60 text-xl text-white transition hover:bg-blue-uchooseit"
             >
               ‹
@@ -73,7 +68,7 @@ export default function PersonVideoCarousel({
             <button
               type="button"
               onClick={() => go(1)}
-              aria-label="Video siguiente"
+              aria-label="→"
               className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-uc-line bg-black/60 text-xl text-white transition hover:bg-blue-uchooseit"
             >
               ›
@@ -82,7 +77,6 @@ export default function PersonVideoCarousel({
         )}
       </div>
 
-      {/* Dots — navegación sin montar videos */}
       {videos.length > 1 && (
         <div className="mt-4 flex justify-center gap-2">
           {videos.map((v, i) => (
@@ -90,7 +84,7 @@ export default function PersonVideoCarousel({
               key={v.src + i}
               type="button"
               onClick={() => setActiveIndex(i)}
-              aria-label={`Ir al video ${i + 1}`}
+              aria-label={`${i + 1}`}
               className={`h-2.5 rounded-full transition-all ${
                 i === activeIndex
                   ? 'w-6 bg-blue-uchooseit'

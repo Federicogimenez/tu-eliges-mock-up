@@ -12,10 +12,10 @@ const SCRIPT_SRC = `https://js.hsforms.net/forms/embed/${PORTAL_ID}.js`
 // TODO: completar con los form IDs reales de cada país
 const FORM_IDS: Record<CountryCode, string> = {
   usa: '8c53addb-cd1c-468f-a653-e5ab63720c57',
-  bra: '83c9d973-9761-4db2-88f8-007c426c601a',
-  arg: '83c9d973-9761-4db2-88f8-007c426c601a',
-  col: '83c9d973-9761-4db2-88f8-007c426c601a',
-  mex: '83c9d973-9761-4db2-88f8-007c426c601a',
+  bra: '891f31d4-f74d-4278-8639-34bfcf68d387',
+  arg: '891f31d4-f74d-4278-8639-34bfcf68d387',
+  col: '891f31d4-f74d-4278-8639-34bfcf68d387',
+  mex: '891f31d4-f74d-4278-8639-34bfcf68d387',
 }
 
 export default function HubSpotForm({ context }: HubSpotFormProps) {
@@ -59,21 +59,21 @@ export default function HubSpotForm({ context }: HubSpotFormProps) {
   }, [formId])
 
   return (
-    <div className="relative mx-auto min-h-[200px] w-full max-w-xl">
-      {/* Loader — ocupa el espacio reservado para evitar el salto de layout */}
+    <div className="w-full max-w-xl mx-auto relative">
+      {/* Loader */}
       {isLoading && (
-        <div
-          role="status"
-          className="absolute inset-0 flex items-center justify-center"
-        >
-          <div className="h-7 w-7 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+        <div className="flex items-center justify-center py-6 gap-2">
+          <div className={`w-5 h-5 border-2 rounded-full animate-spin border-white/30 border-t-white`} />
+          <span className={`text-sm text-white`}>
+            Loading...
+          </span>
         </div>
       )}
 
       {/* HubSpot embed target */}
       <div
         ref={containerRef}
-        className={`hs-form-frame -my-8 ${isClosing ? 'hubspot-closing' : 'hubspot-form'} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`hs-form-frame -my-8 ${isClosing ? 'hubspot-closing' : 'hubspot-form'} ${isLoading ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'} transition-opacity duration-300`}
         data-region="na1"
         data-form-id={formId}
         data-portal-id={PORTAL_ID}

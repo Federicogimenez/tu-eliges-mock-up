@@ -16,12 +16,11 @@ export const NO_FAQS_PAGES = [
   '/thank-you',
   '/business',
   '/save',
-  '/save-latam',
 ]
 
 export const DARK_BG_PAGES: string[] = []
 
-export const LANDING_EMAIL_PAGES = ['/save', '/save-latam']
+export const LANDING_EMAIL_PAGES = ['/save']
 
 export const CATEGORY_PAGES = ['shop', 'travel', 'dining', 'entertainment'] as const
 

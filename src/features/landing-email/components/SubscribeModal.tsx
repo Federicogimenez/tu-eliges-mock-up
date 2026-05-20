@@ -1,31 +1,36 @@
-import EmailCapturePill from './EmailCapturePill'
+import { useTranslation } from '../../../hooks/useTranslation'
+import HubSpotForm from './HubSpotForm'
 import ModalShell from './ModalShell'
 
 interface SubscribeModalProps {
   open: boolean
   onClose: () => void
+  /** Overrides opcionales (ya resueltos por i18n en el padre). */
   title?: string
   subtitle?: string
 }
 
 /**
- * Modal de suscripción — fiel a SubscribeModal.standalone.html del DS:
- * scrim negro, card oscura con borde azul, ícono azul, headline + subcopy
- * y el mismo glass pill de captura (mock). Comportamiento vía ModalShell.
+ * Modal de suscripción — scrim negro, card oscura DS, embed HubSpot.
+ * Comportamiento vía ModalShell. Copy por defecto vía i18n.
  */
 export default function SubscribeModal({
   open,
   onClose,
-  title = 'Unite a la comunidad',
-  subtitle = 'Recibí tips de ahorro, historias de consumo y ofertas exclusivas para viajar a USA sin fundirte.',
+  title,
+  subtitle,
 }: SubscribeModalProps) {
+  const { t } = useTranslation()
+  const heading = title ?? t('landingEmail.modal.title')
+  const sub = subtitle ?? t('landingEmail.modal.subtitle')
+
   return (
-    <ModalShell open={open} onClose={onClose} ariaLabel={title}>
+    <ModalShell open={open} onClose={onClose} ariaLabel={heading}>
       <div className="relative w-full max-w-md animate-fade overflow-hidden rounded-[24px] border border-blue-uchooseit/60 bg-[linear-gradient(180deg,#0d1422_0%,#06090f_100%)] p-7 text-center shadow-[var(--uc-shadow-glow)]">
         <button
           type="button"
           onClick={onClose}
-          aria-label="Cerrar"
+          aria-label="✕"
           className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-uc-line text-white transition hover:bg-uc-ink-2"
         >
           ✕
@@ -42,15 +47,15 @@ export default function SubscribeModal({
         </span>
 
         <h2 className="text-2xl font-extrabold leading-tight text-white">
-          {title}
+          {heading}
         </h2>
-        <p className="uc-lead mx-auto mt-3 max-w-sm text-sm">{subtitle}</p>
+        <p className="uc-lead mx-auto mt-3 max-w-sm text-sm">{sub}</p>
 
         <div className="mt-6">
-          <EmailCapturePill cta="Unirme" />
+          <HubSpotForm context="closing" />
         </div>
 
-        <p className="uc-micro mt-3">Sin tarjeta · cancelás cuando quieras.</p>
+        <p className="uc-micro mt-3">{t('landingEmail.modal.micro')}</p>
       </div>
     </ModalShell>
   )
