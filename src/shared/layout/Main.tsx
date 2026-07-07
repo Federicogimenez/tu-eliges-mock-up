@@ -7,7 +7,7 @@ import { useAnalytics } from '../../hooks/useAnalytics';
 import useAllyPopUpTrigger from '../../hooks/useAllyPopUpTrigger';
 import { HamburgerMenu } from '../components/HamburgerMenu';
 import { SavingsModalProvider } from '../../context/SavingsCalculatorModalContext';
-import CalculateSavingButton from '../components/SavingsCalculator/CalculateSavingButton';
+// import CalculateSavingButton from '../components/SavingsCalculator/CalculateSavingButton';
 import HeroVideo from './HeroVideo';
 import HeroOverlay from './HeroOverlay';
 import AllyPopUp from '../components/AllyPopUp';
@@ -50,7 +50,7 @@ export const Main: React.FC<LayoutProps> = ({ children }) => {
 
         {isHeroPage && (
           <section className="relative w-full flex justify-center items-stretch">
-            {showHeroContent && <CalculateSavingButton />}
+            {/* {showHeroContent && <CalculateSavingButton />} */}
             <HeroVideo />
             {showHeroContent && <HeroOverlay isHome={isHome} />}
           </section>
