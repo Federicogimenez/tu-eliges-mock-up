@@ -32,7 +32,7 @@ Uchooseit-Design-System/   # Material crudo de marca + skill uchooseit-design (v
 ## Piezas clave y cómo se conectan
 
 - **Layout por arrays de rutas:** `shared/routes.ts` declara qué páginas tienen hero, FAQs, fondo oscuro; `useRouteConfig` deriva los flags; `Main.tsx` los aplica. Agregar una página = tocar los tres puntos de integración (ver abajo).
-- **Ally system:** `AllyProvider` (context) + `lib/` (fetch a `api.tueliges.us`) + popup con timer inmediato + persistencia en `localStorage` + cupón en URL de Recurly.
+- **Ally system:** `AllyProvider` (context) + `lib/` (fetch a `api.tueliges.us`) + popup con timer inmediato + persistencia en `localStorage` + cupón en URL de Recurly. El context expone `code` (URL de Recurly con cupón) y `rawCode` (el param crudo). Para partners con video (`ALLY_VIDEOS` en `AllyPopUp.tsx`: k2, mycommunitypharmacy), el popup reemplaza el logo de la API por video en phone frame (mp4 optimizados en `public/`, patrón espejado de `HowSection.tsx`; detalle en `tasks/0013-ally-popup-videos/doc/`); el resto sigue viendo el logo.
 - **Savings calculator:** modal global (botón verde flotante), 19 subcategorías; variante B2B oculta el costo de membresía.
 - **i18n:** tipos + `useTranslation` + JSON por país + country switcher; unifica `/save` y `/save-latam`.
 - **Email capture:** forms HubSpot embebidos, form ID por país.

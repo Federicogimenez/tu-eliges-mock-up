@@ -13,5 +13,6 @@ export interface AllyDataProps {
 export interface AllyContextType {
   recurlyUrl: string;
   code: string | null;
+  rawCode: string | null;
   allyData: AllyDataProps;
 }

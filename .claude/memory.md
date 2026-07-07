@@ -23,6 +23,7 @@
 | 2026-04 | Unificar `/save` y `/ahorra` en una ruta con i18n | dos landings divergían; una sola fuente con copy por país | `0008-landing-email-i18n` |
 | 2026-05 | Rediseño `/save` con calculadora paramétrica + Design System | campaña de ads necesitaba landing alineada a marca | `0009-landing-latam` + `0010-landing-email-migration` |
 | 2026-07-06 | Harness v2: modelo Architect/Dev/Leader con memoria evolutiva (adaptado de `portfolios/federicode`); historial v1 migrado a `tasks/0001`–`0011` | el workflow v1 no tenía evaluador, ni gate de commit, ni memoria que evolucione | `0012-harness-v2` |
+| 2026-07-07 | Videos de partner: re-encode con ffmpeg (H.264 CRF 28, ~3 MB) e in-repo, mapeo cliente por code (`ALLY_VIDEOS`, objeto literal) — se descartó LFS/hosting externo y config genérica | 2 partners hoy; sesgo a la simplicidad — se generaliza si aparecen más | `0013-ally-popup-videos` |
 
 ## Deuda conocida
 

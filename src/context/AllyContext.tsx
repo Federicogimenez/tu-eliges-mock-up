@@ -23,6 +23,7 @@ interface AllyProviderProps {
 
 export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
   const [code, setCode] = useState<string | null>(null);
+  const [rawCode, setRawCode] = useState<string | null>(null);
   const [allyData, setAllyData] = useState<AllyDataProps>(defaultAllyData);
   const [hasInitialized, setHasInitialized] = useState(false);
 
@@ -39,6 +40,7 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
       
       if (codeParam) {
         setCode(recurlyCuponUrl + codeParam);
+        setRawCode(codeParam);
         // Actualizar LocalStorage con el nuevo código
         localStorage.setItem('ally-code', codeParam);
         // Marcar como loading mientras se hace la consulta
@@ -68,6 +70,7 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
         const storedCode = localStorage.getItem('ally-code');
         if (storedCode) {
           setCode(recurlyCuponUrl + storedCode);
+          setRawCode(storedCode);
           // Marcar como loading mientras se hace la consulta
           setAllyData(prev => ({ 
             ...prev,
@@ -108,8 +111,9 @@ export const AllyProvider: React.FC<AllyProviderProps> = ({ children }) => {
   const contextValue: AllyContextType = useMemo(() => ({
       recurlyUrl,
       code,
+      rawCode,
       allyData
-    }), [recurlyUrl, code, allyData]);
+    }), [recurlyUrl, code, rawCode, allyData]);
   
   return (
     <AllyContext.Provider value={contextValue}>
