@@ -32,4 +32,3 @@
 - **SEO:** la SPA no prerenderiza. `0002-seo` quedó **suspendida**, superada por `0011-next-migration` (Vite → Next.js static export), diseñada y **sin ejecutar**. Retomarla = ejecutarla como task (su brief v1 sigue vigente) o re-briefearla si el contexto cambió.
 - **`0003-business`:** quedaron 2 tareas de QA pendientes según el estado del workflow v1 — verificar si siguen vigentes antes de cerrar.
 - **Sin tests unitarios:** la verificación es `npm run build` + QA manual. Decidir framework solo cuando un comportamiento crítico lo pague.
-- **Código comentado en `Home.tsx`:** los imports y slides de `BenefitsSection` quedaron comentados (no borrados) al retirarla en `0015`. Si la remoción se confirma definitiva, borrar el bloque y evaluar si `BenefitsSection.tsx` y sus assets (`/benefits/home/*.png`) siguen teniendo consumidor.
