@@ -24,9 +24,12 @@
 | 2026-05 | Rediseño `/save` con calculadora paramétrica + Design System | campaña de ads necesitaba landing alineada a marca | `0009-landing-latam` + `0010-landing-email-migration` |
 | 2026-07-06 | Harness v2: modelo Architect/Dev/Leader con memoria evolutiva (adaptado de `portfolios/federicode`); historial v1 migrado a `tasks/0001`–`0011` | el workflow v1 no tenía evaluador, ni gate de commit, ni memoria que evolucione | `0012-harness-v2` |
 | 2026-07-07 | Videos de partner: re-encode con ffmpeg (H.264 CRF 28, ~3 MB) e in-repo, mapeo cliente por code (`ALLY_VIDEOS`, objeto literal) — se descartó LFS/hosting externo y config genérica | 2 partners hoy; sesgo a la simplicidad — se generaliza si aparecen más | `0013-ally-popup-videos` |
+| 2026-07-07 | Hero B2B: typewriter propio (~60 líneas) en vez de librería; palabra rotante negocio→comunidad→fundación con i18n `titlePrefix`+`words` (CSV) | reposiciona el hero del *cómo funciona* al *motivo del partner* y segmenta las 3 audiencias B2B sin sumar dependencia | `0014-b2b-hero-typewriter` |
+| 2026-07-07 | Home: `BenefitsVideoSection` unifica beneficios + video demo con autoplay muted; en QA se retiró también `BenefitsSection` (slides) por redundante con la sección nueva, y las category cards ganaron secuencia de activación en no-touch | valor completo al llegar, sin exigir interacción; una sección en vez de dos mensajes diluidos | `0015-home-benefits-video` |
 
 ## Deuda conocida
 
 - **SEO:** la SPA no prerenderiza. `0002-seo` quedó **suspendida**, superada por `0011-next-migration` (Vite → Next.js static export), diseñada y **sin ejecutar**. Retomarla = ejecutarla como task (su brief v1 sigue vigente) o re-briefearla si el contexto cambió.
 - **`0003-business`:** quedaron 2 tareas de QA pendientes según el estado del workflow v1 — verificar si siguen vigentes antes de cerrar.
 - **Sin tests unitarios:** la verificación es `npm run build` + QA manual. Decidir framework solo cuando un comportamiento crítico lo pague.
+- **Código comentado en `Home.tsx`:** los imports y slides de `BenefitsSection` quedaron comentados (no borrados) al retirarla en `0015`. Si la remoción se confirma definitiva, borrar el bloque y evaluar si `BenefitsSection.tsx` y sus assets (`/benefits/home/*.png`) siguen teniendo consumidor.

@@ -84,7 +84,7 @@ app/
     └── tasks/               # historial inmutable: NNNN-slug/ (brief · tasks · doc)
 ```
 
-- **Task nueva:** copiá [.claude/templates/task/](.claude/templates/task/) a `.claude/tasks/NNNN-slug/`. Numerá secuencial (siguiente: `0013-`).
+- **Task nueva:** copiá [.claude/templates/task/](.claude/templates/task/) a `.claude/tasks/NNNN-slug/`. Numerá secuencial (siguiente: `0016-`). **Chequeá `tasks/` antes de numerar** — dos chats paralelos ya colisionaron en `0014`.
 - **Antes de leer todo el código:** empezá por `map.md`. Si no alcanza para tu task, es señal de que el Leader debe enriquecerlo.
 
 ## Historial (workflow v1)

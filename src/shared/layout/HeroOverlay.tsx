@@ -48,19 +48,20 @@ export default function HeroOverlay({ isHome }: HeroOverlayProps) {
         </div>
 
         <div className="animate-appear-up" style={{ animationDelay: '.3s' }}>
-          <p className={`ease-in-out flex portrait:flex-col landscape:flex-row justify-center items-center gap-2 flex-wrap text-center md:w-full font-semibold mx-auto transition-all duration-500 ${isHome ? 'translate-y-0' : ' !flex-row '}`}>
+          <p className={`ease-in-out flex flex-row justify-center items-center gap-2 flex-wrap text-center md:w-full font-semibold mx-auto transition-all duration-500 ${isHome ? 'translate-y-0' : ' !flex-row '}`}>
             {navLinks.map(({ label, icon, path, bg_color }, i) => (
               <Link
                 to={path}
                 key={i}
-                className={`transition-all ease duration-300 rounded-full p-2 text-white flex justify-center items-center gap-x-2 ${isHome ? ' px-5 py-1 bg-gradient-to-br ' : (pathname === path ? ' scale-125' : ' !bg-transparent scale-100 hover:scale-110')} ${bg_color}`}
+                aria-label={label}
+                className={`transition-all ease duration-300 rounded-full p-2 text-white flex justify-center items-center gap-x-2 ${isHome ? ' portrait:p-2.5 landscape:px-5 landscape:py-1 bg-gradient-to-br ' : (pathname === path ? ' scale-125' : ' !bg-transparent scale-100 hover:scale-110')} ${bg_color}`}
               >
                 <img
                   src={icon}
-                  alt="icon"
-                  className={`w-6 lg:w-6 object-contain object-center transition-all duration-300 ${isHome ? 'scale-0' : 'scale-100'} ${pathname === path ? ' scale-125' : ' scale-100'}`}
+                  alt=""
+                  className={`w-6 lg:w-6 object-contain object-center transition-all duration-300 ${isHome ? 'portrait:scale-100 landscape:scale-0' : 'scale-100'} ${pathname === path ? ' scale-125' : ' scale-100'}`}
                 />
-                <span className={`overflow-hidden ${isHome ? '' : 'hidden'}`}>
+                <span className={`overflow-hidden ${isHome ? 'portrait:hidden' : 'hidden'}`}>
                   {label}
                 </span>
               </Link>

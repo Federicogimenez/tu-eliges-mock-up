@@ -1,5 +1,11 @@
+import { useEffect, useRef, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import { useTranslation } from '../../../hooks/useTranslation';
+import { useIsTouchDevice } from '../../../hooks/useIsTouchDevice';
+import useIsInView from '../../../hooks/useIsInView';
+
+const VIEW_OPTIONS: IntersectionObserverInit = { threshold: 0.5 };
+const STEP_INTERVAL_MS = 1000;
 
 const categoryMeta = [
   {
@@ -39,6 +45,45 @@ const categoryMeta = [
 export default function CategoriesSection() {
   const { t } = useTranslation();
 
+  const gridRef = useRef<HTMLDivElement>(null);
+  const isInView = useIsInView(gridRef, VIEW_OPTIONS);
+  const isTouchDevice = useIsTouchDevice();
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const hasPlayedRef = useRef(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (isTouchDevice || !isInView || hasPlayedRef.current) return;
+
+    hasPlayedRef.current = true;
+    let step = 0;
+    setActiveIndex(step);
+
+    timerRef.current = setInterval(() => {
+      step += 1;
+      if (step >= categoryMeta.length) {
+        setActiveIndex(null);
+        if (timerRef.current) clearInterval(timerRef.current);
+        return;
+      }
+      setActiveIndex(step);
+    }, STEP_INTERVAL_MS);
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isTouchDevice, isInView]);
+
+  const handleMouseEnter = () => {
+    hasPlayedRef.current = true;
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    setActiveIndex(null);
+  };
+
   return (
     <div className="relative bg-white dark:bg-black w-full py-10 flex flex-col items-center  ">
         <div className="text-center mb-2 px-4">
@@ -49,12 +94,16 @@ export default function CategoriesSection() {
             {t('home.categories.subtitle')}
           </p>
         </div>
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center">
+        <div
+          ref={gridRef}
+          onMouseEnter={handleMouseEnter}
+          className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center"
+        >
             {
                 categoryMeta.map(( category, i )=>{
                     return <CategoryCard
                         key={i}
-                        id={i}
+                        active={activeIndex === i}
                         name={t(`home.categories.items.${category.key}.name`)}
                         path={category.path}
                         color={category.color}

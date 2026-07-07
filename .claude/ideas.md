@@ -5,6 +5,7 @@
 ## Pendientes
 > Una idea por bloque. Cruda está bien — la procesa el Architect.
 
+- **Botón flotante de la calculadora comentado en `Main.tsx`:** el working tree trae `CalculateSavingButton` desactivado (comentado) — cambio que ningún brief declara y que toca una pieza de conversión del funnel. El Leader lo **dejó fuera del commit del gate 0014/0015** hasta ratificación: si la remoción es intencional, task/delta que lo borre de verdad (no comentado) y registre el motivo; si no, restaurar. *(cargada por el Leader, 2026-07-07)*
 - **`dist/index.html` trackeado por accidente:** `dist/` está en `.gitignore` pero ese único archivo quedó commiteado en algún momento — cada `npm run build` local lo marca como modificado (hashes de assets). Limpieza candidata: `git rm --cached dist/index.html` (el deploy de GitHub Actions buildea fresco, no depende de este archivo — verificar el workflow antes). *(cargada por el Leader, 2026-07-06)*
 ## Procesadas
 | Idea | Veredicto | Destino / motivo | Fecha |
