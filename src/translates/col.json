@@ -478,8 +478,8 @@
   },
   "business": {
     "hero": {
-      "title1": "Convierta Su Comunidad",
-      "title2": "En una Red de Poder de Compra",
+      "titlePrefix": "Recompense a Quienes Impulsan Su",
+      "words": "Negocio,Comunidad,Fundación",
       "description": "Dele a su audiencia acceso privado a la red de descuentos más grande de EE. UU.",
       "trustedBy": "La confianza de organizaciones en todo EE. UU.",
       "plugAndPlay": "Plug & Play · Sin integración tecnológica"

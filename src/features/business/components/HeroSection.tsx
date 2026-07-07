@@ -1,4 +1,5 @@
 import BookCallButton from "./BookCallButton";
+import TypewriterWord from "./TypewriterWord";
 import WaveSeparator from "../../../shared/components/WaveSeparator";
 import { useTranslation } from '../../../hooks/useTranslation';
 
@@ -13,10 +14,12 @@ export default function HeroSection({ onBookCall }: HeroSectionProps) {
     <section className="text-white relative w-full h-[85dvh] min-h-[300px] flex flex-col items-center justify-end pb-14 px-2">
       <h1 className="text-3xl md:text-4xl text-center font-extrabold mb-2 leading-tight">
         <span className="text-neutral-300/80">
-          {t('business.hero.title1')}
+          {t('business.hero.titlePrefix')}
         </span>
         <br />
-        <span>{t('business.hero.title2')}</span>
+        <span>
+          <TypewriterWord words={t('business.hero.words').split(',')} />
+        </span>
       </h1>
       <p className="text-center">
         {t('business.hero.description')}

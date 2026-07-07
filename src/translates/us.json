@@ -478,8 +478,8 @@
   },
   "business": {
     "hero": {
-      "title1": "Turn Your Community",
-      "title2": "Into a Buying Power Network",
+      "titlePrefix": "Reward Those Who Drive Your",
+      "words": "Business,Community,Foundation",
       "description": "Give your audience private access to the largest discount network in the U.S.",
       "trustedBy": "Trusted by organizations across the U.S.",
       "plugAndPlay": "Plug & Play · No Tecnology integration"
